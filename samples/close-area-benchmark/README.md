@@ -18,7 +18,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena dep
 .venv/bin/python -m unittest test_smoke -v                              # ~5 s, skips without numpy
 ```
 
-The full command above now runs all 14 rows. The five rows added later (DWA, `dwa_mem`, Bug2,
+The full command above now runs all 21 rows. The five rows added later (DWA, `dwa_mem`, Bug2,
 TangentBug, D* Lite) were run into the existing matrix without re-running the old nine:
 
 ```sh
@@ -28,6 +28,15 @@ TangentBug, D* Lite) were run into the existing matrix without re-running the ol
 .venv/bin/python export_replays.py --merge --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite   # ~35 s, 40 replays
 ```
 
+The seven rows of loop-73 (Theta* x 4, MPPI x 2, Hybrid A*) were added the same way, without a recheck run
+(`matrix_0_recheck.*` still holds the loop-46c check):
+
+```sh
+.venv/bin/python bench.py --add-to matrix_0 --planners thetastar_known,lazy_thetastar_known,thetastar_unknown,\
+lazy_thetastar_unknown,mppi,mppi_astar,hybrid_astar --workers 14                     # ~34 min on a shared host
+python3 results/cross_check_loop73.py                                                # ~1 s, stdlib
+```
+
 Measured on an Apple M3 Max (16 cores), macOS arm64, CPython 3.12.10, numpy 2.5.4, scipy 1.18.1,
 osqp 1.1.3 (`env` in [results/matrix_0.json](results/matrix_0.json)). The matrix took 323.4 s wall
 with 14 worker processes (2,880 flights). The replay export took 58.0 s, one process
@@ -35,6 +44,9 @@ with 14 worker processes (2,880 flights). The replay export took 58.0 s, one pro
 with 14 processes for 2,240 flights (1,600 new + 640 re-check), same interpreter and versions
 ([results/add_46c_stdout.txt](results/add_46c_stdout.txt), `additions` in matrix_0.json); their
 replay export took 35.3 s ([results/export_replays_add_0.log](results/export_replays_add_0.log)).
+The loop-73 rows took 2058.5 s wall with 14 processes for 2,240 flights, same interpreter and versions, on a
+host shared with other jobs ([results/add_73_stdout.txt](results/add_73_stdout.txt), `additions` in
+matrix_0.json). No replays were exported for them.
 
 ## What is in the matrix
 
@@ -56,6 +68,13 @@ Planners, imported by path from their samples. No planner file was edited.
 | `bug2` | [close-area-planner-dwa-bug bug.py](../close-area-planner-dwa-bug/bug.py) `make("bug2")` | none |
 | `tangent_bug` | `bug.make("tangent_bug")` | none |
 | `dstar_lite` | [close-area-planner-dstar dstar_lite.py](../close-area-planner-dstar/dstar_lite.py) `GridReplanner(backend="dstar")`, same geofence as `astar_unknown` | built from range hits |
+| `thetastar_known` | [close-area-planner-thetastar thetastar.py](../close-area-planner-thetastar/thetastar.py) `make(known_map=True)` | true prior grid |
+| `lazy_thetastar_known` | `thetastar.make(known_map=True, lazy=True)` | true prior grid |
+| `thetastar_unknown` | `thetastar.make(known_map=False, bounds=...)`, area geofence | built from range hits |
+| `lazy_thetastar_unknown` | `thetastar.make(known_map=False, lazy=True, bounds=...)`, area geofence | built from range hits |
+| `mppi` | [close-area-planner-mppi mppi.py](../close-area-planner-mppi/mppi.py) `make(guide="none", bounds=...)` | built from range hits |
+| `mppi_astar` | `mppi.make(guide="astar", bounds=...)`: tracks the unknown-map A* path | built from range hits |
+| `hybrid_astar` | [close-area-planner-hybrid-astar hybrid_astar.py](../close-area-planner-hybrid-astar/hybrid_astar.py) `make(bounds=...)` | built from range hits |
 
 Families: `random`, `u_trap`, `narrow_gap` (world.py) and `office`, `warehouse`, `forest`, `maze`,
 `glass_office` (worlds_complex.py), all through `world_glass.make_any_world`. Presets from
@@ -87,6 +106,10 @@ Checks for the five added rows:
   runs each identical in outcome, min clearance, path length and time to goal
   ([results/matrix_0_recheck.md](results/matrix_0_recheck.md)). The 2,880 old rows in
   matrix_0.json are kept as they were.
+- **loop-73 rows** ([results/matrix_0_loop73_checks.md](results/matrix_0_loop73_checks.md)): the 4,480
+  older runs and their summaries equal the committed matrix_0.json; every run that the three source samples
+  flew themselves is identical in outcome, min clearance, time to goal and path length, 1,440 of 1,440
+  (Theta* flights_0.json, MPPI bench_ideal_0 / bench_crazyflie_0, Hybrid A* bench_0 stock vehicle).
 - **Same as the source sample.** On ideal x random, u_trap and narrow_gap (layouts 0-19), DWA,
   `dwa_mem`, Bug2 and TangentBug match `close-area-planner-dwa-bug`'s own `run.evaluate` run on
   its 72-beam "default" fan: 60 of 60 runs each, same outcome and min clearance
@@ -95,7 +118,8 @@ Checks for the five added rows:
 ## Results (ran 2026-11-09, synthetic)
 
 `python bench.py --layouts 20 --seed 0 --workers 14 --parity`, wall 323.4 s, plus the five rows
-added by `bench.py --add-to matrix_0` (above), wall 216.2 s. Cell = reached % / collision %. Source: [results/matrix_0.md](results/matrix_0.md) (also stuck, timeout, median time,
+added by `bench.py --add-to matrix_0` (above), wall 216.2 s, and the seven loop-73 rows (2026-11-10),
+wall 2058.5 s. Cell = reached % / collision %. Source: [results/matrix_0.md](results/matrix_0.md) (also stuck, timeout, median time,
 min clearance, material hit), per-run rows in [results/matrix_0.json](results/matrix_0.json).
 
 ### Preset `ideal`
@@ -116,9 +140,17 @@ min clearance, material hit), per-run rows in [results/matrix_0.json](results/ma
 | bug2 | 90 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 20 / 0 | 0 / 0 |
 | tangent_bug | 95 / 0 | 90 / 0 | 45 / 0 | 25 / 0 | 20 / 0 | 100 / 0 | 15 / 0 | 25 / 0 |
 | dstar_lite | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| lazy_thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| thetastar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 90 / 0 | 60 / 0 | 100 / 0 | 95 / 0 | 90 / 0 |
+| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 90 / 0 | 65 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| mppi | 90 / 0 | 0 / 0 | 25 / 0 | 25 / 0 | 15 / 0 | 100 / 0 | 0 / 0 | 10 / 0 |
+| mppi_astar | 100 / 0 | 100 / 0 | 95 / 0 | 100 / 0 | 65 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
+| hybrid_astar | 100 / 0 | 100 / 0 | 70 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 85 / 0 |
 
-Best planner per family: the three prior-map planners (`astar_known`, `informed_rrt_star`,
-`astar_mpc`) reach 100 % with 0 % collisions in every family. Best without a prior map:
+Best planner per family: the prior-map planners (`astar_known`, `informed_rrt_star`, `astar_mpc`,
+and since loop-73 `thetastar_known`, `lazy_thetastar_known`) reach 100 % with 0 % collisions in every
+family. The paragraph below compares the 14 older rows; the loop-73 rows are in "Reading, loop-73 rows". Best without a prior map:
 `astar_unknown` in every family (random 100, u_trap 100, narrow_gap 90, office 95, warehouse 55,
 forest 100, maze 95, glass_office 95). `dstar_lite` ties it on random, u_trap, warehouse
 (55 / 0), forest and glass_office (95 / 0) and is 5 points lower on narrow_gap (85), office (90)
@@ -143,6 +175,13 @@ and `freest_beam`, `apf_escape`, `vfh_plus`, `bug2` and `tangent_bug` on forest.
 | bug2 | 90 / 10 | 20 / 30 | 0 / 0 | 0 / 35 | 15 / 20 | 50 / 40 | 0 / 20 | 5 / 40 |
 | tangent_bug | 55 / 45 | 35 / 15 | 5 / 10 | 10 / 45 | 0 / 35 | 25 / 75 | 0 / 50 | 5 / 50 |
 | dstar_lite | 100 / 0 | 100 / 0 | 15 / 10 | 20 / 40 | 5 / 45 | 100 / 0 | 40 / 25 | 10 / 65 |
+| thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| lazy_thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| thetastar_unknown | 100 / 0 | 90 / 5 | 5 / 15 | 35 / 60 | 5 / 60 | 95 / 5 | 65 / 10 | 20 / 65 |
+| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 15 / 25 | 45 / 35 | 30 / 20 | 95 / 5 | 50 / 0 | 30 / 55 |
+| mppi | 55 / 40 | 0 / 95 | 0 / 100 | 5 / 75 | 0 / 100 | 100 / 0 | 0 / 95 | 10 / 75 |
+| mppi_astar | 80 / 20 | 40 / 60 | 15 / 85 | 10 / 85 | 0 / 100 | 100 / 0 | 0 / 100 | 5 / 85 |
+| hybrid_astar | 95 / 5 | 100 / 0 | 10 / 5 | 40 / 45 | 0 / 35 | 90 / 10 | 35 / 15 | 5 / 75 |
 
 Best planner per family: again the three prior-map planners, 100 / 0 everywhere; `dstar_lite`
 ties them on random, u_trap and forest. Best without a prior map (highest reached %, then lowest
@@ -152,6 +191,20 @@ collision %): random `astar_unknown`, `astar_unknown_f2` and `dstar_lite` (100 /
 `astar_unknown_f2` (55 / 0), glass_office `dstar_lite` (10 / 65). The last two picks by that rule
 are weak: warehouse had no reach at all before (best 0 / 0, `astar_unknown_f2`), and on
 glass_office `freest_beam` and `dwa_mem` (5 / 5) are far safer than `dstar_lite`'s 65 % collisions.
+
+### Reading, loop-73 rows
+
+- **Theta* with a prior map ties A* known map**: 100 / 0 in every family on both presets.
+- **Without a map, on ideal, `mppi_astar` is the best or tied-best map-free row in every family** (by the
+  bench's rule in [results/matrix_0.md](results/matrix_0.md)): narrow_gap 95 vs 90 for `astar_unknown`,
+  office 100 vs 95, warehouse 65 vs 55 (tied with `lazy_thetastar_unknown`). `mppi` alone gets 0 % on
+  u_trap and maze.
+- **With 4 beams the new map-free rows collide more in rooms.** `mppi_astar` collides in 60-100 % on
+  u_trap, narrow_gap, office, warehouse, maze and glass_office (`astar_unknown`: 5-65 %). `thetastar_unknown`
+  collides in 60 % on office and warehouse. `lazy_thetastar_unknown` is the bench's map-free pick on crazyflie
+  warehouse (30 / 20) and glass_office (30 / 55), `thetastar_unknown` on maze (65 / 10).
+- **Hybrid A* reaches less often than `astar_unknown` on ideal** in narrow_gap (70 vs 90), office (90 vs 95),
+  maze (90 vs 95) and glass_office (85 vs 95), and ties it elsewhere (warehouse 55 both).
 
 ### Reading
 
@@ -209,6 +262,8 @@ the first 72, 35.3 s for the 40 added.
 
 ## Not included yet
 
+- Replays (`export_replays.py --merge`) for the seven loop-73 rows: not exported, since the replay folder
+  is generated site data outside loop-73's paths.
 - The diagnostic shipped-prior run for `dstar_lite` (only `astar_unknown` has one), and a scan
   memory for APF, VFH+ or the Bug planners.
 - The other safety-filter arms (F1 CP-stop, the map-based CBFs) and the estimator faults: the

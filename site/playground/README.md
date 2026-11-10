@@ -12,7 +12,10 @@ The page runs the hub's real Python code with Pyodide in a Web Worker: the arena
 ([close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md)), DWA, Bug2 and
 TangentBug ([close-area-planner-dwa-bug](../../samples/close-area-planner-dwa-bug/README.md)), D* Lite
 ([close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md)), Informed RRT*
-([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)), the F2 filter
+([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)), Theta* and Lazy Theta*
+([close-area-planner-thetastar](../../samples/close-area-planner-thetastar/README.md)), MPPI
+([close-area-planner-mppi](../../samples/close-area-planner-mppi/README.md)), Hybrid A*
+([close-area-planner-hybrid-astar](../../samples/close-area-planner-hybrid-astar/README.md)), the F2 filter
 ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)) and relocalization after
 VIO loss ([close-area-relocalize](../../samples/close-area-relocalize/README.md)). Nothing is re-implemented
 in JS. Everything is **synthetic**: a simulated 2.5D point-mass vehicle, simulated range sensors and
@@ -126,9 +129,13 @@ Source: [results/playground_check.md](results/playground_check.md), written by
 [results/native_parity.json](results/native_parity.json) from `results/native_parity.py` (CPython 3.12.10).
 Input type: synthetic.
 
-- **12 planners in the browser: 12 of the 14 benchmarked rows** of
-  [close-area-benchmark](../../samples/close-area-benchmark/README.md). Added in loop-62: DWA, DWA + 3 s
-  memory, Bug2, TangentBug, D* Lite (unknown map) and Informed RRT* (known map). The 2 rows left out:
+- **18 planners in the browser: 18 of the 21 benchmarked rows** of
+  [close-area-benchmark](../../samples/close-area-benchmark/README.md). Added in loop-73: Theta* and Lazy
+  Theta* (known map), Lazy Theta* (unknown map, geofenced), MPPI (goal only), MPPI on the unknown-map A*
+  path and Hybrid A* (unknown map, geofenced); see "New planners (loop-73)" below. Left out of the
+  playground: the benchmark row `thetastar_unknown` (plain Theta* without a map; its sample README
+  reports slow replans, so only the Lazy variant is offered). Added in loop-62: DWA, DWA + 3 s
+  memory, Bug2, TangentBug, D* Lite (unknown map) and Informed RRT* (known map). The other 2 rows left out:
   `astar_mpc` needs osqp, and the Pyodide 314.0.7 `pyodide-lock.json` lists 357 packages but no osqp
   (only clarabel and cvxpy-base, checked 2026-11-09); `astar_unknown_f2` is not a separate planner
   here. A* unknown map + filter F2 is close to it, but differs: the benchmark's A* unknown map is
@@ -165,6 +172,40 @@ Input type: synthetic.
   [compare A* vs freest_beam](results/pg_compare_random0.png),
   [hand-drawn box](results/pg_custom_drawn.png), [shared link in a fresh profile](results/pg_shared_link.png), [VIO jump, no filter vs F2, dark theme](results/pg_jump_f2_dark.png),
   [phone 390 px](results/pg_phone_390.png).
+
+### New planners (loop-73)
+
+Source: [results/playground_loop73.md](results/playground_loop73.md) (`results/measure_loop73.mjs`,
+headless Chrome 140, Pyodide 314.0.7) against
+[results/native_parity_loop73.json](results/native_parity_loop73.json) (`results/native_parity_loop73.py`,
+CPython 3.12.10). Seed 0, sensor ideal, truth pose, no filter. Input type: synthetic. **Browser = native on
+12/12 cases** (outcome, time to goal, duration, min clearance, path length), and natively the driver equals
+`run.run_one` with the `bench.py` planner factory on the same JSON world in 12/12 (check E). The browser
+wall times are one run each on a shared host (load average 45.8 at the start), so read them as rough.
+
+  | world | planner | outcome / time to goal s / min clearance m / path m (browser = native) | browser Python s | native Python s |
+  |---|---|---|---|---|
+  | random_0 | thetastar_known | reached / 17.08 / 0.8833 / 24.123 | 3.28 | 2.059 |
+  | maze_0 | thetastar_known | reached / 31.88 / 0.8223 / 39.463 | 9.873 | 6.214 |
+  | random_0 | lazy_thetastar_known | reached / 17.12 / 0.8494 / 24.098 | 2.268 | 1.401 |
+  | maze_0 | lazy_thetastar_known | reached / 31.88 / 0.8208 / 39.448 | 6.253 | 3.616 |
+  | random_0 | lazy_thetastar_unknown | reached / 17.6 / 0.8919 / 24.653 | 10.179 | 6.44 |
+  | maze_0 | lazy_thetastar_unknown | reached / 33.78 / 0.7908 / 40.487 | 30.727 | 19.599 |
+  | random_0 | mppi | reached / 20.82 / 0.341 / 24.051 | 1.673 | 1.112 |
+  | maze_0 | mppi | stuck / - / 0.6542 / 9.441 | 1.673 | 1.083 |
+  | random_0 | mppi_astar | reached / 20.24 / 0.5812 / 23.917 | 5.321 | 3.122 |
+  | maze_0 | mppi_astar | reached / 31.28 / 0.357 / 35.589 | 10.177 | 5.684 |
+  | random_0 | hybrid_astar | reached / 18.74 / 0.6417 / 24.371 | 1.084 | 0.868 |
+  | maze_0 | hybrid_astar | reached / 39.26 / 0.2553 / 38.439 | 2.262 | 1.932 |
+
+Information only (check F, `native_parity_loop73.py --matrix-only`): against the benchmark's rows on the
+generated worlds (layout 0, ideal), 12/12 same outcome and 6/12 identical in every field. Five differ by
+0.0001 m in clearance or 0.001 m in path (the 4-decimal JSON rounding of check B); Hybrid A* on random_0
+reaches B at 18.74 s here and 18.54 s in the matrix.
+
+No run took over 60 s of browser Python, so all 6 stay in the list. Lazy Theta* unknown map is the slowest
+option: 30.7 s for one maze_0 run. MPPI, MPPI + A* and Hybrid A* take the world as an argument (geofence on
+the area bounds, as in the benchmark), like D* Lite.
 
 The driver loop matches the arena's own loops, checked natively in `native_parity.py`
 ([native_parity.json](results/native_parity.json), 21/26 checks identical):
@@ -205,7 +246,7 @@ The only additions are a sensor-preset argument and trace recording.
 
 | Control | Options | Source |
 |---|---|---|
-| Planner | straight, freest_beam, A* + ESDF known map, A* + ESDF unknown map, APF, VFH+, DWA, DWA + 3 s scan memory, Bug2, TangentBug, D* Lite unknown map, Informed RRT* 5000 known map | `planners/`, `run_faults.FreestBeam`, `close-area-planner-reactive`, `close-area-planner-dwa-bug`, `close-area-planner-dstar`, `close-area-planner-sampling` |
+| Planner | straight, freest_beam, A* + ESDF known map, A* + ESDF unknown map, APF, VFH+, DWA, DWA + 3 s scan memory, Bug2, TangentBug, D* Lite unknown map, Informed RRT* 5000 known map, Theta* known map, Lazy Theta* known map, Lazy Theta* unknown map, MPPI goal only, MPPI on the unknown-map A* path, Hybrid A* unknown map | `planners/`, `run_faults.FreestBeam`, `close-area-planner-reactive`, `close-area-planner-dwa-bug`, `close-area-planner-dstar`, `close-area-planner-sampling`, `close-area-planner-thetastar`, `close-area-planner-mppi`, `close-area-planner-hybrid-astar` |
 | Sensor | ideal (72 rays, 6 m), crazyflie (4 cone beams, 3 m), crazyflie_bright (0.73 m) | `presets.py` |
 | VIO fault | off (planner sees truth), VIO no fault, jump, bias, dropout | `estimator.py`, `faults.py`; the VIO options add 2 seeded dark zones |
 | VIO loss recovery | none, single, multi, multi + info-gain move (with VIO jump or dropout; fixes planner A* known map and filter none) | `close-area-relocalize` via [pg_reloc.py](pg_reloc.py) and `run_disambiguate.build` |
@@ -247,11 +288,13 @@ resized in the editor; "New empty" gives a 20 x 20 m area.
 | File | What |
 |---|---|
 | [index.html](index.html), [playground.css](playground.css), [playground.js](playground.js) | The page. Uses `../showcase.css` for the palette and light / dark theme. `window.PG` is a small API for scripted checks |
-| [worker.js](worker.js) | ES module worker: loads Pyodide 314.0.7 (`pyodide.mjs`, CDN or local folder), numpy, scipy and the 36 files in the manifest once, with named retries, then serves `run` messages |
+| [worker.js](worker.js) | ES module worker: loads Pyodide 314.0.7 (`pyodide.mjs`, CDN or local folder), numpy, scipy and the 42 files in the manifest once, with named retries, then serves `run` messages |
 | [pg_reloc.py](pg_reloc.py) | VIO loss recovery glue: builds the arms with `run_disambiguate.build`, records hypotheses, verdict status per frame and loss events |
 | [manifest.json](manifest.json) | Pyodide pin, CDN and local source, packages, files (shared with the spike) |
 | [results/reloc_demo_random_1_97.json](results/reloc_demo_random_1_97.json) | The VIO-loss demo world (written by `native_parity.py`) |
 | [presets/](presets/index.json) | Preset world JSON |
+| `results/native_parity_loop73.py`, `measure_loop73.mjs` | Native reference and browser check for the 6 loop-73 planners ([playground_loop73.md](results/playground_loop73.md)) |
+| `results/build_advisor_loop73.py` | Runs `data/build_advisor.py` unchanged with planner docs for the 7 loop-73 benchmark rows; rebuilds [data/advisor.json](data/advisor.json) |
 | `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity (incl. the relocalization cases); headless Chrome check, link check in a second fresh profile, blocked-CDN check in a third, and screenshots ([pg_shared_link.png](results/pg_shared_link.png)) |
 
 Re-run (needs the arena venv, Chrome at the macOS default path, network for the CDN):
@@ -262,6 +305,8 @@ uv pip install --python samples/close-area-arena/.venv -r samples/close-area-are
 samples/close-area-arena/.venv/bin/python site/playground/results/export_presets.py
 samples/close-area-arena/.venv/bin/python site/playground/results/native_parity.py   # about 1 minute
 node site/playground/results/measure_playground.mjs                                  # about 2 minutes
+samples/close-area-arena/.venv/bin/python site/playground/results/native_parity_loop73.py   # about 2 minutes
+node site/playground/results/measure_loop73.mjs                                      # about 2 minutes
 # optional: fill site/playground/pyodide-local/ first (Offline / blocked CDN) to also measure the local load
 ```
 
@@ -280,6 +325,9 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
 - The 6 new planners have a native reference on one preset each, with the ideal sensor and truth
   pose. Other sensors, faults and F2 run through the same driver code but are not compared with
   native for them; the link check (TangentBug, D* Lite + F2) is browser vs browser only.
+- The 6 loop-73 planners: compared with native on random_0 and maze_0 only, ideal sensor, truth pose,
+  no filter. `measure_playground.mjs` and `native_parity.py` (the older 21 cases, link and CDN checks) were
+  not re-run after the 6 extra files went into the manifest and DRIVER_PY.
 - Pointer drawing was checked for the Box tool only. Wall, Cylinder, Glass, Move, Undo, Delete,
   material change and file open / save / localStorage were not exercised by the scripted check.
 - `spike.html` with the extended manifest (it now also writes the 19 extra files) was not re-run.

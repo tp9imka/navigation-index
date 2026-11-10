@@ -17,7 +17,11 @@ const LABELS = {
   planner: { straight: "straight line to B", freest_beam: "freest beam (reactive)", astar_known: "A* + ESDF, known map",
     astar_unknown: "A* + ESDF, unknown map", apf: "APF + wall follow", vfh_plus: "VFH+",
     dwa: "DWA (dynamic window)", dwa_mem: "DWA + 3 s scan memory", bug2: "Bug2", tangent_bug: "TangentBug",
-    dstar_lite: "D* Lite, unknown map (geofenced)", informed_rrt_star: "Informed RRT* 5000, known map" },
+    dstar_lite: "D* Lite, unknown map (geofenced)", informed_rrt_star: "Informed RRT* 5000, known map",
+    thetastar_known: "Theta* (any-angle), known map", lazy_thetastar_known: "Lazy Theta*, known map",
+    lazy_thetastar_unknown: "Lazy Theta*, unknown map (geofenced)",
+    mppi: "MPPI, goal only (no global plan)", mppi_astar: "MPPI on the unknown-map A* path",
+    hybrid_astar: "Hybrid A*, unknown map (geofenced)" },
   preset: { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m", crazyflie_bright: "Crazyflie, bright light: 0.73 m" },
   fault: { truth: "off: planner sees truth", none: "VIO EKF, no fault", jump: "VIO jump 0.5 m", bias: "VIO bias 0.05 m/s, 10 s", dropout: "VIO dropout 2 s" },
   filter: { none: "none", F2: "F2: PX4-CBF on ranges" },
@@ -729,7 +733,7 @@ $("#linkBtn").onclick = async () => {
 // The worker retries each load step itself (worker.js step()). When it gives up, or the load runs
 // longer than SLOW_S, the Retry button starts a fresh worker. readyP resolves on the first ready.
 // ?pyodide=cdn|local|auto in the page URL is passed on to the worker (manifest.json pyodide_source).
-const WORKER_URL = "worker.js?v=20261109e";
+const WORKER_URL = "worker.js?v=20261110";
 const SLOW_S = 45;
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
 let worker = null, readyResolve;
@@ -911,7 +915,7 @@ function drawSpark(C) {
   sctx.fillStyle = C.bg; sctx.fillRect(0, 0, W, H);
   sctx.strokeStyle = C.bad; sctx.setLineDash([4 * dpr, 4 * dpr]); sctx.lineWidth = 1 * dpr;
   sctx.beginPath(); sctx.moveTo(X(0), Y(0.15)); sctx.lineTo(X(D), Y(0.15)); sctx.stroke(); sctx.setLineDash([]);
-  S.runs.forEach((r, k) => {
+  (S.runs || []).forEach((r, k) => {
     sctx.strokeStyle = runColor(C, k); sctx.lineWidth = 2 * dpr; sctx.beginPath();
     r.clearance.forEach((v, i) => { const t = Math.min(i / r.hz, r.end[0]); i ? sctx.lineTo(X(t), Y(v)) : sctx.moveTo(X(t), Y(v)); });
     sctx.stroke();
@@ -1014,7 +1018,7 @@ async function parityNote() {
     if (!S.parity) S.parity = await (await fetch("results/native_parity.json")).json();
   } catch (err) { return; }
   const keys = S.parity.keys, msgs = [];
-  S.runs.forEach((r, k) => {
+  (S.runs || []).forEach((r, k) => {
     const c = r.config, rec = c.recovery || "none";
     const match = x => x.world === S.presetName && x.planner === c.planner && x.preset === c.preset && x.fault === c.fault && x.filter === c.filter;
     const ref = rec === "none" ? c.seed === 0 && S.parity.cases.find(match)

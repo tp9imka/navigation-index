@@ -1,0 +1,898 @@
+{
+ "input": "synthetic",
+ "command": "samples/close-area-arena/.venv/bin/python site/playground/results/native_parity_loop73.py",
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64",
+  "system": "Darwin",
+  "imports_ms": {
+   "scipy_ndimage": 93644.5,
+   "arena": 1724.1,
+   "reactive": 98.7,
+   "sample_planners": 18776.1,
+   "safety_filter": 20579.1
+  },
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright"
+  ],
+  "faults": [
+   "truth",
+   "none",
+   "jump",
+   "bias",
+   "dropout"
+  ],
+  "filters": [
+   "none",
+   "F2"
+  ],
+  "recovery": [
+   "none",
+   "single",
+   "multi",
+   "multi_ig"
+  ],
+  "load_errors": {}
+ },
+ "keys": [
+  "outcome",
+  "time_to_goal_s",
+  "duration_s",
+  "min_clearance_m",
+  "path_length_m"
+ ],
+ "cases": [
+  {
+   "world": "random_0",
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8833,
+    "path_length_m": 24.123
+   },
+   "free_path": true,
+   "sim_s": 17.08,
+   "native_wall_s": 2.059,
+   "frames": 171
+  },
+  {
+   "world": "maze_0",
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   },
+   "free_path": true,
+   "sim_s": 31.88,
+   "native_wall_s": 6.214,
+   "frames": 319
+  },
+  {
+   "world": "random_0",
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   },
+   "free_path": true,
+   "sim_s": 17.12,
+   "native_wall_s": 1.401,
+   "frames": 172
+  },
+  {
+   "world": "maze_0",
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   },
+   "free_path": true,
+   "sim_s": 31.88,
+   "native_wall_s": 3.616,
+   "frames": 319
+  },
+  {
+   "world": "random_0",
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8919,
+    "path_length_m": 24.653
+   },
+   "free_path": true,
+   "sim_s": 17.6,
+   "native_wall_s": 6.44,
+   "frames": 176
+  },
+  {
+   "world": "maze_0",
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   },
+   "free_path": true,
+   "sim_s": 33.78,
+   "native_wall_s": 19.599,
+   "frames": 338
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.341,
+    "path_length_m": 24.051
+   },
+   "free_path": true,
+   "sim_s": 20.82,
+   "native_wall_s": 1.112,
+   "frames": 209
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.441
+   },
+   "free_path": true,
+   "sim_s": 21.02,
+   "native_wall_s": 1.083,
+   "frames": 211
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   },
+   "free_path": true,
+   "sim_s": 20.24,
+   "native_wall_s": 3.122,
+   "frames": 203
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "free_path": true,
+   "sim_s": 31.28,
+   "native_wall_s": 5.684,
+   "frames": 313
+  },
+  {
+   "world": "random_0",
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.74,
+    "duration_s": 18.74,
+    "min_clearance_m": 0.6417,
+    "path_length_m": 24.371
+   },
+   "free_path": true,
+   "sim_s": 18.74,
+   "native_wall_s": 0.868,
+   "frames": 188
+  },
+  {
+   "world": "maze_0",
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   },
+   "free_path": true,
+   "sim_s": 39.26,
+   "native_wall_s": 1.932,
+   "frames": 393
+  }
+ ],
+ "checks": [
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8833,
+    "path_length_m": 24.123
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8833,
+    "path_length_m": 24.123
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "maze_0",
+    "thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "lazy_thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "maze_0",
+    "lazy_thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "lazy_thetastar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8919,
+    "path_length_m": 24.653
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8919,
+    "path_length_m": 24.653
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "maze_0",
+    "lazy_thetastar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "mppi",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.341,
+    "path_length_m": 24.051
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.341,
+    "path_length_m": 24.051
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "maze_0",
+    "mppi",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.441
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.441
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "mppi_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "maze_0",
+    "mppi_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "hybrid_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.74,
+    "duration_s": 18.74,
+    "min_clearance_m": 0.6417,
+    "path_length_m": 24.371
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.74,
+    "duration_s": 18.74,
+    "min_clearance_m": 0.6417,
+    "path_length_m": 24.371
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "maze_0",
+    "hybrid_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   }
+  }
+ ],
+ "matrix_rows": [
+  {
+   "case": [
+    "random_0",
+    "thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8834,
+    "path_length_m": 24.122
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8833,
+    "path_length_m": 24.123
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "maze_0",
+    "thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "random_0",
+    "lazy_thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "maze_0",
+    "lazy_thetastar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "random_0",
+    "lazy_thetastar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8918,
+    "path_length_m": 24.653
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8919,
+    "path_length_m": 24.653
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "maze_0",
+    "lazy_thetastar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "random_0",
+    "mppi",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.3409,
+    "path_length_m": 24.051
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.341,
+    "path_length_m": 24.051
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "maze_0",
+    "mppi",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.442
+   },
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.441
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "random_0",
+    "mppi_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5811,
+    "path_length_m": 23.917
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "maze_0",
+    "mppi_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "random_0",
+    "hybrid_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.54,
+    "duration_s": 18.54,
+    "min_clearance_m": 0.6713,
+    "path_length_m": 24.451
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.74,
+    "duration_s": 18.74,
+    "min_clearance_m": 0.6417,
+    "path_length_m": 24.371
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "maze_0",
+    "hybrid_astar",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   },
+   "same": true,
+   "same_outcome": true
+  }
+ ],
+ "native_env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64"
+ },
+ "summary": "12/12 checks (E) identical",
+ "matrix_summary": "6/12 identical to matrix_0.json, 12/12 same outcome (generated vs JSON world; maze has a 120 s limit in the matrix, 60 s here)"
+}

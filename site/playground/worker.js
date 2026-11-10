@@ -117,6 +117,31 @@ try:
     PLANNERS["informed_rrt_star"] = lambda: _rrt.make(iters=RRT_ITERS, informed=True, seed=0)
 except Exception as e:                       # noqa: BLE001
     LOAD_ERRORS["sampling"] = repr(e)
+# Theta* and Lazy Theta* (samples/close-area-planner-thetastar). Unknown map offered as Lazy only:
+# plain Theta* unknown-map replans were 1.88 s p95 in CPython (its README).
+try:
+    _theta = _load_sample(THETASTAR_DIR, ["thetastar"])["thetastar"]
+    PLANNERS["thetastar_known"] = lambda: _theta.make(known_map=True)
+    PLANNERS["lazy_thetastar_known"] = lambda: _theta.make(known_map=True, lazy=True)
+    PLANNERS["lazy_thetastar_unknown"] = lambda w: _theta.make(known_map=False, lazy=True, bounds=_bounds(w))
+    WORLD_PLANNERS.add("lazy_thetastar_unknown")
+except Exception as e:                       # noqa: BLE001
+    LOAD_ERRORS["thetastar"] = repr(e)
+# MPPI, unknown map, geofenced as in the benchmark (samples/close-area-planner-mppi)
+try:
+    _mppi = _load_sample(MPPI_DIR, ["mppi"])["mppi"]
+    PLANNERS["mppi"] = lambda w: _mppi.make(guide="none", bounds=_bounds(w))
+    PLANNERS["mppi_astar"] = lambda w: _mppi.make(guide="astar", bounds=_bounds(w))
+    WORLD_PLANNERS.update(("mppi", "mppi_astar"))
+except Exception as e:                       # noqa: BLE001
+    LOAD_ERRORS["mppi"] = repr(e)
+# Hybrid A*, unknown map, geofenced as in the benchmark (samples/close-area-planner-hybrid-astar)
+try:
+    _ha = _load_sample(HYBRID_DIR, ["hybrid_astar"])["hybrid_astar"]
+    PLANNERS["hybrid_astar"] = lambda w: _ha.make(bounds=_bounds(w))
+    WORLD_PLANNERS.add("hybrid_astar")
+except Exception as e:                       # noqa: BLE001
+    LOAD_ERRORS["hybrid_astar"] = repr(e)
 # A* + MPC (close-area-planner-mpc) is not offered: it imports osqp, and Pyodide 314.0.7 ships no osqp wheel.
 # VIO loss recovery arms (samples/close-area-relocalize, built by pg_reloc.py the run_disambiguate.py way)
 pg_reloc = None
@@ -425,7 +450,8 @@ async function init() {
   const b = performance.now();
   py.runPython(`import sys\nif "${HOME}" not in sys.path: sys.path.insert(0, "${HOME}")\n` +
     `REACTIVE_DIR = "${HOME}reactive"\nFILTER_DIR = "${HOME}safety_filter"\n` +
-    `DWABUG_DIR = "${HOME}dwa_bug"\nDSTAR_DIR = "${HOME}dstar"\nSAMPLING_DIR = "${HOME}sampling"\nRELOC_DIR = "${HOME}reloc"`);
+    `DWABUG_DIR = "${HOME}dwa_bug"\nDSTAR_DIR = "${HOME}dstar"\nSAMPLING_DIR = "${HOME}sampling"\nRELOC_DIR = "${HOME}reloc"\n` +
+    `THETASTAR_DIR = "${HOME}thetastar"\nMPPI_DIR = "${HOME}mppi"\nHYBRID_DIR = "${HOME}hybrid_astar"`);
   py.runPython(DRIVER_PY);
   t.import_ms = ms(b);
   t.ready_ms = ms(T0);

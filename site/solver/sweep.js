@@ -11,6 +11,10 @@ export const PLANNER_LABELS = {
   astar_unknown: "A* + ESDF, unknown map", apf: "APF + wall follow", vfh_plus: "VFH+",
   dwa: "DWA (dynamic window)", dwa_mem: "DWA + 3 s scan memory", bug2: "Bug2", tangent_bug: "TangentBug",
   dstar_lite: "D* Lite, unknown map (geofenced)", informed_rrt_star: "Informed RRT* 5000, known map",
+  thetastar_known: "Theta* (any-angle), known map", lazy_thetastar_known: "Lazy Theta*, known map",
+  lazy_thetastar_unknown: "Lazy Theta*, unknown map (geofenced)",
+  mppi: "MPPI, goal only (no global plan)", mppi_astar: "MPPI on the unknown-map A* path",
+  hybrid_astar: "Hybrid A*, unknown map (geofenced)",
 };
 export const PRESET_LABELS = { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m" };
 export const FAULT_LABELS = { truth: "off: planner sees truth", none: "VIO EKF, no fault", jump: "VIO jump 0.5 m",
@@ -32,7 +36,10 @@ export const variationLabel = key => { const [p, f] = key.split("|"); return `${
 // Browser Python seconds per run from site/playground/README.md (synthetic, one preset each) and the
 // spike table there; only a prior for the estimate before this browser has measured its own runs.
 export const PRIOR_WALL_S = { straight: 0.1, freest_beam: 0.2, astar_known: 0.7, astar_unknown: 3.0, apf: 0.3, vfh_plus: 0.3,
-  dwa: 1.0, dwa_mem: 2.4, bug2: 0.2, tangent_bug: 0.25, dstar_lite: 1.3, informed_rrt_star: 0.8 };
+  dwa: 1.0, dwa_mem: 2.4, bug2: 0.2, tangent_bug: 0.25, dstar_lite: 1.3, informed_rrt_star: 0.8,
+  // loop-73: mean of random_0 and maze_0, site/playground/results/playground_loop73.md
+  thetastar_known: 6.6, lazy_thetastar_known: 4.3, lazy_thetastar_unknown: 20.5, mppi: 1.7, mppi_astar: 7.7,
+  hybrid_astar: 1.7 };
 export const PRIOR_DEFAULT_S = 1.0;
 
 // ------------------------------------------------------------ spec

@@ -80,7 +80,8 @@ Add it to `PLANNERS` in `DRIVER_PY` in [../playground/worker.js](../playground/w
 to [../playground/manifest.json](../playground/manifest.json)). The worker lists it in `env.planners`, and
 the Solver shows it automatically. Add a label to `PLANNER_LABELS` in [sweep.js](sweep.js) to get a
 readable name instead of the id, and a time to `PRIOR_WALL_S` for the first estimate. Colours are taken by
-position in `env.planners` (12 colours, then they repeat).
+position in `env.planners` (12 colours, then they repeat; with the 18 planners since loop-73, planners 13-18
+reuse the first 6 colours).
 
 ## Result: one real Quick sweep on random_0, jitter on
 
@@ -128,6 +129,31 @@ Re-run (Chrome at the macOS default path or `CHROME=...`, network for cdn.jsdeli
 node site/solver/results/measure_solver.mjs     # about 1 minute
 node --test site/solver/test_sweep.mjs          # sweep.js unit tests, plain node
 ```
+
+## Result: one Quick sweep on maze_0, 18 planners (loop-73)
+
+Source: [results/quick_maze_0.json](results/quick_maze_0.json) (`SOLVER.exportJSON()`) and
+[results/solver_check_maze_0.json](results/solver_check_maze_0.json), written by
+[results/measure_solver_maze.mjs](results/measure_solver_maze.mjs) (a copy of measure_solver.mjs with only
+the sweep step) in headless Chrome 140 on an Apple M3 Max (16 cores, shared host, load average 29.0 at the
+start). Input type: synthetic.
+
+- The worker now lists **18 planners** (the 12 above plus Theta* known map, Lazy Theta* known map, Lazy
+  Theta* unknown map, MPPI goal only, MPPI on the unknown-map A* path, Hybrid A*; see the
+  [playground README](../playground/README.md)).
+- Quick = 18 planners x ideal x truth pose x 3 seeds = **54 runs, 54 done, 0 errors, 93.0 s** on K = 4
+  workers, jitter on (0.5 m). Python ready 7.3 s after navigation.
+- Headline: **No clear winner**: MPPI on the unknown-map A* path and Theta* (any-angle), known map are
+  within noise on this map (n=3). 8 planners reached B 3/3 (95 % Wilson 44-100 %), the other 10 0/3.
+- Ranking by median time to B (synthetic): MPPI + A* 31.28 s, Theta* known 31.44 s, Lazy Theta* known
+  31.48 s, Lazy Theta* unknown 34.16 s, Hybrid A* 39.26 s, A* known 40.92 s, D* Lite 44.9 s, A* unknown
+  48.7 s.
+- Outcomes: 24 reached, 23 stuck, 7 timeout. Informed RRT* timed out in 3 of 3: the page stops every run at
+  60 s, the benchmark gives maze 120 s.
+- Cross-check: seed 0 is the exact map. Theta* known (31.88 s, 0.8223 m) and MPPI + A* (31.28 s, 0.357 m)
+  give the same time to B and min clearance as the browser = native cases on maze_0 in
+  [playground_loop73.md](../playground/results/playground_loop73.md).
+- Slowest run in the worker: Lazy Theta* unknown map, 34.1 s (under the 180 s watchdog).
 
 ## Limits and not verified
 

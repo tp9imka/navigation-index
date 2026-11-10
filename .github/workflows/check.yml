@@ -52,6 +52,6 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add catalog INDEX.md graph/graph.json index llms.txt reports site/data samples/README.md templates/offline-kit/manifest.json docs/integration-cards/README.md docs/practical-readiness.md
           if ! git diff --cached --quiet; then
-            git commit -m "chore: regenerate catalog [skip ci]"
+            git commit -m "chore: regenerate catalog"
             git push
           fi

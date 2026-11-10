@@ -1,0 +1,267 @@
+{
+ "date": "2026-11-10T06:13:29.364Z",
+ "input": "synthetic",
+ "host": "Apple M3 Max, 16 cores, load 29.0 35.6 38.1",
+ "chrome": "Chrome/140.0.7339.208",
+ "page": "http://127.0.0.1:8782/site/solver/index.html?map=maze_0",
+ "python_ready_s": 7.315,
+ "planners": [
+  "straight",
+  "freest_beam",
+  "astar_known",
+  "astar_unknown",
+  "apf",
+  "vfh_plus",
+  "dwa",
+  "dwa_mem",
+  "bug2",
+  "tangent_bug",
+  "dstar_lite",
+  "informed_rrt_star",
+  "thetastar_known",
+  "lazy_thetastar_known",
+  "lazy_thetastar_unknown",
+  "mppi",
+  "mppi_astar",
+  "hybrid_astar"
+ ],
+ "count_msg_before": "90 runs = 18 planners x 1 sensor x 1 fault x 5 seeds. Estimate: about 1 min 6 s on 4 workers (rough prior from the playground README timings; refined after the first runs).",
+ "sweep": {
+  "done": 54,
+  "total": 54,
+  "elapsed_s": 93.045,
+  "cancelled": false,
+  "workers_ready": 4,
+  "K": 4,
+  "wall_s_from_click": 93.068
+ },
+ "world": "maze",
+ "headline": "No clear winner: MPPI on the unknown-map A* path and Theta* (any-angle), known map are within noise on this map (n=3).",
+ "outcomes": {
+  "stuck": 23,
+  "reached": 24,
+  "timeout": 7
+ },
+ "errors": [],
+ "ranking": [
+  {
+   "planner": "mppi_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 31.28
+  },
+  {
+   "planner": "thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 31.44
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 31.48
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 34.16
+  },
+  {
+   "planner": "hybrid_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 39.26
+  },
+  {
+   "planner": "astar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 40.92
+  },
+  {
+   "planner": "dstar_lite",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 44.9
+  },
+  {
+   "planner": "astar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 48.7
+  },
+  {
+   "planner": "apf",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "bug2",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "dwa",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "dwa_mem",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "freest_beam",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "informed_rrt_star",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "mppi",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "straight",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "tangent_bug",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "vfh_plus",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  }
+ ],
+ "max_wall_s": {
+  "straight": 0.251,
+  "freest_beam": 0.254,
+  "astar_known": 4.876,
+  "astar_unknown": 14.793,
+  "apf": 0.264,
+  "vfh_plus": 0.628,
+  "dwa": 2.163,
+  "dwa_mem": 7.411,
+  "bug2": 0.477,
+  "tangent_bug": 0.5,
+  "dstar_lite": 3.59,
+  "informed_rrt_star": 0.886,
+  "thetastar_known": 9.704,
+  "lazy_thetastar_known": 6.078,
+  "lazy_thetastar_unknown": 34.076,
+  "mppi": 1.619,
+  "mppi_astar": 12.466,
+  "hybrid_astar": 2.364
+ },
+ "console": []
+}

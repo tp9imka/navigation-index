@@ -1,0 +1,2653 @@
+{
+ "schema": "navidx-solver-sweep/1",
+ "input": "synthetic",
+ "note": "SYNTHETIC SIMULATION, 2.5D POINT MASS. Scored on truth. Not a flight result. n seeds on one map is a small sample. Identical runs (same variation, outcome, time to B and path length at 3 dp) count once in every interval.",
+ "world_name": "maze_0",
+ "spec": {
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal"
+  ],
+  "faults": [
+   "truth"
+  ],
+  "fault": null,
+  "seeds": 3,
+  "jitter": 0.5
+ },
+ "run_count": 54,
+ "records_n": 54,
+ "cancelled": false,
+ "started": "2026-11-10T06:13:56.020Z",
+ "finished": "2026-11-10T06:15:29.066Z",
+ "pool": {
+  "workers": 4,
+  "hardware_concurrency": 16,
+  "ready_workers": 4,
+  "python_ready_s": 6.679,
+  "sweep_wall_s": 93.045,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+ },
+ "env": {
+  "python": "3.14.2",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "machine": "wasm32",
+  "system": "Emscripten",
+  "imports_ms": {
+   "scipy_ndimage": 779.3,
+   "arena": 40.7,
+   "reactive": 3.7,
+   "sample_planners": 257.2,
+   "safety_filter": 346.3
+  },
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright"
+  ],
+  "faults": [
+   "truth",
+   "none",
+   "jump",
+   "bias",
+   "dropout"
+  ],
+  "filters": [
+   "none",
+   "F2"
+  ],
+  "recovery": [
+   "none",
+   "single",
+   "multi",
+   "multi_ig"
+  ],
+  "load_errors": {},
+  "pyodide": "314.0.7",
+  "pyodide_source": "cdn",
+  "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "arena_files": 42,
+  "load_attempts": [
+   {
+    "step": "manifest.json",
+    "attempt": 1,
+    "ok": true,
+    "ms": 68
+   },
+   {
+    "step": "Pyodide runtime",
+    "attempt": 1,
+    "ok": true,
+    "ms": 2363
+   },
+   {
+    "step": "hub .py files",
+    "attempt": 1,
+    "ok": true,
+    "ms": 888
+   },
+   {
+    "step": "numpy + scipy wheels",
+    "attempt": 1,
+    "ok": true,
+    "ms": 1393
+   }
+  ]
+ },
+ "jitter": {
+  "radius_m": 0.5,
+  "min_clearance_m": 0.25,
+  "max_draws": 50,
+  "prng": "mulberry32",
+  "seed0": "exact map",
+  "per_seed": [
+   {
+    "seed": 0,
+    "a": [
+     0,
+     0
+    ],
+    "b": [
+     18.3571,
+     17.9186
+    ],
+    "exact": true,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 0
+   },
+   {
+    "seed": 1,
+    "a": [
+     -0.0595,
+     0.3866
+    ],
+    "b": [
+     18.0508,
+     17.7099
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2
+   },
+   {
+    "seed": 2,
+    "a": [
+     -0.1082,
+     0.2777
+    ],
+    "b": [
+     18.028,
+     17.928
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2
+   }
+  ]
+ },
+ "headline": {
+  "kind": "tie",
+  "planner": null,
+  "planners": [
+   "mppi_astar",
+   "thetastar_known"
+  ],
+  "text": "No clear winner: MPPI on the unknown-map A* path and Theta* (any-angle), known map are within noise on this map (n=3)."
+ },
+ "ranking": [
+  {
+   "planner": "mppi_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 31.28,
+   "median_path_m": 35.589,
+   "min_clearance_m": 0.357,
+   "collision_rate": 0,
+   "mean_wall_s": 10.956666666666665
+  },
+  {
+   "planner": "thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 31.44,
+   "median_path_m": 38.856,
+   "min_clearance_m": 0.8085,
+   "collision_rate": 0,
+   "mean_wall_s": 9.41
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 31.48,
+   "median_path_m": 38.845,
+   "min_clearance_m": 0.8182,
+   "collision_rate": 0,
+   "mean_wall_s": 5.959333333333333
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 34.16,
+   "median_path_m": 40.72,
+   "min_clearance_m": 0.7908,
+   "collision_rate": 0,
+   "mean_wall_s": 29.687
+  },
+  {
+   "planner": "hybrid_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 39.26,
+   "median_path_m": 38.439,
+   "min_clearance_m": 0.2553,
+   "collision_rate": 0,
+   "mean_wall_s": 2.311
+  },
+  {
+   "planner": "astar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 40.92,
+   "median_path_m": 36.387,
+   "min_clearance_m": 0.5869,
+   "collision_rate": 0,
+   "mean_wall_s": 4.753
+  },
+  {
+   "planner": "dstar_lite",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 44.9,
+   "median_path_m": 37.745,
+   "min_clearance_m": 0.5718,
+   "collision_rate": 0,
+   "mean_wall_s": 3.3746666666666663
+  },
+  {
+   "planner": "astar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 48.7,
+   "median_path_m": 39.898,
+   "min_clearance_m": 0.5385,
+   "collision_rate": 0,
+   "mean_wall_s": 12.754333333333333
+  },
+  {
+   "planner": "apf",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 10.862,
+   "min_clearance_m": 0.7484,
+   "collision_rate": 0,
+   "mean_wall_s": 0.25233333333333335
+  },
+  {
+   "planner": "bug2",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 3,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 37.925,
+   "min_clearance_m": 0.4506,
+   "collision_rate": 0,
+   "mean_wall_s": 0.47233333333333327
+  },
+  {
+   "planner": "dwa",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 10.107,
+   "min_clearance_m": 0.2861,
+   "collision_rate": 0,
+   "mean_wall_s": 2.0576666666666665
+  },
+  {
+   "planner": "dwa_mem",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 10.002,
+   "min_clearance_m": 0.2729,
+   "collision_rate": 0,
+   "mean_wall_s": 5.568999999999999
+  },
+  {
+   "planner": "freest_beam",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 13.4,
+   "min_clearance_m": 0.4533,
+   "collision_rate": 0,
+   "mean_wall_s": 0.25133333333333335
+  },
+  {
+   "planner": "informed_rrt_star",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 3,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 29.576,
+   "min_clearance_m": 0.2642,
+   "collision_rate": 0,
+   "mean_wall_s": 0.8793333333333333
+  },
+  {
+   "planner": "mppi",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 9.226,
+   "min_clearance_m": 0.653,
+   "collision_rate": 0,
+   "mean_wall_s": 1.6096666666666666
+  },
+  {
+   "planner": "straight",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 3.583,
+   "min_clearance_m": 0.3831,
+   "collision_rate": 0,
+   "mean_wall_s": 0.2323333333333333
+  },
+  {
+   "planner": "tangent_bug",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 2,
+   "timeout": 1,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 24.771,
+   "min_clearance_m": 0.3383,
+   "collision_rate": 0,
+   "mean_wall_s": 0.38633333333333336
+  },
+  {
+   "planner": "vfh_plus",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 16.303,
+   "min_clearance_m": 0.3353,
+   "collision_rate": 0,
+   "mean_wall_s": 0.40666666666666673
+  }
+ ],
+ "matrix": {
+  "straight": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 3.583,
+    "min_clearance_m": 0.3831,
+    "collision_rate": 0,
+    "mean_wall_s": 0.2323333333333333
+   }
+  },
+  "freest_beam": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 13.4,
+    "min_clearance_m": 0.4533,
+    "collision_rate": 0,
+    "mean_wall_s": 0.25133333333333335
+   }
+  },
+  "astar_known": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 40.92,
+    "median_path_m": 36.387,
+    "min_clearance_m": 0.5869,
+    "collision_rate": 0,
+    "mean_wall_s": 4.753
+   }
+  },
+  "astar_unknown": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 48.7,
+    "median_path_m": 39.898,
+    "min_clearance_m": 0.5385,
+    "collision_rate": 0,
+    "mean_wall_s": 12.754333333333333
+   }
+  },
+  "apf": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 10.862,
+    "min_clearance_m": 0.7484,
+    "collision_rate": 0,
+    "mean_wall_s": 0.25233333333333335
+   }
+  },
+  "vfh_plus": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 16.303,
+    "min_clearance_m": 0.3353,
+    "collision_rate": 0,
+    "mean_wall_s": 0.40666666666666673
+   }
+  },
+  "dwa": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 10.107,
+    "min_clearance_m": 0.2861,
+    "collision_rate": 0,
+    "mean_wall_s": 2.0576666666666665
+   }
+  },
+  "dwa_mem": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 10.002,
+    "min_clearance_m": 0.2729,
+    "collision_rate": 0,
+    "mean_wall_s": 5.568999999999999
+   }
+  },
+  "bug2": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 3,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 37.925,
+    "min_clearance_m": 0.4506,
+    "collision_rate": 0,
+    "mean_wall_s": 0.47233333333333327
+   }
+  },
+  "tangent_bug": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 2,
+    "timeout": 1,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 24.771,
+    "min_clearance_m": 0.3383,
+    "collision_rate": 0,
+    "mean_wall_s": 0.38633333333333336
+   }
+  },
+  "dstar_lite": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 44.9,
+    "median_path_m": 37.745,
+    "min_clearance_m": 0.5718,
+    "collision_rate": 0,
+    "mean_wall_s": 3.3746666666666663
+   }
+  },
+  "informed_rrt_star": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 3,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 29.576,
+    "min_clearance_m": 0.2642,
+    "collision_rate": 0,
+    "mean_wall_s": 0.8793333333333333
+   }
+  },
+  "thetastar_known": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 31.44,
+    "median_path_m": 38.856,
+    "min_clearance_m": 0.8085,
+    "collision_rate": 0,
+    "mean_wall_s": 9.41
+   }
+  },
+  "lazy_thetastar_known": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 31.48,
+    "median_path_m": 38.845,
+    "min_clearance_m": 0.8182,
+    "collision_rate": 0,
+    "mean_wall_s": 5.959333333333333
+   }
+  },
+  "lazy_thetastar_unknown": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 34.16,
+    "median_path_m": 40.72,
+    "min_clearance_m": 0.7908,
+    "collision_rate": 0,
+    "mean_wall_s": 29.687
+   }
+  },
+  "mppi": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 9.226,
+    "min_clearance_m": 0.653,
+    "collision_rate": 0,
+    "mean_wall_s": 1.6096666666666666
+   }
+  },
+  "mppi_astar": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 31.28,
+    "median_path_m": 35.589,
+    "min_clearance_m": 0.357,
+    "collision_rate": 0,
+    "mean_wall_s": 10.956666666666665
+   }
+  },
+  "hybrid_astar": {
+   "ideal|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 39.26,
+    "median_path_m": 38.439,
+    "min_clearance_m": 0.2553,
+    "collision_rate": 0,
+    "mean_wall_s": 2.311
+   }
+  }
+ },
+ "records": [
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.538,
+   "min_clearance_m": 0.3831,
+   "duration_s": 14.22,
+   "wall_s": 0.251,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 13.13,
+   "min_clearance_m": 0.4757,
+   "duration_s": 20.86,
+   "wall_s": 0.25,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 41.26,
+   "path_length_m": 36.981,
+   "min_clearance_m": 0.5937,
+   "duration_s": 41.26,
+   "wall_s": 4.876,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 51.9,
+   "path_length_m": 40.46,
+   "min_clearance_m": 0.5385,
+   "duration_s": 51.9,
+   "wall_s": 14.793,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 11.076,
+   "min_clearance_m": 0.7804,
+   "duration_s": 19.16,
+   "wall_s": 0.246,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 16.303,
+   "min_clearance_m": 0.7132,
+   "duration_s": 21.2,
+   "wall_s": 0.316,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.379,
+   "min_clearance_m": 0.2861,
+   "duration_s": 47.04,
+   "wall_s": 2.153,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.145,
+   "min_clearance_m": 0.3114,
+   "duration_s": 30.38,
+   "wall_s": 4.486,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 37.25,
+   "min_clearance_m": 0.4646,
+   "duration_s": 60,
+   "wall_s": 0.467,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 24.771,
+   "min_clearance_m": 0.3699,
+   "duration_s": 35.04,
+   "wall_s": 0.352,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 49.66,
+   "path_length_m": 40.511,
+   "min_clearance_m": 0.5835,
+   "duration_s": 49.66,
+   "wall_s": 3.59,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 29.576,
+   "min_clearance_m": 0.2754,
+   "duration_s": 60,
+   "wall_s": 0.879,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.88,
+   "path_length_m": 39.463,
+   "min_clearance_m": 0.8223,
+   "duration_s": 31.88,
+   "wall_s": 9.704,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.88,
+   "path_length_m": 39.448,
+   "min_clearance_m": 0.8208,
+   "duration_s": 31.88,
+   "wall_s": 6.078,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 33.78,
+   "path_length_m": 40.487,
+   "min_clearance_m": 0.7908,
+   "duration_s": 33.78,
+   "wall_s": 30.075,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.441,
+   "min_clearance_m": 0.6542,
+   "duration_s": 21.02,
+   "wall_s": 1.619,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.28,
+   "path_length_m": 35.589,
+   "min_clearance_m": 0.357,
+   "duration_s": 31.28,
+   "wall_s": 10.005,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    18.3571,
+    17.9186
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 39.26,
+   "path_length_m": 38.439,
+   "min_clearance_m": 0.2553,
+   "duration_s": 39.26,
+   "wall_s": 2.271,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.583,
+   "min_clearance_m": 0.3852,
+   "duration_s": 14.24,
+   "wall_s": 0.223,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 13.4,
+   "min_clearance_m": 0.4533,
+   "duration_s": 20.36,
+   "wall_s": 0.25,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 40.68,
+   "path_length_m": 36.32,
+   "min_clearance_m": 0.5919,
+   "duration_s": 40.68,
+   "wall_s": 4.67,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 43.82,
+   "path_length_m": 36.24,
+   "min_clearance_m": 0.5708,
+   "duration_s": 43.82,
+   "wall_s": 9.748,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.862,
+   "min_clearance_m": 0.7562,
+   "duration_s": 18.62,
+   "wall_s": 0.247,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 13.223,
+   "min_clearance_m": 0.6973,
+   "duration_s": 15.44,
+   "wall_s": 0.276,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.507,
+   "min_clearance_m": 0.3393,
+   "duration_s": 42.1,
+   "wall_s": 2.163,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.002,
+   "min_clearance_m": 0.2729,
+   "duration_s": 46.14,
+   "wall_s": 7.411,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 37.949,
+   "min_clearance_m": 0.4506,
+   "duration_s": 60,
+   "wall_s": 0.473,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 18.834,
+   "min_clearance_m": 0.3648,
+   "duration_s": 26.98,
+   "wall_s": 0.307,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 44.9,
+   "path_length_m": 37.266,
+   "min_clearance_m": 0.5827,
+   "duration_s": 44.9,
+   "wall_s": 3.258,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 29.647,
+   "min_clearance_m": 0.2642,
+   "duration_s": 60,
+   "wall_s": 0.886,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.44,
+   "path_length_m": 38.84,
+   "min_clearance_m": 0.8156,
+   "duration_s": 31.44,
+   "wall_s": 9.361,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.48,
+   "path_length_m": 38.807,
+   "min_clearance_m": 0.8182,
+   "duration_s": 31.48,
+   "wall_s": 5.97,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 34.16,
+   "path_length_m": 40.72,
+   "min_clearance_m": 0.7928,
+   "duration_s": 34.16,
+   "wall_s": 24.91,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.096,
+   "min_clearance_m": 0.654,
+   "duration_s": 20.82,
+   "wall_s": 1.617,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 33.9,
+   "path_length_m": 38.63,
+   "min_clearance_m": 0.3663,
+   "duration_s": 33.9,
+   "wall_s": 12.466,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    18.0508,
+    17.7099
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 40.02,
+   "path_length_m": 42.574,
+   "min_clearance_m": 0.5578,
+   "duration_s": 40.02,
+   "wall_s": 2.364,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.681,
+   "min_clearance_m": 0.385,
+   "duration_s": 14.3,
+   "wall_s": 0.223,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 14.023,
+   "min_clearance_m": 0.4556,
+   "duration_s": 20.5,
+   "wall_s": 0.254,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 40.92,
+   "path_length_m": 36.387,
+   "min_clearance_m": 0.5869,
+   "duration_s": 40.92,
+   "wall_s": 4.713,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 48.7,
+   "path_length_m": 39.898,
+   "min_clearance_m": 0.5683,
+   "duration_s": 48.7,
+   "wall_s": 13.722,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.844,
+   "min_clearance_m": 0.7484,
+   "duration_s": 19.02,
+   "wall_s": 0.264,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 45.317,
+   "min_clearance_m": 0.3353,
+   "duration_s": 57.58,
+   "wall_s": 0.628,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.107,
+   "min_clearance_m": 0.3151,
+   "duration_s": 36.16,
+   "wall_s": 1.857,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.942,
+   "min_clearance_m": 0.3146,
+   "duration_s": 28.46,
+   "wall_s": 4.81,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 37.925,
+   "min_clearance_m": 0.4746,
+   "duration_s": 60,
+   "wall_s": 0.477,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 39.452,
+   "min_clearance_m": 0.3383,
+   "duration_s": 60,
+   "wall_s": 0.5,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 44.76,
+   "path_length_m": 37.745,
+   "min_clearance_m": 0.5718,
+   "duration_s": 44.76,
+   "wall_s": 3.276,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 26.937,
+   "min_clearance_m": 0.2756,
+   "duration_s": 60,
+   "wall_s": 0.873,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.42,
+   "path_length_m": 38.856,
+   "min_clearance_m": 0.8085,
+   "duration_s": 31.42,
+   "wall_s": 9.165,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.48,
+   "path_length_m": 38.845,
+   "min_clearance_m": 0.8185,
+   "duration_s": 31.48,
+   "wall_s": 5.83,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 34.84,
+   "path_length_m": 40.755,
+   "min_clearance_m": 0.8011,
+   "duration_s": 34.84,
+   "wall_s": 34.076,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.226,
+   "min_clearance_m": 0.653,
+   "duration_s": 20.78,
+   "wall_s": 1.593,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.1,
+   "path_length_m": 35.506,
+   "min_clearance_m": 0.3593,
+   "duration_s": 31.1,
+   "wall_s": 10.399,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    18.028,
+    17.928
+   ],
+   "ab_kept": null,
+   "outcome": "reached",
+   "time_to_goal_s": 39.18,
+   "path_length_m": 37.823,
+   "min_clearance_m": 0.3471,
+   "duration_s": 39.18,
+   "wall_s": 2.298,
+   "error": null,
+   "worker": 0
+  }
+ ],
+ "world": {
+  "schema": "close-area-world/1",
+  "frame": "local ENU m, origin at A",
+  "family": "maze",
+  "seed": 0,
+  "index": 0,
+  "bounds": [
+   -1.0353,
+   -0.839,
+   18.9647,
+   19.161
+  ],
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   18.3571,
+   17.9186
+  ],
+  "z": 1,
+  "radius": 0.15,
+  "obstacles": [
+   {
+    "type": "wall",
+    "x0": 2.9147,
+    "y0": 1.161,
+    "x1": 7.0147,
+    "y1": 1.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 8.9147,
+    "y0": 1.161,
+    "x1": 13.0147,
+    "y1": 1.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9147,
+    "y0": 3.161,
+    "x1": 9.0147,
+    "y1": 3.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9147,
+    "y0": 5.161,
+    "x1": 13.0147,
+    "y1": 5.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 14.9147,
+    "y0": 5.161,
+    "x1": 18.9647,
+    "y1": 5.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 2.9147,
+    "y0": 7.161,
+    "x1": 11.0147,
+    "y1": 7.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 0.9147,
+    "y0": 9.161,
+    "x1": 3.0147,
+    "y1": 9.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9147,
+    "y0": 9.161,
+    "x1": 7.0147,
+    "y1": 9.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 12.9147,
+    "y0": 9.161,
+    "x1": 15.0147,
+    "y1": 9.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 0.9147,
+    "y0": 11.161,
+    "x1": 3.0147,
+    "y1": 11.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 6.9147,
+    "y0": 11.161,
+    "x1": 9.0147,
+    "y1": 11.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 10.9147,
+    "y0": 11.161,
+    "x1": 13.0147,
+    "y1": 11.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 14.9147,
+    "y0": 11.161,
+    "x1": 18.9647,
+    "y1": 11.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -1.0353,
+    "y0": 13.161,
+    "x1": 13.0147,
+    "y1": 13.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 10.9147,
+    "y0": 15.161,
+    "x1": 15.0147,
+    "y1": 15.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9147,
+    "y0": 17.161,
+    "x1": 9.0147,
+    "y1": 17.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 0.9647,
+    "y0": 3.111,
+    "x1": 0.9647,
+    "y1": 5.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 0.9647,
+    "y0": 13.111,
+    "x1": 0.9647,
+    "y1": 17.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 2.9647,
+    "y0": 1.111,
+    "x1": 2.9647,
+    "y1": 9.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 2.9647,
+    "y0": 15.111,
+    "x1": 2.9647,
+    "y1": 17.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9647,
+    "y0": 3.111,
+    "x1": 4.9647,
+    "y1": 5.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9647,
+    "y0": 9.111,
+    "x1": 4.9647,
+    "y1": 13.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 4.9647,
+    "y0": 15.111,
+    "x1": 4.9647,
+    "y1": 17.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 8.9647,
+    "y0": 1.111,
+    "x1": 8.9647,
+    "y1": 3.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 8.9647,
+    "y0": 7.111,
+    "x1": 8.9647,
+    "y1": 11.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 8.9647,
+    "y0": 15.111,
+    "x1": 8.9647,
+    "y1": 19.161,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 10.9647,
+    "y0": 3.111,
+    "x1": 10.9647,
+    "y1": 5.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 10.9647,
+    "y0": 7.111,
+    "x1": 10.9647,
+    "y1": 9.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 10.9647,
+    "y0": 15.111,
+    "x1": 10.9647,
+    "y1": 17.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 12.9647,
+    "y0": 1.111,
+    "x1": 12.9647,
+    "y1": 3.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 12.9647,
+    "y0": 5.111,
+    "x1": 12.9647,
+    "y1": 9.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 14.9647,
+    "y0": -0.839,
+    "x1": 14.9647,
+    "y1": 3.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 14.9647,
+    "y0": 5.111,
+    "x1": 14.9647,
+    "y1": 9.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 14.9647,
+    "y0": 13.111,
+    "x1": 14.9647,
+    "y1": 17.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 16.9647,
+    "y0": 1.111,
+    "x1": 16.9647,
+    "y1": 5.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 16.9647,
+    "y0": 7.111,
+    "x1": 16.9647,
+    "y1": 9.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 16.9647,
+    "y0": 11.111,
+    "x1": 16.9647,
+    "y1": 17.211,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   }
+  ]
+ }
+}

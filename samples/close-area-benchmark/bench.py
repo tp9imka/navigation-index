@@ -18,6 +18,12 @@ Planners (imported by path from their samples, nothing edited there):
   bug2, tangent_bug   close-area-planner-dwa-bug bug.make("bug2") / bug.make("tangent_bug")
   dstar_lite          close-area-planner-dstar GridReplanner(backend="dstar"), unknown map, same geofence
                       as astar_unknown (subclass built here, sample not edited)
+  thetastar_known, lazy_thetastar_known
+                      close-area-planner-thetastar thetastar.make(known_map=True[, lazy=True]), known map
+  thetastar_unknown, lazy_thetastar_unknown
+                      thetastar.make(known_map=False[, lazy=True], bounds=...), unknown map, same geofence
+  mppi, mppi_astar    close-area-planner-mppi mppi.make(guide="none" / "astar", bounds=...), unknown map
+  hybrid_astar        close-area-planner-hybrid-astar hybrid_astar.make(bounds=...), unknown map
 Diagnostic only (--planners astar_unknown_prior): astar_esdf known_map=False exactly as shipped.
 
 Adding rows to an existing matrix without re-running the old ones (loop-46c):
@@ -107,6 +113,9 @@ _mpc = _load_sample("close-area-planner-mpc", ["mpc"])
 _filters = _load_sample("close-area-safety-filter", ["filters"])
 _dwabug = _load_sample("close-area-planner-dwa-bug", ["dwa", "bug"])
 _dstar = _load_sample("close-area-planner-dstar", ["dstar_lite"])
+_theta = _load_sample("close-area-planner-thetastar", ["thetastar"])
+_mppi = _load_sample("close-area-planner-mppi", ["mppi"])
+_hybrid = _load_sample("close-area-planner-hybrid-astar", ["hybrid_astar"])
 DWA_MEM_S = 3.0                # s of remembered returns, as close-area-planner-dwa-bug/bench.py
 
 
@@ -169,15 +178,34 @@ PLANNERS = {
                     "close-area-planner-dwa-bug"),
     "dstar_lite": (lambda w: geofenced_dstar(_bounds(w)), None, "D* Lite unknown map",
                    "close-area-planner-dstar"),
+    "thetastar_known": (lambda w: _theta["thetastar"].make(known_map=True), None,
+                        "Theta* known map", "close-area-planner-thetastar"),
+    "lazy_thetastar_known": (lambda w: _theta["thetastar"].make(known_map=True, lazy=True), None,
+                             "Lazy Theta* known map", "close-area-planner-thetastar"),
+    "thetastar_unknown": (lambda w: _theta["thetastar"].make(known_map=False, bounds=_bounds(w)), None,
+                          "Theta* unknown map", "close-area-planner-thetastar"),
+    "lazy_thetastar_unknown": (lambda w: _theta["thetastar"].make(known_map=False, lazy=True, bounds=_bounds(w)),
+                               None, "Lazy Theta* unknown map", "close-area-planner-thetastar"),
+    "mppi": (lambda w: _mppi["mppi"].make(guide="none", bounds=_bounds(w)), None,
+             "MPPI, goal only, unknown map", "close-area-planner-mppi"),
+    "mppi_astar": (lambda w: _mppi["mppi"].make(guide="astar", bounds=_bounds(w)), None,
+                   "MPPI on the unknown-map A* path", "close-area-planner-mppi"),
+    "hybrid_astar": (lambda w: _hybrid["hybrid_astar"].make(bounds=_bounds(w)), None,
+                     "Hybrid A* unknown map", "close-area-planner-hybrid-astar"),
 }
 DEFAULT_PLANNERS = ("straight", "freest_beam", "apf_escape", "vfh_plus", "astar_known", "astar_unknown",
                     "informed_rrt_star", "astar_mpc", "astar_unknown_f2",
-                    "dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite")
+                    "dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite",
+                    "thetastar_known", "lazy_thetastar_known", "thetastar_unknown", "lazy_thetastar_unknown",
+                    "mppi", "mppi_astar", "hybrid_astar")
 NEW_PLANNERS = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite")   # added by --add-to (loop-46c)
 NEEDS = {"apf_escape": (_reactive, "apf"), "vfh_plus": (_reactive, "vfh_plus"),
          "informed_rrt_star": (_sampling, "rrt_star"), "astar_mpc": (_mpc, "mpc"),
          "astar_unknown_f2": (_filters, "filters"), "dwa": (_dwabug, "dwa"), "dwa_mem": (_dwabug, "dwa"),
-         "bug2": (_dwabug, "bug"), "tangent_bug": (_dwabug, "bug"), "dstar_lite": (_dstar, "dstar_lite")}
+         "bug2": (_dwabug, "bug"), "tangent_bug": (_dwabug, "bug"), "dstar_lite": (_dstar, "dstar_lite"),
+         "thetastar_known": (_theta, "thetastar"), "lazy_thetastar_known": (_theta, "thetastar"),
+         "thetastar_unknown": (_theta, "thetastar"), "lazy_thetastar_unknown": (_theta, "thetastar"),
+         "mppi": (_mppi, "mppi"), "mppi_astar": (_mppi, "mppi"), "hybrid_astar": (_hybrid, "hybrid_astar")}
 FAMILIES = ("random", "u_trap", "narrow_gap", "office", "warehouse", "forest", "maze", "glass_office")
 PRESETS = ("ideal", "crazyflie")
 LONG_FAMILIES = {"maze": 120.0, "warehouse": 120.0}
@@ -309,7 +337,8 @@ def summarize(rows):
     return s
 
 
-PRIOR_MAP = ("astar_known", "informed_rrt_star", "astar_mpc")   # plan on the true prior grid
+PRIOR_MAP = ("astar_known", "informed_rrt_star", "astar_mpc",   # plan on the true prior grid
+             "thetastar_known", "lazy_thetastar_known")
 
 
 def best(cells: dict, planners, family) -> str:
@@ -426,7 +455,8 @@ def main(argv=None) -> int:
 
 
 SLOW = {"astar_unknown": 0, "astar_unknown_f2": 0, "astar_unknown_prior": 0, "dwa_mem": 0, "informed_rrt_star": 1,
-        "dstar_lite": 1, "astar_mpc": 2, "dwa": 2}
+        "dstar_lite": 1, "astar_mpc": 2, "dwa": 2, "thetastar_unknown": 0, "lazy_thetastar_unknown": 0,
+        "thetastar_known": 1, "lazy_thetastar_known": 1, "hybrid_astar": 1}
 
 
 def run_tasks(planners, families, presets_, layouts, seed, workers):

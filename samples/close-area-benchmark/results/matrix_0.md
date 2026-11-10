@@ -4,6 +4,8 @@ Parity with run.evaluate (ideal x random, runs with identical outcome and min cl
 
 Rows dwa, dwa_mem, bug2, tangent_bug, dstar_lite added later by `python bench.py --add-to matrix_0 --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite --recheck vfh_plus,astar_unknown --workers 14` (2026-11-09, same layouts and limits, 14 worker processes, wall 216.2 s for 2240 runs, Python 3.12.10, numpy 2.5.4). All other rows are kept from the first run. Existing rows re-run as a check, runs identical in outcome, min clearance, path length and time to goal: vfh_plus 320/320, astar_unknown 320/320.
 
+Rows thetastar_known, lazy_thetastar_known, thetastar_unknown, lazy_thetastar_unknown, mppi, mppi_astar, hybrid_astar added later by `python bench.py --add-to matrix_0 --planners thetastar_known,lazy_thetastar_known,thetastar_unknown,lazy_thetastar_unknown,mppi,mppi_astar,hybrid_astar --workers 14` (2026-11-10, same layouts and limits, 14 worker processes, wall 2058.5 s for 2240 runs, Python 3.12.10, numpy 2.5.4). All other rows are kept from the first run.
+
 ### Preset `ideal`
 
 Cell = reached % / collision % (20 layouts unless stated).
@@ -24,10 +26,17 @@ Cell = reached % / collision % (20 layouts unless stated).
 | bug2 | 90 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 20 / 0 | 0 / 0 |
 | tangent_bug | 95 / 0 | 90 / 0 | 45 / 0 | 25 / 0 | 20 / 0 | 100 / 0 | 15 / 0 | 25 / 0 |
 | dstar_lite | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| lazy_thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| thetastar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 90 / 0 | 60 / 0 | 100 / 0 | 95 / 0 | 90 / 0 |
+| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 90 / 0 | 65 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| mppi | 90 / 0 | 0 / 0 | 25 / 0 | 25 / 0 | 15 / 0 | 100 / 0 | 0 / 0 | 10 / 0 |
+| mppi_astar | 100 / 0 | 100 / 0 | 95 / 0 | 100 / 0 | 65 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
+| hybrid_astar | 100 / 0 | 100 / 0 | 70 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 85 / 0 |
 
-Best planner per family (reached / collision %): random => apf_escape/vfh_plus/astar_known/astar_unknown/informed_rrt_star/astar_mpc/dstar_lite (100 / 0); u_trap => astar_known/astar_unknown/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_known/informed_rrt_star/astar_mpc (100 / 0); office => astar_known/informed_rrt_star/astar_mpc (100 / 0); warehouse => astar_known/informed_rrt_star/astar_mpc (100 / 0); forest => freest_beam/apf_escape/vfh_plus/astar_known/astar_unknown/informed_rrt_star/astar_mpc/bug2/tangent_bug/dstar_lite (100 / 0); maze => astar_known/informed_rrt_star/astar_mpc (100 / 0); glass_office => astar_known/informed_rrt_star/astar_mpc (100 / 0)
+Best planner per family (reached / collision %): random => apf_escape/vfh_plus/astar_known/astar_unknown/informed_rrt_star/astar_mpc/dstar_lite/thetastar_known/lazy_thetastar_known/thetastar_unknown/lazy_thetastar_unknown/mppi_astar/hybrid_astar (100 / 0); u_trap => astar_known/astar_unknown/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite/thetastar_known/lazy_thetastar_known/thetastar_unknown/lazy_thetastar_unknown/mppi_astar/hybrid_astar (100 / 0); narrow_gap => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); office => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known/mppi_astar (100 / 0); warehouse => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); forest => freest_beam/apf_escape/vfh_plus/astar_known/astar_unknown/informed_rrt_star/astar_mpc/bug2/tangent_bug/dstar_lite/thetastar_known/lazy_thetastar_known/thetastar_unknown/lazy_thetastar_unknown/mppi/mppi_astar/hybrid_astar (100 / 0); maze => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); glass_office => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0)
 
-Best without a prior map (astar_known, informed_rrt_star, astar_mpc excluded): random => apf_escape/vfh_plus/astar_unknown/dstar_lite (100 / 0); u_trap => astar_unknown/astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_unknown (90 / 0); office => astar_unknown (95 / 0); warehouse => astar_unknown/dstar_lite (55 / 0); forest => freest_beam/apf_escape/vfh_plus/astar_unknown/bug2/tangent_bug/dstar_lite (100 / 0); maze => astar_unknown (95 / 0); glass_office => astar_unknown/dstar_lite (95 / 0)
+Best without a prior map (astar_known, informed_rrt_star, astar_mpc, thetastar_known, lazy_thetastar_known excluded): random => apf_escape/vfh_plus/astar_unknown/dstar_lite/thetastar_unknown/lazy_thetastar_unknown/mppi_astar/hybrid_astar (100 / 0); u_trap => astar_unknown/astar_unknown_f2/dstar_lite/thetastar_unknown/lazy_thetastar_unknown/mppi_astar/hybrid_astar (100 / 0); narrow_gap => mppi_astar (95 / 0); office => mppi_astar (100 / 0); warehouse => lazy_thetastar_unknown/mppi_astar (65 / 0); forest => freest_beam/apf_escape/vfh_plus/astar_unknown/bug2/tangent_bug/dstar_lite/thetastar_unknown/lazy_thetastar_unknown/mppi/mppi_astar/hybrid_astar (100 / 0); maze => astar_unknown/thetastar_unknown/mppi_astar (95 / 0); glass_office => astar_unknown/dstar_lite/lazy_thetastar_unknown/mppi_astar (95 / 0)
 
 ### Preset `crazyflie`
 
@@ -49,10 +58,17 @@ Cell = reached % / collision % (20 layouts unless stated).
 | bug2 | 90 / 10 | 20 / 30 | 0 / 0 | 0 / 35 | 15 / 20 | 50 / 40 | 0 / 20 | 5 / 40 |
 | tangent_bug | 55 / 45 | 35 / 15 | 5 / 10 | 10 / 45 | 0 / 35 | 25 / 75 | 0 / 50 | 5 / 50 |
 | dstar_lite | 100 / 0 | 100 / 0 | 15 / 10 | 20 / 40 | 5 / 45 | 100 / 0 | 40 / 25 | 10 / 65 |
+| thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| lazy_thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| thetastar_unknown | 100 / 0 | 90 / 5 | 5 / 15 | 35 / 60 | 5 / 60 | 95 / 5 | 65 / 10 | 20 / 65 |
+| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 15 / 25 | 45 / 35 | 30 / 20 | 95 / 5 | 50 / 0 | 30 / 55 |
+| mppi | 55 / 40 | 0 / 95 | 0 / 100 | 5 / 75 | 0 / 100 | 100 / 0 | 0 / 95 | 10 / 75 |
+| mppi_astar | 80 / 20 | 40 / 60 | 15 / 85 | 10 / 85 | 0 / 100 | 100 / 0 | 0 / 100 | 5 / 85 |
+| hybrid_astar | 95 / 5 | 100 / 0 | 10 / 5 | 40 / 45 | 0 / 35 | 90 / 10 | 35 / 15 | 5 / 75 |
 
-Best planner per family (reached / collision %): random => astar_known/astar_unknown/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite (100 / 0); u_trap => astar_known/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_known/informed_rrt_star/astar_mpc (100 / 0); office => astar_known/informed_rrt_star/astar_mpc (100 / 0); warehouse => astar_known/informed_rrt_star/astar_mpc (100 / 0); forest => astar_known/informed_rrt_star/astar_mpc/dstar_lite (100 / 0); maze => astar_known/informed_rrt_star/astar_mpc (100 / 0); glass_office => astar_known/informed_rrt_star/astar_mpc (100 / 0)
+Best planner per family (reached / collision %): random => astar_known/astar_unknown/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite/thetastar_known/lazy_thetastar_known/thetastar_unknown/lazy_thetastar_unknown (100 / 0); u_trap => astar_known/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite/thetastar_known/lazy_thetastar_known/lazy_thetastar_unknown/hybrid_astar (100 / 0); narrow_gap => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); office => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); warehouse => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); forest => astar_known/informed_rrt_star/astar_mpc/dstar_lite/thetastar_known/lazy_thetastar_known/mppi/mppi_astar (100 / 0); maze => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0); glass_office => astar_known/informed_rrt_star/astar_mpc/thetastar_known/lazy_thetastar_known (100 / 0)
 
-Best without a prior map (astar_known, informed_rrt_star, astar_mpc excluded): random => astar_unknown/astar_unknown_f2/dstar_lite (100 / 0); u_trap => astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_unknown (25 / 5); office => astar_unknown_f2 (50 / 5); warehouse => bug2 (15 / 20); forest => dstar_lite (100 / 0); maze => astar_unknown_f2 (55 / 0); glass_office => dstar_lite (10 / 65)
+Best without a prior map (astar_known, informed_rrt_star, astar_mpc, thetastar_known, lazy_thetastar_known excluded): random => astar_unknown/astar_unknown_f2/dstar_lite/thetastar_unknown/lazy_thetastar_unknown (100 / 0); u_trap => astar_unknown_f2/dstar_lite/lazy_thetastar_unknown/hybrid_astar (100 / 0); narrow_gap => astar_unknown (25 / 5); office => astar_unknown_f2 (50 / 5); warehouse => lazy_thetastar_unknown (30 / 20); forest => dstar_lite/mppi/mppi_astar (100 / 0); maze => thetastar_unknown (65 / 10); glass_office => lazy_thetastar_unknown (30 / 55)
 
 ### All fields
 
@@ -170,6 +186,62 @@ Best without a prior map (astar_known, informed_rrt_star, astar_mpc excluded): r
 | ideal | dstar_lite | forest | 100 | 0 | 0 | 0 | 23.24 | 0.595 | - | 17.1 |
 | ideal | dstar_lite | maze | 90 | 0 | 10 | 0 | 49.7 | 0.586 | - | 51.6 |
 | ideal | dstar_lite | glass_office | 95 | 0 | 5 | 0 | 29.16 | 0.272 | - | 26.6 |
+| ideal | thetastar_known | random | 100 | 0 | 0 | 0 | 17.09 | 0.943 | - | 29.1 |
+| ideal | thetastar_known | u_trap | 100 | 0 | 0 | 0 | 17.66 | 0.931 | - | 39.4 |
+| ideal | thetastar_known | narrow_gap | 100 | 0 | 0 | 0 | 22.36 | 0.34 | - | 90.9 |
+| ideal | thetastar_known | office | 100 | 0 | 0 | 0 | 18.05 | 0.283 | - | 44.9 |
+| ideal | thetastar_known | warehouse | 100 | 0 | 0 | 0 | 27.46 | 0.603 | - | 92 |
+| ideal | thetastar_known | forest | 100 | 0 | 0 | 0 | 18.12 | 0.891 | - | 35.9 |
+| ideal | thetastar_known | maze | 100 | 0 | 0 | 0 | 30.07 | 0.797 | - | 107.9 |
+| ideal | thetastar_known | glass_office | 100 | 0 | 0 | 0 | 21.17 | 0.266 | - | 86 |
+| ideal | lazy_thetastar_known | random | 100 | 0 | 0 | 0 | 17.11 | 0.933 | - | 20.6 |
+| ideal | lazy_thetastar_known | u_trap | 100 | 0 | 0 | 0 | 17.68 | 0.921 | - | 24.2 |
+| ideal | lazy_thetastar_known | narrow_gap | 100 | 0 | 0 | 0 | 22.36 | 0.347 | - | 64.8 |
+| ideal | lazy_thetastar_known | office | 100 | 0 | 0 | 0 | 18.03 | 0.288 | - | 27.9 |
+| ideal | lazy_thetastar_known | warehouse | 100 | 0 | 0 | 0 | 27.53 | 0.597 | - | 69.5 |
+| ideal | lazy_thetastar_known | forest | 100 | 0 | 0 | 0 | 18.17 | 0.895 | - | 26.9 |
+| ideal | lazy_thetastar_known | maze | 100 | 0 | 0 | 0 | 29.96 | 0.797 | - | 67.4 |
+| ideal | lazy_thetastar_known | glass_office | 100 | 0 | 0 | 0 | 20.94 | 0.264 | - | 54.7 |
+| ideal | thetastar_unknown | random | 100 | 0 | 0 | 0 | 17.26 | 0.917 | - | 468.2 |
+| ideal | thetastar_unknown | u_trap | 100 | 0 | 0 | 0 | 18.73 | 0.875 | - | 558.6 |
+| ideal | thetastar_unknown | narrow_gap | 90 | 0 | 10 | 0 | 31.88 | 0.296 | - | 928.5 |
+| ideal | thetastar_unknown | office | 90 | 0 | 10 | 0 | 19 | 0.272 | - | 44.2 |
+| ideal | thetastar_unknown | warehouse | 60 | 0 | 40 | 0 | 38.87 | 0.345 | - | 1098.1 |
+| ideal | thetastar_unknown | forest | 100 | 0 | 0 | 0 | 18.26 | 0.809 | - | 542.1 |
+| ideal | thetastar_unknown | maze | 95 | 0 | 5 | 0 | 37.72 | 0.774 | - | 1341.1 |
+| ideal | thetastar_unknown | glass_office | 90 | 0 | 10 | 0 | 25.4 | 0.269 | - | 108.9 |
+| ideal | lazy_thetastar_unknown | random | 100 | 0 | 0 | 0 | 17.4 | 0.91 | - | 124.3 |
+| ideal | lazy_thetastar_unknown | u_trap | 100 | 0 | 0 | 0 | 18.85 | 0.869 | - | 150.4 |
+| ideal | lazy_thetastar_unknown | narrow_gap | 90 | 0 | 5 | 5 | 29.43 | 0.29 | - | 307.4 |
+| ideal | lazy_thetastar_unknown | office | 90 | 0 | 10 | 0 | 18.1 | 0.277 | - | 28 |
+| ideal | lazy_thetastar_unknown | warehouse | 65 | 0 | 35 | 0 | 39.1 | 0.421 | - | 287.5 |
+| ideal | lazy_thetastar_unknown | forest | 100 | 0 | 0 | 0 | 18.28 | 0.856 | - | 135.2 |
+| ideal | lazy_thetastar_unknown | maze | 90 | 0 | 10 | 0 | 35 | 0.758 | - | 391.2 |
+| ideal | lazy_thetastar_unknown | glass_office | 95 | 0 | 5 | 0 | 25.92 | 0.279 | - | 55 |
+| ideal | mppi | random | 90 | 0 | 10 | 0 | 20.35 | 0.45 | - | 19.2 |
+| ideal | mppi | u_trap | 0 | 0 | 100 | 0 | - | 0.685 | - | 21.7 |
+| ideal | mppi | narrow_gap | 25 | 0 | 75 | 0 | 22.76 | 0.561 | - | 36.8 |
+| ideal | mppi | office | 25 | 0 | 75 | 0 | 8.4 | 0.579 | - | 11.1 |
+| ideal | mppi | warehouse | 15 | 0 | 85 | 0 | 27.1 | 0.288 | - | 33.7 |
+| ideal | mppi | forest | 100 | 0 | 0 | 0 | 20.29 | 0.435 | - | 20.6 |
+| ideal | mppi | maze | 0 | 0 | 100 | 0 | - | 0.382 | - | 19.4 |
+| ideal | mppi | glass_office | 10 | 0 | 90 | 0 | 5.83 | 0.611 | - | 12.1 |
+| ideal | mppi_astar | random | 100 | 0 | 0 | 0 | 20.24 | 0.605 | - | 63.9 |
+| ideal | mppi_astar | u_trap | 100 | 0 | 0 | 0 | 21.93 | 0.471 | - | 75.5 |
+| ideal | mppi_astar | narrow_gap | 95 | 0 | 5 | 0 | 33.92 | 0.281 | - | 121.3 |
+| ideal | mppi_astar | office | 100 | 0 | 0 | 0 | 11.35 | 0.286 | - | 21 |
+| ideal | mppi_astar | warehouse | 65 | 0 | 35 | 0 | 24.3 | 0.322 | - | 81.6 |
+| ideal | mppi_astar | forest | 100 | 0 | 0 | 0 | 20.4 | 0.563 | - | 67 |
+| ideal | mppi_astar | maze | 95 | 0 | 5 | 0 | 33.62 | 0.365 | - | 120 |
+| ideal | mppi_astar | glass_office | 95 | 0 | 5 | 0 | 15.06 | 0.292 | - | 31.4 |
+| ideal | hybrid_astar | random | 100 | 0 | 0 | 0 | 18.44 | 0.67 | - | 18.5 |
+| ideal | hybrid_astar | u_trap | 100 | 0 | 0 | 0 | 20.08 | 0.71 | - | 19.2 |
+| ideal | hybrid_astar | narrow_gap | 70 | 0 | 25 | 5 | 32.1 | 0.285 | - | 34.8 |
+| ideal | hybrid_astar | office | 90 | 0 | 5 | 5 | 20.19 | 0.264 | - | 23.4 |
+| ideal | hybrid_astar | warehouse | 55 | 0 | 45 | 0 | 48.28 | 0.259 | - | 46.9 |
+| ideal | hybrid_astar | forest | 100 | 0 | 0 | 0 | 22.47 | 0.552 | - | 21.2 |
+| ideal | hybrid_astar | maze | 90 | 0 | 5 | 5 | 46.46 | 0.46 | - | 48.9 |
+| ideal | hybrid_astar | glass_office | 85 | 0 | 15 | 0 | 29.2 | 0.26 | - | 25.9 |
 | crazyflie | straight | random | 40 | 40 | 20 | 0 | 16.69 | 0.254 | matte 8 | 1 |
 | crazyflie | straight | u_trap | 0 | 65 | 35 | 0 | - | 0.15 | matte 13 | 1 |
 | crazyflie | straight | narrow_gap | 0 | 70 | 30 | 0 | - | 0.149 | matte 14 | 0.8 |
@@ -282,3 +354,59 @@ Best without a prior map (astar_known, informed_rrt_star, astar_mpc excluded): r
 | crazyflie | dstar_lite | forest | 100 | 0 | 0 | 0 | 24.58 | 0.493 | - | 10.9 |
 | crazyflie | dstar_lite | maze | 40 | 25 | 30 | 5 | 83.36 | 0.234 | matte 5 | 46.2 |
 | crazyflie | dstar_lite | glass_office | 10 | 65 | 25 | 0 | 36.03 | 0.15 | glass 7, matte 6 | 17.2 |
+| crazyflie | thetastar_known | random | 100 | 0 | 0 | 0 | 17.09 | 0.943 | - | 26.8 |
+| crazyflie | thetastar_known | u_trap | 100 | 0 | 0 | 0 | 17.66 | 0.931 | - | 39.3 |
+| crazyflie | thetastar_known | narrow_gap | 100 | 0 | 0 | 0 | 22.36 | 0.34 | - | 91.6 |
+| crazyflie | thetastar_known | office | 100 | 0 | 0 | 0 | 18.05 | 0.283 | - | 44.3 |
+| crazyflie | thetastar_known | warehouse | 100 | 0 | 0 | 0 | 27.46 | 0.603 | - | 91.5 |
+| crazyflie | thetastar_known | forest | 100 | 0 | 0 | 0 | 18.12 | 0.891 | - | 35.5 |
+| crazyflie | thetastar_known | maze | 100 | 0 | 0 | 0 | 30.07 | 0.797 | - | 113.2 |
+| crazyflie | thetastar_known | glass_office | 100 | 0 | 0 | 0 | 21.17 | 0.266 | - | 85.7 |
+| crazyflie | lazy_thetastar_known | random | 100 | 0 | 0 | 0 | 17.11 | 0.933 | - | 20.1 |
+| crazyflie | lazy_thetastar_known | u_trap | 100 | 0 | 0 | 0 | 17.68 | 0.921 | - | 24.8 |
+| crazyflie | lazy_thetastar_known | narrow_gap | 100 | 0 | 0 | 0 | 22.36 | 0.347 | - | 64.9 |
+| crazyflie | lazy_thetastar_known | office | 100 | 0 | 0 | 0 | 18.03 | 0.288 | - | 29 |
+| crazyflie | lazy_thetastar_known | warehouse | 100 | 0 | 0 | 0 | 27.53 | 0.597 | - | 68.4 |
+| crazyflie | lazy_thetastar_known | forest | 100 | 0 | 0 | 0 | 18.17 | 0.895 | - | 24.9 |
+| crazyflie | lazy_thetastar_known | maze | 100 | 0 | 0 | 0 | 29.96 | 0.797 | - | 66.3 |
+| crazyflie | lazy_thetastar_known | glass_office | 100 | 0 | 0 | 0 | 20.94 | 0.264 | - | 55.5 |
+| crazyflie | thetastar_unknown | random | 100 | 0 | 0 | 0 | 19.34 | 0.715 | - | 862.8 |
+| crazyflie | thetastar_unknown | u_trap | 90 | 5 | 5 | 0 | 25.43 | 0.434 | matte 1 | 1192.8 |
+| crazyflie | thetastar_unknown | narrow_gap | 5 | 15 | 10 | 70 | 57.52 | 0.211 | matte 3 | 2628.7 |
+| crazyflie | thetastar_unknown | office | 35 | 60 | 5 | 0 | 26.04 | 0.149 | matte 12 | 125.9 |
+| crazyflie | thetastar_unknown | warehouse | 5 | 60 | 25 | 10 | 85.4 | 0.15 | matte 12 | 3532.2 |
+| crazyflie | thetastar_unknown | forest | 95 | 5 | 0 | 0 | 24.16 | 0.433 | matte 1 | 1139.2 |
+| crazyflie | thetastar_unknown | maze | 65 | 10 | 20 | 5 | 73.44 | 0.264 | matte 2 | 4814.1 |
+| crazyflie | thetastar_unknown | glass_office | 20 | 65 | 15 | 0 | 38.36 | 0.15 | glass 8, matte 5 | 253.5 |
+| crazyflie | lazy_thetastar_unknown | random | 100 | 0 | 0 | 0 | 19.95 | 0.787 | - | 221.5 |
+| crazyflie | lazy_thetastar_unknown | u_trap | 100 | 0 | 0 | 0 | 25.57 | 0.482 | - | 308.6 |
+| crazyflie | lazy_thetastar_unknown | narrow_gap | 15 | 25 | 0 | 60 | 52.28 | 0.209 | matte 5 | 761.7 |
+| crazyflie | lazy_thetastar_unknown | office | 45 | 35 | 15 | 5 | 26.32 | 0.169 | matte 7 | 49.9 |
+| crazyflie | lazy_thetastar_unknown | warehouse | 30 | 20 | 25 | 25 | 84.57 | 0.214 | matte 4 | 1001.8 |
+| crazyflie | lazy_thetastar_unknown | forest | 95 | 5 | 0 | 0 | 23.6 | 0.387 | matte 1 | 312.2 |
+| crazyflie | lazy_thetastar_unknown | maze | 50 | 0 | 30 | 20 | 75.73 | 0.28 | - | 1279.7 |
+| crazyflie | lazy_thetastar_unknown | glass_office | 30 | 55 | 15 | 0 | 47.57 | 0.149 | glass 8, matte 3 | 89.1 |
+| crazyflie | mppi | random | 55 | 40 | 5 | 0 | 20.3 | 0.422 | matte 8 | 14.7 |
+| crazyflie | mppi | u_trap | 0 | 95 | 5 | 0 | - | 0.141 | matte 19 | 9.8 |
+| crazyflie | mppi | narrow_gap | 0 | 100 | 0 | 0 | - | 0.138 | matte 20 | 10.1 |
+| crazyflie | mppi | office | 5 | 75 | 20 | 0 | 9.9 | 0.143 | matte 15 | 4.9 |
+| crazyflie | mppi | warehouse | 0 | 100 | 0 | 0 | - | 0.142 | matte 20 | 0.8 |
+| crazyflie | mppi | forest | 100 | 0 | 0 | 0 | 20.91 | 0.357 | - | 18.5 |
+| crazyflie | mppi | maze | 0 | 95 | 5 | 0 | - | 0.143 | matte 19 | 3.6 |
+| crazyflie | mppi | glass_office | 10 | 75 | 15 | 0 | 9.22 | 0.146 | glass 1, matte 14 | 4.4 |
+| crazyflie | mppi_astar | random | 80 | 20 | 0 | 0 | 20.37 | 0.535 | matte 4 | 64.7 |
+| crazyflie | mppi_astar | u_trap | 40 | 60 | 0 | 0 | 27.13 | 0.148 | matte 12 | 77.4 |
+| crazyflie | mppi_astar | narrow_gap | 15 | 85 | 0 | 0 | 21.34 | 0.142 | matte 17 | 62.6 |
+| crazyflie | mppi_astar | office | 10 | 85 | 5 | 0 | 8.1 | 0.142 | matte 17 | 12.8 |
+| crazyflie | mppi_astar | warehouse | 0 | 100 | 0 | 0 | - | 0.14 | matte 20 | 29.9 |
+| crazyflie | mppi_astar | forest | 100 | 0 | 0 | 0 | 21.02 | 0.408 | - | 67.6 |
+| crazyflie | mppi_astar | maze | 0 | 100 | 0 | 0 | - | 0.139 | matte 20 | 53.1 |
+| crazyflie | mppi_astar | glass_office | 5 | 85 | 10 | 0 | 8.26 | 0.146 | glass 5, matte 12 | 18.2 |
+| crazyflie | hybrid_astar | random | 95 | 5 | 0 | 0 | 21.24 | 0.601 | matte 1 | 18.7 |
+| crazyflie | hybrid_astar | u_trap | 100 | 0 | 0 | 0 | 29.33 | 0.409 | - | 28.8 |
+| crazyflie | hybrid_astar | narrow_gap | 10 | 5 | 10 | 75 | 37.39 | 0.26 | matte 1 | 57.5 |
+| crazyflie | hybrid_astar | office | 40 | 45 | 15 | 0 | 28.32 | 0.19 | matte 9 | 23.3 |
+| crazyflie | hybrid_astar | warehouse | 0 | 35 | 60 | 5 | - | 0.218 | matte 7 | 45.4 |
+| crazyflie | hybrid_astar | forest | 90 | 10 | 0 | 0 | 26.41 | 0.36 | matte 2 | 23.8 |
+| crazyflie | hybrid_astar | maze | 35 | 15 | 30 | 20 | 83.08 | 0.274 | matte 3 | 64.8 |
+| crazyflie | hybrid_astar | glass_office | 5 | 75 | 15 | 5 | 16.62 | 0.149 | glass 10, matte 5 | 25.9 |

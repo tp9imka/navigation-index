@@ -21,7 +21,7 @@
    "maze": 120.0,
    "glass_office": 60.0
   },
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "pose": "true pose (no VIO, no faults)",
   "filter_rows": [
    "astar_unknown_f2"
@@ -189,6 +189,76 @@
    "needs_prior_map": false,
    "playground": {
     "planner": "dstar_lite",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "thetastar_known": {
+   "label": "Theta* known map",
+   "sample": "close-area-planner-thetastar",
+   "needs_prior_map": true,
+   "playground": {
+    "planner": "thetastar_known",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "lazy_thetastar_known": {
+   "label": "Lazy Theta* known map",
+   "sample": "close-area-planner-thetastar",
+   "needs_prior_map": true,
+   "playground": {
+    "planner": "lazy_thetastar_known",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "thetastar_unknown": {
+   "label": "Theta* unknown map",
+   "sample": "close-area-planner-thetastar",
+   "needs_prior_map": false,
+   "playground": {
+    "planner": "thetastar_unknown",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "lazy_thetastar_unknown": {
+   "label": "Lazy Theta* unknown map",
+   "sample": "close-area-planner-thetastar",
+   "needs_prior_map": false,
+   "playground": {
+    "planner": "lazy_thetastar_unknown",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "mppi": {
+   "label": "MPPI, goal only, unknown map",
+   "sample": "close-area-planner-mppi",
+   "needs_prior_map": false,
+   "playground": {
+    "planner": "mppi",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "mppi_astar": {
+   "label": "MPPI on the unknown-map A* path",
+   "sample": "close-area-planner-mppi",
+   "needs_prior_map": false,
+   "playground": {
+    "planner": "mppi_astar",
+    "filter": "none"
+   },
+   "in_playground_now": false
+  },
+  "hybrid_astar": {
+   "label": "Hybrid A* unknown map",
+   "sample": "close-area-planner-hybrid-astar",
+   "needs_prior_map": false,
+   "playground": {
+    "planner": "hybrid_astar",
     "filter": "none"
    },
    "in_playground_now": false
@@ -435,6 +505,104 @@
      "median_clearance_m": 0.616,
      "collisions_by_material": {},
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.09,
+     "median_clearance_m": 0.943,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.11,
+     "median_clearance_m": 0.933,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.26,
+     "median_clearance_m": 0.917,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.4,
+     "median_clearance_m": 0.91,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 20.35,
+     "median_clearance_m": 0.45,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.24,
+     "median_clearance_m": 0.605,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.44,
+     "median_clearance_m": 0.67,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
     }
    },
    "crazyflie": {
@@ -647,6 +815,110 @@
      "median_clearance_m": 0.576,
      "collisions_by_material": {},
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.09,
+     "median_clearance_m": 0.943,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.11,
+     "median_clearance_m": 0.933,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 19.34,
+     "median_clearance_m": 0.715,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 19.95,
+     "median_clearance_m": 0.787,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 55.0,
+     "collision": 40.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 20.3,
+     "median_clearance_m": 0.422,
+     "collisions_by_material": {
+      "matte": 8
+     },
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 80.0,
+     "collision": 20.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.37,
+     "median_clearance_m": 0.535,
+     "collisions_by_material": {
+      "matte": 4
+     },
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 5.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 21.24,
+     "median_clearance_m": 0.601,
+     "collisions_by_material": {
+      "matte": 1
+     },
+     "max_time_s": 60.0
     }
    }
   },
@@ -845,6 +1117,104 @@
      "timeout": 0.0,
      "median_time_s": 22.12,
      "median_clearance_m": 0.598,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.66,
+     "median_clearance_m": 0.931,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.68,
+     "median_clearance_m": 0.921,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.73,
+     "median_clearance_m": 0.875,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.85,
+     "median_clearance_m": 0.869,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 0.0,
+     "stuck": 100.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.685,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 21.93,
+     "median_clearance_m": 0.471,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.08,
+     "median_clearance_m": 0.71,
      "collisions_by_material": {},
      "max_time_s": 60.0
     }
@@ -1059,6 +1429,110 @@
      "median_clearance_m": 0.407,
      "collisions_by_material": {},
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.66,
+     "median_clearance_m": 0.931,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 17.68,
+     "median_clearance_m": 0.921,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 5.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 25.43,
+     "median_clearance_m": 0.434,
+     "collisions_by_material": {
+      "matte": 1
+     },
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 25.57,
+     "median_clearance_m": 0.482,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 95.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.141,
+     "collisions_by_material": {
+      "matte": 19
+     },
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 40.0,
+     "collision": 60.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 27.13,
+     "median_clearance_m": 0.148,
+     "collisions_by_material": {
+      "matte": 12
+     },
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 29.33,
+     "median_clearance_m": 0.409,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
     }
    }
   },
@@ -1257,6 +1731,104 @@
      "timeout": 10.0,
      "median_time_s": 39.72,
      "median_clearance_m": 0.262,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 22.36,
+     "median_clearance_m": 0.34,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 22.36,
+     "median_clearance_m": 0.347,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 31.88,
+     "median_clearance_m": 0.296,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 5.0,
+     "median_time_s": 29.43,
+     "median_clearance_m": 0.29,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 25.0,
+     "collision": 0.0,
+     "stuck": 75.0,
+     "timeout": 0.0,
+     "median_time_s": 22.76,
+     "median_clearance_m": 0.561,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 33.92,
+     "median_clearance_m": 0.281,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 70.0,
+     "collision": 0.0,
+     "stuck": 25.0,
+     "timeout": 5.0,
+     "median_time_s": 32.1,
+     "median_clearance_m": 0.285,
      "collisions_by_material": {},
      "max_time_s": 60.0
     }
@@ -1473,6 +2045,114 @@
       "matte": 2
      },
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 22.36,
+     "median_clearance_m": 0.34,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 22.36,
+     "median_clearance_m": 0.347,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 5.0,
+     "collision": 15.0,
+     "stuck": 10.0,
+     "timeout": 70.0,
+     "median_time_s": 57.52,
+     "median_clearance_m": 0.211,
+     "collisions_by_material": {
+      "matte": 3
+     },
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 15.0,
+     "collision": 25.0,
+     "stuck": 0.0,
+     "timeout": 60.0,
+     "median_time_s": 52.28,
+     "median_clearance_m": 0.209,
+     "collisions_by_material": {
+      "matte": 5
+     },
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 100.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.138,
+     "collisions_by_material": {
+      "matte": 20
+     },
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 15.0,
+     "collision": 85.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 21.34,
+     "median_clearance_m": 0.142,
+     "collisions_by_material": {
+      "matte": 17
+     },
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 10.0,
+     "collision": 5.0,
+     "stuck": 10.0,
+     "timeout": 75.0,
+     "median_time_s": 37.39,
+     "median_clearance_m": 0.26,
+     "collisions_by_material": {
+      "matte": 1
+     },
+     "max_time_s": 60.0
     }
    }
   },
@@ -1673,6 +2353,104 @@
      "timeout": 0.0,
      "median_time_s": 22.39,
      "median_clearance_m": 0.261,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.05,
+     "median_clearance_m": 0.283,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.03,
+     "median_clearance_m": 0.288,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 19.0,
+     "median_clearance_m": 0.272,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 18.1,
+     "median_clearance_m": 0.277,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 25.0,
+     "collision": 0.0,
+     "stuck": 75.0,
+     "timeout": 0.0,
+     "median_time_s": 8.4,
+     "median_clearance_m": 0.579,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 11.35,
+     "median_clearance_m": 0.286,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 5.0,
+     "median_time_s": 20.19,
+     "median_clearance_m": 0.264,
      "collisions_by_material": {},
      "max_time_s": 60.0
     }
@@ -1891,6 +2669,114 @@
       "matte": 8
      },
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.05,
+     "median_clearance_m": 0.283,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.03,
+     "median_clearance_m": 0.288,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 35.0,
+     "collision": 60.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 26.04,
+     "median_clearance_m": 0.149,
+     "collisions_by_material": {
+      "matte": 12
+     },
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 45.0,
+     "collision": 35.0,
+     "stuck": 15.0,
+     "timeout": 5.0,
+     "median_time_s": 26.32,
+     "median_clearance_m": 0.169,
+     "collisions_by_material": {
+      "matte": 7
+     },
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 5.0,
+     "collision": 75.0,
+     "stuck": 20.0,
+     "timeout": 0.0,
+     "median_time_s": 9.9,
+     "median_clearance_m": 0.143,
+     "collisions_by_material": {
+      "matte": 15
+     },
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 10.0,
+     "collision": 85.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 8.1,
+     "median_clearance_m": 0.142,
+     "collisions_by_material": {
+      "matte": 17
+     },
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 40.0,
+     "collision": 45.0,
+     "stuck": 15.0,
+     "timeout": 0.0,
+     "median_time_s": 28.32,
+     "median_clearance_m": 0.19,
+     "collisions_by_material": {
+      "matte": 9
+     },
+     "max_time_s": 60.0
     }
    }
   },
@@ -2105,6 +2991,111 @@
      "collisions_by_material": {},
      "max_time_s": 120.0,
      "reached_within_60s": 55.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 27.46,
+     "median_clearance_m": 0.603,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 27.53,
+     "median_clearance_m": 0.597,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 60.0,
+     "collision": 0.0,
+     "stuck": 40.0,
+     "timeout": 0.0,
+     "median_time_s": 38.87,
+     "median_clearance_m": 0.345,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 65.0,
+     "collision": 0.0,
+     "stuck": 35.0,
+     "timeout": 0.0,
+     "median_time_s": 39.1,
+     "median_clearance_m": 0.421,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 65.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 15.0,
+     "collision": 0.0,
+     "stuck": 85.0,
+     "timeout": 0.0,
+     "median_time_s": 27.1,
+     "median_clearance_m": 0.288,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 15.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 65.0,
+     "collision": 0.0,
+     "stuck": 35.0,
+     "timeout": 0.0,
+     "median_time_s": 24.3,
+     "median_clearance_m": 0.322,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 65.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 55.0,
+     "collision": 0.0,
+     "stuck": 45.0,
+     "timeout": 0.0,
+     "median_time_s": 48.28,
+     "median_clearance_m": 0.259,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 50.0
     }
    },
    "crazyflie": {
@@ -2333,6 +3324,121 @@
      },
      "max_time_s": 120.0,
      "reached_within_60s": 0.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 27.46,
+     "median_clearance_m": 0.603,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 27.53,
+     "median_clearance_m": 0.597,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 5.0,
+     "collision": 60.0,
+     "stuck": 25.0,
+     "timeout": 10.0,
+     "median_time_s": 85.4,
+     "median_clearance_m": 0.15,
+     "collisions_by_material": {
+      "matte": 12
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 30.0,
+     "collision": 20.0,
+     "stuck": 25.0,
+     "timeout": 25.0,
+     "median_time_s": 84.57,
+     "median_clearance_m": 0.214,
+     "collisions_by_material": {
+      "matte": 4
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 100.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.142,
+     "collisions_by_material": {
+      "matte": 20
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 100.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.14,
+     "collisions_by_material": {
+      "matte": 20
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 35.0,
+     "stuck": 60.0,
+     "timeout": 5.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.218,
+     "collisions_by_material": {
+      "matte": 7
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
     }
    }
   },
@@ -2531,6 +3637,104 @@
      "timeout": 0.0,
      "median_time_s": 23.24,
      "median_clearance_m": 0.595,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.12,
+     "median_clearance_m": 0.891,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.17,
+     "median_clearance_m": 0.895,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.26,
+     "median_clearance_m": 0.809,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.28,
+     "median_clearance_m": 0.856,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.29,
+     "median_clearance_m": 0.435,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.4,
+     "median_clearance_m": 0.563,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 22.47,
+     "median_clearance_m": 0.552,
      "collisions_by_material": {},
      "max_time_s": 60.0
     }
@@ -2751,6 +3955,110 @@
      "median_clearance_m": 0.493,
      "collisions_by_material": {},
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.12,
+     "median_clearance_m": 0.891,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 18.17,
+     "median_clearance_m": 0.895,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 5.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 24.16,
+     "median_clearance_m": 0.433,
+     "collisions_by_material": {
+      "matte": 1
+     },
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 5.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 23.6,
+     "median_clearance_m": 0.387,
+     "collisions_by_material": {
+      "matte": 1
+     },
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.91,
+     "median_clearance_m": 0.357,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 21.02,
+     "median_clearance_m": 0.408,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 10.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 26.41,
+     "median_clearance_m": 0.36,
+     "collisions_by_material": {
+      "matte": 2
+     },
+     "max_time_s": 60.0
     }
    }
   },
@@ -2964,6 +4272,111 @@
      "timeout": 0.0,
      "median_time_s": 49.7,
      "median_clearance_m": 0.586,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 80.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 30.07,
+     "median_clearance_m": 0.797,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 29.96,
+     "median_clearance_m": 0.797,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 37.72,
+     "median_clearance_m": 0.774,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 95.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 35.0,
+     "median_clearance_m": 0.758,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 90.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 0.0,
+     "stuck": 100.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.382,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 33.62,
+     "median_clearance_m": 0.365,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 90.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 5.0,
+     "median_time_s": 46.46,
+     "median_clearance_m": 0.46,
      "collisions_by_material": {},
      "max_time_s": 120.0,
      "reached_within_60s": 80.0
@@ -3199,6 +4612,119 @@
      },
      "max_time_s": 120.0,
      "reached_within_60s": 0.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 30.07,
+     "median_clearance_m": 0.797,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 29.96,
+     "median_clearance_m": 0.797,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 100.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 65.0,
+     "collision": 10.0,
+     "stuck": 20.0,
+     "timeout": 5.0,
+     "median_time_s": 73.44,
+     "median_clearance_m": 0.264,
+     "collisions_by_material": {
+      "matte": 2
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 10.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 50.0,
+     "collision": 0.0,
+     "stuck": 30.0,
+     "timeout": 20.0,
+     "median_time_s": 75.73,
+     "median_clearance_m": 0.28,
+     "collisions_by_material": {},
+     "max_time_s": 120.0,
+     "reached_within_60s": 10.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 95.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.143,
+     "collisions_by_material": {
+      "matte": 19
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 0.0,
+     "collision": 100.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": null,
+     "median_clearance_m": 0.139,
+     "collisions_by_material": {
+      "matte": 20
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 35.0,
+     "collision": 15.0,
+     "stuck": 30.0,
+     "timeout": 20.0,
+     "median_time_s": 83.08,
+     "median_clearance_m": 0.274,
+     "collisions_by_material": {
+      "matte": 3
+     },
+     "max_time_s": 120.0,
+     "reached_within_60s": 0.0
     }
    }
   },
@@ -3399,6 +4925,104 @@
      "timeout": 0.0,
      "median_time_s": 29.16,
      "median_clearance_m": 0.272,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 21.17,
+     "median_clearance_m": 0.266,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.94,
+     "median_clearance_m": 0.264,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 90.0,
+     "collision": 0.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 25.4,
+     "median_clearance_m": 0.269,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 25.92,
+     "median_clearance_m": 0.279,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 10.0,
+     "collision": 0.0,
+     "stuck": 90.0,
+     "timeout": 0.0,
+     "median_time_s": 5.83,
+     "median_clearance_m": 0.611,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 95.0,
+     "collision": 0.0,
+     "stuck": 5.0,
+     "timeout": 0.0,
+     "median_time_s": 15.06,
+     "median_clearance_m": 0.292,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 85.0,
+     "collision": 0.0,
+     "stuck": 15.0,
+     "timeout": 0.0,
+     "median_time_s": 29.2,
+     "median_clearance_m": 0.26,
      "collisions_by_material": {},
      "max_time_s": 60.0
     }
@@ -3626,6 +5250,119 @@
       "matte": 6
      },
      "max_time_s": 60.0
+    },
+    "thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 21.17,
+     "median_clearance_m": 0.266,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_known": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 100.0,
+     "collision": 0.0,
+     "stuck": 0.0,
+     "timeout": 0.0,
+     "median_time_s": 20.94,
+     "median_clearance_m": 0.264,
+     "collisions_by_material": {},
+     "max_time_s": 60.0
+    },
+    "thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 20.0,
+     "collision": 65.0,
+     "stuck": 15.0,
+     "timeout": 0.0,
+     "median_time_s": 38.36,
+     "median_clearance_m": 0.15,
+     "collisions_by_material": {
+      "matte": 5,
+      "glass": 8
+     },
+     "max_time_s": 60.0
+    },
+    "lazy_thetastar_unknown": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 30.0,
+     "collision": 55.0,
+     "stuck": 15.0,
+     "timeout": 0.0,
+     "median_time_s": 47.57,
+     "median_clearance_m": 0.149,
+     "collisions_by_material": {
+      "glass": 8,
+      "matte": 3
+     },
+     "max_time_s": 60.0
+    },
+    "mppi": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 10.0,
+     "collision": 75.0,
+     "stuck": 15.0,
+     "timeout": 0.0,
+     "median_time_s": 9.22,
+     "median_clearance_m": 0.146,
+     "collisions_by_material": {
+      "matte": 14,
+      "glass": 1
+     },
+     "max_time_s": 60.0
+    },
+    "mppi_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 5.0,
+     "collision": 85.0,
+     "stuck": 10.0,
+     "timeout": 0.0,
+     "median_time_s": 8.26,
+     "median_clearance_m": 0.146,
+     "collisions_by_material": {
+      "matte": 12,
+      "glass": 5
+     },
+     "max_time_s": 60.0
+    },
+    "hybrid_astar": {
+     "n": 20,
+     "seed": [
+      0
+     ],
+     "reached": 5.0,
+     "collision": 75.0,
+     "stuck": 15.0,
+     "timeout": 5.0,
+     "median_time_s": 16.62,
+     "median_clearance_m": 0.149,
+     "collisions_by_material": {
+      "matte": 5,
+      "glass": 10
+     },
+     "max_time_s": 60.0
     }
    }
   }
@@ -3634,31 +5371,44 @@
   "random": {
    "ideal": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 18 s median: best of 3 prior-map planners on random with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 17 s median: best of 5 prior-map planners on random with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
+     "winner": "thetastar_unknown",
      "ties": [
+      "lazy_thetastar_unknown",
+      "hybrid_astar",
+      "dstar_lite",
       "astar_unknown",
+      "mppi_astar",
       "vfh_plus",
       "apf_escape"
      ],
-     "reason": "100 % reached, 0 % collision, 19 s median: best of 11 map-free planners on random with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 17 s median: best of 16 map-free planners on random with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
+     "thetastar_unknown",
+     "lazy_thetastar_unknown",
      "astar_mpc",
+     "hybrid_astar",
      "astar_known",
      "dstar_lite",
      "astar_unknown",
+     "mppi_astar",
      "informed_rrt_star",
      "vfh_plus",
      "apf_escape",
      "tangent_bug",
+     "mppi",
      "bug2",
      "freest_beam",
      "dwa",
@@ -3669,31 +5419,42 @@
    },
    "crazyflie": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 18 s median: best of 3 prior-map planners on random with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 17 s median: best of 5 prior-map planners on random with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
+     "winner": "thetastar_unknown",
      "ties": [
+      "lazy_thetastar_unknown",
+      "dstar_lite",
       "astar_unknown_f2",
       "astar_unknown"
      ],
-     "reason": "100 % reached, 0 % collision, 21 s median: best of 11 map-free planners on random with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 19 s median: best of 16 map-free planners on random with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
      "astar_mpc",
      "astar_known",
+     "thetastar_unknown",
+     "lazy_thetastar_unknown",
      "dstar_lite",
      "astar_unknown_f2",
      "astar_unknown",
      "informed_rrt_star",
+     "hybrid_astar",
      "bug2",
      "apf_escape",
+     "mppi_astar",
      "dwa_mem",
+     "mppi",
      "tangent_bug",
      "freest_beam",
      "vfh_plus",
@@ -3705,24 +5466,36 @@
   "u_trap": {
    "ideal": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 19 s median: best of 3 prior-map planners on u_trap with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 18 s median: best of 5 prior-map planners on u_trap with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "astar_unknown",
+     "winner": "thetastar_unknown",
      "ties": [
+      "lazy_thetastar_unknown",
+      "hybrid_astar",
+      "mppi_astar",
+      "astar_unknown",
       "dstar_lite",
       "astar_unknown_f2"
      ],
-     "reason": "100 % reached, 0 % collision, 22 s median: best of 11 map-free planners on u_trap with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 19 s median: best of 16 map-free planners on u_trap with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
      "astar_mpc",
+     "thetastar_unknown",
+     "lazy_thetastar_unknown",
      "astar_known",
+     "hybrid_astar",
+     "mppi_astar",
      "astar_unknown",
      "dstar_lite",
      "astar_unknown_f2",
@@ -3733,33 +5506,44 @@
      "dwa",
      "dwa_mem",
      "freest_beam",
+     "mppi",
      "straight",
      "vfh_plus"
     ]
    },
    "crazyflie": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 19 s median: best of 3 prior-map planners on u_trap with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 18 s median: best of 5 prior-map planners on u_trap with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "astar_unknown_f2",
+     "winner": "lazy_thetastar_unknown",
      "ties": [
+      "astar_unknown_f2",
+      "hybrid_astar",
       "dstar_lite"
      ],
-     "reason": "100 % reached, 0 % collision, 29 s median: best of 11 map-free planners on u_trap with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 26 s median: best of 16 map-free planners on u_trap with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
      "astar_mpc",
      "astar_known",
      "informed_rrt_star",
+     "lazy_thetastar_unknown",
      "astar_unknown_f2",
+     "hybrid_astar",
      "dstar_lite",
      "astar_unknown",
+     "thetastar_unknown",
+     "mppi_astar",
      "tangent_bug",
      "apf_escape",
      "bug2",
@@ -3767,6 +5551,7 @@
      "freest_beam",
      "dwa",
      "straight",
+     "mppi",
      "vfh_plus"
     ]
    }
@@ -3776,24 +5561,33 @@
     "prior_map": {
      "winner": "astar_mpc",
      "ties": [
+      "lazy_thetastar_known",
+      "thetastar_known",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 22 s median: best of 3 prior-map planners on narrow_gap with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 22 s median: best of 5 prior-map planners on narrow_gap with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "astar_unknown",
+     "winner": "mppi_astar",
      "ties": [],
-     "reason": "90 % reached, 0 % collision, 38 s median: best of 11 map-free planners on narrow_gap with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "95 % reached, 0 % collision, 34 s median: best of 16 map-free planners on narrow_gap with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
      "astar_mpc",
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_known",
      "informed_rrt_star",
+     "mppi_astar",
+     "lazy_thetastar_unknown",
+     "thetastar_unknown",
      "astar_unknown",
      "dstar_lite",
+     "hybrid_astar",
      "vfh_plus",
      "tangent_bug",
+     "mppi",
      "dwa",
      "dwa_mem",
      "apf_escape",
@@ -3807,33 +5601,42 @@
     "prior_map": {
      "winner": "astar_mpc",
      "ties": [
+      "lazy_thetastar_known",
+      "thetastar_known",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 22 s median: best of 3 prior-map planners on narrow_gap with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 22 s median: best of 5 prior-map planners on narrow_gap with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
      "winner": "astar_unknown",
      "ties": [],
-     "reason": "25 % reached, 5 % collision, 30 s median: best of 11 map-free planners on narrow_gap with the crazyflie sensor (20 layouts, seed 0, synthetic).",
+     "reason": "25 % reached, 5 % collision, 30 s median: best of 16 map-free planners on narrow_gap with the crazyflie sensor (20 layouts, seed 0, synthetic).",
      "weak": "Weak pick: no map-free planner reaches 50 % with under 20 % collisions here. Safest map-free option: DWA + 3 s scan memory (5 % reached, 0 % collision).",
      "safest": "dwa_mem"
     },
     "ranked": [
      "astar_mpc",
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_known",
      "informed_rrt_star",
      "astar_unknown",
      "astar_unknown_f2",
      "dstar_lite",
+     "lazy_thetastar_unknown",
+     "mppi_astar",
+     "hybrid_astar",
      "dwa_mem",
      "tangent_bug",
+     "thetastar_unknown",
      "vfh_plus",
      "bug2",
      "freest_beam",
      "apf_escape",
      "dwa",
-     "straight"
+     "straight",
+     "mppi"
     ]
    }
   },
@@ -3842,23 +5645,32 @@
     "prior_map": {
      "winner": "astar_mpc",
      "ties": [
+      "lazy_thetastar_known",
+      "thetastar_known",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 16 s median: best of 3 prior-map planners on office with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 16 s median: best of 5 prior-map planners on office with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "astar_unknown",
+     "winner": "mppi_astar",
      "ties": [],
-     "reason": "95 % reached, 0 % collision, 23 s median: best of 11 map-free planners on office with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 11 s median: best of 16 map-free planners on office with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "mppi_astar",
      "astar_mpc",
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_known",
      "informed_rrt_star",
      "astar_unknown",
+     "lazy_thetastar_unknown",
+     "thetastar_unknown",
+     "hybrid_astar",
      "dstar_lite",
      "vfh_plus",
+     "mppi",
      "tangent_bug",
      "freest_beam",
      "dwa_mem",
@@ -3873,25 +5685,34 @@
     "prior_map": {
      "winner": "astar_mpc",
      "ties": [
+      "lazy_thetastar_known",
+      "thetastar_known",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 16 s median: best of 3 prior-map planners on office with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 16 s median: best of 5 prior-map planners on office with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
      "winner": "astar_unknown_f2",
      "ties": [],
-     "reason": "50 % reached, 5 % collision, 23 s median: best of 11 map-free planners on office with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "50 % reached, 5 % collision, 23 s median: best of 16 map-free planners on office with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
      "astar_mpc",
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_known",
      "informed_rrt_star",
      "astar_unknown_f2",
+     "lazy_thetastar_unknown",
+     "hybrid_astar",
      "astar_unknown",
+     "thetastar_unknown",
      "dstar_lite",
      "tangent_bug",
+     "mppi_astar",
      "dwa_mem",
+     "mppi",
      "vfh_plus",
      "freest_beam",
      "apf_escape",
@@ -3904,28 +5725,37 @@
   "warehouse": {
    "ideal": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 38 s median: best of 3 prior-map planners on warehouse with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 27 s median: best of 5 prior-map planners on warehouse with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
+     "winner": "mppi_astar",
      "ties": [
-      "astar_unknown"
+      "lazy_thetastar_unknown"
      ],
-     "reason": "55 % reached, 0 % collision, 48 s median: best of 11 map-free planners on warehouse with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "65 % reached, 0 % collision, 24 s median: best of 16 map-free planners on warehouse with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
      "astar_mpc",
      "astar_known",
      "informed_rrt_star",
+     "mppi_astar",
+     "lazy_thetastar_unknown",
+     "thetastar_unknown",
      "dstar_lite",
+     "hybrid_astar",
      "astar_unknown",
      "vfh_plus",
      "tangent_bug",
+     "mppi",
      "freest_beam",
      "dwa",
      "dwa_mem",
@@ -3937,51 +5767,67 @@
    },
    "crazyflie": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 38 s median: best of 3 prior-map planners on warehouse with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 27 s median: best of 5 prior-map planners on warehouse with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "bug2",
+     "winner": "lazy_thetastar_unknown",
      "ties": [],
-     "reason": "15 % reached, 20 % collision, 78 s median: best of 11 map-free planners on warehouse with the crazyflie sensor (20 layouts, seed 0, synthetic).",
+     "reason": "30 % reached, 20 % collision, 85 s median: best of 16 map-free planners on warehouse with the crazyflie sensor (20 layouts, seed 0, synthetic).",
      "weak": "Weak pick: no map-free planner reaches 50 % with under 20 % collisions here. Safest map-free option: APF + wall-follow escape (0 % reached, 0 % collision).",
      "safest": "apf_escape"
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
      "astar_mpc",
      "astar_known",
      "informed_rrt_star",
+     "lazy_thetastar_unknown",
      "bug2",
      "dstar_lite",
+     "thetastar_unknown",
      "apf_escape",
      "astar_unknown_f2",
      "freest_beam",
      "dwa_mem",
+     "hybrid_astar",
      "tangent_bug",
      "astar_unknown",
      "dwa",
      "straight",
-     "vfh_plus"
+     "vfh_plus",
+     "mppi",
+     "mppi_astar"
     ]
    }
   },
   "forest": {
    "ideal": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 20 s median: best of 3 prior-map planners on forest with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 18 s median: best of 5 prior-map planners on forest with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
+     "winner": "thetastar_unknown",
      "ties": [
+      "lazy_thetastar_unknown",
+      "mppi",
+      "mppi_astar",
+      "hybrid_astar",
+      "dstar_lite",
       "astar_unknown",
       "tangent_bug",
       "vfh_plus",
@@ -3989,10 +5835,17 @@
       "apf_escape",
       "bug2"
      ],
-     "reason": "100 % reached, 0 % collision, 23 s median: best of 11 map-free planners on forest with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 18 s median: best of 16 map-free planners on forest with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
+     "thetastar_unknown",
+     "lazy_thetastar_unknown",
+     "mppi",
      "astar_mpc",
+     "mppi_astar",
+     "hybrid_astar",
      "astar_known",
      "dstar_lite",
      "astar_unknown",
@@ -4010,25 +5863,37 @@
    },
    "crazyflie": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "thetastar_known",
      "ties": [
+      "lazy_thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 20 s median: best of 3 prior-map planners on forest with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 18 s median: best of 5 prior-map planners on forest with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
-     "ties": [],
-     "reason": "100 % reached, 0 % collision, 25 s median: best of 11 map-free planners on forest with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "winner": "mppi",
+     "ties": [
+      "mppi_astar",
+      "dstar_lite"
+     ],
+     "reason": "100 % reached, 0 % collision, 21 s median: best of 16 map-free planners on forest with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "thetastar_known",
+     "lazy_thetastar_known",
      "astar_mpc",
+     "mppi",
+     "mppi_astar",
      "astar_known",
      "dstar_lite",
      "informed_rrt_star",
+     "lazy_thetastar_unknown",
+     "thetastar_unknown",
      "astar_unknown",
      "astar_unknown_f2",
+     "hybrid_astar",
      "apf_escape",
      "bug2",
      "dwa_mem",
@@ -4043,23 +5908,34 @@
   "maze": {
    "ideal": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "lazy_thetastar_known",
      "ties": [
+      "thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 37 s median: best of 3 prior-map planners on maze with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 30 s median: best of 5 prior-map planners on maze with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "astar_unknown",
-     "ties": [],
-     "reason": "95 % reached, 0 % collision, 50 s median: best of 11 map-free planners on maze with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "winner": "mppi_astar",
+     "ties": [
+      "thetastar_unknown",
+      "astar_unknown"
+     ],
+     "reason": "95 % reached, 0 % collision, 34 s median: best of 16 map-free planners on maze with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_mpc",
      "astar_known",
      "informed_rrt_star",
+     "mppi_astar",
+     "thetastar_unknown",
      "astar_unknown",
+     "lazy_thetastar_unknown",
+     "hybrid_astar",
      "dstar_lite",
      "bug2",
      "tangent_bug",
@@ -4069,29 +5945,37 @@
      "dwa",
      "dwa_mem",
      "freest_beam",
+     "mppi",
      "straight"
     ]
    },
    "crazyflie": {
     "prior_map": {
-     "winner": "astar_mpc",
+     "winner": "lazy_thetastar_known",
      "ties": [
+      "thetastar_known",
+      "astar_mpc",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 37 s median: best of 3 prior-map planners on maze with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 30 s median: best of 5 prior-map planners on maze with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "astar_unknown_f2",
+     "winner": "thetastar_unknown",
      "ties": [],
-     "reason": "55 % reached, 0 % collision, 84 s median: best of 11 map-free planners on maze with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "65 % reached, 10 % collision, 73 s median: best of 16 map-free planners on maze with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_mpc",
      "astar_known",
      "informed_rrt_star",
+     "thetastar_unknown",
      "astar_unknown_f2",
+     "lazy_thetastar_unknown",
      "dstar_lite",
+     "hybrid_astar",
      "astar_unknown",
      "freest_beam",
      "apf_escape",
@@ -4100,6 +5984,8 @@
      "tangent_bug",
      "dwa",
      "straight",
+     "mppi",
+     "mppi_astar",
      "vfh_plus"
     ]
    }
@@ -4109,26 +5995,37 @@
     "prior_map": {
      "winner": "astar_mpc",
      "ties": [
+      "lazy_thetastar_known",
+      "thetastar_known",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 19 s median: best of 3 prior-map planners on glass_office with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 19 s median: best of 5 prior-map planners on glass_office with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
+     "winner": "mppi_astar",
      "ties": [
+      "lazy_thetastar_unknown",
+      "dstar_lite",
       "astar_unknown"
      ],
-     "reason": "95 % reached, 0 % collision, 29 s median: best of 11 map-free planners on glass_office with the ideal sensor (20 layouts, seed 0, synthetic)."
+     "reason": "95 % reached, 0 % collision, 15 s median: best of 16 map-free planners on glass_office with the ideal sensor (20 layouts, seed 0, synthetic)."
     },
     "ranked": [
      "astar_mpc",
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_known",
      "informed_rrt_star",
+     "mppi_astar",
+     "lazy_thetastar_unknown",
      "dstar_lite",
      "astar_unknown",
+     "thetastar_unknown",
+     "hybrid_astar",
      "vfh_plus",
      "tangent_bug",
+     "mppi",
      "freest_beam",
      "dwa_mem",
      "dwa",
@@ -4142,23 +6039,30 @@
     "prior_map": {
      "winner": "astar_mpc",
      "ties": [
+      "lazy_thetastar_known",
+      "thetastar_known",
       "astar_known",
       "informed_rrt_star"
      ],
-     "reason": "100 % reached, 0 % collision, 19 s median: best of 3 prior-map planners on glass_office with the crazyflie sensor (20 layouts, seed 0, synthetic)."
+     "reason": "100 % reached, 0 % collision, 19 s median: best of 5 prior-map planners on glass_office with the crazyflie sensor (20 layouts, seed 0, synthetic)."
     },
     "no_map": {
-     "winner": "dstar_lite",
+     "winner": "lazy_thetastar_unknown",
      "ties": [],
-     "reason": "10 % reached, 65 % collision, 36 s median: best of 11 map-free planners on glass_office with the crazyflie sensor (20 layouts, seed 0, synthetic).",
+     "reason": "30 % reached, 55 % collision, 48 s median: best of 16 map-free planners on glass_office with the crazyflie sensor (20 layouts, seed 0, synthetic).",
      "weak": "Weak pick: no map-free planner reaches 50 % with under 20 % collisions here. Safest map-free option: DWA + 3 s scan memory (5 % reached, 5 % collision).",
      "safest": "dwa_mem"
     },
     "ranked": [
      "astar_mpc",
+     "lazy_thetastar_known",
+     "thetastar_known",
      "astar_known",
      "informed_rrt_star",
+     "lazy_thetastar_unknown",
+     "thetastar_unknown",
      "dstar_lite",
+     "mppi",
      "freest_beam",
      "dwa_mem",
      "apf_escape",
@@ -4168,6 +6072,8 @@
      "dwa",
      "astar_unknown",
      "straight",
+     "hybrid_astar",
+     "mppi_astar",
      "vfh_plus"
     ]
    }
@@ -4257,7 +6163,7 @@
      "samples/close-area-benchmark/README.md"
     ],
     "matrix": [
-     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office.",
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, forest, maze, glass_office.",
      "crazyflie: >= 90 % reached with 0 % collision on random; <= 20 % reached or >= 20 % collision on office, warehouse, glass_office; collision 0-65 %. Top of its group on random, narrow_gap."
     ],
     "needs_prior_map": false
@@ -4302,7 +6208,7 @@
     ],
     "matrix": [
      "ideal: >= 90 % reached with 0 % collision on u_trap; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, maze, glass_office; collision 0 % everywhere. Top of its group on u_trap.",
-     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap; <= 20 % reached or >= 20 % collision on narrow_gap, warehouse, glass_office; collision 0-45 %. Top of its group on random, u_trap, office, maze."
+     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap; <= 20 % reached or >= 20 % collision on narrow_gap, warehouse, glass_office; collision 0-45 %. Top of its group on random, u_trap, office."
     ],
     "needs_prior_map": false
    },
@@ -4345,7 +6251,7 @@
     ],
     "matrix": [
      "ideal: >= 90 % reached with 0 % collision on random, u_trap, forest; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, maze, glass_office; collision 0 % everywhere. Top of its group on forest.",
-     "crazyflie: >= 90 % reached with 0 % collision on no family; <= 20 % reached or >= 20 % collision on u_trap, narrow_gap, office, warehouse, forest, maze, glass_office; collision 0-40 %. Top of its group on warehouse."
+     "crazyflie: >= 90 % reached with 0 % collision on no family; <= 20 % reached or >= 20 % collision on u_trap, narrow_gap, office, warehouse, forest, maze, glass_office; collision 0-40 %. Top of its group on no family."
     ],
     "needs_prior_map": false
    },
@@ -4373,8 +6279,113 @@
      "samples/close-area-planner-dstar/README.md"
     ],
     "matrix": [
-     "ideal: >= 90 % reached with 0 % collision on random, u_trap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, warehouse, forest, glass_office.",
-     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap, forest; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, maze, glass_office; collision 0-65 %. Top of its group on random, u_trap, forest, glass_office."
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, forest, glass_office.",
+     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap, forest; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, maze, glass_office; collision 0-65 %. Top of its group on random, u_trap, forest."
+    ],
+    "needs_prior_map": false
+   },
+   "thetastar_known": {
+    "what": "Theta*: any-angle A* on the same inflated grid and clearance cost as A* + ESDF. A node may link to any earlier node it can see, so the path is not tied to grid directions. Same follower.",
+    "needs": "An exact prior map and a good pose. Ignores the range sensor.",
+    "good": "Prior map known: shorter, straighter paths than grid A* and usually an earlier arrival at B (sample README).",
+    "fails": "Plans take several times longer than A*. Trusts the pose, as A* known map does.",
+    "src": [
+     "samples/close-area-planner-thetastar/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office.",
+     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office."
+    ],
+    "needs_prior_map": true
+   },
+   "lazy_thetastar_known": {
+    "what": "Lazy Theta*: Theta* that checks line of sight only when a node is expanded, so fewer checks per plan.",
+    "needs": "An exact prior map and a good pose. Ignores the range sensor.",
+    "good": "Prior map known and a few hundred ms per replan: any-angle paths with cheaper plans than Theta* (sample README).",
+    "fails": "Still slower per plan than grid A*. Trusts the pose.",
+    "src": [
+     "samples/close-area-planner-thetastar/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office.",
+     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office."
+    ],
+    "needs_prior_map": true
+   },
+   "thetastar_unknown": {
+    "what": "Theta* on the map built from range hits (the unknown-map A* map, on the area geofence).",
+    "needs": "No prior map. A range scan and a good pose.",
+    "good": "Benchmark row only. Not offered in the playground: its replans are slow (sample README).",
+    "fails": "Slow replans when the map changes; with 4 beams it collides more than the unknown-map A* (sample README).",
+    "src": [
+     "samples/close-area-planner-thetastar/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, forest, maze.",
+     "crazyflie: >= 90 % reached with 0 % collision on random; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, glass_office; collision 0-65 %. Top of its group on random, maze."
+    ],
+    "needs_prior_map": false
+   },
+   "lazy_thetastar_unknown": {
+    "what": "Lazy Theta* on the map built from range hits, on the area geofence.",
+    "needs": "No prior map. A range scan and a good pose.",
+    "good": "Any-angle paths without a prior map, with cheaper replans than plain Theta*.",
+    "fails": "The slowest planner in the playground per run. With 4 beams it collides more than the unknown-map A* (sample README).",
+    "src": [
+     "samples/close-area-planner-thetastar/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, warehouse, forest, glass_office.",
+     "crazyflie: >= 90 % reached with 0 % collision on random, u_trap; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, glass_office; collision 0-55 %. Top of its group on random, u_trap, warehouse, glass_office."
+    ],
+    "needs_prior_map": false
+   },
+   "mppi": {
+    "what": "MPPI: samples a few hundred velocity sequences over 2 s, scores them against the range-built map and B, and blends them by cost. No global plan.",
+    "needs": "No prior map. A range scan and a good pose. numpy only, no QP solver.",
+    "good": "Open clutter.",
+    "fails": "A local controller: stays in U traps and maze dead ends.",
+    "src": [
+     "samples/close-area-planner-mppi/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, forest; <= 20 % reached or >= 20 % collision on u_trap, warehouse, maze, glass_office; collision 0 % everywhere. Top of its group on forest.",
+     "crazyflie: >= 90 % reached with 0 % collision on forest; <= 20 % reached or >= 20 % collision on random, u_trap, narrow_gap, office, warehouse, maze, glass_office; collision 0-100 %. Top of its group on forest."
+    ],
+    "needs_prior_map": false
+   },
+   "mppi_astar": {
+    "what": "MPPI that tracks a lookahead point on the unknown-map A* path instead of B.",
+    "needs": "No prior map. A range scan and a good pose.",
+    "good": "Reaches about as often as the unknown-map A* and often sooner, with smooth model-aware setpoints (sample README).",
+    "fails": "With 4 beams it collides more than the unknown-map A* (sample README).",
+    "src": [
+     "samples/close-area-planner-mppi/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, narrow_gap, office, forest, maze, glass_office; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, narrow_gap, office, warehouse, forest, maze, glass_office.",
+     "crazyflie: >= 90 % reached with 0 % collision on forest; <= 20 % reached or >= 20 % collision on random, u_trap, narrow_gap, office, warehouse, maze, glass_office; collision 0-100 %. Top of its group on forest."
+    ],
+    "needs_prior_map": false
+   },
+   "hybrid_astar": {
+    "what": "Hybrid A* over x, y and heading with turn-rate-limited arcs, on the range-built map and the area geofence.",
+    "needs": "No prior map. A range scan and a good pose.",
+    "good": "A vehicle that cannot turn in place at speed.",
+    "fails": "For a multirotor it reached B less often than A* + follower in the sample's runs (sample README).",
+    "src": [
+     "samples/close-area-planner-hybrid-astar/README.md",
+     "samples/close-area-benchmark/README.md"
+    ],
+    "matrix": [
+     "ideal: >= 90 % reached with 0 % collision on random, u_trap, office, forest, maze; <= 20 % reached or >= 20 % collision on no family; collision 0 % everywhere. Top of its group on random, u_trap, forest.",
+     "crazyflie: >= 90 % reached with 0 % collision on u_trap; <= 20 % reached or >= 20 % collision on narrow_gap, office, warehouse, glass_office; collision 0-75 %. Top of its group on u_trap."
     ],
     "needs_prior_map": false
    }
@@ -4384,14 +6395,14 @@
     "what": "72 rays, 360 deg, 6 m range, 0.02 m noise, 2 % dropout. Sees every material, glass included. Think of a 2D lidar.",
     "impact": "The prior-map planners do not read it. Map-free planners do best here.",
     "by_family": {
-     "random": "Best map-free planner dstar_lite: 100 % reached, 0 % collision. 8 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "u_trap": "Best map-free planner astar_unknown: 100 % reached, 0 % collision. 6 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "narrow_gap": "Best map-free planner astar_unknown: 90 % reached, 0 % collision. 2 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "office": "Best map-free planner astar_unknown: 95 % reached, 0 % collision. 2 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "warehouse": "Best map-free planner dstar_lite: 55 % reached, 0 % collision. 0 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "forest": "Best map-free planner dstar_lite: 100 % reached, 0 % collision. 8 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "maze": "Best map-free planner astar_unknown: 95 % reached, 0 % collision. 2 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "glass_office": "Best map-free planner dstar_lite: 95 % reached, 0 % collision. 2 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded)."
+     "random": "Best map-free planner thetastar_unknown: 100 % reached, 0 % collision. 13 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "u_trap": "Best map-free planner thetastar_unknown: 100 % reached, 0 % collision. 10 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "narrow_gap": "Best map-free planner mppi_astar: 95 % reached, 0 % collision. 5 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "office": "Best map-free planner mppi_astar: 100 % reached, 0 % collision. 6 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "warehouse": "Best map-free planner mppi_astar: 65 % reached, 0 % collision. 0 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "forest": "Best map-free planner thetastar_unknown: 100 % reached, 0 % collision. 13 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "maze": "Best map-free planner mppi_astar: 95 % reached, 0 % collision. 6 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "glass_office": "Best map-free planner mppi_astar: 95 % reached, 0 % collision. 6 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded)."
     },
     "src": [
      "samples/close-area-benchmark/README.md"
@@ -4401,14 +6412,14 @@
     "what": "4 cone beams of 27 deg (front, back, left, right), 3 m range, glass and mirrors invisible, dark surfaces seen to 1 m. Like a Crazyflie Multi-ranger deck.",
     "impact": "Holes between beams: map-free planners collide much more than on ideal.",
     "by_family": {
-     "random": "Best map-free planner dstar_lite: 100 % reached, 0 % collision. 4 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "u_trap": "Best map-free planner astar_unknown_f2: 100 % reached, 0 % collision. 3 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "narrow_gap": "Best map-free planner astar_unknown: 25 % reached, 5 % collision. 0 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "office": "Best map-free planner astar_unknown_f2: 50 % reached, 5 % collision. 0 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "warehouse": "Best map-free planner bug2: 15 % reached, 20 % collision. 0 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "forest": "Best map-free planner dstar_lite: 100 % reached, 0 % collision. 3 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "maze": "Best map-free planner astar_unknown_f2: 55 % reached, 0 % collision. 0 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
-     "glass_office": "Best map-free planner dstar_lite: 10 % reached, 65 % collision. 0 of 10 map-free planners reach >= 80 % with < 10 % collision (straight excluded)."
+     "random": "Best map-free planner thetastar_unknown: 100 % reached, 0 % collision. 7 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "u_trap": "Best map-free planner lazy_thetastar_unknown: 100 % reached, 0 % collision. 6 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "narrow_gap": "Best map-free planner astar_unknown: 25 % reached, 5 % collision. 0 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "office": "Best map-free planner astar_unknown_f2: 50 % reached, 5 % collision. 0 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "warehouse": "Best map-free planner lazy_thetastar_unknown: 30 % reached, 20 % collision. 0 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "forest": "Best map-free planner mppi: 100 % reached, 0 % collision. 7 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "maze": "Best map-free planner thetastar_unknown: 65 % reached, 10 % collision. 0 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded).",
+     "glass_office": "Best map-free planner lazy_thetastar_unknown: 30 % reached, 55 % collision. 0 of 15 map-free planners reach >= 80 % with < 10 % collision (straight excluded)."
     },
     "src": [
      "samples/close-area-benchmark/README.md"

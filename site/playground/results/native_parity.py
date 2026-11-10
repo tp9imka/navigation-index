@@ -39,6 +39,9 @@ DWABUG = os.path.join(ROOT, "samples", "close-area-planner-dwa-bug")
 DSTAR = os.path.join(ROOT, "samples", "close-area-planner-dstar")
 SAMPLING = os.path.join(ROOT, "samples", "close-area-planner-sampling")
 RELOC = os.path.join(ROOT, "samples", "close-area-relocalize")
+THETASTAR = os.path.join(ROOT, "samples", "close-area-planner-thetastar")
+MPPI = os.path.join(ROOT, "samples", "close-area-planner-mppi")
+HYBRID = os.path.join(ROOT, "samples", "close-area-planner-hybrid-astar")
 BENCH = os.path.join(ROOT, "samples", "close-area-benchmark", "bench.py")
 KEYS = ("outcome", "time_to_goal_s", "duration_s", "min_clearance_m", "path_length_m")
 
@@ -94,7 +97,8 @@ def driver_ns():
     if PG not in sys.path:                 # pg_reloc.py, as /home/pyodide in the browser
         sys.path.insert(0, PG)
     ns = {"REACTIVE_DIR": REACTIVE, "FILTER_DIR": SAFETY, "DWABUG_DIR": DWABUG, "DSTAR_DIR": DSTAR,
-          "SAMPLING_DIR": SAMPLING, "RELOC_DIR": RELOC, "__name__": "playground_driver"}
+          "SAMPLING_DIR": SAMPLING, "RELOC_DIR": RELOC,
+          "THETASTAR_DIR": THETASTAR, "MPPI_DIR": MPPI, "HYBRID_DIR": HYBRID, "__name__": "playground_driver"}
     exec(compile(src, "worker.js:DRIVER_PY", "exec"), ns)
     return ns
 

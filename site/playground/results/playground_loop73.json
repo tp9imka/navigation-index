@@ -1,0 +1,369 @@
+{
+ "date": "2026-11-10T06:09:04.462Z",
+ "input": "synthetic",
+ "page": "http://127.0.0.1:8776/site/playground/index.html?pyodide=cdn",
+ "native": "native_parity_loop73.json",
+ "host": {
+  "cpus": 16,
+  "loadavg": [
+   45.8,
+   38.9,
+   39.5
+  ]
+ },
+ "chrome": "Chrome/140.0.7339.208",
+ "env": {
+  "pyodide": "314.0.7",
+  "python": "3.14.2",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "load_errors": {},
+  "imports_ms": {
+   "scipy_ndimage": 790.3,
+   "arena": 41,
+   "reactive": 3.8,
+   "sample_planners": 264.3,
+   "safety_filter": 357
+  },
+  "arena_files": 42
+ },
+ "parity": [
+  {
+   "world": "random_0",
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8833,
+    "path_length_m": 24.123
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.08,
+    "duration_s": 17.08,
+    "min_clearance_m": 0.8833,
+    "path_length_m": 24.123
+   },
+   "same": true,
+   "browser_wall_s": 3.28,
+   "worker_ms": 3284,
+   "native_wall_s": 2.059,
+   "sim_s": 17.08
+  },
+  {
+   "world": "maze_0",
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8223,
+    "path_length_m": 39.463
+   },
+   "same": true,
+   "browser_wall_s": 9.873,
+   "worker_ms": 9885,
+   "native_wall_s": 6.214,
+   "sim_s": 31.88
+  },
+  {
+   "world": "random_0",
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.12,
+    "duration_s": 17.12,
+    "min_clearance_m": 0.8494,
+    "path_length_m": 24.098
+   },
+   "same": true,
+   "browser_wall_s": 2.268,
+   "worker_ms": 2271,
+   "native_wall_s": 1.401,
+   "sim_s": 17.12
+  },
+  {
+   "world": "maze_0",
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.88,
+    "duration_s": 31.88,
+    "min_clearance_m": 0.8208,
+    "path_length_m": 39.448
+   },
+   "same": true,
+   "browser_wall_s": 6.253,
+   "worker_ms": 6264,
+   "native_wall_s": 3.616,
+   "sim_s": 31.88
+  },
+  {
+   "world": "random_0",
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8919,
+    "path_length_m": 24.653
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 17.6,
+    "duration_s": 17.6,
+    "min_clearance_m": 0.8919,
+    "path_length_m": 24.653
+   },
+   "same": true,
+   "browser_wall_s": 10.179,
+   "worker_ms": 10182,
+   "native_wall_s": 6.44,
+   "sim_s": 17.6
+  },
+  {
+   "world": "maze_0",
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.78,
+    "duration_s": 33.78,
+    "min_clearance_m": 0.7908,
+    "path_length_m": 40.487
+   },
+   "same": true,
+   "browser_wall_s": 30.727,
+   "worker_ms": 30737,
+   "native_wall_s": 19.599,
+   "sim_s": 33.78
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.341,
+    "path_length_m": 24.051
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.82,
+    "duration_s": 20.82,
+    "min_clearance_m": 0.341,
+    "path_length_m": 24.051
+   },
+   "same": true,
+   "browser_wall_s": 1.673,
+   "worker_ms": 1677,
+   "native_wall_s": 1.112,
+   "sim_s": 20.82
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.441
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 21.02,
+    "min_clearance_m": 0.6542,
+    "path_length_m": 9.441
+   },
+   "same": true,
+   "browser_wall_s": 1.673,
+   "worker_ms": 1680,
+   "native_wall_s": 1.083,
+   "sim_s": 21.02
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   },
+   "same": true,
+   "browser_wall_s": 5.321,
+   "worker_ms": 5325,
+   "native_wall_s": 3.122,
+   "sim_s": 20.24
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "same": true,
+   "browser_wall_s": 10.177,
+   "worker_ms": 10185,
+   "native_wall_s": 5.684,
+   "sim_s": 31.28
+  },
+  {
+   "world": "random_0",
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.74,
+    "duration_s": 18.74,
+    "min_clearance_m": 0.6417,
+    "path_length_m": 24.371
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.74,
+    "duration_s": 18.74,
+    "min_clearance_m": 0.6417,
+    "path_length_m": 24.371
+   },
+   "same": true,
+   "browser_wall_s": 1.084,
+   "worker_ms": 1092,
+   "native_wall_s": 0.868,
+   "sim_s": 18.74
+  },
+  {
+   "world": "maze_0",
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 39.26,
+    "duration_s": 39.26,
+    "min_clearance_m": 0.2553,
+    "path_length_m": 38.439
+   },
+   "same": true,
+   "browser_wall_s": 2.262,
+   "worker_ms": 2285,
+   "native_wall_s": 1.932,
+   "sim_s": 39.26
+  }
+ ],
+ "console": [
+  "exception: {\"exceptionId\":1,\"text\":\"Uncaught (in promise)\",\"lineNumber\":1020,\"columnNumber\":9,\"scriptId\":\"7\",\"url\":\"http://127.0.0.1:8776/site/playground/playground.js?v=20261110\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"parityNote\",\"scriptId\":\"7\",\"url\":\"http://127.0.0.1:8776/site/playground/playground.js?v=20261110\",\"lineNumber\":1020,\"columnNumber\":9}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of null (reading 'forEach')\\n    at parityNote (http://127.0.0.1:8776/site/playground/playground.js?v=20261110:1021:10)\",\"objectId"
+ ],
+ "summary": "12/12 cases identical (browser = native)",
+ "slow": []
+}
