@@ -1,5 +1,7 @@
 # Judge drill: close-area A=>B, relocalization pitch (H1)
 
+For the default toolkit pitch (decided 2026-11-09 evening) use [judge-drill-toolkit.md](judge-drill-toolkit.md); this page is for the H1 variant.
+
 Use this at H+36 to rehearse the hard questions for the close-area pitch. The pitch leads with
 relocalization after VIO loss (H1 in [close-area-story.md](close-area-story.md#h1-relocalization-after-vio-loss-the-pivot-if-the-kill-test-fails)),
 because the safety-filter headline failed on held-out seeds. Every answer below is 2-4 sentences,

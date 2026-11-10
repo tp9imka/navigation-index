@@ -42,7 +42,7 @@ Contents: [Facts that hold either way](#0-facts-that-hold-either-way) - [Story](
 2. **H+26.** Write the five beats for the chosen story on the wall, one line each.
 3. **H+30.** Fill the 3-minute skeleton (section 4, or H1's own skeleton) with what actually runs.
    Record the backup video ([demo-script-close-area.md](../demo-script-close-area.md#recording-the-backup)).
-4. **H+36.** Rehearse with [judge-drill-close-area.md](judge-drill-close-area.md) (15 questions with numbers): one person asks, the answerer has 20 s.
+4. **H+36.** Rehearse with [judge-drill-toolkit.md](judge-drill-toolkit.md) (11 questions on the toolkit pitch) and, if the brief is VIO loss, [judge-drill-close-area.md](judge-drill-close-area.md) (15 questions on H1): one person asks, the answerer has 20 s.
    Any answer that still says "pending" is either filled or reworded to "not measured".
 5. **H+40.** Score with [judging-self-assessment.md](../judging-self-assessment.md) and copy every
    number into the [one-pager](one-pager-template.md) and `runs/results.md`.
@@ -254,8 +254,8 @@ For the section 1 story. H1 has its own skeleton in section 3. Same beats as
 | 0:00-0:20 | Problem | The one-line story (or the chosen hook). The platform and sensors the organisers gave us | Title slide: top-down view of the course, A and B marked |
 | 0:20-0:40 | Why it matters | "Estimation broke past competitions, and reported covariance is overconfident." One hub number with its label (section 6, rows C1-C2) | One slide, one number, label in the corner |
 | 0:40-1:00 | What we built | planner => safety filter => autopilot; nav monitor => margin and speed cap. Say which boxes are real and which are stubs. Say where each box runs | Architecture slide |
-| 1:00-2:00 | Live demo | Same seed, two arms side by side; VIO fault injected; covariance-margin arm breaches the unseen obstacle, ours widens, slows, holds, reaches B; then our failure case | Sim view full screen |
-| 2:00-2:35 | Honest numbers | Ours vs PX4-CBF-style vs Belief-CBF-style, layouts x fault cases, `[synthetic]` or `[SITL]`, stuck rate, one "not measured". On seed 0: collisions 0 % vs 11 % (F2) and 9 % (F3) on jumps; reach 20 % vs 33 % (F2) | Results table |
+| 1:00-2:00 | Live demo | The 2-minute toolkit demo, compressed to 60 s: room => world JSON => Solver (Import, Quick, Pareto view, Recommend) => `make first-flight` => score line. Drop the sketch image, Animate race and the pack beat, as the script says for a short slot. The two-arm safety-filter demo is retired: F5 failed its kill test (1.7 % [0.7, 3.8] collisions on jump faults against a 1 % bar, `[synthetic]`, [kill_e_tables.md](../../samples/close-area-safety-filter/results/kill_e_tables.md)) | Rows of [demo-script-close-area.md](../demo-script-close-area.md#script) |
+| 2:00-2:35 | Honest numbers | The demo's own numbers, all `[synthetic]`, one map: 9 planners tied at 5/5 on the hall, Pareto view names 2; pick `thetastar_known` 5/5, median 21.90 s, narrowest passage 0.65 m => `ARM=F0` ([recommend.md](../../site/solver/results/import_hall_8x6/recommend.md)); pack: `astar_known` 10/10 still NOT PROVEN, needs 35 runs ([pack_hall_8x6.md](../../samples/close-area-benchmark/results/pack_hall_8x6.md)). One "not measured": no SITL, no flight. Judge prep: [judge-drill-toolkit.md](judge-drill-toolkit.md) | Table from [numbers on screen](../demo-script-close-area.md#numbers-on-screen-and-where-they-come-from) |
 | 2:35-3:00 | What's next | Runtime-assurance path, next three steps, scope line ("the vehicle's own navigation only") | Path-to-product slide ([path-to-product.md section 6](../../docs/path-to-product.md#6-the-path-to-product-slide)) |
 
 Cut order if over time: "What we built" shrinks to one sentence first. "Honest numbers" never
