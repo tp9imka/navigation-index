@@ -11,3 +11,4 @@ site/playground/pyodide-local/
 
 # venue kit zip (tools/venue_kit.py bundle)
 dist/
+navkit-cache/

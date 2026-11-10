@@ -43,7 +43,7 @@ def selection(definition, manifest):
     return [items[i] for i in definition['prep_items']]
 
 
-def run_command(argv, cwd, env, folder, commands, timeout=1800):
+def run_command(argv, cwd, env, folder, commands, timeout=1800, ok_returncodes=(0,)):
     started = time.monotonic()
     log = folder / ('command-%02d.log' % len(commands))
     entry = dict(argv=argv, cwd=str(cwd), log=str(log), returncode=None)
@@ -57,9 +57,40 @@ def run_command(argv, cwd, env, folder, commands, timeout=1800):
             output.write(str(e))
     entry['elapsed_s'] = round(time.monotonic() - started, 4)
     commands.append(entry)
-    if entry['returncode']:
+    if entry['returncode'] not in ok_returncodes:
         excerpt = log.read_text(errors='replace')[-1800:]
         raise ValueError(f"command exited {entry['returncode']}; log {log}\n{excerpt}")
+
+
+def tree_bytes(path):
+    """Bytes under path, symlinks counted as links (a venv's bin/python is not the interpreter)."""
+    path = Path(path)
+    if not path.is_dir():
+        return path.lstat().st_size if path.exists() else 0
+    return sum((Path(d) / f).lstat().st_size for d, _, files in os.walk(path) for f in files)
+
+
+def run_step(command, variables, env, folder, commands):
+    """One definition command; optional name, skip_unless_exists guard and measure path."""
+    argv = [s.format(**variables) for s in command['argv']]
+    cwd = command['cwd'].format(**variables)
+    guard = command.get('skip_unless_exists')
+    if guard and not Path(guard.format(**variables)).exists():
+        commands.append(dict(name=command.get('name'), argv=argv, cwd=cwd, returncode=None,
+                             skipped='not found: ' + guard.format(**variables)))
+        return
+    if command.get('env'):
+        env = dict(env, **{k: v.format(**variables) for k, v in command['env'].items()})
+    try:
+        run_command(argv, cwd, env, folder, commands, ok_returncodes=tuple(command.get('ok_returncodes', [0])))
+    finally:
+        entry = commands[-1]
+        if command.get('name'):
+            entry['name'] = command['name']
+        if command.get('measure'):
+            measured = command['measure'].format(**variables)
+            entry['measured_path'] = measured
+            entry['measured_bytes'] = tree_bytes(measured)
 
 
 def runtime(python, packages, tools=None):
@@ -135,8 +166,8 @@ def install_runtime(items, python, repo, cache, pip_platform, env, folder, comma
         return
     wheels = cache / 'pip' / pip_platform
     for item in items:
-        if item['type'] != 'pip':
-            continue
+        if item['type'] != 'pip' or item.get('python_version'):
+            continue  # a python_version wheel set is for venvs the rehearsal creates, never --python
         vcs_wheels = []
         for req in item.get('vcs', []):
             name = req.split('@', 1)[0].strip().lower().replace('-', '_')
@@ -220,6 +251,7 @@ def main(argv=None):
             known_download_bytes=sum(i.get('size') or 0 for i in items),
             unknown_size_items=[i['id'] for i in items if not i.get('size_complete')],
             weights=definition.get('weights', 'none'), commands=definition['rehearse_commands'],
+            browser=definition.get('browser'),
             offline_ready=False), indent=2))
         return 0
     repo, cache = Path(a.repo).resolve(), Path(a.cache).resolve()
@@ -231,7 +263,12 @@ def main(argv=None):
     run = folder / ('run-' + str(time.time_ns()))
     run.mkdir()
     variables = dict(repo=str(repo), cache=str(cache), python=python, run=str(run),
-                     kit=str(KIT), pip_platform=a.pip_platform)
+                     kit=str(KIT), pip_platform=a.pip_platform,
+                     uv_platform={'macos-arm64': 'aarch64-apple-darwin', 'linux-amd64': 'x86_64-manylinux_2_28',
+                                  'linux-arm64': 'aarch64-manylinux_2_28'}.get(a.pip_platform, ''),
+                     # uv's apple-darwin target defaults to macOS 13; match the manifest's wheel tag.
+                     macos_target='.'.join(next((t.split('_')[1:3] for t in manifest.get('pip_platforms', {})
+                                                 .get('macos-arm64', []) if t.startswith('macosx_')), ['14', '0'])))
     env = dict(os.environ, TORCH_HOME=str(cache / 'torch'), PYTHON=python,
                PIP_NO_INDEX='1', HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1')
     if a.action == 'prepare' and not a.cached_only:
@@ -259,11 +296,21 @@ def main(argv=None):
             if items and not a.cached_only:
                 if any(i['type'] == 'pip' for i in items) and not a.pip_platform:
                     raise ValueError('unknown pip platform; select a supported --pip-platform')
-                run_command([sys.executable, str(KIT / 'prep.py'), '--manifest', str(selected_path),
-                    '--out', str(cache), '--repo', str(repo), '--profile', 'full', '--pip', shlex.join([python, '-m', 'pip']),
-                    '--python-version', '.'.join(rt['python'].split('.')[:2])]
-                    + (['--pip-platforms', a.pip_platform] if a.pip_platform else []),
-                    repo, env, run, receipt['commands'])
+                # Pip items may pin their own python_version (wheel sets for venvs on another
+                # CPython minor); prep.py downloads one version per call, into the same pip/<platform>/.
+                groups = {}
+                for item in items:
+                    groups.setdefault(item.get('python_version') if item['type'] == 'pip' else None, []).append(item)
+                for version, group in groups.items():
+                    group_path = selected_path
+                    if list(groups) != [None]:
+                        group_path = folder / ('manifest-py%s.json' % (version or 'default'))
+                        group_path.write_text(json.dumps(dict(manifest, items=group), indent=2) + '\n')
+                    run_command([sys.executable, str(KIT / 'prep.py'), '--manifest', str(group_path),
+                        '--out', str(cache), '--repo', str(repo), '--profile', 'full', '--pip', shlex.join([python, '-m', 'pip']),
+                        '--python-version', version or '.'.join(rt['python'].split('.')[:2])]
+                        + (['--pip-platforms', a.pip_platform] if a.pip_platform else []),
+                        repo, env, run, receipt['commands'])
             unpack(definition, cache)
             install_runtime(items, python, repo, cache, a.pip_platform, env, run, receipt['commands'])
             image_items = [i for i in items if i['type'] == 'docker-build']
@@ -294,13 +341,17 @@ def main(argv=None):
             receipt['inputs'] = inventory(definition, items, repo, cache, a.pip_platform)
             if receipt['inputs'] != prepared['inputs']:
                 raise ValueError('input hashes changed or assets added/removed; run prepare again')
+            if a.action == 'verify':
+                for command in definition.get('verify_commands', []):
+                    run_step(command, variables, env, run, receipt['commands'])
             if a.action == 'rehearse':
                 started_ns = time.time_ns()
                 for command in definition['rehearse_commands']:
-                    run_command([s.format(**variables) for s in command['argv']],
-                                command['cwd'].format(**variables), env, run, receipt['commands'])
+                    run_step(command, variables, env, run, receipt['commands'])
                 receipt['outputs'] = validate_outputs(definition['expected_outputs'], variables, started_ns)
                 receipt['offline_ready'] = bool(a.network_disabled and not a.fixture)
+        cache_inputs = [k.split('/', 1)[1] for k in receipt.get('inputs', {}) if k.startswith('cache/')]
+        receipt['cache_input_bytes'] = sum((cache / rel).stat().st_size for rel in cache_inputs)
         receipt['success'] = True
     except (ValueError, OSError, KeyError, subprocess.TimeoutExpired, zipfile.BadZipFile, lzma.LZMAError) as e:
         receipt['errors'].append(str(e))

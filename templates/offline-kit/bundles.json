@@ -509,6 +509,402 @@
           "license": "Apache-2.0"
         }
       ]
+    },
+    {
+      "id": "close-area",
+      "sample": "close-area-arena",
+      "prep_items": [
+        "pip:close-area-py312",
+        "pip:close-area-py311"
+      ],
+      "extra_items": [
+        {
+          "id": "pip:close-area-py312",
+          "type": "pip",
+          "tier": "standard",
+          "license": "per package (see PyPI metadata)",
+          "source": "samples/close-area-arena/requirements.txt, samples/close-area-arena/requirements-image.txt, samples/close-area-benchmark/requirements.txt",
+          "requirements": [
+            "numpy>=2.0",
+            "scipy>=1.13",
+            "matplotlib>=3.8",
+            "Pillow>=10.0",
+            "osqp>=1.0"
+          ],
+          "vcs": [],
+          "size": null,
+          "size_complete": false,
+          "python_version": "3.12",
+          "note": "Arena (with the image extra) and benchmark venvs; their published runs used CPython 3.12."
+        },
+        {
+          "id": "pip:close-area-py311",
+          "type": "pip",
+          "tier": "standard",
+          "license": "per package (see PyPI metadata)",
+          "source": "samples/close-area-arena/requirements.txt (via templates/flight-repo/Makefile)",
+          "requirements": [
+            "numpy>=2.0",
+            "scipy>=1.13",
+            "matplotlib>=3.8"
+          ],
+          "vcs": [],
+          "size": null,
+          "size_complete": false,
+          "python_version": "3.11",
+          "note": "flight-repo .venv: its Makefile runs a bare uv venv, which picked CPython 3.11.15 for every published flight-repo result. Pure-Python wheels are shared with the 3.12 set in the same pip/<platform>/."
+        }
+      ],
+      "repo_inputs": [
+        "samples/close-area-arena/*.py",
+        "samples/close-area-arena/requirements*.txt",
+        "samples/close-area-arena/rooms/hall_8x6.json",
+        "samples/close-area-arena/rooms/hall_8x6.world.json",
+        "samples/close-area-benchmark/*.py",
+        "samples/close-area-benchmark/requirements.txt",
+        "samples/close-area-benchmark/packs/hall_8x6.json",
+        "samples/close-area-benchmark/results/pack_hall_8x6.json",
+        "samples/close-area-safety-filter/*.py",
+        "samples/close-area-planner-*/*.py",
+        "templates/flight-repo/Makefile",
+        "templates/flight-repo/main.py",
+        "templates/flight-repo/flightloop/*.py",
+        "tools/venue_kit.py"
+      ],
+      "cache_inputs": [
+        "pip/{pip_platform}/*.whl",
+        "pip/{pip_platform}/numpy-*-cp312-*.whl",
+        "pip/{pip_platform}/scipy-*-cp312-*.whl",
+        "pip/{pip_platform}/matplotlib-*-cp312-*.whl",
+        "pip/{pip_platform}/contourpy-*-cp312-*.whl",
+        "pip/{pip_platform}/kiwisolver-*-cp312-*.whl",
+        "pip/{pip_platform}/pillow-*-cp312-*.whl",
+        "pip/{pip_platform}/osqp-*-cp312-*.whl",
+        "pip/{pip_platform}/numpy-*-cp311-*.whl",
+        "pip/{pip_platform}/scipy-*-cp311-*.whl",
+        "pip/{pip_platform}/matplotlib-*-cp311-*.whl",
+        "pip/{pip_platform}/contourpy-*-cp311-*.whl",
+        "pip/{pip_platform}/kiwisolver-*-cp311-*.whl"
+      ],
+      "packages": [],
+      "requires_venv": false,
+      "weights": "None: synthetic arena worlds, no models.",
+      "browser": {
+        "item": "browser (Pyodide for site/playground and site/solver)",
+        "prepare": "python3 tools/venue_kit.py prepare",
+        "verify": "python3 tools/venue_kit.py verify",
+        "target": "site/playground/pyodide-local/",
+        "doc": "docs/day0-runbook.md#browser-tools-offline",
+        "note": "Separate tool, not fetched by prep.py; rehearse runs its verify only when the target exists."
+      },
+      "runtime_tools": {
+        "uv": [
+          "uv",
+          "--version"
+        ],
+        "cpython_3_12": [
+          "uv",
+          "python",
+          "find",
+          "--system",
+          "--no-python-downloads",
+          "3.12"
+        ],
+        "cpython_3_11": [
+          "uv",
+          "python",
+          "find",
+          "--system",
+          "--no-python-downloads",
+          "3.11"
+        ],
+        "make": [
+          "make",
+          "--version"
+        ]
+      },
+      "prepare_commands": [],
+      "verify_commands": [
+        {
+          "name": "resolve-py312",
+          "argv": [
+            "uv",
+            "pip",
+            "compile",
+            "--offline",
+            "--no-cache",
+            "--no-index",
+            "--no-build",
+            "--find-links",
+            "{cache}/pip/{pip_platform}",
+            "--python-version",
+            "3.12",
+            "--python-platform",
+            "{uv_platform}",
+            "--quiet",
+            "-o",
+            "{run}/resolved-py312.txt",
+            "{repo}/samples/close-area-arena/requirements-image.txt",
+            "{repo}/samples/close-area-benchmark/requirements.txt"
+          ],
+          "cwd": "{run}",
+          "env": {
+            "MACOSX_DEPLOYMENT_TARGET": "{macos_target}"
+          }
+        },
+        {
+          "name": "resolve-py311",
+          "argv": [
+            "uv",
+            "pip",
+            "compile",
+            "--offline",
+            "--no-cache",
+            "--no-index",
+            "--no-build",
+            "--find-links",
+            "{cache}/pip/{pip_platform}",
+            "--python-version",
+            "3.11",
+            "--python-platform",
+            "{uv_platform}",
+            "--quiet",
+            "-o",
+            "{run}/resolved-py311.txt",
+            "{repo}/samples/close-area-arena/requirements.txt"
+          ],
+          "cwd": "{run}",
+          "env": {
+            "MACOSX_DEPLOYMENT_TARGET": "{macos_target}"
+          }
+        }
+      ],
+      "rehearse_commands": [
+        {
+          "name": "arena-venv",
+          "argv": [
+            "uv",
+            "venv",
+            "--offline",
+            "--no-python-downloads",
+            "--python",
+            "3.12",
+            "{run}/venv-arena"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "arena-install",
+          "argv": [
+            "uv",
+            "pip",
+            "install",
+            "--offline",
+            "--no-cache",
+            "--no-index",
+            "--no-build",
+            "--find-links",
+            "{cache}/pip/{pip_platform}",
+            "--python",
+            "{run}/venv-arena/bin/python",
+            "-r",
+            "{repo}/samples/close-area-arena/requirements-image.txt"
+          ],
+          "cwd": "{run}",
+          "measure": "{run}/venv-arena"
+        },
+        {
+          "name": "arena-imports",
+          "argv": [
+            "{run}/venv-arena/bin/python",
+            "-c",
+            "import importlib, importlib.metadata as m, json; mods = {{'numpy': 'numpy', 'scipy': 'scipy', 'matplotlib': 'matplotlib', 'pillow': 'PIL.Image'}}; [importlib.import_module(x) for x in mods.values()]; print(json.dumps({{p: m.version(p) for p in mods}}))"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "arena-smoke",
+          "argv": [
+            "{run}/venv-arena/bin/python",
+            "-m",
+            "unittest",
+            "test_smoke",
+            "-v"
+          ],
+          "cwd": "{repo}/samples/close-area-arena"
+        },
+        {
+          "name": "bench-venv",
+          "argv": [
+            "uv",
+            "venv",
+            "--offline",
+            "--no-python-downloads",
+            "--python",
+            "3.12",
+            "{run}/venv-bench"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "bench-install",
+          "argv": [
+            "uv",
+            "pip",
+            "install",
+            "--offline",
+            "--no-cache",
+            "--no-index",
+            "--no-build",
+            "--find-links",
+            "{cache}/pip/{pip_platform}",
+            "--python",
+            "{run}/venv-bench/bin/python",
+            "-r",
+            "{repo}/samples/close-area-benchmark/requirements.txt"
+          ],
+          "cwd": "{run}",
+          "measure": "{run}/venv-bench"
+        },
+        {
+          "name": "bench-imports",
+          "argv": [
+            "{run}/venv-bench/bin/python",
+            "-c",
+            "import importlib, importlib.metadata as m, json; mods = {{'numpy': 'numpy', 'scipy': 'scipy', 'matplotlib': 'matplotlib', 'osqp': 'osqp'}}; [importlib.import_module(x) for x in mods.values()]; print(json.dumps({{p: m.version(p) for p in mods}}))"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "pack-hall_8x6",
+          "argv": [
+            "{run}/venv-bench/bin/python",
+            "pack.py",
+            "run",
+            "packs/hall_8x6.json",
+            "--workers",
+            "4",
+            "--out",
+            "{run}/pack_hall_8x6"
+          ],
+          "cwd": "{repo}/samples/close-area-benchmark",
+          "measure": "{run}/pack_hall_8x6.json",
+          "ok_returncodes": [
+            0,
+            1
+          ],
+          "note": "Exit 1 is the published outcome (no planner passes every criterion); the next step checks the verdicts instead."
+        },
+        {
+          "name": "pack-verdicts-match",
+          "argv": [
+            "{python}",
+            "-c",
+            "import json, sys; get = lambda p: (lambda e: (e['exit_code'], {{k: v['verdict'] for k, v in e['planners'].items()}}))(json.load(open(p))['evaluation']); new, old = get(sys.argv[1]), get(sys.argv[2]); print(json.dumps(dict(fresh=new, committed=old))); sys.exit(0 if new == old else 1)",
+            "{run}/pack_hall_8x6.json",
+            "{repo}/samples/close-area-benchmark/results/pack_hall_8x6.json"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "flight-copy",
+          "argv": [
+            "{python}",
+            "-c",
+            "import os, shutil, sys; shutil.copytree(sys.argv[1], sys.argv[2], ignore=shutil.ignore_patterns('.venv', 'runs', 'results', '__pycache__', '*.md')); os.makedirs(os.path.join(sys.argv[2], 'results'))",
+            "{repo}/templates/flight-repo",
+            "{run}/flight-repo"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "flight-venv",
+          "argv": [
+            "uv",
+            "venv",
+            "--offline",
+            "--no-python-downloads",
+            "--python",
+            "3.11",
+            "{run}/flight-repo/.venv"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "flight-install",
+          "argv": [
+            "uv",
+            "pip",
+            "install",
+            "--offline",
+            "--no-cache",
+            "--no-index",
+            "--no-build",
+            "--find-links",
+            "{cache}/pip/{pip_platform}",
+            "--python",
+            "{run}/flight-repo/.venv/bin/python",
+            "-r",
+            "{repo}/samples/close-area-arena/requirements.txt"
+          ],
+          "cwd": "{run}",
+          "measure": "{run}/flight-repo/.venv"
+        },
+        {
+          "name": "flight-imports",
+          "argv": [
+            "{run}/flight-repo/.venv/bin/python",
+            "-c",
+            "import importlib, importlib.metadata as m, json; mods = {{'numpy': 'numpy', 'scipy': 'scipy', 'matplotlib': 'matplotlib'}}; [importlib.import_module(x) for x in mods.values()]; print(json.dumps({{p: m.version(p) for p in mods}}))"
+          ],
+          "cwd": "{run}"
+        },
+        {
+          "name": "first-flight",
+          "argv": [
+            "make",
+            "first-flight",
+            "PLANNER=bench:dstar_lite",
+            "WORLD={repo}/samples/close-area-arena/rooms/hall_8x6.world.json",
+            "ARM=F0",
+            "HUB={repo}"
+          ],
+          "cwd": "{run}/flight-repo",
+          "measure": "{run}/flight-repo/results"
+        },
+        {
+          "name": "venue-kit-verify",
+          "argv": [
+            "{python}",
+            "{repo}/tools/venue_kit.py",
+            "verify"
+          ],
+          "cwd": "{repo}",
+          "skip_unless_exists": "{repo}/site/playground/pyodide-local"
+        }
+      ],
+      "expected_outputs": [
+        {
+          "path": "{run}/pack_hall_8x6.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/pack_hall_8x6.md",
+          "kind": "nonempty"
+        },
+        {
+          "path": "{run}/flight-repo/results/first_flight_bench_dstar_lite_hall_8x6.world.jsonl",
+          "kind": "nonempty"
+        },
+        {
+          "path": "{run}/flight-repo/results/first_flight_bench_dstar_lite_hall_8x6.world_score.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/flight-repo/results/first_flight_bench_dstar_lite_hall_8x6.world.png",
+          "kind": "nonempty"
+        }
+      ]
     }
   ]
 }

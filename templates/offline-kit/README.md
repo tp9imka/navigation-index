@@ -23,9 +23,10 @@ cache directory (a USB disk is fine) with everything a team may need, before the
 Files: `prep.py` (fetcher, stdlib only), `build_manifest.py` (regenerates `manifest.json` from the
 repo), `manifest.json`, `test_manifest.py`.
 
-For a smaller, rehearsable selection, use [the three starter bundles](../../docs/starter-bundles.md):
-`receiver-log` (real-attack-replay), `vehicle-sim` (golden-demo v2 SITL), and `vision`
-(e2e-visual-nav-vpair). `bundle.py` selects existing prep items plus a few explicit additions from
+For a smaller, rehearsable selection, use [the starter bundles](../../docs/starter-bundles.md):
+`receiver-log` (real-attack-replay), `vehicle-sim` (golden-demo v2 SITL), `vision`
+(e2e-visual-nav-vpair), and `close-area` (the Day-1 Python flow: arena, benchmark pack, one
+flight-repo flight, from cp311 + cp312 wheels in fresh uv venvs). `bundle.py` selects existing prep items plus a few explicit additions from
 `bundles.json`; it reuses this cache, `.prep-state.json`, `SHA256SUMS` and the existing fetchers.
 It adds per-bundle input hashes, runtime versions, command logs and measured receipts under
 `bundles/`. A successful download or cache verification alone never marks a bundle offline-ready.
