@@ -1,0 +1,11 @@
+Check of the proposed close-area-benchmark entries (INTEGRATION.md section b), 2026-11-10, sample venv
+(CPython 3.12.10, numpy 2.5.4, scipy 1.18.1, Apple M3 Max). Nothing in close-area-benchmark was edited.
+
+Method: samples/close-area-benchmark/bench.py imported by path; its _load_sample("close-area-planner-mppi", ["mppi"])
+loaded this sample; "mppi" and "mppi_astar" were added to its PLANNERS dict at runtime with the exact
+lambdas from INTEGRATION.md; its own run_one(name, family, "ideal", index, 0) flew layouts 0-1 of all
+8 families for both entries; each row was compared with results/bench_ideal_0.json (mppi => mppi_none,
+mppi_astar => mppi_astar) on outcome, min clearance and path length.
+(The benchmark's mpc.py did not load in this venv: no osqp. That does not touch these two rows.)
+
+benchmark run_one with runtime-registered entries vs results/bench_ideal_0.json: 32/32 identical

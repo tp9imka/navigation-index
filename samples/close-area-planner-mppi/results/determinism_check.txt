@@ -1,0 +1,3 @@
+Determinism check, 2026-11-10: `python bench.py --preset ideal --layouts 20 --seed 0 --workers 14 --out <scratch dir>` run a second time and compared run by run with results/bench_ideal_0.json on outcome, min clearance, path length and time to goal (timings excluded).
+
+identical runs 480 of 480

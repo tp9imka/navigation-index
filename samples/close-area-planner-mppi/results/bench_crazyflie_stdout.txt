@@ -1,0 +1,10 @@
+| planner | family | layouts | reached % | collision % | stuck % | timeout % | median time to B s | median path m | median min clearance m | step ms median | step ms p95 | A* replan ms median | A* replan ms p95 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| astar_unknown | random | 20 | 100.0 | 0.0 | 0.0 | 0.0 | 22.51 | 24.63 | 0.59 | 0.33 | 84.6 | 41.14 | 112.74 |
+| astar_unknown | office | 20 | 35.0 | 25.0 | 35.0 | 5.0 | 18.84 | 7.6 | 0.225 | 0.39 | 22.24 | 11.75 | 38.44 |
+| mppi_none | random | 20 | 55.0 | 40.0 | 5.0 | 0.0 | 20.3 | 23.39 | 0.422 | 3.85 | 8.64 | - | - |
+| mppi_none | office | 20 | 5.0 | 75.0 | 20.0 | 0.0 | 9.9 | 2.79 | 0.143 | 3.89 | 7.86 | - | - |
+| mppi_astar | random | 20 | 80.0 | 20.0 | 0.0 | 0.0 | 20.37 | 23.95 | 0.535 | 4.98 | 86.36 | 42.75 | 101.22 |
+| mppi_astar | office | 20 | 10.0 | 85.0 | 5.0 | 0.0 | 8.1 | 4.08 | 0.142 | 5.24 | 28.28 | 11.58 | 34.96 |
+parity {'compared': 40, 'identical': 40}  wall 15.2 s  wrote results/bench_crazyflie_0.json, .md
+.venv/bin/python bench.py --preset crazyflie --families random,office  20  0   159.46s user 3.14s system 1030% cpu 15.786 total

@@ -1,0 +1,10 @@
+| planner | family | layouts | reached % | collision % | stuck % | timeout % | median time to B s | median path m | median min clearance m | step ms median | step ms p95 | A* replan ms median | A* replan ms p95 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| astar_unknown | random | 5 | 100.0 | 0.0 | 0.0 | 0.0 | 18.38 | 23.95 | 0.608 | 0.65 | 51.88 | 22.42 | 59.86 |
+| astar_unknown | maze | 5 | 100.0 | 0.0 | 0.0 | 0.0 | 45.64 | 37.73 | 0.582 | 0.48 | 59.13 | 22.01 | 72.35 |
+| mppi_none | random | 5 | 80.0 | 0.0 | 20.0 | 0.0 | 20.3 | 23.95 | 0.572 | 3.77 | 4.03 | - | - |
+| mppi_none | maze | 5 | 0.0 | 0.0 | 100.0 | 0.0 | - | 9.44 | 0.374 | 3.63 | 3.91 | - | - |
+| mppi_astar | random | 5 | 100.0 | 0.0 | 0.0 | 0.0 | 20.24 | 23.95 | 0.592 | 4.18 | 57.09 | 22.64 | 60.69 |
+| mppi_astar | maze | 5 | 100.0 | 0.0 | 0.0 | 0.0 | 31.28 | 35.59 | 0.372 | 4.33 | 64.3 | 23.01 | 72.77 |
+parity {'compared': 10, 'identical': 10}  wall 65.8 s  wrote results/timing_0.json, .md
+.venv/bin/python bench.py --timing --workers 1  65.71s user 0.29s system 99% cpu 1:06.49 total
