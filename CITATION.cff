@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use Navigation Index, please cite it as below."
+type: software
+title: "Navigation Index"
+authors:
+  - family-names: Antsimonau
+    given-names: Ivan
+    alias: tp9imka
+repository-code: "https://github.com/tp9imka/navigation-index"
+url: "https://navigation-index.pages.dev/"
+license: Apache-2.0
+version: 0.1.0
+# date-released: set to the tag date when v0.1.0 is tagged.
+date-released: 2026-11-11
+abstract: >-
+  An open knowledge hub for navigation of small autonomous vehicles: 923
+  open-source repos and 975 papers, datasets, standards and other resources
+  linked in one graph, 63 runnable samples that say what ran on which data,
+  and a browser Arena that races 21 path planners on a map you draw. Every
+  number is labelled synthetic, SITL or real. Readable by people and by
+  coding agents (llms.txt, MCP server).
+keywords:
+  - navigation
+  - path-planning
+  - obstacle-avoidance
+  - drones
+  - uav
+  - px4
+  - ardupilot
+  - gnss
+  - slam
+  - robotics
+  - pyodide
+  - mcp-server

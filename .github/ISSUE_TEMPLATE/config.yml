@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Live site
+    url: https://navigation-index.pages.dev/
+    about: Search the index and try the Arena (Solver, Playground, Results) before opening an issue.

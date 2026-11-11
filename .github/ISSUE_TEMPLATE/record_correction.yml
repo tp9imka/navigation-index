@@ -1,0 +1,38 @@
+name: Record correction
+description: A catalog record (repo or resource) is wrong.
+title: "[record] "
+labels: ["record-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The record id is on its catalog page and in `python3 tools/query.py show <id>`.
+  - type: input
+    id: record_id
+    attributes:
+      label: Record id
+      placeholder: repo:px4/px4-autopilot or res:groves-pnt-book-2e
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: Quote the field and the wrong text, then the correct text.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: The README, paper, licence file or release page that shows the correct fact.
+      placeholder: https://
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Pull request
+      options:
+        - label: I can open a PR that edits the record in data/ (see CONTRIBUTING.md).
+          required: false

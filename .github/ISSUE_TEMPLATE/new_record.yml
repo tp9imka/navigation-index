@@ -1,0 +1,49 @@
+name: New record
+description: Suggest a repo or resource (paper, dataset, standard, talk, course) for the catalog.
+title: "[new record] "
+labels: ["new-record"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Scope: the vehicle's own navigation, localization, PNT resilience, autonomy,
+        situational awareness, defensive EW and counter-UAS detection.
+        No targeting, homing, intercept or weapons guidance.
+        Search first: `python3 tools/query.py search "<keywords>"`.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - repo
+        - paper
+        - dataset
+        - standard
+        - talk or video
+        - course or book
+        - other resource
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Source link
+      description: Canonical URL (GitHub repo, DOI or arXiv page, dataset page).
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs here
+      description: What it does and who building navigation would use it. One to three sentences.
+    validations:
+      required: true
+  - type: input
+    id: concepts
+    attributes:
+      label: Concepts (optional)
+      description: Concept ids from data/concepts.json, comma-separated.
+      placeholder: concept:terrain-nav, concept:sensor-fusion
+    validations:
+      required: false

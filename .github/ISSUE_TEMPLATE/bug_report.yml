@@ -1,0 +1,49 @@
+name: Bug report
+description: A tool, sample, template or site page does not do what its README says.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A security problem goes through private reporting (SECURITY.md), not here.
+        A wrong catalog record has its own form: "Record correction".
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Path or page, e.g. tools/query.py, samples/close-area-arena, site/solver/.
+      placeholder: samples/close-area-arena/run.py
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command or steps
+      description: The exact command you ran, from which folder, or the clicks on the page.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+      description: What the README or docs say should happen. Link the line if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual output
+      description: Paste the output or traceback as it came out.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and architecture, Python version, browser (for site pages), commit.
+      placeholder: macOS 15 arm64, Python 3.12.4, commit abc1234
+    validations:
+      required: true

@@ -1,0 +1,62 @@
+name: New planner for the benchmark
+description: Propose a planner for samples/close-area-benchmark.
+title: "[planner] "
+labels: ["planner"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Planners code against the Planner interface in samples/close-area-arena/CONTRACT.md.
+        A planner PR runs the full matrix and commits the JSON (CONTRIBUTING.md, "Add a planner to the benchmark").
+        All benchmark results are synthetic.
+  - type: input
+    id: name
+    attributes:
+      label: Planner name
+      placeholder: e.g. FASTER, EGO-Planner, RRT-Connect
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Paper or source
+      description: Paper, reference implementation or textbook section.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Licence
+      description: Licence of the code you would port or reuse. Your own new code lands under Apache-2.0.
+      placeholder: BSD-3-Clause, or "written from the paper"
+    validations:
+      required: true
+  - type: dropdown
+    id: map
+    attributes:
+      label: Map it needs
+      options:
+        - none (reactive)
+        - true prior grid
+        - built from range hits
+        - other (describe below)
+    validations:
+      required: true
+  - type: dropdown
+    id: matrix
+    attributes:
+      label: Will you run the full matrix?
+      description: 8 arena families x 2 sensor presets x 20 layouts, seed 0, via bench.py --add-to.
+      options:
+        - "Yes, I will run it and commit results/matrix_0.json"
+        - "No, I can write the planner but cannot run the matrix"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Expected strengths and weak spots, dependencies, anything else.
+    validations:
+      required: false
