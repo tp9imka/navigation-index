@@ -2,10 +2,11 @@
 
 Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or extending this hub.
 
-Navigation Index is an open navigation knowledge hub for drones and robots: a linked catalog of
-open-source repos, papers, datasets and standards, runnable samples that say what ran on which
-data, and a browser Arena (Solver, Playground) that races path planners on a map. Every number
-is labelled synthetic, SITL or real.
+Navigation Index is open navigation knowledge for drones and robots: a linked catalog, honest
+experiments, and a browser Arena that races path planners on your map. The catalog links
+open-source repos, papers, datasets and standards; the samples say what ran on which data; the
+Arena (Solver, Playground, Results) runs the hub's planners in the browser. Every number is
+labelled synthetic, SITL or real.
 
 ## Given a task statement
 

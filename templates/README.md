@@ -6,7 +6,7 @@ a planning kit. For what to build on, read
 [competition-playbook.md](../docs/competition-playbook.md) and
 [reference-stacks.md](../docs/reference-stacks.md) instead.
 
-## Close-area A=>B (a likely first-day task)
+## Close-area A=>B (a common first task)
 
 For "fly a drone from A to B in a close area, maybe with obstacles", open these in order:
 
