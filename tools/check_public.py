@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail on employer, event, tooling and machine-path wording in tracked, non-generated files.
 
-Rules: loop/specs/public-release.md section 6. Output one `path:line:term` per hit (line 0 = the
+Rules: the public-release spec, hygiene section. Output one `path:line:term` per hit (line 0 = the
 file path itself matches), exit 1 on any hit that the allow-list does not cover.
 
   python3 tools/check_public.py                 # strict: exit 1 on any hit
@@ -52,7 +52,7 @@ TERM_NAMES = [n for n, _ in TERMS]
 GENERATED_PREFIXES = ("catalog/", "graph/", "index/", "reports/", "site/data/")
 GENERATED_FILES = {"INDEX.md", "llms.txt", "samples/README.md", "templates/offline-kit/manifest.json",
                    "docs/integration-cards/README.md", "docs/practical-readiness.md"}
-# loop/ is the private build log; the spec allows wave tags there and wave 5 moves it out of the tree.
+# loop/ was the private build log; it now lives outside the tree and is gitignored.
 SKIP_PREFIXES = ("loop/",)
 MAX_BYTES = 50_000_000  # scan big result JSON too: run logs in them carry paths
 

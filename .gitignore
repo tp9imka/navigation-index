@@ -12,3 +12,6 @@ site/playground/pyodide-local/
 # offline browser kit zip (tools/offline_browser_kit.py bundle)
 dist/
 navkit-cache/
+
+# Driver state lives outside the public tree (private vault).
+loop/
