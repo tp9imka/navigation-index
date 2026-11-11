@@ -1,7 +1,7 @@
 # Samples
 
 Use this when you need runnable code: pick a sample by problem, check its status, deps and
-input type, then run its first command. For the close-area A=>B task (likely on Day 1), start
+input type, then run its first command. For the close-area A=>B task (a common first task), start
 at [close-area-arena](close-area-arena/README.md) (`ran`, synthetic) and the two "Close-area
 A=>B" sections near the end of "By problem":
 [close-area-planner-reactive](close-area-planner-reactive/README.md) and
