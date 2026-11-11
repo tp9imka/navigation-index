@@ -4,7 +4,7 @@
 //   node site/playground/results/measure_playground.mjs
 // Needs Google Chrome at the macOS default path (or CHROME=...), network access to cdn.jsdelivr.net,
 // and the arena venv (for the native run of the hand-drawn world).
-// loop-63: also the VIO loss recovery cases (native_parity.json reloc_cases), the arms compare view, and a
+// Also the VIO loss recovery cases (native_parity.json reloc_cases), the arms compare view, and a
 // third Chrome with cdn.jsdelivr.net mapped to 127.0.0.1 (blocked): automatic retries, then the Retry button;
 // when site/playground/pyodide-local/ exists (README: Offline / blocked CDN) it also loads from there.
 // The main page is opened with ?pyodide=cdn so a vendored folder does not change the CDN measurement.

@@ -123,7 +123,7 @@ def render(rows, recs):
         "",
         f"{len(rows)} cards, one per repo: install, wiring, gotchas, license. Cards were read from "
         "source, docs and issues, not run, unless the card says so. Grouped by the repo's primary "
-        "concept in the index; \"Also\" lists its other concepts. Fit is the index's hackathon fit. "
+        "concept in the index; \"Also\" lists its other concepts. Fit is the index's quick-build fit. "
         "Last push is the GitHub API value stored in the index at build time, not a release date: "
         "check releases on GitHub before you pin a version. License is the card's License row, "
         "shortened; read the card for caveats.",

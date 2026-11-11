@@ -1,16 +1,16 @@
-// Playground worker (loop-48b, ES module worker): runs the hub's real close-area arena (samples/close-area-arena) under
+// Playground worker (ES module worker): runs the hub's real close-area arena (samples/close-area-arena) under
 // Pyodide in a Web Worker, so the page never freezes while Python computes a run.
 // Protocol (postMessage):
 //   page => worker  {type: "run", id, world: <close-area-world/1 dict>, cfg: {planner, preset, fault, filter, seed,
 //                   recovery, max_time_s, vehicle, sensor}}   max_time_s optional: run time limit override in s,
 //                   clamped 10-300; without it the limit comes from world.family (LONG_FAMILIES in DRIVER_PY, as bench.py)
-//                   vehicle optional (loop-75): {radius_m, v_max, a_max, tau}, all four, each clamped to VEHICLE_CLAMP;
+//                   vehicle optional: {radius_m, v_max, a_max, tau}, all four, each clamped to VEHICLE_CLAMP;
 //                   without it run.DEFAULTS["vehicle"]. sensor optional: {beams, fov_deg, max_range_m, min_range_m,
 //                   noise_sigma_m, cone_deg?, dropout?}, clamped to SENSOR_CLAMP; it replaces cfg.preset (which
 //                   is then reported as "custom"). Unknown or missing keys => error naming them
 //                   (samples/close-area-arena/presets.py). The result carries "vehicle" and "sensor" as flown
 //                   (after clamping, with a "clamped" list).
-//                   loop-75b: cfg.yaw optional, "fixed" (default, every sensor) | "look_where_you_go"; the result
+//                   cfg.yaw optional, "fixed" (default, every sensor) | "look_where_you_go"; the result
 //                   carries it as "yaw" (and config.yaw). Every planner inflates obstacles by the flown
 //                   vehicle radius_m for that run (radius_override in DRIVER_PY, restored after the run); the
 //                   result's "inflation" lists the constants set and the planners that have no radius term.
@@ -45,7 +45,7 @@ run_faults = importlib.import_module(P + "run_faults")
 _t2 = time.perf_counter()
 
 class GeofencedAStar(astar.AStarESDF):
-    """close-area-benchmark bench.py GeofencedAStar (loop-75b): astar_esdf(known_map=False) with its
+    """close-area-benchmark bench.py GeofencedAStar: astar_esdf(known_map=False) with its
     log-odds map corner on the area bounds minus 2 m (same 24 m size), instead of the shipped fixed
     corner at (-2.5, -2.5), which left office_0's B outside the map. Subclass built here, sample not edited."""
 
@@ -196,7 +196,7 @@ IMPORT_MS = {"scipy_ndimage": round((_t1 - _t0) * 1e3, 1), "arena": round((_t2 -
              "reactive": round((_t3 - _t2) * 1e3, 1),
              "sample_planners": round((_t3b - _t3) * 1e3, 1), "safety_filter": round((_t4 - _t3b) * 1e3, 1)}
 FILTER_SCAN_EVERY = 3        # physics steps, as close-area-safety-filter/run_kill.py (16.7 Hz filter scan)
-# Run time limit (loop-73b): the same table as close-area-benchmark/bench.py LONG_FAMILIES, so a preset
+# Run time limit: the same table as close-area-benchmark/bench.py LONG_FAMILIES, so a preset
 # world gets the limit its benchmark row had. Other families, and worlds without a family, keep
 # run.DEFAULTS max_time_s (60 s). A run message may override it with cfg.max_time_s, clamped.
 LONG_FAMILIES = {"maze": 120.0, "warehouse": 120.0}
@@ -217,27 +217,27 @@ def max_time_for(doc, override=None):
     return float(run_mod.DEFAULTS["max_time_s"]), "default"
 
 
-# Sensor presets offered by the page (loop-75 adds the two team-facing ones from presets.SENSOR_SPECS).
+# Sensor presets offered by the page (including the two team-facing ones from presets.SENSOR_SPECS).
 PG_PRESETS = ("ideal", "crazyflie", "crazyflie_bright", "depth_cam_87", "lidar_2d")
-# Custom vehicle / sensor from a run message (loop-75): sane ranges, values outside are clamped and
+# Custom vehicle / sensor from a run message: sane ranges, values outside are clamped and
 # listed in the result's "clamped". presets.py then checks the clamped dict (keys, types, min < max).
 VEHICLE_CLAMP = {"radius_m": (0.05, 0.6), "v_max": (0.1, 5.0), "a_max": (0.5, 20.0), "tau": (0.02, 1.0)}
 SENSOR_CLAMP = {"beams": (1, 360), "fov_deg": (1.0, 360.0), "max_range_m": (0.5, 30.0), "min_range_m": (0.0, 5.0),
                 "noise_sigma_m": (0.0, 0.5), "cone_deg": (0.0, 30.0), "dropout": (0.0, 0.5)}
 MIN_RANGE_GAP_M = 0.1         # min_range_m is clamped to at most max_range_m - 0.1
-# Look-where-you-go yaw (loop-75). The range fan is body frame and the planners command yaw_rate 0, so a
+# Look-where-you-go yaw. The range fan is body frame and the planners command yaw_rate 0, so a
 # forward-only sensor would stare at the initial goal bearing all run. With cfg.yaw = "look_where_you_go"
 # the driver sets the setpoint's yaw rate: face the commanded velocity, or the goal when slower than
-# YAW_SLOW_MPS, proportional with YAW_GAIN, capped at YAW_RATE_CAP. loop-75b: opt-in for every sensor (it was
-# on by default for fov < 360 deg in loop-75); fixed yaw was faster in 4 of 4 office_0 / maze_0 runs
+# YAW_SLOW_MPS, proportional with YAW_GAIN, capped at YAW_RATE_CAP. Opt-in for every sensor (it was
+# on by default for fov < 360 deg at first); fixed yaw was faster in 4 of 4 office_0 / maze_0 runs
 # (samples/close-area-arena/results/custom_sensor_0.md).
 YAW_RATE_CAP = 1.0            # rad/s (57 deg/s) [proposal], half of vehicle.Vehicle yaw_rate_max 2.0
 YAW_GAIN = 2.0                # 1/s, yaw rate per rad of heading error [proposal]
 YAW_SLOW_MPS = 0.2            # m/s, below this commanded speed face the goal [proposal]
 FULL_FOV = 2 * math.pi - 1e-9
-YAW_OPTIONS = ("fixed", "look_where_you_go")   # cfg.yaw (loop-75b), default "fixed" for every sensor
+YAW_OPTIONS = ("fixed", "look_where_you_go")   # cfg.yaw, default "fixed" for every sensor
 
-# Vehicle radius in the planners (loop-75b). The planner samples hardcode the 0.15 m arena radius as module
+# Vehicle radius in the planners. The planner samples hardcode the 0.15 m arena radius as module
 # constants (or constructor defaults). When a run flies another radius_m, every planner below inflates by it:
 # each constant is set to radius_m + (its shipped value - 0.15 m), so the planner's own margins on top of the
 # radius stay as shipped, for that run only, and restored after it (radius_override). At 0.15 m nothing is touched.
@@ -374,7 +374,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
              recovery="none", max_time_s=None, vehicle=None, sensor=None, yaw="fixed", yaw_policy=None, inflate=True):
     """_simulate inside radius_override(vehicle radius_m): the planners inflate by the flown radius for this
     run only. inflate=False (native before/after comparison only, the run message has no such field) keeps
-    the shipped 0.15 m constants, as before loop-75b."""
+    the shipped 0.15 m constants, as before the vehicle radius reached the planners."""
     r = clamp_vehicle(vehicle)[0]["radius_m"] if vehicle is not None else RADIUS_DEFAULT
     ov = radius_override(r if inflate else RADIUS_DEFAULT)
     with ov:
@@ -395,10 +395,10 @@ def _simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="n
     of samples/close-area-relocalize; the arm brings its own planner (A* known map behind the hover
     gate), so planner must be astar_known and the filter none.
     max_time_s: None = by world family (max_time_for), else the run time limit in s (clamped 10-300).
-    vehicle / sensor (loop-75): None, or a team-facing dict (presets.py schema), clamped by clamp_vehicle /
-    clamp_sensor; sensor replaces preset. yaw (loop-75b, run message cfg.yaw): "fixed" (default, every sensor)
+    vehicle / sensor: None, or a team-facing dict (presets.py schema), clamped by clamp_vehicle /
+    clamp_sensor; sensor replaces preset. yaw (run message cfg.yaw): "fixed" (default, every sensor)
     = yaw rate 0 from the driver, the vehicle keeps its initial bearing to B; "look_where_you_go" = the
-    look_where_you_go policy below, for any sensor. yaw_policy (loop-75, native scripts only, overrides yaw when
+    look_where_you_go policy below, for any sensor. yaw_policy (native scripts only, overrides yaw when
     given): "auto" = look_where_you_go when the sensor fov < 360 deg, "off" = fixed.
     plan_radius: the radius the planners were set to by simulate (radius_override), for the APF / VFH+ instances."""
     cfg = cfg or run_mod.DEFAULTS
@@ -585,7 +585,7 @@ function watchDownloads(expected) {
   } catch (err) { /* no PerformanceObserver in this worker: stage progress only */ }
 }
 
-// Load retries (loop-63, dry-run blocker 7: one cold load stalled 122 s, then "Failed to fetch").
+// Load retries (dry-run blocker 7: one cold load stalled 122 s, then "Failed to fetch").
 // Every load step is named and gets ATTEMPTS tries, with BACKOFF_S waits between them. A step that
 // does not finish within TIMEOUT_S counts as a failed attempt. After the last attempt the page shows
 // a Retry button, which starts a new worker (that also drops any fetch that still hangs).
@@ -711,7 +711,7 @@ async function init() {
   postMessage({ type: "ready", env, timings: t, mb: Math.round(mbDone * 10) / 10 });
 }
 
-// cfg.vehicle / cfg.sensor (loop-75) must be plain objects when present; DRIVER_PY checks keys and clamps values.
+// cfg.vehicle / cfg.sensor must be plain objects when present; DRIVER_PY checks keys and clamps values.
 function checkCfg(cfg) {
   for (const k of ["vehicle", "sensor"]) {
     const v = cfg[k];

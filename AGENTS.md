@@ -2,24 +2,28 @@
 
 Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or extending this hub.
 
-## Given a problem statement
+Navigation Index is an open navigation knowledge hub for drones and robots: a linked catalog of
+open-source repos, papers, datasets and standards, runnable samples that say what ran on which
+data, and a browser Arena (Solver, Playground) that races path planners on a map. Every number
+is labelled synthetic, SITL or real.
 
-For the EDGE internal hackathon, Challenge 2 "Autonomous Frontiers", read
-[docs/problem-statement-decoder.md, full-brief routing](docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages) first (MCP: `read`
+## Given a task statement
+
+Read [docs/problem-statement-decoder.md, full-brief routing](docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages) first (MCP: `read`
 with `guide:problem-statement-decoder`). It narrows the hub to the rows, samples and guides
 that fit an autonomous flight product and lists the rows to skip.
 
-### Close-area A=>B (likely Day-1 task)
+### Close-area A=>B (a common first task)
 
 Use this block when the brief is "fly a drone from A to B in a close area, maybe with obstacles".
 
 Start here: one ordered script, fresh clone => scored first flight => regression bar: [docs/quickstart-first-flight.md](docs/quickstart-first-flight.md).
 
-1. First 20 minutes: [docs/first-day-intake.md](docs/first-day-intake.md) - organiser
-   questions in order, each answer => driver, sim, sample. Research behind it:
+1. First 20 minutes: [docs/first-day-intake.md](docs/first-day-intake.md) - questions for whoever set the task,
+   in order, each answer => driver, sim, sample. Research behind it:
    [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md).
 2. Runnable baseline: [samples/close-area-arena](samples/close-area-arena/README.md) (status `ran`,
-   synthetic inputs only). Starter loop for the team repo:
+   synthetic inputs only). Starter loop for your own repo:
    [templates/flight-repo](templates/flight-repo/README.md): `make first-flight` flies it in the arena
    (planner + safety filter + estimator faults) and scores the log. `make first-flight-reloc` adds relocalization after a VIO jump; outside the hub use `make first-flight HUB=/path/to/hub`.
 3. Send setpoints to a real platform: [templates/drone-adapter](templates/drone-adapter/README.md)
@@ -33,9 +37,9 @@ Start here: one ordered script, fresh clone => scored first flight => regression
    every arena: [samples/close-area-benchmark](samples/close-area-benchmark/README.md); try it in
    the browser: [site/playground/](site/playground/index.html).
 5. One-page summary: [docs/cheatsheets/close-area-a-to-b.md](docs/cheatsheets/close-area-a-to-b.md). Demo and
-   pitch: [templates/presenting/live-demo-script-close-area.md](templates/presenting/live-demo-script-close-area.md),
+   presentation: [templates/presenting/live-demo-script-close-area.md](templates/presenting/live-demo-script-close-area.md),
    [templates/presenting/close-area-story.md](templates/presenting/close-area-story.md).
-6. Day-1 tools, one entry command each (all synthetic; flow in the cheat sheet "Day-1 flow with the browser tools"):
+6. First-day tools, one entry command each (all synthetic; flow in the cheat sheet "First-day flow with the browser tools"):
    - Room => world JSON: `world_from_room.py rooms/hall_8x6.json` or `world_from_image.py <plan>.png --ref ...` in [close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic).
    - Rank planners on that world: [site/solver/](site/solver/README.md) (Import world JSON, Your drone, Quick / Stress / Thorough, Pareto view, Recommend => `recommend.md`).
    - Fly the pick: `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0|F2>` in [flight-repo](templates/flight-repo/README.md#fly-what-the-solver-picks-benchid-in-a-world-file); F2 cannot pass gaps under ~1.4 m, use `ARM=F0` there.
@@ -69,7 +73,7 @@ Free-text search ranks a pasted problem statement poorly. Do this instead:
 Install convention for samples: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
 inside the sample folder, or the sample's Docker command. Never install into the global
 interpreter. Deviations are listed in `samples/README.md`.
-Run long commands (clone, venv install, first sample run) with stdin closed (`< /dev/null`) or in the background: in the Day-1 dry run a plain `git clone` hung past 120 s in an agent shell.
+Run long commands (clone, venv install, first sample run) with stdin closed (`< /dev/null`) or in the background: in the cold-start drill a plain `git clone` hung past 120 s in an agent shell.
 
 ## Using the hub to answer a question
 
@@ -82,9 +86,9 @@ selective preparation and measured rehearsal receipts.
 
 1. Start at `llms.txt` (map) and `INDEX.md` (concept tree + high-fit repos).
 2. Pick a concept page in `catalog/concepts/` - it lists every repo, document, talk,
-   dataset and sample tagged with that concept, high hackathon-fit first.
+   dataset and sample tagged with that concept, high quick-build fit first.
 3. Open individual pages in `catalog/repos/` or `catalog/resources/` for summary,
-   hackathon notes, GitHub metadata and graph links (related / referenced by).
+   build notes, GitHub metadata and graph links (related / referenced by).
 4. For programmatic lookup use the CLI (stdlib Python, no installs):
    ```
    python3 tools/query.py search "uav satellite image matching" --kind repo --fit high

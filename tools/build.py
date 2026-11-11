@@ -320,7 +320,7 @@ GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/res
                # deep-dive docs (DOC_KIND); docs/reports/README.md stays out (internal review history).
                "docs/paper-digests/README.md", "docs/dataset-cards/README.md",
                "docs/integration-cards/README.md", "docs/research/README.md", "docs/cheatsheets/README.md")
-# Templates are hub guides too (drone-adapter drivers and frames, close-area demo and pitch), except the
+# Templates are hub guides too (drone-adapter drivers and frames, close-area demo and story), except the
 # copy-me skeleton repo (TODO placeholders) and agent instruction files written for a team repo.
 GUIDE_SKIP_DIRS = ("templates/project-repo/",)
 GUIDE_SKIP_NAMES = frozenset(("AGENTS.md", "CLAUDE.md"))

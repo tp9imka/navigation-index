@@ -1,4 +1,4 @@
-// Screenshots and the 390 px overflow check for the public pages (wave 3 site design).
+// Screenshots and the 390 px overflow check for the public pages (public site design).
 // Run from the repo root (Node 22+, no npm packages): node site/screenshots/capture_public.mjs
 // Needs Google Chrome at the macOS default path (or CHROME=...). Serves the repo root with
 // python3 -m http.server, then for every page x width (1280, 390) x theme (light, dark):

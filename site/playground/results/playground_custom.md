@@ -1,4 +1,4 @@
-# Playground loop-75 / 75b: custom vehicle, sensor and yaw in the run message, browser vs native
+# Playground: custom vehicle, sensor and yaw in the run message, browser vs native
 
 `node site/playground/results/measure_custom.mjs`, 2026-11-10T08:16:35.660Z. Input: **synthetic** (2.5D point-mass arena, preset worlds, seed 0, truth pose, no filter).
 Browser: Chrome/140.0.7339.208, Pyodide 314.0.7 (Python 3.14.2, numpy 2.4.6, scipy 1.18.0), worker.js driven directly by postMessage. Native: 3.12.10, numpy 2.5.4, scipy 1.18.1 ([native_parity_custom.json](native_parity_custom.json)).
@@ -16,7 +16,7 @@ Host: 16 CPUs, load average 174 / 108.5 / 81.5 at start. Worker ready in 18.2 s.
 | narrow_gap_0 | astar_unknown | vehicle | ideal / fixed | 0.25 | reached / 53.24 / 0.3264 / 55.086 | reached / 53.24 / 0.3264 / 55.086 | yes | 13.721 | 6.34 |
 | narrow_gap_0 | astar_unknown | vehicle | ideal / fixed | 0.35 | stuck / - / 0.418 / 34.379 | stuck / - / 0.418 / 34.379 | yes | 21.451 | 9.847 |
 
-Vehicle radius in the planners (loop-75b). Before = the same run with the planners at the shipped 0.15 m (native only, `inflate=False`). Free path = BFS on the true grid inflated by the radius.
+Vehicle radius in the planners. Before = the same run with the planners at the shipped 0.15 m (native only, `inflate=False`). Free path = BFS on the true grid inflated by the radius.
 
 | world | planner | radius m | free path | before: outcome / time to goal s / min clearance m / path m | after (browser = native) |
 |---|---|---|---|---|---|

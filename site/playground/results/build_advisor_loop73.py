@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Rebuild site/playground/data/advisor.json with data/build_advisor.py, unchanged, plus the loop-73 rows.
+"""Rebuild site/playground/data/advisor.json with data/build_advisor.py, unchanged, plus the rows for the planners added on 2026-11-10.
 
 build_advisor.py needs a PLANNER_DOCS entry for every planner in matrix_0.json and lists the prior-map
-planners in PRIOR_MAP. loop-73 could not edit that file, so this wrapper adds both for the 7 rows added by
+planners in PRIOR_MAP. The change that added them could not edit that file, so this wrapper adds both for the 7 rows added by
 `bench.py --add-to matrix_0` (Theta* x4, MPPI x2, Hybrid A*) and then calls build_advisor.main().
-Driver: move the entries below into build_advisor.py and delete this file.
+To do: move the entries below into build_advisor.py and delete this file.
 
     python3 site/playground/results/build_advisor_loop73.py      # stdlib only, < 1 s
 
@@ -78,10 +78,10 @@ if missing:
 BA.PLANNER_DOCS.update(NEW_DOCS)
 BA.PRIOR_MAP.update({"thetastar_known", "lazy_thetastar_known"})      # as bench.py PRIOR_MAP
 
-# loop-75b: the playground's astar_unknown now uses the benchmark's geofenced map corner (worker.js
+# The playground's astar_unknown now uses the benchmark's geofenced map corner (worker.js
 # GeofencedAStar), so build_advisor.py's "runs the shipped unknown-map A*" note is out of date. Text only;
-# the shipped vs benchmark numbers it introduces are unchanged. Driver: move this text into build_advisor.py.
-MAP_CORNER_NOTE = ("Since loop-75b the playground's unknown-map A* uses the benchmark's map corner (area corner "
+# the shipped vs benchmark numbers it introduces are unchanged. To do: move this text into build_advisor.py.
+MAP_CORNER_NOTE = ("The playground's unknown-map A* now uses the benchmark's map corner (area corner "
                    "minus 2 m); the shipped map starts 2.5 m behind A. Ideal sensor, 20 layouts: reached % shipped "
                    "vs benchmark corner.")
 

@@ -1,4 +1,4 @@
-# loop-80, 2026-11-10, synthetic, macOS arm64, templates/flight-repo/.venv (uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1; built by this make, 12 wheels)
+# 2026-11-10, synthetic, macOS arm64, templates/flight-repo/.venv (uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1; built by this make, 12 wheels)
 # The command from site/solver/results/recommend_narrow_gap_0.md, run in templates/flight-repo.
 # OUT= added only so the log, plot and score JSON go to /tmp/loop80_flight/ (this job may not add files under templates/flight-repo/results/); same flight otherwise.
 # Wall 51.29 s including the venv build (time). Machine heavily loaded by other jobs.

@@ -1,4 +1,4 @@
-// loop-93: scripted pass over the Day-1 Solver path that no script had clicked before, in headless Chrome:
+// Scripted pass over the first-day Solver path that no script had clicked before, in headless Chrome:
 // Import world JSON (samples/close-area-arena/rooms/hall_8x6.world.json, CDP DOM.setFileInputFiles) => Quick
 // (real mouse click) => Export CSV, Export JSON and Recommend (real mouse clicks; downloads captured with CDP
 // Browser.setDownloadBehavior) => check every file exists and parses => Thorough with 2 planners (wiring check)

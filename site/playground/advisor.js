@@ -1,5 +1,5 @@
 "use strict";
-// Playground Advisor (loop-65). Vanilla JS, no build step, no dependencies.
+// Playground Advisor. Vanilla JS, no build step, no dependencies.
 // Shows the close-area-benchmark results (data/advisor.json, built by data/build_advisor.py) for the
 // selected preset family and sensor, recommends a planner, and explains every option.
 //   const adv = Advisor.mount(container, { getFamily, getPreset, onPick });
@@ -92,7 +92,7 @@
         <p>${useBtn(w, c, "Use this", "primary")}</p></div>`;
     }
 
-    // Run time limit the playground uses for a family: worker.js max_time_for (bench.py LONG_FAMILIES, loop-73b).
+    // Run time limit the playground uses for a family: worker.js max_time_for (bench.py LONG_FAMILIES).
     // The "by 60 s" notes only apply when the playground limit is shorter than the benchmark cell's.
     function pgLimitS(fam) { return ({ maze: 120, warehouse: 120 })[fam] || 60; }
     function shorterLimit(cell, c) { return cell.max_time_s != null && pgLimitS(c.famUsed) < cell.max_time_s; }

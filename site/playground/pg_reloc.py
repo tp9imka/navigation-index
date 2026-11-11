@@ -1,4 +1,4 @@
-"""Playground glue for VIO-loss recovery (loop-63). Loaded by worker.js DRIVER_PY.
+"""Playground glue for VIO-loss recovery. Loaded by worker.js DRIVER_PY.
 
 The arms come from samples/close-area-relocalize unchanged: run_disambiguate.build(arm, w, est,
 seed, index) returns (pose source, planner) exactly as run_disambiguate.py's run_cell does:

@@ -1,11 +1,11 @@
-// Record the Recommend export (loop-80; re-recorded loop-87 with Quick = 5 seeds) from real Quick sweeps in
+// Record the Recommend export (first recorded 2026-11-10; re-recorded with Quick = 5 seeds) from real Quick sweeps in
 // headless Chrome, one per map.
 // Copied from measure_solver.mjs (same server, CDP client and Chrome flags), screenshots dropped.
 // Run from the repo root (Node 22+, no npm packages): node site/solver/results/measure_recommend.mjs [map ...]
 // Default maps: narrow_gap_0 random_0. Needs Google Chrome at the macOS default path (or CHROME=...)
 // and network for cdn.jsdelivr.net. Writes into site/solver/results/ per map:
 // recommend_<map>.md and recommend_<map>.json (SOLVER.recommend(), the function behind the Recommend button),
-// quick_<map>_<TAG>.json (SOLVER.exportJSON(), the sweep they came from; TAG = loop87, the loop-80 files are
+// quick_<map>_<TAG>.json (SOLVER.exportJSON(), the sweep they came from; TAG = loop87, the first-recording files are
 // kept), and recommend_check.json.
 import { spawn } from "node:child_process";
 import fs from "node:fs";

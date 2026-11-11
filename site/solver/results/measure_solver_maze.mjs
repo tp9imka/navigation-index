@@ -1,8 +1,8 @@
-// loop-73 copy of measure_solver.mjs: one real Quick sweep on maze_0 only (start/goal jitter ON, the
+// Copy of measure_solver.mjs: one real Quick sweep on maze_0 only (start/goal jitter ON, the
 // default 0.5 m: seed 0 = exact map, seeds 1 and 2 move A and B). No screenshots, share or cancel steps.
 // Run from the repo root (Node 22+, no npm packages): node site/solver/results/measure_solver_maze.mjs
 // Needs Google Chrome at the macOS default path (or CHROME=...) and network for cdn.jsdelivr.net.
-// loop-73b: run time limit Auto (maze => 120 s, as the benchmark); records limit_line (the result header).
+// Run time limit Auto (maze => 120 s, as the benchmark); records limit_line (the result header).
 // Writes into site/solver/results/: quick_maze_0.json (SOLVER.exportJSON(), the function behind the
 // Export JSON button) and solver_check_maze_0.json.
 import { spawn, spawnSync } from "node:child_process";
@@ -83,7 +83,7 @@ async function main() {
     const t1 = Date.now();
     out.sweep = await cdp.eval("SOLVER.quick().then(sw => ({ done: sw.done, total: sw.total, elapsed_s: sw.elapsed_s, cancelled: sw.cancelled, workers_ready: SOLVER.S.readyCount, K: SOLVER.K }))");
     out.sweep.wall_s_from_click = (Date.now() - t1) / 1000;
-    out.limit_line = await cdp.eval("document.querySelector('#limitLine').textContent");     // loop-73b: limit in the result header
+    out.limit_line = await cdp.eval("document.querySelector('#limitLine').textContent");     // limit in the result header
     out.time_limit_select = await cdp.eval("document.querySelector('#tlimSel').value");
     const json = await cdp.eval("SOLVER.exportJSON()");
     fs.writeFileSync(path.join(HERE, "quick_maze_0.json"), json);

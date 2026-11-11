@@ -1,4 +1,4 @@
-// loop-76 copy of measure_solver_maze.mjs: "Your drone" panel. One Quick sweep on office_0 with the drone's
+// Copy of measure_solver_maze.mjs: "Your drone" panel. One Quick sweep on office_0 with the drone's
 // sensor set to depth_cam_87 in the panel (Quick = 3 seeds, the drone's sensor only, truth pose, every planner,
 // jitter on 0.5 m), a 390 px phone check with the panel open on Custom, and a share link round trip of
 // vehicle, custom sensor and yaw (no sweep after the reload).

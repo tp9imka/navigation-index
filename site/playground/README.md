@@ -21,7 +21,7 @@ VIO loss ([close-area-relocalize](../../samples/close-area-relocalize/README.md)
 in JS. Everything is **synthetic**: a simulated 2.5D point-mass vehicle, simulated range sensors and
 a simulated VIO. No number here is a flight result.
 
-## Your drone: radius, top speed, yaw (loop-75b)
+## Your drone: radius, top speed, yaw
 
 Under the seed field, **Advanced: your drone** (closed by default) holds three controls. They apply to
 configs A and B, go into `readCfg` and into the copied link.
@@ -57,7 +57,7 @@ Not reached: **straight** (flies the line to B, no obstacle model) and **freest_
 free-beam and 0.6 m repulsion thresholds, no radius term) behave as before at any radius. Also unchanged:
 speed laws that read clearance (`astar_esdf.V_CLEAR_STOP_M` 0.25 m and the like) and the relocalizer's
 0.35 m hypothesis motion check (`disambiguate.CLEAR_M`). The result's `inflation` field lists what was set.
-The arena itself already used the radius for collision, scoring and the free-path check (loop-75).
+The arena itself already used the radius for collision, scoring and the free-path check.
 
 Narrow gap, before (planners at 0.15 m, native `inflate=False`) and after, seed 0, truth pose, ideal
 sensor ([playground_custom.md](results/playground_custom.md), browser = native on all 7 cases; synthetic):
@@ -74,7 +74,7 @@ of threading the gap with 0.0152 m (MPPI) to spare. At 0.35 m the BFS finds no f
 and both now stop short (stuck) instead of flying into the gap and colliding. One layout: an example, not a rate.
 
 **Yaw.** `cfg.yaw = "look_where_you_go"` turns the vehicle toward its commanded velocity (gain 2 /s, cap
-1 rad/s, toward B below 0.2 m/s). Default `fixed` for every sensor. In loop-75 the policy was on by default
+1 rad/s, toward B below 0.2 m/s). Default `fixed` for every sensor. In the first version of this panel the policy was on by default
 for sensors under 360 deg; it was slower than fixed yaw in 4 of 4 office_0 / maze_0 runs with the depth
 camera ([custom_sensor_0.md](../../samples/close-area-arena/results/custom_sensor_0.md)), so it is now opt-in.
 Example: office_0, MPPI on the A* path, depth_cam_87: reached in 14.14 s fixed, 15.88 s look where you go
@@ -82,11 +82,11 @@ Example: office_0, MPPI on the A* path, depth_cam_87: reached in 14.14 s fixed, 
 
 Checks: [native_parity_custom.json](results/native_parity_custom.json) 11/11 (the sensor dict = the preset
 name; driver = `run.run_one` with the override; constants restored and a default run unchanged after the
-custom-radius runs; `cfg.yaw` absent = the loop-75 fixed-yaw path; an explicit 0.15 m vehicle = none).
+custom-radius runs; `cfg.yaw` absent = the original fixed-yaw path; an explicit 0.15 m vehicle = none).
 In the browser ([playground_custom.md](results/playground_custom.md)): 7/7 cases, 4/4 refusals (incl.
 `cfg.yaw` "spin"), 6/6 page checks (sensor select, panel => `readCfg` and link, link => panel, clamp).
 
-## A* unknown map is geofenced (loop-75b fix)
+## A* unknown map is geofenced (fix)
 
 The playground's `astar_unknown` used the shipped log-odds map corner at (-2.5, -2.5). office_0's B is at
 (-6.75, -7.39), outside that map, so the planner never moved (stuck, 0.0 m path). It now uses the
@@ -107,7 +107,7 @@ reached / 22.0 / 22.0 / 0.2892 / 13.758 there, same outcome and clearance; time 
 identical to `bench.py`'s factory on the same JSON world). The Advisor's note about the map corner was
 updated ([data/advisor.json](data/advisor.json), via `results/build_advisor_loop73.py`).
 
-## VIO loss recovery (loop-63)
+## VIO loss recovery
 
 The **VIO loss recovery** select (per config) is active when the VIO fault is jump or dropout:
 
@@ -152,9 +152,9 @@ sample's published `disamb_random_1.json` run 97 (generated world, not JSON): mu
 multi + info-gain identical, single differs in min clearance only (0.5182 m here, 0.5183 m there),
 the 4-decimal JSON rounding of check B below. Screenshot: [pg_reloc_arms.png](results/pg_reloc_arms.png).
 
-## Loading: retries and the Retry button (loop-63)
+## Loading: retries and the Retry button
 
-Dry-run blocker 7 ([docs/day1-dry-run.md](../../docs/cold-start-drill.md)): a cold load stalled 122.5 s and
+Dry-run blocker 7 ([docs/cold-start-drill.md](../../docs/cold-start-drill.md)): a cold load stalled 122.5 s and
 failed with "Failed to fetch"; there was no retry. Now `worker.js` runs each load step as a named
 step with 3 attempts and waits of 2 s and 6 s between them: `manifest.json`, `Pyodide runtime`
 (`pyodide.mjs` + `loadPyodide`; a retry imports `pyodide.mjs?attempt=N`, because a failed module import
@@ -175,7 +175,7 @@ retried again. The 122 s stall itself (a fetch that hangs, then fails) was not r
 
 One command does all of this: `python3 tools/offline_browser_kit.py prepare` vendors Pyodide with sha256 checks,
 `verify` checks the playground and the Solver with the CDN blocked, `bundle` writes a zip that runs
-with `python3 serve.py` ([day0-runbook](../../docs/first-three-hours.md)). The manual steps below do the same by hand.
+with `python3 serve.py` ([first-three-hours](../../docs/first-three-hours.md)). The manual steps below do the same by hand.
 
 The playground needs Pyodide 314.0.7, numpy and scipy. By default it loads them from
 cdn.jsdelivr.net. To run without the CDN (venue Wi-Fi that blocks it, or no network), vendor them
@@ -220,18 +220,18 @@ Source: [results/playground_check.md](results/playground_check.md), written by
 Input type: synthetic.
 
 - **18 planners in the browser: 18 of the 21 benchmarked rows** of
-  [close-area-benchmark](../../samples/close-area-benchmark/README.md). Added in loop-73: Theta* and Lazy
+  [close-area-benchmark](../../samples/close-area-benchmark/README.md). Added on 2026-11-10: Theta* and Lazy
   Theta* (known map), Lazy Theta* (unknown map, geofenced), MPPI (goal only), MPPI on the unknown-map A*
-  path and Hybrid A* (unknown map, geofenced); see "New planners (loop-73)" below. Left out of the
+  path and Hybrid A* (unknown map, geofenced); see "New planners" below. Left out of the
   playground: the benchmark row `thetastar_unknown` (plain Theta* without a map; its sample README
-  reports slow replans, so only the Lazy variant is offered). Added in loop-62: DWA, DWA + 3 s
+  reports slow replans, so only the Lazy variant is offered). Added before them (2026-11-09): DWA, DWA + 3 s
   memory, Bug2, TangentBug, D* Lite (unknown map) and Informed RRT* (known map). The other 2 rows left out:
   `astar_mpc` needs osqp, and the Pyodide 314.0.7 `pyodide-lock.json` lists 357 packages but no osqp
   (only clarabel and cvxpy-base, checked 2026-11-09); `astar_unknown_f2` is not a separate planner
-  here. A* unknown map + filter F2 is the same combination: since loop-75b both A* unknown maps are
+  here. A* unknown map + filter F2 is the same combination: now both A* unknown maps are
   geofenced (see "A* unknown map is geofenced").
-- **Browser = native on 21/21 preset cases** (27/27 in the loop-75b re-run, which added office_0 A* unknown
-  map and the loop-73b cases; [playground_check.md](results/playground_check.md)) (outcome, time to goal, duration, min clearance, path
+- **Browser = native on 21/21 preset cases** (27/27 in the re-run after the drone-panel change, which added office_0 A* unknown
+  map and the run-time-limit cases; [playground_check.md](results/playground_check.md)) (outcome, time to goal, duration, min clearance, path
   length; seed 0). Example: random_0, A* known map => reached in 19.38 s, min clearance 0.5647 m,
   path 23.838 m in both. The cases cover all 12 planners, all 3 sensor presets, faults none / jump /
   bias / dropout and F2. The 6 new planners, one preset each:
@@ -246,7 +246,7 @@ Input type: synthetic.
   | office_0 | informed_rrt_star | reached / 25.88 / 0.2762 / 13.578 | 0.82 | 0.434 |
 
 - **Shareable link works in a fresh profile.** A hand-drawn world with compare mode (TangentBug vs
-  D* Lite + F2, Crazyflie sensor, VIO on, seed 7) gave a 491-character link (461 before loop-63 added the recovery param). A second headless Chrome
+  D* Lite + F2, Crazyflie sensor, VIO on, seed 7) gave a 491-character link (461 before the recovery param was added). A second headless Chrome
   with a new profile and cold cache opened it, restored the identical world and config, ran by
   itself, and got both scores identical to the source tab (A collision at 8.5 s, B reached in 28.4 s).
   The `w=` value is 426-1610 characters for the 8 presets (forest_0 is the longest, 6966 characters
@@ -264,7 +264,7 @@ Input type: synthetic.
   [hand-drawn box](results/pg_custom_drawn.png), [shared link in a fresh profile](results/pg_shared_link.png), [VIO jump, no filter vs F2, dark theme](results/pg_jump_f2_dark.png),
   [phone 390 px](results/pg_phone_390.png).
 
-### New planners (loop-73)
+### New planners
 
 Source: [results/playground_loop73.md](results/playground_loop73.md) (`results/measure_loop73.mjs`,
 headless Chrome 140, Pyodide 314.0.7) against
@@ -298,7 +298,7 @@ No run took over 60 s of browser Python, so all 6 stay in the list. Lazy Theta* 
 option: 30.7 s for one maze_0 run. MPPI, MPPI + A* and Hybrid A* take the world as an argument (geofence on
 the area bounds, as in the benchmark), like D* Lite.
 
-### Run time limit = the benchmark's (loop-73b)
+### Run time limit = the benchmark's
 
 A run ends as `timeout` at the world's run time limit, in sim time. `worker.js` `max_time_for` takes it
 from the world's `family` with the table of `samples/close-area-benchmark/bench.py` `LONG_FAMILIES`:
@@ -306,7 +306,7 @@ from the world's `family` with the table of `samples/close-area-benchmark/bench.
 (family `custom`) or without a family gets 60 s; an edited preset keeps its family. A run message may
 override the limit with `cfg.max_time_s` (clamped to 10-300 s; the Solver uses this for its fixed
 choices). Every result carries `max_time_s` and `max_time_source` (`family`, `default` or `cfg`), and the
-score table shows it next to the outcome, for example "reached (limit 120 s)". Before loop-73b every run
+score table shows it next to the outcome, for example "reached (limit 120 s)". Before this change every run
 stopped at 60 s, so on maze_0 Bug2 (105.22 s) and Informed RRT* (69.7 s) timed out here and reached B in
 the benchmark.
 
@@ -315,7 +315,7 @@ headless Chrome 140, Pyodide 314.0.7), every maze_0 and warehouse_0 case of
 [native_parity.json](results/native_parity.json) and
 [native_parity_loop73.json](results/native_parity_loop73.json). Seed 0, sensor ideal, truth pose, no
 filter. Input type: synthetic. **Browser = native on 11/11 cases**; the worker reported the same limit as
-native (120 s) and the score table showed it in 11/11. The 6 loop-73 maze_0 rows did not change with the
+native (120 s) and the score table showed it in 11/11. The 6 new-planner maze_0 rows did not change with the
 longer limit (all of them end before 60 s). One browser run each on a shared host (load average 29.1).
 
 | world | planner | limit s (browser / native / table) | browser outcome / time to goal s / min clearance m / path m | native | same | browser Python s | native Python s |
@@ -339,21 +339,21 @@ clearance is 0.5151 m here and 0.515 m in the matrix, a 0.0001 m difference from
 (check B). Bug2 on maze_0 and warehouse_0 and Informed RRT* on maze_0 are identical to the matrix.
 
 The driver loop matches the arena's own loops, checked natively in `native_parity.py`
-([native_parity.json](results/native_parity.json), 29/37 checks identical after loop-75b; every reference loop gets
+([native_parity.json](results/native_parity.json), 29/37 checks identical after the drone-panel change; every reference loop gets
 the driver's run time limit, `cfg_for`):
 
 | check | identical |
 |---|---|
 | A: driver == `run.run_one` on the same JSON world (truth pose, ideal sensor), 11 cases of the first 6 planners (incl. A* known on maze_0 and warehouse_0, A* unknown on office_0) | 11/11 |
-| E: driver == `run.run_one` with the planner built by `close-area-benchmark/bench.py` `PLANNERS[name][0]` called with the world, same JSON world, 6 loop-62 planners plus Bug2 on maze_0 / warehouse_0, Informed RRT* on maze_0, and (loop-75b) A* unknown on random_0 and office_0 | 11/11 |
+| E: driver == `run.run_one` with the planner built by `close-area-benchmark/bench.py` `PLANNERS[name][0]` called with the world, same JSON world, the 6 planners added on 2026-11-09 plus Bug2 on maze_0 / warehouse_0, Informed RRT* on maze_0, and A* unknown on random_0 and office_0 | 11/11 |
 | C: driver == `run.run_one` + `estimator.make_pose_source_factory(fault)` (the `run.evaluate` path) | 2/2 |
 | D: driver with F2 == `close-area-safety-filter/run_kill.run_one("F2", case, unsensed off)` | 2/2 |
 | B: driver on the preset JSON == `run.run_one` on `world.make_world` (no JSON) | 3/11 (A* unknown on random_0 now differs by 0.0001 m clearance; on office_0 by 0.04 s) |
-| G (loop-63, separate count `reloc_summary`): driver with recovery == `run.run_one` + `run_disambiguate.build`, same JSON world, score + loss events | 4/4 |
+| G (separate count `reloc_summary`): driver with recovery == `run.run_one` + `run_disambiguate.build`, same JSON world, score + loss events | 4/4 |
 
-Information only: the 6 loop-62 cases and the 5 loop-73b maze_0 / warehouse_0 cases against the
+Information only: the 6 cases for the planners added on 2026-11-09 and the 5 run-time-limit maze_0 / warehouse_0 cases against the
 benchmark's own rows in `samples/close-area-benchmark/results/matrix_0.json` (generated worlds, preset
-ideal, layout 0): 9/11 identical, 11/11 same outcome. With A* unknown on random_0 and office_0 (loop-75b): 9/13
+ideal, layout 0): 9/11 identical, 11/11 same outcome. With A* unknown on random_0 and office_0 added: 9/13
 identical, 13/13 same outcome; both differ by the JSON rounding only. Informed RRT* on office_0 differs in min clearance
 only (0.2762 m here, 0.2761 m in the matrix), A* known map on warehouse_0 too (0.5151 m vs 0.515 m): the
 same 4-decimal JSON rounding as check B.
@@ -371,13 +371,13 @@ equals the native score **on the same JSON world**, and can differ slightly from
 the planner `make()` functions, `filters.make("F2")` and `scorer.score`. Each planner is built the
 way `close-area-benchmark/bench.py` builds it: the DWA / Bug, D* Lite and RRT* samples each import
 their own `arena.py`, so they load with bench.py's recipe (folder on `sys.path` only while importing).
-D* Lite and (since loop-75b) A* unknown map get the benchmark's geofence (log-odds map corner = area
-corner - 2 m); before loop-75b A* unknown map kept the shipped corner at (-2.5, -2.5) and did not move
+D* Lite and (since the drone-panel change) A* unknown map get the benchmark's geofence (log-odds map corner = area
+corner - 2 m); before that change A* unknown map kept the shipped corner at (-2.5, -2.5) and did not move
 when B was outside it. The loop is `run.run_one`
 when the filter is off (pose at the 10 Hz planner rate), and `run_kill.run_one` when F2 is on (pose
 and filter every 50 Hz step, a second sensor copy for the filter at 16.7 Hz, rng `[seed, index, 8]`).
 The only additions are a sensor-preset argument, trace recording, the run time limit by family
-(120 s on maze and warehouse, as `bench.py`; see "Run time limit" above), and (loop-75b) the per-run
+(120 s on maze and warehouse, as `bench.py`; see "Run time limit" above), and the per-run
 radius override and the opt-in yaw policy (see "Your drone").
 
 | Control | Options | Source |
@@ -415,7 +415,7 @@ resized in the editor; "New empty" gives a 20 x 20 m area.
   base64url coded without padding.
 - Query params: `planner`, `preset`, `fault`, `filter` for config A; the same with `_b` for config B
   and `compare=1` when compare is on; `seed`; `radius`, `v_max`, `yaw` when the drone panel is not
-  the default (loop-75b, both configs); `src=<preset>` when the world is an unedited preset
+  the default (both configs); `src=<preset>` when the world is an unedited preset
   (used only to show the native parity note, after checking the decoded world equals the preset file).
 - Opening the link restores world and config and runs once Python is ready. Unknown param values
   are ignored with a message. Editing the world or loading another one removes the link from the
@@ -433,8 +433,8 @@ resized in the editor; "New empty" gives a 20 x 20 m area.
 | [presets/](presets/index.json) | Preset world JSON |
 | `results/native_parity_custom.py`, `measure_custom.mjs` | Native reference and browser check for cfg.vehicle, cfg.sensor, cfg.yaw, the radius rule and the drone panel / link ([playground_custom.md](results/playground_custom.md)) |
 | `results/measure_loop73b.mjs` | Browser check of every maze_0 / warehouse_0 case with the benchmark run time limit ([playground_loop73b.md](results/playground_loop73b.md)) |
-| `results/native_parity_loop73.py`, `measure_loop73.mjs` | Native reference and browser check for the 6 loop-73 planners ([playground_loop73.md](results/playground_loop73.md)) |
-| `results/build_advisor_loop73.py` | Runs `data/build_advisor.py` unchanged with planner docs for the 7 loop-73 benchmark rows; rebuilds [data/advisor.json](data/advisor.json) |
+| `results/native_parity_loop73.py`, `measure_loop73.mjs` | Native reference and browser check for the 6 planners added on 2026-11-10 ([playground_loop73.md](results/playground_loop73.md)) |
+| `results/build_advisor_loop73.py` | Runs `data/build_advisor.py` unchanged with planner docs for the 7 benchmark rows added on 2026-11-10; rebuilds [data/advisor.json](data/advisor.json) |
 | `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity (incl. the relocalization cases); headless Chrome check, link check in a second fresh profile, blocked-CDN check in a third, and screenshots ([pg_shared_link.png](results/pg_shared_link.png)) |
 
 Re-run (needs the arena venv, Chrome at the macOS default path, network for the CDN):
@@ -468,13 +468,13 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
 - The 6 new planners have a native reference on one preset each, with the ideal sensor and truth
   pose. Other sensors, faults and F2 run through the same driver code but are not compared with
   native for them; the link check (TangentBug, D* Lite + F2) is browser vs browser only.
-- The 6 loop-73 planners: compared with native on random_0 and maze_0 only, ideal sensor, truth pose,
+- The 6 planners added on 2026-11-10: compared with native on random_0 and maze_0 only, ideal sensor, truth pose,
   no filter. `measure_playground.mjs` and `native_parity.py` (the older 21 cases, link and CDN checks) were
   not re-run after the 6 extra files went into the manifest and DRIVER_PY.
 - Pointer drawing was checked for the Box tool only. Wall, Cylinder, Glass, Move, Undo, Delete,
   material change and file open / save / localStorage were not exercised by the scripted check.
 - `spike.html` with the extended manifest (it now also writes the 19 extra files) was not re-run.
-- Run time limit (loop-73b): `measure_playground.mjs` (its 21 cases, link and CDN checks) was not re-run;
+- Run time limit: `measure_playground.mjs` (its 21 cases, link and CDN checks) was not re-run;
   the 5 new maze_0 / warehouse_0 cases in native_parity.json were compared with the browser by
   `measure_loop73b.mjs` only. The `cfg.max_time_s` override and its clamp were spot-checked once in native
   CPython through `play()` (result not saved), not in a browser run. Office, forest and the other 60 s families were not re-run
@@ -483,16 +483,16 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
   not measured: browser Python ran about 2x slower than native in the check, so such a run would
   take about 10 s.
 - Real or SITL flight: everything is the synthetic arena.
-- Drone panel (loop-75b): the radius rule was compared with native on narrow_gap_0 only (MPPI on the A* path
+- Drone panel: the radius rule was compared with native on narrow_gap_0 only (MPPI on the A* path
   and A* unknown map, 0.25 and 0.35 m). The other planners get the same constants set but no run at another
   radius was compared or looked at; v_max other than 2 m/s was not run in a check. The panel was driven by
   script (values set, `PG.config`, link round trip), not clicked; its layout at 390 px was not looked at.
   look-where-you-go yaw on a 360 deg sensor runs but was not compared with native.
-- loop-75b re-run of `measure_playground.mjs`: its nav-link check at 390 px reported the Playground link
+- Re-run of `measure_playground.mjs` after the drone-panel change: its nav-link check at 390 px reported the Playground link
   not found on site/showcase.html and site/index.html (right edge null). Those pages and nav.js were not
   changed here; not investigated. The local Pyodide folder case was not measured (no
   site/playground/pyodide-local/ in this checkout).
-- Retries (loop-63): only a refused connection was tested (CDN mapped to 127.0.0.1). A fetch that
+- Retries: only a refused connection was tested (CDN mapped to 127.0.0.1). A fetch that
   hangs and then fails, as in blocker 7, the 120 s / 180 s step timeouts, the 45 s "still loading"
   Retry, and the fresh-runtime path after a timed-out `loadPackage` were not exercised. Venue Wi-Fi
   not tried.
@@ -507,7 +507,7 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
 - `spike.html` with the extended manifest: not re-run. Its file loop makes a stray directory for
   `pg_reloc.py` (no folder in its `dst`); harmless, not tested.
 
-# Spike (loop-48a): can the arena run in the browser?
+# Spike: can the arena run in the browser?
 
 Feasibility spike for a browser playground (draw an arena, place A and B, pick a planner, watch
 it fly). Question: can the hub's real Python arena and planners

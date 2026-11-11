@@ -1,4 +1,4 @@
-"""Native CPython reference for the planners added in loop-73 (Theta* / Lazy Theta*, MPPI, Hybrid A*).
+"""Native CPython reference for the planners added on 2026-11-10 (Theta* / Lazy Theta*, MPPI, Hybrid A*).
 Sibling of native_parity.py: same driver (worker.js DRIVER_PY, extracted from the file), same score keys.
 
 Run from the repo root with the arena venv:
@@ -9,7 +9,7 @@ truth pose, no filter. Checks:
   E  driver == run.run_one on the same JSON world with the planner built by
      samples/close-area-benchmark/bench.py PLANNERS[name][0](world)
   F  (information) driver vs the benchmark's results/matrix_0.json row (preset ideal, layout 0, generated
-     world, not JSON; since loop-73b both use 120 s on maze: worker.js max_time_for = bench.py LONG_FAMILIES)
+     world, not JSON; since the run time limit change both use 120 s on maze: worker.js max_time_for = bench.py LONG_FAMILIES)
 Writes native_parity_loop73.json for measure_loop73.mjs. `--matrix-only` recomputes only F from the saved file
 (run after the benchmark rows exist; the cases and their native wall times stay as they were).
 Input type: synthetic (seeded generated layouts, simulated vehicle and sensors).

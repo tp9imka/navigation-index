@@ -523,7 +523,7 @@ function renderResults() {
   renderPareto(agg);
 }
 
-// ---------------------------------------------------------------- Pareto view (loop-89)
+// ---------------------------------------------------------------- Pareto view
 // x = median time to B, y = min clearance, dot area grows with the success rate; ring + id label = Pareto-optimal
 // within the best success group (SW.paretoFront). Faded = outside that group. No time to B => not plotted.
 function niceTicks(lo, hi, n) {
@@ -775,7 +775,7 @@ function preset(seeds, presets, resetFault, vars, fault) {
 const droneP = () => { const c = $("#droneSensor").value || "ideal"; return c === SW.CUSTOM ? [] : [c]; };
 const quick = () => preset(SW.QUICK_SEEDS, droneP(), true);
 const thorough = () => preset(SW.THOROUGH_SEEDS, [...new Set(["ideal", "crazyflie", ...droneP()])], false);
-// Stress (loop-89): 5 seeds (SW.STRESS_SEEDS), the drone's sensor + crazyflie on truth pose, and the drone's sensor
+// Stress: 5 seeds (SW.STRESS_SEEDS), the drone's sensor + crazyflie on truth pose, and the drone's sensor
 // with one VIO fault (the chosen one, else SW.STRESS_FAULT = jump). crazyflie flies truth pose only (S.vars).
 function stress() {
   const c = $("#droneSensor").value || "ideal", key = c === SW.CUSTOM ? SW.CUSTOM : c;

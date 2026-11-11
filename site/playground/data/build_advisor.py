@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/playground/data/advisor.json for the playground Advisor panel (loop-65). Stdlib only.
+"""Build site/playground/data/advisor.json for the playground Advisor panel. Stdlib only.
 
 Reads:
   samples/close-area-benchmark/results/matrix_0.json   per-run rows, 14 planners x 8 families x 2 presets
@@ -26,7 +26,7 @@ PRIOR = ROOT / "samples/close-area-benchmark/results/prior_check_0.json"
 RELOC = ROOT / "samples/close-area-relocalize/results/reloc_matrix_refs.md"
 OUT = HERE / "advisor.json"
 PLAYGROUND_LIMIT_S = 60.0          # run.DEFAULTS max_time_s: worker.js limit for every family not in PLAYGROUND_LONG
-PLAYGROUND_LONG = {"maze": 120.0, "warehouse": 120.0}   # loop-73b: worker.js max_time_for = bench.py LONG_FAMILIES
+PLAYGROUND_LONG = {"maze": 120.0, "warehouse": 120.0}   # worker.js max_time_for = bench.py LONG_FAMILIES
 
 PRIOR_MAP = {"astar_known", "informed_rrt_star", "astar_mpc"}
 # playground option id => benchmark row. Ids not listed map to the benchmark row of the same name.

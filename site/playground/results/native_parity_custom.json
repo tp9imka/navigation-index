@@ -826,7 +826,7 @@
    }
   },
   {
-   "check": "K4 cfg.yaw absent == yaw_policy off (loop-75 fixed yaw)",
+   "check": "K4 cfg.yaw absent == yaw_policy off (original fixed yaw)",
    "case": [
     "office_0",
     "mppi_astar"

@@ -12,7 +12,8 @@ number in the panel is a flight or SITL result.
 
 ## Key result
 
-Ivan's observation holds in the benchmark. On office and maze, only 2 of the 10 map-free planners
+The observation that prompted the panel (most planners fail in maze and office) holds in the
+benchmark. On office and maze, only 2 of the 10 map-free planners
 (straight excluded) reach B in at least 50 % of layouts with the ideal sensor (`astar_unknown`,
 `dstar_lite`). With the Crazyflie sensor only 1 of 10 does (`astar_unknown_f2`: office 50 % reached
 / 5 % collision, maze 55 % / 0 %). The three prior-map planners reach 100 % with 0 % collision in
@@ -22,7 +23,7 @@ seed 0, true pose).
 
 Two playground-specific traps the panel shows:
 
-- **Run time limit.** Since loop-73b the playground uses the benchmark's limit: 120 s on maze and
+- **Run time limit.** The playground now uses the benchmark's limit: 120 s on maze and
   warehouse (worker.js `max_time_for` = bench.py `LONG_FAMILIES`), 60 s elsewhere. Before, it stopped
   every run at 60 s, and the table printed "N % by 60 s" under cells that reached B later (on maze with
   the Crazyflie sensor, `astar_unknown_f2` reached 55 % in 120 s and 0 % within 60 s). That note now
@@ -57,8 +58,8 @@ Screenshots (viewport only): [maze x crazyflie](results/advisor-maze-crazyflie.p
 [inside the playground](results/advisor-in-playground.png).
 
 Not checked: Safari and Firefox, touch input on a real phone, screen readers beyond the ARIA
-attributes, and the wiring against loop-62's edited index.html / playground.js (it was injected into
-the version in this checkout).
+attributes, and the wiring against the later index.html / playground.js that added six benchmark planners (it was
+injected into the version checked out when the panel was built).
 
 ## How the data is built
 
@@ -70,8 +71,8 @@ python3 site/playground/data/build_advisor.py     # stdlib, < 1 s, writes data/a
   (%), `median_time_s` (over runs that reached B), `median_clearance_m` (over all runs), `n`, `seed`,
   `collisions_by_material` and `max_time_s` from the 4,480 per-run rows of matrix_0.json, and exits
   non-zero if any value differs from the matrix's own `summary`. All 224 cells match. Maze and
-  warehouse cells got `reached_within_60s` while the playground stopped every run at 60 s; since
-  loop-73b the playground limit equals the benchmark's (120 s there), so no cell has it.
+  warehouse cells got `reached_within_60s` while the playground stopped every run at 60 s; now
+  the playground limit equals the benchmark's (120 s there), so no cell has it.
 - **Recommendation.** Rule: highest reached %, then lowest collision %, then lowest median time.
   Ranked separately for planners that need a prior map (`astar_known`, `informed_rrt_star`,
   `astar_mpc`) and those that do not. Ties on reached and collision are listed. A map-free winner
@@ -89,8 +90,8 @@ python3 site/playground/data/build_advisor.py     # stdlib, < 1 s, writes data/a
   `apf_escape`, the other 5 map to the same name. Each benchmark row has `playground: {planner,
   filter}`; `astar_unknown_f2` => planner `astar_unknown` + filter `F2`. Rows with
   `in_playground_now: false` (`informed_rrt_star`, `astar_mpc`, `dwa`, `dwa_mem`, `bug2`,
-  `tangent_bug`, `dstar_lite`) get a "new" tag and assume loop-62 adds them under the benchmark name.
-  If loop-62 uses other ids, add them to `PG_TO_BENCH` / `BENCH_TO_PG` and rebuild. Not in the
+  `tangent_bug`, `dstar_lite`) get a "new" tag and assume the playground adds them under the benchmark name.
+  If it uses other ids, add them to `PG_TO_BENCH` / `BENCH_TO_PG` and rebuild. Not in the
   benchmark: preset `crazyflie_bright` (shown as `crazyflie`, nearest), every VIO fault (the matrix
   uses the true pose), and F2 on any planner other than `astar_unknown`.
 
@@ -108,7 +109,7 @@ const adv = Advisor.mount(container, {
 adv.refresh();   // force a re-render; adv.destroy() removes the panel
 ```
 
-## Wiring (for the driver; loop-62 owns index.html and playground.js)
+## Wiring (index.html and playground.js)
 
 **index.html**, 3 additions:
 
@@ -132,7 +133,7 @@ preset (`S.pristine`); an edited preset or an opened file shows the custom note 
 
 <!-- wire-js -->
 ```js
-// Advisor panel (advisor.js, loop-65): benchmark success rates per planner for the loaded preset family.
+// Advisor panel (advisor.js): benchmark success rates per planner for the loaded preset family.
 if (window.Advisor) window.PG_ADVISOR = Advisor.mount($("#advisorBox"), {
   getFamily: () => (S.pristine && S.presetName && S.doc.family !== "custom") ? S.doc.family
     : { custom: true, from: S.doc && S.doc.family !== "custom" ? S.doc.family : null },
@@ -142,6 +143,6 @@ if (window.Advisor) window.PG_ADVISOR = Advisor.mount($("#advisorBox"), {
 });
 ```
 
-The panel polls every 400 ms, so no other playground.js line needs to change. If loop-62 renames
+The panel polls every 400 ms, so no other playground.js line needs to change. If a later change renames
 the `#A_preset` / `#A_planner` selects or `setCfg`, adjust the three lines above. If share links
 should carry the pick, `onPick` is the place to update them.

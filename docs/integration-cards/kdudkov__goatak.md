@@ -1,6 +1,6 @@
 # GoATAK - integration card
 <!-- about: repo:kdudkov/goatak -->
-One-line: Go TAK server / CoT router plus a browser-based TAK client (Leaflet + milsymbol); one Docker command gives judges a live map without anyone installing ATAK.
+One-line: Go TAK server / CoT router plus a browser-based TAK client (Leaflet + milsymbol); one Docker command gives reviewers a live map without anyone installing ATAK.
 
 | | |
 |---|---|

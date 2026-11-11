@@ -51,7 +51,7 @@ FILTERS = {
     'max_download_mb': {'type': 'number', 'minimum': 0, 'description': 'dataset MB ceiling; dependencies excluded, unknown is excluded'},
     "kind": {"type": "string", "description": "repo, sample, guide, concept, paper, doc, dataset, standard, "
                                                "talk, ... (unknown kinds return an error listing the valid ones)"},
-    "fit": {"type": "string", "enum": ["high", "medium", "low"], "description": "hackathon fit"},
+    "fit": {"type": "string", "enum": ["high", "medium", "low"], "description": "quick-build fit"},
     "domain": {"type": "string", "description": "air, ground, maritime, underwater, space, dismounted, multi"},
     "limit": {"type": "integer", "minimum": 1, "maximum": MAX_LIMIT, "default": DEFAULT_LIMIT},
 }
@@ -93,7 +93,7 @@ TOOLS = [
     },
     {
         "name": "concept",
-        "description": "Everything tagged with a concept, high hackathon fit first. "
+        "description": "Everything tagged with a concept, high quick-build fit first. "
                        "Omit id to list all concept ids with record counts.",
         "inputSchema": {"type": "object", "properties": {
             "id": {"type": "string", "description": "concept id, e.g. concept:terrain-nav"}, **FILTERS}},

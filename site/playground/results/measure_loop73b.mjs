@@ -1,4 +1,4 @@
-// loop-73b: browser = native for every maze_0 and warehouse_0 case, after the run time limit became the
+// Browser = native for every maze_0 and warehouse_0 case, after the run time limit became the
 // benchmark's (worker.js max_time_for = bench.py LONG_FAMILIES: maze, warehouse 120 s, else 60 s).
 // Cases: the maze_0 / warehouse_0 rows of native_parity.json and native_parity_loop73.json. Also checks that
 // the result reports max_time_s and the score table shows "(limit N s)" next to the outcome.
@@ -114,7 +114,7 @@ async function main() {
   out.limit_ok = out.parity.every(r => r.max_time_s.browser === r.max_time_s.native && r.max_time_s.shown_in_table === r.max_time_s.browser);
   write("playground_loop73b.json", out);
   const f = v => (v == null ? "-" : v);
-  const md = [`# Playground loop-73b: maze_0 and warehouse_0 with the benchmark run time limit, browser vs native`, "",
+  const md = [`# Playground: maze_0 and warehouse_0 with the benchmark run time limit, browser vs native`, "",
     `\`node site/playground/results/measure_loop73b.mjs\`, ${out.date}. Input: **synthetic** (2.5D point-mass arena, preset worlds, seed 0, sensor ideal, truth pose, no filter).`,
     `Browser: ${out.chrome}, Pyodide ${out.env.pyodide} (Python ${out.env.python}, numpy ${out.env.numpy}, scipy ${out.env.scipy}). Native: ${NATIVE.native_env.python}, numpy ${NATIVE.native_env.numpy}, scipy ${NATIVE.native_env.scipy} ([native_parity.json](native_parity.json), [native_parity_loop73.json](native_parity_loop73.json)).`,
     `Host: ${out.host.cpus} CPUs, load average ${out.host.loadavg.join(" / ")} at start. Load errors in the worker: ${JSON.stringify(out.env.load_errors)}.`, "",

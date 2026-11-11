@@ -1,5 +1,5 @@
 "use strict";
-// Arena playground (loop-48b). Vanilla JS, no build step, no dependencies.
+// Arena playground. Vanilla JS, no build step, no dependencies.
 // The editor holds one close-area-world/1 document (samples/close-area-arena/world_json.py).
 // Runs go to worker.js, which executes the hub's real Python arena under Pyodide and returns the trace.
 // window.PG is a small API for scripted checks (results/measure_playground.mjs).
@@ -34,7 +34,7 @@ const DEFAULT_CFG = [
   { planner: "astar_known", preset: "ideal", fault: "truth", filter: "none", recovery: "none" },
   { planner: "freest_beam", preset: "ideal", fault: "truth", filter: "none", recovery: "none" },
 ];
-// "Advanced: your drone" (loop-75b): one vehicle for configs A and B. a_max and tau stay at run.DEFAULTS.
+// "Advanced: your drone": one vehicle for configs A and B. a_max and tau stay at run.DEFAULTS.
 // Sent as cfg.vehicle only when radius or v_max differ from the defaults, and cfg.yaw only when not "fixed",
 // so a default run sends the same message (and gets the same result) as before.
 const DRONE_DEFAULT = { radius_m: 0.15, v_max: 2.0, a_max: 3.0, tau: 0.15 };
@@ -669,7 +669,7 @@ function applyEnv(env) {        // disable options the worker could not load
 // ---------------------------------------------------------------- shareable link
 // URL = page ? config query params # w=<world JSON, deflate (zlib, CompressionStream), base64url>.
 // Params: planner, preset, fault, filter, recovery (config A), the same with _b (config B), compare=1,
-// arms=1 (compare all recovery arms on config A), seed, and (loop-75b, "Advanced: your drone", only when not
+// arms=1 (compare all recovery arms on config A), seed, and ("Advanced: your drone", only when not
 // the default) radius=<m>, v_max=<m/s>, yaw=look_where_you_go; they apply to both configs,
 // src=<preset name> when the world is an unedited preset (only used to show the native parity note).
 const CFG_KEYS = ["planner", "preset", "fault", "filter", "recovery"];
@@ -1136,7 +1136,7 @@ window.PG = {
   duration,
 };
 
-// Advisor panel (advisor.js, loop-65): benchmark success rates per planner for the loaded preset family.
+// Advisor panel (advisor.js): benchmark success rates per planner for the loaded preset family.
 if (window.Advisor) window.PG_ADVISOR = Advisor.mount($("#advisorBox"), {
   getFamily: () => (S.pristine && S.presetName && S.doc.family !== "custom") ? S.doc.family
     : { custom: true, from: S.doc && S.doc.family !== "custom" ? S.doc.family : null },

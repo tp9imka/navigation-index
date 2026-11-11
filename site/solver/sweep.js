@@ -49,11 +49,11 @@ export const YAW_LABELS = { fixed: "fixed (worker default)", look_where_you_go: 
 export const EXTRA_FAULTS = ["none", "jump", "bias", "dropout"];
 export const OUTCOMES = ["reached", "collision", "stuck", "timeout", "error"];
 export const MAX_SEEDS = 50;
-// Quick / Thorough buttons (loop-87): with 3 seeds 3/3 (44-100 %) overlaps 0/3 (0-56 %), so Quick could never
+// Quick / Thorough buttons: with 3 seeds 3/3 (44-100 %) overlaps 0/3 (0-56 %), so Quick could never
 // name a winner; with 5 seeds 5/5 (57-100 %) is disjoint from 0/5 (0-43 %).
 export const QUICK_SEEDS = 5;
 export const THOROUGH_SEEDS = 10;
-// Stress button (loop-89): on random_0 17 of 18 planners reached B 5/5 under Quick, so success cannot order
+// Stress button: on random_0 17 of 18 planners reached B 5/5 under Quick, so success cannot order
 // them. Stress keeps Quick's 5 seeds and adds the variations that make the sensor or the pose worse:
 // the drone's sensor (truth pose), crazyflie (4 beams, truth pose) and the drone's sensor with one VIO fault.
 export const STRESS_SEEDS = QUICK_SEEDS;
@@ -71,7 +71,7 @@ export const JITTER_DEFAULT = 0.5;
 export const JITTER_MARGIN_M = 0.1;              // jittered A/B keep vehicle radius + this from any surface
 export const JITTER_DRAWS = 50;                  // draws per point before the exact point is kept
 export const VEHICLE_RADIUS_M = 0.15;            // close-area arena default (world.py RADIUS)
-// Run time limit (loop-73b). "auto" = by map family, the rule of site/playground/worker.js max_time_for,
+// Run time limit. "auto" = by map family, the rule of site/playground/worker.js max_time_for,
 // which copies samples/close-area-benchmark/bench.py LONG_FAMILIES. A world without a long family
 // (other presets, custom worlds) gets run.DEFAULTS max_time_s = 60 s.
 export const LONG_FAMILIES = { maze: 120, warehouse: 120 };
@@ -92,7 +92,7 @@ export const sensorSpecOf = (preset, spec) => (preset === CUSTOM ? (spec && spec
 // spike table there; only a prior for the estimate before this browser has measured its own runs.
 export const PRIOR_WALL_S = { straight: 0.1, freest_beam: 0.2, astar_known: 0.7, astar_unknown: 3.0, apf: 0.3, vfh_plus: 0.3,
   dwa: 1.0, dwa_mem: 2.4, bug2: 0.2, tangent_bug: 0.25, dstar_lite: 1.3, informed_rrt_star: 0.8,
-  // loop-73: mean of random_0 and maze_0, site/playground/results/playground_loop73.md
+  // Mean of random_0 and maze_0, site/playground/results/playground_loop73.md
   thetastar_known: 6.6, lazy_thetastar_known: 4.3, lazy_thetastar_unknown: 20.5, mppi: 1.7, mppi_astar: 7.7,
   hybrid_astar: 1.7 };
 export const PRIOR_DEFAULT_S = 1.0;
@@ -138,7 +138,7 @@ export function normSpec(spec, available) {
   const jv = s.jitter == null || s.jitter === "" ? JITTER_DEFAULT : Number(s.jitter);
   const jitter = jv === 0 ? 0 : JITTER_RADII.includes(jv) ? jv : JITTER_DEFAULT;
   const faults = extra ? ["truth", extra] : ["truth"];
-  // vars (loop-89, Stress): an explicit subset of presets x faults, kept in cross-product order; missing,
+  // vars (Stress): an explicit subset of presets x faults, kept in cross-product order; missing,
   // empty or nothing valid => null (every preset x fault)
   const asked = Array.isArray(s.vars) ? new Set(s.vars) : null;
   const vars = asked ? presets.flatMap(p => faults.map(f => `${p}|${f}`)).filter(k => asked.has(k)) : [];
@@ -249,7 +249,7 @@ export function jitterPoint(doc, p, rng, R, minClear, draws = JITTER_DRAWS) {
   return { p: [p[0], p[1]], kept: true, draws };
 }
 
-// ------------------------------------------------------------ free path A=>B (loop-93)
+// ------------------------------------------------------------ free path A=>B
 // The worker reports result.free_path = worlds_complex.has_free_path(world, vehicle radius): A and B each more
 // than radius + 0.1 m from every surface, and a 4-connected BFS from A's cell to B's cell on the world grid
 // (world_json.from_json: 0.1 m cells over the bounds, a cell is occupied when its centre is within 0.05 m of
@@ -425,7 +425,7 @@ export const runSignature = r => [r.preset, r.fault, r.outcome, r3(r.time_to_goa
 // success = wilson(distinct runs that reached B, n_distinct). Error records each count as distinct.
 // `identical` = runs that have at least one
 // identical twin in the group (0 when every run is distinct).
-// No-path runs (worker free_path false, loop-93) are kept out of every count below: no_path counts them,
+// No-path runs (worker free_path false) are kept out of every count below: no_path counts them,
 // n_all = n + no_path. A planner cannot fail a map that has no route.
 export function stats(all) {
   const recs = all.filter(r => !isNoPath(r)), no_path = all.length - recs.length;
@@ -534,7 +534,7 @@ export function headline(ranking) {
       `; runner-up ${plannerLabel(b.planner)} ${b.reached}/${b.n} (${pct(b.success.lo)}-${pct(b.success.hi)}, ${nOne(b)}).${dupNote(a, b)}` };
 }
 
-// ------------------------------------------------------------ Pareto view (loop-89)
+// ------------------------------------------------------------ Pareto view
 // When success ties, which planners are fast AND safe? ranking: rank() rows (pooled, or one variation's cells).
 // Group = the best success group: every planner whose 95 % Wilson interval overlaps the top one's (the tied set
 // of the headline and Recommend; just the top planner when it is a clear winner). Empty when nobody reached B.

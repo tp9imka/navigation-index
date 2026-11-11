@@ -1,6 +1,6 @@
-// loop-93: how often did the old jitter picker wall A or B in? Pure node, no browser, no runs.
+// How often did the old jitter picker wall A or B in? Pure node, no browser, no runs.
 // For every preset in site/playground/presets plus the two room worlds, seeds 1..49 and each jitter radius,
-// counts the seeds whose first drawn A/B pair (the pre-loop-93 rule) has no free path at the world radius
+// counts the seeds whose first drawn A/B pair (the earlier rule) has no free path at the world radius
 // (SW.hasFreePath, the worker's free_path rule; parity 10/10 in measure_import.json), and how many the
 // redraw fixed. Run from the repo root: node site/solver/results/free_path_jitter.mjs
 // Writes site/solver/results/free_path_jitter.json. Synthetic worlds.

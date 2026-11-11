@@ -2,7 +2,7 @@
 
 <!-- about: repo:ardupilot/ardupilot, repo:px4/px4-autopilot, repo:mavlink/mavsdk-python, repo:ardupilot/pymavlink, repo:mavlink/mavros, repo:mavlink-router/mavlink-router, repo:mavlink/qgroundcontrol, repo:ardupilot/mavproxy, repo:thien94/vision_to_mavros, repo:auterion/px4-ros2-interface-lib, repo:px4/px4_ros_com, repo:snstac/pytak, repo:brian7704/opentakserver, repo:spatialillusions/milsymbol, repo:kdudkov/goatak, repo:ardupilot/arduremoteid, repo:opendroneid/receiver-android, repo:wiedehopf/readsb, repo:dstl/stone-soup, repo:krakenrf/krakensdr_doa, repo:ion-g-ion/mavlinkmcp, repo:robotmcp/ros-mcp-server, repo:nasa-jpl/rosa -->
 
-What each card gives you in a hackathon. All 23 were written from READMEs, docs, source files and issues read through the GitHub API (plus PyPI metadata where noted). None of these repos was installed or run for the cards, and every snippet is marked "not run". Version-sensitive names (ArduPilot SITL params, PX4 SIH target and aux-global-position params) were checked against both the default branch and the latest stable tag, and the cards say which is which.
+What each card gives you in a short build. All 23 were written from READMEs, docs, source files and issues read through the GitHub API (plus PyPI metadata where noted). None of these repos was installed or run for the cards, and every snippet is marked "not run". Version-sensitive names (ArduPilot SITL params, PX4 SIH target and aux-global-position params) were checked against both the default branch and the latest stable tag, and the cards say which is which.
 
 ## Autopilots and simulation
 
@@ -28,7 +28,7 @@ What each card gives you in a hackathon. All 23 were written from READMEs, docs,
 
 - [PyTAK](snstac__pytak.md) - Python CoT sender/receiver. Puts own-ship, detections and nav uncertainty (`ce`/`le`) on ATAK/TAK maps.
 - [OpenTAKServer](brian7704__opentakserver.md) - TAK server with web map, video and Meshtastic, set up by installer script. Note the open message-path issues.
-- [GoATAK](kdudkov__goatak.md) - single Go binary/Docker TAK server plus web client. Fastest live map for judges (AGPL).
+- [GoATAK](kdudkov__goatak.md) - single Go binary/Docker TAK server plus web client. Fastest live map for reviewers (AGPL).
 - [milsymbol](spatialillusions__milsymbol.md) - MIL-STD-2525/APP-6 SVG symbols for Leaflet/MapLibre/Cesium web views.
 
 ## Detection and awareness sensors (defensive)

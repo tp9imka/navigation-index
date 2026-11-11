@@ -294,7 +294,7 @@
    "warehouse": 120.0
   },
   "time_limit": "The playground uses the benchmark's run time limit: 120 s on maze and warehouse, 60 s on the other families and on custom worlds.",
-  "astar_unknown_map_corner": "Since loop-75b the playground's unknown-map A* uses the benchmark's map corner (area corner minus 2 m); the shipped map starts 2.5 m behind A. Ideal sensor, 20 layouts: reached % shipped vs benchmark corner.",
+  "astar_unknown_map_corner": "The playground's unknown-map A* now uses the benchmark's map corner (area corner minus 2 m); the shipped map starts 2.5 m behind A. Ideal sensor, 20 layouts: reached % shipped vs benchmark corner.",
   "astar_unknown_shipped_vs_bench": {
    "office": {
     "shipped_prior": 15.0,

@@ -1,5 +1,5 @@
-// loop-75: browser = native for custom vehicles and sensors in the run message (cfg.vehicle, cfg.sensor).
-// loop-75b: cfg.yaw, vehicle radius in the planners, and the page's "Advanced: your drone" panel.
+// Browser = native for custom vehicles and sensors in the run message (cfg.vehicle, cfg.sensor).
+// Also cfg.yaw, vehicle radius in the planners, and the page's "Advanced: your drone" panel.
 // Cases: native_parity_custom.json (depth_cam_87 as a cfg.sensor dict with and without cfg.yaw, vehicle radius
 // 0.25 and 0.35 m on narrow_gap_0 with mppi_astar and astar_unknown). Also checks: the ready env lists the 5
 // presets, the result carries the vehicle, sensor, yaw and inflation flown (= native), an unknown key is refused
@@ -187,7 +187,7 @@ async function main() {
   out.ui_ok = out.ui_checks.every(r => r.ok);
   write("playground_custom.json", out);
   const f = v => (v == null ? "-" : v);
-  const md = [`# Playground loop-75 / 75b: custom vehicle, sensor and yaw in the run message, browser vs native`, "",
+  const md = [`# Playground: custom vehicle, sensor and yaw in the run message, browser vs native`, "",
     `\`node site/playground/results/measure_custom.mjs\`, ${out.date}. Input: **synthetic** (2.5D point-mass arena, preset worlds, seed 0, truth pose, no filter).`,
     `Browser: ${out.chrome}, Pyodide ${out.env.pyodide} (Python ${out.env.python}, numpy ${out.env.numpy}, scipy ${out.env.scipy}), worker.js driven directly by postMessage. Native: ${NATIVE.native_env.python}, numpy ${NATIVE.native_env.numpy}, scipy ${NATIVE.native_env.scipy} ([native_parity_custom.json](native_parity_custom.json)).`,
     `Host: ${out.host.cpus} CPUs, load average ${out.host.loadavg.join(" / ")} at start. Worker ready in ${out.ready_s} s. Load errors in the worker: ${JSON.stringify(out.env.load_errors)}.`, "",
@@ -196,7 +196,7 @@ async function main() {
     "| world | planner | custom | sensor / yaw | vehicle radius m | browser outcome / time to goal s / min clearance m / path m | native | same | browser Python s | native Python s |",
     "|---|---|---|---|---|---|---|---|---|---|",
     ...out.parity.map(r => `| ${r.world} | ${r.planner} | ${r.custom} | ${r.flown.sensor.name} / ${r.flown.yaw} | ${r.flown.radius} | ${r.browser.outcome} / ${f(r.browser.time_to_goal_s)} / ${r.browser.min_clearance_m} / ${r.browser.path_length_m} | ${r.native.outcome} / ${f(r.native.time_to_goal_s)} / ${r.native.min_clearance_m} / ${r.native.path_length_m} | ${r.same ? "yes" : "NO"} | ${r.browser_wall_s} | ${r.native_wall_s} |`),
-    "", "Vehicle radius in the planners (loop-75b). Before = the same run with the planners at the shipped 0.15 m (native only, `inflate=False`). Free path = BFS on the true grid inflated by the radius.", "",
+    "", "Vehicle radius in the planners. Before = the same run with the planners at the shipped 0.15 m (native only, `inflate=False`). Free path = BFS on the true grid inflated by the radius.", "",
     "| world | planner | radius m | free path | before: outcome / time to goal s / min clearance m / path m | after (browser = native) |", "|---|---|---|---|---|---|",
     ...out.parity.filter(r => r.before).map(r => `| ${r.world} | ${r.planner} | ${r.flown.radius} | ${r.free_path ? "yes" : "no"} | ${r.before.outcome} / ${f(r.before.time_to_goal_s)} / ${r.before.min_clearance_m} / ${r.before.path_length_m} | ${r.browser.outcome} / ${f(r.browser.time_to_goal_s)} / ${r.browser.min_clearance_m} / ${r.browser.path_length_m} |`),
     "", "| refusal case | as expected | worker message |", "|---|---|---|",

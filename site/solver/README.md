@@ -29,9 +29,9 @@ Details:
   a seed, so planners stay comparable. A draw is rejected if it is inside an obstacle, closer than the
   vehicle radius (`radius` in the world, else 0.15 m) + 0.1 m to any obstacle surface or to the bounds
   (the arena treats the bounds as walls), or outside the bounds. After 50 rejected draws the exact point is
-  kept and recorded (`a_kept` / `b_kept`, a note under the pool line). Since loop-93 a drawn pair whose A and
+  kept and recorded (`a_kept` / `b_kept`, a note under the pool line). A drawn pair whose A and
   B are not connected at that radius is redrawn (up to 20 pairs, `JITTER_PATH_TRIES`); see
-  [Free path](#free-path-and-the-day-1-import-pass-loop-93). The page edits a copy of the world
+  [Free path](#free-path-and-the-room-import-pass). The page edits a copy of the world
   dict (`a`, `b`) before posting the run; [worker.js](../playground/worker.js) is unchanged and re-centres
   on A as before. Each record carries the `a` and `b` it flew; the JSON export has `jitter.per_seed`, the CSV
   has `a_x, a_y, b_x, b_y`. The race view draws A and B of the chosen seed and a small + at the exact map's
@@ -44,7 +44,7 @@ Details:
   "deterministic: k identical runs" (k = runs that have an identical twin). Error records are never
   collapsed: each error is its own failed trial. The pooled row keeps variations apart (the variation is
   part of the run signature).
-- **Run time limit (loop-73b).** Seconds of sim time before a run ends as `timeout`. **Auto** (default) uses
+- **Run time limit.** Seconds of sim time before a run ends as `timeout`. **Auto** (default) uses
   the benchmark's rule: [worker.js](../playground/worker.js) `max_time_for` copies
   `samples/close-area-benchmark/bench.py` `LONG_FAMILIES`, so maze and warehouse get 120 s and every other
   family 60 s (`run.DEFAULTS`). The rule reads the world's `family`: a preset edited in the playground keeps
@@ -72,21 +72,21 @@ Details:
   runner-up's, it says "No clear winner: A and B are within noise on this map (n=..)". Otherwise it names the
   winner with both intervals. If no planner reached B, it says so. When identical runs were collapsed, the n
   reads "n=3, 1 distinct" and the headline adds "Identical runs count once in the interval."
-  When more than 5 planners overlap the best one's interval (loop-87), it says "N planners tie at the top;
+  When more than 5 planners overlap the best one's interval, it says "N planners tie at the top;
   run Thorough or more seeds to separate them" with the best planner's count and interval, instead of naming two.
 - **Estimate.** Before the first results it uses a prior per planner (browser Python seconds from the
   [playground README](../playground/README.md)). After that it uses the mean worker time per planner
   measured in this browser, summed over the remaining runs and divided by K. The pool's load time is not included.
-- **Quick** = 5 seeds (`QUICK_SEEDS`, loop-87; 3 before), the drone's sensor only (ideal by default), truth pose
+- **Quick** = 5 seeds (`QUICK_SEEDS`; 3 before the 5-seed change), the drone's sensor only (ideal by default), truth pose
   only, then runs. **Thorough** = 10 seeds (`THOROUGH_SEEDS`), ideal + crazyflie + the drone's sensor, keeps the
   fault choice, then runs. Neither changes the planner selection or the jitter setting. Why 5: with 3 seeds
   3/3 (95 % Wilson 44-100 %) overlaps 0/3 (0-56 %), so a Quick sweep could never name a winner; 5/5 (57-100 %)
   is disjoint from 0/5 (0-43 %). The run summary under the sweep controls adds one line from the same Wilson
   code (`separationNote`, `seedsToSeparate` in sweep.js), e.g. "Quick separates 5/5 from 0/5; telling 5/5
   from 4/5 needs about 33 seeds" (Thorough: 10/10 vs 9/10 needs about 76). The Quick results recorded
-  before loop-87 below (random_0, maze_0, office_0, loop-80 Recommend) used 3 seeds.
-  **Stress** (loop-89) = 5 seeds, the drone's sensor and crazyflie on truth pose plus the drone's sensor with
-  one VIO fault; see [Stress and the Pareto view](#stress-and-the-pareto-view-loop-89).
+  before the 5-seed change below (random_0, maze_0, office_0, the first Recommend export) used 3 seeds.
+  **Stress** = 5 seeds, the drone's sensor and crazyflie on truth pose plus the drone's sensor with
+  one VIO fault; see [Stress and the Pareto view](#stress-and-the-pareto-view).
 - **Share link.** `index.html?planners=..&presets=..&fault=..&seeds=..&jitter=..&tlim=auto|60|120|180&vars=..&src=<preset>#w=<world>`.
   A link without `tlim` opens with Auto. `vars` (Stress) lists the variation keys flown (`ideal|truth,...`);
   without it every preset x fault flies. The world
@@ -105,7 +105,7 @@ Add it to `PLANNERS` in `DRIVER_PY` in [../playground/worker.js](../playground/w
 to [../playground/manifest.json](../playground/manifest.json)). The worker lists it in `env.planners`, and
 the Solver shows it automatically. Add a label to `PLANNER_LABELS` in [sweep.js](sweep.js) to get a
 readable name instead of the id, and a time to `PRIOR_WALL_S` for the first estimate. Colours are taken by
-position in `env.planners` (12 colours, then they repeat; with the 18 planners since loop-73, planners 13-18
+position in `env.planners` (12 colours, then they repeat; with the 18 planners since Theta*, MPPI and Hybrid A* were added, planners 13-18
 reuse the first 6 colours).
 
 ## Result: one real Quick sweep on random_0, jitter on
@@ -155,7 +155,7 @@ node site/solver/results/measure_solver.mjs     # about 1 minute
 node --test site/solver/test_sweep.mjs          # sweep.js unit tests, plain node
 ```
 
-## Result: one Quick sweep on maze_0, 18 planners, benchmark time limit (loop-73b)
+## Result: one Quick sweep on maze_0, 18 planners, benchmark time limit
 
 Source: [results/quick_maze_0.json](results/quick_maze_0.json) (`SOLVER.exportJSON()`) and
 [results/solver_check_maze_0.json](results/solver_check_maze_0.json), written by
@@ -185,7 +185,7 @@ start). Input type: synthetic.
   `matrix_0.json` maze rows (layout 0, seed 0, ideal).
 - Slowest run in the worker: Lazy Theta* unknown map, 30.7 s (watchdog 360 s at the 120 s limit).
 
-## Your drone (loop-76)
+## Your drone
 
 A collapsible **Your drone** panel in the Sweep section. Input type of every run: synthetic.
 
@@ -202,7 +202,7 @@ A collapsible **Your drone** panel in the Sweep section. Input type of every run
   [presets.py](../../samples/close-area-arena/presets.py) into `PRESET_SPECS` in sweep.js.
 - **Yaw**: fixed (default) or look where you go. Sent as `cfg.yaw` only when not fixed (the interface another
   job is adding to the worker). Each record stores the asked `yaw` and the `yaw_policy` the worker reported.
-- **Quick** = 5 seeds since loop-87 (3 when this section was recorded), the drone's sensor only (ideal by
+- **Quick** = 5 seeds since the 5-seed change (3 when this section was recorded), the drone's sensor only (ideal by
   default, Custom => the custom variation alone). **Thorough** = 10 seeds, ideal + crazyflie + the drone's sensor.
 - **Records and exports.** Every record has `vehicle`, `sensor` (the custom dict, or the preset's spec),
   `yaw`, `yaw_policy`. CSV adds `sensor_label`, `sensor_beams`, `sensor_fov_deg`, `sensor_max_range_m`,
@@ -225,7 +225,7 @@ shared host, load average 45.0 at the start). Input type: synthetic.
 
 - Quick = 18 planners x depth_cam_87 x truth pose x 3 seeds = **54 runs, 54 done, 0 errors, 17.5 s** on K = 4
   workers, jitter on (0.5 m), run time limit Auto => 60 s (office family). Arena default vehicle (not sent).
-  Re-run by the loop driver after loop-75b landed: yaw fixed (not sent), the worker reports yaw policy
+  Re-run after the playground's vehicle-radius and geofence change landed: yaw fixed (not sent), the worker reports yaw policy
   `off` on all 54 runs, and `astar_unknown` is geofenced.
 - Outcomes: 25 reached, 26 stuck, 2 collision, 1 timeout.
 - Headline: **No clear winner**: MPPI on the unknown-map A* path and Lazy Theta*, known map are within
@@ -241,10 +241,10 @@ shared host, load average 45.0 at the start). Input type: synthetic.
   yaw look_where_you_go were restored, and the panel opened.
 - No console errors or warnings.
 
-## Recommend (loop-80)
+## Recommend
 
 **Recommend** (Result section, next to Export JSON) downloads `recommend.md` and `recommend.json`: the
-sweep turned into something to paste into the team repo and the pitch. Logic in
+sweep turned into something to paste into your project repo and your write-up. Logic in
 [recommend.js](recommend.js) (pure, unit tested), input = the same doc as Export JSON plus
 [../playground/data/advisor.json](../playground/data/advisor.json).
 
@@ -268,7 +268,7 @@ whose best route never narrows below 3.60 m. Measured on the presets (node, 46-2
 glass_office_0 0.82 m => F0; random_0 3.60 m, u_trap_0 3.15 m, forest_0 1.78 m, maze_0 1.55 m,
 warehouse_0 1.45 m => F2. warehouse_0 is 0.05 m above the threshold, inside the grid error.
 
-### Result: Quick sweeps on narrow_gap_0 and random_0 (loop-87, Quick = 5 seeds)
+### Result: Quick sweeps on narrow_gap_0 and random_0 (Quick = 5 seeds)
 
 `node site/solver/results/measure_recommend.mjs` (headless Chrome 140.0.7339.208, 4 workers, 18 planners x
 5 seeds = 90 runs per map, jitter 0.5 m, ideal, truth pose, Apple M3 Max 16 cores, load average 41.2 at the
@@ -284,12 +284,12 @@ all 5 distinct runs, so no seed count separates them on success alone (the "What
 so); median time to B orders them. Read the benchmark rows below the table (e.g. `mppi` is 25 % reached on
 narrow_gap in the benchmark, ideal sensor, vs 95 % for `mppi_astar`).
 
-Superseded (loop-80, Quick = 3 seeds, 54 runs per map, load about 23): both maps said "No clear winner"
+Superseded (first export, Quick = 3 seeds, 54 runs per map, load about 23): both maps said "No clear winner"
 with a tied set of 18, every planner run (narrow_gap_0: 14 at 3/3 and 4 at 0/3, 38.5 s; random_0: 17 at
 3/3 and `straight` 0/3, 28.9 s), because 3/3 (44-100 %) overlaps 0/3 (0-56 %). Those sweeps are kept as
 [quick_narrow_gap_0_loop80.json](results/quick_narrow_gap_0_loop80.json) and
 [quick_random_0_loop80.json](results/quick_random_0_loop80.json); the recommend_*.md / .json files now hold
-the loop-87 export. The command for narrow_gap_0 is unchanged (`mppi_astar`, ARM=F0).
+the 5-seed export. The command for narrow_gap_0 is unchanged (`mppi_astar`, ARM=F0).
 
 The narrow_gap_0 command, run once in templates/flight-repo (its `./.venv`, built by this make, uv
 CPython 3.11.15, numpy 2.4.6, scipy 1.17.1; `OUT=` pointed the log to /tmp so nothing was added under
@@ -300,21 +300,21 @@ score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.j
 ```
 
 score_log.py: reached, 21.76 s to goal, min clearance 0.2579 m at (10.443, 7.182), in the gap. The
-loop-80 Solver's seed 0..2 runs gave a 21.22 s median and 0.261 m min clearance (10 Hz planner in the worker,
+first-export Solver's seed 0..2 runs gave a 21.22 s median and 0.261 m min clearance (10 Hz planner in the worker,
 jittered A and B on seeds 1-2). keepalive=29: 29 ticks reused the previous setpoint under the 30 ms
 planner budget on a loaded machine, so this run end is wall-clock dependent.
 
 Not verified: the "none"
 and "winner" texts ran in unit tests only, not in a browser; the random_0 command and ARM=F2 on
-narrow_gap_0 were not flown here; the custom-world `my_world.json` command was not run. loop-87: the
+narrow_gap_0 were not flown here; the custom-world `my_world.json` command was not run. 5-seed change: the
 "Quick separates 5/5 from 0/5" line under the sweep controls ran in the recorded page (no console errors)
 but was not looked at or screenshotted; the "Clearly worse" table and the "N planners tie at the top"
 headline were seen only in the recorded files above and the unit tests.
 
-## Stress and the Pareto view (loop-89)
+## Stress and the Pareto view
 
-On easy maps success rate cannot order the planners: the loop-87 Quick sweeps had 17 of 18 planners at 5/5
-on random_0 and 14 on narrow_gap_0 ([Recommend result](#result-quick-sweeps-on-narrow_gap_0-and-random_0-loop-87-quick--5-seeds)).
+On easy maps success rate cannot order the planners: the 5-seed Quick sweeps had 17 of 18 planners at 5/5
+on random_0 and 14 on narrow_gap_0 ([Recommend result](#result-quick-sweeps-on-narrow_gap_0-and-random_0-quick--5-seeds)).
 Two additions:
 
 - **Stress** button (next to Quick and Thorough; the tooltip gives the rationale: on easy maps the planners
@@ -349,7 +349,7 @@ average 30.5 at the start; [results/stress_check.json](results/stress_check.json
 
 | Sweep | Headline | Tied set | Success spread in the tied set | Pareto-optimal (pooled) |
 |---|---|---|---|---|
-| Quick (loop-87, [recommend_random_0.json](results/recommend_random_0.json)) | 17 planners tie at the top | 17, `straight` clearly worse (0/5) | all 5/5 | not computed then |
+| Quick (5 seeds, [recommend_random_0.json](results/recommend_random_0.json)) | 17 planners tie at the top | 17, `straight` clearly worse (0/5) | all 5/5 | not computed then |
 | Stress | 17 planners tie at the top (n=15 per planner, best 12/15, 55-93 %) | the same 17, `straight` clearly worse (0/15) | 12/15 (`lazy_thetastar_unknown`, `dstar_lite`) down to 6/15 (`dwa`) | `lazy_thetastar_unknown` 17.69 s, 0.506 m; `dstar_lite` 20.25 s, 0.516 m; `thetastar_known` 17.08 s, 0.334 m (10/15) |
 
 Stress does not shrink the tied set at 15 runs per planner: the Wilson intervals of 12/15 and 6/15 (20-64 %)
@@ -374,12 +374,12 @@ Custom drone sensor, a drone sensor other than ideal and faults other than `jump
 tests only; the `vars=` share link was not opened in a browser; the "What more seeds buy" line names the
 5 seeds per variation ("Quick separates..."), not the 15 runs per planner pooled. One map, 5 seeds.
 
-## Free path and the Day-1 import pass (loop-93)
+## Free path and the room-import pass
 
 **Free path.** [worker.js](../playground/worker.js) returns `free_path` with every result:
 `worlds_complex.has_free_path(world, vehicle radius)`, true when A and B are each more than radius + 0.1 m
 from every surface and a 4-connected search on the world's 0.1 m grid, inflated by the radius, joins them.
-Before loop-93 the Solver dropped it, so a jittered seed that walled A or B in counted as a planner failure.
+Before this change the Solver dropped it, so a jittered seed that walled A or B in counted as a planner failure.
 Now:
 
 - Every record has `free_path` (the worker's) and `free_path_pred` (the page's own check before the run);
@@ -394,7 +394,7 @@ Now:
   (cell centres at bounds + (i + 0.5) x 0.1 m, which does not move with A; occupied = centre within 0.05 m of
   an obstacle or the cell under a cylinder centre; blocked = within the radius of an occupied cell centre or
   the border). `seedJitter` redraws the A/B pair while it is not connected, up to 20 pairs, then keeps the exact
-  A and B (`path_kept`). A seed whose first pair connects gets the same A and B as before loop-93. The check
+  A and B (`path_kept`). A seed whose first pair connects gets the same A and B as before this change. The check
   uses the jitter radius (the larger of the world's and the vehicle's). Cost: one grid per world and radius
   (cached) and one BFS per drawn pair; 10 x 49 x 3 seeds below ran in about 1 s of node.
 - Parity: 10 single `straight` runs in the browser worker on test worlds (open, a wall with gaps of 0, 0.30,
@@ -408,7 +408,7 @@ Now:
   The redraw matters for user-drawn worlds with closed pockets near A or B (unit test `POCKET`: 2 of 49
   seeds at 1.0 m needed a redraw).
 
-**Day-1 import pass.** `node site/solver/results/measure_import.mjs` (headless Chrome 140.0.7339.208, the
+**Room-import pass.** `node site/solver/results/measure_import.mjs` (headless Chrome 140.0.7339.208, the
 page's pool K = 4, Apple M3 Max 16 cores, load average 15.8 / 42.2 / 51.7 at the start; every click is a CDP
 `Input.dispatchMouseEvent` mouse click; downloads captured with `Browser.setDownloadBehavior`). Result:
 [results/measure_import.json](results/measure_import.json), files in
@@ -435,7 +435,7 @@ real profile may still ask to allow the second Recommend download.
 
 ## Limits and not verified
 
-- One map, 3 seeds (5 since loop-87), ideal sensor, truth pose: a small sample. On random_0 the 3-seed Quick
+- One map, 3 seeds (5 since the 5-seed change), ideal sensor, truth pose: a small sample. On random_0 the 3-seed Quick
   sweep could not separate 11 of the 12 planners; the 5-seed one separates only `straight` (0/5) from the 17
   planners at 5/5.
 - Jitter makes seeds sample start and goal positions within 0.25 to 1.0 m of the map's A and B, not other
@@ -445,18 +445,18 @@ real profile may still ask to allow the second Recommend download.
   With jitter off, many planners repeat the identical run on every seed; those collapse to one trial.
 - The duplicate marker and jitter-off path are unit tested in [test_sweep.mjs](test_sweep.mjs); the recorded
   browser run had jitter on and no duplicates, so the "deterministic" marker was not seen in a browser.
-- No-path handling (loop-93) ran in a browser only with every run connected (hall_8x6, 130 runs, 0 no path);
+- No-path handling ran in a browser only with every run connected (hall_8x6, 130 runs, 0 no path);
   the "no path (k)" cell, the headline note and the recommend.md count with k > 0 ran in unit tests only.
 - Verified in headless Chrome 140 only. Firefox, Safari, real phones and touch were not tried.
   `CompressionStream` (share link) needs Chrome 80+, Firefox 113+, Safari 16.4+.
 - Run time limit: only Auto on maze_0 ran in a browser. The fixed 60 / 120 / 180 s choices, the
   `tlim=` share link and the CSV / JSON fields are unit tested in [test_sweep.mjs](test_sweep.mjs) only;
   the scaled watchdog was not triggered.
-- crazyflie and VIO jump ran only in the loop-89 Stress sweep (random_0); bias, dropout and VIO none did not run.
+- crazyflie and VIO jump ran only in the Stress sweep (random_0); bias, dropout and VIO none did not run.
 - Not run by any script: paste of a playground link (the codec is unit tested, the form was not clicked),
   the 180 s watchdog and the worker-crash path (the error path is unit tested in sweep.js only). Import,
-  Quick, Thorough and the CSV / JSON / Recommend buttons were clicked once (loop-93, hall_8x6, below).
-- Your drone (loop-76): only the depth_cam_87 Quick sweep ran. No browser sweep used a custom vehicle, the
+  Quick, Thorough and the CSV / JSON / Recommend buttons were clicked once (room-import pass, hall_8x6, below).
+- Your drone: only the depth_cam_87 Quick sweep ran. No browser sweep used a custom vehicle, the
   Custom sensor, lidar_2d or `yaw=look_where_you_go`; `cfg.yaw` and planners honouring `vehicle.radius_m`
   depend on a worker change that was not in this checkout. Those paths are unit tested in sweep.js only.
 - K workers each hold a Pyodide heap (the playground README measured 90 MB of wasm heap per runtime).

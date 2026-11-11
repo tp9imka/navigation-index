@@ -1,4 +1,4 @@
-// Nav check and screenshots for loop-74. Run from the repo root: node site/results-nav/check_nav.mjs
+// Nav check and screenshots for the shared site nav. Run from the repo root: node site/results-nav/check_nav.mjs
 // - spawns `python3 -m http.server` on the repo root (base "/") and a tiny node server that serves the
 //   repo under "/navigation-index/" (the GitHub Pages layout),
 // - opens every page in the machine's headless Chrome (CDP over Node's built-in WebSocket),

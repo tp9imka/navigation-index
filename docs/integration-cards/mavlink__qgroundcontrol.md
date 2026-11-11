@@ -1,6 +1,6 @@
 # QGroundControl - integration card
 <!-- about: repo:mavlink/qgroundcontrol -->
-One-line: cross-platform MAVLink ground station for PX4 and ArduPilot; in a hackathon it is the demo screen (map, EKF/GPS status, parameters, MAVLink Inspector) rather than something you modify.
+One-line: cross-platform MAVLink ground station for PX4 and ArduPilot; in a short build it is the demo screen (map, EKF/GPS status, parameters, MAVLink Inspector) rather than something you modify.
 
 | | |
 |---|---|
@@ -24,7 +24,7 @@ chmod +x QGroundControl-x86_64.AppImage
 Remote SITL: Application Settings => Comm Links => add UDP/TCP link to the SITL host.
 
 ## Wiring it into a nav stack
-- Shows what the estimator thinks: GPS fix/satellite count, EKF status flags, and position. Good for showing judges a GNSS-loss event injected via [PX4](./px4__px4-autopilot.md) `failure gps off` or [ArduPilot](./ardupilot__ardupilot.md) `SIM_GPS1_ENABLE 0`.
+- Shows what the estimator thinks: GPS fix/satellite count, EKF status flags, and position. Good for showing reviewers a GNSS-loss event injected via [PX4](./px4__px4-autopilot.md) `failure gps off` or [ArduPilot](./ardupilot__ardupilot.md) `SIM_GPS1_ENABLE 0`.
 - When QGC shares a vehicle with ROS/[MAVROS](./mavlink__mavros.md) or scripts, run [mavlink-router](./mavlink-router__mavlink-router.md) and give QGC its own endpoint.
 - `.plan` files from QGC can be loaded by [MAVSDK-Python](./mavlink__mavsdk-python.md) (`examples/mission_import.py`) and are produced by [MAVLinkMCP](./ion-g-ion__mavlinkmcp.md) (`download_mission_as_plan`).
 - Situational awareness beyond the own vehicle (other tracks, MIL-STD-2525 symbols) belongs in a TAK client fed by [PyTAK](./snstac__pytak.md); QGC has no CoT support.
@@ -33,7 +33,7 @@ Remote SITL: Application Settings => Comm Links => add UDP/TCP link to the SITL 
 ## Gotchas
 - Ubuntu: the AppImage needs FUSE and the user in the `dialout` group for serial; ModemManager can grab telemetry radios (QGC docs; not re-verified here).
 - Open issues: #13803 segfault in Linux Docker, #13802 video window missing on AArch64 RPi daily build, #15048 freeze with a flood of STATUSTEXT messages (an agent or script spamming status text can lock the UI).
-- Custom builds pull in Qt licensing questions; prefer stock binaries for a hackathon.
+- Custom builds pull in Qt licensing questions; prefer stock binaries for a short build.
 
 ## Alternatives
 - [MAVProxy](./ardupilot__mavproxy.md): terminal GCS, scriptable modules, already in ArduPilot SITL.

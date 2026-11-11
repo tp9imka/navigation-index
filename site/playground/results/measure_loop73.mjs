@@ -1,4 +1,4 @@
-// Browser = native check for the planners added in loop-73 (Theta* / Lazy Theta*, MPPI, Hybrid A*).
+// Browser = native check for the planners added on 2026-11-10 (Theta* / Lazy Theta*, MPPI, Hybrid A*).
 // Same CDP recipe as measure_playground.mjs (copied, that file is not imported). Run from the repo root
 // (Node 22+, no npm packages), after native_parity_loop73.py:
 //   samples/close-area-arena/.venv/bin/python site/playground/results/native_parity_loop73.py
@@ -104,7 +104,7 @@ async function main() {
   out.slow = out.parity.filter(r => r.browser_wall_s > SLOW_S).map(r => [r.world, r.planner, r.browser_wall_s]);
   write("playground_loop73.json", out);
   const f = v => (v == null ? "-" : v);
-  const md = [`# Playground loop-73: new planners, browser vs native`, "",
+  const md = [`# Playground: new planners, browser vs native`, "",
     `\`node site/playground/results/measure_loop73.mjs\`, ${out.date}. Input: **synthetic** (2.5D point-mass arena, preset worlds, seed 0, sensor ideal, truth pose, no filter).`,
     `Browser: ${out.chrome}, Pyodide ${out.env.pyodide} (Python ${out.env.python}, numpy ${out.env.numpy}, scipy ${out.env.scipy}). Native: ${NATIVE.native_env.python}, numpy ${NATIVE.native_env.numpy}, scipy ${NATIVE.native_env.scipy} ([native_parity_loop73.json](native_parity_loop73.json)).`,
     `Host: ${out.host.cpus} CPUs, load average ${out.host.loadavg.join(" / ")} at start. Load errors in the worker: ${JSON.stringify(out.env.load_errors)}.`, "",

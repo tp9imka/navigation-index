@@ -246,7 +246,7 @@ test("jitter: no free point in 50 draws => exact point kept and recorded", () =>
     obstacles: [{ type: "box", cx: 5, cy: 5, hx: 3, hy: 3 }] };           // A buried: every draw is inside
   const j = S.seedJitter(doc, 1, 0.5);
   assert.equal(j.a_kept, true); assert.deepEqual(j.a, [5, 5]);
-  // loop-93: a buried A is never connected, so no drawn pair passes hasFreePath => both exact points kept
+  // A buried A is never connected, so no drawn pair passes hasFreePath => both exact points kept
   assert.equal(j.path_kept, true); assert.equal(j.b_kept, true); assert.deepEqual(j.b, [8, 8]);
   assert.equal(j.path_redraws, S.JITTER_PATH_TRIES); assert.equal(j.free_path, false);
   const r = S.recordFromResult({ planner: "dwa", preset: "ideal", fault: "truth", seed: 1, a: j.a, b: j.b, ab_kept: { a: true, b: false } },
@@ -289,7 +289,7 @@ test("all identical everywhere => headline says n and distinct", () => {
 });
 
 
-// ------------------------------------------------------------ your drone (loop-76)
+// ------------------------------------------------------------ your drone
 const DRONE = { vehicle: { radius_m: 0.25, v_max: 1.5, a_max: 4, tau: 0.15 }, sensor_choice: "custom",
   sensor: { beams: 30, fov_deg: 87, max_range_m: 5, min_range_m: 0.3, noise_sigma_m: 0.04 }, yaw: "look_where_you_go" };
 
@@ -487,7 +487,7 @@ test("recommend: ARM F0 with a warning below 1.4 m, F2 on a wide map", () => {
 });
 
 
-// ------------------------------------------------------------ Stress and Pareto (loop-89)
+// ------------------------------------------------------------ Stress and Pareto
 // ranking row: k of n reached, median time to B t, min clearance c (rank() field names)
 const prow = (planner, k, n, t, c) => ({ planner, reached: k, n, success: S.wilson(k, n), median_time_s: t, min_clearance_m: c });
 
@@ -587,7 +587,7 @@ test("recommend: 'Pareto-optimal: ...' under the tied set, pareto in recommend.j
 });
 
 
-// ------------------------------------------------------------ free path / no path (loop-93)
+// ------------------------------------------------------------ free path / no path
 const wallT = (x0, y0, x1, y1) => ({ type: "wall", x0, y0, x1, y1, thickness: 0.1 });
 // OPEN with a closed 1.2 x 1.2 m room east of B: a jittered B can land inside it, walled in.
 const POCKET = { ...OPEN, b: [14.8, 15], obstacles: [wallT(15.2, 14.4, 15.2, 15.6), wallT(16.4, 14.4, 16.4, 15.6),
@@ -614,7 +614,7 @@ test("jitter: a pair whose A and B are not connected is redrawn; every seed ends
   const j = redrawn[0], rng = S.mulberry32((Math.imul(j.seed, 0x9E3779B1) ^ 0x5EED) >>> 0), min = 0.15 + S.JITTER_MARGIN_M;
   const a1 = S.jitterPoint(POCKET, POCKET.a, rng, 1.0, min).p, b1 = S.jitterPoint(POCKET, POCKET.b, rng, 1.0, min).p;
   assert.equal(S.hasFreePath(POCKET, a1, b1, 0.15), false);
-  // seeds that needed no redraw are unchanged from the pre-loop-93 rule (first pair kept)
+  // seeds that needed no redraw are unchanged from the earlier rule (first pair kept)
   const k = js.find(x => x.seed > 0 && !x.path_redraws), r2 = S.mulberry32((Math.imul(k.seed, 0x9E3779B1) ^ 0x5EED) >>> 0);
   assert.deepEqual(k.a, S.jitterPoint(POCKET, POCKET.a, r2, 1.0, min).p);
   assert.equal(S.seedJitter(POCKET, 0, 1.0).free_path, true);

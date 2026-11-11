@@ -1,4 +1,4 @@
-/* Playground Advisor (loop-65). Tokens (--panel, --fg, --muted, --line, --accent, --ok, --bad, --warn ...),
+/* Playground Advisor. Tokens (--panel, --fg, --muted, --line, --accent, --ok, --bad, --warn ...),
    .btn, .badge, .small, .muted come from ../showcase.css, so light and dark themes follow it. */
 .adv { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin: 18px 0; min-width: 0; }
 .adv h3 { font-size: 18px; margin: 0; }

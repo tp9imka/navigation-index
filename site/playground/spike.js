@@ -1,5 +1,5 @@
 "use strict";
-// Feasibility spike (loop-48a): run the hub's real close-area arena (samples/close-area-arena)
+// Feasibility spike: run the hub's real close-area arena (samples/close-area-arena)
 // in the browser with Pyodide, time it, stream positions back and draw them.
 // No build step. Files to copy into Pyodide come from manifest.json.
 //   spike.html            => 2 cases (straight, astar_esdf known map), 1 run each, animated

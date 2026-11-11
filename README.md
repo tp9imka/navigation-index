@@ -1,7 +1,7 @@
 # navigation-index
 
-A research hub for navigation hackathons with a defense lens: PNT, GNSS-denied and
-GNSS-contested navigation, sensor fusion, SLAM, autopilots, situational awareness.
+An open navigation knowledge hub for drones and robots: resilient PNT, GNSS-denied and
+GNSS-contested navigation, sensor fusion, SLAM, autopilots, airspace awareness.
 It indexes open-source repos (described, tagged and linked, not cloned) and the material
 around them: standards, papers, talks, courses, datasets, reports. Everything is one
 knowledge graph, so a repo page shows the papers, courses and samples that point at it, and
@@ -12,7 +12,7 @@ kind are at the top of [INDEX.md](INDEX.md) and in [llms.txt](llms.txt), and the
 ([docs/integration-cards/README.md](docs/integration-cards/README.md)) states how many cards
 it lists.
 
-**EDGE hackathon Challenge 2** => [docs/problem-statement-decoder.md, full-brief routing](docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages).
+**Got a full task brief** => [docs/problem-statement-decoder.md, full-brief routing](docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages).
 **Close-area A=>B task** (fly a drone from A to B, maybe with obstacles) =>
 [docs/research/close-area-nav/](docs/research/close-area-nav/README.md), then the runnable
 [samples/close-area-arena](samples/close-area-arena/README.md).
@@ -28,7 +28,7 @@ it lists.
   ([how it works](site/solver/README.md)). **Your drone** sets radius, speed and sensor;
   **Recommend** downloads `recommend.md` with the pick and the `make first-flight PLANNER=bench:<id>`
   command for [templates/flight-repo](templates/flight-repo/README.md#fly-what-the-solver-picks-benchid-in-a-world-file).
-  Venue blocks the CDN: `python3 tools/offline_browser_kit.py prepare` then `verify`
+  Network blocks the CDN: `python3 tools/offline_browser_kit.py prepare` then `verify`
   ([first-three-hours](docs/first-three-hours.md#browser-tools-offline)).
 - [Search UI](https://navigation-index.pages.dev/site/) - every record, doc and sample.
 
@@ -36,19 +36,19 @@ it lists.
 
 | Need | Open |
 |---|---|
-| First 20 minutes of the day | [docs/first-day-intake.md](docs/first-day-intake.md), measured end to end in [docs/cold-start-drill.md](docs/cold-start-drill.md) |
-| First hour of the day: clone to a scored first flight and a regression bar | [docs/quickstart-first-flight.md](docs/quickstart-first-flight.md) |
+| First 20 minutes on a new task | [docs/first-day-intake.md](docs/first-day-intake.md), measured end to end in [docs/cold-start-drill.md](docs/cold-start-drill.md) |
+| First hour: clone to a scored first flight and a regression bar | [docs/quickstart-first-flight.md](docs/quickstart-first-flight.md) |
 | Which planner for which arena and sensor | [samples/close-area-benchmark](samples/close-area-benchmark/README.md) (14 planners x 8 arenas x 2 sensors) |
-| Starter code for the team repo | [templates/flight-repo](templates/flight-repo/README.md) (`make first-flight`), [templates/drone-adapter](templates/drone-adapter/README.md) (PX4, ArduPilot, Crazyflie, Tello) |
-| Our room as an arena world | [samples/close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic) `world_from_room.py` (measured room) or `world_from_image.py` (floor plan image) => world JSON for the Solver |
+| Starter code for your own repo | [templates/flight-repo](templates/flight-repo/README.md) (`make first-flight`), [templates/drone-adapter](templates/drone-adapter/README.md) (PX4, ArduPilot, Crazyflie, Tello) |
+| Your room as an arena world | [samples/close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic) `world_from_room.py` (measured room) or `world_from_image.py` (floor plan image) => world JSON for the Solver |
 | Pick and fly a planner for that world | [Solver](site/solver/README.md) Quick, Thorough if tied, Recommend => `make first-flight PLANNER=bench:<id> WORLD=<file>` in flight-repo; F2 cannot pass gaps under ~1.4 m |
-| A regression bar for the team | [close-area-benchmark scenario packs](samples/close-area-benchmark/README.md#scenario-packs) (`pack.py run packs/<name>.json`, PASS / FAIL / NOT PROVEN per planner) |
+| A regression bar for your planner | [close-area-benchmark scenario packs](samples/close-area-benchmark/README.md#scenario-packs) (`pack.py run packs/<name>.json`, PASS / FAIL / NOT PROVEN per planner) |
 | People walking through | [samples/close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) `run_predict.py` (VO gate: 100 of 100 held-out runs reached, 0 collisions, synthetic) |
 | B is a marker, position unknown | [samples/close-area-explore](samples/close-area-explore/README.md) (frontier found B in 43.3 % with B unknown, 88.3-100 % with a nominal B within 2 m, synthetic), then [fiducial-goal-apriltag](samples/fiducial-goal-apriltag/README.md) |
 | More planners | [Theta*](samples/close-area-planner-thetastar/README.md), [MPPI](samples/close-area-planner-mppi/README.md), [Hybrid A*](samples/close-area-planner-hybrid-astar/README.md) (negative: 81.9 vs 91.2 % reached, synthetic) |
 | How the toolkit was built | [docs/how-it-was-built.md](docs/how-it-was-built.md) |
 | What we tested as innovation, and what failed | [docs/research/README.md](docs/research/README.md) (decision at the end) |
-| Pitch, demo, judge questions | [templates/presenting/close-area-story.md](templates/presenting/close-area-story.md), [templates/presenting/live-demo-script-close-area.md](templates/presenting/live-demo-script-close-area.md), [templates/presenting/hard-questions.md](templates/presenting/hard-questions.md) |
+| Story, demo, hard questions | [templates/presenting/close-area-story.md](templates/presenting/close-area-story.md), [templates/presenting/live-demo-script-close-area.md](templates/presenting/live-demo-script-close-area.md), [templates/presenting/hard-questions.md](templates/presenting/hard-questions.md) |
 | How this hub was built (agent loop) | [loop/DRIVER.md](loop/DRIVER.md), [loop/JOURNAL.md](loop/JOURNAL.md) |
 
 ## Got a problem statement? Four hops
@@ -59,7 +59,7 @@ the [three starter bundles](docs/starter-bundles.md). Each has a rehearsal path 
 
 1. **Decode it.** [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md):
    wording table => 1-3 of the decoder rows, each with approach, stack, data, starting
-   sample, risk, pitch. Then [docs/first-three-hours.md](docs/first-three-hours.md) for the first three hours.
+   sample, risk, one-line summary. Then [docs/first-three-hours.md](docs/first-three-hours.md) for the first three hours.
 2. **Pick a sample.** [samples/README.md](samples/README.md): every sample grouped by
    problem, with status (ran / partial / sketch), deps, first command and the key measured
    result.
@@ -75,14 +75,14 @@ the [three starter bundles](docs/starter-bundles.md). Each has a rehearsal path 
 | You want | Go to |
 |---|---|
 | One-page brief cheat sheets: demo, first 2 hours, citable numbers, traps | [docs/cheatsheets/](docs/cheatsheets/README.md) |
-| Project ideas, judging angle, reference architectures, prep checklist | [docs/competition-playbook.md](docs/competition-playbook.md) |
+| Project ideas, what reviewers look for, reference architectures, prep checklist | [docs/competition-playbook.md](docs/competition-playbook.md) |
 | Flagship demo: SITL spoof => integrity monitor => source switch => operator dashboard | [samples/golden-demo](samples/golden-demo/README.md) |
 | A real past brief and seven team solutions, benchmarked | [docs/landscape/blind-flight-teardown.md](docs/landscape/blind-flight-teardown.md) |
 | What vendors sell, what funders ask for, UA/RU sources | [docs/landscape/](docs/landscape/README.md), [UA/RU overview](docs/landscape/ua-ru-sources-overview.md) |
 | Integrity and timing guides | [docs/integrity-monitoring.md](docs/integrity-monitoring.md), [docs/timing-resilience.md](docs/timing-resilience.md) |
 | What PX4 EKF2 and ArduPilot EKF3 do when GNSS is spoofed or jammed (SITL flights, source-cited) | [docs/autopilot-gnss-fault-handling.md](docs/autopilot-gnss-fault-handling.md) |
 | Model weights vs code licenses (SuperPoint, MASt3R...) | [docs/model-weights-licenses.md](docs/model-weights-licenses.md) |
-| Team repo skeleton, judge dashboard, offline cache | [templates/](templates/README.md): [project-repo](templates/project-repo/), [demo-dashboard](templates/demo-dashboard/README.md), [offline-kit](templates/offline-kit/README.md) |
+| Project repo skeleton, demo dashboard, offline cache | [templates/](templates/README.md): [project-repo](templates/project-repo/), [demo-dashboard](templates/demo-dashboard/README.md), [offline-kit](templates/offline-kit/README.md) |
 | Learn navigation fast | [docs/primer/](docs/primer/README.md), [docs/learning-paths.md](docs/learning-paths.md) |
 | Record, replay and inspect sensor logs | [recording-replay](samples/recording-replay/README.md), [MCAP](docs/integration-cards/foxglove__mcap.md), [Rosbags](docs/integration-cards/ternaris__rosbags.md), [Rerun](docs/integration-cards/rerun-io__rerun.md) |
 | Browse by topic | [INDEX.md](INDEX.md) => `catalog/concepts/` |

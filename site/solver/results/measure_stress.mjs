@@ -1,4 +1,4 @@
-// Record one Stress sweep on random_0 (loop-89) in headless Chrome and the Pareto view on a 390 px phone.
+// Record one Stress sweep on random_0 in headless Chrome and the Pareto view on a 390 px phone.
 // Copied from measure_recommend.mjs (same server, CDP client and Chrome flags).
 // Run from the repo root (Node 22+, no npm packages): node site/solver/results/measure_stress.mjs [map]
 // Default map: random_0. Needs Google Chrome at the macOS default path (or CHROME=...) and network for

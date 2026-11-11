@@ -1,4 +1,4 @@
-# Playground loop-73b: maze_0 and warehouse_0 with the benchmark run time limit, browser vs native
+# Playground: maze_0 and warehouse_0 with the benchmark run time limit, browser vs native
 
 `node site/playground/results/measure_loop73b.mjs`, 2026-11-10T07:07:26.126Z. Input: **synthetic** (2.5D point-mass arena, preset worlds, seed 0, sensor ideal, truth pose, no filter).
 Browser: Chrome/140.0.7339.208, Pyodide 314.0.7 (Python 3.14.2, numpy 2.4.6, scipy 1.18.0). Native: 3.12.10, numpy 2.5.4, scipy 1.18.1 ([native_parity.json](native_parity.json), [native_parity_loop73.json](native_parity_loop73.json)).

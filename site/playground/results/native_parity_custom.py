@@ -1,4 +1,4 @@
-"""Native CPython reference for custom vehicles and sensors in the playground run message (loop-75, loop-75b).
+"""Native CPython reference for custom vehicles and sensors in the playground run message.
 Sibling of native_parity.py: same driver (worker.js DRIVER_PY, extracted from the file), same score keys.
 
 Run from the repo root with the arena venv:
@@ -6,21 +6,21 @@ Run from the repo root with the arena venv:
 
 Cases (seed 0, truth pose, no filter):
   1  random_0      mppi_astar     cfg.sensor = presets.SENSOR_SPECS["depth_cam_87"] (dict), cfg.yaw = look_where_you_go
-  2  office_0      mppi_astar     the same (1 and 2 are the loop-75 cases; loop-75b made the yaw policy opt-in)
+  2  office_0      mppi_astar     the same (1 and 2 are the first custom-vehicle cases; the yaw policy became opt-in later)
   3  office_0      mppi_astar     the same camera, cfg.yaw absent (default "fixed")
   4  narrow_gap_0  mppi_astar     cfg.vehicle radius_m 0.25 (v_max, a_max, tau as run.DEFAULTS), sensor ideal
   5  narrow_gap_0  mppi_astar     radius_m 0.35
   6  narrow_gap_0  astar_unknown  radius_m 0.25
   7  narrow_gap_0  astar_unknown  radius_m 0.35
   Cases 4-7 also store "before": the same run with inflate=False (planners keep the shipped 0.15 m, as before
-  loop-75b; native only, the run message has no such field).
+  the vehicle radius reached the planners; native only, the run message has no such field).
 Checks:
   K1  cases 1-3: driver with the sensor dict == driver with preset "depth_cam_87" and the same yaw
   K2  cases 4-7: driver == run.run_one on the same JSON world with run.DEFAULTS["vehicle"]["radius"] = r and the
       planner built inside the driver's radius_override(r) (loop parity with the override)
   K3  no leak: after cases 4-7 every overridden constant is back at its import value, and narrow_gap_0
       mppi_astar at the default radius == the same run made before any custom radius
-  K4  case 3 (cfg.yaw absent) == simulate(yaw_policy="off"), the loop-75 "fixed yaw" path
+  K4  case 3 (cfg.yaw absent) == simulate(yaw_policy="off"), the original "fixed yaw" path
   K5  cfg.vehicle with the default radius 0.15 m == no cfg.vehicle (nothing overridden at 0.15 m)
 Information: case 3 vs samples/close-area-arena/results/custom_sensor_0.json (depth_cam_87 fixed yaw, office_0).
 Writes native_parity_custom.json for measure_custom.mjs to compare the browser against.
@@ -115,10 +115,10 @@ def main():
     check("K3 overridden constants restored after the runs", "RADIUS_TABLE", consts1, consts0)
     check("K3 default-radius run after the custom-radius runs == the same run before them", ["narrow_gap_0", "mppi_astar"],
           NP.pick(sim(plain)["score"]), first_default)
-    # K4: default yaw = the loop-75 fixed-yaw path
+    # K4: default yaw = the original fixed-yaw path
     c3 = out["cases"][2]
     r = ns["simulate"](docs["office_0"], "mppi_astar", "depth_cam_87", "truth", "none", 0, yaw_policy="off")
-    check("K4 cfg.yaw absent == yaw_policy off (loop-75 fixed yaw)", ["office_0", "mppi_astar"], c3["score"], NP.pick(r["score"]))
+    check("K4 cfg.yaw absent == yaw_policy off (original fixed yaw)", ["office_0", "mppi_astar"], c3["score"], NP.pick(r["score"]))
     # K5: an explicit default radius changes nothing
     r = sim(dict(plain, vehicle=veh(dv["radius"])))
     check("K5 cfg.vehicle radius 0.15 m == no cfg.vehicle", ["narrow_gap_0", "mppi_astar"], NP.pick(r["score"]), first_default)

@@ -8,10 +8,10 @@ Checks (fields: outcome, time_to_goal_s, duration_s, min_clearance_m, path_lengt
   A  driver on presets/<w>.json  ==  run.run_one on WJ.from_json(<same json>)          (loop parity, truth pose, ideal sensor)
   B  driver on presets/<w>.json  ==  run.run_one on world.make_world(family, 0, 0)    (JSON round trip changes nothing)
   C  driver with a fault         ==  run.run_one on the same JSON world with estimator.make_pose_source_factory(fault)  (run.evaluate path)
-  Run time limit (loop-73b): the driver takes it from the world family (worker.js max_time_for, the
+  Run time limit: the driver takes it from the world family (worker.js max_time_for, the
   bench.py LONG_FAMILIES table: maze and warehouse 120 s, else 60 s); every reference loop below gets
   the same limit through cfg_for.
-  E  driver (6 sample planners, and astar_unknown since loop-75b)  ==  run.run_one on the same JSON world with the planner built by
+  E  driver (6 sample planners, and astar_unknown since it was geofenced)  ==  run.run_one on the same JSON world with the planner built by
                                     samples/close-area-benchmark/bench.py PLANNERS[name][0](world)
   F  (information) driver (6 sample planners, A* known map on maze / warehouse, astar_unknown) vs the benchmark's results/matrix_0.json row (preset ideal,
      layout 0, generated world, not JSON, so the 4-decimal rounding of check B applies)
@@ -65,26 +65,26 @@ CASES = [
     ("office_0", "freest_beam", "crazyflie", "none", "none"),
     ("glass_office_0", "astar_unknown", "crazyflie", "truth", "none"),
     ("u_trap_0", "astar_known", "crazyflie_bright", "bias", "F2"),
-    # loop-62: the 6 benchmark planners added to the playground, one preset each
+    # The 6 benchmark planners added to the playground, one preset each
     ("random_0", "dwa", "ideal", "truth", "none"),
     ("u_trap_0", "dwa_mem", "ideal", "truth", "none"),
     ("office_0", "bug2", "ideal", "truth", "none"),
     ("forest_0", "tangent_bug", "ideal", "truth", "none"),
     ("narrow_gap_0", "dstar_lite", "ideal", "truth", "none"),
     ("office_0", "informed_rrt_star", "ideal", "truth", "none"),
-    # loop-73b: run time limit by family (worker.js max_time_for = bench.py LONG_FAMILIES: maze, warehouse 120 s)
+    # Run time limit by family (worker.js max_time_for = bench.py LONG_FAMILIES: maze, warehouse 120 s)
     ("maze_0", "astar_known", "ideal", "truth", "none"),
     ("warehouse_0", "astar_known", "ideal", "truth", "none"),
     ("maze_0", "bug2", "ideal", "truth", "none"),
     ("warehouse_0", "bug2", "ideal", "truth", "none"),
     ("maze_0", "informed_rrt_star", "ideal", "truth", "none"),
-    # loop-75b: astar_unknown is geofenced as bench.py GeofencedAStar; office_0's B was outside the shipped map
+    # astar_unknown is geofenced as bench.py GeofencedAStar; office_0's B was outside the shipped map
     ("office_0", "astar_unknown", "ideal", "truth", "none"),
 ]
 NEW = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite", "informed_rrt_star")
-# loop-75b: planners also checked against bench.py's factory (E) and matrix_0.json (F), besides A and B
+# Planners also checked against bench.py's factory (E) and matrix_0.json (F), besides A and B
 BENCH_TOO = ("astar_unknown",)
-# loop-63: VIO loss recovery arms (world, planner, preset, fault, filter, seed, recovery). The demo world is
+# VIO loss recovery arms (world, planner, preset, fault, filter, seed, recovery). The demo world is
 # world.make_world("random", 1, 97) through world_json (templates/presenting/live-demo-script-close-area.md H1), saved by this script.
 DEMO = "reloc_demo_random_1_97"
 RELOC_CASES = [
@@ -202,7 +202,7 @@ def main():
         out["checks"].append({"check": name, "case": list(case), "same": ok, "driver": mine["score"], "reference": pick(ref)})
         print("CHECK", name, case, "same" if ok else f"DIFF {mine['score']} vs {pick(ref)}")
 
-    # factories take the world (loop-75b: astar_unknown is geofenced on its bounds)
+    # factories take the world (astar_unknown is geofenced on its bounds)
     fac = {"straight": lambda w: run.load_planner("straight"), "astar_known": lambda w: ns["PLANNERS"]["astar_known"](),
            "astar_unknown": lambda w: ns["PLANNERS"]["astar_unknown"](w), "freest_beam": lambda w: ns["PLANNERS"]["freest_beam"](),
            "apf": lambda w: ns["PLANNERS"]["apf"](), "vfh_plus": lambda w: ns["PLANNERS"]["vfh_plus"]()}
@@ -240,7 +240,7 @@ def main():
     # F: information only, against the benchmark matrix on generated worlds
     mx = {(r["planner"], r["family"], r["preset"], r["index"]): r for r in json.load(open(MATRIX))["runs"]}
     out["matrix_rows"] = []
-    # loop-73b: also A* known map on the long families (maze, warehouse), same 120 s limit as the matrix
+    # Also A* known map on the long families (maze, warehouse), same 120 s limit as the matrix
     long_fams = ns["LONG_FAMILIES"]
     for case in [c for c in CASES if c[1] in NEW or ((docs[c[0]]["family"] in long_fams or c[1] in BENCH_TOO)
                                                      and c[2:] == ("ideal", "truth", "none"))]:

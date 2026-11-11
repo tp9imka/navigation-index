@@ -639,7 +639,7 @@ def main():
                    + " (see below)")
     p.add_argument("arg", nargs="?", help="query text, statement or id, depending on the command")
     p.add_argument("--kind", help="repo, sample, guide, concept, paper, doc, dataset, ...")
-    p.add_argument("--fit", choices=["high", "medium", "low"], help="hackathon fit")
+    p.add_argument("--fit", choices=["high", "medium", "low"], help="quick-build fit")
     p.add_argument("--domain", help="air, ground, maritime, underwater, space, dismounted, multi")
     p.add_argument("--concept", help="restrict search to a concept id, e.g. concept:vio")
     for key, choices in readiness.ENUMS.items():
