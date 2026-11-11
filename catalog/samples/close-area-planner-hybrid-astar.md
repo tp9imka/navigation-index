@@ -29,6 +29,6 @@ Own numpy + scipy Hybrid A* (Dolgov et al. 2008 / 2010) over continuous (x, y, h
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [How it was built: method, kill tests and fact-check error rates](../../docs/how-it-was-built.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) (mentions)
+- [Hard questions a reviewer will ask, with 20-second answers](../../templates/presenting/hard-questions.md) (mentions)
 
 _Indexed by lane(s): samples_

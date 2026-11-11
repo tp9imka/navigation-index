@@ -34,6 +34,6 @@ A small MCP server (stdio JSON-RPC 2.0, pymavlink) that lets Claude Code or any 
 - [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 
 _Indexed by lane(s): samples_

@@ -42,7 +42,7 @@ Shore-side detection of GNSS spoofing from the AIS picture, on real Danish Marit
 - [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Danish Maritime Authority historical AIS data](../../catalog/resources/dma-historical-ais.md) (dataset_for)
 - [Natural Earth vector data](../../catalog/resources/natural-earth-vectors.md) (dataset_for)
 

@@ -28,6 +28,6 @@ Announcement of DIANA's 2026 challenge programme topics, including operating in 
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 
 _Indexed by lane(s): defense-context_

@@ -34,7 +34,7 @@ DARPA program page for ANS, which pursued GPS-quality PNT in denied environments
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 - [DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program](../../catalog/resources/insidegnss-darpa-aspn.md) (part_of)
 
 _Indexed by lane(s): alt-nav, docs-standards_

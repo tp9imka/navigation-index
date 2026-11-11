@@ -35,7 +35,7 @@ Search arms for the case where B is a marker, a nominal position or an area, not
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/quickstart-first-flight.md) (mentions)
-- [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) (mentions)
+- [Hard questions a reviewer will ask, with 20-second answers](../../templates/presenting/hard-questions.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 
 _Indexed by lane(s): samples_

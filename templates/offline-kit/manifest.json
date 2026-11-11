@@ -1736,7 +1736,7 @@
    "size": null,
    "size_complete": false,
    "each": true,
-   "note": "unpinned names, fetched one by one; resolve against your Python before the event"
+   "note": "unpinned names, fetched one by one; resolve against your Python while still online"
   },
   {
    "id": "docker:3000:3000",
@@ -3895,7 +3895,7 @@
    "source": "templates/demo-dashboard/README.md (Offline), docs/integration-cards/protomaps__pmtiles.md",
    "size": null,
    "size_complete": false,
-   "note": "override --bbox for the venue; size from `pmtiles extract --dry-run` (prep.py --probe)"
+   "note": "override --bbox for your area; size from `pmtiles extract --dry-run` (prep.py --probe)"
   }
  ]
 }

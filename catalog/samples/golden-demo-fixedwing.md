@@ -39,8 +39,8 @@ ArduPlane Plane-4.6.3 SITL in Docker (new image built on the sitl-docker copter 
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
-- [Slides outline](../../templates/pitch/slides-outline.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
+- [Slides outline](../../templates/presenting/slides-outline.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 
 _Indexed by lane(s): samples_

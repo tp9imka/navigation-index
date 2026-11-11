@@ -26,7 +26,7 @@ EU defence hackathon (17-19 October 2025, eight locations) with challenges on pr
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 - [EUDIS Defence Hackathon, 5th edition (Oct 2026) - GNSS-denied navigation challenge](../../catalog/resources/eudis-defence-hackathon-2026.md) (cites)
 
 _Indexed by lane(s): learning_

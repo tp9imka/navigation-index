@@ -39,8 +39,8 @@ A stdlib-only simulation of six vehicles with biased odometry where only two kee
 - [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Cooperative localization on real UWB: MILUV drones through the swarm-coop filters](../../catalog/samples/swarm-coop-real-uwb.md) (uses)
 
 _Indexed by lane(s): samples_

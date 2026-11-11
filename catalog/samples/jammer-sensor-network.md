@@ -43,7 +43,7 @@ End-to-end stdlib pipeline for the 'cheap receivers detect and localize a GNSS j
 - [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 
 _Indexed by lane(s): samples_

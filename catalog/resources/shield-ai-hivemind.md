@@ -33,6 +33,6 @@ Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on par
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 
 _Indexed by lane(s): landscape_

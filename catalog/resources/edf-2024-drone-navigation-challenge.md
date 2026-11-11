@@ -27,7 +27,7 @@ European Defence Fund technological-challenge topic on multi-sensor integration 
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 - [European Defence Fund 2025 calls](../../catalog/resources/edf-2025-call.md) (cites)
 
 _Indexed by lane(s): defense-context_

@@ -32,7 +32,7 @@ Vendor explanation of AIM+ interference monitoring and mitigation: narrowband an
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../../catalog/resources/honeywell-hguide-o480.md) (cites)
 
 _Indexed by lane(s): docs-standards_

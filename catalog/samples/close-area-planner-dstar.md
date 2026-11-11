@@ -4,7 +4,7 @@
 
 D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mode, compared with A* replanning from scratch on 50 seed-0 layouts per family. Same outcomes (random, u_trap), identical path costs at all 10,017 frozen-map checks, 4-7x less search time per replan; on tiled maps A* search grows to 5.8 s (8x8 tiles) while D* Lite stays at 2.5-7 ms. Synthetic.
 
-**Verification:** 2026-11-09: compare run/verify/scale/fuzz ran on Apple M3 Max, CPython 3.12.10 (results/ files); README written by the loop driver from those files after the job timed out.
+**Verification:** 2026-11-09: compare run/verify/scale/fuzz ran on Apple M3 Max, CPython 3.12.10 (results/ files); README written afterwards from those files after the build run timed out.
 
 ## Practical readiness
 

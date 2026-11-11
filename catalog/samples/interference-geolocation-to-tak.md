@@ -33,7 +33,7 @@ Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bea
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard](../../catalog/samples/jammer-sensor-network.md) (uses)
 
 _Indexed by lane(s): samples_

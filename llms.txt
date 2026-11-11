@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy, resilient PNT and airspace awareness: 923 open-source repos, 975 documents, talks, courses and datasets, 63 usage samples and 90 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy, resilient PNT and airspace awareness: 923 open-source repos, 975 documents, talks, courses and datasets, 63 usage samples and 89 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide, template or sample doc). Guides (kind `guide`, including templates/) are searchable like any other node.
 
@@ -90,31 +90,30 @@ Read AGENTS.md for how to query and extend. For a problem statement, run `python
 - [Four selective offline starter bundles](docs/starter-bundles.md): Pick a bundle before downloading the broad offline kit.
 - [Timing resilience: the T in PNT](docs/timing-resilience.md): After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-48 h build that ...
 - [Upstream findings](docs/upstream-findings.md): Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
-- [Hackathon kit templates](templates/README.md): Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
-- [ADR-NNNN: TODO decision title](templates/adr.md): - Status: proposed accepted superseded by ADR-NNNN - Date / hour: TODO (e.g.
-- [Demo dashboard](templates/demo-dashboard/README.md): Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
-- [Demo script: close-area A to B, the toolkit in 2 minutes](templates/demo-script-close-area.md): State on 2026-11-10: this is a script for the measured toolkit.
-- [Demo script](templates/demo-script.md): Live demo inside a 3-minute pitch (adjust times to the event).
+- [Templates](templates/README.md): Files to copy when you build a navigation prototype on a short clock: a flight-loop starter, a platform driver, a project skeleton, an offline cache, a replay dashboard, presenting material and a planning kit.
+- [ADR-NNNN: TODO decision title](templates/competition-kit/adr.md): - Status: proposed accepted superseded by ADR-NNNN - Date / hour: TODO (e.g.
+- [Deck outline](templates/competition-kit/deck-outline.md): 9 slides, 3 minutes plus Q&A.
+- [Retro](templates/competition-kit/retro.md): Within a week, 45 minutes, whole team.
+- [Risk register](templates/competition-kit/risk-register.md): Open at hour 0.
+- [Self-assessment](templates/competition-kit/self-assessment.md): Score yourself at hour 22 and hour 40.
+- [Submission checklist](templates/competition-kit/submission-checklist.md): Run hours 42-48, before the final push.
+- [Team roles and 48h plan](templates/competition-kit/team-roles-and-48h-plan.md): Derived from playbook section 5.
+- [Threat model: TODO project name](templates/competition-kit/threat-model.md): Fill at hours 0-2, freeze at hour 14.
+- [Demo dashboard](templates/demo-dashboard/README.md): Use this when a GNSS / PNT run with lat / lon tracks needs a map replay for reviewers.
 - [drone-adapter: one seam between the planner and any drone](templates/drone-adapter/README.md): Use this when planner code must not depend on which drone you get.
 - [drivers: Adapter implementations for real platforms](templates/drone-adapter/drivers/README.md): Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED, pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them, behind the pose() / ranges() / send_setpoint() seam ...
 - [Frame conventions per platform](templates/drone-adapter/frames.md): The planner always works in local ENU (x east, y north, z up, origin at point A) with body FLU (x forward, y left, z up), yaw in rad CCW from +x.
-- [flight-repo: close-area A=>B flight loop starter](templates/flight-repo/README.md): Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
-- [Judging self-assessment](templates/judging-self-assessment.md): Score yourself at H+22 and H+40.
-- [Offline kit](templates/offline-kit/README.md): Use this when you prepare laptops in the week or night before the event, or share a cache with teammates at the venue.
-- [Pitch deck outline](templates/pitch-deck-outline.md): 9 slides, 3 minutes plus Q&A.
-- [Pitch kit](templates/pitch/README.md): Use this when you write what you say, show or hand to judges at the end.
-- [Close-area pitch scaffold: A to B through obstacles](templates/pitch/close-area-story.md): Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
-- [Judge drill: close-area A=>B, relocalization pitch (H1)](templates/pitch/judge-drill-close-area.md): For the default toolkit pitch (decided 2026-11-09 evening) use judge-drill-toolkit.md; this page is for the H1 variant.
-- [Judge drill: close-area A=>B, measured-toolkit pitch](templates/pitch/judge-drill-toolkit.md): Use this at H+36 to rehearse the hard questions for the toolkit pitch: the measured toolkit, plus a narrow claim only if the real brief fits it (case study, research decision).
-- [[Project name]: one-pager](templates/pitch/one-pager-template.md): Team: [names, roles] - Brief: [problem statement, in its own words] - Repo: [URL, public / private] - Commit: [hash]
-- [Pitch structure](templates/pitch/pitch-structure.md): Two skeletons (3 and 5 minutes) for a PNT-resilience pitch, the funder vocabulary to use and not to stretch, and 15 hard judge questions with answer patterns.
-- [Slides outline](templates/pitch/slides-outline.md): A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch.
-- [Story bank](templates/pitch/story-bank.md): Ready opening hooks for a PNT-resilience pitch, 10 per brief family, each tied to a measured result in the hub.
-- [Post-hackathon retro](templates/post-hackathon-retro.md): Within a week, 45 minutes, whole team.
-- [Risk register](templates/risk-register.md): Open at H+0.
-- [Submission checklist](templates/submission-checklist.md): Run H+42 to H+48, before the final push.
-- [Team roles and 48h plan](templates/team-roles-and-48h-plan.md): Derived from playbook section 5.
-- [Threat model: TODO project name](templates/threat-model.md): Fill at H+0 to H+2, freeze at H+14.
+- [flight-repo: close-area A=>B flight loop starter](templates/flight-repo/README.md): Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it in the first hour as your team's repo.
+- [Offline kit](templates/offline-kit/README.md): Use this when you prepare laptops in the week or night before you work without a reliable network (a field site, a lab with locked-down Wi-Fi, an air-gapped room), or share a cache with teammates there.
+- [Presenting](templates/presenting/README.md): Use this when you write what you say, show or hand to reviewers at the end.
+- [Close-area talk scaffold: A to B through obstacles](templates/presenting/close-area-story.md): Fill this on the second day when the task is "fly a drone from A to B in a close area, with obstacles".
+- [Hard questions a reviewer will ask, with 20-second answers](templates/presenting/hard-questions.md): Use this in the last rehearsal before the talk, for the close-area A=>B task.
+- [Live demo script: close-area A to B, the toolkit in 2 minutes](templates/presenting/live-demo-script-close-area.md): State on 2026-11-10: this is a script for the measured toolkit.
+- [Live demo script](templates/presenting/live-demo-script.md): Live demo inside a 3-minute talk (adjust times to your slot).
+- [[Project name]: one-pager](templates/presenting/one-pager-template.md): Team: [names, roles] - Brief: [problem statement, in its own words] - Repo: [URL, public / private] - Commit: [hash]
+- [Pitch structure](templates/presenting/pitch-structure.md): Two skeletons (3 and 5 minutes) for a PNT-resilience pitch, the funder vocabulary to use and not to stretch, and 15 hard reviewer questions with answer patterns.
+- [Slides outline](templates/presenting/slides-outline.md): A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch.
+- [Story bank](templates/presenting/story-bank.md): Ready opening hooks for a PNT-resilience pitch, 10 per brief family, each tied to a measured result in the hub.
 
 ## Samples
 
@@ -211,9 +210,9 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md): 25 items - PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 - [Autopilots and flight control](catalog/concepts/autopilot.md): 169 items - Flight stacks, control loops, estimation inside autopilots, firmware.
 - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 59 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
-- [Path and motion planning](catalog/concepts/path-planning.md): 224 items - Global/local planners, sampling and search based planning, trajectory optimization.
+- [Path and motion planning](catalog/concepts/path-planning.md): 223 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 45 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
-- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 158 items - Reactive avoidance, sense-and-avoid, DAA.
+- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 157 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 91 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [GIS, maps and geospatial data](catalog/concepts/gis-mapping.md): 77 items - Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [Geodesy and coordinate frames](catalog/concepts/geodesy.md): 28 items - Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
@@ -222,8 +221,8 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 70 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 39 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 202 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
-- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 291 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 201 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 290 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 152 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 141 items - Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Tracking and data association](catalog/concepts/target-tracking.md): 32 items - Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).

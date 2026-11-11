@@ -24,11 +24,11 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for a close-area A=>B task.
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
-- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
+- [Close-area talk scaffold: A to B through obstacles](../../templates/presenting/close-area-story.md) - Fill this on the second day when the task is "fly a drone from A to B in a close area, with obstacles".
 - [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) - Next action when the task arrives: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for an autonomous flight navigation task (full-brief routing).
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Some briefs say the winning team may take its solution towards real-world implementation.
-- [Slides outline](../../templates/pitch/slides-outline.md) - A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch.
+- [Slides outline](../../templates/presenting/slides-outline.md) - A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
 ## Repositories (68)

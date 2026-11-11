@@ -41,8 +41,8 @@ Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) match
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Fixed-wing golden demo: ArduPlane 4.6.3 SITL on a 27.6 km route, coherent GPS drag, golden-demo monitor, EKF3 switch to ExternalNav fed by measured day (VPAIR) and night (thermal) geoloc fix models vs airspeed dead reckoning only](../../catalog/samples/golden-demo-fixedwing.md) (uses)
 
 _Indexed by lane(s): samples_

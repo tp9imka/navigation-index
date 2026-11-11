@@ -30,7 +30,7 @@ Builds on samples/autopilot-spoof-response (both EKFs believe a coherent GNSS dr
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 
 _Indexed by lane(s): samples_

@@ -25,8 +25,8 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) - For a team entering a navigation-themed competition or hackathon, including one with a defense-context track.
 - [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) - Next action when the task arrives: ask questions 1-3 of section 1, then open section 2 for the stack.
+- [Hard questions a reviewer will ask, with 20-second answers](../../templates/presenting/hard-questions.md) - Use this in the last rehearsal before the talk, for the close-area A=>B task.
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show reviewers a Stanford diagram that prove
-- [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - For the default toolkit pitch (decided 2026-11-09 evening) use judge-drill-toolkit.md; this page is for the H1 variant.
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) - Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 - [Learning paths](../../docs/learning-paths.md) - Three study tracks built from the courses, talks, books and docs in this index.
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Some briefs say the winning team may take its solution towards real-world implementation.

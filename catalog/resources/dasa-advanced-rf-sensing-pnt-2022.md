@@ -26,7 +26,7 @@ UK DASA themed competition (for the Bright Corvus project) seeking RF sensing an
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 - [UK DASA Early Market Engagement: PNT problem statement for uncrewed systems](../../catalog/resources/uk-dasa-emp-pnt-problem-statement-2024.md) (cites)
 
 _Indexed by lane(s): defense-context_

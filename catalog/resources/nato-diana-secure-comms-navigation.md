@@ -26,6 +26,6 @@ DIANA feature on cohort companies working on resilient navigation and secure com
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
 - [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
 
 _Indexed by lane(s): defense-context_

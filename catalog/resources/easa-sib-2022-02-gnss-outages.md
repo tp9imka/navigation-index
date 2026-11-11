@@ -23,7 +23,7 @@ EASA's safety information bulletin on GNSS jamming and spoofing affecting aircra
 ## Referenced by
 
 - [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
-- [Pitch deck outline](../../templates/pitch-deck-outline.md) (mentions)
+- [Deck outline](../../templates/competition-kit/deck-outline.md) (mentions)
 - [EASA - Global Navigation Satellite System outages and alterations](../../catalog/resources/easa-gnss-outages-page.md) (explains)
 - [EASA and IATA comprehensive plan to mitigate the risks of GNSS interference](../../catalog/resources/easa-iata-gnss-interference-plan-2025.md) (cites)
 - [FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions](../../catalog/resources/faa-safo-24002-gnss-disruptions.md) (cites)

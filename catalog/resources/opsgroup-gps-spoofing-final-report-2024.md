@@ -29,6 +29,6 @@ Crowd-sourced industry report from a six-week OPSGROUP workgroup of pilots, cont
 - [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Pitch deck outline](../../templates/pitch-deck-outline.md) (mentions)
+- [Deck outline](../../templates/competition-kit/deck-outline.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

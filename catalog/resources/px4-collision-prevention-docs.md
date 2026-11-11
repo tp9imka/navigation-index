@@ -22,7 +22,7 @@ Docs. PX4's built-in collision prevention for multicopters in acceleration-based
 
 ## Referenced by
 
-- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
+- [Close-area talk scaffold: A to B through obstacles](../../templates/presenting/close-area-story.md) (mentions)
 - [VOXL Vision Obstacle Avoidance (VOA)](../../catalog/resources/modalai-voxl-voa-docs.md) (uses)
 - [VFH+: reliable obstacle avoidance for fast mobile robots](../../catalog/resources/ulrich-borenstein-vfhplus-icra-1998.md) (explains)
 

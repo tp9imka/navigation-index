@@ -40,7 +40,7 @@ A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge 
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Offline kit](../../templates/offline-kit/README.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 
 _Indexed by lane(s): samples_

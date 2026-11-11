@@ -41,8 +41,8 @@ Replays 7 public u-blox logs from Jammertest 2024 (University of Vaasa VAARA dat
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Four selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
-- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
-- [Story bank](../../templates/pitch/story-bank.md) (mentions)
+- [Pitch structure](../../templates/presenting/pitch-structure.md) (mentions)
+- [Story bank](../../templates/presenting/story-bank.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (uses)
 
