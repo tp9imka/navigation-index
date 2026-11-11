@@ -32,14 +32,13 @@ Runs every close-area planner in the hub through the shared close-area-arena on 
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Day-1 drill 2026-11: brief drops => scored first flight => regression bar (loop-92)](../../docs/day1-drill-2026-11.md) (mentions)
-- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) (mentions)
-- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) (mentions)
+- [Cold-start drill: close-area A=>B from a fresh clone, one agent, no team](../../docs/cold-start-drill.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [How it was built: method, kill tests and fact-check error rates](../../docs/how-it-was-built.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/quickstart-first-flight.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)

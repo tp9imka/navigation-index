@@ -2,7 +2,7 @@
 
 `repo:dan11003/tbv_slam_public` - <https://github.com/dan11003/tbv_slam_public>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 92 | C++ | NOASSERTION | 2024-07-15 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Radar SLAM with verified loop closures built on CFEAR radar odometry.
 
 **Why it matters:** Full radar-only SLAM, including loop closure, for long GNSS-denied drives.
 
-**Hackathon notes:** ROS1 + Docker; pairs with CFEAR.
+**Build notes:** ROS1 + Docker; pairs with CFEAR.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

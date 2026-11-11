@@ -2,7 +2,7 @@
 
 `repo:dusty-nv/ros_deep_learning` - <https://github.com/dusty-nv/ros_deep_learning>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 984 | C++ | ? | 2024-07-13 | False | production | medium |
 
@@ -10,7 +10,7 @@ ROS/ROS 2 nodes wrapping jetson-inference for detection, classification and segm
 
 **Why it matters:** Drop-in onboard perception topics for a ROS robot on Jetson.
 
-**Hackathon notes:** Build inside jetson-containers ROS image.
+**Build notes:** Build inside jetson-containers ROS image.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

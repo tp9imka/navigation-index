@@ -21,7 +21,7 @@ Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometr
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (integrates_with)
 

@@ -2,7 +2,7 @@
 
 `repo:dronekit/dronekit-python` - <https://github.com/dronekit/dronekit-python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,955 | Python | Apache-2.0 | 2024-05-30 | False | archived | low |
 
@@ -10,7 +10,7 @@ Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenanc
 
 **Why it matters:** Many tutorials still use it; fine for simple ArduPilot scripts but prefer pymavlink or MAVSDK for new work.
 
-**Hackathon notes:** The PyPI release 2.9.2 (2019) fails to import on Python 3.10+ (it uses collections.MutableMapping); pin Python 3.9 or install from GitHub master, which has the fix. Better to avoid for new work.
+**Build notes:** The PyPI release 2.9.2 (2019) fails to import on Python 3.10+ (it uses collections.MutableMapping); pin Python 3.9 or install from GitHub master, which has the fix. Better to avoid for new work.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

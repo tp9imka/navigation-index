@@ -2,7 +2,7 @@
 
 `repo:skyfielders/python-skyfield` - <https://github.com/skyfielders/python-skyfield>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,801 | Python | MIT | 2026-09-29 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library for high-accuracy positions of stars, planets and Earth satellite
 
 **Why it matters:** Gives the ephemerides any celestial or satellite-based nav prototype needs.
 
-**Hackathon notes:** pip install skyfield; downloads ephemeris files on first use.
+**Build notes:** pip install skyfield; downloads ephemeris files on first use.
 
 ## Deep dives
 
@@ -29,9 +29,9 @@ Python library for high-accuracy positions of stars, planets and Earth satellite
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [celnav](../../catalog/repos/ms8r__celnav.md) (depends_on)
 - [JPL DE421 planetary ephemeris (NAIF SPK kernel)](../../catalog/resources/jpl-de421-ephemeris.md) (has_code)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (uses)

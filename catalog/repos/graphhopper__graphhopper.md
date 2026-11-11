@@ -2,7 +2,7 @@
 
 `repo:graphhopper/graphhopper` - <https://github.com/graphhopper/graphhopper>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,784 | Java | Apache-2.0 | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ Java OSM routing engine usable as library or server, with custom models for per-
 
 **Why it matters:** Embeddable routing on the JVM, relevant for dismounted navigation apps; on-device Android routing is no longer officially supported (last Android demo is v1.0).
 
-**Hackathon notes:** Single jar + OSM pbf; custom model JSON lets you penalize road classes or areas.
+**Build notes:** Single jar + OSM pbf; custom model JSON lets you penalize road classes or areas.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

@@ -2,7 +2,7 @@
 
 `repo:taroz/matrtklib` - <https://github.com/taroz/MatRTKLIB>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 101 | MATLAB | MIT | 2025-03-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ MATLAB wrapper exposing RTKLIB functions and data structures (observations, navi
 
 **Why it matters:** Lets MATLAB users script RTKLIB processing and analysis without writing C.
 
-**Hackathon notes:** Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots. Since January 2025 the backend is MALIB (the RTKLIB successor), not RTKLIB 2.4.3; pre-compiled mex files ship for Windows, Ubuntu and macOS.
+**Build notes:** Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots. Since January 2025 the backend is MALIB (the RTKLIB successor), not RTKLIB 2.4.3; pre-compiled mex files ship for Windows, Ubuntu and macOS.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 

@@ -2,7 +2,7 @@
 
 `repo:kdudkov/goatak` - <https://github.com/kdudkov/goatak>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 197 | Go | AGPL-3.0 | 2026-06-30 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 **Why it matters:** Single static binary TAK server and browser client - minimal footprint for edge devices.
 
-**Hackathon notes:** go build or release binary; web map client is handy for judges without ATAK installed.
+**Build notes:** go build or release binary; web map client is handy for reviewers without ATAK installed.
 
 ## Deep dives
 
@@ -29,9 +29,9 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

@@ -2,7 +2,7 @@
 
 `repo:librepilot/librepilot` - <https://github.com/librepilot/LibrePilot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 360 | C | NOASSERTION | 2023-12-14 | False | archived | low |
 
@@ -10,7 +10,7 @@ GitHub mirror of LibrePilot, the community continuation of OpenPilot for CC3D/Re
 
 **Why it matters:** Historical reference for the OpenPilot-era INS13 estimator and UAVTalk protocol; not a base for new work.
 
-**Hackathon notes:** Read-only reference. Hardware is end-of-life.
+**Build notes:** Read-only reference. Hardware is end-of-life.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

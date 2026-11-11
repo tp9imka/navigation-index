@@ -2,7 +2,7 @@
 
 `repo:c-o-s-t-y-a/ardupilot_ua` - <https://github.com/c-o-s-t-y-a/ardupilot_ua>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | NOASSERTION | 2026-09-25 | False | educational | low |
 
@@ -10,7 +10,7 @@ Unofficial Ukrainian translation of key sections of the ArduPilot Copter documen
 
 **Why it matters:** Lowers the entry barrier for Ukrainian-speaking teams and operators configuring ArduPilot, including non-GPS navigation sections.
 
-**Hackathon notes:** Reference only. May lag the English wiki; the original wins on conflicts.
+**Build notes:** Reference only. May lag the English wiki; the original wins on conflicts.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Unofficial Ukrainian translation of key sections of the ArduPilot Copter documen
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

@@ -2,7 +2,7 @@
 
 `repo:kurligin/safe-route` - <https://github.com/Kurligin/safe-route>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-10-26 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Controller for an autonomous ground cargo platform in the amr-sim simulator plus
 
 **Why it matters:** Worked example of GNSS-shadow ground navigation with a scored simulator benchmark, written in Russian.
 
-**Hackathon notes:** README reports position error and collision results against the organisers' baseline (their numbers, not verified here). Depends on the organisers' amr-sim, which may not be public.
+**Build notes:** README reports position error and collision results against the organisers' baseline (their numbers, not verified here). Depends on the organisers' amr-sim, which may not be public.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Controller for an autonomous ground cargo platform in the amr-sim simulator plus
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

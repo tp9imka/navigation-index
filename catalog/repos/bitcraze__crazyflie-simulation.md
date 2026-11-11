@@ -2,7 +2,7 @@
 
 `repo:bitcraze/crazyflie-simulation` - <https://github.com/bitcraze/crazyflie-simulation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 90 | Python | MIT | 2026-11-04 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Minimal simulation models and tooling for Crazyflie in Webots and Gazebo; the RE
 
 **Why it matters:** Hardware-free swarm prototyping.
 
-**Hackathon notes:** Webots is the easiest entry.
+**Build notes:** Webots is the easiest entry.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
@@ -24,7 +24,7 @@ Minimal simulation models and tooling for Crazyflie in Webots and Gazebo; the RE
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [crazyflie-simulation documentation](../../catalog/resources/bitcraze-crazyflie-simulation-docs.md) (explains)
 
 _Indexed by lane(s): domains-swarm_

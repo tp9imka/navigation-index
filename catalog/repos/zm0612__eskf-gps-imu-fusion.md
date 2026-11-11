@@ -2,7 +2,7 @@
 
 `repo:zm0612/eskf-gps-imu-fusion` - <https://github.com/zm0612/eskf-gps-imu-fusion>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 925 | C++ | ? | 2024-01-16 | False | educational | medium |
 
@@ -10,7 +10,7 @@ ESKF fusing GPS and IMU for improved positioning, with documentation in Chinese.
 
 **Why it matters:** Another compact ESKF reference with a worked dataset.
 
-**Hackathon notes:** Standalone CMake build; docs are in Chinese.
+**Build notes:** Standalone CMake build; docs are in Chinese.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

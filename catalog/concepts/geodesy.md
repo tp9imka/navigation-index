@@ -15,7 +15,7 @@ Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
 ## Guides (2)
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
-- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes on the day.
+- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes when the task arrives.
 
 ## Repositories (16)
 

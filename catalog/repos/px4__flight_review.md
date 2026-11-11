@@ -2,7 +2,7 @@
 
 `repo:px4/flight_review` - <https://github.com/PX4/flight_review>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 280 | JavaScript | BSD-3-Clause | 2026-10-20 | False | production | medium |
 
@@ -10,7 +10,7 @@ Web app for uploading and plotting PX4 ULog flight logs, including estimator inn
 
 **Why it matters:** Fast way to judge whether EKF2 is healthy when fusing a new vision or flow source.
 
-**Hackathon notes:** Use the hosted instance or run locally with Docker.
+**Build notes:** Use the hosted instance or run locally with Docker.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

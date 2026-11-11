@@ -2,7 +2,7 @@
 
 `repo:floralhercules/scc-loc` - <https://github.com/FloralHercules/SCC-Loc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 26 | Python | Apache-2.0 | 2026-10-15 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Zero-shot UAV thermal geo-localization against satellite imagery without thermal
 
 **Why it matters:** Zero-shot avoids collecting paired thermal data, a common blocker.
 
-**Hackathon notes:** Very recent; check release completeness.
+**Build notes:** Very recent; check release completeness.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

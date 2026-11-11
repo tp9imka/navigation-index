@@ -2,7 +2,7 @@
 
 `repo:koide3/small_gicp` - <https://github.com/koide3/small_gicp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,073 | C++ | MIT | 2026-09-29 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Efficient, parallel point-cloud registration library (GICP, ICP variants) with C
 
 **Why it matters:** Pip-installable registration to build your own LiDAR odometry or map-based relocalization fast.
 
-**Hackathon notes:** `pip install small_gicp`; good for scan-to-map localization prototypes.
+**Build notes:** `pip install small_gicp`; good for scan-to-map localization prototypes.
 
 ## Deep dives
 

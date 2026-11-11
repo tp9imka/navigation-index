@@ -2,7 +2,7 @@
 
 `repo:esri/joint-military-symbology-xml` - <https://github.com/esri/joint-military-symbology-xml>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 191 | C# | Apache-2.0 | 2024-09-19 | True | archived | low |
 
@@ -10,7 +10,7 @@ Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, ent
 
 **Why it matters:** Machine-readable symbol tables useful for validating SIDCs or building your own renderer.
 
-**Hackathon notes:** Archived in 2024; data still useful.
+**Build notes:** Archived in 2024; data still useful.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

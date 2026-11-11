@@ -2,7 +2,7 @@
 
 `repo:codexlabsllc/colosseum` - <https://github.com/CodexLabsLLC/Colosseum>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 667 | C++ | NOASSERTION | 2026-07-08 | True | archived | low |
 
@@ -10,7 +10,7 @@ Community fork of AirSim that moved it to newer Unreal Engine 5 releases. The Gi
 
 **Why it matters:** Was the main path to run AirSim on UE5; useful as a reference port even though it is no longer maintained.
 
-**Hackathon notes:** Archived on GitHub, so expect unanswered issues. Use only if you need its UE5 changes specifically.
+**Build notes:** Archived on GitHub, so expect unanswered issues. Use only if you need its UE5 changes specifically.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

@@ -2,7 +2,7 @@
 
 `repo:rbonghi/jetson_stats` - <https://github.com/rbonghi/jetson_stats>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,634 | Python | AGPL-3.0 | 2026-10-26 | False | production | high |
 
@@ -10,7 +10,7 @@ Monitoring tool for NVIDIA Jetson: CPU/GPU load, clocks, temperatures, power rai
 
 **Why it matters:** The easy way to put a measured watts number next to a latency number, which is what an onboard-compute slide needs.
 
-**Hackathon notes:** AGPL-3.0: fine as a dev tool on the bench, do not bundle it into a shipped image. `sudo pip3 install jetson-stats` on the Jetson itself (ask before installing).
+**Build notes:** AGPL-3.0: fine as a dev tool on the bench, do not bundle it into a shipped image. `sudo pip3 install jetson-stats` on the Jetson itself (ask before installing).
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

@@ -2,7 +2,7 @@
 
 `repo:mit-aera/flightgoggles` - <https://github.com/mit-aera/FlightGoggles>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 444 | C++ | NOASSERTION | 2024-04-01 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Unity3D and ROS framework from MIT for photorealistic camera rendering with real
 
 **Why it matters:** Pioneered vehicle-in-the-loop rendering: fly a real drone in a mocap room while feeding it synthetic imagery.
 
-**Hackathon notes:** Not actively maintained since 2024; ROS1. Mostly of interest as a reference or alongside the Blackbird dataset.
+**Build notes:** Not actively maintained since 2024; ROS1. Mostly of interest as a reference or alongside the Blackbird dataset.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

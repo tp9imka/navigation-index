@@ -2,7 +2,7 @@
 
 `repo:algafix/osnma` - <https://github.com/Algafix/OSNMA>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 52 | Python | EUPL-1.2 | 2026-10-14 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key
 
 **Why it matters:** Most practical open tool to add navigation message authentication to a Galileo-capable receiver pipeline.
 
-**Hackathon notes:** Works live with a u-blox receiver outputting SFRBX; needs the public key and Merkle root from the GSC. Good basis for an 'authenticated position' demo.
+**Build notes:** Works live with a u-blox receiver outputting SFRBX; needs the public key and Merkle root from the GSC. Good basis for an 'authenticated position' demo.
 
 ## Deep dives
 
@@ -32,13 +32,13 @@ Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md) (alternative_to)

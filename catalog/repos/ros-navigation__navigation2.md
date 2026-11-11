@@ -2,7 +2,7 @@
 
 `repo:ros-navigation/navigation2` - <https://github.com/ros-navigation/navigation2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5,019 | C++ | NOASSERTION | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 
 **Why it matters:** Default autonomy layer for ground robots in ROS 2; the place to plug a GNSS-denied localization source and still get full point-to-point and waypoint missions.
 
-**Hackathon notes:** apt install ros-<distro>-navigation2 plus nav2_bringup gives a Gazebo TurtleBot demo in under an hour. Swap AMCL for your own localization by publishing map->odom TF. Tuning params YAML is the main time sink.
+**Build notes:** apt install ros-<distro>-navigation2 plus nav2_bringup gives a Gazebo TurtleBot demo in under an hour. Swap AMCL for your own localization by publishing map->odom TF. Tuning params YAML is the main time sink.
 
 ## Deep dives
 
@@ -32,11 +32,11 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [BehaviorTree.CPP](../../catalog/repos/behaviortree__behaviortree.cpp.md) (integrates_with)
 - [Beluga](../../catalog/repos/ekumen-os__beluga.md) (alternative_to)

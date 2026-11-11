@@ -15,10 +15,10 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 
 ## Guides (8)
 
-- [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) - Research lane, 2026-11-09, for EDGE hackathon Challenge 2.
+- [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) - Research lane, 2026-11-09, for a close-area A=>B task.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
-- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes on the day.
+- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes when the task arrives.
 - [H1: move to distinguish competing location hypotheses](../../docs/hypotheses/h1-active-disambiguation.md) - Status: mechanism demonstrated synthetically; proposed improvement over the information-gain baseline NOT demonstrated.
 - [H2: request a localization fix before its navigation deadline](../../docs/hypotheses/h2-localization-scheduling.md) - Status: synthetic predictive trigger is competitive, but advantage over a strong opportunity heuristic is not established.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms: 1.

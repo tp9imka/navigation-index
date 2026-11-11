@@ -2,7 +2,7 @@
 
 `repo:snstac/adsbcot` - <https://github.com/snstac/adsbcot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 | Python | Apache-2.0 | 2026-10-23 | False | production | high |
 
@@ -10,7 +10,7 @@ Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into
 
 **Why it matters:** ADS-B also carries NIC/NACp integrity fields - the same signal GPSJam uses - so this is a ready bridge for a live GNSS-interference overlay.
 
-**Hackathon notes:** Run alongside readsb on an RTL-SDR; add a filter that flags low NIC aircraft as an interference indicator.
+**Build notes:** Run alongside readsb on an RTL-SDR; add a filter that flags low NIC aircraft as an interference indicator.
 
 ## Deep dives
 
@@ -31,9 +31,9 @@ Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Stone Soup](../../catalog/repos/dstl__stone-soup.md) (integrates_with)
 - [PyTAK](../../catalog/repos/snstac__pytak.md) (same_org)

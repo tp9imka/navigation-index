@@ -2,7 +2,7 @@
 
 `repo:ros-realtime/ros2-realtime-examples` - <https://github.com/ros-realtime/ros2-realtime-examples>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 87 | C++ | Apache-2.0 | 2024-01-29 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Minimal recipes for real-time ROS 2: memory locking, thread priorities, CPU pinn
 
 **Why it matters:** Short, copyable patterns for keeping the nav callback off the same thread as logging and image I/O.
 
-**Hackathon notes:** Last push 2024-01. Apply two recipes (mlockall, SCHED_FIFO on the estimator thread) and show the latency histogram before and after.
+**Build notes:** Last push 2024-01. Apply two recipes (mlockall, SCHED_FIFO on the estimator thread) and show the latency histogram before and after.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 

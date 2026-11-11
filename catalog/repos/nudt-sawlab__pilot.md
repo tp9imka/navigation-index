@@ -2,7 +2,7 @@
 
 `repo:nudt-sawlab/pilot` - <https://github.com/nudt-sawlab/PiLoT>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 125 | Python | MIT | 2026-07-04 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Neural pixel-to-3D registration for UAV ego-localization and target geo-localiza
 
 **Why it matters:** Absolute 6-DoF pose from a 3D map is a strong GNSS-denied fix for low-altitude drones.
 
-**Hackathon notes:** GPU-heavy (CUDA extension build, CityGaussian conda env); demo data is about 15 GB. Code is MIT, but PiLoT-data on HF is gated: non-commercial research or education only, no redistribution. From NUDT, which is on the US Entity List - check your programme's rules.
+**Build notes:** GPU-heavy (CUDA extension build, CityGaussian conda env); demo data is about 15 GB. Code is MIT, but PiLoT-data on HF is gated: non-commercial research or education only, no redistribution. From NUDT, which is on the US Entity List - check your programme's rules.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

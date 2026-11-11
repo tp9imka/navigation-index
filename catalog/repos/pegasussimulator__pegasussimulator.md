@@ -2,7 +2,7 @@
 
 `repo:pegasussimulator/pegasussimulator` - <https://github.com/PegasusSimulator/PegasusSimulator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 918 | Python | BSD-3-Clause | 2026-08-07 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Framework on top of NVIDIA Isaac Sim for simulating multirotors with PX4 in the 
 
 **Why it matters:** Gives PX4 users photorealistic, GPU-accelerated Omniverse rendering while keeping the real autopilot stack.
 
-**Hackathon notes:** Needs an RTX GPU and an Isaac Sim install; match Pegasus release to the Isaac Sim version listed in its docs.
+**Build notes:** Needs an RTX GPU and an Isaac Sim install; match Pegasus release to the Isaac Sim version listed in its docs.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

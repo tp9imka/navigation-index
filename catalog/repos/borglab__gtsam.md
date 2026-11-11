@@ -2,7 +2,7 @@
 
 `repo:borglab/gtsam` - <https://github.com/borglab/gtsam>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,780 | Jupyter Notebook | NOASSERTION | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 
 **Why it matters:** The default backbone for building a custom GNSS/INS or multi-sensor navigation estimator where you add or drop sensor factors as GNSS degrades.
 
-**Hackathon notes:** pip install gtsam gives Python bindings; start from the ImuFactor examples and add a GNSS position factor. Noise model tuning is where time goes.
+**Build notes:** pip install gtsam gives Python bindings; start from the ImuFactor examples and add a GNSS position factor. Noise model tuning is where time goes.
 
 ## Deep dives
 
@@ -35,14 +35,14 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [GTSfM](../../catalog/repos/borglab__gtsfm.md) (depends_on)
 - [Ceres Solver](../../catalog/repos/ceres-solver__ceres-solver.md) (alternative_to)

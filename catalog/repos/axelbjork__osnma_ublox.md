@@ -2,7 +2,7 @@
 
 `repo:axelbjork/osnma_ublox` - <https://github.com/AxelBjork/OSNMA_ublox>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6 | Jupyter Notebook | ? | 2022-04-29 | False | archived | low |
 
@@ -10,7 +10,7 @@ Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.
 
 **Why it matters:** Small, readable OSNMA example from the test phase.
 
-**Hackathon notes:** Inactive since 2022, predates OSNMA public service; use for learning only.
+**Build notes:** Inactive since 2022, predates OSNMA public service; use for learning only.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

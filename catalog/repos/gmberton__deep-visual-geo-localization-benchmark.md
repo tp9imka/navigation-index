@@ -2,7 +2,7 @@
 
 `repo:gmberton/deep-visual-geo-localization-benchmark` - <https://github.com/gmberton/deep-visual-geo-localization-benchmark>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 259 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Official code for the CVPR 2022 benchmark: a configurable training and evaluatio
 
 **Why it matters:** Lets a team compare VPR design choices on equal footing, including runtime and memory, before committing to an onboard model.
 
-**Hackathon notes:** Datasets must be arranged in its directory layout; the VPR-datasets-downloader repo helps. MIT licence.
+**Build notes:** Datasets must be arranged in its directory layout; the VPR-datasets-downloader repo helps. MIT licence.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

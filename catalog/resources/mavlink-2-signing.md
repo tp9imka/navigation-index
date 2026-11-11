@@ -26,7 +26,7 @@ Describes MAVLink 2 packet signing: a shared-secret SHA-256 based signature and 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

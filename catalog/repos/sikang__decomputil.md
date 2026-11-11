@@ -2,7 +2,7 @@
 
 `repo:sikang/decomputil` - <https://github.com/sikang/DecompUtil>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | archived | medium |
 
@@ -10,7 +10,7 @@ Header-only C++ library that grows convex polytopes (safe flight corridors) arou
 
 **Why it matters:** The standard way to turn a grid path into convex free-space constraints that a QP or MPC can use. Corridors make the collision constraint linear, so the optimiser stays a QP.
 
-**Hackathon notes:** License BSD-3-Clause, last push 2018-09-10 (gh api). Header-only with Eigen, so it builds anywhere. A Python team can get a usable corridor faster with axis-aligned box inflation along the A* path.
+**Build notes:** License BSD-3-Clause, last push 2018-09-10 (gh api). Header-only with Eigen, so it builds anywhere. A Python team can get a usable corridor faster with axis-aligned box inflation along the A* path.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

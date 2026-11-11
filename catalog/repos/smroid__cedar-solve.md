@@ -2,7 +2,7 @@
 
 `repo:smroid/cedar-solve` - <https://github.com/smroid/cedar-solve>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 28 | Python | Apache-2.0 | 2026-08-06 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 
 **Why it matters:** More maintained than upstream tetra3 for new work.
 
-**Hackathon notes:** pip install cedar-solve. Keeps tetra3's API but is not quite drop-in: follow the repo's migration notes when porting tetra3 code.
+**Build notes:** pip install cedar-solve. Keeps tetra3's API but is not quite drop-in: follow the repo's migration notes when porting tetra3 code.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [tetra3](../../catalog/repos/esa__tetra3.md) (fork_of)

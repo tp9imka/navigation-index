@@ -2,7 +2,7 @@
 
 `repo:ardupilot/missionplanner` - <https://github.com/ArduPilot/MissionPlanner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,421 | C# | GPL-3.0 | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and 
 
 **Why it matters:** Feature-richest ArduPilot GCS; the EKF and GPS status views are useful during GNSS-denial tests.
 
-**Hackathon notes:** Windows best; runs under Mono on Linux/mac with caveats.
+**Build notes:** Windows best; runs under Mono on Linux/mac with caveats.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

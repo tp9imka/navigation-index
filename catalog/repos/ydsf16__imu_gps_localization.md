@@ -2,7 +2,7 @@
 
 `repo:ydsf16/imu_gps_localization` - <https://github.com/ydsf16/imu_gps_localization>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 738 | C++ | NOASSERTION | 2026-10-04 | False | educational | high |
 
@@ -10,7 +10,7 @@ Error-state Kalman filter fusing IMU and GPS for localization, small and readabl
 
 **Why it matters:** Minimal ESKF GNSS/IMU example good for a first hackathon filter.
 
-**Hackathon notes:** Small ROS project; easy to strip ROS and port.
+**Build notes:** Small ROS project; easy to strip ROS and port.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

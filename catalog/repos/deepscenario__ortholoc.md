@@ -2,7 +2,7 @@
 
 `repo:deepscenario/ortholoc` - <https://github.com/deepscenario/OrthoLoC>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 79 | Python | NOASSERTION | 2026-03-10 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Dataset tools and code for UAV 6-DoF localization and calibration against orthop
 
 **Why it matters:** Paired UAV images, orthophotos and DSMs let a team evaluate the matching stage without retrieval.
 
-**Hackathon notes:** LICENSE file is CC BY-NC-SA 4.0 (read via gh api): evaluation only, no commercial use. Data is large (about 287 GB per project page, not checked); use a subset.
+**Build notes:** LICENSE file is CC BY-NC-SA 4.0 (read via gh api): evaluation only, no commercial use. Data is large (about 287 GB per project page, not checked); use a subset.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

@@ -2,7 +2,7 @@
 
 `repo:castacks/alfa-dataset` - <https://github.com/castacks/alfa-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 20 |  | ? | 2020-07-23 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Landing page for the AIR Lab Failure and Anomaly dataset: 47 processed autonomou
 
 **Why it matters:** Real small fixed-wing flights with full ArduPilot logs, usable to test airspeed/propulsion-aided dead reckoning against GPS truth on a real airframe, and engine-out segments test a propulsion model's failure case.
 
-**Hackathon notes:** KiltHub DOI 10.1184/R1/12707963: processed.zip 272 MB, dataflash.zip 541 MB. Repository metadata says CC BY 4.0 while the bundled README says CC0, both permissive. Sequences are short (most 1-4 min). Airspeed channel presence not checked.
+**Build notes:** KiltHub DOI 10.1184/R1/12707963: processed.zip 272 MB, dataflash.zip 541 MB. Repository metadata says CC BY 4.0 while the bundled README says CC0, both permissive. Sequences are short (most 1-4 min). Airspeed channel presence not checked.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

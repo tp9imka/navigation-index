@@ -2,7 +2,7 @@
 
 `repo:sikang/mpl_ros` - <https://github.com/sikang/mpl_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | research-prototype | low |
 
@@ -10,7 +10,7 @@ ROS wrapper and examples for search-based kinodynamic planning: graph search ove
 
 **Why it matters:** Reference implementation of kinodynamic search for quadrotors, the same idea as Fast-Planner's front end. The output is already dynamically feasible, so no separate smoothing pass is needed.
 
-**Hackathon notes:** License Apache-2.0, last push 2025-04-17 (gh api). ROS 1 catkin build. Kinodynamic search in Python is slow in 3D; prefer geometric A* + min-snap unless the team needs aggressive flight.
+**Build notes:** License Apache-2.0, last push 2025-04-17 (gh api). ROS 1 catkin build. Kinodynamic search in Python is slow in 3D; prefer geometric A* + min-snap unless the team needs aggressive flight.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:open-pnt/pntos-c` - <https://github.com/Open-PNT/pntOS-C>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5 | C | Apache-2.0 | 2026-08-30 | False | active-research | low |
 
@@ -10,7 +10,7 @@ C API specification of pntOS, the modular plug-in architecture for navigation sy
 
 **Why it matters:** Shows what a plug-in fusion API looks like in the defence PNT community; the full pntOS distribution is access-controlled, this API is public.
 
-**Hackathon notes:** Apache-2.0, meson build. Headers only, no estimator inside.
+**Build notes:** Apache-2.0, meson build. Headers only, no estimator inside.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

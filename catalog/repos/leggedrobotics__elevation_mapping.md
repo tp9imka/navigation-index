@@ -2,7 +2,7 @@
 
 `repo:leggedrobotics/elevation_mapping` - <https://github.com/leggedrobotics/elevation_mapping>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 47 | C++ | BSD-3-Clause | 2022-10-08 | False | archived | low |
 
@@ -10,7 +10,7 @@ Robot-centric elevation mapping for rough terrain navigation, started at ETH Zur
 
 **Why it matters:** Classic baseline for terrain mapping on legged and wheeled robots.
 
-**Hackathon notes:** ROS 1; this fork is dormant since 2022, while upstream ANYbotics/elevation_mapping was updated in 2024. Prefer the GPU version.
+**Build notes:** ROS 1; this fork is dormant since 2022, while upstream ANYbotics/elevation_mapping was updated in 2024. Prefer the GPU version.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 

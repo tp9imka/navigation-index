@@ -2,7 +2,7 @@
 
 `repo:taroz/gnss-radar` - <https://github.com/taroz/GNSS-Radar>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 101 | JavaScript | ? | 2026-10-26 | False | production | medium |
 
@@ -10,7 +10,7 @@ Web application showing current GNSS satellite positions (sky plot) for a locati
 
 **Why it matters:** Quick visibility planning tool for field tests.
 
-**Hackathon notes:** Use the hosted site or run locally for offline sky plots.
+**Build notes:** Use the hosted site or run locally for offline sky plots.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

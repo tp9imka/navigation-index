@@ -2,7 +2,7 @@
 
 `repo:citec-spbu/smart-uav-return-gnss-station` - <https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3 | C | ? | 2024-06-01 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Student project from SPbU (CITEC) on returning a UAV to its launch point when bo
 
 **Why it matters:** Same problem statement as many Ukrainian field requirements (lost link + lost GNSS => come home), from the Russian academic side.
 
-**Hackathon notes:** Sparse docs; read the C sources directly. Reference value only.
+**Build notes:** Sparse docs; read the C sources directly. Reference value only.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Student project from SPbU (CITEC) on returning a UAV to its launch point when bo
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

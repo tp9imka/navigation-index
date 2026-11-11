@@ -2,7 +2,7 @@
 
 `repo:ardupilot/sik` - <https://github.com/ArduPilot/SiK>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 346 | C | BSD-2-Clause | 2026-10-04 | False | production | low |
 
@@ -10,7 +10,7 @@ Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying
 
 **Why it matters:** Classic serial telemetry radio stack; frequency-hopping config is relevant to link robustness.
 
-**Hackathon notes:** Mostly use stock firmware; configure via AT commands or Mission Planner.
+**Build notes:** Mostly use stock firmware; configure via AT commands or Mission Planner.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 

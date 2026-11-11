@@ -2,7 +2,7 @@
 
 `repo:yangsc4063/rino` - <https://github.com/yangsc4063/rino>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 72 | C++ | ? | 2025-09-18 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Non-iterative, adaptively loosely coupled radar-inertial odometry for spinning (
 
 **Why it matters:** Recent scanning-radar inertial method to benchmark against.
 
-**Hackathon notes:** ROS Noetic / Ubuntu 20.04, catkin build, Sophus built manually. Replay MulRan with its file player (radar + IMU); a Boreas demo is shown.
+**Build notes:** ROS Noetic / Ubuntu 20.04, catkin build, Sophus built manually. Replay MulRan with its file player (radar + IMU); a Boreas demo is shown.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

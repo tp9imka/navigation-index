@@ -2,7 +2,7 @@
 
 `repo:utiasasrl/steam_icp` - <https://github.com/utiasASRL/steam_icp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 274 | C++ | MIT | 2026-02-11 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 **Why it matters:** Ready continuous-time radar odometry pipeline evaluated on Boreas.
 
-**Hackathon notes:** Docker build; test on Boreas sequences.
+**Build notes:** Docker build; test on Boreas sequences.
 
 ## Deep dives
 
@@ -29,9 +29,9 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Yeti radar odometry](../../catalog/repos/keenan-burnett__yeti_radar_odometry.md) (alternative_to)
 - [STEAM](../../catalog/repos/utiasasrl__steam.md) (same_org)
 - [RINO](../../catalog/repos/yangsc4063__rino.md) (alternative_to)

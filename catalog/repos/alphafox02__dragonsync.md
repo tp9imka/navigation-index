@@ -2,7 +2,7 @@
 
 `repo:alphafox02/dragonsync` - <https://github.com/alphafox02/DragonSync>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 99 | Python | Apache-2.0 | 2026-11-06 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 
 **Why it matters:** Working example of a passive drone-detection to common-operating-picture pipeline.
 
-**Hackathon notes:** Read it as a reference architecture even without the WarDragon kit; reuse its CoT mapping for your own detector.
+**Build notes:** Read it as a reference architecture even without the WarDragon kit; reuse its CoT mapping for your own detector.
 
 ## Deep dives
 
@@ -34,7 +34,7 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 ## Referenced by
 
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [WarDragon docs](../../catalog/repos/alphafox02__wardragon.md) (same_org)
 - [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md) (integrates_with)
 - [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (alternative_to)

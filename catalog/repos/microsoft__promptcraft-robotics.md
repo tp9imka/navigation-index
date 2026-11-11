@@ -2,7 +2,7 @@
 
 `repo:microsoft/promptcraft-robotics` - <https://github.com/microsoft/PromptCraft-Robotics>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,124 | Python | MIT | 2024-01-20 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator ac
 
 **Why it matters:** Classic starting point for prompting LLMs to produce drone control code in simulation.
 
-**Hackathon notes:** No longer updated and AirSim itself is archived; mine the prompts, run elsewhere.
+**Build notes:** No longer updated and AirSim itself is archived; mine the prompts, run elsewhere.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

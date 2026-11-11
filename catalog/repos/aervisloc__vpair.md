@@ -2,7 +2,7 @@
 
 `repo:aervisloc/vpair` - <https://github.com/AerVisLoc/vpair>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 61 | None | ? | 2026-11-01 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 
 **Why it matters:** Benchmark for UAV visual geolocalization against georeferenced maps.
 
-**Hackathon notes:** Academic use only, commercial use prohibited (README). Full set is 20.5 GB (2,706 query/reference pairs plus 10,000 distractors); a 0.86 GB sample is on Zenodo. The repo itself holds only the README and images. Evaluate with VPR-methods-evaluation.
+**Build notes:** Academic use only, commercial use prohibited (README). Full set is 20.5 GB (2,706 query/reference pairs plus 10,000 distractors); a 0.86 GB sample is on Zenodo. The repo itself holds only the README and images. Evaluate with VPR-methods-evaluation.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [Four selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
 - [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (evaluated_on)

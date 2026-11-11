@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/mimosa` - <https://github.com/ntnu-arl/mimosa>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 131 | C++ | BSD-3-Clause | 2026-10-01 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric 
 
 **Why it matters:** From the group behind DARPA SubT field robots; relevant to smoke/dark/dust scenarios.
 
-**Hackathon notes:** ROS Noetic; publishes nav_msgs/Odometry. Radar factor lets you keep velocity constraints when LiDAR is blinded by dust or smoke.
+**Build notes:** ROS Noetic; publishes nav_msgs/Odometry. Radar factor lets you keep velocity constraints when LiDAR is blinded by dust or smoke.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md)
 
@@ -24,7 +24,7 @@ Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 
 _Indexed by lane(s): slam_
 

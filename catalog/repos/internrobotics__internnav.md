@@ -2,7 +2,7 @@
 
 `repo:internrobotics/internnav` - <https://github.com/InternRobotics/InternNav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,168 | Jupyter Notebook | MIT | 2026-03-10 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering visio
 
 **Why it matters:** Brings recent VLA-style navigation models into one toolkit.
 
-**Hackathon notes:** Large models and simulators; use the provided checkpoints.
+**Build notes:** Large models and simulators; use the provided checkpoints.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

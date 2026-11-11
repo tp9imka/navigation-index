@@ -2,7 +2,7 @@
 
 `repo:ai-winter/python_motion_planning` - <https://github.com/ai-winter/python_motion_planning>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | active-research | medium |
 
@@ -10,7 +10,7 @@ Python package of planning and tracking algorithms for mobile robots: Dijkstra, 
 
 **Why it matters:** Gives readable reference versions of most global and local baselines in one place, useful for a side-by-side baseline table in the pitch.
 
-**Hackathon notes:** License GPL-3.0 (copyleft: fine for a demo, not for EDGE product code). Last push 2026-09-15 (gh api); PyPI version 2.1. Mostly 2D AGV examples; 3D support not checked. Read and re-implement rather than import into product code.
+**Build notes:** License GPL-3.0 (copyleft: fine for a demo, not for closed product code). Last push 2026-09-15 (gh api); PyPI version 2.1. Mostly 2D AGV examples; 3D support not checked. Read and re-implement rather than import into product code.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

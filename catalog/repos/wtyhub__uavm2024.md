@@ -2,7 +2,7 @@
 
 `repo:wtyhub/uavm2024` - <https://github.com/wtyhub/UAVM2024>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3 |  | ? | 2024-10-26 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Page for the ACM MM 2024 multi-weather drone-satellite matching challenge, listi
 
 **Why it matters:** Adds weather robustness to cross-view geo-localization.
 
-**Hackathon notes:** Only two listed entries are public: WAGL (4th, R@1 94.07) and WELN (5th, 85.58). Challenge data (University160k-WX) builds on University-1652 (request-only, research use).
+**Build notes:** Only two listed entries are public: WAGL (4th, R@1 94.07) and WELN (5th, 85.58). Challenge data (University160k-WX) builds on University-1652 (request-only, research use).
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

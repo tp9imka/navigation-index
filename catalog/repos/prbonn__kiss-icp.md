@@ -2,7 +2,7 @@
 
 `repo:prbonn/kiss-icp` - <https://github.com/PRBonn/kiss-icp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,373 | C++ | MIT | 2026-06-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, w
 
 **Why it matters:** Works out of the box on almost any LiDAR without IMU; ideal hackathon starting point.
 
-**Hackathon notes:** `pip install kiss-icp` and run on a rosbag or KITTI folder in minutes. Add KISS-SLAM for loop closure.
+**Build notes:** `pip install kiss-icp` and run on a rosbag or KITTI folder in minutes. Add KISS-SLAM for loop closure.
 
 ## Deep dives
 
@@ -32,12 +32,12 @@ Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, w
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [livox-mid360-slam-evaluation](../../catalog/repos/harshareddy1611__livox-mid360-slam-evaluation.md) (evaluated_on)
 - [KISS-SLAM](../../catalog/repos/prbonn__kiss-slam.md) (extends)

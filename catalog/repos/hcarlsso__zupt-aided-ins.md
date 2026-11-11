@@ -2,7 +2,7 @@
 
 `repo:hcarlsso/zupt-aided-ins` - <https://github.com/hcarlsso/ZUPT-aided-INS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 30 | MATLAB | BSD-2-Clause | 2021-10-09 | False | archived | medium |
 
@@ -10,7 +10,7 @@ MATLAB implementation of the OpenShoe zero-velocity-aided foot-mounted INS with 
 
 **Why it matters:** Reference for dismounted soldier / first responder navigation without GNSS.
 
-**Hackathon notes:** Works with any foot-mounted IMU log; sample data included. No updates since 2021.
+**Build notes:** Works with any foot-mounted IMU log; sample data included. No updates since 2021.
 
 **Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

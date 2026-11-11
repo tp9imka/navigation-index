@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ntpsec/ntpsec` - <https://gitlab.com/NTPsec/ntpsec>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C | ? | ? | ? | production | medium |
 
@@ -10,7 +10,7 @@ A security-focused refactor of the reference NTP implementation with much of the
 
 **Why it matters:** Keeps the reference-implementation refclock drivers (useful for odd timing receivers) while dropping much of the attack surface of classic ntpd.
 
-**Hackathon notes:** Use when a specific refclock driver is needed that chrony lacks; otherwise chrony is easier. ntpviz plots offsets and frequency from its logs.
+**Build notes:** Use when a specific refclock driver is needed that chrony lacks; otherwise chrony is easier. ntpviz plots offsets and frequency from its logs.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

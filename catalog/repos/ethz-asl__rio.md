@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/rio` - <https://github.com/ethz-asl/rio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 157 | C++ | BSD-3-Clause | 2025-08-04 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM
 
 **Why it matters:** Factor-graph radar-inertial baseline for drones in degraded visual environments.
 
-**Hackathon notes:** ROS build; datasets linked in README.
+**Build notes:** ROS build; datasets linked in README.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

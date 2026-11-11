@@ -2,7 +2,7 @@
 
 `repo:moveit/moveit2` - <https://github.com/moveit/moveit2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,103 | C++ | BSD-3-Clause | 2026-10-28 | False | production | low |
 
@@ -10,7 +10,7 @@ Motion planning framework for ROS 2 manipulators: kinematics, collision checking
 
 **Why it matters:** Relevant when a vehicle carries an arm or gimbal-like mechanism; outside pure navigation but the ROS 2 standard for manipulation planning.
 
-**Hackathon notes:** Binary install via apt; use the MoveIt Setup Assistant for a new robot. Overkill unless your platform has an arm.
+**Build notes:** Binary install via apt; use the MoveIt Setup Assistant for a new robot. Overkill unless your platform has an arm.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

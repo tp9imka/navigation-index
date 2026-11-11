@@ -2,7 +2,7 @@
 
 `repo:semuconsulting/pynmeagps` - <https://github.com/semuconsulting/pynmeagps>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 112 | Python | BSD-3-Clause | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 
 **Why it matters:** NMEA is what most autopilots and COTS receivers emit; this is a well-maintained parser/generator.
 
-**Hackathon notes:** pip install pynmeagps. Can also generate NMEA to feed test positions into a downstream system.
+**Build notes:** pip install pynmeagps. Can also generate NMEA to feed test positions into a downstream system.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [pynmea2](../../catalog/repos/knio__pynmea2.md) (alternative_to)

@@ -2,7 +2,7 @@
 
 `repo:opencpn/opencpn` - <https://github.com/OpenCPN/OpenCPN>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,516 | C | GPL-2.0 | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ Cross-platform open-source chartplotter and navigation application that displays
 
 **Why it matters:** The de facto open maritime nav display; a ready-made situational awareness front end for any surface-vessel or GNSS-denied maritime demo.
 
-**Hackathon notes:** Install the packaged build, feed it NMEA over UDP/TCP from your own nav filter or a simulator and you have a chart display in minutes. Writing a plugin needs the plugin SDK and a full C++ build.
+**Build notes:** Install the packaged build, feed it NMEA over UDP/TCP from your own nav filter or a simulator and you have a chart display in minutes. Writing a plugin needs the plugin SDK and a full C++ build.
 
 ## Deep dives
 
@@ -31,10 +31,10 @@ Cross-platform open-source chartplotter and navigation application that displays
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md) (integrates_with)
 - [OpenCPN radar_pi](../../catalog/repos/opencpn-radar-pi__radar_pi.md) (extends)

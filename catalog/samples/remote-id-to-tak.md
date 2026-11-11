@@ -32,9 +32,9 @@ Passive airspace awareness from broadcast Remote ID (ASTM F3411 / ASD-STAN EN 47
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 

@@ -2,7 +2,7 @@
 
 `repo:ardupilot/arduremoteid` - <https://github.com/ArduPilot/ArduRemoteID>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 256 | C++ | GPL-2.0 | 2025-07-04 | False | production | high |
 
@@ -10,7 +10,7 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 
 **Why it matters:** Cheap compliant Remote ID broadcasting, and the transmitter side of any Remote ID-based C-UAS awareness demo.
 
-**Hackathon notes:** Flash an ESP32-S3/C3 dev board; pair with opendroneid receiver-android to show detection end to end.
+**Build notes:** Flash an ESP32-S3/C3 dev board; pair with opendroneid receiver-android to show detection end to end.
 
 ## Deep dives
 
@@ -32,7 +32,7 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 ## Referenced by
 
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
 - [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (integrates_with)

@@ -9,7 +9,7 @@ US startup whose founders started at the February 2024 El Segundo Defense Tech H
 ## Key takeaways
 
 - Vendor claims: six months from hackathon to a SOCOM sale (YC launch post); integration under 30 minutes (company statement relayed by press)
-- Direct precedent that a hackathon visual-nav demo can become a product - and that judges have seen this pitch
+- Direct precedent that a hackathon visual-nav demo can become a product - and that reviewers have seen this pitch
 
 ## Deep dives
 
@@ -31,12 +31,11 @@ US startup whose founders started at the February 2024 El Segundo Defense Tech H
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)

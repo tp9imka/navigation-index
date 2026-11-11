@@ -36,11 +36,11 @@ Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic a
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [Slides outline](../../templates/pitch/slides-outline.md) (mentions)
 - [Story bank](../../templates/pitch/story-bank.md) (mentions)

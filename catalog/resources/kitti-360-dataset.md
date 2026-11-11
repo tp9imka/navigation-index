@@ -22,10 +22,10 @@ Successor to KITTI with longer suburban drives, 360-degree perception sensors an
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): sim-data_

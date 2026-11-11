@@ -2,7 +2,7 @@
 
 `repo:signalk/signalk-server` - <https://github.com/SignalK/signalk-server>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 448 | TypeScript | Apache-2.0 | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 **Why it matters:** A modern data bus for a vessel; ideal glue between sensors, your own nav filter and displays.
 
-**Hackathon notes:** Run via Docker or npm, enable the sample data playback, subscribe over WebSocket. Write a plugin to inject an alternative position source.
+**Build notes:** Run via Docker or npm, enable the sample data playback, subscribe over WebSocket. Write a plugin to inject an alternative position source.
 
 ## Deep dives
 
@@ -32,12 +32,12 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [CANboat](../../catalog/repos/canboat__canboat.md) (integrates_with)
 - [OpenCPN](../../catalog/repos/opencpn__opencpn.md) (integrates_with)

@@ -2,7 +2,7 @@
 
 `repo:ipnl-polyu/urbannavdataset` - <https://github.com/IPNL-POLYU/UrbanNavDataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 634 | Python | MIT | 2026-10-15 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar
 
 **Why it matters:** Benchmark for GNSS multipath and NLOS mitigation in cities.
 
-**Hackathon notes:** Pick one Hong Kong sequence and run an RTKLIB plus loosely coupled baseline to show urban degradation.
+**Build notes:** Pick one Hong Kong sequence and run an RTKLIB plus loosely coupled baseline to show urban degradation.
 
 ## Deep dives
 
@@ -24,11 +24,11 @@ Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): sim-data_
 

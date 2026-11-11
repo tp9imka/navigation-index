@@ -2,7 +2,7 @@
 
 `repo:semuconsulting/pyrtcm` - <https://github.com/semuconsulting/pyrtcm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 116 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, 
 
 **Why it matters:** Lets teams inspect and manipulate correction streams from NTRIP casters in Python.
 
-**Hackathon notes:** pip install pyrtcm. Combine with pygnssutils' NTRIP client for live streams.
+**Build notes:** pip install pyrtcm. Combine with pygnssutils' NTRIP client for live streams.
 
 ## Deep dives
 

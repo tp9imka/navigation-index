@@ -27,8 +27,8 @@ DARPA's 2018-2021 challenge for autonomous robot teams mapping and searching tun
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): defense-context_

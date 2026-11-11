@@ -32,52 +32,51 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (44)
+## Guides (43)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
-- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
-- [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
-- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
-- [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for an autonomous flight navigation task.
+- [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for an autonomous flight navigation task.
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09, for an autonomous flight navigation task.
+- [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09.
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
-- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
+- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09, copying the method of 07.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
+- [Brief decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied task, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from, the
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
-- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
-- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) - Next action: run step 1, then work down.
+- [Cold-start drill: close-area A=>B from a fresh clone, one agent, no team](../../docs/cold-start-drill.md) - Next action if you are starting a task now: read the blockers first (all are fixed; two of them change what you type), then follow quickstart-first-flight.md.
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) - For a team entering a navigation-themed competition or hackathon, including one with a defense-context track.
 - [Demo script: close-area A to B, the toolkit in 2 minutes](../../templates/demo-script-close-area.md) - State on 2026-11-10: this is a script for the measured toolkit.
-- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for an autonomous flight navigation task (details not yet known at the time).
 - [Docs map](../../docs/README.md) - Use this page when you need to know which page under docs/ answers your question, or the order to read them in.
 - [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) - Next action when the task arrives: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
-- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for an autonomous flight navigation task (full-brief routing).
 - [H1: move to distinguish competing location hypotheses](../../docs/hypotheses/h1-active-disambiguation.md) - Status: mechanism demonstrated synthetically; proposed improvement over the information-gain baseline NOT demonstrated.
 - [H2: request a localization fix before its navigation deadline](../../docs/hypotheses/h2-localization-scheduling.md) - Status: synthetic predictive trigger is competitive, but advantage over a strong opportunity heuristic is not established.
 - [H3: adapt a navigation model only when the data identify it](../../docs/hypotheses/h3-selective-adaptation.md) - Status: conditional synthetic benefit after observable model change.
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
-- [Innovation experiments: hypotheses before claims](../../docs/innovation-experiments.md) - For Challenge 2, start from an existing estimator and flight stack, then identify a specific algorithmic contribution with a strong baseline and a falsification test.
+- [How it was built: method, kill tests and fact-check error rates](../../docs/how-it-was-built.md) - This page describes how the hub's close-area toolkit was built and checked, which of its own headline ideas failed, and how often the catalog's records were wrong when checked.
+- [Innovation experiments: hypotheses before claims](../../docs/innovation-experiments.md) - For an autonomous flight navigation task, start from an existing estimator and flight stack, then identify a specific algorithmic contribution with a strong baseline and a falsification test.
 - [Integration cards](../../docs/integration-cards/README.md) - Use this when you are about to install or wire a specific repo (autopilot SDK, VIO, planner, GNSS library, TAK bridge) and need its install steps, wiring, gotchas and license before you clone it.
-- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show judges a Stanford diagram that proves y
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show reviewers a Stanford diagram that prove
 - [Learning paths](../../docs/learning-paths.md) - Three study tracks built from the courses, talks, books and docs in this index.
 - [Navigation invention hypothesis cards](../../docs/hypotheses/README.md) - Status: first POCs executed on 2026-11-09.
-- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Some briefs say the winning team may take its solution towards real-world implementation.
 - [Pitch structure](../../templates/pitch/pitch-structure.md) - Two skeletons (3 and 5 minutes) for a PNT-resilience pitch, the funder vocabulary to use and not to stretch, and 15 hard judge questions with answer patterns.
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
+- [Quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/quickstart-first-flight.md) - Next action: run step 1, then work down.
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
-- [Research handoff: challenge the innovation claims](../../docs/hypotheses/research-agent-prompt.md) - Work in this repository.
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) - Use this when you need the innovation story, want to know which research round fits the brief, or need the kill test and status for a headline idea.
 - [Slides outline](../../templates/pitch/slides-outline.md) - A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch.
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
 - [Story bank](../../templates/pitch/story-bank.md) - Ready opening hooks for a PNT-resilience pitch, 10 per brief family, each tied to a measured result in the hub.
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
-- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
+- [The first three hours](../../docs/first-three-hours.md) - What a 4-5 person team does from the moment the problem statement drops until hour 3, when a walking skeleton should run end to end.
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for an autonomous flight navigation task (full brief not yet known).
 
 ## Repositories (130)
 

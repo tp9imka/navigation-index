@@ -2,7 +2,7 @@
 
 `repo:hku-mars/fast_lio` - <https://github.com/hku-mars/FAST_LIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5,356 | C++ | GPL-2.0 | 2026-10-25 | False | production | high |
 
@@ -10,7 +10,7 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 
 **Why it matters:** The default LIO in many field robots; runs on ARM boards and supports solid-state and spinning LiDARs.
 
-**Hackathon notes:** Easiest LIO to get running; Livox drivers supported. No loop closure; pair with a localization or loop-closure add-on.
+**Build notes:** Easiest LIO to get running; Livox drivers supported. No loop closure; pair with a localization or loop-closure add-on.
 
 ## Deep dives
 
@@ -33,12 +33,12 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [Faster-LIO](../../catalog/repos/gaoxiang12__faster-lio.md) (alternative_to)

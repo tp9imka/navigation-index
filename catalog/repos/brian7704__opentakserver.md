@@ -2,7 +2,7 @@
 
 `repo:brian7704/opentakserver` - <https://github.com/brian7704/OpenTAKServer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 392 | Python | GPL-3.0 | 2026-11-07 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 
 **Why it matters:** Quick, modern backend for a common operating picture demo linking several sensors and phones.
 
-**Hackathon notes:** Installer scripts for Linux/RPi; get clients connected in an hour, then focus on your sensor feed.
+**Build notes:** Installer scripts for Linux/RPi; get clients connected in an hour, then focus on your sensor feed.
 
 ## Deep dives
 
@@ -31,10 +31,10 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [drone-mesh-mapper](../../catalog/repos/colonelpanichacks__drone-mesh-mapper.md) (integrates_with)
 - [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md) (alternative_to)

@@ -2,7 +2,7 @@
 
 `repo:mavlink/mavlink` - <https://github.com/mavlink/mavlink>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,474 | Python | NOASSERTION | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 
 **Why it matters:** The lingua franca of open-source UAS; any GCS, companion, Remote ID or C-UAS sensor integration ends up speaking it.
 
-**Hackathon notes:** Add a custom dialect XML and regenerate bindings to prototype new messages (e.g. a jamming-detection report).
+**Build notes:** Add a custom dialect XML and regenerate bindings to prototype new messages (e.g. a jamming-detection report).
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [node-mavlink](../../catalog/repos/ardupilot__node-mavlink.md) (depends_on)

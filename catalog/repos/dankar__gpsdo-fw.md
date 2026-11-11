@@ -2,7 +2,7 @@
 
 `repo:dankar/gpsdo-fw` - <https://github.com/dankar/gpsdo-fw>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 39 | C | GPL-3.0 | 2025-02-25 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Replacement firmware for a widely sold BH3SAP GPSDO module, with menus for PPB t
 
 **Why it matters:** Turns a cheap off-the-shelf GPSDO into something whose discipline and holdover behaviour you can read and modify.
 
-**Hackathon notes:** Buy the module, flash over SWD. fredzo/gpsdo-fw is an active fork.
+**Build notes:** Buy the module, flash over SWD. fredzo/gpsdo-fw is an active fork.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

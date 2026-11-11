@@ -2,7 +2,7 @@
 
 `repo:jketterl/openwebrx` - <https://github.com/jketterl/openwebrx>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,341 | Python | AGPL-3.0 | 2024-12-11 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Multi-user web SDR receiver with waterfall display and many built-in digital dec
 
 **Why it matters:** Shared, browser-based spectrum view is a simple way to demonstrate RF situational awareness, e.g. watching the GNSS L1 band for interference with a suitable front end.
 
-**Hackathon notes:** Docker image available. Upstream activity slowed after 2024; the luarvique fork is more active.
+**Build notes:** Docker image available. Upstream activity slowed after 2024; the luarvique fork is more active.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 

@@ -2,7 +2,7 @@
 
 `repo:px4/px4-avoidance` - <https://github.com/PX4/PX4-Avoidance>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 753 | C++ | BSD-3-Clause | 2024-04-10 | True | archived | low |
 
@@ -10,7 +10,7 @@ Archived ROS nodes for local planning, global planning and safe landing using de
 
 **Why it matters:** Still a useful reference for obstacle avoidance architectures, but unmaintained.
 
-**Hackathon notes:** ROS 1 only; read for design ideas.
+**Build notes:** ROS 1 only; read for design ideas.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

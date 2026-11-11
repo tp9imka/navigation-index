@@ -2,7 +2,7 @@
 
 `repo:spel-uchile/star_tracker` - <https://github.com/spel-uchile/Star_Tracker>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 96 | Python | GPL-3.0 | 2024-09-08 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Open star tracker software from the University of Chile space lab, flown on SUCH
 
 **Why it matters:** Flight-tested open star tracker code, a basis for attitude from stars.
 
-**Hackathon notes:** Python prototype; compare with tetra3/LOST.
+**Build notes:** Python prototype; compare with tetra3/LOST.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 

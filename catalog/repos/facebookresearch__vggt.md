@@ -2,7 +2,7 @@
 
 `repo:facebookresearch/vggt` - <https://github.com/facebookresearch/vggt>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14,610 | Python | NOASSERTION | 2026-05-19 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Visual Geometry Grounded Transformer: a feed-forward network predicting camera p
 
 **Why it matters:** Instant pose and geometry from a handful of frames; a building block for learned relocalization and mapping.
 
-**Hackathon notes:** GPU inference via PyTorch; Hugging Face demo for quick tests. Not a full SLAM system by itself. Licence: LICENSE.txt prohibits military, warfare and ITAR-controlled uses; the default VGGT-1B checkpoint is non-commercial and only the gated VGGT-1B-Commercial checkpoint allows commercial use.
+**Build notes:** GPU inference via PyTorch; Hugging Face demo for quick tests. Not a full SLAM system by itself. Licence: LICENSE.txt prohibits military, warfare and ITAR-controlled uses; the default VGGT-1B checkpoint is non-commercial and only the gated VGGT-1B-Commercial checkpoint allows commercial use.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

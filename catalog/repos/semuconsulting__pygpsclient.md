@@ -2,7 +2,7 @@
 
 `repo:semuconsulting/pygpsclient` - <https://github.com/semuconsulting/PyGPSClient>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 862 | Python | BSD-3-Clause | 2026-10-26 | False | production | high |
 
@@ -10,7 +10,7 @@ Cross-platform Python GUI GNSS client that displays and configures receivers ove
 
 **Why it matters:** Fast visual tool for checking receiver state, satellite C/N0 and corrections during field tests.
 
-**Hackathon notes:** pip install pygpsclient. Good bench tool to watch C/N0 drop during a jamming test in a shielded setup.
+**Build notes:** pip install pygpsclient. Good bench tool to watch C/N0 drop during a jamming test in a shielded setup.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Cross-platform Python GUI GNSS client that displays and configures receivers ove
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

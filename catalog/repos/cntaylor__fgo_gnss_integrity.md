@@ -2,15 +2,15 @@
 
 `repo:cntaylor/fgo_gnss_integrity` - <https://github.com/cntaylor/FGO_gnss_integrity>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 9 | Python | ? | 2026-03-24 | False | research-prototype | low |
 
 Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with solution-separation ARAIM on real GNSS epochs (from libRSF datasets) plus Monte Carlo outliers.
 
-**Why it matters:** Recent bridge between robust factor graphs and classic integrity monitoring, the comparison judges ask about when a team says 'robust kernel'.
+**Why it matters:** Recent bridge between robust factor graphs and classic integrity monitoring, the comparison reviewers ask about when a team says 'robust kernel'.
 
-**Hackathon notes:** No license file. Data DB stored via git LFS. Reference for evaluation design.
+**Build notes:** No license file. Data DB stored via git LFS. Reference for evaluation design.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

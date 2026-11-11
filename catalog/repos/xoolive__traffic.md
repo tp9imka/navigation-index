@@ -2,7 +2,7 @@
 
 `repo:xoolive/traffic` - <https://github.com/xoolive/traffic>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 524 | Python | MIT | 2026-10-14 | False | production | medium |
 
@@ -10,7 +10,7 @@ Toolbox for processing and analyzing air traffic trajectories: OpenSky access, f
 
 **Why it matters:** Analyze flight tracks and airspace structures for airspace awareness or UAV deconfliction studies.
 
-**Hackathon notes:** pip install traffic; OpenSky historical data needs an account.
+**Build notes:** pip install traffic; OpenSky historical data needs an account.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 

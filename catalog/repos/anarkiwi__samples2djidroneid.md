@@ -2,7 +2,7 @@
 
 `repo:anarkiwi/samples2djidroneid` - <https://github.com/anarkiwi/samples2djidroneid>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 37 | Python | Apache-2.0 | 2026-10-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on pr
 
 **Why it matters:** Recovers DJI drone and pilot location telemetry from RF, filling the gap for drones without standard Remote ID.
 
-**Hackathon notes:** Needs high-rate I/Q captures; decoding is slow with interference.
+**Build notes:** Needs high-rate I/Q captures; decoding is slow with interference.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on pr
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [DragonSync](../../catalog/repos/alphafox02__dragonsync.md) (integrates_with)
 - [dji_droneid](../../catalog/repos/proto17__dji_droneid.md) (alternative_to)
 - [DroneSecurity (DJI DroneID receiver)](../../catalog/repos/rub-syssec__dronesecurity.md) (alternative_to)

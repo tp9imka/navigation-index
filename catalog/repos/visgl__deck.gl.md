@@ -2,7 +2,7 @@
 
 `repo:visgl/deck.gl` - <https://github.com/visgl/deck.gl>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14,742 | TypeScript | MIT | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ GPU-powered large-scale data visualization framework with layers for points, pat
 
 **Why it matters:** Renders thousands of tracks (ADS-B, AIS, swarm telemetry) smoothly for a common operating picture.
 
-**Hackathon notes:** Use TripsLayer for animated track histories; integrates with React.
+**Build notes:** Use TripsLayer for animated track histories; integrates with React.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ GPU-powered large-scale data visualization framework with layers for points, pat
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

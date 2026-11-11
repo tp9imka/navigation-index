@@ -2,7 +2,7 @@
 
 `repo:i2nav-whu/kf-gins` - <https://github.com/i2Nav-WHU/KF-GINS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,222 | C++ | GPL-3.0 | 2026-06-10 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS inte
 
 **Why it matters:** Clean, readable GNSS/INS baseline in the PSINS/Groves tradition; ideal to adapt for GNSS-outage experiments.
 
-**Hackathon notes:** Builds with CMake and Eigen; includes demo dataset. Simulate outages by masking GNSS epochs and watch drift.
+**Build notes:** Builds with CMake and Eigen; includes demo dataset. Simulate outages by masking GNSS epochs and watch drift.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS inte
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OB_GINS](../../catalog/repos/i2nav-whu__ob_gins.md) (same_org)
 - [NaveGo](../../catalog/repos/rodralez__navego.md) (alternative_to)

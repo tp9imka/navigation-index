@@ -2,7 +2,7 @@
 
 `repo:unmannedlab/rellis-3d` - <https://github.com/unmannedlab/RELLIS-3D>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 463 | Jupyter Notebook | ? | 2022-11-23 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plu
 
 **Why it matters:** A standard benchmark for off-road perception and localization.
 
-**Hackathon notes:** Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable. Data and code are CC BY-NC-SA 3.0, so non-commercial use only.
+**Build notes:** Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable. Data and code are CC BY-NC-SA 3.0, so non-commercial use only.
 
 ## Deep dives
 

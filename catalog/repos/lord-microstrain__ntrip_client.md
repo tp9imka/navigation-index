@@ -2,7 +2,7 @@
 
 `repo:lord-microstrain/ntrip_client` - <https://github.com/LORD-MicroStrain/ntrip_client>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 119 | Python | NOASSERTION | 2026-04-21 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, 
 
 **Why it matters:** Standard glue to get RTK corrections into a ROS robot.
 
-**Hackathon notes:** apt-installable ROS package; works with any receiver driver accepting RTCM topics.
+**Build notes:** apt-installable ROS package; works with any receiver driver accepting RTCM topics.
 
 ## Deep dives
 

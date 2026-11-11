@@ -2,7 +2,7 @@
 
 `repo:arnauochoa/smartphone-decimeter-challenge` - <https://github.com/arnauochoa/smartphone-decimeter-challenge>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 9 | MATLAB | MIT | 2023-07-05 | False | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 
 **Why it matters:** MATLAB route for smartphone GNSS positioning.
 
-**Hackathon notes:** Reference only: the EKF, INS and magnitude submodules are private, so it does not run as cloned. MIT. From an ENAC master's thesis.
+**Build notes:** Reference only: the EKF, INS and magnitude submodules are private, so it does not run as cloned. MIT. From an ENAC master's thesis.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md)
 

@@ -2,7 +2,7 @@
 
 `repo:mit-spark/vnav-labs` - <https://github.com/MIT-SPARK/VNAV-labs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 145 | C++ | ? | 2024-11-05 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3
 
 **Why it matters:** A structured, graded path from ROS basics to visual-inertial navigation, built by the SPARK lab behind Kimera.
 
-**Hackathon notes:** Labs assume Ubuntu + ROS; pick individual labs (feature tracking, two-view geometry) as warm-ups.
+**Build notes:** Labs assume Ubuntu + ROS; pick individual labs (feature tracking, two-view geometry) as warm-ups.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 

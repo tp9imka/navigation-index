@@ -2,7 +2,7 @@
 
 `repo:mavlink/mavlink-devguide` - <https://github.com/mavlink/mavlink-devguide>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 149 | Python | NOASSERTION | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ Source of the mavlink.io documentation: protocol, microservices (mission, parame
 
 **Why it matters:** Canonical reference when wiring new sensors or services over MAVLink.
 
-**Hackathon notes:** Read the microservice pages before implementing anything stateful.
+**Build notes:** Read the microservice pages before implementing anything stateful.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

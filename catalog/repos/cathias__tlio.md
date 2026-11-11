@@ -2,7 +2,7 @@
 
 `repo:cathias/tlio` - <https://github.com/CathIAS/TLIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 414 | Python | NOASSERTION | 2023-08-08 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 
 **Why it matters:** Strong blueprint for combining a learned motion prior with a classical filter.
 
-**Hackathon notes:** Training data is head-mounted; expect domain gap on other platforms. The released dataset is CC BY-NC (non-commercial); the code is BSD-licensed.
+**Build notes:** Training data is head-mounted; expect domain gap on other platforms. The released dataset is CC BY-NC (non-commercial); the code is BSD-licensed.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

@@ -2,7 +2,7 @@
 
 `repo:rpng/kalibr_allan` - <https://github.com/rpng/kalibr_allan>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 665 | MATLAB | ? | 2020-06-21 | True | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB scripts producing IMU Allan standard deviation charts and Kalibr-ready no
 
 **Why it matters:** Historical reference for IMU noise characterisation.
 
-**Hackathon notes:** Archived; prefer allan_variance_ros.
+**Build notes:** Archived; prefer allan_variance_ros.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

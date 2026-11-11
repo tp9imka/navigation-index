@@ -17,7 +17,7 @@ Factsheet for an EDF-funded project developing ground and space-based detection 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [European Defence Fund 2025 calls](../../catalog/resources/edf-2025-call.md) (cites)
 
 _Indexed by lane(s): defense-context_

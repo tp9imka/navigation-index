@@ -2,7 +2,7 @@
 
 `repo:jjsantos01/qgis_mcp` - <https://github.com/jjsantos01/qgis_mcp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,148 | Python | ? | 2025-10-01 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ MCP server plus QGIS plugin that lets an LLM create projects, load layers, run p
 
 **Why it matters:** Natural-language GIS analysis for terrain, route and coverage products in a mission-planning demo.
 
-**Hackathon notes:** Install the plugin, start the socket server in QGIS, add the MCP server to the client. Arbitrary code execution - sandbox it.
+**Build notes:** Install the plugin, start the socket server in QGIS, add the MCP server to the client. Arbitrary code execution - sandbox it.
 
 ## Deep dives
 

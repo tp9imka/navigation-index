@@ -2,7 +2,7 @@
 
 `repo:commaai/laika` - <https://github.com/commaai/laika>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 727 | Python | MIT | 2026-09-25 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python GNSS processing library from comma.ai that fetches orbits, clocks and atm
 
 **Why it matters:** Quickest way to go from raw pseudoranges to a corrected fix in Python; it powered openpilot's laikad GNSS localizer until that was removed in October 2023.
 
-**Hackathon notes:** Install from a clone (`pip install .`); the PyPI 'laika' package is a 2018 0.0.1 stub. Correction downloads need internet, and NASA CDDIS needs an Earthdata login in a .netrc. Good backend for Android raw data experiments.
+**Build notes:** Install from a clone (`pip install .`); the PyPI 'laika' package is a 2018 0.0.1 stub. Correction downloads need internet, and NASA CDDIS needs an Earthdata login in a .netrc. Good backend for Android raw data experiments.
 
 ## Deep dives
 
@@ -30,9 +30,9 @@ Python GNSS processing library from comma.ai that fetches orbits, clocks and atm
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [openpilot](../../catalog/repos/commaai__openpilot.md) (depends_on)
 - [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md) (alternative_to)

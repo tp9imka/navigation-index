@@ -2,7 +2,7 @@
 
 `repo:senseroboticslab/diso` - <https://github.com/SenseRoboticsLab/DISO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 36 | C++ | GPL-3.0 | 2025-01-09 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Direct imaging sonar odometry: estimates vehicle motion directly from forward-lo
 
 **Why it matters:** Sonar odometry is a key aid when DVL bottom-lock or vision fails in turbid water.
 
-**Hackathon notes:** C++ with ROS; try on the provided datasets first.
+**Build notes:** C++ with ROS; try on the provided datasets first.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/gcopter` - <https://github.com/zju-fast-lab/gcopter>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,328 | C++ | MIT | 2023-10-15 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor 
 
 **Why it matters:** Efficient, well-documented trajectory optimizer to turn waypoint paths into flyable minimum-control trajectories.
 
-**Hackathon notes:** Header-heavy C++ with ROS1 examples; best used as a library behind your own front-end.
+**Build notes:** Header-heavy C++ with ROS1 examples; best used as a library behind your own front-end.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 

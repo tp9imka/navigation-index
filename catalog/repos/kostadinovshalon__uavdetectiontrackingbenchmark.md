@@ -2,7 +2,7 @@
 
 `repo:kostadinovshalon/uavdetectiontrackingbenchmark` - <https://github.com/KostadinovShalon/UAVDetectionTrackingBenchmark>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 147 | Python | ? | 2026-08-17 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Code and configs for benchmarking drone detection and tracking across Anti-UAV, 
 
 **Why it matters:** Saves time on dataset wrangling for a vision C-UAS comparison.
 
-**Hackathon notes:** Use the COCO conversion scripts first. No LICENSE file, so all rights reserved by default. The three datasets keep their own terms.
+**Build notes:** Use the COCO conversion scripts first. No LICENSE file, so all rights reserved by default. The three datasets keep their own terms.
 
 ## Deep dives
 
@@ -28,9 +28,9 @@ Code and configs for benchmarking drone detection and tracking across Anti-UAV, 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md) (evaluated_on)
 
 _Indexed by lane(s): domains-swarm_

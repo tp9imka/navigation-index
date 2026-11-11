@@ -2,7 +2,7 @@
 
 `repo:ardupilot/pymavlink` - <https://github.com/ArduPilot/pymavlink>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 741 | Python | NOASSERTION | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 **Why it matters:** Quickest path to scripting a vehicle or parsing flight logs to evaluate estimator behaviour under GNSS loss.
 
-**Hackathon notes:** pip install pymavlink; mavutil.mavlink_connection('udp:...') against SITL works in minutes.
+**Build notes:** pip install pymavlink; mavutil.mavlink_connection('udp:...') against SITL works in minutes.
 
 ## Deep dives
 
@@ -31,12 +31,12 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
 - [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md) (depends_on)

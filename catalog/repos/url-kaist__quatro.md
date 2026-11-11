@@ -2,7 +2,7 @@
 
 `repo:url-kaist/quatro` - <https://github.com/url-kaist/Quatro>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 409 | C++ | GPL-3.0 | 2026-05-10 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Fast, robust global registration for terrestrial robots that assumes near-planar
 
 **Why it matters:** Faster global relocalization for ground vehicles.
 
-**Hackathon notes:** Smaller research codebase; pair with KISS-ICP.
+**Build notes:** Smaller research codebase; pair with KISS-ICP.
 
 **Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/ego-planner-swarm` - <https://github.com/ZJU-FAST-Lab/ego-planner-swarm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,251 | C++ | GPL-3.0 | 2025-03-08 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collisio
 
 **Why it matters:** Open reference for drone swarms that coordinate paths without a central server, relevant to contested comms scenarios.
 
-**Hackathon notes:** Simulation launches many drones on one machine; trajectory broadcast assumes reliable comms - an interesting knob to degrade in a hackathon.
+**Build notes:** Simulation launches many drones on one machine; trajectory broadcast assumes reliable comms - an interesting knob to degrade in a hackathon.
 
 ## Deep dives
 

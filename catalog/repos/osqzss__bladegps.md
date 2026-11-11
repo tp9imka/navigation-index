@@ -2,7 +2,7 @@
 
 `repo:osqzss/bladegps` - <https://github.com/osqzss/bladeGPS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 158 | C | MIT | 2022-10-13 | True | archived | low |
 
@@ -10,7 +10,7 @@ Real-time GPS L1 signal simulator variant of GPS-SDR-SIM for bladeRF hardware.
 
 **Why it matters:** Real-time variant for interactive receiver testing. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
-**Hackathon notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
+**Build notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

@@ -2,7 +2,7 @@
 
 `repo:magicleap/supergluepretrainednetwork` - <https://github.com/magicleap/SuperGluePretrainedNetwork>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,105 | Python | NOASSERTION | 2024-08-30 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR
 
 **Why it matters:** Used by WildNav and many UAV localization repos; non-commercial license limits reuse.
 
-**Hackathon notes:** Prefer LightGlue (permissive license, faster) unless replicating WildNav exactly.
+**Build notes:** Prefer LightGlue (permissive license, faster) unless replicating WildNav exactly.
 
 **Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

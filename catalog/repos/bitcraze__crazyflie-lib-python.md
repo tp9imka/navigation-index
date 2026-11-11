@@ -2,7 +2,7 @@
 
 `repo:bitcraze/crazyflie-lib-python` - <https://github.com/bitcraze/crazyflie-lib-python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 351 | Python | NOASSERTION | 2026-11-04 | False | production | high |
 
@@ -10,7 +10,7 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 
 **Why it matters:** Fastest way to script autonomy experiments on nano drones.
 
-**Hackathon notes:** pip install cflib; Swarm class runs parallel commands.
+**Build notes:** pip install cflib; Swarm class runs parallel commands.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
@@ -24,7 +24,7 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)

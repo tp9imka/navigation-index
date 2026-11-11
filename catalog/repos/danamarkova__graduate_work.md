@@ -2,7 +2,7 @@
 
 `repo:danamarkova/graduate_work` - <https://github.com/DanaMarkova/graduate_work>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | C | ? | 2025-08-20 | False | educational | low |
 
@@ -10,7 +10,7 @@ Russian graduate thesis code: 'Development of a UAV inertial navigation module u
 
 **Why it matters:** Small, self-contained INS + aiding simulator with a visual front-end; good for teaching drift and aiding.
 
-**Hackathon notes:** Mixed C++/C#/Node stack; setup cost moderate. Treat as reference, not a library.
+**Build notes:** Mixed C++/C#/Node stack; setup cost moderate. Treat as reference, not a library.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Russian graduate thesis code: 'Development of a UAV inertial navigation module u
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

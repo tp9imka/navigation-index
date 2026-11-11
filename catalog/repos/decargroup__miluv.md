@@ -2,7 +2,7 @@
 
 `repo:decargroup/miluv` - <https://github.com/decargroup/miluv>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 32 | Python | MIT | 2026-07-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB rangin
 
 **Why it matters:** UWB plus vision data with multiple vehicles, for relative and indoor localization.
 
-**Hackathon notes:** Download the dataset via devkit scripts; examples include UWB EKF.
+**Build notes:** Download the dataset via devkit scripts; examples include UWB EKF.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB rangin
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [UWB drone dataset (TIERS)](../../catalog/repos/tiers__uwb-drone-dataset.md) (alternative_to)
 - [MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision](../../catalog/resources/miluv-dataset-2025.md) (has_code)

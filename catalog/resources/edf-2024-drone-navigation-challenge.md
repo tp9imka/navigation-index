@@ -21,12 +21,12 @@ European Defence Fund technological-challenge topic on multi-sensor integration 
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [European Defence Fund 2025 calls](../../catalog/resources/edf-2025-call.md) (cites)
 

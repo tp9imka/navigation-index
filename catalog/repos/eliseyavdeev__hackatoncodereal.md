@@ -2,7 +2,7 @@
 
 `repo:eliseyavdeev/hackatoncodereal` - <https://github.com/EliseyAvdeev/HackatonCODEreal>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-06-28 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Hackathon code from team SKB 'ФИЗ-ТЕХ' for the June 2026 blind-flight case
 
 **Why it matters:** A compact Python baseline with heatmaps over speed and azimuth, handy for visualising why altimeter matching is ambiguous.
 
-**Hackathon notes:** Run gui.py. README says post-processing is more stable than real time and that a 10 m altimeter error was tested. Demo videos are on Yandex Disk links.
+**Build notes:** Run gui.py. README says post-processing is more stable than real time and that a 10 m altimeter error was tested. Demo videos are on Yandex Disk links.
 
 ## Deep dives
 
@@ -31,12 +31,12 @@ Hackathon code from team SKB 'ФИЗ-ТЕХ' for the June 2026 blind-flight case
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [KROT (Где мы, Бариста?) - terrain correlation from radar altimeter](../../catalog/repos/rub1kub__where-are-we-barista.md) (alternative_to)
 - [Хакатон: трек «Робототехника и сенсорика», кейс «Полёт вслепую»](../../catalog/resources/iqarium-polet-vslepuyu-hackathon-2026.md) (has_code)

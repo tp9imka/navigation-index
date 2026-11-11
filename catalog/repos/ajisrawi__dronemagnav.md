@@ -2,7 +2,7 @@
 
 `repo:ajisrawi/dronemagnav` - <https://github.com/ajisrawi/dronemagnav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | Python | NOASSERTION | 2026-09-13 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-
 
 **Why it matters:** Rare example of MagNav pushed down to cheap drone hardware with an autopilot interface.
 
-**Hackathon notes:** Very recent single-author project; the board has not been built and the firmware has not run on real hardware (README status). Proprietary licence, so read it for ideas only - do not reuse code or designs. Global anomaly maps are coarse, so expect km-level, not meter-level, results on small drones.
+**Build notes:** Very recent single-author project; the board has not been built and the firmware has not run on real hardware (README status). Proprietary licence, so read it for ideas only - do not reuse code or designs. Global anomaly maps are coarse, so expect km-level, not meter-level, results on small drones.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

@@ -21,6 +21,6 @@ Archived Bitcraze wiki page with static TWR measurements of the UWB Loco system 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 
 _Indexed by lane(s): close-area-localization_

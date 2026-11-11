@@ -2,7 +2,7 @@
 
 `repo:rlabbe/kalman-and-bayesian-filters-in-python` - <https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 19,474 | Jupyter Notebook | NOASSERTION | 2024-08-07 | False | educational | high |
 
@@ -10,7 +10,7 @@ Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particl
 
 **Why it matters:** Fastest onboarding for team members new to estimation.
 
-**Hackathon notes:** Run the notebooks locally or in Binder; chapters on UKF and EKF are enough for a hackathon.
+**Build notes:** Run the notebooks locally or in Binder; chapters on UKF and EKF are enough for a hackathon.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

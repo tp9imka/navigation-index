@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/esvo` - <https://github.com/HKUST-Aerial-Robotics/ESVO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 508 | C++ | ? | 2025-03-20 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 **Why it matters:** Event cameras keep working under high dynamic range and fast motion, where frame cameras blur or saturate.
 
-**Hackathon notes:** Needs stereo event cameras or recorded datasets; ROS 1.
+**Build notes:** Needs stereo event cameras or recorded datasets; ROS 1.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

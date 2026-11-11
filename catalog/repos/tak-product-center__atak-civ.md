@@ -2,7 +2,7 @@
 
 `repo:tak-product-center/atak-civ` - <https://github.com/TAK-Product-Center/atak-civ>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 297 | Java | NOASSERTION | 2026-02-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Source of the civilian Android Team Awareness Kit maintained by the TAK Product 
 
 **Why it matters:** The most widely used open tactical map client; plugins let you inject nav and sensor data into a fielded UI.
 
-**Hackathon notes:** Plugin builds need the matching SDK version; budget half a day for toolchain. Many teams instead feed CoT from Python and just use stock ATAK/iTAK.
+**Build notes:** Plugin builds need the matching SDK version; budget half a day for toolchain. Many teams instead feed CoT from Python and just use stock ATAK/iTAK.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

@@ -2,7 +2,7 @@
 
 `repo:luxonis/depthai-core` - <https://github.com/luxonis/depthai-core>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 365 | C++ | MIT | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo d
 
 **Why it matters:** OAK cameras give a small UAS or UGV onboard stereo depth and feature tracking without a GPU, a cheap input for VIO and obstacle avoidance when GNSS is gone.
 
-**Hackathon notes:** The luxonis/depthai repo is a placeholder; real code and examples live here. Needs OAK hardware.
+**Build notes:** The luxonis/depthai repo is a placeholder; real code and examples live here. Needs OAK hardware.
 
 ## Deep dives
 

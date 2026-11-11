@@ -2,7 +2,7 @@
 
 `repo:autowarefoundation/autoware` - <https://github.com/autowarefoundation/autoware>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 12,228 | Dockerfile | Apache-2.0 | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack cov
 
 **Why it matters:** The biggest open ground-vehicle autonomy stack; its localization modules are a mature map-based alternative when GNSS is degraded.
 
-**Hackathon notes:** Heavy: use the Docker images and the planning simulator. For a hackathon, lift single packages such as NDT scan matcher or the EKF localizer.
+**Build notes:** Heavy: use the Docker images and the planning simulator. For a hackathon, lift single packages such as NDT scan matcher or the EKF localizer.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

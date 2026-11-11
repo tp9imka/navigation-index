@@ -2,7 +2,7 @@
 
 `repo:mit-aera/blackbird-dataset` - <https://github.com/mit-aera/Blackbird-Dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 162 | Python | MIT | 2022-12-15 | False | archived | low |
 
@@ -10,7 +10,7 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 **Why it matters:** Combines real flight dynamics with synthetic vision, good for VIO under aggressive motion.
 
-**Hackathon notes:** Inactive since 2022; download scripts may need adaptation.
+**Build notes:** Inactive since 2022; download scripts may need adaptation.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_

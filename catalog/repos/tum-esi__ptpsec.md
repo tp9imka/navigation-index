@@ -2,7 +2,7 @@
 
 `repo:tum-esi/ptpsec` - <https://github.com/tum-esi/ptpsec>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 | C | MIT | 2025-04-16 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP
 
 **Why it matters:** Shows how to defend the network time path, the part a GNSS-vs-PTP cross-check silently trusts.
 
-**Hackathon notes:** Needs two NICs with hardware timestamping per node and DPDK for the attacker; plan a day of setup. The detection idea can be reproduced in software on logged offsets.
+**Build notes:** Needs two NICs with hardware timestamping per node and DPDK for the attacker; plan a day of setup. The detection idea can be reproduced in software on logged offsets.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 

@@ -2,7 +2,7 @@
 
 `repo:t1gr20an06-k/hackathon-blind-flight` - <https://github.com/t1Gr20an06-k/Hackathon-Blind-Flight>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2 | Python | ? | 2026-07-15 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Russian-language hackathon solution for 'Полёт вслепую' (Blind fligh
 
 **Why it matters:** A compact, documented TERCOM pipeline on real DEM data; shows how a GNSS-denied hackathon problem was posed and solved in 2026.
 
-**Hackathon notes:** Reads DEM + altimeter series; small dependency set. Useful as a baseline if a hackathon gives altimeter/DEM data. Accuracy figures are not independently checked here.
+**Build notes:** Reads DEM + altimeter series; small dependency set. Useful as a baseline if a hackathon gives altimeter/DEM data. Accuracy figures are not independently checked here.
 
 ## Deep dives
 
@@ -30,12 +30,12 @@ Russian-language hackathon solution for 'Полёт вслепую' (Blind fligh
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Gagarin - TERCOM for UAVs without GNSS](../../catalog/repos/danilka88__gag27062026.md) (alternative_to)
 - [Полёт вслепую - GCS with terrain-referenced navigation](../../catalog/repos/drones-voronka__drones-backend.md) (alternative_to)

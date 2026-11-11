@@ -2,7 +2,7 @@
 
 `repo:nvidia-isaac-ros/isaac_ros_nvblox` - <https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 765 | C++ | Apache-2.0 | 2026-09-22 | False | production | high |
 
@@ -10,7 +10,7 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 **Why it matters:** Real-time onboard mapping for obstacle avoidance without lidar.
 
-**Hackathon notes:** Isaac ROS dev container; RealSense quickstart.
+**Build notes:** Isaac ROS dev container; RealSense quickstart.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
@@ -25,7 +25,7 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [voxblox](../../catalog/repos/ethz-asl__voxblox.md) (alternative_to)
 - [Isaac ROS DNN Inference](../../catalog/repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) (same_org)

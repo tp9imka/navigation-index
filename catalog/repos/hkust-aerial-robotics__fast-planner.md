@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/fast-planner` - <https://github.com/hkust-aerial-robotics/fast-planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,444 | C++ | GPL-3.0 | 2024-10-24 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optim
 
 **Why it matters:** Classic baseline that most later UAV planners compare against; modular enough to reuse its mapping (ESDF) and search components.
 
-**Hackathon notes:** ROS1 + Gazebo-free lightweight sim; builds in minutes on Ubuntu 20.04. Expect NLopt dependency friction.
+**Build notes:** ROS1 + Gazebo-free lightweight sim; builds in minutes on Ubuntu 20.04. Expect NLopt dependency friction.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

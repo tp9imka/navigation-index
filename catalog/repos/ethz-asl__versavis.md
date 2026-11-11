@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/versavis` - <https://github.com/ethz-asl/versavis>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 291 | C++ | NOASSERTION | 2021-09-28 | False | archived | low |
 
@@ -10,7 +10,7 @@ Open hardware and firmware board that hardware-triggers multiple cameras and an 
 
 **Why it matters:** Shows the hardware-sync approach (trigger plus exposure-time compensation) that removes most camera-IMU timing error before any software sync is needed.
 
-**Hackathon notes:** Last push 2021-09, ROS 1. License file is BSD-3 text (GitHub reports NOASSERTION). Cite the design; for a hackathon, use a camera with a hardware trigger input wired to an FC camera-trigger output instead.
+**Build notes:** Last push 2021-09, ROS 1. License file is BSD-3 text (GitHub reports NOASSERTION). Cite the design; for a hackathon, use a camera with a hardware trigger input wired to an FC camera-trigger output instead.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

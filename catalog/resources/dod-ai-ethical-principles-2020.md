@@ -9,7 +9,7 @@ Announcement of the DoD's AI ethical principles - responsible, equitable, tracea
 ## Key takeaways
 
 - Traceable and governable map to logging and safe fallback in nav autonomy
-- Judges increasingly ask how an AI component can be disengaged
+- Reviewers increasingly ask how an AI component can be disengaged
 
 **Concepts:** [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
@@ -17,7 +17,7 @@ Announcement of the DoD's AI ethical principles - responsible, equitable, tracea
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/rovtio` - <https://github.com/ntnu-arl/rovtio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 130 | C++ | NOASSERTION | 2025-09-30 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Visual-thermal-inertial odometry extending ROVIO to fuse asynchronous thermal an
 
 **Why it matters:** Thermal keeps odometry alive in darkness and smoke; NTNU ARL targets subterranean and degraded environments.
 
-**Hackathon notes:** Needs a thermal camera synced to IMU (or their datasets). Thermal calibration targets need a heated pattern.
+**Build notes:** Needs a thermal camera synced to IMU (or their datasets). Thermal calibration targets need a heated pattern.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

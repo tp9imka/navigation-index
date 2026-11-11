@@ -2,7 +2,7 @@
 
 `repo:nrc-cnrc/cuas-sensing-dataset` - <https://github.com/nrc-cnrc/CUAS-sensing-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 |  | CC-BY-4.0 | 2026-10-02 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Labelled real-world radar tracks of small UAVs, birds, humans and vehicles from 
 
 **Why it matters:** Radar track classification (drone vs bird) is central to C-UAS beyond micro-Doppler range; open labelled radar data is scarce.
 
-**Hackathon notes:** Train a kinematic-feature classifier on the tracks; no RF hardware needed.
+**Build notes:** Train a kinematic-feature classifier on the tracks; no RF hardware needed.
 
 ## Deep dives
 

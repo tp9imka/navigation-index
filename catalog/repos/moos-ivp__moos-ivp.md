@@ -2,7 +2,7 @@
 
 `repo:moos-ivp/moos-ivp` - <https://github.com/moos-ivp/moos-ivp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 103 | C++ | NOASSERTION | 2026-10-29 | False | production | high |
 
@@ -10,7 +10,7 @@ Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-
 
 **Why it matters:** The academic and navy-adjacent reference for marine vehicle autonomy; much published USV/UUV collision avoidance work is built on it.
 
-**Hackathon notes:** Builds on Linux/macOS with CMake; the bundled alpha and heron missions run in simulation with pMarineViewer. Pair with the MIT 2.680 labs.
+**Build notes:** Builds on Linux/macOS with CMake; the bundled alpha and heron missions run in simulation with pMarineViewer. Pair with the MIT 2.680 labs.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

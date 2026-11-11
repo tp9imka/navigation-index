@@ -2,7 +2,7 @@
 
 `repo:d2snc/moos-ivp-masters` - <https://github.com/d2snc/moos-ivp-masters>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2 | C++ | ? | 2025-11-21 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo 
 
 **Why it matters:** Recent, field-validated COLREGs avoidance code that plugs straight into MOOS-IvP.
 
-**Hackathon notes:** Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases. No LICENSE file, so all rights reserved by default. The README says terms are 'specified in the repository' but none are.
+**Build notes:** Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases. No LICENSE file, so all rights reserved by default. The README says terms are 'specified in the repository' but none are.
 
 **Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 

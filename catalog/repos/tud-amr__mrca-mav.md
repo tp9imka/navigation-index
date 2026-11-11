@@ -2,7 +2,7 @@
 
 `repo:tud-amr/mrca-mav` - <https://github.com/tud-amr/mrca-mav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | MATLAB | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB code for chance-constrained NMPC collision avoidance of MAVs among moving
 
 **Why it matters:** Reference implementation of an uncertainty-aware quadrotor MPC, the strongest baseline for clearance inflated by uncertainty.
 
-**Hackathon notes:** License GPL-3.0 (gh api), last push 2020-06-30. MATLAB, so read for the formulation and re-implement the collision-probability bound in Python.
+**Build notes:** License GPL-3.0 (gh api), last push 2020-06-30. MATLAB, so read for the formulation and re-implement the collision-probability bound in Python.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

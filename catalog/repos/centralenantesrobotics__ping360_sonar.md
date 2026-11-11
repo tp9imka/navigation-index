@@ -2,7 +2,7 @@
 
 `repo:centralenantesrobotics/ping360_sonar` - <https://github.com/CentraleNantesRobotics/ping360_sonar>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 50 | C++ | MIT | 2026-07-02 | False | production | medium |
 
@@ -10,7 +10,7 @@ ROS package that drives the Ping360 scanning sonar and publishes scans as images
 
 **Why it matters:** Gets low-cost scanning sonar into a ROS SLAM or obstacle pipeline.
 
-**Hackathon notes:** Needs the sonar; the laser-scan output plugs into standard 2D SLAM tools.
+**Build notes:** Needs the sonar; the laser-scan output plugs into standard 2D SLAM tools.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

@@ -2,7 +2,7 @@
 
 `repo:prime-slam/aero-vloc` - <https://github.com/prime-slam/aero-vloc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 82 | Python | Apache-2.0 | 2024-11-28 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Benchmark tool accompanying the aerial VPR survey by Moskalenko et al.: download
 
 **Why it matters:** Ready-made drone-to-satellite VPR pipeline with many descriptors behind one interface, plus evidence on how tile zoom and overlap affect recall.
 
-**Hackathon notes:** Start from example.ipynb (download map, localize a sequence, compute recall). Some weights come from a Google Drive link, others via TorchHub. Tested on Python 3.10. Apache-2.0.
+**Build notes:** Start from example.ipynb (download map, localize a sequence, compute recall). Some weights come from a Google Drive link, others via TorchHub. Tested on Python 3.10. Apache-2.0.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

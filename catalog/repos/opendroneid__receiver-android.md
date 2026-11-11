@@ -2,7 +2,7 @@
 
 `repo:opendroneid/receiver-android` - <https://github.com/opendroneid/receiver-android>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 386 | Java | Apache-2.0 | 2026-07-26 | False | production | high |
 
@@ -10,7 +10,7 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 
 **Why it matters:** Fastest way to get a working cooperative drone-detection sensor in a hackathon using only phones.
 
-**Hackathon notes:** Sideload on a recent Android phone; Wi-Fi NaN support depends on handset. Extend to forward detections as CoT to a TAK server.
+**Build notes:** Sideload on a recent Android phone; Wi-Fi NaN support depends on handset. Extend to forward detections as CoT to a TAK server.
 
 ## Deep dives
 
@@ -32,12 +32,12 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduRemoteID](../../catalog/repos/ardupilot__arduremoteid.md) (integrates_with)
 - [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (same_org)

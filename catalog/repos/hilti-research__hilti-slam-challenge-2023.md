@@ -2,7 +2,7 @@
 
 `repo:hilti-research/hilti-slam-challenge-2023` - <https://github.com/Hilti-Research/hilti-slam-challenge-2023>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 79 | Python | ? | 2026-08-10 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
 
 **Why it matters:** Multi-session data is useful for map reuse and relocalization experiments.
 
-**Hackathon notes:** Same workflow as 2022; bags on the challenge site and Hugging Face. Data licence is CC BY-NC-SA 3.0: non-commercial use only.
+**Build notes:** Same workflow as 2022; bags on the challenge site and Hugging Face. Data licence is CC BY-NC-SA 3.0: non-commercial use only.
 
 ## Deep dives
 
@@ -28,9 +28,9 @@ Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Hilti SLAM Challenge 2022](../../catalog/repos/hilti-research__hilti-slam-challenge-2022.md) (same_org)
 - [Hilti x Trimble SLAM Challenge 2026](../../catalog/resources/hilti-slam-challenge.md) (has_code)
 

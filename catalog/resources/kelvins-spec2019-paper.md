@@ -21,6 +21,6 @@ ESA Kelvins / Stanford competition on monocular spacecraft pose estimation, anal
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

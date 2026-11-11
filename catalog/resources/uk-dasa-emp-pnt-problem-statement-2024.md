@@ -26,12 +26,12 @@ Published September 2024. Asks for assured PNT for small UAS: low-cost, low-SWaP
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 

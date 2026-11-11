@@ -2,7 +2,7 @@
 
 `repo:stephendade/rpanion-server` - <https://github.com/stephendade/Rpanion-server>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 196 | JavaScript | GPL-3.0 | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ Web-based companion-computer manager for MAVLink vehicles: telemetry routing, vi
 
 **Why it matters:** Turnkey companion setup so the team spends time on navigation code rather than plumbing.
 
-**Hackathon notes:** Flash the prebuilt image to a Pi; manage routing in the browser.
+**Build notes:** Flash the prebuilt image to a Pi; manage routing in the browser.
 
 ## Deep dives
 

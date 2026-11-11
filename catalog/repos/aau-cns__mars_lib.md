@@ -2,7 +2,7 @@
 
 `repo:aau-cns/mars_lib` - <https://github.com/aau-cns/mars_lib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 360 | C++ | NOASSERTION | 2025-04-23 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Modular IMU-driven sensor-fusion framework from University of Klagenfurt designe
 
 **Why it matters:** Directly relevant to graceful degradation when GNSS or another aiding sensor drops out.
 
-**Hackathon notes:** Core library builds standalone; ROS wrapper exists separately (mars_ros). Good fit for a sensor-dropout demo. Licence is BSD-2-Clause with an added condition that forbids selling the software or services based on it (source-available, no commercial use).
+**Build notes:** Core library builds standalone; ROS wrapper exists separately (mars_ros). Good fit for a sensor-dropout demo. Licence is BSD-2-Clause with an added condition that forbids selling the software or services based on it (source-available, no commercial use).
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
@@ -25,7 +25,7 @@ Modular IMU-driven sensor-fusion framework from University of Klagenfurt designe
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ethzasl_msf (Multi Sensor Fusion)](../../catalog/repos/ethz-asl__ethzasl_msf.md) (alternative_to)

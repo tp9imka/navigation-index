@@ -2,7 +2,7 @@
 
 `repo:castacks/alfa-dataset-tools` - <https://github.com/castacks/alfa-dataset-tools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 43 | C++ | ? | 2024-04-12 | False | archived | medium |
 
@@ -10,7 +10,7 @@ C++, Python and MATLAB readers and evaluation helpers for the ALFA fixed-wing fa
 
 **Why it matters:** Saves the parsing step when using ALFA for fixed-wing navigation experiments.
 
-**Hackathon notes:** No LICENSE file in the repo (the ALFA paper page calls it BSD; not confirmed in the repo). Dataflash logs can also be read with pymavlink directly.
+**Build notes:** No LICENSE file in the repo (the ALFA paper page calls it BSD; not confirmed in the repo). Dataflash logs can also be read with pymavlink directly.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

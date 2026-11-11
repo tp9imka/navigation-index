@@ -2,7 +2,7 @@
 
 `repo:higerra/ridi_imu` - <https://github.com/higerra/ridi_imu>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 238 | C++ | MIT | 2019-09-04 | False | archived | low |
 
@@ -10,7 +10,7 @@ Code for RIDI, which regresses velocity from smartphone IMU data with learned mo
 
 **Why it matters:** Ancestor of RoNIN/TLIO-style learned inertial odometry.
 
-**Hackathon notes:** Old dependencies; prefer RoNIN for new work.
+**Build notes:** Old dependencies; prefer RoNIN for new work.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Code for RIDI, which regresses velocity from smartphone IMU data with learned mo
 ## Referenced by
 
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): gap-fill_
 

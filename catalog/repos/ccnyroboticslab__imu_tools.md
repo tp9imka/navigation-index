@@ -2,7 +2,7 @@
 
 `repo:ccnyroboticslab/imu_tools` - <https://github.com/CCNYRoboticsLab/imu_tools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,142 | C++ | NOASSERTION | 2026-09-17 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz I
 
 **Why it matters:** Standard ROS orientation filter feeding robot_localization.
 
-**Hackathon notes:** apt install on ROS 2.
+**Build notes:** apt install on ROS 2.
 
 ## Deep dives
 

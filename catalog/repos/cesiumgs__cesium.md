@@ -2,7 +2,7 @@
 
 `repo:cesiumgs/cesium` - <https://github.com/cesiumgs/cesium>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 15,930 | JavaScript | Apache-2.0 | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 
 **Why it matters:** Best open web option for a 3D situational awareness view with terrain and flight paths; widely used in defense demos.
 
-**Hackathon notes:** npm install cesium. Default imagery/terrain use Cesium ion (token); for offline, serve your own quantized-mesh terrain and tiles.
+**Build notes:** npm install cesium. Default imagery/terrain use Cesium ion (token); for offline, serve your own quantized-mesh terrain and tiles.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

@@ -2,7 +2,7 @@
 
 `repo:mavlink/qgroundcontrol` - <https://github.com/mavlink/qgroundcontrol>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5,099 | C++ | Apache-2.0 | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 
 **Why it matters:** Most common open GCS; a base for custom operator UIs, including Remote ID display.
 
-**Hackathon notes:** Use prebuilt binaries for SITL; custom builds take a few hours to set up Qt.
+**Build notes:** Use prebuilt binaries for SITL; custom builds take a few hours to set up Qt.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

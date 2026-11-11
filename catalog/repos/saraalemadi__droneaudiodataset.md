@@ -2,7 +2,7 @@
 
 `repo:saraalemadi/droneaudiodataset` - <https://github.com/saraalemadi/DroneAudioDataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 127 |  | NOASSERTION | 2026-10-04 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Indoor recordings of drone propeller noise augmented with noise clips, organised
 
 **Why it matters:** A common baseline audio set for acoustic drone detection. Note: its licence explicitly forbids military/defence use, so check fit before building on it.
 
-**Hackathon notes:** Licence allows educational and non-commercial academic research only, and explicitly bans military, defence, intelligence, security and surveillance use - not usable for a defence entry; pick another acoustic set. The 'Unknown' clips come from ESC-50 and Speech Commands under their own licences.
+**Build notes:** Licence allows educational and non-commercial academic research only, and explicitly bans military, defence, intelligence, security and surveillance use - not usable for a defence entry; pick another acoustic set. The 'Unknown' clips come from ESC-50 and Speech Commands under their own licences.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 

@@ -2,7 +2,7 @@
 
 `repo:time-appliances-project/time-card` - <https://github.com/Time-Appliances-Project/Time-Card>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,491 | C | NOASSERTION | 2026-10-27 | False | production | low |
 
@@ -10,7 +10,7 @@ Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS re
 
 **Why it matters:** An open reference design for exactly the GNSS + holdover-oscillator architecture resilient timing guidance recommends.
 
-**Hackathon notes:** Hardware, not a 48 h build; read the architecture and holdover sections for design ideas.
+**Build notes:** Hardware, not a 48 h build; read the architecture and holdover sections for design ideas.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

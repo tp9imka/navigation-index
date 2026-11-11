@@ -2,7 +2,7 @@
 
 `repo:korogodin/glnephexercise` - <https://github.com/Korogodin/glnephexercise>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | CMake | ? | 2020-10-06 | False | educational | low |
 
@@ -10,7 +10,7 @@ MPEI student project template for computing GLONASS satellite positions from bro
 
 **Why it matters:** GLONASS ephemerides use a different (numerical integration) model than GPS; this is a compact way to learn it.
 
-**Hackathon notes:** Pair with the GPS twin exercise (Korogodin/gpsephexercise).
+**Build notes:** Pair with the GPS twin exercise (Korogodin/gpsephexercise).
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ MPEI student project template for computing GLONASS satellite positions from bro
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [gnssrecbasics2020 - GNSS receiver course labs (MPEI)](../../catalog/repos/korogodin__gnssrecbasics2020.md) (same_org)
 
 _Indexed by lane(s): ua-ru-round2_

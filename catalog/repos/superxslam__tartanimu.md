@@ -2,7 +2,7 @@
 
 `repo:superxslam/tartanimu` - <https://github.com/superxslam/TartanIMU>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 158 | Python | Apache-2.0 | 2026-09-12 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ResNet-LSTM inertial model pretrained on more than 100 hours of car, quadruped, 
 
 **Why it matters:** The first public IMU foundation model (CVPR 2025): a team can fine-tune on its own airframe instead of training from scratch.
 
-**Hackathon notes:** Apache-2.0 code; weights license on Hugging Face not checked. The README says the public release has the LSTM model only (the Transformer core is not included). pip install -e . then run inference on a CSV of IMU samples.
+**Build notes:** Apache-2.0 code; weights license on Hugging Face not checked. The README says the public release has the LSTM model only (the Transformer core is not included). pip install -e . then run inference on a CSV of IMU samples.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

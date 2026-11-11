@@ -2,7 +2,7 @@
 
 `repo:canboat/canboat` - <https://github.com/canboat/canboat>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 666 | Rust | NOASSERTION | 2026-11-09 | False | production | medium |
 
@@ -10,7 +10,7 @@ Toolkit for NMEA 2000 networks: a PGN decoder/analyzer plus utilities to read, w
 
 **Why it matters:** Gives raw access to ship sensor buses (GNSS, heading, AIS, depth), useful for maritime nav integrity monitoring and spoofing detection research.
 
-**Hackathon notes:** Build analyzer and pipe candump/actisense logs through it to JSON. Needs a CAN or N2K gateway for live data; sample logs work offline.
+**Build notes:** Build analyzer and pipe candump/actisense logs through it to JSON. Needs a CAN or N2K gateway for live data; sample logs work offline.
 
 **Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

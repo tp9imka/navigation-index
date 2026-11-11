@@ -2,7 +2,7 @@
 
 `repo:freetakteam/freetakserver` - <https://github.com/FreeTAKTeam/FreeTakServer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 968 | Python | EPL-2.0 | 2024-10-29 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Open-source Python server compatible with TAK clients (ATAK, WinTAK, iTAK) that 
 
 **Why it matters:** Gives dismounted users and robots a shared map picture; common endpoint for drone-detection and blue-force feeds.
 
-**Hackathon notes:** pip install or the ZeroTouch installer; activity slowed since 2024, so check OpenTAKServer as a more active option.
+**Build notes:** pip install or the ZeroTouch installer; activity slowed since 2024, so check OpenTAKServer as a more active option.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

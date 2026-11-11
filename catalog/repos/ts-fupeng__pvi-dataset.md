@@ -2,7 +2,7 @@
 
 `repo:ts-fupeng/pvi-dataset` - <https://github.com/TS-FuPeng/PVI-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 |  | ? | 2025-05-09 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Dataset combining stereo camera, IMU, polarization camera and high-precision GPS
 
 **Why it matters:** Polarized skylight gives a GNSS-free heading reference; open data for it is rare.
 
-**Hackathon notes:** README only links a Google Drive; check data format before planning.
+**Build notes:** README only links a Google Drive; check data format before planning.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

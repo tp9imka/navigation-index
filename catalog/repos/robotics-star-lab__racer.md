@@ -2,7 +2,7 @@
 
 `repo:robotics-star-lab/racer` - <https://github.com/robotics-star-lab/racer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 815 | C++ | ? | 2024-11-19 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Rapid collaborative exploration with multiple UAVs: decomposes unknown space and
 
 **Why it matters:** A worked example of multi-robot task allocation for exploration under limited comms.
 
-**Hackathon notes:** Same toolchain as FUEL; run 2-4 drones in sim and vary comm range.
+**Build notes:** Same toolchain as FUEL; run 2-4 drones in sim and vary comm range.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

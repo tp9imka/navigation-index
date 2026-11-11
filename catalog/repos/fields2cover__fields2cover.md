@@ -2,7 +2,7 @@
 
 `repo:fields2cover/fields2cover` - <https://github.com/fields2cover/fields2cover>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 923 | C++ | BSD-3-Clause | 2026-10-27 | False | production | high |
 
@@ -10,7 +10,7 @@ Modular coverage path planning library: headland generation, swath generation, r
 
 **Why it matters:** Ready coverage planner for area search or survey patterns by ground or air vehicles.
 
-**Hackathon notes:** Build from source with GDAL dependency; Python bindings let you produce a sweep over a GeoJSON polygon quickly.
+**Build notes:** Build from source with GDAL dependency; Python bindings let you produce a sweep over a GeoJSON polygon quickly.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

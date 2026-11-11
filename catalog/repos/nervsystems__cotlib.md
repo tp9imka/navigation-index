@@ -2,7 +2,7 @@
 
 `repo:nervsystems/cotlib` - <https://github.com/nervsystems/cotlib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 13 | Go | MIT | 2026-10-05 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Go library for parsing, validating and generating Cursor-on-Target XML with secu
 
 **Why it matters:** Hardened CoT parsing for Go services that accept untrusted network input.
 
-**Hackathon notes:** Schema validation needs libxml2 and CGO.
+**Build notes:** Schema validation needs libxml2 and CGO.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

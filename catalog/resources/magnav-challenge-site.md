@@ -33,14 +33,14 @@ Challenge site for airborne magnetic anomaly navigation: compensate the aircraft
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [Developing a Series of AI Challenges for the United States Department of the Air Force](../../catalog/resources/daf-ai-challenges-arxiv.md) (explains)
 - [DAF-MIT AI Accelerator MagNav real-time C-17 demonstration (2023)](../../catalog/resources/daf-mit-magnav-c17-demo-2023.md) (cites)

@@ -2,7 +2,7 @@
 
 `repo:schwehr/noaadata` - <https://github.com/schwehr/noaadata>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 47 | Python | NOASSERTION | 2026-10-26 | False | production | low |
 
@@ -10,7 +10,7 @@ Pure-Python AIS decode and encode library from a long-time AIS researcher, with 
 
 **Why it matters:** A reference-quality alternative decoder, handy for cross-checking pyais output and for older message types.
 
-**Hackathon notes:** Use mainly as a cross-check; pyais has the friendlier API.
+**Build notes:** Use mainly as a cross-check; pyais has the friendlier API.
 
 **Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 

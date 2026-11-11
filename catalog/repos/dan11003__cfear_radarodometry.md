@@ -2,7 +2,7 @@
 
 `repo:dan11003/cfear_radarodometry` - <https://github.com/dan11003/CFEAR_Radarodometry>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 64 | C++ | GPL-3.0 | 2024-10-17 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Landing page for CFEAR, learning-free spinning-radar odometry that filters retur
 
 **Why it matters:** Strong baseline for spinning (Navtech-style) radar odometry; robust in weather that defeats LiDAR.
 
-**Hackathon notes:** Clone CFEAR_Radarodometry_code_public for the ROS 1 code (Melodic or later; Oxford Radar RobotCar demo bag provided). Benchmarked on Oxford Radar RobotCar and Boreas. GPL-3.0.
+**Build notes:** Clone CFEAR_Radarodometry_code_public for the ROS 1 code (Melodic or later; Oxford Radar RobotCar demo bag provided). Benchmarked on Oxford Radar RobotCar and Boreas. GPL-3.0.
 
 ## Deep dives
 
@@ -30,10 +30,10 @@ Landing page for CFEAR, learning-free spinning-radar odometry that filters retur
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [TBV Radar SLAM](../../catalog/repos/dan11003__tbv_slam_public.md) (extends)
 - [ORORA](../../catalog/repos/url-kaist__outlier-robust-radar-odometry.md) (alternative_to)

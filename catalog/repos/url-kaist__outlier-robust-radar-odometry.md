@@ -2,7 +2,7 @@
 
 `repo:url-kaist/outlier-robust-radar-odometry` - <https://github.com/url-kaist/outlier-robust-radar-odometry>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 215 | C++ | GPL-3.0 | 2025-03-27 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Outlier-robust radar odometry using graduated non-convexity-style estimation on 
 
 **Why it matters:** Robust estimation is what keeps radar odometry stable amid clutter and multipath.
 
-**Hackathon notes:** Evaluated on MulRan and Oxford Radar; ROS build.
+**Build notes:** Evaluated on MulRan and Oxford Radar; ROS build.
 
 ## Deep dives
 

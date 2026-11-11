@@ -2,7 +2,7 @@
 
 `repo:nvidia/tensorrt` - <https://github.com/NVIDIA/TensorRT>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 13,438 | C++ | Apache-2.0 | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ Open parts of NVIDIA's inference SDK: parsers, plugins, samples and the trtexec 
 
 **Why it matters:** On a Jetson this is how a matcher or VPR backbone gets from 'works in PyTorch' to a fixed, measurable latency. trtexec timings are the numbers to quote.
 
-**Hackathon notes:** JetPack already ships TensorRT; this repo is for samples and Polygraphy. Export ONNX, run `trtexec --onnx=model.onnx --fp16`, record mean and p99 latency. Engines are tied to the GPU and TensorRT version: rebuild on the target.
+**Build notes:** JetPack already ships TensorRT; this repo is for samples and Polygraphy. Export ONNX, run `trtexec --onnx=model.onnx --fp16`, record mean and p99 latency. Engines are tied to the GPU and TensorRT version: rebuild on the target.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

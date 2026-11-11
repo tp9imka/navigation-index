@@ -19,4 +19,4 @@ Preprint (later ICRA 2019) of the IROS 2018 Autonomous Drone Race winner: a CNN 
 
 - cites: [Challenges and implemented technologies used in autonomous drone racing](../../catalog/resources/moon-2019-adr-iros-challenges.md)
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

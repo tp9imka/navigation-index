@@ -2,7 +2,7 @@
 
 `repo:prbonn/rko_lio` - <https://github.com/PRBonn/rko_lio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 688 | C++ | MIT | 2026-10-18 | False | active-research | high |
 
@@ -10,7 +10,7 @@ LiDAR-inertial odometry aiming to work without sensor-specific modelling or heav
 
 **Why it matters:** Recent (2025-2026) LIO from the KISS-ICP group; good for unknown hardware.
 
-**Hackathon notes:** `pip install "rko_lio[all]"` then `rko_lio -v /path/to/bags` runs on ROS 1 or ROS 2 bags with a rerun viewer; a ROS 2 node is also available. You must supply IMU and LiDAR extrinsics if the bag's TF tree lacks them. No loop closure - see rko_slam for that.
+**Build notes:** `pip install "rko_lio[all]"` then `rko_lio -v /path/to/bags` runs on ROS 1 or ROS 2 bags with a rerun viewer; a ROS 2 node is also available. You must supply IMU and LiDAR extrinsics if the bag's TF tree lacks them. No loop closure - see rko_slam for that.
 
 ## Deep dives
 

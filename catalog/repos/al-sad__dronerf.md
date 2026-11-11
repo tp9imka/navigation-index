@@ -2,7 +2,7 @@
 
 `repo:al-sad/dronerf` - <https://github.com/Al-Sad/DroneRF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 201 | MATLAB | Apache-2.0 | 2021-01-28 | False | archived | low |
 
@@ -10,7 +10,7 @@ LabVIEW programs to record RF signals plus MATLAB and Python code for drone dete
 
 **Why it matters:** Widely cited RF detection baseline.
 
-**Hackathon notes:** Dormant since 2021; good for a quick baseline classifier.
+**Build notes:** Dormant since 2021; good for a quick baseline classifier.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ LabVIEW programs to record RF signals plus MATLAB and Python code for drone dete
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [RFClassification](../../catalog/repos/codymq__rfclassification.md) (depends_on)
 - [Drone Detection and Identification using RF signals](../../catalog/repos/kalit31__drone-detection-and-identification-using-rf-signals.md) (depends_on)
 - [RFUAV](../../catalog/repos/kitoweeknd__rfuav.md) (alternative_to)

@@ -2,7 +2,7 @@
 
 `repo:foundationvision/bytetrack` - <https://github.com/FoundationVision/ByteTrack>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,801 | Python | MIT | 2024-06-19 | False | production | medium |
 
@@ -10,7 +10,7 @@ ECCV 2022 multi-object tracker that associates both high- and low-confidence det
 
 **Why it matters:** Strong baseline for tracking small, intermittently detected drones in video.
 
-**Hackathon notes:** Use via BoxMOT or Ultralytics tracker configs rather than the original training code.
+**Build notes:** Use via BoxMOT or Ultralytics tracker configs rather than the original training code.
 
 **Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md)
 

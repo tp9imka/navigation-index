@@ -2,7 +2,7 @@
 
 `repo:dc9st/librtlsdr-2freq` - <https://github.com/DC9ST/librtlsdr-2freq>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 30 | C | GPL-3.0 | 2019-04-06 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Modified librtlsdr that switches between two frequencies during one recording wi
 
 **Why it matters:** The trick that makes reference-transmitter synchronization of cheap TDOA receivers work.
 
-**Hackathon notes:** Build on the Pi receivers; see the companion evaluation scripts.
+**Build notes:** Build on the Pi receivers; see the companion evaluation scripts.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 

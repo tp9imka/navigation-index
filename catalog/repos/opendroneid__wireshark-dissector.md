@@ -2,7 +2,7 @@
 
 `repo:opendroneid/wireshark-dissector` - <https://github.com/opendroneid/wireshark-dissector>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 115 | Lua | Apache-2.0 | 2026-06-12 | False | production | medium |
 
@@ -10,7 +10,7 @@ Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and B
 
 **Why it matters:** Debugging aid for Remote ID sniffers.
 
-**Hackathon notes:** Drop the Lua into the Wireshark plugin folder.
+**Build notes:** Drop the Lua into the Wireshark plugin folder.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and B
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (same_org)
 - [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (uses)
 

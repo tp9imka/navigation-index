@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_time_optimal` - <https://github.com/uzh-rpg/rpg_time_optimal>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 131 | Python | GPL-3.0 | 2021-09-17 | False | archived | low |
 
@@ -10,7 +10,7 @@ Code for computing time-optimal quadrotor trajectories through waypoints, from t
 
 **Why it matters:** Insight into how top drone-racing teams plan; transferable to fast inspection or reconnaissance flight planning.
 
-**Hackathon notes:** Python/CasADi, offline only. Inactive since 2021.
+**Build notes:** Python/CasADi, offline only. Inactive since 2021.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

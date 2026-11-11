@@ -2,7 +2,7 @@
 
 `repo:mit-acl/dpgo` - <https://github.com/mit-acl/dpgo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 208 | C++ | MIT | 2024-06-17 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Distributed pose-graph optimization library with certifiably correct solutions f
 
 **Why it matters:** Solver core for decentralized multi-robot SLAM.
 
-**Hackathon notes:** Library only; feed it pose graphs from each robot.
+**Build notes:** Library only; feed it pose graphs from each robot.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
@@ -20,7 +20,7 @@ Distributed pose-graph optimization library with certifiably correct solutions f
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md) (depends_on)
 - [Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems](../../catalog/resources/kimera-multi-tian-2021.md) (uses)
 

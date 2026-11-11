@@ -2,7 +2,7 @@
 
 `repo:mit-spark/kimera-multi` - <https://github.com/MIT-SPARK/Kimera-Multi>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 417 | Shell | ? | 2025-01-28 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM syst
 
 **Why it matters:** Multi-robot mapping with peer-to-peer communication is core to swarm and team operations.
 
-**Hackathon notes:** Multi-repo install; budget a full day. Use their datasets for a demo.
+**Build notes:** Multi-repo install; budget a full day. Use their datasets for a demo.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

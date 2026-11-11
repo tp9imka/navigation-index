@@ -2,7 +2,7 @@
 
 `repo:open-navigation/opennav_coverage` - <https://github.com/open-navigation/opennav_coverage>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 320 | C++ | Apache-2.0 | 2026-11-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Nav2-compatible complete-coverage task server and navigator built on Fields2Cove
 
 **Why it matters:** Gives Nav2 robots area-search and survey patterns (boustrophedon sweeps over a polygon) out of the box, useful for search, mapping and route clearance scenarios.
 
-**Hackathon notes:** Fields2Cover is apt-installable on Humble, Jazzy and Kilted (ros-<distro>-fields2cover 2.x); only the main branch (Lyrical) builds it from source. Send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.
+**Build notes:** Fields2Cover is apt-installable on Humble, Jazzy and Kilted (ros-<distro>-fields2cover 2.x); only the main branch (Lyrical) builds it from source. Send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:air-io/air-io` - <https://github.com/Air-IO/Air-IO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 282 | Python | BSD-3-Clause | 2026-09-16 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Learning-based inertial odometry for UAVs that improves feature observability by
 
 **Why it matters:** Recent IMU-only drone odometry for GNSS-denied flight.
 
-**Hackathon notes:** PyPose-based research code. EuRoC, Blackbird and a simulated Pegasus split plus pretrained models are on GitHub releases; the EKF also needs the AirIMU results files.
+**Build notes:** PyPose-based research code. EuRoC, Blackbird and a simulated Pegasus split plus pretrained models are on GitHub releases; the EKF also needs the AirIMU results files.
 
 ## Deep dives
 

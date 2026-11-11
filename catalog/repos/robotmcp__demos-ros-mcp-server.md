@@ -2,7 +2,7 @@
 
 `repo:robotmcp/demos-ros-mcp-server` - <https://github.com/robotmcp/demos-ros-mcp-server>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | C++ | Apache-2.0 | 2026-07-09 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Standalone demos for driving robots with natural language through the ROS MCP se
 
 **Why it matters:** Worked examples shorten the path from install to a talking robot demo.
 
-**Hackathon notes:** Each sub-folder is a self-contained project with its own README; the PX4 demo (takeoff, patterns, orbit, RTL via MAVROS) is the most relevant. Run one demo end to end before customizing the server.
+**Build notes:** Each sub-folder is a self-contained project with its own README; the PX4 demo (takeoff, patterns, orbit, RTL via MAVROS) is the most relevant. Run one demo end to end before customizing the server.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

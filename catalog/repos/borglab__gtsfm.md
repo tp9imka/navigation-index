@@ -2,7 +2,7 @@
 
 `repo:borglab/gtsfm` - <https://github.com/borglab/gtsfm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 528 | Jupyter Notebook | NOASSERTION | 2026-11-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-e
 
 **Why it matters:** Builds georeferenceable 3D maps from drone or ground imagery, which can serve as prior maps for visual localization.
 
-**Hackathon notes:** No compilation: `uv tool install .` (or `pip install .` in Python 3.12) from a recursive checkout, then `gtsfm run` opens a browser workspace with sample scenes; `gtsfm execute` is the CLI path for your own image folders. Expect long runtimes on large sets - downsample.
+**Build notes:** No compilation: `uv tool install .` (or `pip install .` in Python 3.12) from a recursive checkout, then `gtsfm run` opens a browser workspace with sample scenes; `gtsfm execute` is the CLI path for your own image folders. Expect long runtimes on large sets - downsample.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

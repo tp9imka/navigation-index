@@ -2,7 +2,7 @@
 
 `repo:mistlab/swarm-slam` - <https://github.com/MISTLab/Swarm-SLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 721 | Shell | MIT | 2025-04-10 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, suppo
 
 **Why it matters:** Shared map and relative localization across a team without central infrastructure.
 
-**Hackathon notes:** ROS 2 with heavy deps; try on the provided datasets before robots.
+**Build notes:** ROS 2 with heavy deps; try on the provided datasets before robots.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
@@ -25,7 +25,7 @@ Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, suppo
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Buzz](../../catalog/repos/buzz-lang__buzz.md) (same_org)
 - [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md) (alternative_to)

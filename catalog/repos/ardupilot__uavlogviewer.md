@@ -2,7 +2,7 @@
 
 `repo:ardupilot/uavlogviewer` - <https://github.com/ArduPilot/UAVLogViewer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 271 | JavaScript | GPL-3.0 | 2026-08-05 | False | production | medium |
 
@@ -10,7 +10,7 @@ Browser-based viewer for ArduPilot DataFlash (.bin) and MAVLink telemetry (.tlog
 
 **Why it matters:** Quick post-flight review of EKF3 innovations and source switching.
 
-**Hackathon notes:** Hosted at plot.ardupilot.org; no install.
+**Build notes:** Hosted at plot.ardupilot.org; no install.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

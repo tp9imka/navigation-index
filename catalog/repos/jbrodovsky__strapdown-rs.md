@@ -2,7 +2,7 @@
 
 `repo:jbrodovsky/strapdown-rs` - <https://github.com/jbrodovsky/strapdown-rs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | Rust | MIT | 2026-10-20 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Rust library and CLI for strapdown INS research under GNSS denial: local-level m
 
 **Why it matters:** Lesser-known, actively developed Rust INS; memory-safe option for embedded or simulation pipelines.
 
-**Hackathon notes:** cargo build; library crate is strapdown-core (docs.rs) and the CLI is strapdown-sim. Loosely coupled only, no pseudorange or carrier-phase models.
+**Build notes:** cargo build; library crate is strapdown-core (docs.rs) and the CLI is strapdown-sim. Loosely coupled only, no pseudorange or carrier-phase models.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

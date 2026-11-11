@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ohwr/project/wrpc-sw` - <https://gitlab.com/ohwr/project/wrpc-sw>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ Software for the White Rabbit PTP Core (WRPC): a bare-metal PTP daemon (PPSi) an
 
 **Why it matters:** The node side of White Rabbit: if a team has a WR-capable FPGA board, this is what turns it into a synchronised timing endpoint.
 
-**Hackathon notes:** Needs WR hardware (e.g. SPEC board + WR switch) and the wr-cores gateware. Not a 48 h starting point without the kit on the table; useful as reference for how WR extends PTP with phase tracking and link calibration.
+**Build notes:** Needs WR hardware (e.g. SPEC board + WR switch) and the wr-cores gateware. Not a 48 h starting point without the kit on the table; useful as reference for how WR extends PTP with phase tracking and link calibration.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

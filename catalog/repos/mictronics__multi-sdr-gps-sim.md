@@ -2,7 +2,7 @@
 
 `repo:mictronics/multi-sdr-gps-sim` - <https://github.com/Mictronics/multi-sdr-gps-sim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 271 | C | MIT | 2025-01-17 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to 
 
 **Why it matters:** More current option than the archived original for building test rigs. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
-**Hackathon notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
+**Build notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 

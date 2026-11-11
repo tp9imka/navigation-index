@@ -2,7 +2,7 @@
 
 `repo:castacks/tartanairpy` - <https://github.com/castacks/tartanairpy>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 130 | Python | MIT | 2026-06-09 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python package for downloading, customizing and iterating the TartanAir-V2 synth
 
 **Why it matters:** TartanAir's photorealistic scenes with weather and lighting variety stress-test SLAM and VO.
 
-**Hackathon notes:** Download only the environments and modalities you need - full set is very large.
+**Build notes:** Download only the environments and modalities you need - full set is very large.
 
 ## Deep dives
 
@@ -24,8 +24,8 @@ Python package for downloading, customizing and iterating the TartanAir-V2 synth
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [TartanAir: A Dataset to Push the Limits of Visual SLAM](../../catalog/resources/cmu-tartanair-dataset.md) (has_code)
 

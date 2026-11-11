@@ -2,7 +2,7 @@
 
 `repo:je310/eskf` - <https://github.com/je310/ESKF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 178 | C++ | MIT | 2019-04-12 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Error-state Kalman filter implementation following Sola's quaternion ESKF formul
 
 **Why it matters:** Compact code reference for Sola's equations when writing your own ESKF.
 
-**Hackathon notes:** Small codebase, no recent updates; read alongside the Sola report.
+**Build notes:** Small codebase, no recent updates; read alongside the Sola report.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:christianrauch/apriltag_ros` - <https://github.com/christianrauch/apriltag_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | active-research | high |
 
@@ -10,7 +10,7 @@ ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and 
 
 **Why it matters:** Gets fiducial poses into a ROS 2 graph in one launch file, so a planner can treat 'tag id N in view' as goal B or feed tag-relative pose to the autopilot.
 
-**Hackathon notes:** License MIT (gh api), last push 2026-11. Use this for ROS 2; AprilRobotics/apriltag_ros is the older ROS 1 wrapper (last push 2024-06). Publish the tag TF, then convert to LANDING_TARGET or to a local-frame goal. Frame conventions (camera optical vs body) are the usual time sink.
+**Build notes:** License MIT (gh api), last push 2026-11. Use this for ROS 2; AprilRobotics/apriltag_ros is the older ROS 1 wrapper (last push 2024-06). Publish the tag TF, then convert to LANDING_TARGET or to a local-frame goal. Frame conventions (camera optical vs body) are the usual time sink.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
@@ -25,8 +25,8 @@ ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) (integrates_with)
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)

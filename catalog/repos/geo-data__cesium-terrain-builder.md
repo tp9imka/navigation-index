@@ -2,7 +2,7 @@
 
 `repo:geo-data/cesium-terrain-builder` - <https://github.com/geo-data/cesium-terrain-builder>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 888 | C++ | NOASSERTION | 2023-03-05 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Command-line tools to convert GDAL-readable DEMs into Cesium heightmap terrain t
 
 **Why it matters:** Turns a Copernicus/SRTM DEM into offline 3D terrain for a CesiumJS display without internet.
 
-**Hackathon notes:** Unmaintained since 2023; use the tum-gis docker image to avoid build pain.
+**Build notes:** Unmaintained since 2023; use the tum-gis docker image to avoid build pain.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 

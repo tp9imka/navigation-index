@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_trajectory_evaluation` - <https://github.com/uzh-rpg/rpg_trajectory_evaluation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,214 | Python | MIT | 2023-03-30 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Toolbox for quantitative trajectory evaluation of VO/VIO, implementing the align
 
 **Why it matters:** Implements the alignment conventions used in many VIO benchmarks; good for apples-to-apples comparisons.
 
-**Hackathon notes:** Old Python 2 era code, ROS optional. evo is easier for quick use.
+**Build notes:** Old Python 2 era code, ROS optional. evo is easier for quick use.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

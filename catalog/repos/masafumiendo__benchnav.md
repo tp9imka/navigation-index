@@ -2,7 +2,7 @@
 
 `repo:masafumiendo/benchnav` - <https://github.com/masafumiendo/benchnav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 60 | Python | ? | 2024-06-15 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners 
 
 **Why it matters:** Lightweight way to compare off-road planners without a robot.
 
-**Hackathon notes:** Docker setup via make build-gpu or build-cpu, or pip install from the clone (not on PyPI); fetch the dataset and models with scripts/download_dataset_and_model.sh, then run the tutorial notebooks. No LICENSE file, so all rights reserved by default.
+**Build notes:** Docker setup via make build-gpu or build-cpu, or pip install from the clone (not on PyPI); fetch the dataset and models with scripts/download_dataset_and_model.sh, then run the tutorial notebooks. No LICENSE file, so all rights reserved by default.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

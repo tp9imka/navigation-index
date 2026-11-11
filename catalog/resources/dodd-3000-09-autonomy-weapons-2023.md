@@ -17,7 +17,7 @@ DoD policy governing development and use of autonomous and semi-autonomous weapo
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

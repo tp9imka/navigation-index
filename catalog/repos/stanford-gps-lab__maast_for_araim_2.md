@@ -2,7 +2,7 @@
 
 `repo:stanford-gps-lab/maast_for_araim_2` - <https://github.com/stanford-gps-lab/maast_for_araim_2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 7 | MATLAB | ? | 2024-07-17 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and pr
 
 **Why it matters:** Reference-grade integrity tooling from the lab behind much ARAIM research.
 
-**Hackathon notes:** MATLAB; heavy on aviation integrity concepts. Use for coverage maps of integrity availability.
+**Build notes:** MATLAB; heavy on aviation integrity concepts. Use for coverage maps of integrity availability.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

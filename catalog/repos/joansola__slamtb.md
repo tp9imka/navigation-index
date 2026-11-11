@@ -2,7 +2,7 @@
 
 `repo:joansola/slamtb` - <https://github.com/joansola/slamtb>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 263 | MATLAB | GPL-3.0 | 2026-11-07 | False | educational | low |
 
@@ -10,7 +10,7 @@ Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`gr
 
 **Why it matters:** Readable reference for EKF-SLAM landmark handling, by the author of the widely cited Lie theory and quaternion kinematics notes.
 
-**Hackathon notes:** Runs in MATLAB with simulated worlds out of the box; not maintained, use for understanding rather than deployment.
+**Build notes:** Runs in MATLAB with simulated worlds out of the box; not maintained, use for understanding rather than deployment.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

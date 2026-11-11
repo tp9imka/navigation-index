@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_quadrotor_control` - <https://github.com/uzh-rpg/rpg_quadrotor_control>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 731 | C++ | NOASSERTION | 2021-09-20 | False | archived | low |
 
@@ -10,7 +10,7 @@ UZH RPG quadrotor control framework: position and attitude controllers, a trajec
 
 **Why it matters:** A complete, readable reference for how trajectory generation, tracking control and a mission state machine fit together on a multirotor.
 
-**Hackathon notes:** License MIT (LICENSE file read; GitHub shows NOASSERTION). Last push 2021-09-20. ROS 1 only. Read for architecture; for a live demo PX4 offboard or ArduPilot guided mode is less work.
+**Build notes:** License MIT (LICENSE file read; GitHub shows NOASSERTION). Last push 2021-09-20. ROS 1 only. Read for architecture; for a live demo PX4 offboard or ArduPilot guided mode is less work.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

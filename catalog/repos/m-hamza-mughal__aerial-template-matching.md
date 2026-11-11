@@ -2,7 +2,7 @@
 
 `repo:m-hamza-mughal/aerial-template-matching` - <https://github.com/m-hamza-mughal/Aerial-Template-Matching>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 111 | Python | BSD-2-Clause | 2021-01-16 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Code for the paper 'Assisting UAV Localization via Deep Contextual Image Matchin
 
 **Why it matters:** A zero-training baseline to compare learned matchers against; mirrors classic DSMAC-style scene correlation in spirit.
 
-**Hackathon notes:** Runs instantly; good as a fallback or ablation baseline in a demo.
+**Build notes:** Runs instantly; good as a fallback or ablation baseline in a demo.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

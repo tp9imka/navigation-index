@@ -2,7 +2,7 @@
 
 `repo:prbonn/kiss-slam` - <https://github.com/PRBonn/kiss-slam>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 548 | Python | MIT | 2026-08-11 | False | active-research | high |
 
@@ -10,7 +10,7 @@ LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP
 
 **Why it matters:** Full LiDAR SLAM with the same low-configuration philosophy.
 
-**Hackathon notes:** Pip-installable; quick to demo on outdoor bags.
+**Build notes:** Pip-installable; quick to demo on outdoor bags.
 
 ## Deep dives
 

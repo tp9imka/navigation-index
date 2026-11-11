@@ -2,7 +2,7 @@
 
 `repo:shelfcol/gps_imu_fusion` - <https://github.com/Shelfcol/gps_imu_fusion>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 154 | C++ | ? | 2022-04-09 | False | educational | low |
 
@@ -10,7 +10,7 @@ GPS/IMU fusion examples derived from zm0612/eskf-gps-imu-fusion, implementing an
 
 **Why it matters:** Small comparison set of filter types for GNSS/IMU.
 
-**Hackathon notes:** Inactive since 2022; use as reading material.
+**Build notes:** Inactive since 2022; use as reading material.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

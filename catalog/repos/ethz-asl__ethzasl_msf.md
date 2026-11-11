@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/ethzasl_msf` - <https://github.com/ethz-asl/ethzasl_msf>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,105 | C++ | NOASSERTION | 2026-10-19 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Modular EKF framework from ETH ASL for fusing IMU propagation with pose, positio
 
 **Why it matters:** Classic MAV state estimator that shows how to fuse delayed vision/GPS measurements into an IMU-driven filter.
 
-**Hackathon notes:** ROS 1 era; building on modern distros takes effort. Read it for the design more than to run it.
+**Build notes:** ROS 1 era; building on modern distros takes effort. Read it for the design more than to run it.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

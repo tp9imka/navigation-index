@@ -2,7 +2,7 @@
 
 `repo:uav-avl/benchmark` - <https://github.com/UAV-AVL/Benchmark>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 221 | Python | ? | 2026-10-10 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Benchmark and code for UAV absolute visual localization under low-altitude, mult
 
 **Why it matters:** One of the most up-to-date (2025) systematic comparisons of what actually works for low-altitude drones, which is the regime of small tactical UAVs.
 
-**Hackathon notes:** Read its results before choosing a retrieval/matcher combo; reuse its evaluation scripts to score your own pipeline.
+**Build notes:** Read its results before choosing a retrieval/matcher combo; reuse its evaluation scripts to score your own pipeline.
 
 ## Deep dives
 
@@ -31,8 +31,8 @@ Benchmark and code for UAV absolute visual localization under low-altitude, mult
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [U2S-CVGL (scale-aware UAV-to-satellite)](../../catalog/repos/uav-avl__u2s-cvgl.md) (same_org)

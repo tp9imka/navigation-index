@@ -2,7 +2,7 @@
 
 `repo:leggedrobotics/grid_map` - <https://github.com/leggedrobotics/grid_map>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 27 | C++ | BSD-3-Clause | 2026-09-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 int
 
 **Why it matters:** Common data structure for elevation, slope and cost layers - the glue between DEMs and planners.
 
-**Hackathon notes:** Available as ROS 2 binaries; load a GeoTIFF DEM (via GDAL) into a grid_map layer for terrain-aware costs.
+**Build notes:** Available as ROS 2 binaries; load a GeoTIFF DEM (via GDAL) into a grid_map layer for terrain-aware costs.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

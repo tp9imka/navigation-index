@@ -2,7 +2,7 @@
 
 `repo:nwtime/linuxptp` - <https://github.com/nwtime/linuxptp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 43 | C | GPL-2.0 | 2026-08-09 | False | production | high |
 
@@ -10,7 +10,7 @@ The standard Linux implementation of IEEE 1588 PTP: ptp4l (boundary/ordinary/tra
 
 **Why it matters:** If a hackathon build needs sub-microsecond time across several computers (sensor nodes, TDOA receivers, a radar array), this is the off-the-shelf way to get it on Linux with hardware timestamping.
 
-**Hackathon notes:** apt install linuxptp. Needs NICs with hardware timestamping (check `ethtool -T`); Raspberry Pi CM4/CM5 and Intel i210/i225 work. Use ts2phc with a GNSS 1PPS to build a grandmaster, ptp4l -S for software timestamping in a demo. Log `pmc` offsets to show holdover and attack behaviour.
+**Build notes:** apt install linuxptp. Needs NICs with hardware timestamping (check `ethtool -T`); Raspberry Pi CM4/CM5 and Intel i210/i225 work. Use ts2phc with a GNSS 1PPS to build a grandmaster, ptp4l -S for software timestamping in a demo. Log `pmc` offsets to show holdover and attack behaviour.
 
 ## Deep dives
 

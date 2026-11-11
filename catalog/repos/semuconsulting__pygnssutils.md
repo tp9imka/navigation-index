@@ -2,7 +2,7 @@
 
 `repo:semuconsulting/pygnssutils` - <https://github.com/semuconsulting/pygnssutils>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 148 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 
 **Why it matters:** Glue for building correction pipelines and logging tools without writing protocol code.
 
-**Hackathon notes:** pip install pygnssutils; gnssntripclient gets you RTCM from a caster in one command.
+**Build notes:** pip install pygnssutils; gnssntripclient gets you RTCM from a caster in one command.
 
 ## Deep dives
 

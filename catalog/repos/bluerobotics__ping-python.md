@@ -2,7 +2,7 @@
 
 `repo:bluerobotics/ping-python` - <https://github.com/bluerobotics/ping-python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 61 | Python | MIT | 2026-08-05 | False | production | medium |
 
@@ -10,7 +10,7 @@ Python library and examples for Blue Robotics Ping echosounder and Ping360 scann
 
 **Why it matters:** Cheap altimeter and sonar input for underwater navigation and obstacle sensing.
 
-**Hackathon notes:** pip install bluerobotics-ping; requires the hardware or Ping Viewer logs.
+**Build notes:** pip install bluerobotics-ping; requires the hardware or Ping Viewer logs.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

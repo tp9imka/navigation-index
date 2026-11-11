@@ -2,7 +2,7 @@
 
 `repo:rerun-io/rerun` - <https://github.com/rerun-io/rerun>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11,731 | Rust | Apache-2.0 | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ SDKs and viewer for recording and inspecting multimodal robotics data on synchro
 
 **Why it matters:** Inspect the estimator trajectory beside sensor frames and navigation-health signals when a map alone cannot explain a failure.
 
-**Hackathon notes:** Prototype with the Python SDK and local viewer. Define coordinate frames and clock domains before comparing tracks. Cache the viewer/package and test the actual target laptop offline. README and MIT/Apache license files checked 2026-11-07; viewer not run in this hub. Keep hosted-service terms separate from the open-source SDK licenses.
+**Build notes:** Prototype with the Python SDK and local viewer. Define coordinate frames and clock domains before comparing tracks. Cache the viewer/package and test the actual target laptop offline. README and MIT/Apache license files checked 2026-11-07; viewer not run in this hub. Keep hosted-service terms separate from the open-source SDK licenses.
 
 ## Deep dives
 

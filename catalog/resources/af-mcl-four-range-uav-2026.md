@@ -22,4 +22,4 @@ Preprint (arXiv, Oct 2026), full text read. AF-MCL: 2D Monte Carlo localization 
 - uses: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 - cites: [Fully On-board Low-Power Localization with Multizone Time-of-Flight Sensors on Nano-UAVs](../../catalog/resources/muller-2023-nano-uav-mcl-multizone-tof.md)
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

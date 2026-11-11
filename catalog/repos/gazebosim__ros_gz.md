@@ -2,7 +2,7 @@
 
 `repo:gazebosim/ros_gz` - <https://github.com/gazebosim/ros_gz>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 552 | C++ | Apache-2.0 | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Bridge packages that relay topics, services and clock between Gazebo Sim transpo
 
 **Why it matters:** Needed whenever a ROS 2 navigation or SLAM stack has to consume simulated sensor streams from Gazebo.
 
-**Hackathon notes:** Use parameter_bridge with a YAML of topic mappings. Match the ros_gz branch to your ROS 2 distro and Gazebo release or builds fail.
+**Build notes:** Use parameter_bridge with a YAML of topic mappings. Match the ros_gz branch to your ROS 2 distro and Gazebo release or builds fail.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ Bridge packages that relay topics, services and clock between Gazebo Sim transpo
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) (integrates_with)
 

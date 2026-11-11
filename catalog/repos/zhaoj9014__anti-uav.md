@@ -2,7 +2,7 @@
 
 `repo:zhaoj9014/anti-uav` - <https://github.com/ZhaoJ9014/Anti-UAV>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 889 | Python | MIT | 2025-05-07 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 **Why it matters:** The main public benchmark for vision-based C-UAS tracking, including thermal.
 
-**Hackathon notes:** Download a subset, train a YOLO detector plus tracker, report on their metric.
+**Build notes:** Download a subset, train a YOLO detector plus tracker, report on their metric.
 
 ## Deep dives
 
@@ -31,10 +31,10 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [UAV Detection and Tracking Benchmark](../../catalog/repos/kostadinovshalon__uavdetectiontrackingbenchmark.md) (evaluated_on)
 - [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) (evaluated_on)
 - [Drone-vs-Bird Detection Challenge](../../catalog/repos/wosdetc__challenge.md) (alternative_to)

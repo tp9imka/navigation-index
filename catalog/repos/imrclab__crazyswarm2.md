@@ -2,7 +2,7 @@
 
 `repo:imrclab/crazyswarm2` - <https://github.com/IMRCLab/crazyswarm2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 264 | Python | MIT | 2026-11-04 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or
 
 **Why it matters:** Ready-made multi-agent testbed for coordinated indoor flight and formation experiments.
 
-**Hackathon notes:** Simulation works without hardware; with Crazyflies plus Loco or Lighthouse you can fly a small swarm in a day.
+**Build notes:** Simulation works without hardware; with Crazyflies plus Loco or Lighthouse you can fly a small swarm in a day.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
@@ -27,9 +27,9 @@ ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (alternative_to)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)

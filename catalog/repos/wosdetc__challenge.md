@@ -2,7 +2,7 @@
 
 `repo:wosdetc/challenge` - <https://github.com/wosdetc/challenge>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 72 | Python | ? | 2022-12-16 | False | archived | high |
 
@@ -10,7 +10,7 @@ Repository of the long-running Drone-vs-Bird challenge: annotations and instruct
 
 **Why it matters:** Telling a distant drone from a bird is the core false-alarm problem in camera-based C-UAS; this is the reference benchmark.
 
-**Hackathon notes:** Videos only on request (wosdetc@googlegroups.com) after signing a data usage agreement, research use only - allow lead time. Then train a small-object YOLO; the hard part is tiny targets, so tile the frames. Repo not updated since 2022-12 (2023 edition is the last listed).
+**Build notes:** Videos only on request (wosdetc@googlegroups.com) after signing a data usage agreement, research use only - allow lead time. Then train a small-object YOLO; the hard part is tiny targets, so tile the frames. Repo not updated since 2022-12 (2023 edition is the last listed).
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 

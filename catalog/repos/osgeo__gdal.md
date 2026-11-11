@@ -2,7 +2,7 @@
 
 `repo:osgeo/gdal` - <https://github.com/osgeo/gdal>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,139 | C++ | NOASSERTION | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Translator library and CLI tools for raster and vector geospatial formats (GeoTI
 
 **Why it matters:** Every map, DEM and imagery pipeline goes through GDAL; gdalwarp, gdaldem and gdal_translate cover most reference-map preparation.
 
-**Hackathon notes:** Use conda or the OSGeo Docker image to avoid version mismatches between GDAL and Python bindings.
+**Build notes:** Use conda or the OSGeo Docker image to avoid version mismatches between GDAL and Python bindings.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Translator library and CLI tools for raster and vector geospatial formats (GeoTI
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

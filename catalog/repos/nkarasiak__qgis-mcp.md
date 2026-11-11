@@ -2,7 +2,7 @@
 
 `repo:nkarasiak/qgis-mcp` - <https://github.com/nkarasiak/qgis-mcp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 423 | Python | GPL-2.0 | 2026-10-17 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP sock
 
 **Why it matters:** More recent alternative if the original QGIS MCP lags behind QGIS releases.
 
-**Hackathon notes:** Same plugin-plus-server pattern; check QGIS version compatibility.
+**Build notes:** Same plugin-plus-server pattern; check QGIS version compatibility.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

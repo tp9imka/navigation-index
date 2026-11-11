@@ -2,7 +2,7 @@
 
 `repo:sxjack/uav_electronic_ids` - <https://github.com/sxjack/uav_electronic_ids>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 136 | C | MIT | 2024-01-04 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French
 
 **Why it matters:** Small, readable alternative Remote ID implementation, including receiver-side sketches.
 
-**Hackathon notes:** Arduino IDE; the id_open examples are transmitters (ESP32, ESP8266, nRF52) and id_scanner is a receiver sketch.
+**Build notes:** Arduino IDE; the id_open examples are transmitters (ESP32, ESP8266, nRF52) and id_scanner is a receiver sketch.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 

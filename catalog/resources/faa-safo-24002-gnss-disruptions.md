@@ -22,7 +22,7 @@ FAA Safety Alert for Operators describing jamming vs spoofing effects on aircraf
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [GPS Spoofing WorkGroup 2024 - Final Report](../../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md) (cites)
 
 _Indexed by lane(s): defense-context_

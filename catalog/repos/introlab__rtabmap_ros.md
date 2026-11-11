@@ -2,7 +2,7 @@
 
 `repo:introlab/rtabmap_ros` - <https://github.com/introlab/rtabmap_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,550 | C++ | BSD-3-Clause | 2026-11-04 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry
 
 **Why it matters:** Drop-in SLAM for ROS 2 Nav2 stacks.
 
-**Hackathon notes:** apt-installable for supported distros; launch examples cover common sensors.
+**Build notes:** apt-installable for supported distros; launch examples cover common sensors.
 
 ## Deep dives
 

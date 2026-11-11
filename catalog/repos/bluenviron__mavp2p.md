@@ -2,7 +2,7 @@
 
 `repo:bluenviron/mavp2p` - <https://github.com/bluenviron/mavp2p>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 255 | Go | MIT | 2026-11-03 | False | production | high |
 
@@ -10,7 +10,7 @@ Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with dedupl
 
 **Why it matters:** Zero-dependency alternative to mavlink-router; easy to drop on any companion.
 
-**Hackathon notes:** Download the release binary and run; no build.
+**Build notes:** Download the release binary and run; no build.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:topo-epfl/crossloc` - <https://github.com/TOPO-EPFL/CrossLoc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 116 | Python | MIT | 2022-08-19 | False | archived | low |
 
@@ -10,7 +10,7 @@ CVPR 2022 cross-modal visual representation learning for absolute camera localiz
 
 **Why it matters:** Shows that synthetic renders from DEM/orthophoto can train localizers for real flights - a cheap way to cover new terrain.
 
-**Hackathon notes:** Older and heavy to set up; read for the synthetic-data idea.
+**Build notes:** Older and heavy to set up; read for the synthetic-data idea.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

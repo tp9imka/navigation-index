@@ -2,7 +2,7 @@
 
 `repo:strasdat/sophus` - <https://github.com/strasdat/Sophus>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,465 | C++ | NOASSERTION | 2024-07-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SL
 
 **Why it matters:** De facto Lie group dependency in SLAM codebases.
 
-**Hackathon notes:** Header-mostly; widely packaged. In maintenance mode since June 2024 (bug fixes only); sophus2 and sophus-rs are the successors.
+**Build notes:** Header-mostly; widely packaged. In maintenance mode since June 2024 (bug fixes only); sophus2 and sophus-rs are the successors.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

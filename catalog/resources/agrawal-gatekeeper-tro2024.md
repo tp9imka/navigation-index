@@ -8,7 +8,7 @@ Lightweight check between a planner and a controller: simulate the nominal traje
 
 ## Key takeaways
 
-- Planner-agnostic, easy to explain to judges
+- Planner-agnostic, easy to explain to reviewers
 - Needs a backup controller and backup set
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md)

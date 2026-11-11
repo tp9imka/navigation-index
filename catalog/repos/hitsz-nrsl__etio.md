@@ -2,7 +2,7 @@
 
 `repo:hitsz-nrsl/etio` - <https://github.com/HITSZ-NRSL/ETIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 12 | C++ | ? | 2026-01-17 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Edge-based monocular thermal-inertial odometry that tracks thermal edges for vis
 
 **Why it matters:** Low-cost night/smoke navigation from a single thermal camera plus IMU.
 
-**Hackathon notes:** Code released with the paper; try on public thermal datasets first.
+**Build notes:** Code released with the paper; try on public thermal datasets first.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:koide3/glim` - <https://github.com/koide3/glim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,922 | C++ | MIT | 2026-10-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Versatile point-cloud localization and mapping framework with GPU-accelerated fa
 
 **Why it matters:** Modern, maintained 3D mapping with GPU speedups and an extensible module system.
 
-**Hackathon notes:** Prebuilt packages exist for ROS 2; GPU optional but recommended.
+**Build notes:** Prebuilt packages exist for ROS 2; GPU optional but recommended.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

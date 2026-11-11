@@ -2,7 +2,7 @@
 
 `repo:lu-feng/selavpr` - <https://github.com/Lu-Feng/SelaVPR>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 269 | Python | MIT | 2026-02-04 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ ICLR 2024 method adapting pretrained foundation models for place recognition wit
 
 **Why it matters:** Global+local output lets one model do retrieval and re-ranking.
 
-**Hackathon notes:** Used by Visual-Locator for UAV retrieval.
+**Build notes:** Used by Visual-Locator for UAV retrieval.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

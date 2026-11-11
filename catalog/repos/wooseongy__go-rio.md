@@ -2,7 +2,7 @@
 
 `repo:wooseongy/go-rio` - <https://github.com/wooseongY/Go-RIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 109 | C++ | ? | 2026-09-21 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Ground-optimized 4D radar-inertial odometry integrating continuous velocity via 
 
 **Why it matters:** Recent state of the art for 4D radar odometry on ground vehicles.
 
-**Hackathon notes:** Recent code; check sensor assumptions against your radar.
+**Build notes:** Recent code; check sensor assumptions against your radar.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

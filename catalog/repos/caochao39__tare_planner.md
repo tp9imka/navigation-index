@@ -2,7 +2,7 @@
 
 `repo:caochao39/tare_planner` - <https://github.com/caochao39/tare_planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 744 | C++ | ? | 2026-05-25 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Hierarchical exploration planner from CMU's Team Explorer, which earned the most
 
 **Why it matters:** Well-documented, high-performing exploration planner that runs on top of a ready simulation stack.
 
-**Hackathon notes:** Install the companion development environment first; ROS1 and ROS2 branches exist. Runs in sim on a laptop.
+**Build notes:** Install the companion development environment first; ROS1 and ROS2 branches exist. Runs in sim on a laptop.
 
 ## Deep dives
 

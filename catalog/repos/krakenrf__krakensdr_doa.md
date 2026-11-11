@@ -2,7 +2,7 @@
 
 `repo:krakenrf/krakensdr_doa` - <https://github.com/krakenrf/krakensdr_doa>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 323 | Python | GPL-3.0 | 2025-12-13 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 
 **Why it matters:** Passive DF of interference sources (or drone control links) is a core defensive-EW capability and maps well to a hackathon demo.
 
-**Hackathon notes:** Needs KrakenSDR hardware (or recorded IQ). Prebuilt Raspberry Pi images exist (check the KrakenRF docs). Multiple stations plus Stone Soup gives triangulated emitter tracks.
+**Build notes:** Needs KrakenSDR hardware (or recorded IQ). Prebuilt Raspberry Pi images exist (check the KrakenRF docs). Multiple stations plus Stone Soup gives triangulated emitter tracks.
 
 ## Deep dives
 
@@ -30,9 +30,9 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Stone Soup](../../catalog/repos/dstl__stone-soup.md) (integrates_with)
 - [Heimdall DAQ firmware](../../catalog/repos/krakenrf__heimdall_daq_fw.md) (same_org)

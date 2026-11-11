@@ -2,7 +2,7 @@
 
 `repo:aceinna/gnss-ins-sim` - <https://github.com/Aceinna/gnss-ins-sim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,499 | Python | MIT | 2024-11-27 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer mea
 
 **Why it matters:** Quick way to produce synthetic IMU and GNSS data with known truth to test filters and dead reckoning under GNSS outage.
 
-**Hackathon notes:** Pure Python; define a motion profile CSV and sensor grade, then plug your filter in as an algorithm.
+**Build notes:** Pure Python; define a motion profile CSV and sensor grade, then plug your filter in as an algorithm.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer mea
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [pyins](../../catalog/repos/nmayorov__pyins.md) (alternative_to)
 - [NaveGo](../../catalog/repos/rodralez__navego.md) (alternative_to)

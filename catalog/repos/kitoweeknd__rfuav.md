@@ -2,7 +2,7 @@
 
 `repo:kitoweeknd/rfuav` - <https://github.com/kitoweeknd/RFUAV>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 463 | Python | Apache-2.0 | 2026-10-28 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 
 **Why it matters:** Recent learned RF drone classification with a public dataset.
 
-**Hackathon notes:** Start from the provided spectrogram models; raw data size is large.
+**Build notes:** Start from the provided spectrogram models; raw data size is large.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [DroneRF](../../catalog/repos/al-sad__dronerf.md) (alternative_to)
 - [Noisy Drone RF Signal Classification](../../catalog/repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
 

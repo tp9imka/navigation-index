@@ -2,7 +2,7 @@
 
 `repo:reza-zhu/sues-200-benchmark` - <https://github.com/Reza-Zhu/SUES-200-Benchmark>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 96 | Python | MIT | 2026-09-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code
 
 **Why it matters:** Adds altitude variation that University-1652 lacks - closer to real flight profiles.
 
-**Hackathon notes:** Comparable training pipeline to University-1652. The dataset is for academic research only, despite the repo's MIT code licence.
+**Build notes:** Comparable training pipeline to University-1652. The dataset is for academic research only, despite the repo's MIT code licence.
 
 ## Deep dives
 
@@ -28,8 +28,8 @@ Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (alternative_to)
 - [SUES-200: A Multi-height Multi-scene Cross-view Image Benchmark Across Drone and Satellite](../../catalog/resources/sues-200-benchmark-2022.md) (has_code)
 

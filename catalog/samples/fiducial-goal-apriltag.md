@@ -29,12 +29,11 @@ Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 64
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)

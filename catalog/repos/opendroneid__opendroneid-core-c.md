@@ -2,7 +2,7 @@
 
 `repo:opendroneid/opendroneid-core-c` - <https://github.com/opendroneid/opendroneid-core-c>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 383 | C | Apache-2.0 | 2026-10-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID me
 
 **Why it matters:** Remote ID is the cooperative layer of airspace awareness and counter-UAS; this library is the canonical message implementation.
 
-**Hackathon notes:** Builds with CMake in minutes; pair with an ESP32 or phone receiver to decode drone broadcasts and push them to a map or TAK.
+**Build notes:** Builds with CMake in minutes; pair with an ESP32 or phone receiver to decode drone broadcasts and push them to a map or TAK.
 
 ## Deep dives
 
@@ -35,12 +35,12 @@ Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID me
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [DragonSync](../../catalog/repos/alphafox02__dragonsync.md) (integrates_with)
 - [ArduRemoteID](../../catalog/repos/ardupilot__arduremoteid.md) (depends_on)

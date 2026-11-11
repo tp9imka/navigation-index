@@ -2,7 +2,7 @@
 
 `repo:krakenrf/heimdall_daq_fw` - <https://github.com/krakenrf/heimdall_daq_fw>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 100 | C | GPL-3.0 | 2026-01-05 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 **Why it matters:** Useful if you need raw coherent IQ for your own DF or interference-localization algorithm.
 
-**Hackathon notes:** Installed as part of the KrakenSDR image; modify only if building custom DSP.
+**Build notes:** Installed as part of the KrakenSDR image; modify only if building custom DSP.
 
 ## Deep dives
 

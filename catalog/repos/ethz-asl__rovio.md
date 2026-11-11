@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/rovio` - <https://github.com/ethz-asl/rovio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,272 | C++ | NOASSERTION | 2026-09-03 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Robust visual-inertial odometry using an iterated EKF directly on image-patch ph
 
 **Why it matters:** Long a go-to VIO on PX4/MAV research platforms because it is cheap to run.
 
-**Hackathon notes:** ROS 1 / catkin. Lightweight; tuning of patch and feature counts matters.
+**Build notes:** ROS 1 / catkin. Lightweight; tuning of patch and feature counts matters.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

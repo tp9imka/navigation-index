@@ -2,7 +2,7 @@
 
 `repo:parrot-developers/olympe` - <https://github.com/Parrot-Developers/olympe>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ Parrot's Python controller library for ANAFI drones and the Sphinx simulator, us
 
 **Why it matters:** The SDK path if the event platform is a Parrot ANAFI. Same code drives Sphinx and the real drone.
 
-**Hackathon notes:** BSD-3-Clause. PyPI ships only a manylinux x86_64 wheel (parrot-olympe 8.5.0), and Sphinx needs Ubuntu x64 plus an NVIDIA GPU, so neither runs on an Apple Silicon Mac. Only useful if an x86 Linux GPU box is provided.
+**Build notes:** BSD-3-Clause. PyPI ships only a manylinux x86_64 wheel (parrot-olympe 8.5.0), and Sphinx needs Ubuntu x64 plus an NVIDIA GPU, so neither runs on an Apple Silicon Mac. Only useful if an x86 Linux GPU box is provided.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

@@ -2,7 +2,7 @@
 
 `repo:alinnman/celestial-navigation` - <https://github.com/alinnman/celestial-navigation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 23 | Python | MIT | 2026-08-29 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Python toolkit for classic celestial navigation sight reduction, usable offline 
 
 **Why it matters:** Ground-truth math for turning star/sun sightings into a position.
 
-**Hackathon notes:** Pair with a star tracker output to compute position.
+**Build notes:** Pair with a star tracker output to compute position.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
@@ -24,7 +24,7 @@ Python toolkit for classic celestial navigation sight reduction, usable offline 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [celnav](../../catalog/repos/ms8r__celnav.md) (alternative_to)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 

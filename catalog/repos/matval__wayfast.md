@@ -2,7 +2,7 @@
 
 `repo:matval/wayfast` - <https://github.com/matval/WayFAST>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 65 | Python | ? | 2024-03-13 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Self-supervised traversability prediction for wheeled field robots that learns f
 
 **Why it matters:** Agricultural/field traversability learning without hand labels.
 
-**Hackathon notes:** Dormant; use for method reference. No LICENSE file, so all rights reserved by default.
+**Build notes:** Dormant; use for method reference. No LICENSE file, so all rights reserved by default.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

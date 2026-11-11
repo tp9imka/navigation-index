@@ -2,7 +2,7 @@
 
 `repo:layumi/uavm2023` - <https://github.com/layumi/UAVM2023>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 13 |  | ? | 2026-07-04 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Page for the ACM MM 2023 drone-satellite matching challenge on University-160k, 
 
 **Why it matters:** Index of open winning-team code for drone-satellite matching.
 
-**Hackathon notes:** Public entries: MLPN (4th, R@1 92.77), DPN (6th, 90.02) and BingY998 (7th, 85.76); the top two are private, and MBEG's 98.94 was removed for using University-1652 test data. Data is University-1652-derived (request-only, research use).
+**Build notes:** Public entries: MLPN (4th, R@1 92.77), DPN (6th, 90.02) and BingY998 (7th, 85.76); the top two are private, and MBEG's 98.94 was removed for using University-1652 test data. Data is University-1652-derived (request-only, research use).
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

@@ -26,7 +26,7 @@ Defines four cumulative resilience levels for PNT user equipment based on preven
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)

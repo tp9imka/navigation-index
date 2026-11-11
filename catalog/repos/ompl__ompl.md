@@ -2,7 +2,7 @@
 
 `repo:ompl/ompl` - <https://github.com/ompl/ompl>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,196 | C++ | NOASSERTION | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 
 **Why it matters:** The reference implementation for sampling-based planning; underpins MoveIt and many UAV/UGV planners, so it is the quickest way to get a correct baseline planner.
 
-**Hackathon notes:** pip wheels exist for the Python bindings; define a state validity checker against your occupancy grid or DEM and you have a planner in an afternoon.
+**Build notes:** pip wheels exist for the Python bindings; define a state validity checker against your occupancy grid or DEM and you have a planner in an afternoon.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) (alternative_to)

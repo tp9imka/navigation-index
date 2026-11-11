@@ -2,7 +2,7 @@
 
 `repo:wise-vision/ros2_mcp` - <https://github.com/wise-vision/ros2_mcp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 99 | Python | MPL-2.0 | 2026-10-21 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ MCP server that lets AI agents discover and operate ROS 2 robots: topic echo/pub
 
 **Why it matters:** Native ROS 2 alternative for LLM control without a rosbridge hop.
 
-**Hackathon notes:** Fastest path is the Docker image (wisevision/ros2_mcp:jazzy or :humble) as the MCP client's stdio command - ROS 2 does not need to be installed on the host. Start with ROS2_MCP_READONLY=1 so the agent can inspect but not publish.
+**Build notes:** Fastest path is the Docker image (wisevision/ros2_mcp:jazzy or :humble) as the MCP client's stdio command - ROS 2 does not need to be installed on the host. Start with ROS2_MCP_READONLY=1 so the agent can inspect but not publish.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

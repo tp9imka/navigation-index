@@ -2,7 +2,7 @@
 
 `repo:parskatt/roma` - <https://github.com/Parskatt/RoMa>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,333 | Python | MIT | 2026-01-23 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 
 **Why it matters:** Handles season, lighting and sensor differences between drone frames and satellite imagery better than sparse matchers, at higher compute cost.
 
-**Hackathon notes:** Use as the accurate-but-slow verifier on the top retrieval hit; GPU recommended.
+**Build notes:** Use as the accurate-but-slow verifier on the top retrieval hit; GPU recommended.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)

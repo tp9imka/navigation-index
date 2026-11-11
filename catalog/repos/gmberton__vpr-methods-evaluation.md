@@ -2,7 +2,7 @@
 
 `repo:gmberton/vpr-methods-evaluation` - <https://github.com/gmberton/VPR-methods-evaluation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 206 | Python | MIT | 2026-08-13 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Wrapper exposing many state-of-the-art place recognition models behind one inter
 
 **Why it matters:** Fastest way to benchmark several retrieval models on your own drone/satellite set.
 
-**Hackathon notes:** Format your data as database/queries folders with UTM in filenames; GPU recommended.
+**Build notes:** Format your data as database/queries folders with UTM in filenames; GPU recommended.
 
 ## Deep dives
 
@@ -32,7 +32,7 @@ Wrapper exposing many state-of-the-art place recognition models behind one inter
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)

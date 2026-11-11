@@ -2,7 +2,7 @@
 
 `repo:openlayers/openlayers` - <https://github.com/openlayers/openlayers>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 12,647 | JavaScript | BSD-2-Clause | 2026-11-07 | False | production | medium |
 
@@ -10,7 +10,7 @@ Feature-rich web mapping library supporting many projections, WMS/WMTS, vector t
 
 **Why it matters:** Strong choice when you need non-Web-Mercator projections or OGC services in a C2 web UI.
 
-**Hackathon notes:** npm install ol; integrates with proj4js for custom CRS.
+**Build notes:** npm install ol; integrates with proj4js for custom CRS.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

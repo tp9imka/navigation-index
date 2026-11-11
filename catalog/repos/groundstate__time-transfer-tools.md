@@ -2,7 +2,7 @@
 
 `repo:groundstate/time-transfer-tools` - <https://github.com/groundstate/time-transfer-tools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | MATLAB | MIT | 2025-11-13 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match o
 
 **Why it matters:** Lets a team compare two GNSS-timed sites the way timing labs do.
 
-**Hackathon notes:** Needs MATLAB. Useful only if CGGTTS files are available (e.g. from a timing lab).
+**Build notes:** Needs MATLAB. Useful only if CGGTTS files are available (e.g. from a timing lab).
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

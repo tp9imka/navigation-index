@@ -32,6 +32,6 @@ Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

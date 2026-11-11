@@ -2,7 +2,7 @@
 
 `repo:mbrossar/denoise-imu-gyro` - <https://github.com/mbrossar/denoise-imu-gyro>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 419 | Python | MIT | 2020-09-16 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ CNN that denoises low-cost gyroscope signals to improve attitude estimation.
 
 **Why it matters:** Shows learned correction for cheap MEMS gyros.
 
-**Hackathon notes:** Inactive since 2020; trained on EuRoC/TUM-VI.
+**Build notes:** Inactive since 2020; trained on EuRoC/TUM-VI.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

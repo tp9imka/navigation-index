@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/mav_active_3d_planning` - <https://github.com/ethz-asl/mav_active_3d_planning>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 714 | C++ | BSD-3-Clause | 2025-08-14 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Modular framework for online informative path planning on MAVs: pluggable trajec
 
 **Why it matters:** The evaluator abstraction is exactly where a 'localisability' or 'TRN information' gain would plug in, instead of the usual exploration gain.
 
-**Hackathon notes:** License BSD-3-Clause (gh api). Last push 2025-08-14. ROS 1 catkin stack. Borrow the planner / evaluator split as architecture; do not attempt to build it on day 1.
+**Build notes:** License BSD-3-Clause (gh api). Last push 2025-08-14. ROS 1 catkin stack. Borrow the planner / evaluator split as architecture; do not attempt to build it in the first day.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:zxsecurity/nmeadesync` - <https://github.com/zxsecurity/NMEAdesync>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 26 | Python | ? | 2017-06-24 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Proof-of-concept that feeds crafted NMEA sentences to a GPS-referenced NTP serve
 
 **Why it matters:** A ready-made test input for a time-spoofing detector: it reproduces the 'trusted serial GNSS time' weakness without RF.
 
-**Hackathon notes:** Only for a closed lab against your own time server; no RF needed. Use it to show the detector alarm, not to attack anything.
+**Build notes:** Only for a closed lab against your own time server; no RF needed. Use it to show the detector alarm, not to attack anything.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 

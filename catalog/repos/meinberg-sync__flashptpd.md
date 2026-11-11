@@ -2,7 +2,7 @@
 
 `repo:meinberg-sync/flashptpd` - <https://github.com/meinberg-sync/flashptpd>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 51 | C++ | MIT | 2024-07-02 | True | archived | low |
 
@@ -10,7 +10,7 @@ Experimental C++17 client/server style PTP from Meinberg: the client sends Sync 
 
 **Why it matters:** Shows a unicast request/response PTP variant close to NTP in shape; useful when thinking about how a client chooses among several servers.
 
-**Hackathon notes:** Archived; read for the protocol idea, do not build on it.
+**Build notes:** Archived; read for the protocol idea, do not build on it.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

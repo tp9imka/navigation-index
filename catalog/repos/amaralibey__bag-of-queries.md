@@ -2,7 +2,7 @@
 
 `repo:amaralibey/bag-of-queries` - <https://github.com/amaralibey/Bag-of-Queries>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 197 | Jupyter Notebook | MIT | 2025-03-16 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ CVPR 2024 place recognition with a bag of learnable global queries over backbone
 
 **Why it matters:** Recent strong retrieval model with simple usage.
 
-**Hackathon notes:** torch.hub available.
+**Build notes:** torch.hub available.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

@@ -2,7 +2,7 @@
 
 `repo:copterexpress/clover` - <https://github.com/CopterExpress/clover>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 694 | C++ | MIT | 2026-04-14 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS-based software stack and Raspberry Pi image for the Clover educational quadc
 
 **Why it matters:** One of the most complete Russian-language open stacks for GNSS-free indoor/outdoor flight: optical flow plus marker maps fed into the autopilot EKF, with documented parameter sets.
 
-**Hackathon notes:** Use the Docker/VM simulator image to fly ArUco-map navigation without hardware in hours. The marker-map => VPE path is a ready template for any external position source into PX4. ROS1 (Noetic) based; ROS2 only via community ports. Canonical repo is CopterExpress/clover; klever-coex/clover is a recent fork.
+**Build notes:** Use the Docker/VM simulator image to fly ArUco-map navigation without hardware in hours. The marker-map => VPE path is a ready template for any external position source into PX4. ROS1 (Noetic) based; ROS2 only via community ports. Canonical repo is CopterExpress/clover; klever-coex/clover is a recent fork.
 
 ## Deep dives
 
@@ -32,12 +32,12 @@ ROS-based software stack and Raspberry Pi image for the Clover educational quadc
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) (alternative_to)
 - [Clover Rescue Project](../../catalog/repos/devmbs__crtclient.md) (depends_on)
 - [CRTClover - Clover Rescue Team backend](../../catalog/repos/devmbs__crtclover.md) (integrates_with)

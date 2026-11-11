@@ -19,4 +19,4 @@ ModalAI docs page (read 2026-11-09). VIO starts from a static or a dynamic (abou
 
 - part_of: [VOXL OpenVINS server](../../catalog/resources/modalai-voxl-open-vins-server-docs.md)
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/mav_trajectory_generation` - <https://github.com/ethz-asl/mav_trajectory_generation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 674 | C++ | Apache-2.0 | 2023-05-20 | False | archived | medium |
 
@@ -10,7 +10,7 @@ C++ library for polynomial (minimum-snap style) trajectory generation for multir
 
 **Why it matters:** The reference open implementation of the Richter / Bry / Roy polynomial method. Turns a waypoint list from a route planner into a smooth, dynamically feasible reference an MPC or autopilot can track.
 
-**Hackathon notes:** License Apache-2.0 (gh api), commercial-friendly. Last push 2023-05-20, effectively unmaintained. Build is catkin / ROS 1 (Noetic-era), so budget a Docker image. For a pure-Python 48h build, RotorPy's MinSnap class gives the same idea with less setup; use this one when you want the C++ core for the product story.
+**Build notes:** License Apache-2.0 (gh api), commercial-friendly. Last push 2023-05-20, effectively unmaintained. Build is catkin / ROS 1 (Noetic-era), so budget a Docker image. For a pure-Python 48h build, RotorPy's MinSnap class gives the same idea with less setup; use this one when you want the C++ core for the product story.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -31,7 +31,7 @@ Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, re
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 
 _Indexed by lane(s): samples_

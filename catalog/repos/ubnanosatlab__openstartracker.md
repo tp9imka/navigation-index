@@ -2,7 +2,7 @@
 
 `repo:ubnanosatlab/openstartracker` - <https://github.com/UBNanosatLab/openstartracker>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 204 | Python | MIT | 2026-10-30 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Open-source star tracker using a Bayesian star identification approach, develope
 
 **Why it matters:** Full camera-to-attitude pipeline with calibration, proven on small-satellite hardware.
 
-**Hackathon notes:** Calibration step needed for your camera; budget a few hours.
+**Build notes:** Calibration step needed for your camera; budget a few hours.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 

@@ -2,7 +2,7 @@
 
 `repo:qualcomm/aimet` - <https://github.com/qualcomm/aimet>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,743 | Python | NOASSERTION | 2026-11-08 | False | production | low |
 
@@ -10,7 +10,7 @@ Qualcomm's quantization and compression library for PyTorch and ONNX models: pos
 
 **Why it matters:** Qualcomm flight boards (RB5, VOXL 2) need INT8 models for the NPU. AIMET is the vendor path to get there without large accuracy loss.
 
-**Hackathon notes:** Repo moved from quic/aimet to qualcomm/aimet. License file is BSD-3-style (GitHub reports NOASSERTION). Only worth the setup if the team has a Qualcomm board in hand.
+**Build notes:** Repo moved from quic/aimet to qualcomm/aimet. License file is BSD-3-style (GitHub reports NOASSERTION). Only worth the setup if the team has a Qualcomm board in hand.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

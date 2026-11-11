@@ -25,7 +25,7 @@ Official docs for the Stone Soup tracking framework with step-by-step tutorials 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Stone Soup: No Longer Just an Appetiser](../../catalog/resources/dstl-stone-soup-v1-fusion2023.md) (part_of)

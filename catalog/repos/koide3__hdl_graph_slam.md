@@ -2,7 +2,7 @@
 
 `repo:koide3/hdl_graph_slam` - <https://github.com/koide3/hdl_graph_slam>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,344 | C++ | BSD-2-Clause | 2024-07-16 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@
 
 **Why it matters:** Simple, hackable graph SLAM that 4DRadarSLAM and others build on; GPS constraints make it handy for mixed GNSS/denied runs.
 
-**Hackathon notes:** ROS 1; GLIM is the author's newer framework.
+**Build notes:** ROS 1; GLIM is the author's newer framework.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 

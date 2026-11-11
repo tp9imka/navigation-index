@@ -2,7 +2,7 @@
 
 `repo:alicmu2024/gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision` - <https://github.com/alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 69 | Jupyter Notebook | ? | 2025-11-17 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogr
 
 **Why it matters:** Turnkey starting point for a jamming-type classifier using open data.
 
-**Hackathon notes:** Open in Colab and download the Zenodo IQ set (1.9 GB, CC BY 4.0). Its signals are simulated in MATLAB: DME, narrowband, AM, chirp, FM and no jamming. The repo has no licence file.
+**Build notes:** Open in Colab and download the Zenodo IQ set (1.9 GB, CC BY 4.0). Its signals are simulated in MATLAB: DME, narrowband, AM, chirp, FM and no jamming. The repo has no licence file.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

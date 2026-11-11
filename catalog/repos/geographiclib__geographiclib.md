@@ -2,7 +2,7 @@
 
 `repo:geographiclib/geographiclib` - <https://github.com/geographiclib/geographiclib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 487 | C++ | MIT | 2026-08-24 | False | production | high |
 
@@ -10,7 +10,7 @@ C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heig
 
 **Why it matters:** Gold-standard geodesy: geodesic distances, geoid (EGM96/2008) undulation for GNSS height vs DEM height, and MGRS.
 
-**Hackathon notes:** Python and JS ports exist (geographiclib-python, geographiclib-js); geoid datasets download separately.
+**Build notes:** Python and JS ports exist (geographiclib-python, geographiclib-js); geoid datasets download separately.
 
 ## Deep dives
 

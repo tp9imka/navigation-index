@@ -18,4 +18,4 @@ University news on the IROS 2019 Autonomous Drone Race in Macau: six teams flew 
 
 - part_of: [Challenges and implemented technologies used in autonomous drone racing](../../catalog/resources/moon-2019-adr-iros-challenges.md)
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

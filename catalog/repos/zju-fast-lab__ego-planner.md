@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/ego-planner` - <https://github.com/zju-fast-lab/ego-planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,734 | C++ | GPL-3.0 | 2025-03-08 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimiz
 
 **Why it matters:** Lightweight onboard replanning for small drones flying through clutter; widely reused baseline for agile UAV navigation in unknown environments.
 
-**Hackathon notes:** ROS1 (Ubuntu 16.04-20.04) with a bundled simulator; runs on a laptop. A ROS 2 port lives in the ego-planner-swarm ros2_version branch, and upstream recommends EGO-Swarm over this repo; PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.
+**Build notes:** ROS1 (Ubuntu 16.04-20.04) with a bundled simulator; runs on a laptop. A ROS 2 port lives in the ego-planner-swarm ros2_version branch, and upstream recommends EGO-Swarm over this repo; PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

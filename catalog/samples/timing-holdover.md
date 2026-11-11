@@ -31,10 +31,10 @@ A stdlib-only simulation of a GNSS-disciplined oscillator (type-2 PLL on a noisy
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Story bank](../../templates/pitch/story-bank.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)

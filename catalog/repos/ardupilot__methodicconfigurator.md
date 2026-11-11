@@ -2,7 +2,7 @@
 
 `repo:ardupilot/methodicconfigurator` - <https://github.com/ArduPilot/MethodicConfigurator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 173 | Python | GPL-3.0 | 2026-11-09 | False | production | low |
 
@@ -10,7 +10,7 @@ Guided step-by-step parameter configuration tool for ArduPilot vehicles; the seq
 
 **Why it matters:** Reduces setup mistakes on new airframes, which matter more than code in short builds.
 
-**Hackathon notes:** Use when building physical ArduPilot vehicles.
+**Build notes:** Use when building physical ArduPilot vehicles.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

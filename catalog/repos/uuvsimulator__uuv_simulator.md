@@ -2,7 +2,7 @@
 
 `repo:uuvsimulator/uuv_simulator` - <https://github.com/uuvsimulator/uuv_simulator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 890 | Python | NOASSERTION | 2023-08-08 | True | archived | low |
 
@@ -10,7 +10,7 @@ Gazebo/ROS packages for underwater vehicle simulation with hydrodynamics, thrust
 
 **Why it matters:** Many underwater-nav papers and DAVE build on it; useful for reference models.
 
-**Hackathon notes:** Archived and tied to old ROS/Gazebo; use Stonefish or DAVE instead.
+**Build notes:** Archived and tied to old ROS/Gazebo; use Stonefish or DAVE instead.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md)
 

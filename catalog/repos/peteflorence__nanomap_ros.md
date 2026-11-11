@@ -2,7 +2,7 @@
 
 `repo:peteflorence/nanomap_ros` - <https://github.com/peteflorence/nanomap_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ C++/ROS library that answers obstacle proximity queries from a history of depth 
 
 **Why it matters:** Shows how to make obstacle distance itself uncertainty-aware in the body frame.
 
-**Hackathon notes:** gh api shows license NOASSERTION, last push 2018-06-18. ROS 1. Treat as read-only for a product; borrow the idea, not the code.
+**Build notes:** gh api shows license NOASSERTION, last push 2018-06-18. ROS 1. Treat as read-only for a product; borrow the idea, not the code.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

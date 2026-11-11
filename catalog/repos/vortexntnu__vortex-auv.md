@@ -2,7 +2,7 @@
 
 `repo:vortexntnu/vortex-auv` - <https://github.com/vortexntnu/vortex-auv>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 134 | C++ | MIT | 2026-11-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Guidance, navigation and control software from NTNU's student Vortex team for co
 
 **Why it matters:** A complete, actively maintained student AUV GNC stack to borrow structure from.
 
-**Hackathon notes:** ROS 2 workspace; sim integration via their companion repos.
+**Build notes:** ROS 2 workspace; sim integration via their companion repos.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

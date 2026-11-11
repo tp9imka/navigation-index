@@ -2,7 +2,7 @@
 
 `repo:zhuge2333/4dradarslam` - <https://github.com/zhuge2333/4DRadarSLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 316 | C++ | GPL-3.0 | 2023-11-01 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@
 
 **Why it matters:** One of the few full SLAM pipelines for 4D imaging radar, the all-weather sensor for ground vehicles.
 
-**Hackathon notes:** ROS 1; structured like hdl_graph_slam. Test on their dataset first.
+**Build notes:** ROS 1; structured like hdl_graph_slam. Test on their dataset first.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

@@ -2,7 +2,7 @@
 
 `repo:gnsscusdr/cu-sdr-collection` - <https://github.com/gnsscusdr/CU-SDR-Collection>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 80 | MATLAB | ? | 2024-09-18 | False | educational | medium |
 
@@ -10,7 +10,7 @@ University of Colorado Boulder collection of MATLAB software-defined GNSS receiv
 
 **Why it matters:** Teaching-grade multi-constellation receivers you can read end to end, from acquisition to tracking and navigation.
 
-**Hackathon notes:** Point the settings file at one of the provided IQ data sets and run. MATLAB licence required; slow on long recordings.
+**Build notes:** Point the settings file at one of the provided IQ data sets and run. MATLAB licence required; slow on long recordings.
 
 **Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

@@ -2,7 +2,7 @@
 
 `repo:ros-realtime/reference-system` - <https://github.com/ros-realtime/reference-system>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 102 | C++ | Apache-2.0 | 2023-09-17 | False | archived | low |
 
@@ -10,7 +10,7 @@ ROS 2 Real-Time Working Group benchmark that simulates an autonomous-driving nod
 
 **Why it matters:** Gives a defensible method for choosing executor and middleware settings on a companion computer instead of defaults.
 
-**Hackathon notes:** Last push 2023-09. Use the method, not the code: copy the measurement approach onto your own graph.
+**Build notes:** Last push 2023-09. Use the method, not the code: copy the measurement approach onto your own graph.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 

@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/wavemap` - <https://github.com/ethz-asl/wavemap>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | active-research | medium |
 
@@ -10,7 +10,7 @@ Multi-resolution occupancy mapping that stores the map as wavelet-compressed oct
 
 **Why it matters:** A CPU-only map with a Python API and an ARM-tested build, which suits a companion computer without a GPU. Handles thin obstacles and large ranges better than a fixed-resolution grid per its RSS 2023 paper.
 
-**Hackathon notes:** License BSD-3-Clause, last push 2024-12-30 (gh api). ROS 2 work sits on an unmerged feature/ros2 branch. The Python package builds from source (no pywavemap on PyPI as of 2026-11-09). Docker files are provided. Not built here.
+**Build notes:** License BSD-3-Clause, last push 2024-12-30 (gh api). ROS 2 work sits on an unmerged feature/ros2 branch. The Python package builds from source (no pywavemap on PyPI as of 2026-11-09). Docker files are provided. Not built here.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

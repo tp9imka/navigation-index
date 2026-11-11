@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/vid-dataset` - <https://github.com/ZJU-FAST-Lab/VID-Dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 66 | C++ | AGPL-3.0 | 2026-04-29 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Visual-inertial-dynamical multirotor dataset: stereo/depth camera, hardware-time
 
 **Why it matters:** One of very few open datasets with measured motor speed and current next to IMU and truth, which is exactly what a propulsion-aided estimator needs.
 
-**Hackathon notes:** AGPL-3.0 on the repo. Bags are behind a NAS share link with a password listed in the README; total size not verified. Convert bags to CSV once and cache.
+**Build notes:** AGPL-3.0 on the repo. Bags are behind a NAS share link with a password listed in the README; total size not verified. Convert bags to CSV once and cache.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

@@ -2,7 +2,7 @@
 
 `repo:dfpc-coe/node-cot` - <https://github.com/dfpc-coe/node-cot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 40 | TypeScript | MIT | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ JavaScript/TypeScript library for parsing, building and converting Cursor-on-Tar
 
 **Why it matters:** Quickest way to emit CoT from a Node/web app.
 
-**Hackathon notes:** npm install @tak-ps/node-cot.
+**Build notes:** npm install @tak-ps/node-cot.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:prl-mushr/hound_core` - <https://github.com/prl-mushr/hound_core>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 17 | Python | BSD-3-Clause | 2026-10-28 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR g
 
 **Why it matters:** Affordable off-road platform with sim-to-real tooling.
 
-**Hackathon notes:** Docker-based install; real hardware optional. BeamNG license needed for sim.
+**Build notes:** Docker-based install; real hardware optional. BeamNG license needed for sim.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

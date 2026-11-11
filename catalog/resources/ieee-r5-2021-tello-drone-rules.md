@@ -20,4 +20,4 @@ Student contest rules (V4, Nov 2020) for an autonomous DJI Tello on a 3 x 3 m gr
 
 - uses: [Tello SDK 2.0 User Guide](../../catalog/resources/tello-sdk-2-user-guide.md)
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

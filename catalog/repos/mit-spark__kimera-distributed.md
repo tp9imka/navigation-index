@@ -2,7 +2,7 @@
 
 `repo:mit-spark/kimera-distributed` - <https://github.com/MIT-SPARK/Kimera-Distributed>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 21 | C++ | ? | 2024-08-17 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Distributed front end of Kimera-Multi: handles the inter-robot communication pro
 
 **Why it matters:** Reusable distributed SLAM back end.
 
-**Hackathon notes:** Used through Kimera-Multi.
+**Build notes:** Used through Kimera-Multi.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

@@ -2,7 +2,7 @@
 
 `repo:geospace-code/pymap3d` - <https://github.com/geospace-code/pymap3d>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 451 | Python | BSD-2-Clause | 2026-06-22 | False | production | high |
 
@@ -10,7 +10,7 @@ Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with 
 
 **Why it matters:** The everyday tool for converting GNSS fixes into a local ENU/NED frame for fusion and planning.
 
-**Hackathon notes:** pip install pymap3d; no compiled deps.
+**Build notes:** pip install pymap3d; no compiled deps.
 
 ## Deep dives
 

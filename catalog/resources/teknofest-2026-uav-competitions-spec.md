@@ -16,4 +16,4 @@ Specification for the International and High School UAV competitions. Rotary-win
 
 **Tags:** `teknofest`, `competition`, `rotary-wing`, `rules`
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

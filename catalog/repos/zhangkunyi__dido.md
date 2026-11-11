@@ -2,7 +2,7 @@
 
 `repo:zhangkunyi/dido` - <https://github.com/zhangkunyi/DIDO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 64 | Python | ? | 2022-10-08 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Code and data for Deep Inertial Quadrotor Dynamical Odometry: networks de-bias t
 
 **Why it matters:** Early open example of mixing quadrotor dynamics with learned inertial estimates in a filter; its data is also the second benchmark used by AI-IO.
 
-**Hackathon notes:** No LICENSE file in the repo, so reuse rights are unclear: use the data for evaluation only and ask the authors before shipping anything derived. Indoor mocap flights only.
+**Build notes:** No LICENSE file in the repo, so reuse rights are unclear: use the data for evaluation only and ask the authors before shipping anything derived. Indoor mocap flights only.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

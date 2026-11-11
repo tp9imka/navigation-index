@@ -16,4 +16,4 @@ Peer-reviewed (IEEE Control Systems Letters 7:3615-3620, per Crossref). Combines
 
 **Tags:** `control-barrier-function`, `composite-cbf`, `theory`, `peer-reviewed`
 
-_Indexed by lane(s): loop-05_
+_Indexed by lane(s): cbf-baselines_

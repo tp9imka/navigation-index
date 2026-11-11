@@ -2,7 +2,7 @@
 
 `repo:akarsh-prabhakara/radarhd` - <https://github.com/akarsh-prabhakara/RadarHD>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 158 | Python | ? | 2025-09-20 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Learns to generate high-resolution, lidar-like point clouds from low-cost single
 
 **Why it matters:** Makes cheap radar usable for mapping and localization in smoke or darkness.
 
-**Hackathon notes:** Pretrained model and data provided; GPU needed.
+**Build notes:** Pretrained model and data provided; GPU needed.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

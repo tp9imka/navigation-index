@@ -2,7 +2,7 @@
 
 `repo:pyproj4/pyproj` - <https://github.com/pyproj4/pyproj>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,237 | Python | MIT | 2026-11-02 | False | production | high |
 
@@ -10,7 +10,7 @@ Python interface to PROJ for CRS definitions, coordinate transformations and geo
 
 **Why it matters:** Default Python tool for lat/lon <-> UTM/ECEF/local conversions in nav prototypes.
 
-**Hackathon notes:** pip install pyproj ships PROJ inside the wheel; reuse a Transformer object for speed.
+**Build notes:** pip install pyproj ships PROJ inside the wheel; reuse a Transformer object for speed.
 
 ## Deep dives
 

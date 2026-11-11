@@ -2,7 +2,7 @@
 
 `repo:hku-mars/point-lio` - <https://github.com/hku-mars/Point-LIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,379 | C++ | NOASSERTION | 2026-06-13 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ High-bandwidth LiDAR-inertial odometry that updates the state point by point, to
 
 **Why it matters:** Handles violent motion (agile drones, vibration) where frame-based LIO breaks.
 
-**Hackathon notes:** Same ecosystem as FAST-LIO; try when FAST-LIO diverges on aggressive motion.
+**Build notes:** Same ecosystem as FAST-LIO; try when FAST-LIO diverges on aggressive motion.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

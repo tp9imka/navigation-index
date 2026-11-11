@@ -2,7 +2,7 @@
 
 `repo:lizhipro/kf-homoval` - <https://github.com/lizhipro/KF-HomoVAL>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 7 | Python | MIT | 2026-08-17 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@
 
 **Why it matters:** Homography-based registration gives full pose, not just a location, which helps when the camera is not nadir.
 
-**Hackathon notes:** Pair with the STHN family for comparison; expect to retrain on your imagery.
+**Build notes:** Pair with the STHN family for comparison; expect to retrain on your imagery.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

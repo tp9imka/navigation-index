@@ -2,7 +2,7 @@
 
 `repo:spencerfolk/rotorpy` - <https://github.com/spencerfolk/rotorpy>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 326 | Python | MIT | 2026-09-07 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python multirotor simulator with aerodynamic effects (drag, wind) for education 
 
 **Why it matters:** Good for studying estimator and controller behaviour under wind and disturbances without a game engine.
 
-**Hackathon notes:** pip installable, runs on a laptop. Has IMU and mocap-style sensor models; add your own estimator in Python.
+**Build notes:** pip installable, runs on a laptop. Has IMU and mocap-style sensor models; add your own estimator in Python.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Python multirotor simulator with aerodynamic effects (drag, wind) for education 
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [mav_trajectory_generation](../../catalog/repos/ethz-asl__mav_trajectory_generation.md) (alternative_to)

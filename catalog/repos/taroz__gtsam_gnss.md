@@ -2,7 +2,7 @@
 
 `repo:taroz/gtsam_gnss` - <https://github.com/taroz/gtsam_gnss>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 138 | C++ | MIT | 2026-05-23 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Custom GTSAM factors and MATLAB wrappers for GNSS factor-graph positioning, incl
 
 **Why it matters:** Factor graphs are a robust way to fuse GNSS with other sensors and reject outliers.
 
-**Hackathon notes:** Requires the author's GTSAM fork and MATLAB; under active development.
+**Build notes:** Requires the author's GTSAM fork and MATLAB; under active development.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 

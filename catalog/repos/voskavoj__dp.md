@@ -2,7 +2,7 @@
 
 `repo:voskavoj/dp` - <https://github.com/voskavoj/DP>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5 | TeX | ? | 2024-07-29 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Diploma thesis materials on signals-of-opportunity positioning from LEO satellit
 
 **Why it matters:** Readable derivation plus code for Doppler positioning from LEO constellations.
 
-**Hackathon notes:** Use as the math reference for a Doppler-positioning simulator.
+**Build notes:** Use as the math reference for a Doppler-positioning simulator.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 

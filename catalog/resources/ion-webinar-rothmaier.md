@@ -20,7 +20,7 @@ Stanford work on detecting spoofing from spatial signal characteristics (angle-o
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 

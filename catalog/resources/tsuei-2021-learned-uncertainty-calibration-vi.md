@@ -9,7 +9,7 @@ ICRA 2021. Observes that EKF means are accurate while covariances are not, and t
 ## Key takeaways
 
 - VIO covariance error is systematic, so it can be calibrated from logged flights
-- Implies a cheap fix: fit an inflation from Day 1 recordings against a reference
+- Implies a cheap fix: fit an inflation from your first recordings against a reference
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

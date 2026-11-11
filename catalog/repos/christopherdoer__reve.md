@@ -2,7 +2,7 @@
 
 `repo:christopherdoer/reve` - <https://github.com/christopherdoer/reve>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 125 | Fortran | GPL-3.0 | 2022-07-03 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Radar Ego Velocity Estimator: robust 3D ego-velocity from 4D mmWave radar Dopple
 
 **Why it matters:** Radar velocity works in smoke, fog and darkness, a strong aid for GNSS-denied drones.
 
-**Hackathon notes:** ROS1; run on the provided datasets, pairs with christopherdoer/rio.
+**Build notes:** ROS1; run on the provided datasets, pairs with christopherdoer/rio.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

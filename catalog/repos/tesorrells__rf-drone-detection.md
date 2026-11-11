@@ -2,7 +2,7 @@
 
 `repo:tesorrells/rf-drone-detection` - <https://github.com/tesorrells/RF-Drone-Detection>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 226 | Python | ? | 2025-05-21 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Georgia Tech student project on passive RF drone detection: a wifi_monitor.py sc
 
 **Why it matters:** Shows a cheap passive RF detection path for drones that use Wi-Fi links.
 
-**Hackathon notes:** Needs root and a monitor-mode Wi-Fi adapter (tested on 2.4 GHz only, Ubuntu 18.04). It only matches two DJI OUI prefixes, so it misses non-Wi-Fi links and is trivially spoofed. No licence file.
+**Build notes:** Needs root and a monitor-mode Wi-Fi adapter (tested on 2.4 GHz only, Ubuntu 18.04). It only matches two DJI OUI prefixes, so it misses non-Wi-Fi links and is trivially spoofed. No licence file.
 
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 

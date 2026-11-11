@@ -10,11 +10,11 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 
 ## Guides (5)
 
-- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for an autonomous flight navigation task (details not yet known at the time).
 - [H3: adapt a navigation model only when the data identify it](../../docs/hypotheses/h3-selective-adaptation.md) - Status: conditional synthetic benefit after observable model change.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms: 1.
 - [Paper digests](../../docs/paper-digests/README.md) - Use this when you are about to build on a published method and need its real results, limits, code and license before you commit.
-- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Some briefs say the winning team may take its solution towards real-world implementation.
 
 ## Repositories (78)
 

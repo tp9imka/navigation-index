@@ -2,7 +2,7 @@
 
 `repo:uwcubesat/lost` - <https://github.com/UWCubeSat/lost>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 92 | C++ | ? | 2026-11-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Open-source star tracker (C++) covering centroiding, star identification and att
 
 **Why it matters:** Compiled, modular alternative for embedded targets.
 
-**Hackathon notes:** Build with make; it can generate synthetic star images for testing (no real test images ship in the repo).
+**Build notes:** Build with make; it can generate synthetic star images for testing (no real test images ship in the repo).
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 

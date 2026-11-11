@@ -2,7 +2,7 @@
 
 `repo:mlichvar/ntpperf` - <https://github.com/mlichvar/ntpperf>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 79 | C | GPL-2.0 | 2026-11-02 | False | production | low |
 
@@ -10,7 +10,7 @@ Load generator for NTP servers and PTP masters by chrony's author: simulates man
 
 **Why it matters:** Tests whether a time server stays accurate under request floods - a denial-of-service angle on timing infrastructure.
 
-**Hackathon notes:** Needs a dedicated link and routing so responses come back to the test host. Lab tool, not demo material.
+**Build notes:** Needs a dedicated link and routing so responses come back to the test host. Lab tool, not demo material.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

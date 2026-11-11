@@ -2,7 +2,7 @@
 
 `repo:tmboc/softgnss` - <https://github.com/TMBOC/SoftGNSS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 92 | MATLAB | GPL-2.0 | 2022-06-21 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with u
 
 **Why it matters:** The receiver code that accompanies the standard textbook on software GPS receivers; the canonical teaching codebase.
 
-**Hackathon notes:** Good for learning acquisition and tracking loops on a sample data file.
+**Build notes:** Good for learning acquisition and tracking loops on a sample data file.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

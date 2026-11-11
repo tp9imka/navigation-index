@@ -2,7 +2,7 @@
 
 `repo:olliw42/mlrs` - <https://github.com/olliw42/mLRS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 632 | C | GPL-3.0 | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ LoRa-based bidirectional link carrying RC and full MAVLink serial data on 2.4 GH
 
 **Why it matters:** Combines control and telemetry over long-range LoRa for ArduPilot/PX4, which is useful where Wi-Fi links fail.
 
-**Hackathon notes:** Supports several off-the-shelf modules; read the hardware list first.
+**Build notes:** Supports several off-the-shelf modules; read the hardware list first.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 

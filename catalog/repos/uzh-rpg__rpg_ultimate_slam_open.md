@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_ultimate_slam_open` - <https://github.com/uzh-rpg/rpg_ultimate_slam_open>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 336 | C++ | GPL-3.0 | 2025-03-18 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Open-source release of Ultimate SLAM, combining events, standard frames and IMU 
 
 **Why it matters:** Template for fusing event cameras with frames and IMU for robust flight state estimation.
 
-**Hackathon notes:** ROS 1 / catkin; test on event datasets before buying hardware.
+**Build notes:** ROS 1 / catkin; test on event datasets before buying hardware.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

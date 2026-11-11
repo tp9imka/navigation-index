@@ -2,7 +2,7 @@
 
 `repo:mavlink/mavros` - <https://github.com/mavlink/mavros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,249 | C++ | NOASSERTION | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 
 **Why it matters:** Standard glue between ROS-based VIO/SLAM and a flight controller for GPS-denied navigation.
 
-**Hackathon notes:** apt install ros-<distro>-mavros, then run install_geographiclib_datasets.sh; current MAVROS targets ROS 2 (Humble and newer). Feed your odometry into /mavros/vision_pose/pose.
+**Build notes:** apt install ros-<distro>-mavros, then run install_geographiclib_datasets.sh; current MAVROS targets ROS 2 (Humble and newer). Feed your odometry into /mavros/vision_pose/pose.
 
 ## Deep dives
 
@@ -33,8 +33,8 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

@@ -2,7 +2,7 @@
 
 `repo:hku-mars/marsim` - <https://github.com/hku-mars/MARSIM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 595 | C++ | GPL-2.0 | 2025-10-25 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Lightweight point-realistic lidar simulator for UAVs from HKU MaRS, supporting r
 
 **Why it matters:** Fast way to test lidar-based UAV navigation and planning without a full game-engine sim.
 
-**Hackathon notes:** ROS based; runs on CPU or modest GPU. Pairs well with FAST-LIO-style stacks.
+**Build notes:** ROS based; runs on CPU or modest GPU. Pairs well with FAST-LIO-style stacks.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

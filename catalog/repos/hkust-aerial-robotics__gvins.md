@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/gvins` - <https://github.com/HKUST-Aerial-Robotics/GVINS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,171 | C++ | GPL-3.0 | 2021-09-11 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 **Why it matters:** Shows how raw GNSS measurements degrade gracefully into VIO when satellites are blocked, a core pattern for contested or urban PNT.
 
-**Hackathon notes:** ROS1 (Melodic/Noetic) only; run on the GVINS dataset bags. Porting to ROS 2 is non-trivial.
+**Build notes:** ROS1 (Melodic/Noetic) only; run on the GVINS dataset bags. Porting to ROS 2 is non-trivial.
 
 ## Deep dives
 
@@ -30,8 +30,8 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [gnss_comm](../../catalog/repos/hkust-aerial-robotics__gnss_comm.md) (same_org)
 - [GVINS dataset](../../catalog/repos/hkust-aerial-robotics__gvins-dataset.md) (evaluated_on)
 

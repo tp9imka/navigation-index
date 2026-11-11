@@ -2,7 +2,7 @@
 
 `repo:missioncommand/mil-sym-ts` - <https://github.com/missioncommand/mil-sym-ts>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 32 | TypeScript | Apache-2.0 | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology
 
 **Why it matters:** Standard-conformant symbols are the expected visual language for any common operational picture or C2 demo.
 
-**Hackathon notes:** npm package; render SIDC codes to SVG/canvas and drop onto Leaflet/Cesium/OpenLayers layers. Multi-point graphics need control-point ordering per the standard.
+**Build notes:** npm package; render SIDC codes to SVG/canvas and drop onto Leaflet/Cesium/OpenLayers layers. Multi-point graphics need control-point ordering per the standard.
 
 ## Deep dives
 

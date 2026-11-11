@@ -2,7 +2,7 @@
 
 `repo:tixiaoshan/lio-sam` - <https://github.com/TixiaoShan/LIO-SAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,973 | C++ | BSD-3-Clause | 2025-02-14 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optiona
 
 **Why it matters:** Popular LIO with built-in GNSS factors; the template for LiDAR+INS+intermittent GNSS.
 
-**Hackathon notes:** ROS 1 main branch, community ROS 2 branch. Needs a 9-axis IMU and careful extrinsics.
+**Build notes:** ROS 1 main branch, community ROS 2 branch. Needs a 9-axis IMU and careful extrinsics.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optiona
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

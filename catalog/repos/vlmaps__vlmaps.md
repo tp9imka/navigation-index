@@ -2,7 +2,7 @@
 
 `repo:vlmaps/vlmaps` - <https://github.com/vlmaps/vlmaps>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 732 | Python | MIT | 2024-07-09 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Builds visual-language maps by fusing pretrained visual-language features into a
 
 **Why it matters:** Language-queryable maps are a natural interface for operators tasking robots.
 
-**Hackathon notes:** Habitat-based data; GPU needed for feature extraction.
+**Build notes:** Habitat-based data; GPU needed for feature extraction.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

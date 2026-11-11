@@ -2,7 +2,7 @@
 
 `repo:sjtu-visys-team/ai-io` - <https://github.com/SJTU-ViSYS-team/AI-IO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 87 | Python | MIT | 2026-07-27 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU d
 
 **Why it matters:** The most recent open code that treats the propulsion system as a sensor: the paper (ICRA 2026) reports rotor speed improves velocity prediction accuracy by 36.9%. MIT license makes it usable for a product prototype.
 
-**Hackathon notes:** Dataset is a 363 MB GitHub release asset (AI-IO_dataset.tar.gz) plus a 0.9 MB checkpoint, so it downloads in minutes. Train/eval scripts are single commands; training time and GPU need not measured here. Use its velocity output as a pseudo-measurement in an existing EKF; an IMU-only ablation gives the rotor-speed delta.
+**Build notes:** Dataset is a 363 MB GitHub release asset (AI-IO_dataset.tar.gz) plus a 0.9 MB checkpoint, so it downloads in minutes. Train/eval scripts are single commands; training time and GPU need not measured here. Use its velocity output as a pseudo-measurement in an existing EKF; an IMU-only ablation gives the rotor-speed delta.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

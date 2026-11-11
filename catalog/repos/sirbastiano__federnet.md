@@ -2,7 +2,7 @@
 
 `repo:sirbastiano/federnet` - <https://github.com/sirbastiano/FederNet>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6 | Jupyter Notebook | ? | 2022-10-19 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Terrain relative navigation for planetary landing that detects craters with a Ma
 
 **Why it matters:** Crater-based TRN, the space analogue of map-matching navigation.
 
-**Hackathon notes:** Thesis code; TensorFlow 2 and pretrained weights needed.
+**Build notes:** Thesis code; TensorFlow 2 and pretrained weights needed.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 

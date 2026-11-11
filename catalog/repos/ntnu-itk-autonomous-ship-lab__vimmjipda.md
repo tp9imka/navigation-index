@@ -2,7 +2,7 @@
 
 `repo:ntnu-itk-autonomous-ship-lab/vimmjipda` - <https://github.com/ntnu-itk-autonomous-ship-lab/vimmjipda>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 | Python | MIT | 2025-12-04 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Interface that runs the VIMMJIPDA multi-target tracker (visibility, interacting 
 
 **Why it matters:** A maritime-grade multi-target tracker connected to a collision avoidance loop, closing the sense-track-avoid chain.
 
-**Hackathon notes:** Install with uv alongside colav-simulator; the VIMMJIPDA core tracker code is vendored in vimmjipda/code (also published on Code Ocean).
+**Build notes:** Install with uv alongside colav-simulator; the VIMMJIPDA core tracker code is vendored in vimmjipda/code (also published on Code Ocean).
 
 **Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 

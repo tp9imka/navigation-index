@@ -2,7 +2,7 @@
 
 `repo:i2nav-whu/le-vins` - <https://github.com/i2Nav-WHU/LE-VINS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 200 | C++ | GPL-3.0 | 2026-06-25 | False | active-research | low |
 
@@ -10,7 +10,7 @@ INS-centric visual-inertial navigation with LiDAR depth enhancement for visual f
 
 **Why it matters:** Shows LiDAR-aided VIO in the same INS-centric architecture as IC-GVINS.
 
-**Hackathon notes:** Needs camera+LiDAR+IMU data; research code.
+**Build notes:** Needs camera+LiDAR+IMU data; research code.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

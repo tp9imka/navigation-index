@@ -2,7 +2,7 @@
 
 `repo:hku-mars/r3live` - <https://github.com/hku-mars/r3live>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,489 | C++ | GPL-2.0 | 2025-12-04 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package
 
 **Why it matters:** Produces dense colored maps useful for operator displays and mapping.
 
-**Hackathon notes:** ROS 1, heavy on dependencies; FAST-LIVO2 is the newer alternative. Licence: GPLv2 but the README allows it free only for personal and academic use; commercial use needs a separately negotiated licence.
+**Build notes:** ROS 1, heavy on dependencies; FAST-LIVO2 is the newer alternative. Licence: GPLv2 but the README allows it free only for personal and academic use; commercial use needs a separately negotiated licence.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

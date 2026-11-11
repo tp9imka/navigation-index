@@ -2,7 +2,7 @@
 
 `repo:mit-spark/kimera-rpgo` - <https://github.com/MIT-SPARK/Kimera-RPGO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 575 | C++ | BSD-2-Clause | 2026-10-09 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Robust pose-graph optimization that rejects bad loop closures via pairwise consi
 
 **Why it matters:** Outlier-robust loop closure is what keeps a long GNSS-denied mission from corrupting its map; reusable outside Kimera.
 
-**Hackathon notes:** Small library; feed it any odometry + loop closure edges. Good drop-in back end for a custom front end.
+**Build notes:** Small library; feed it any odometry + loop closure edges. Good drop-in back end for a custom front end.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
@@ -24,7 +24,7 @@ Robust pose-graph optimization that rejects bad loop closures via pairwise consi
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md) (depends_on)
 - [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../../catalog/resources/kimera-rosinol-2019.md) (has_code)
 

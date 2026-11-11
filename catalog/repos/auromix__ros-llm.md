@@ -2,7 +2,7 @@
 
 `repo:auromix/ros-llm` - <https://github.com/Auromix/ROS-LLM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 833 | Python | Apache-2.0 | 2023-07-10 | False | archived | low |
 
@@ -10,7 +10,7 @@ Framework for natural-language interaction with ROS robots, letting an LLM call 
 
 **Why it matters:** Earlier ROS-native LLM integration; useful comparison to MCP-based designs.
 
-**Hackathon notes:** Not updated since 2023; prefer ROSA or the MCP servers for new work.
+**Build notes:** Not updated since 2023; prefer ROSA or the MCP servers for new work.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

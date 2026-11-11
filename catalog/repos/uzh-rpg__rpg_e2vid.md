@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_e2vid` - <https://github.com/uzh-rpg/rpg_e2vid>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 436 | Python | GPL-3.0 | 2021-12-05 | False | archived | low |
 
@@ -10,7 +10,7 @@ Reconstructs intensity video from event streams with a recurrent network, enabli
 
 **Why it matters:** Bridge that lets standard VO/feature pipelines consume event camera data.
 
-**Hackathon notes:** Pretrained model; PyTorch.
+**Build notes:** Pretrained model; PyTorch.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

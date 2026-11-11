@@ -2,7 +2,7 @@
 
 `repo:ardupilot/apm_planner` - <https://github.com/ArduPilot/apm_planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 553 | C++ | NOASSERTION | 2026-04-18 | False | archived | low |
 
@@ -10,7 +10,7 @@ Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.
 
 **Why it matters:** Alternative GCS mainly of historical interest.
 
-**Hackathon notes:** Prefer QGroundControl or Mission Planner.
+**Build notes:** Prefer QGroundControl or Mission Planner.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

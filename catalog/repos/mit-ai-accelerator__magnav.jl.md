@@ -2,7 +2,7 @@
 
 `repo:mit-ai-accelerator/magnav.jl` - <https://github.com/MIT-AI-Accelerator/MagNav.jl>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 185 | Julia | NOASSERTION | 2026-11-09 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 
 **Why it matters:** Official code behind the AFRL/MIT MagNav challenge; magnetic navigation is a leading GNSS-independent, unjammable PNT approach in DIU and AFRL programs.
 
-**Hackathon notes:** Install Julia, Pkg.add("MagNav") and run the documented examples on the challenge flight data; compensation + EKF in a day. The DAF-MIT project has concluded and the package now gets maintenance-only changes, so do not expect fixes for new issues.
+**Build notes:** Install Julia, Pkg.add("MagNav") and run the documented examples on the challenge flight data; compensation + EKF in a day. The DAF-MIT project has concluded and the package now gets maintenance-only changes, so do not expect fixes for new issues.
 
 ## Deep dives
 
@@ -37,13 +37,13 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [AFIT MagNav example data](../../catalog/repos/afit-eeng-magnav__example-data.md) (integrates_with)
 - [DroneMagNav](../../catalog/repos/ajisrawi__dronemagnav.md) (alternative_to)

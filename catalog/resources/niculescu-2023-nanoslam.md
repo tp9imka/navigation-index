@@ -15,4 +15,4 @@ IEEE Internet of Things Journal (doi 10.1109/JIOT.2023.3339254, per arXiv); abst
 
 **Tags:** `nano-uav`, `slam`, `tof`, `peer-reviewed`
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

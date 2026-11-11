@@ -2,7 +2,7 @@
 
 `repo:ros2/ros2_tracing` - <https://github.com/ros2/ros2_tracing>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 273 | Python | Apache-2.0 | 2026-11-03 | False | production | high |
 
@@ -10,7 +10,7 @@ LTTng-based instrumentation for ROS 2: tracepoints in rclcpp/rcl/rmw plus tools 
 
 **Why it matters:** The way to measure, not guess, the camera-to-setpoint latency of a ROS 2 nav pipeline. That number goes straight into EKF2_EV_DELAY / VISO_DELAY_MS and onto the latency-budget slide.
 
-**Hackathon notes:** Linux only (LTTng kernel/userspace packages). Trace a 60 s replay, then report p50/p99 callback latency per node. Pairs with tracetools_analysis notebooks.
+**Build notes:** Linux only (LTTng kernel/userspace packages). Trace a 60 s replay, then report p50/p99 callback latency per node. Pairs with tracetools_analysis notebooks.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 

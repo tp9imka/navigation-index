@@ -2,7 +2,7 @@
 
 `repo:zlab-pub/wifi-ptp` - <https://github.com/zlab-pub/wifi-ptp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 73 | C | ? | 2024-07-01 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi
 
 **Why it matters:** Time sync between drones or ground nodes over Wi-Fi instead of cable.
 
-**Hackathon notes:** Needs Atheros ath9k cards and a kernel rebuild on an old kernel. Cite the idea; do not plan on building it in 48 h.
+**Build notes:** Needs Atheros ath9k cards and a kernel rebuild on an old kernel. Cite the idea; do not plan on building it in 48 h.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

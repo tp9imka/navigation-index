@@ -15,7 +15,7 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 
 ## Guides (4)
 
-- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary reviewers use when they ask whether your solut
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) - What funders publish as navigation problem statements.
 - [Threat model: TODO project name](../../templates/threat-model.md) - Fill at H+0 to H+2, freeze at H+14.
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4

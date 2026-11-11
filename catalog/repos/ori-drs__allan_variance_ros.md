@@ -2,7 +2,7 @@
 
 `repo:ori-drs/allan_variance_ros` - <https://github.com/ori-drs/allan_variance_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 697 | C++ | BSD-3-Clause | 2025-01-23 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and ou
 
 **Why it matters:** Needed to get realistic IMU noise values for any filter or VIO setup.
 
-**Hackathon notes:** Record a few hours of static IMU data before the event; the analysis itself is quick.
+**Build notes:** Record a few hours of static IMU data before the event; the analysis itself is quick.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and ou
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

@@ -2,7 +2,7 @@
 
 `repo:umich-curly/drift` - <https://github.com/UMich-CURLY/drift>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 189 | C++ | BSD-3-Clause | 2026-06-01 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Symmetry-preserving (invariant) state estimation library from University of Mich
 
 **Why it matters:** Maintained InEKF stack for proprioceptive dead reckoning when GNSS and vision are unavailable.
 
-**Hackathon notes:** Has ROS examples; try on a wheeled robot bag for GNSS-free odometry.
+**Build notes:** Has ROS examples; try on a wheeled robot bag for GNSS-free odometry.
 
 ## Deep dives
 
@@ -29,9 +29,9 @@ Symmetry-preserving (invariant) state estimation library from University of Mich
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md) (extends)
 - [The invariant extended Kalman filter as a stable observer](../../catalog/resources/barrau-bonnabel-invariant-ekf.md) (explains)
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) (explains)

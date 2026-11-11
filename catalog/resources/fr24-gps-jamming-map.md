@@ -17,7 +17,7 @@ Flightradar24's map of GNSS interference, computed from navigation integrity cat
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 

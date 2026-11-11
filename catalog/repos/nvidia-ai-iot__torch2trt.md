@@ -2,7 +2,7 @@
 
 `repo:nvidia-ai-iot/torch2trt` - <https://github.com/NVIDIA-AI-IOT/torch2trt>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,887 | Python | MIT | 2024-08-17 | False | production | high |
 
@@ -10,7 +10,7 @@ Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson 
 
 **Why it matters:** Simplest path to fast onboard inference for learned nav models.
 
-**Hackathon notes:** Install on a Jetson with JetPack; not every layer converts - check supported ops.
+**Build notes:** Install on a Jetson with JetPack; not every layer converts - check supported ops.
 
 ## Deep dives
 

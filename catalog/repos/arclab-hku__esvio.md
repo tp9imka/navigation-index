@@ -2,7 +2,7 @@
 
 `repo:arclab-hku/esvio` - <https://github.com/arclab-hku/ESVIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 65 | C++ | GPL-3.0 | 2024-11-09 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Event-based stereo visual-inertial odometry combining stereo event and image str
 
 **Why it matters:** Event cameras keep tracking under fast motion and HDR where frame VIO fails.
 
-**Hackathon notes:** ROS1; run on provided event datasets.
+**Build notes:** ROS1; run on provided event datasets.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

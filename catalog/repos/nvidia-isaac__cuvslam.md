@@ -2,7 +2,7 @@
 
 `repo:nvidia-isaac/cuvslam` - <https://github.com/nvidia-isaac/cuVSLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,900 | C++ | NOASSERTION | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to mu
 
 **Why it matters:** The engine behind Isaac ROS Visual SLAM, now usable directly from Python.
 
-**Hackathon notes:** Download the prebuilt wheel (cuvslam-cu12 or -cu13) from the GitHub releases page, not PyPI; wheels cover x86_64, Jetson Orin (JetPack 6) and Jetson Thor with Python 3.10+, other combos need a source build. Needs CUDA Toolkit libraries; examples include EuRoC and KITTI.
+**Build notes:** Download the prebuilt wheel (cuvslam-cu12 or -cu13) from the GitHub releases page, not PyPI; wheels cover x86_64, Jetson Orin (JetPack 6) and Jetson Thor with Python 3.10+, other combos need a source build. Needs CUDA Toolkit libraries; examples include EuRoC and KITTI.
 
 ## Deep dives
 
@@ -32,12 +32,12 @@ NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to mu
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (depends_on)
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../../catalog/resources/cuvslam-2025.md) (has_code)

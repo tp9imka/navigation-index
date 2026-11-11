@@ -2,7 +2,7 @@
 
 `repo:nickrehm/drehmflight` - <https://github.com/nickrehm/dRehmFlight>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,476 | C++ | GPL-3.0 | 2025-01-20 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft
 
 **Why it matters:** Easiest flight-control code to understand end to end; good for teaching attitude estimation (Madgwick) and control loops in a weekend.
 
-**Hackathon notes:** Flash to a Teensy with an MPU6050/9250 IMU; no navigation or MAVLink, so pair with a companion for anything beyond stabilisation.
+**Build notes:** Flash to a Teensy with an MPU6050/9250 IMU; no navigation or MAVLink, so pair with a companion for anything beyond stabilisation.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

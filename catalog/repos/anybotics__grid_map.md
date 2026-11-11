@@ -2,7 +2,7 @@
 
 `repo:anybotics/grid_map` - <https://github.com/ANYbotics/grid_map>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,270 | C++ | BSD-3-Clause | 2026-01-13 | False | production | high |
 
@@ -10,7 +10,7 @@ C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for 
 
 **Why it matters:** Standard data structure for terrain-aware off-road navigation.
 
-**Hackathon notes:** apt install ros-<distro>-grid-map; convert DEMs or point clouds to layers quickly.
+**Build notes:** apt install ros-<distro>-grid-map; convert DEMs or point clouds to layers quickly.
 
 ## Deep dives
 

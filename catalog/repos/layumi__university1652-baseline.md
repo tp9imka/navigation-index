@@ -2,7 +2,7 @@
 
 `repo:layumi/university1652-baseline` - <https://github.com/layumi/University1652-Baseline>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 700 | Python | MIT | 2026-10-07 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Dataset and baseline code for drone-based geo-localization across drone, satelli
 
 **Why it matters:** The standard drone-to-satellite retrieval benchmark; most cross-view papers report on it.
 
-**Hackathon notes:** Dataset is sent on emailed request from an academic address, after agreeing to research-only use, no sharing with third parties and no profit (Request.md); the synthetic drone views are building-centric, not wide-area terrain.
+**Build notes:** Dataset is sent on emailed request from an academic address, after agreeing to research-only use, no sharing with third parties and no profit (Request.md); the synthetic drone views are building-centric, not wide-area terrain.
 
 ## Deep dives
 

@@ -21,4 +21,4 @@ Bitcraze blog post on how the Flow deck v2 estimates position by dead reckoning 
 - explains: [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md)
 - explains: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
-_Indexed by lane(s): loop-23_
+_Indexed by lane(s): crazyflie-sensing_

@@ -2,7 +2,7 @@
 
 `repo:airvln/airvln` - <https://github.com/AirVLN/AirVLN>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 400 | Python | ? | 2026-03-25 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Benchmark and simulator (AirSim/UE-based) for vision-and-language navigation by 
 
 **Why it matters:** The first widely used aerial VLN benchmark; baseline for language-commanded drone navigation.
 
-**Hackathon notes:** Large simulator assets; plan download time. Linux + GPU.
+**Build notes:** Large simulator assets; plan download time. Linux + GPU.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

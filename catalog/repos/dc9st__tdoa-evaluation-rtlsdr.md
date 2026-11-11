@@ -2,7 +2,7 @@
 
 `repo:dc9st/tdoa-evaluation-rtlsdr` - <https://github.com/DC9ST/tdoa-evaluation-rtlsdr>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 104 | MATLAB | ? | 2020-10-30 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ MATLAB scripts that localize a transmitter by TDOA from three RTL-SDR receivers,
 
 **Why it matters:** Shows that distributed RF sensing needs nanosecond-level relative timing and one way to get it without GNSS disciplining.
 
-**Hackathon notes:** Three Pis with RTL-SDRs plus the modified librtlsdr; MATLAB or port to Octave/NumPy.
+**Build notes:** Three Pis with RTL-SDRs plus the modified librtlsdr; MATLAB or port to Octave/NumPy.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 

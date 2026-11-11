@@ -2,7 +2,7 @@
 
 `repo:eprosima/micro-xrce-dds-agent` - <https://github.com/eProsima/Micro-XRCE-DDS-Agent>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 212 | C++ | Apache-2.0 | 2026-09-03 | False | production | medium |
 
@@ -10,7 +10,7 @@ Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 
 
 **Why it matters:** Core link in the PX4 and ArduPilot ROS 2 (DDS) paths.
 
-**Hackathon notes:** Install via snap or build from source; run MicroXRCEAgent udp4 -p 8888 for SITL.
+**Build notes:** Install via snap or build from source; run MicroXRCEAgent udp4 -p 8888 for SITL.
 
 ## Deep dives
 

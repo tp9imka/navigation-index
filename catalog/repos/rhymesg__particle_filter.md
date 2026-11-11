@@ -2,7 +2,7 @@
 
 `repo:rhymesg/particle_filter` - <https://github.com/rhymesg/Particle_Filter>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 36 | MATLAB | MIT | 2026-09-27 | False | educational | medium |
 
@@ -10,7 +10,7 @@ MATLAB particle filtering examples for terrain-referenced navigation, comparing 
 
 **Why it matters:** Directly addresses the ambiguous-terrain problem that breaks naive TRN.
 
-**Hackathon notes:** Runs in MATLAB with simulated terrain; port the update logic to Python for a DEM demo.
+**Build notes:** Runs in MATLAB with simulated terrain; port the update logic to Python for a DEM demo.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

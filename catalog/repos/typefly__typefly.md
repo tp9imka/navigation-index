@@ -2,7 +2,7 @@
 
 `repo:typefly/typefly` - <https://github.com/typefly/TypeFly>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 119 | Python | Apache-2.0 | 2026-07-08 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ LLM-based robot control framework: an OpenAI model turns a natural-language requ
 
 **Why it matters:** Shows how to constrain LLM output into a small, verifiable command language for drones, cutting latency and risk.
 
-**Hackathon notes:** `pip install -e .`, add an OpenAI key and run `typefly-run`; the default virtual robot uses a webcam, so no hardware is needed. A Tello needs both a Wi-Fi and an ethernet adapter. Swap in a MAVSDK-based robot wrapper to target PX4.
+**Build notes:** `pip install -e .`, add an OpenAI key and run `typefly-run`; the default virtual robot uses a webcam, so no hardware is needed. A Tello needs both a Wi-Fi and an ethernet adapter. Swap in a MAVSDK-based robot wrapper to target PX4.
 
 ## Deep dives
 

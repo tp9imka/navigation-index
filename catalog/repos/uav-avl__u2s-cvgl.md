@@ -2,7 +2,7 @@
 
 `repo:uav-avl/u2s-cvgl` - <https://github.com/UAV-AVL/U2S-CVGL>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 24 | Python | ? | 2026-03-12 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Scale-aware cross-view geo-localization method for matching UAV views to satelli
 
 **Why it matters:** Scale mismatch is one of the main failure modes when flight altitude is uncertain; this targets it directly.
 
-**Hackathon notes:** Research code; useful if your demo flies at varying altitudes and fixed-scale tiles break.
+**Build notes:** Research code; useful if your demo flies at varying altitudes and fixed-scale tiles break.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

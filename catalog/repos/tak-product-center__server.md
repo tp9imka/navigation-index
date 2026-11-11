@@ -2,7 +2,7 @@
 
 `repo:tak-product-center/server` - <https://github.com/tak-product-center/server>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 709 | Java | NOASSERTION | 2026-04-03 | False | production | medium |
 
@@ -10,7 +10,7 @@ Open-source release of the TAK Server from the TAK Product Center: the federatio
 
 **Why it matters:** Reference C2 backend used by many government users; integrating with it makes a demo interoperable with fielded TAK clients.
 
-**Hackathon notes:** Java + PostgreSQL + certificate setup is the main hurdle; use a docker recipe and allow several hours.
+**Build notes:** Java + PostgreSQL + certificate setup is the main hurdle; use a docker recipe and allow several hours.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

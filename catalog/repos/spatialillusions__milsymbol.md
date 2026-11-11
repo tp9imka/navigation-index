@@ -2,7 +2,7 @@
 
 `repo:spatialillusions/milsymbol` - <https://github.com/spatialillusions/milsymbol>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 821 | JavaScript | MIT | 2026-10-27 | False | production | high |
 
@@ -10,7 +10,7 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 **Why it matters:** Renders correct unit and track symbology on any web map without licensed assets.
 
-**Hackathon notes:** npm install milsymbol; new ms.Symbol(sidc).asSVG() drops straight into a Leaflet or MapLibre marker.
+**Build notes:** npm install milsymbol; new ms.Symbol(sidc).asSVG() drops straight into a Leaflet or MapLibre marker.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
 - [Joint Military Symbology XML](../../catalog/repos/esri__joint-military-symbology-xml.md) (alternative_to)

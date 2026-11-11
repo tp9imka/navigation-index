@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/terrain-navigation2` - <https://github.com/ethz-asl/terrain-navigation2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 59 | C++ | BSD-3-Clause | 2026-10-02 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT*
 
 **Why it matters:** The closest open match to fixed-wing terrain-following route planning, and it already consumes a DEM, the same input the hub's TRN samples use.
 
-**Hackathon notes:** License BSD-3-Clause (gh api), commercial-friendly. Last push 2026-10-02. Build and run not attempted here; expect a ROS 2 + grid_map + OMPL workspace. The planner core is the asset: swap its cost for TRN information to get a localisability-aware route.
+**Build notes:** License BSD-3-Clause (gh api), commercial-friendly. Last push 2026-10-02. Build and run not attempted here; expect a ROS 2 + grid_map + OMPL workspace. The planner core is the asset: swap its cost for TRN information to get a localisability-aware route.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:thien94/vision_to_mavros` - <https://github.com/thien94/vision_to_mavros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 295 | Python | GPL-3.0 | 2022-10-28 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 
 **Why it matters:** Proven recipe for feeding vision-based localisation into ArduPilot EKF3 for GPS-denied flight; came out of GSoC work.
 
-**Hackathon notes:** Old (2022) but simple; adapt the non-ROS T265 script to any VIO source.
+**Build notes:** Old (2022) but simple; adapt the non-ROS T265 script to any VIO source.
 
 ## Deep dives
 
@@ -30,8 +30,8 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

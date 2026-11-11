@@ -2,7 +2,7 @@
 
 `repo:plansys2/ros2_planning_system` - <https://github.com/plansys2/ros2_planning_system>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 495 | C++ | Apache-2.0 | 2026-10-30 | False | production | medium |
 
@@ -10,7 +10,7 @@ PDDL-based symbolic planning system for ROS 2: domain/problem management, plan g
 
 **Why it matters:** Turns high-level mission goals (visit, inspect, deliver) into executable action sequences, the missing layer above Nav2.
 
-**Hackathon notes:** apt-installable; write a PDDL domain and wrap Nav2 goals as actions. Learning PDDL is the time cost.
+**Build notes:** apt-installable; write a PDDL domain and wrap Nav2 goals as actions. Learning PDDL is the time cost.
 
 **Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

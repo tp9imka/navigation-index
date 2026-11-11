@@ -2,7 +2,7 @@
 
 `repo:univaasadigieco/vaara` - <https://github.com/UniVaasaDigiEco/VAARA>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2 |  | ? | 2026-04-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in
 
 **Why it matters:** Second independent real-world interference dataset, useful for cross-dataset validation of detectors.
 
-**Hackathon notes:** Check README for which batches are released; pair with the Jammertest plan for labels.
+**Build notes:** Check README for which batches are released; pair with the Jammertest plan for labels.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md) (alternative_to)
 - [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md) (integrates_with)

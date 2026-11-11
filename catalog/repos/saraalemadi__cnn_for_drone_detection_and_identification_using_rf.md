@@ -2,7 +2,7 @@
 
 `repo:saraalemadi/cnn_for_drone_detection_and_identification_using_rf` - <https://github.com/saraalemadi/CNN_for_drone_detection_and_identification_using_RF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 21 | Python | GPL-3.0 | 2020-06-22 | False | archived | low |
 
@@ -10,7 +10,7 @@ CNN code for drone detection and identification on RF spectra.
 
 **Why it matters:** Simple CNN baseline for RF drone ID.
 
-**Hackathon notes:** Older code (2020): three Keras scripts that read DroneRF's RF_Data.csv and use the old keras.layers.core API; use as reference only.
+**Build notes:** Older code (2020): three Keras scripts that read DroneRF's RF_Data.csv and use the old keras.layers.core API; use as reference only.
 
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 

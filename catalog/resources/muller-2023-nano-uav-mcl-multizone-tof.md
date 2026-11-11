@@ -24,4 +24,4 @@ DATE 2023 (venue from the AF-MCL reference list); arXiv full text read. Global M
 
 - [Monte Carlo-Based Indoor UAV Localization in Dynamic Environments Using Only Four Onboard Range Sensors](../../catalog/resources/af-mcl-four-range-uav-2026.md) (cites)
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

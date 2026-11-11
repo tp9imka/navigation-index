@@ -27,12 +27,11 @@ The samples/golden-demo v2 scenario on PX4 v1.17.0 SIH in Docker. A pymavlink co
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [Slides outline](../../templates/pitch/slides-outline.md) (mentions)
 - [Story bank](../../templates/pitch/story-bank.md) (mentions)

@@ -2,7 +2,7 @@
 
 `repo:grupo-semear-usp/swarm_in_blocks` - <https://github.com/Grupo-SEMEAR-USP/swarm_in_blocks>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | JavaScript | ? | 2023-06-09 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Block-programming and web control platform for drone swarms on COEX Clover (ROS,
 
 **Why it matters:** Example of a winning open CopterHack project.
 
-**Hackathon notes:** No licence (all rights reserved). Runs on the Clover Gazebo simulation; the real-swarm mode is barely tested.
+**Build notes:** No licence (all rights reserved). Runs on the Clover Gazebo simulation; the real-swarm mode is barely tested.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

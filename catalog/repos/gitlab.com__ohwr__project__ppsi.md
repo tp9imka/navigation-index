@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ohwr/project/ppsi` - <https://gitlab.com/ohwr/project/ppsi>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ Portable PTP stack ('PTP Ported to Silicon') used in White Rabbit nodes and swit
 
 **Why it matters:** A PTP stack that runs on soft-core CPUs, with the White Rabbit extension.
 
-**Hackathon notes:** Read for embedded PTP design.
+**Build notes:** Read for embedded PTP design.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

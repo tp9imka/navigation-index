@@ -2,7 +2,7 @@
 
 `repo:byu-magicc/mavsim_public` - <https://github.com/byu-magicc/mavsim_public>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,045 | Python | GPL-3.0 | 2026-06-13 | False | educational | high |
 
@@ -10,7 +10,7 @@ Project files for Beard and McLain's 'Small Unmanned Aircraft: Theory and Practi
 
 **Why it matters:** The most direct pure-Python fixed-wing GNC chain available: estimation, guidance and path planning in one readable codebase, with wind.
 
-**Hackathon notes:** License GPL-3.0 (gh api): fine for a demo, rewrite before productising. Last push 2026-06-13, maintained. Folders confirmed: mavsim_python/planners (dubins_parameters, path_follower, path_manager, rrt_dubins, rrt_straight_line) and controllers (autopilot_tecs, autopilot_lqr). Some files are student templates with blanks to fill; check each module before relying on it. No ROS, no SITL needed.
+**Build notes:** License GPL-3.0 (gh api): fine for a demo, rewrite before productising. Last push 2026-06-13, maintained. Folders confirmed: mavsim_python/planners (dubins_parameters, path_follower, path_manager, rrt_dubins, rrt_straight_line) and controllers (autopilot_tecs, autopilot_lqr). Some files are student templates with blanks to fill; check each module before relying on it. No ROS, no SITL needed.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

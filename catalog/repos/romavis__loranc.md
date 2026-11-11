@@ -2,7 +2,7 @@
 
 `repo:romavis/loranc` - <https://github.com/romavis/LoranC>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 7 | IDL | NOASSERTION | 2014-06-05 | False | archived | low |
 
@@ -10,7 +10,7 @@ Hobby project to build a DSP-based Loran-C receiver that can also lock onto the 
 
 **Why it matters:** One of very few open receivers for low-frequency hyperbolic navigation, the basis of eLoran.
 
-**Hackathon notes:** Hardware reference only, last touched 2014: the loop-antenna preamp and RF front-end schematics are the useful part for an LF receiver build. No signal processing code to reuse.
+**Build notes:** Hardware reference only, last touched 2014: the loop-antenna preamp and RF front-end schematics are the useful part for an LF receiver build. No signal processing code to reuse.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

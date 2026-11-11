@@ -2,7 +2,7 @@
 
 `repo:rasterio/rasterio` - <https://github.com/rasterio/rasterio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,593 | Python | NOASSERTION | 2026-11-03 | False | production | high |
 
@@ -10,7 +10,7 @@ Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, 
 
 **Why it matters:** Easiest way to sample a DEM or orthophoto at a coordinate for terrain-referenced or visual navigation experiments.
 
-**Hackathon notes:** pip wheels include GDAL; use windowed reads to crop tiles around a vehicle position.
+**Build notes:** pip wheels include GDAL; use windowed reads to crop tiles around a vehicle position.
 
 ## Deep dives
 
@@ -30,12 +30,12 @@ Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [elevation](../../catalog/repos/bopen__elevation.md) (integrates_with)
 - [GDAL](../../catalog/repos/osgeo__gdal.md) (integrates_with)

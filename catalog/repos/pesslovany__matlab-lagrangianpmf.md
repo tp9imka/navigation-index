@@ -2,7 +2,7 @@
 
 `repo:pesslovany/matlab-lagrangianpmf` - <https://github.com/pesslovany/Matlab-LagrangianPMF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3 | MATLAB | AGPL-3.0 | 2026-10-30 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ MATLAB implementation of Lagrangian grid-based (point-mass) filters for terrain-
 
 **Why it matters:** State-of-the-art grid filters for terrain-aided navigation that run in real time; a strong alternative to particle filters for radar-altimeter TRN.
 
-**Hackathon notes:** Needs MATLAB; a mex file speeds the FFT time update and can be switched off. AGPL-3.0 licence matters if you ship derived code.
+**Build notes:** Needs MATLAB; a mex file speeds the FFT time update and can be switched off. AGPL-3.0 licence matters if you ship derived code.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:rlabbe/filterpy` - <https://github.com/rlabbe/filterpy>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,896 | Python | MIT | 2026-10-27 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library of Kalman filters (linear, extended, unscented, ensemble), smooth
 
 **Why it matters:** Quick prototyping of filters in notebooks before porting to embedded code.
 
-**Hackathon notes:** pip install filterpy. Not Lie-group aware, so handle attitude error states manually or use navlie/manif for that.
+**Build notes:** pip install filterpy. Not Lie-group aware, so handle attitude error states manually or use navlie/manif for that.
 
 ## Deep dives
 
@@ -30,12 +30,12 @@ Python library of Kalman filters (linear, extended, unscented, ensemble), smooth
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [navlie](../../catalog/repos/decargroup__navlie.md) (alternative_to)
 - [Kalman and Bayesian Filters in Python (book)](../../catalog/repos/rlabbe__kalman-and-bayesian-filters-in-python.md) (depends_on)

@@ -2,7 +2,7 @@
 
 `repo:decargroup/navlie` - <https://github.com/decargroup/navlie>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 196 | Python | MIT | 2026-04-30 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python state estimation package on Lie groups (McGill DECAR): EKF, iterated EKF,
 
 **Why it matters:** Fastest way to prototype on-manifold INS filters in Python.
 
-**Hackathon notes:** pip install; has IMU and GNSS-like examples.
+**Build notes:** pip install; has IMU and GNSS-like examples.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Python state estimation package on Lie groups (McGill DECAR): EKF, iterated EKF,
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

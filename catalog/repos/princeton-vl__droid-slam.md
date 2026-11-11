@@ -2,7 +2,7 @@
 
 `repo:princeton-vl/droid-slam` - <https://github.com/princeton-vl/DROID-SLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,725 | Python | BSD-3-Clause | 2025-05-05 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Deep visual SLAM that iterates dense bundle adjustment through a recurrent updat
 
 **Why it matters:** Much more robust than classic pipelines on hard sequences; strong learned baseline.
 
-**Hackathon notes:** Needs a large-memory NVIDIA GPU; not real-time on embedded. Pretrained weights available.
+**Build notes:** Needs a large-memory NVIDIA GPU; not real-time on embedded. Pretrained weights available.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

@@ -2,7 +2,7 @@
 
 `repo:koorter/weln` - <https://github.com/koorter/WELN>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6 | Python | ? | 2024-07-11 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Siamese-network solution to the ACM MM 2024 multi-environment drone-satellite ma
 
 **Why it matters:** Open challenge entry for weather-robust geo-localization.
 
-**Hackathon notes:** No licence (all rights reserved). Weights and the University1652-Plus weather set are on Baidu pan only, may be hard to fetch; the data derives from University-1652 (research use). 5th on the public leaderboard (R@1 85.58), 4th after one team was removed.
+**Build notes:** No licence (all rights reserved). Weights and the University1652-Plus weather set are on Baidu pan only, may be hard to fetch; the data derives from University-1652 (research use). 5th on the public leaderboard (R@1 85.58), 4th after one team was removed.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

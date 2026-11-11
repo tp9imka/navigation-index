@@ -2,7 +2,7 @@
 
 `repo:benjaminpotter/ccompass` - <https://github.com/benjaminpotter/ccompass>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | C++ | MIT | 2024-08-16 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Header-only C library for processing sky polarization images to support heading 
 
 **Why it matters:** Polarization compass gives heading without magnetometers or GNSS, robust to magnetic disturbance.
 
-**Hackathon notes:** Needs a polarization camera (or simulated images).
+**Build notes:** Needs a polarization camera (or simulated images).
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md)
 
@@ -20,7 +20,7 @@ Header-only C library for processing sky polarization images to support heading 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../../catalog/resources/opensky-sky-polarization-simulator-2024.md) (uses)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 

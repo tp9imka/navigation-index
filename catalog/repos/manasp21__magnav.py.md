@@ -2,7 +2,7 @@
 
 `repo:manasp21/magnav.py` - <https://github.com/manasp21/magnav.py>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 9 | Python | ? | 2026-01-15 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer dat
 
 **Why it matters:** Lowers the language barrier to the MagNav data and algorithms for Python-heavy teams.
 
-**Hackathon notes:** Community port; install from the repo (despite the README badge, magnavpy is not on PyPI) and sort out GDAL first. Verify outputs against MagNav.jl examples.
+**Build notes:** Community port; install from the repo (despite the README badge, magnavpy is not on PyPI) and sort out GDAL first. Verify outputs against MagNav.jl examples.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
@@ -25,7 +25,7 @@ Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer dat
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (alternative_to)
 - [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../../catalog/resources/qctrl-ironstone-opal.md) (alternative_to)

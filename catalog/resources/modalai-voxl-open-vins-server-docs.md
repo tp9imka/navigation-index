@@ -23,7 +23,7 @@ ModalAI docs for the OpenVINS-based VIO service on VOXL 2. Publishes full state 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [VOXL OpenVINS server: Initialization and Resets](../../catalog/resources/modalai-voxl-open-vins-init-resets.md) (part_of)
 
 _Indexed by lane(s): close-area-localization_

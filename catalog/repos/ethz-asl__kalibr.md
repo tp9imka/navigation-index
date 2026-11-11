@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/kalibr` - <https://github.com/ethz-asl/kalibr>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5,805 | C++ | NOASSERTION | 2024-03-30 | False | production | medium |
 
@@ -10,7 +10,7 @@ ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics 
 
 **Why it matters:** Standard way to calibrate a camera-IMU rig before running any VIO.
 
-**Hackathon notes:** Use the Docker image to avoid ROS 1 build pain; print an AprilGrid target in advance.
+**Build notes:** Use the Docker image to avoid ROS 1 build pain; print an AprilGrid target in advance.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

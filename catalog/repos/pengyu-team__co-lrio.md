@@ -2,7 +2,7 @@
 
 `repo:pengyu-team/co-lrio` - <https://github.com/PengYu-Team/Co-LRIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 |  | ? | 2025-03-27 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the
 
 **Why it matters:** Shows how UWB ranging tightens swarm state estimation when GNSS is out.
 
-**Hackathon notes:** Use zhongshp/Co-LRIO (Apache-2.0, C++). ROS 2 Foxy and GTSAM 4.2a8; build is sensitive to versions.
+**Build notes:** Use zhongshp/Co-LRIO (Apache-2.0, C++). ROS 2 Foxy and GTSAM 4.2a8; build is sensitive to versions.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

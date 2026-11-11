@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/omni-swarm` - <https://github.com/HKUST-Aerial-Robotics/Omni-swarm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 293 | Jupyter Notebook | ? | 2022-07-03 | False | archived | low |
 
@@ -10,7 +10,7 @@ Decentralized omnidirectional visual-inertial-UWB state estimation for aerial sw
 
 **Why it matters:** Shows fusing UWB ranging with VIO for drift-bounded relative swarm localization.
 
-**Hackathon notes:** Dormant since 2022; superseded by D2SLAM.
+**Build notes:** Dormant since 2022; superseded by D2SLAM.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 

@@ -2,7 +2,7 @@
 
 `repo:dfpc-coe/cloudtak` - <https://github.com/dfpc-coe/cloudtak>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 138 | TypeScript | AGPL-3.0 | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ Browser-based TAK-compatible common operating picture with ETL connectors that p
 
 **Why it matters:** Shows how to bridge arbitrary data sources (sensors, APIs) into a TAK network with a web COP.
 
-**Hackathon notes:** AWS-oriented deployment; locally, reuse its node-CoT library and connector patterns.
+**Build notes:** AWS-oriented deployment; locally, reuse its node-CoT library and connector patterns.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

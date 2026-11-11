@@ -2,7 +2,7 @@
 
 `repo:april-zju/lidar_imu_calib` - <https://github.com/APRIL-ZJU/lidar_IMU_calib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,190 | C++ | GPL-3.0 | 2023-05-15 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS
 
 **Why it matters:** Full LiDAR-IMU extrinsics without a target.
 
-**Hackathon notes:** ROS 1; needs a sequence with rich excitation.
+**Build notes:** ROS 1; needs a sequence with rich excitation.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

@@ -2,7 +2,7 @@
 
 `repo:ybgdgh/co-navgpt` - <https://github.com/ybgdgh/Co-NavGPT>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 107 | Python | ? | 2024-06-30 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Multi-robot exploration and object search where an LLM assigns frontier goals to
 
 **Why it matters:** LLM as a multi-agent tasker, a pattern for swarm search missions.
 
-**Hackathon notes:** Habitat simulation; adapt the goal-assignment prompt for your own swarm sim.
+**Build notes:** Habitat simulation; adapt the goal-assignment prompt for your own swarm sim.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

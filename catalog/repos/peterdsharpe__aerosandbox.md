@@ -2,7 +2,7 @@
 
 `repo:peterdsharpe/aerosandbox` - <https://github.com/peterdsharpe/AeroSandbox>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,388 | Jupyter Notebook | MIT | 2026-10-30 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python aircraft design and trajectory optimisation toolkit on CasADi: aerodynami
 
 **Why it matters:** Gives a team physically grounded drag, propeller and battery-power numbers to put an energy cost into a route planner, without writing aerodynamics from scratch.
 
-**Hackathon notes:** License MIT (gh api). Last push 2026-10-30. pip install aerosandbox. Library folder confirmed to include propulsion_electric, propulsion_propeller and winds modules. Use it offline to build an energy-per-metre table vs airspeed and wind, then use the table in the planner cost; do not put the full optimiser in the flight loop.
+**Build notes:** License MIT (gh api). Last push 2026-10-30. pip install aerosandbox. Library folder confirmed to include propulsion_electric, propulsion_propeller and winds modules. Use it offline to build an energy-per-metre table vs airspeed and wind, then use the table in the planner cost; do not put the full optimiser in the flight loop.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

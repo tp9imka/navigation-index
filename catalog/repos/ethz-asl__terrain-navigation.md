@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/terrain-navigation` - <https://github.com/ethz-asl/terrain-navigation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 187 | C++ | BSD-3-Clause | 2025-07-01 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Original ROS 1 implementation of 'Safe Low-Altitude Navigation in Steep Terrain 
 
 **Why it matters:** Same planner as terrain-navigation2 with a ready Dockerfile, which may be the faster way to see it run.
 
-**Hackathon notes:** License BSD-3-Clause (gh api). Last push 2025-07-01. README provides docker build for ROS Noetic; image size quoted there is 774 MB (not rebuilt here). Use it to get pictures of terrain-aware routes on day 1, then port the cost.
+**Build notes:** License BSD-3-Clause (gh api). Last push 2025-07-01. README provides docker build for ROS Noetic; image size quoted there is 774 MB (not rebuilt here). Use it to get pictures of terrain-aware routes in the first day, then port the cost.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

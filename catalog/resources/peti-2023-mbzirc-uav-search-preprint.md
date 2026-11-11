@@ -20,4 +20,4 @@ Preprint by the UNIZG-FER MBZIRC 2023 team. States the challenge frame: find one
 
 - uses: [MBZIRC Maritime Grand Challenge simulator](../../catalog/repos/osrf__mbzirc.md)
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

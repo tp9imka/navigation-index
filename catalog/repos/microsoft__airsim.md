@@ -2,7 +2,7 @@
 
 `repo:microsoft/airsim` - <https://github.com/microsoft/AirSim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 18,605 | C++ | NOASSERTION | 2026-09-15 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU
 
 **Why it matters:** Still the most widely used photorealistic drone sim in research papers; many visual-nav and geolocalization datasets were rendered with it.
 
-**Hackathon notes:** Prebuilt binary environments are the quickest path. Building from source requires a matching old Unreal version. For new work prefer Colosseum or Project AirSim.
+**Build notes:** Prebuilt binary environments are the quickest path. Building from source requires a matching old Unreal version. For new work prefer Colosseum or Project AirSim.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

@@ -2,7 +2,7 @@
 
 `repo:stac-utils/pystac-client` - <https://github.com/stac-utils/pystac-client>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 211 | Python | NOASSERTION | 2026-11-03 | False | production | high |
 
@@ -10,7 +10,7 @@ Python client for searching STAC APIs (Earth Search, Planetary Computer and othe
 
 **Why it matters:** Credential-free path to Sentinel-2, Landsat and Copernicus DEM tiles via public STAC catalogs.
 
-**Hackathon notes:** Search Earth Search (AWS) without a key and read COGs directly with rasterio.
+**Build notes:** Search Earth Search (AWS) without a key and read COGs directly with rasterio.
 
 ## Deep dives
 
@@ -30,8 +30,8 @@ Python client for searching STAC APIs (Earth Search, Planetary Computer and othe
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

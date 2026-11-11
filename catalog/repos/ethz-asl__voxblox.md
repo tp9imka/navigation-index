@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/voxblox` - <https://github.com/ethz-asl/voxblox>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | research-prototype | medium |
 
@@ -10,7 +10,7 @@ CPU voxel mapping library that fuses depth into a truncated signed distance fiel
 
 **Why it matters:** The CPU reference for ESDF maps used by gradient-based drone planners. The ESDF gives distance and gradient to the nearest obstacle at any point, which is what clearance costs need.
 
-**Hackathon notes:** License BSD-3-Clause, last push 2024-07-01 (gh api), no ROS 2 branch on the main repo. catkin build in a Noetic Docker image is the realistic route; do not try a native macOS build in 48h. CPU only, no CUDA. Use it only if the platform already runs ROS 1; nvblox replaces it on a Jetson.
+**Build notes:** License BSD-3-Clause, last push 2024-07-01 (gh api), no ROS 2 branch on the main repo. catkin build in a Noetic Docker image is the realistic route; do not try a native macOS build in 48h. CPU only, no CUDA. Use it only if the platform already runs ROS 1; nvblox replaces it on a Jetson.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

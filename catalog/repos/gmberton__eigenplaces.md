@@ -2,7 +2,7 @@
 
 `repo:gmberton/eigenplaces` - <https://github.com/gmberton/EigenPlaces>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 163 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ ICCV 2023 visual place recognition training method for viewpoint-robust descript
 
 **Why it matters:** Viewpoint robustness matters when drone heading and tilt vary against nadir satellite tiles.
 
-**Hackathon notes:** Pretrained models loadable via torch.hub.
+**Build notes:** Pretrained models loadable via torch.hub.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

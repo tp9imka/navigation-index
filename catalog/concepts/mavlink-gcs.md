@@ -22,7 +22,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 ## Guides (2)
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) - Next action when the task arrives: ask questions 1-3 of section 1, then open section 2 for the stack.
 
 ## Repositories (36)
 

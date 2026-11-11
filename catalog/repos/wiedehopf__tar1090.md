@@ -2,7 +2,7 @@
 
 `repo:wiedehopf/tar1090` - <https://github.com/wiedehopf/tar1090>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,962 | JavaScript | NOASSERTION | 2026-10-26 | False | production | medium |
 
@@ -10,7 +10,7 @@ Improved web interface for readsb/dump1090 with track history, filtering and ove
 
 **Why it matters:** Ready-made visualization layer for an ADS-B based interference or airspace-awareness demo.
 
-**Hackathon notes:** One-line install on top of readsb. Fork the JS to color aircraft by NIC to show degraded GNSS.
+**Build notes:** One-line install on top of readsb. Fork the JS to color aircraft by NIC to show degraded GNSS.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
@@ -24,7 +24,7 @@ Improved web interface for readsb/dump1090 with track history, filtering and ove
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [readsb](../../catalog/repos/wiedehopf__readsb.md) (integrates_with)
 

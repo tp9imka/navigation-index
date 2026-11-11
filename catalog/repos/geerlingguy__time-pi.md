@@ -2,7 +2,7 @@
 
 `repo:geerlingguy/time-pi` - <https://github.com/geerlingguy/time-pi>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 294 | Python | GPL-3.0 | 2026-11-08 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a 
 
 **Why it matters:** A documented recipe a team can reproduce in hours for a local GNSS time reference.
 
-**Hackathon notes:** Ansible-driven; budget an afternoon including GNSS antenna placement.
+**Build notes:** Ansible-driven; budget an afternoon including GNSS antenna placement.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

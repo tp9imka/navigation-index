@@ -2,7 +2,7 @@
 
 `repo:cggos/imu_x_fusion` - <https://github.com/cggos/imu_x_fusion>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,127 | C++ | GPL-3.0 | 2025-03-28 | False | educational | high |
 
@@ -10,7 +10,7 @@ Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side
 
 **Why it matters:** Lets you compare filter variants on the same inputs with little code.
 
-**Hackathon notes:** ROS package; swap estimator by config to compare behaviour.
+**Build notes:** ROS package; swap estimator by config to compare behaviour.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

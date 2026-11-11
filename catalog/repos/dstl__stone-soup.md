@@ -2,15 +2,15 @@
 
 `repo:dstl/stone-soup` - <https://github.com/dstl/Stone-Soup>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 679 | Python | MIT | 2026-11-06 | False | production | high |
 
 Open-source Python framework from UK Dstl and partners for developing, running and evaluating tracking and state estimation algorithms: Kalman variants, particle filters, JPDA, MHT, GM-PHD, track management and metrics.
 
-**Why it matters:** A government-backed, permissively developed tracking toolkit - the closest thing to a reference library for situational-awareness fusion that defense judges will recognize.
+**Why it matters:** A government-backed, permissively developed tracking toolkit - the closest thing to a reference library for situational-awareness fusion that defense-context reviewers will recognize.
 
-**Hackathon notes:** pip install stonesoup; tutorials run in Jupyter. Good for fusing ADS-B, Remote ID or DF bearings into tracks on a common picture within a day. Keep it to air-picture awareness, not fire control.
+**Build notes:** pip install stonesoup; tutorials run in Jupyter. Good for fusing ADS-B, Remote ID or DF bearings into tracks on a common picture within a day. Keep it to air-picture awareness, not fire control.
 
 ## Deep dives
 
@@ -33,13 +33,13 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [pyMHT](../../catalog/repos/erikliland__pymht.md) (alternative_to)

@@ -2,7 +2,7 @@
 
 `repo:ceres-solver/ceres-solver` - <https://github.com/ceres-solver/ceres-solver>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,605 | C++ | NOASSERTION | 2026-11-04 | False | production | medium |
 
@@ -10,7 +10,7 @@ Google's nonlinear least-squares and general optimization library with automatic
 
 **Why it matters:** Used as the solver under many VIO and GNSS/INS optimizers (VINS-Fusion, OB_GINS); good for writing your own sliding-window estimator.
 
-**Hackathon notes:** Solid but you write the residuals yourself. Pair with an existing IMU preintegration residual (e.g. from OB_GINS) rather than deriving from scratch.
+**Build notes:** Solid but you write the residuals yourself. Pair with an existing IMU preintegration residual (e.g. from OB_GINS) rather than deriving from scratch.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:bluenviron/gomavlib` - <https://github.com/bluenviron/gomavlib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 199 | Go | MIT | 2026-11-09 | False | production | medium |
 
@@ -10,7 +10,7 @@ Go MAVLink v1/v2 library with dialect generation and multiple transports.
 
 **Why it matters:** Good for writing small, robust Go services (telemetry relays, sensor bridges).
 
-**Hackathon notes:** Go modules; examples for reading/writing messages.
+**Build notes:** Go modules; examples for reading/writing messages.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

@@ -26,7 +26,7 @@ Multi-campus sequences in Asia and Europe across seasons with two lidar types, s
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): sim-data_

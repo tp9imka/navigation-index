@@ -2,7 +2,7 @@
 
 `repo:solarwarlock/flyingblind_hakaton` - <https://github.com/SolarWarlock/FlyingBlind_Hakaton>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-07-31 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Second public solution to the same 'Полёт вслепую' hackathon task: w
 
 **Why it matters:** Shows the practical details (UTM projection, bilinear DEM sampling, weighted scoring for informative relief, flat-terrain rejection) that a TERCOM demo needs.
 
-**Hackathon notes:** Streamlit app on rasterio + pyproj; an optional Rust core (built automatically if cargo is installed) speeds up the hypothesis search. Includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Small repo (about a dozen commits).
+**Build notes:** Streamlit app on rasterio + pyproj; an optional Rust core (built automatically if cargo is installed) speeds up the hypothesis search. Includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Small repo (about a dozen commits).
 
 ## Deep dives
 
@@ -30,12 +30,12 @@ Second public solution to the same 'Полёт вслепую' hackathon task: w
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Gagarin - TERCOM for UAVs without GNSS](../../catalog/repos/danilka88__gag27062026.md) (alternative_to)
 - [Полёт вслепую - GCS with terrain-referenced navigation](../../catalog/repos/drones-voronka__drones-backend.md) (alternative_to)

@@ -2,7 +2,7 @@
 
 `repo:nunojpg/ntripcaster` - <https://github.com/nunojpg/ntripcaster>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 66 | C | ? | 2026-01-12 | False | production | medium |
 
@@ -10,7 +10,7 @@ Maintained mirror of the BKG standard NTRIP broadcaster in C for distributing RT
 
 **Why it matters:** Self-hosted correction distribution for a private RTK network, e.g. in a contested area without public casters.
 
-**Hackathon notes:** Builds with autotools; pair with str2str from RTKLIB as the source.
+**Build notes:** Builds with autotools; pair with str2str from RTKLIB as the source.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 

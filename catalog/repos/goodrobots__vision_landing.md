@@ -2,7 +2,7 @@
 
 `repo:goodrobots/vision_landing` - <https://github.com/goodrobots/vision_landing>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 236 | C++ | GPL-3.0 | 2023-04-11 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Precision landing using visual fiducial targets, sending LANDING_TARGET messages
 
 **Why it matters:** Example of vision-based terminal approach for recovery/landing without GNSS accuracy.
 
-**Hackathon notes:** Discontinued by its authors (README: academic/learning use only). Needs OpenCV, the aruco library and DroneKit on the companion; inactive since 2023.
+**Build notes:** Discontinued by its authors (README: academic/learning use only). Needs OpenCV, the aruco library and DroneKit on the companion; inactive since 2023.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

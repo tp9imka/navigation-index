@@ -2,7 +2,7 @@
 
 `repo:weae-g/note-outdoor` - <https://github.com/weae-g/note-outdoor>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 |  | ? | 2025-12-07 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Russian-language markdown knowledge base on navigation, data fusion, data links,
 
 **Why it matters:** A structured checklist for trading off navigation and comms options; useful for a design slide, not as evidence.
 
-**Hackathon notes:** Use the 'quick choice by task' tables as a starting point, then verify claims against primary sources; authorship and sourcing are not documented.
+**Build notes:** Use the 'quick choice by task' tables as a starting point, then verify claims against primary sources; authorship and sourcing are not documented.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Russian-language markdown knowledge base on navigation, data fusion, data links,
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-round2_
 

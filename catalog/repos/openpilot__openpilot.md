@@ -2,7 +2,7 @@
 
 `repo:openpilot/openpilot` - <https://github.com/openpilot/OpenPilot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 620 | C | NOASSERTION | 2015-08-08 | False | archived | low |
 
@@ -10,7 +10,7 @@ Mirror of the original OpenPilot flight controller project (not comma.ai's openp
 
 **Why it matters:** Origin of the TauLabs, dRonin and LibrePilot family; historical only.
 
-**Hackathon notes:** Historical reference only.
+**Build notes:** Historical reference only.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

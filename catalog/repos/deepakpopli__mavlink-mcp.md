@@ -2,7 +2,7 @@
 
 `repo:deepakpopli/mavlink-mcp` - <https://github.com/deepakpopli/mavlink-mcp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6 | Python | MIT | 2026-10-08 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering m
 
 **Why it matters:** Another ready LLM-to-autopilot bridge, oriented to ArduPilot missions.
 
-**Hackathon notes:** Young project; test thoroughly in SITL.
+**Build notes:** Young project; test thoroughly in SITL.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

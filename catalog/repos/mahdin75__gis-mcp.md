@@ -2,7 +2,7 @@
 
 `repo:mahdin75/gis-mcp` - <https://github.com/mahdin75/gis-mcp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 205 | Python | MIT | 2026-08-21 | False | active-research | high |
 
@@ -10,7 +10,7 @@ MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas 
 
 **Why it matters:** Headless geodesy/GIS tool layer an agent can call for coordinate conversion and spatial reasoning.
 
-**Hackathon notes:** pip install gis-mcp; no QGIS needed. Good for an agent that must reason about coordinates and areas.
+**Build notes:** pip install gis-mcp; no QGIS needed. Good for an agent that must reason about coordinates and areas.
 
 ## Deep dives
 

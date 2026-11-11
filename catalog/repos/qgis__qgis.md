@@ -2,7 +2,7 @@
 
 `repo:qgis/qgis` - <https://github.com/qgis/qgis>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14,798 | C++ | GPL-2.0 | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Desktop open-source GIS for viewing, editing, analyzing and printing geospatial 
 
 **Why it matters:** The analyst's workbench for building mission areas, inspecting DEMs and checking flight logs on a map.
 
-**Hackathon notes:** Install the LTR build; draw AOIs and export GeoJSON for planners. QGIS loads MBTiles/PMTiles for offline basemaps.
+**Build notes:** Install the LTR build; draw AOIs and export GeoJSON for planners. QGIS loads MBTiles/PMTiles for offline basemaps.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

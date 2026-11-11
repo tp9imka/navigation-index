@@ -20,7 +20,7 @@ Open-source investigation using AIS ship tracks, public records and ISS-based me
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [2025 Was a Stress Test & Maritime AI™ Is the Only Way to Pass](../../catalog/resources/windward-2025-maritime-stress-test.md) (cites)

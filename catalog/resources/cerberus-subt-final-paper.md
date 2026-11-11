@@ -22,7 +22,7 @@ Winning team's description of its legged-plus-aerial system: multi-modal percept
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [DARPA Subterranean (SubT) Challenge](../../catalog/resources/darpa-subt-challenge.md) (part_of)
 

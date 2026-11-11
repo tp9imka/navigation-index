@@ -2,7 +2,7 @@
 
 `repo:sotostrk/tercom-via-particle-filter-uav-state-estimation-mae6760-project-` - <https://github.com/sotostrk/TERCOM-via-Particle-Filter-UAV-State-Estimation-MAE6760-Project->
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | MATLAB | ? | 2026-05-12 | False | educational | medium |
 
@@ -10,7 +10,7 @@ MATLAB SIR particle filter estimating UAV position from terrain contour matching
 
 **Why it matters:** Particle filters handle the multimodal ambiguity of terrain matching better than a single correlation peak.
 
-**Hackathon notes:** Port the filter loop to Python for a demo.
+**Build notes:** Port the filter loop to Python for a demo.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

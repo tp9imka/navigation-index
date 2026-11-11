@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ohwr/project/wr-cores` - <https://gitlab.com/ohwr/project/wr-cores>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | VHDL | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ CERN Open Hardware Repository HDL cores for White Rabbit nodes and switches, inc
 
 **Why it matters:** White Rabbit is the open route to sub-ns time across a distributed array (radio telescopes, accelerators) and an alternative to GNSS time inside a facility.
 
-**Hackathon notes:** FPGA work; buy WR nodes/switches if you need it in a build.
+**Build notes:** FPGA work; buy WR nodes/switches if you need it in a build.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

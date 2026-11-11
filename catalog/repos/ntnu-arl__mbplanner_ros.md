@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/mbplanner_ros` - <https://github.com/ntnu-arl/mbplanner_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 360 | C++ | BSD-3-Clause | 2023-04-19 | False | archived | low |
 
@@ -10,7 +10,7 @@ Motion-primitive based exploration planner for fast aerial robots in confined sp
 
 **Why it matters:** Aerial complement to GBPlanner for drone exploration without GNSS.
 
-**Hackathon notes:** ROS1, not updated since 2023.
+**Build notes:** ROS1, not updated since 2023.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

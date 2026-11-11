@@ -2,7 +2,7 @@
 
 `repo:hviktortsoi/fast_lio_localization` - <https://github.com/HViktorTsoi/FAST_LIO_LOCALIZATION>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,079 | C++ | GPL-2.0 | 2023-05-20 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map
 
 **Why it matters:** Localize in a map you surveyed earlier, the standard pattern for GNSS-denied ground ops in known areas.
 
-**Hackathon notes:** ROS 1; build a map with FAST-LIO first, then localize. Needs a rough initial pose (RViz or another sensor). The global-localization node needs Python 2.7 and Open3D 0.9, so plan for a Melodic-era environment or a container.
+**Build notes:** ROS 1; build a map with FAST-LIO first, then localize. Needs a rough initial pose (RViz or another sensor). The global-localization node needs Python 2.7 and Open3D 0.9, so plan for a Melodic-era environment or a container.
 
 ## Deep dives
 

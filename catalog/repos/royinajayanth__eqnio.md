@@ -2,7 +2,7 @@
 
 `repo:royinajayanth/eqnio` - <https://github.com/RoyinaJayanth/EqNIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 42 | Python | ? | 2026-02-15 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Subequivariant neural inertial odometry (ICLR 2025) that canonicalises IMU data 
 
 **Why it matters:** State of the art learned inertial odometry with released code.
 
-**Hackathon notes:** Repo vendors modified TLIO (TLIO-master/) and RoNIN code, so no separate setup; get the TLIO dataset (CC BY-NC) or RoNIN data (non-commercial licence) first. No licence file in the repo, so the code is all rights reserved.
+**Build notes:** Repo vendors modified TLIO (TLIO-master/) and RoNIN code, so no separate setup; get the TLIO dataset (CC BY-NC) or RoNIN data (non-commercial licence) first. No licence file in the repo, so the code is all rights reserved.
 
 **Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

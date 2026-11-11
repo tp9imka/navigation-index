@@ -2,7 +2,7 @@
 
 `repo:utiasasrl/pyboreas` - <https://github.com/utiasASRL/pyboreas>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 127 | Python | BSD-3-Clause | 2026-09-16 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and
 
 **Why it matters:** Radar plus lidar over seasons and snow suits all-weather localization work.
 
-**Hackathon notes:** Data is hosted on S3; download selected sequences.
+**Build notes:** Data is hosted on S3; download selected sequences.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [STEAM-ICP](../../catalog/repos/utiasasrl__steam_icp.md) (evaluated_on)
 
 _Indexed by lane(s): sim-data_

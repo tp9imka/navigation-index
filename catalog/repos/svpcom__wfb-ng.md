@@ -2,7 +2,7 @@
 
 `repo:svpcom/wfb-ng` - <https://github.com/svpcom/wfb-ng>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,565 | Python | GPL-3.0 | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, 
 
 **Why it matters:** Unidirectional broadcast-style link with FEC is more robust to interference than plain Wi-Fi; useful for EW-resilient telemetry experiments.
 
-**Hackathon notes:** Install on Linux with compatible RTL8812AU/EU cards (patched drivers required); key pairs per link. Code is GPL-3.0, but the author's paid support excludes military usage.
+**Build notes:** Install on Linux with compatible RTL8812AU/EU cards (patched drivers required); key pairs per link. Code is GPL-3.0, but the author's paid support excludes military usage.
 
 **Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

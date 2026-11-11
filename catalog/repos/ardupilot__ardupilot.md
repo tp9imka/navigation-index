@@ -2,7 +2,7 @@
 
 `repo:ardupilot/ardupilot` - <https://github.com/ArduPilot/ardupilot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 16,331 | C++ | GPL-3.0 | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 
 **Why it matters:** Very broad vehicle coverage and mature non-GPS navigation docs; EKF3 source switching (EK3_SRCn_*) is directly useful for GNSS-loss and spoofing-resilience experiments.
 
-**Hackathon notes:** `sim_vehicle.py -v ArduCopter --console --map` gives SITL in minutes. Lua scripting lets you add behaviour on the flight controller without a fork. Use SIM_GPS1_ENABLE=0 / EK3_SRC1_* to simulate GNSS denial.
+**Build notes:** `sim_vehicle.py -v ArduCopter --console --map` gives SITL in minutes. Lua scripting lets you add behaviour on the flight controller without a fork. Use SIM_GPS1_ENABLE=0 / EK3_SRC1_* to simulate GNSS denial.
 
 ## Deep dives
 
@@ -38,15 +38,15 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 ## Referenced by
 
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md) (extends)
 - [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md) (integrates_with)

@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/rio` - <https://github.com/HKUST-Aerial-Robotics/RIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 208 | C++ | MIT | 2025-03-13 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar
 
 **Why it matters:** Sliding-window alternative to EKF radar-inertial methods.
 
-**Hackathon notes:** ROS1 build; run on public 4D radar datasets.
+**Build notes:** ROS1 build; run on public 4D radar datasets.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

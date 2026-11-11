@@ -2,7 +2,7 @@
 
 `repo:peterjburke/rid` - <https://github.com/PeterJBurke/RID>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 83 | C | MIT | 2024-03-31 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 **Why it matters:** Ten-dollar Remote ID sensor node.
 
-**Hackathon notes:** PlatformIO project for VS Code (not the Arduino IDE), developed on a TTGO ESP32 board with a 1.14-inch LCD; it shows lat/lon of one UAV on the display.
+**Build notes:** PlatformIO project for VS Code (not the Arduino IDE), developed on a TTGO ESP32 board with a 1.14-inch LCD; it shows lat/lon of one UAV on the display.
 
 ## Deep dives
 

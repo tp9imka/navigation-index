@@ -2,7 +2,7 @@
 
 `repo:andrewbcn/stm32-gpsdo` - <https://github.com/AndrewBCN/STM32-GPSDO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 106 | C++ | GPL-3.0 | 2022-04-22 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC 
 
 **Why it matters:** Low-cost build that shows the full GPSDO loop on hobby parts; a starting point for adding holdover and spoof-detection logic.
 
-**Hackathon notes:** Parts are cheap and available; the loop is frequency-counting with long averaging, so expect hours to settle. felixd/STM32-GPSDO is a fork.
+**Build notes:** Parts are cheap and available; the loop is frequency-counting with long averaging, so expect hours to settle. felixd/STM32-GPSDO is a fork.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

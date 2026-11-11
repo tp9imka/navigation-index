@@ -2,7 +2,7 @@
 
 `repo:airlab-polimi/roamfree` - <https://github.com/AIRLab-POLIMI/ROAMFREE>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 32 | C++ | ? | 2026-06-03 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Pose-graph sensor fusion and self-calibration library on g2o with a catalogue of
 
 **Why it matters:** A long-lived example of a sensor-agnostic fusion library where new sensors are declared, not coded, which is the plug-and-play idea.
 
-**Hackathon notes:** LGPL-3.0 per README (no SPDX on GitHub). ROS1 wrapper. Reference design.
+**Build notes:** LGPL-3.0 per README (no SPDX on GitHub). ROS1 wrapper. Reference design.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

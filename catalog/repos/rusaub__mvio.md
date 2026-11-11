@@ -2,7 +2,7 @@
 
 `repo:rusaub/mvio` - <https://github.com/RusaUB/mvio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 37 | C++ | ? | 2026-08-27 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ C++ monocular VIO: ORB features tracked with Lucas-Kanade flow, parallax-based k
 
 **Why it matters:** A small, readable VIO you can actually step through, unlike the large research systems.
 
-**Hackathon notes:** CMake build; configs in configs/. Calibrate your own camera (camera.yaml) as the article insists. No accuracy numbers are published.
+**Build notes:** CMake build; configs in configs/. Calibrate your own camera (camera.yaml) as the article insists. No accuracy numbers are published.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ C++ monocular VIO: ORB features tracked with Lucas-Kanade flow, parallax-based k
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) (alternative_to)
 - [Cистема визуально-инерциальной навигации для дрона на C++](../../catalog/resources/habr-kodoka-mvio-cpp-2026.md) (has_code)
 

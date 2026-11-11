@@ -2,7 +2,7 @@
 
 `repo:sviridov-aleksandr/aerial-nav` - <https://github.com/sviridov-aleksandr/aerial-nav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 |  | ? | 2026-09-03 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Matches onboard camera frames to a pre-built satellite map of the route: a ResNe
 
 **Why it matters:** A full coarse-retrieval plus fine-registration VPS pipeline, the same structure fielded visual positioning products describe.
 
-**Hackathon notes:** Good template for a two-stage VPS demo: retrieval narrows the search, LightGlue gives the fix. Check what weights and data are shipped before relying on it.
+**Build notes:** Good template for a two-stage VPS demo: retrieval narrows the search, LightGlue gives the fix. Check what weights and data are shipped before relying on it.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Matches onboard camera frames to a pre-built satellite map of the route: a ResNe
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-round2_
 

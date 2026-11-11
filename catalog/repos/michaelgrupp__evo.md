@@ -2,7 +2,7 @@
 
 `repo:michaelgrupp/evo` - <https://github.com/MichaelGrupp/evo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,361 | Python | GPL-3.0 | 2026-10-30 | False | production | high |
 
@@ -10,7 +10,7 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 
 **Why it matters:** The default way to score a nav or SLAM result against ground truth; essential for any demo that claims accuracy.
 
-**Hackathon notes:** pip install evo. Run evo_ape with alignment flags; it reads most dataset ground-truth formats directly.
+**Build notes:** pip install evo. Run evo_ape with alignment flags; it reads most dataset ground-truth formats directly.
 
 ## Deep dives
 
@@ -29,12 +29,12 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [cnspy trajectory evaluation](../../catalog/repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)

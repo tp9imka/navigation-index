@@ -2,7 +2,7 @@
 
 `repo:cyberbotics/webots` - <https://github.com/cyberbotics/webots>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,761 | C++ | Apache-2.0 | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ General-purpose open-source robot simulator with many robot models and sensors i
 
 **Why it matters:** Cross-platform and easy to install; good for ground and multi-robot nav demos with ROS 2 integration.
 
-**Hackathon notes:** Installers for Windows, macOS and Linux. webots_ros2 package for ROS 2. Less common in aerial autonomy.
+**Build notes:** Installers for Windows, macOS and Linux. webots_ros2 package for ROS 2. Less common in aerial autonomy.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

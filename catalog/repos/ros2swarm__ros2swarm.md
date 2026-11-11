@@ -2,7 +2,7 @@
 
 `repo:ros2swarm/ros2swarm` - <https://github.com/ROS2swarm/ROS2swarm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 121 | Python | Apache-2.0 | 2026-08-03 | False | archived | medium |
 
@@ -10,7 +10,7 @@ ROS 2 package providing a library of swarm behaviours (aggregation, dispersion, 
 
 **Why it matters:** Ready-made ground swarm behaviours in ROS 2.
 
-**Hackathon notes:** Launch in Gazebo with multiple TurtleBots. Not maintained any more (README); branches target ROS 2 Dashing, Foxy and Galactic.
+**Build notes:** Launch in Gazebo with multiple TurtleBots. Not maintained any more (README); branches target ROS 2 Dashing, Foxy and Galactic.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

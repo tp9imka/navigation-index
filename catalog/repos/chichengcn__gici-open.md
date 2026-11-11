@@ -2,7 +2,7 @@
 
 `repo:chichengcn/gici-open` - <https://github.com/chichengcn/gici-open>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 680 | C++ | GPL-3.0 | 2025-01-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (
 
 **Why it matters:** One of the most complete open tightly coupled GNSS/INS/vision stacks; good for showing positioning robustness in degraded GNSS.
 
-**Hackathon notes:** Large codebase; run on the provided dataset first. Config files are the main interface.
+**Build notes:** Large codebase; run on the provided dataset first. Config files are the main interface.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

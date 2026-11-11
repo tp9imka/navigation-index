@@ -22,7 +22,7 @@ Webinar arguing for timing as the foundation of resilient PNT, covering precisio
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 

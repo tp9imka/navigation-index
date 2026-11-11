@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/agilicious` - <https://github.com/uzh-rpg/agilicious>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 660 | TeX | ? | 2023-03-07 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Public front page of the UZH Agilicious quadrotor hardware and software stack fo
 
 **Why it matters:** A reference for a modern agile-flight software architecture, but not usable code for a hackathon.
 
-**Hackathon notes:** No license file on GitHub. README points to an academic-use-only license agreement and an access request form, so it is not usable for a product and code cannot be fetched on the day. Last push 2023-03-07. Listed so nobody wastes time on it.
+**Build notes:** No license file on GitHub. README points to an academic-use-only license agreement and an access request form, so it is not usable for a product and code cannot be fetched at short notice. Last push 2023-03-07. Listed so nobody wastes time on it.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 

@@ -2,7 +2,7 @@
 
 `repo:naver/mast3r` - <https://github.com/naver/mast3r>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,161 | Python | NOASSERTION | 2025-06-30 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from im
 
 **Why it matters:** Robust to extreme viewpoint change (oblique drone view vs nadir satellite) because it reasons in 3D.
 
-**Hackathon notes:** Heavy model and non-commercial license; good for offline demos.
+**Build notes:** Heavy model and non-commercial license; good for offline demos.
 
 ## Deep dives
 

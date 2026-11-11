@@ -2,7 +2,7 @@
 
 `repo:arplaboratory/sthn` - <https://github.com/arplaboratory/STHN>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 88 | Jupyter Notebook | MIT | 2026-05-16 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 
 **Why it matters:** Turns a coarse thermal match into an accurate position fix.
 
-**Hackathon notes:** Combine with the IROS 2023 retrieval stage from the same lab.
+**Build notes:** Combine with the IROS 2023 retrieval stage from the same lab.
 
 ## Deep dives
 
@@ -30,10 +30,10 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
 - [UASTHN](../../catalog/repos/arplaboratory__uasthn.md) (extends)
 - [ScalLoc](../../catalog/repos/floralhercules__scalloc.md) (alternative_to)

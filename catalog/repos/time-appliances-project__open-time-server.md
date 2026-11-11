@@ -2,7 +2,7 @@
 
 `repo:time-appliances-project/open-time-server` - <https://github.com/Time-Appliances-Project/Open-Time-Server>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 16 |  | MIT | 2025-02-17 | False | production | low |
 
@@ -10,7 +10,7 @@ OCP specification for an open time server: COTS server, a NIC with hardware time
 
 **Why it matters:** A concise architecture document for a GNSS-backed time server with holdover; useful as a slide template for a resilient-timing pitch.
 
-**Hackathon notes:** Read-only spec. Use the block diagram and responsibilities split when designing your own time node.
+**Build notes:** Read-only spec. Use the block diagram and responsibilities split when designing your own time node.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

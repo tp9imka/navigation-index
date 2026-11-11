@@ -2,7 +2,7 @@
 
 `repo:taroz/gsdc2023` - <https://github.com/taroz/gsdc2023>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 116 | MATLAB | MIT | 2025-01-15 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Code reproducing Taro Suzuki's Google Smartphone Decimeter Challenge 2023 entry 
 
 **Why it matters:** Shows what state-of-the-art smartphone positioning looks like on a public benchmark.
 
-**Hackathon notes:** MATLAB required. Read it for the pipeline design even if you reimplement in Python.
+**Build notes:** MATLAB required. Read it for the pipeline design even if you reimplement in Python.
 
 ## Deep dives
 
@@ -30,10 +30,10 @@ Code reproducing Taro Suzuki's Google Smartphone Decimeter Challenge 2023 entry 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [ML GNSS/IMU integration (GSDC 2022)](../../catalog/repos/akpozi__machine_learning_gnss_imu_integration.md) (alternative_to)
 - [Smartphone Decimeter Challenge MATLAB package](../../catalog/repos/arnauochoa__smartphone-decimeter-challenge.md) (alternative_to)
 - [GSDC 10th place solution](../../catalog/repos/fkaneko__kaggle_google_smartphone_decimeter_challenge.md) (alternative_to)

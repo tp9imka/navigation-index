@@ -2,7 +2,7 @@
 
 `repo:stanford-navlab/gnss_lib_py` - <https://github.com/Stanford-NavLab/gnss_lib_py>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 268 | Python | MIT | 2026-11-04 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 
 **Why it matters:** Strong Python base for smartphone GNSS work and for prototyping integrity/fault detection.
 
-**Hackathon notes:** pip install gnss-lib-py; tutorials load GSDC data directly. Very good fit for a 24h spoofing-detection or integrity notebook.
+**Build notes:** pip install gnss-lib-py; tutorials load GSDC data directly. Very good fit for a 24h spoofing-detection or integrity notebook.
 
 ## Deep dives
 
@@ -32,14 +32,14 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [laika](../../catalog/repos/commaai__laika.md) (alternative_to)

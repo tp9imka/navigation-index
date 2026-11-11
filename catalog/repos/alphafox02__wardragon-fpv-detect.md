@@ -2,7 +2,7 @@
 
 `repo:alphafox02/wardragon-fpv-detect` - <https://github.com/alphafox02/wardragon-fpv-detect>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 35 | Python | Apache-2.0 | 2026-03-24 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ GNU Radio based scanner that checks known analog FPV video frequencies for energ
 
 **Why it matters:** Simple, explainable RF detection of FPV drones, a growing threat class.
 
-**Hackathon notes:** Needs GNU Radio 3.10, gr-inspector and an SDR such as Pluto.
+**Build notes:** Needs GNU Radio 3.10, gr-inspector and an SDR such as Pluto.
 
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 

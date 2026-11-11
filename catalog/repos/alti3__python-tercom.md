@@ -2,7 +2,7 @@
 
 `repo:alti3/python-tercom` - <https://github.com/alti3/python-tercom>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 7 | Python | ? | 2025-04-06 | False | educational | high |
 
@@ -10,7 +10,7 @@ Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profi
 
 **Why it matters:** Smallest end-to-end TERCOM sim to understand and extend for a DEM-matching demo.
 
-**Hackathon notes:** Load an SRTM/Copernicus DEM tile, generate a profile, show the correlation surface; an afternoon's work.
+**Build notes:** Load an SRTM/Copernicus DEM tile, generate a profile, show the correlation surface; an afternoon's work.
 
 ## Deep dives
 
@@ -31,13 +31,13 @@ Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profi
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [TERCOM-python (DSMAC-style scene matching)](../../catalog/repos/ayushmankumar7__tercom-python.md) (alternative_to)

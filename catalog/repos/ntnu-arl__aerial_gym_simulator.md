@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/aerial_gym_simulator` - <https://github.com/ntnu-arl/aerial_gym_simulator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 780 | Python | BSD-3-Clause | 2026-06-28 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, wit
 
 **Why it matters:** Train learned obstacle avoidance and navigation for drones at scale with simulated depth cameras and lidar.
 
-**Hackathon notes:** Needs NVIDIA GPU and Isaac Gym preview (a legacy package); check README for current install path.
+**Build notes:** Needs NVIDIA GPU and Isaac Gym preview (a legacy package); check README for current install path.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

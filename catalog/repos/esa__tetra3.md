@@ -2,7 +2,7 @@
 
 `repo:esa/tetra3` - <https://github.com/esa/tetra3>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 175 | Python | Apache-2.0 | 2024-08-14 | False | production | high |
 
@@ -10,7 +10,7 @@ Fast lost-in-space plate solver for star trackers from ESA: identifies stars in 
 
 **Why it matters:** Star-based attitude (and with time + gravity vector, position) is jam-proof; tetra3 is the easiest open solver.
 
-**Hackathon notes:** Not on PyPI: pip install git+https://github.com/esa/tetra3.git; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.
+**Build notes:** Not on PyPI: pip install git+https://github.com/esa/tetra3.git; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Fast lost-in-space plate solver for star trackers from ESA: identifies stars in 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [celestial-navigation toolkit](../../catalog/repos/alinnman__celestial-navigation.md) (integrates_with)
 - [Astrometry.net](../../catalog/repos/dstndstn__astrometry.net.md) (alternative_to)

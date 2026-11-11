@@ -2,7 +2,7 @@
 
 `repo:keenan-burnett/yeti_radar_odometry` - <https://github.com/keenan-burnett/yeti_radar_odometry>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 154 | C++ | BSD-3-Clause | 2021-12-15 | False | archived | low |
 
@@ -10,7 +10,7 @@ Radar odometry for Navtech spinning radar that compensates motion distortion and
 
 **Why it matters:** Shows the corrections needed to make scanning radar odometry accurate.
 
-**Hackathon notes:** Unmaintained; evaluated on Oxford Radar RobotCar.
+**Build notes:** Unmaintained; evaluated on Oxford Radar RobotCar.
 
 ## Deep dives
 

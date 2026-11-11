@@ -2,7 +2,7 @@
 
 `repo:superq/chrony_exporter` - <https://github.com/SuperQ/chrony_exporter>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 114 | Go | Apache-2.0 | 2026-11-01 | False | production | high |
 
@@ -10,7 +10,7 @@ Prometheus exporter for chrony tracking, sources and server statistics.
 
 **Why it matters:** Puts clock offset, frequency and source health on a dashboard: the monitoring half of a timing-resilience demo.
 
-**Hackathon notes:** Run next to chronyd, scrape with Prometheus, chart in Grafana; enable the sources collector to see each reference.
+**Build notes:** Run next to chronyd, scrape with Prometheus, chart in Grafana; enable the sources collector to see each reference.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

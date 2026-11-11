@@ -16,4 +16,4 @@ Event page for a UAV and UGV trial inside the never-operated Zwentendorf nuclear
 
 **Tags:** `enrich`, `hackathon`, `indoor`, `inspection`, `competition`
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

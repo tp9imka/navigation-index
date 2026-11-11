@@ -2,7 +2,7 @@
 
 `repo:sobu-labs/gnss-multiple-jammers-dataset` - <https://github.com/sobu-labs/gnss-multiple-jammers-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 |  | ? | 2026-06-14 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Placeholder repo: its description promises recordings of several simultaneous ch
 
 **Why it matters:** Multi-jammer data is rare; useful for testing mitigation filters.
 
-**Hackathon notes:** No data, README or licence yet - nothing to use. Watch the repo or pick another jamming set.
+**Build notes:** No data, README or licence yet - nothing to use. Watch the repo or pick another jamming set.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

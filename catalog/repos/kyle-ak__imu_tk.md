@@ -2,7 +2,7 @@
 
 `repo:kyle-ak/imu_tk` - <https://github.com/Kyle-ak/imu_tk>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 557 | C++ | ? | 2023-06-22 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of a
 
 **Why it matters:** Cheap way to improve MEMS IMU accuracy before deploying a filter.
 
-**Hackathon notes:** Needs Ceres; collect static poses in many orientations with short rotations between.
+**Build notes:** Needs Ceres; collect static poses in many orientations with short rotations between.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

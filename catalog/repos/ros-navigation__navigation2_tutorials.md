@@ -2,7 +2,7 @@
 
 `repo:ros-navigation/navigation2_tutorials` - <https://github.com/ros-navigation/navigation2_tutorials>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 374 | Python | ? | 2026-10-03 | False | educational | high |
 
@@ -10,7 +10,7 @@ Tutorial packages referenced by docs.nav2.org: example planner, controller and b
 
 **Why it matters:** Shortest path to custom Nav2 plugins and GPS-based outdoor navigation in ROS 2.
 
-**Hackathon notes:** Clone into a ROS 2 workspace matching your distro branch; the GPS waypoint follower demo runs in Gazebo.
+**Build notes:** Clone into a ROS 2 workspace matching your distro branch; the GPS waypoint follower demo runs in Gazebo.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

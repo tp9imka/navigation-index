@@ -2,7 +2,7 @@
 
 `repo:nlsfi/fgi-gsrx` - <https://github.com/nlsfi/FGI-GSRx>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 200 | MATLAB | GPL-3.0 | 2026-10-09 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Inst
 
 **Why it matters:** MATLAB receiver suitable for quick algorithm swaps (e.g. new tracking or interference mitigation) with readable code.
 
-**Hackathon notes:** Needs MATLAB and IQ files; slow but transparent.
+**Build notes:** Needs MATLAB and IQ files; slow but transparent.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

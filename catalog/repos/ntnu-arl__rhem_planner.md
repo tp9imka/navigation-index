@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/rhem_planner` - <https://github.com/ntnu-arl/rhem_planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ Uncertainty-aware receding-horizon exploration planner that picks paths minimisi
 
 **Why it matters:** Example of VIO uncertainty driving route choice on a real aerial robot.
 
-**Hackathon notes:** No license field (gh api), last push 2018-05-30, ROS 1. Read-only. URL redirects from unr-arl/rhem_planner.
+**Build notes:** No license field (gh api), last push 2018-05-30, ROS 1. Read-only. URL redirects from unr-arl/rhem_planner.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,15 +2,15 @@
 
 `repo:deptofdefense/androidtacticalassaultkit-civ` - <https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 498 | Java | NOASSERTION | 2024-10-18 | True | archived | medium |
 
 The DoD's public source release of the civilian Android Team Awareness Kit: map engine, Cursor-on-Target messaging and plugin SDK.
 
-**Why it matters:** TAK is the de facto common operating picture across US/NATO units, so a plugin or CoT feed is an instantly legible demo for defense judges.
+**Why it matters:** TAK is the de facto common operating picture across US/NATO units, so a plugin or CoT feed is an instantly legible demo for defense-context reviewers.
 
-**Hackathon notes:** Archived; use the TAK Product Center repo for current code. Building ATAK from source is heavy - develop a plugin against a prebuilt SDK instead.
+**Build notes:** Archived; use the TAK Product Center repo for current code. Building ATAK from source is heavy - develop a plugin against a prebuilt SDK instead.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

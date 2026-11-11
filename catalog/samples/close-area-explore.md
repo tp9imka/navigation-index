@@ -30,11 +30,11 @@ Search arms for the case where B is a marker, a nominal position or an area, not
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/quickstart-first-flight.md) (mentions)
 - [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 

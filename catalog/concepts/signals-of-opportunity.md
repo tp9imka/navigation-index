@@ -9,7 +9,7 @@ Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran,
 ## Guides (2)
 
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
-- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What judges from industry already know.
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What reviewers from industry already know.
 
 ## Repositories (14)
 

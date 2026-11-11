@@ -12,7 +12,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 ## Guides (2)
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
-- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for a close-area A=>B task (full-brief routing).
 
 ## Repositories (45)
 

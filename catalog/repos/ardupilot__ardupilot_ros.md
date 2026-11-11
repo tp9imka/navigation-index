@@ -2,7 +2,7 @@
 
 `repo:ardupilot/ardupilot_ros` - <https://github.com/ArduPilot/ardupilot_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 31 | Python | GPL-3.0 | 2026-07-27 | False | active-research | high |
 
@@ -10,7 +10,7 @@ ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS n
 
 **Why it matters:** Directly targets lidar-SLAM-fed GPS-free flight on ArduPilot.
 
-**Hackathon notes:** Use with ardupilot_gz for simulation; follow the wiki ROS 2 pages.
+**Build notes:** Use with ardupilot_gz for simulation; follow the wiki ROS 2 pages.
 
 ## Deep dives
 

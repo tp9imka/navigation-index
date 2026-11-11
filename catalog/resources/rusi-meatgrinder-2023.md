@@ -24,7 +24,7 @@ RUSI special report on Russian battlefield adaptation, including the density of 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

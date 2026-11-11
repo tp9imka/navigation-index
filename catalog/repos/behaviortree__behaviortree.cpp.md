@@ -2,7 +2,7 @@
 
 `repo:behaviortree/behaviortree.cpp` - <https://github.com/behaviortree/behaviortree.cpp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,287 | C++ | MIT | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ C++ behavior tree library with XML trees, async actions, logging and the Groot e
 
 **Why it matters:** Standard way to compose navigation, fallback and recovery logic into readable mission trees.
 
-**Hackathon notes:** Header-friendly library; Groot2 GUI helps demo mission logic to judges.
+**Build notes:** Header-friendly library; Groot2 GUI helps demo mission logic to reviewers.
 
 **Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

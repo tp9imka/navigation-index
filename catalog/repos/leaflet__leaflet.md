@@ -2,7 +2,7 @@
 
 `repo:leaflet/leaflet` - <https://github.com/leaflet/leaflet>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 45,893 | JavaScript | BSD-2-Clause | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Small, simple JavaScript library for interactive raster/vector maps with a huge 
 
 **Why it matters:** Quickest route to a working map with markers and tracks in a hackathon UI.
 
-**Hackathon notes:** Works with milsymbol to render unit icons as markers.
+**Build notes:** Works with milsymbol to render unit icons as markers.
 
 ## Deep dives
 

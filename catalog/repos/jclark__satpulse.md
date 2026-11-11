@@ -2,7 +2,7 @@
 
 `repo:jclark/satpulse` - <https://github.com/jclark/satpulse>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 70 | Go | MIT | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP
 
 **Why it matters:** The shortest path from a GNSS timing receiver to a working NTP/PTP time server with monitoring, on cheap hardware.
 
-**Hackathon notes:** Install on a Pi CM4/CM5 with a u-blox timing receiver; follow satpulse.net. The GUI makes receiver state visible during a jamming or spoofing demo.
+**Build notes:** Install on a Pi CM4/CM5 with a u-blox timing receiver; follow satpulse.net. The GUI makes receiver state visible during a jamming or spoofing demo.
 
 ## Deep dives
 

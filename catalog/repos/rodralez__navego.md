@@ -2,7 +2,7 @@
 
 `repo:rodralez/navego` - <https://github.com/rodralez/NaveGo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 643 | MATLAB | NOASSERTION | 2024-02-24 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Open MATLAB/GNU Octave toolbox for simulating and processing integrated INS/GNSS
 
 **Why it matters:** Quick offline analysis and simulation of INS/GNSS without compiling anything.
 
-**Hackathon notes:** Works in Octave if no MATLAB licence. Last push 2024, so treat as stable rather than evolving.
+**Build notes:** Works in Octave if no MATLAB licence. Last push 2024, so treat as stable rather than evolving.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

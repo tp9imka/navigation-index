@@ -2,7 +2,7 @@
 
 `repo:learnsyslab/crazyflow` - <https://github.com/learnsyslab/crazyflow>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | active-research | medium |
 
@@ -10,7 +10,7 @@ JAX-based batched, differentiable quadrotor simulator from TUM LSY with first-pr
 
 **Why it matters:** Light, pip-installable Crazyflie sim with sim-to-real tuned dynamics. Runs on CPU, so usable on a Mac.
 
-**Hackathon notes:** MIT. CPU wheel is py3-none-any; the GPU extra is Linux x86-64 CUDA only. Lower-level than gym-pybullet-drones; use it through lsy_drone_racing unless you need batched rollouts.
+**Build notes:** MIT. CPU wheel is py3-none-any; the GPU extra is Linux x86-64 CUDA only. Lower-level than gym-pybullet-drones; use it through lsy_drone_racing unless you need batched rollouts.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
@@ -25,7 +25,7 @@ JAX-based batched, differentiable quadrotor simulator from TUM LSY with first-pr
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [MuJoCo Menagerie](../../catalog/repos/google-deepmind__mujoco_menagerie.md) (integrates_with)
 - [LSY Autonomous Drone Racing](../../catalog/repos/learnsyslab__lsy_drone_racing.md) (depends_on)
 

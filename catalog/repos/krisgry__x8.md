@@ -2,7 +2,7 @@
 
 `repo:krisgry/x8` - <https://github.com/krisgry/x8>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 27 | Matlab | ? | 2018-06-14 | False | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB simulator showcasing the Skywalker X8 flying-wing aerodynamic model from 
 
 **Why it matters:** A published, real-airframe aerodynamic coefficient set: the process model a fixed-wing vehicle-dynamic-model navigator needs.
 
-**Hackathon notes:** No license file; cite the paper. Thrust model is borrowed from the Aerosonde model per the README, so propulsion is not identified. Port the coefficients to Python rather than run MATLAB.
+**Build notes:** No license file; cite the paper. Thrust model is borrowed from the Aerosonde model per the README, so propulsion is not identified. Port the coefficients to Python rather than run MATLAB.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

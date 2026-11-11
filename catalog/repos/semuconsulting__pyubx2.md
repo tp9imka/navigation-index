@@ -2,7 +2,7 @@
 
 `repo:semuconsulting/pyubx2` - <https://github.com/semuconsulting/pyubx2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 256 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 
 **Why it matters:** Standard way to talk to u-blox receivers from Python: configure, log raw data and read jamming/spoofing status fields (MON-HW, NAV-STATUS).
 
-**Hackathon notes:** pip install pyubx2. Read MON-RF jamming indicators and NAV-STATUS spoof flags to build a live interference monitor quickly.
+**Build notes:** pip install pyubx2. Read MON-RF jamming indicators and NAV-STATUS spoof flags to build a live interference monitor quickly.
 
 ## Deep dives
 
@@ -30,10 +30,10 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [GPSSpy](../../catalog/repos/hoverflyhampton__gpsspy.md) (integrates_with)

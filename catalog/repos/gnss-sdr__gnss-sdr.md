@@ -2,7 +2,7 @@
 
 `repo:gnss-sdr/gnss-sdr` - <https://github.com/gnss-sdr/gnss-sdr>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,327 | C++ | GPL-3.0 | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 
 **Why it matters:** The most complete open receiver for experimenting with signal-level defenses (tracking monitors, authentication, interference) on real or simulated IQ.
 
-**Hackathon notes:** Install from distro packages (apt install gnss-sdr) to skip a long build. Feed it GPS-SDR-SIM or recorded IQ files; works with HackRF/USRP/RTL-SDR front-ends.
+**Build notes:** Install from distro packages (apt install gnss-sdr) to skip a long build. Feed it GPS-SDR-SIM or recorded IQ files; works with HackRF/USRP/RTL-SDR front-ends.
 
 ## Deep dives
 
@@ -32,14 +32,14 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [OSNMAlib](../../catalog/repos/algafix__osnma.md) (integrates_with)

@@ -2,7 +2,7 @@
 
 `repo:osrf/subt` - <https://github.com/osrf/subt>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 371 | C++ | NOASSERTION | 2024-05-07 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual t
 
 **Why it matters:** Ready GNSS-denied underground environments with official scoring - a credible simulation testbed straight out of a DARPA challenge.
 
-**Hackathon notes:** Dockerized, ROS1-era; heavy GPU/CPU needs. Use the hello-world repo as a starting point.
+**Build notes:** Dockerized, ROS1-era; heavy GPU/CPU needs. Use the hello-world repo as a starting point.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

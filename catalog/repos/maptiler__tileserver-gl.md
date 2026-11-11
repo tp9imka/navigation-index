@@ -2,7 +2,7 @@
 
 `repo:maptiler/tileserver-gl` - <https://github.com/maptiler/tileserver-gl>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,918 | JavaScript | NOASSERTION | 2026-11-01 | False | production | high |
 
@@ -10,7 +10,7 @@ Vector and raster tile server that serves MBTiles/PMTiles with GL styles and ren
 
 **Why it matters:** Simplest offline basemap server for field laptops and TAK clients needing raster tiles.
 
-**Hackathon notes:** docker run maptiler/tileserver-gl with an mbtiles file; also gives WMTS for QGIS.
+**Build notes:** docker run maptiler/tileserver-gl with an mbtiles file; also gives WMTS for QGIS.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Vector and raster tile server that serves MBTiles/PMTiles with GL styles and ren
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
 - [Martin](../../catalog/repos/maplibre__martin.md) (alternative_to)

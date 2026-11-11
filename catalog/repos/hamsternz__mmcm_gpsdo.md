@@ -2,7 +2,7 @@
 
 `repo:hamsternz/mmcm_gpsdo` - <https://github.com/hamsternz/MMCM_GPSDO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 33 | VHDL | ? | 2022-09-01 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ All-digital GPSDO in VHDL for a Basys3 FPGA board: steers the clock with MMCM ph
 
 **Why it matters:** Minimal FPGA disciplining loop to read or extend with holdover logic.
 
-**Hackathon notes:** Needs a Basys3 (Artix-7) and a GPS with PPS. No licence file per GitHub metadata - read, do not copy.
+**Build notes:** Needs a Basys3 (Artix-7) and a GPS with PPS. No licence file per GitHub metadata - read, do not copy.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

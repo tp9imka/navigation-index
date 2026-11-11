@@ -2,7 +2,7 @@
 
 `repo:utiasasrl/steam` - <https://github.com/utiasASRL/steam>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 117 | C++ | BSD-3-Clause | 2026-05-15 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinea
 
 **Why it matters:** Continuous-time estimation handles asynchronous, motion-distorted sensors such as spinning radar and lidar.
 
-**Hackathon notes:** Library, not an application; see steam_icp for a ready odometry pipeline built on it.
+**Build notes:** Library, not an application; see steam_icp for a ready odometry pipeline built on it.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

@@ -2,7 +2,7 @@
 
 `repo:pajaraca/iez` - <https://github.com/pajaraca/IEZ>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 57 | Python | ? | 2022-08-15 | False | educational | high |
 
@@ -10,7 +10,7 @@ Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot
 
 **Why it matters:** Compact reference for the standard ZUPT pedestrian tracker that underpins dismounted soldier navigation.
 
-**Hackathon notes:** Runs offline on included data; reproduce with any cheap IMU strapped to a boot.
+**Build notes:** Runs offline on included data; reproduce with any cheap IMU strapped to a boot.
 
 **Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

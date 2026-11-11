@@ -2,7 +2,7 @@
 
 `repo:prbonn/mapclosures` - <https://github.com/PRBonn/MapClosures>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 455 | C++ | MIT | 2026-10-07 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Loop-closure detection using bird's-eye-view density images of local LiDAR maps.
 
 **Why it matters:** Sensor-agnostic loop closure that plugs into any LiDAR odometry.
 
-**Hackathon notes:** Python bindings via pip.
+**Build notes:** Python bindings via pip.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

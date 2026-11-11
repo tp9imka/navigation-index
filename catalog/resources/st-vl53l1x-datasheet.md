@@ -21,4 +21,4 @@ Datasheet for the 940 nm laser ToF chip used five times on the Crazyflie Multi-r
 - explains: [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md)
 - explains: [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md)
 
-_Indexed by lane(s): loop-23_
+_Indexed by lane(s): crazyflie-sensing_

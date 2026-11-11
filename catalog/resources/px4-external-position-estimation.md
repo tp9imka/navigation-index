@@ -22,7 +22,7 @@ How to feed external vision or mocap poses into PX4 EKF2 via MAVLink or ROS, inc
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)

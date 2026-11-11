@@ -2,7 +2,7 @@
 
 `repo:onthegomap/planetiler` - <https://github.com/onthegomap/planetiler>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,245 | Java | Apache-2.0 | 2026-11-07 | False | production | medium |
 
@@ -10,7 +10,7 @@ Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM
 
 **Why it matters:** Build your own up-to-date offline basemap for an AOI in minutes.
 
-**Hackathon notes:** planetiler --download --area=<region> --output=<name>.pmtiles builds mbtiles or pmtiles; the jar needs Java 25+, the Homebrew, single-file and Docker launchers need no Java. The first run downloads about 1 GB of ocean and Natural Earth data.
+**Build notes:** planetiler --download --area=<region> --output=<name>.pmtiles builds mbtiles or pmtiles; the jar needs Java 25+, the Homebrew, single-file and Docker launchers need no Java. The first run downloads about 1 GB of ocean and Natural Earth data.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

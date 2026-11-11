@@ -2,7 +2,7 @@
 
 `repo:introlab/rtabmap` - <https://github.com/introlab/rtabmap>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,091 | C++ | NOASSERTION | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Graph-based SLAM library and app supporting RGB-D, stereo and LiDAR, with memory
 
 **Why it matters:** Practical all-rounder with GUI, database and localization modes; easiest way to get a working 3D map on a ground robot.
 
-**Hackathon notes:** Install via apt binaries (ROS) or the standalone app. Supports phone/iPad LiDAR capture. Save a map, then switch to localization mode.
+**Build notes:** Install via apt binaries (ROS) or the standalone app. Supports phone/iPad LiDAR capture. Save a map, then switch to localization mode.
 
 ## Deep dives
 

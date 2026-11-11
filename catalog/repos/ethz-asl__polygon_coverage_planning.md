@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/polygon_coverage_planning` - <https://github.com/ethz-asl/polygon_coverage_planning>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 671 | C++ | GPL-3.0 | 2023-11-13 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep
 
 **Why it matters:** Handles no-fly holes inside a survey area, which simple lawnmower generators do not.
 
-**Hackathon notes:** ROS1 + CGAL; last push 2023. Use as a reference or run offline to produce waypoint lists.
+**Build notes:** ROS1 + CGAL; last push 2023. Use as a reference or run offline to produce waypoint lists.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

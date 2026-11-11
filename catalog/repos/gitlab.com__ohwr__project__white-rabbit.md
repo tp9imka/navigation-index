@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ohwr/project/white-rabbit` - <https://gitlab.com/ohwr/project/white-rabbit>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? |  | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ Umbrella OHWR project for White Rabbit, the deterministic Ethernet extension of 
 
 **Why it matters:** Starting point to find which WR hardware, gateware and calibration notes exist before committing to WR in a timing demo.
 
-**Hackathon notes:** Read the wiki, not the code. Use it to pick hardware and to cite WR accuracy from the project's own docs.
+**Build notes:** Read the wiki, not the code. Use it to pick hardware and to cite WR accuracy from the project's own docs.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

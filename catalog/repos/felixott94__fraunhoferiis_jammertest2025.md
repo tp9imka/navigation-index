@@ -2,7 +2,7 @@
 
 `repo:felixott94/fraunhoferiis_jammertest2025` - <https://github.com/FelixOtt94/FraunhoferIIS_Jammertest2025>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5 | Python | ? | 2026-08-26 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 **Why it matters:** Rare open real-world interference data from live jamming trials, suited to training and testing interference detectors and classifiers.
 
-**Hackathon notes:** Data is chunked HDF5 under dataset/ (Git LFS; the README points to an identical GitLab mirror for the full download) plus train/test split lists. There are no loader modules - the README only gives an h5py inspection snippet, so budget time to write your own loader before building a jamming/spoofing classifier on one scenario class.
+**Build notes:** Data is chunked HDF5 under dataset/ (Git LFS; the README points to an identical GitLab mirror for the full download) plus train/test split lists. There are no loader modules - the README only gives an h5py inspection snippet, so budget time to write your own loader before building a jamming/spoofing classifier on one scenario class.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Towards Jammer Fingerprinting](../../catalog/repos/helsinki-sda-group__towards-jammer-fingerprinting.md) (integrates_with)
 - [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md) (integrates_with)
 - [VAARA Jammertest dataset](../../catalog/repos/univaasadigieco__vaara.md) (alternative_to)

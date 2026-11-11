@@ -2,7 +2,7 @@
 
 `repo:open-pnt/aspn-icd` - <https://github.com/Open-PNT/ASPN-ICD>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 10 | Python | CC-BY-4.0 | 2026-09-24 | False | production | medium |
 
@@ -10,7 +10,7 @@ Public interface control document for ASPN 2023, the All-Source Positioning and 
 
 **Why it matters:** Using ASPN message types for sensor inputs is a cheap way to make a hackathon fusion engine speak the plug-and-play vocabulary defence PNT programmes use.
 
-**Hackathon notes:** CC-BY-4.0. Read the measurement types you need (IMU, position, velocity, altitude) and mirror them as dataclasses; no code to build.
+**Build notes:** CC-BY-4.0. Read the measurement types you need (IMU, position, velocity, altitude) and mirror them as dataclasses; no code to build.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

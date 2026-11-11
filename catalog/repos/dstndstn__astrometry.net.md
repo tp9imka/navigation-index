@@ -2,7 +2,7 @@
 
 `repo:dstndstn/astrometry.net` - <https://github.com/dstndstn/astrometry.net>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 876 | C | NOASSERTION | 2026-11-07 | False | production | medium |
 
@@ -10,7 +10,7 @@ Blind astrometric solver that identifies star fields in arbitrary images and ret
 
 **Why it matters:** Proven lost-in-space plate solving; with a known time and gravity vector it yields attitude and coarse position.
 
-**Hackathon notes:** apt install astrometry.net plus index files for your field of view; solve-field on a night-sky photo.
+**Build notes:** apt install astrometry.net plus index files for your field of view; solve-field on a night-sky photo.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md)
 

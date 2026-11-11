@@ -2,7 +2,7 @@
 
 `repo:kumarrobotics/ublox` - <https://github.com/KumarRobotics/ublox>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 539 | C++ | BSD-3-Clause | 2026-08-21 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS driver for u-blox receivers that publishes fixes, raw measurements and recei
 
 **Why it matters:** Common bridge from u-blox hardware into ROS-based autonomy stacks.
 
-**Hackathon notes:** Available as a ROS package; check the branch for ROS 1 vs ROS 2.
+**Build notes:** Available as a ROS package; check the branch for ROS 1 vs ROS 2.
 
 ## Deep dives
 

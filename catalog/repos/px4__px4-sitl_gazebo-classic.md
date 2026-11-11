@@ -2,7 +2,7 @@
 
 `repo:px4/px4-sitl_gazebo-classic` - <https://github.com/PX4/PX4-SITL_gazebo-classic>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 467 | C++ | ? | 2026-10-27 | False | production | medium |
 
@@ -10,7 +10,7 @@ Plugins, vehicle models and worlds that connect PX4 SITL/HITL to Gazebo Classic,
 
 **Why it matters:** Large existing corpus of tutorials and research setups still target it; the GPS plugin is a common starting point for spoofing and jamming experiments in sim.
 
-**Hackathon notes:** Works with Ubuntu 20.04/22.04 and Gazebo 11. Gazebo Classic has reached end of life, so prefer gz-sim for new builds unless you need a specific legacy model.
+**Build notes:** Works with Ubuntu 20.04/22.04 and Gazebo 11. Gazebo Classic has reached end of life, so prefer gz-sim for new builds unless you need a specific legacy model.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

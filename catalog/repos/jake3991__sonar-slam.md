@@ -2,7 +2,7 @@
 
 `repo:jake3991/sonar-slam` - <https://github.com/jake3991/sonar-SLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 308 | Python | MIT | 2023-09-21 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute 
 
 **Why it matters:** One of the more complete open sonar SLAM pipelines; directly relevant to GNSS-free underwater navigation.
 
-**Hackathon notes:** ROS 1 with sample bags; budget time for dependencies.
+**Build notes:** ROS 1 with sample bags; budget time for dependencies.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [BRUCE](../../catalog/repos/jinkunw__bruce.md) (alternative_to)
 - [DISO](../../catalog/repos/senseroboticslab__diso.md) (alternative_to)
 

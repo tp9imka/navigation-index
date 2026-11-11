@@ -2,7 +2,7 @@
 
 `repo:nasa-sw-vnv/fret` - <https://github.com/NASA-SW-VnV/fret>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 504 | JavaScript | NOASSERTION | 2026-04-14 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ NASA's Formal Requirements Elicitation Tool: write requirements in a structured 
 
 **Why it matters:** Certification work starts from requirements. Writing the nav function's safety requirements in FRET gives a traceable artifact that maps to the DO-178C requirements-based mindset.
 
-**Hackathon notes:** Electron desktop app. License is a NASA agreement in LICENSE.pdf (GitHub reports NOASSERTION; not read here). A 30-minute exercise: 5 requirements for the nav output, exported to Ogma, shown as one slide of traceability.
+**Build notes:** Electron desktop app. License is a NASA agreement in LICENSE.pdf (GitHub reports NOASSERTION; not read here). A 30-minute exercise: 5 requirements for the nav output, exported to Ogma, shown as one slide of traceability.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md)
 

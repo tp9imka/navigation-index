@@ -2,7 +2,7 @@
 
 `repo:raulmur/orb_slam2` - <https://github.com/raulmur/ORB_SLAM2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 10,271 | C++ | NOASSERTION | 2024-05-15 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, w
 
 **Why it matters:** The reference visual SLAM baseline most papers compare against; cheap camera-only localization when GNSS is denied.
 
-**Hackathon notes:** Superseded by ORB-SLAM3 and no longer developed; builds need patching on modern OpenCV/Eigen. Use only to reproduce old baselines.
+**Build notes:** Superseded by ORB-SLAM3 and no longer developed; builds need patching on modern OpenCV/Eigen. Use only to reproduce old baselines.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

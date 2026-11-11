@@ -2,7 +2,7 @@
 
 `repo:1ux/dcf77decode` - <https://github.com/1ux/DCF77Decode>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | C++ | GPL-3.0 | 2024-04-11 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ C library that decodes the DCF77 time code bitstream (from a cheap AM receiver m
 
 **Why it matters:** A tiny GNSS-independent coarse time source for a microcontroller.
 
-**Hackathon notes:** Pair with a DCF77 receiver module; accuracy is limited by the AM envelope.
+**Build notes:** Pair with a DCF77 receiver module; accuracy is limited by the AM envelope.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 

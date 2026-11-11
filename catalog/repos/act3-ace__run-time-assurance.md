@@ -2,7 +2,7 @@
 
 `repo:act3-ace/run-time-assurance` - <https://github.com/act3-ace/run-time-assurance>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | Jupyter Notebook | NOASSERTION | 2025-09-12 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Python library of runtime-assurance safety filters from the AFRL ACT3 team: gene
 
 **Why it matters:** One of very few public, code-level RTA implementations from a defense lab. It shows the switch logic and constraint style a reviewer will expect when you claim 'simplex architecture'.
 
-**Hackathon notes:** LICENSE says only 'This software is government owned'; the README carries an AFRL public-release case number. Fine to read and learn from; ask before shipping it. Examples target spacecraft docking, so adapt the constraint set to nav (position bound, innovation bound).
+**Build notes:** LICENSE says only 'This software is government owned'; the README carries an AFRL public-release case number. Fine to read and learn from; ask before shipping it. Examples target spacecraft docking, so adapt the constraint set to nav (position bound, innovation bound).
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

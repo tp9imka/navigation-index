@@ -21,7 +21,7 @@ UK maritime resilient navigation study (MarRINav) on backups for GNSS at sea, in
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Who cares about the Baltic Jammer? Terrestrial Navigation in the Baltic Sea Region (39C3)](../../catalog/resources/39c3-baltic-jammer-r-mode.md) (cites)
 

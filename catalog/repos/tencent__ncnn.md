@@ -2,7 +2,7 @@
 
 `repo:tencent/ncnn` - <https://github.com/Tencent/ncnn>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 24,030 | C++ | NOASSERTION | 2026-11-09 | False | production | medium |
 
@@ -10,7 +10,7 @@ Dependency-free C++ inference engine tuned for ARM CPUs (NEON) with optional Vul
 
 **Why it matters:** The practical CPU-only inference path on a Raspberry Pi 5 or other ARM companion, and a published per-board baseline to compare against.
 
-**Hackathon notes:** BSD-3 for ncnn itself, with third-party components under their own terms (LICENSE.txt). Run `benchncnn` on your board to reproduce the README numbers before porting your own model via pnnx.
+**Build notes:** BSD-3 for ncnn itself, with third-party components under their own terms (LICENSE.txt). Run `benchncnn` on your board to reproduce the README numbers before porting your own model via pnnx.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

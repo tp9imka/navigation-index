@@ -2,7 +2,7 @@
 
 `repo:signalk/specification` - <https://github.com/SignalK/specification>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 105 | JavaScript | NOASSERTION | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ The JSON schema and specification for the Signal K marine data format covering n
 
 **Why it matters:** Gives a common vocabulary for maritime nav data instead of inventing one during a hackathon.
 
-**Hackathon notes:** Read the navigation.* paths before designing your own message format.
+**Build notes:** Read the navigation.* paths before designing your own message format.
 
 **Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

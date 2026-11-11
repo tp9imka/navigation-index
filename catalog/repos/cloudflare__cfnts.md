@@ -2,7 +2,7 @@
 
 `repo:cloudflare/cfnts` - <https://github.com/cloudflare/cfnts>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 174 | Rust | BSD-2-Clause | 2024-04-09 | True | archived | low |
 
@@ -10,7 +10,7 @@ Cloudflare's Rust implementation of Network Time Security (NTS) key exchange and
 
 **Why it matters:** Readable NTS reference code; for running NTS use chrony, ntpd-rs or NTPsec.
 
-**Hackathon notes:** Archived; read only.
+**Build notes:** Archived; read only.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

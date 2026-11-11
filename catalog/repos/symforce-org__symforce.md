@@ -2,7 +2,7 @@
 
 `repo:symforce-org/symforce` - <https://github.com/symforce-org/symforce>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,656 | C++ | Apache-2.0 | 2026-10-30 | False | production | medium |
 
@@ -10,7 +10,7 @@ Symbolic computation and code generation library with a fast sparse nonlinear le
 
 **Why it matters:** Lets a team write a custom measurement model (drag force, rotor thrust, learned velocity) once symbolically and get optimized C++/Python residuals and Jacobians, avoiding hand-derived Jacobian bugs under time pressure.
 
-**Hackathon notes:** Apache-2.0, pip install symforce. Learning curve is real; worth it only if the team writes new factors.
+**Build notes:** Apache-2.0, pip install symforce. Learning curve is real; worth it only if the team writes new factors.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

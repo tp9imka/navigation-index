@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/vins-mono` - <https://github.com/HKUST-Aerial-Robotics/VINS-Mono>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,070 | C++ | GPL-3.0 | 2024-08-14 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Optimization-based monocular visual-inertial estimator with sliding-window bundl
 
 **Why it matters:** The canonical one-camera-plus-IMU estimator; works on light UAV payloads where stereo or LiDAR is too heavy.
 
-**Hackathon notes:** ROS 1 only and no longer maintained; the README targets Ubuntu 16.04 / ROS Kinetic with Ceres 1.14, and the bundled Docker image is ROS Kinetic. Sensitive to time sync and initialization motion.
+**Build notes:** ROS 1 only and no longer maintained; the README targets Ubuntu 16.04 / ROS Kinetic with Ceres 1.14, and the bundled Docker image is ROS Kinetic. Sensitive to time sync and initialization motion.
 
 ## Deep dives
 

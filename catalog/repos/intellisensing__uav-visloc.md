@@ -2,7 +2,7 @@
 
 `repo:intellisensing/uav-visloc` - <https://github.com/IntelliSensing/UAV-VisLoc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 300 | Python | ? | 2024-05-22 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 
 **Why it matters:** Real nadir-ish drone frames with ground truth over large, non-urban areas - the closest public match to a GNSS-denied flight test.
 
-**Hackathon notes:** Best dataset to test a visual-GPS demo; pick one flight and its map, run your matcher, plot error vs ground truth.
+**Build notes:** Best dataset to test a visual-GPS demo; pick one flight and its map, run your matcher, plot error vs ground truth.
 
 ## Deep dives
 
@@ -30,13 +30,13 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [GeoAnchor](../../catalog/repos/yusufgunel__geoanchor.md) (evaluated_on)
 - [Inertial Labs VINS visual-aided INS (with Maxar Raptor)](../../catalog/resources/inertial-labs-vins.md) (alternative_to)

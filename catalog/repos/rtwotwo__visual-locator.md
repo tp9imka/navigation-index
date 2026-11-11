@@ -2,7 +2,7 @@
 
 `repo:rtwotwo/visual-locator` - <https://github.com/Rtwotwo/Visual-Locator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | Python | MIT | 2026-06-16 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over 
 
 **Why it matters:** Clean example of a retrieval + registration pipeline that compares classic and learned matchers side by side.
 
-**Hackathon notes:** Training described used a multi-GPU server; for a hackathon reuse pretrained weights and the pipeline code only.
+**Build notes:** Training described used a multi-GPU server; for a hackathon reuse pretrained weights and the pipeline code only.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

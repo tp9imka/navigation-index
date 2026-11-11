@@ -2,7 +2,7 @@
 
 `repo:nasa/cots-star-tracker` - <https://github.com/nasa/COTS-Star-Tracker>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 125 | Python | BSD-3-Clause | 2025-08-14 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ NASA software for building a star tracker from commercial off-the-shelf cameras,
 
 **Why it matters:** Directly aimed at cheap COTS cameras - the hardware a hackathon team will have.
 
-**Hackathon notes:** Follow its calibration workflow with a phone or Pi camera.
+**Build notes:** Follow its calibration workflow with a phone or Pi camera.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

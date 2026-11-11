@@ -2,7 +2,7 @@
 
 `repo:junzis/pymodes` - <https://github.com/junzis/pymodes>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 673 | Python | GPL-3.0 | 2026-10-30 | False | production | high |
 
@@ -10,7 +10,7 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 
 **Why it matters:** Decode raw Mode S yourself, including derived wind and airspeed data; underlies The 1090MHz Riddle book.
 
-**Hackathon notes:** pip install pyModeS now installs the v3 rewrite (Python 3.11+): a single decode() call plus a stateful PipeDecoder for streams, and a modes CLI. Older tutorials and The 1090MHz Riddle use the v2 pms.adsb.* API; pin pyModeS<3 to follow them. Pairs with a Beast/raw feed from readsb.
+**Build notes:** pip install pyModeS now installs the v3 rewrite (Python 3.11+): a single decode() call plus a stateful PipeDecoder for streams, and a modes CLI. Older tutorials and The 1090MHz Riddle use the v2 pms.adsb.* API; pin pyModeS<3 to follow them. Pairs with a Beast/raw feed from readsb.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [traffic](../../catalog/repos/xoolive__traffic.md) (depends_on)

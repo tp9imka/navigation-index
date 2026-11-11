@@ -21,8 +21,8 @@ Non-binding guidance helping universities and researchers spot and manage dual-u
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Regulation (EU) 2021/821 - Dual-use export control regime](../../catalog/resources/eu-dual-use-regulation-2021-821.md) (part_of)
 
 _Indexed by lane(s): defense-context_

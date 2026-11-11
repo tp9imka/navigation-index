@@ -2,7 +2,7 @@
 
 `repo:hku-mars/fast-livo2` - <https://github.com/hku-mars/FAST-LIVO2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,856 | C++ | GPL-2.0 | 2026-03-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequenti
 
 **Why it matters:** High-accuracy colored mapping that stays robust when either LiDAR or camera degrades.
 
-**Hackathon notes:** Needs hardware-synced LiDAR+camera; datasets available.
+**Build notes:** Needs hardware-synced LiDAR+camera; datasets available.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

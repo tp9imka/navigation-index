@@ -21,30 +21,30 @@ Reactive avoidance, sense-and-avoid, DAA.
 
 ## Guides (25)
 
-- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for a close-area A=>B task.
 - [05. CBF baselines for the idea C kill test, read faithfully](../../docs/research/close-area-nav/05-cbf-baselines-faithful.md) - Loop-05, 2026-11-09.
-- [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
-- [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
+- [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09.
+- [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09.
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
-- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes on the day.
+- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes when the task arrives.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
-- [Close-area A=>B: how real events specify the task](../../docs/research/close-area-nav/06-task-phrasing-survey.md) - Lane 6 of the close-area research pass (loop-12, 2026-11-09).
-- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
+- [Close-area A=>B: how real events specify the task](../../docs/research/close-area-nav/06-task-phrasing-survey.md) - Lane 6 of the close-area research pass (2026-11-09).
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for a close-area A=>B task (full-brief routing).
 - [Close-area A=>B: simulators, platforms, competition formats](../../docs/research/close-area-nav/02-sims-platforms-competitions.md) - Lane 2 of the close-area research pass (2026-11-09).
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
-- [Day-1 drill 2026-11: brief drops => scored first flight => regression bar (loop-92)](../../docs/day1-drill-2026-11.md) - Next action if you are on Day 1: read Blockers (two of them change what you type), then follow day1-quickstart.md steps 2-6.
-- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
-- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) - Next action: run step 1, then work down.
+- [Cold-start drill: close-area A=>B from a fresh clone, one agent, no team](../../docs/cold-start-drill.md) - Next action if you are starting a task now: read the blockers first (all are fixed; two of them change what you type), then follow quickstart-first-flight.md.
 - [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
 - [Demo script: close-area A to B, the toolkit in 2 minutes](../../templates/demo-script-close-area.md) - State on 2026-11-10: this is a script for the measured toolkit.
 - [drivers: Adapter implementations for real platforms](../../templates/drone-adapter/drivers/README.md) - Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED, pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them, behind the pose() / ranges() / se
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) - Next action when the task arrives: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
 - [Hackathon kit templates](../../templates/README.md) - Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
+- [How it was built: method, kill tests and fact-check error rates](../../docs/how-it-was-built.md) - This page describes how the hub's close-area toolkit was built and checked, which of its own headline ideas failed, and how often the catalog's records were wrong when checked.
 - [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) - Use this at H+36 to rehearse the hard questions for the toolkit pitch: the measured toolkit, plus a narrow claim only if the real brief fits it (case study, research decision).
 - [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - For the default toolkit pitch (decided 2026-11-09 evening) use judge-drill-toolkit.md; this page is for the H1 variant.
 - [Navigation primer](../../docs/primer/README.md) - Use this when a navigation term, sensor or failure mode is new to you and you need the plain explanation plus the repos to build with.
+- [Quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/quickstart-first-flight.md) - Next action: run step 1, then work down.
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) - Use this when you need the innovation story, want to know which research round fits the brief, or need the kill test and status for a headline idea.
 
 ## Repositories (58)

@@ -2,7 +2,7 @@
 
 `repo:neuromorphs/tonic` - <https://github.com/neuromorphs/tonic>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 301 | Python | GPL-3.0 | 2026-10-03 | False | production | medium |
 
@@ -10,7 +10,7 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 **Why it matters:** Fast access to many event datasets for learning-based event navigation.
 
-**Hackathon notes:** pip install tonic (or conda-forge); use transforms such as ToFrame or voxel grids. The project is looking for a new maintainer, so pin a version.
+**Build notes:** pip install tonic (or conda-forge); use transforms such as ToFrame or voxel grids. The project is looking for a new maintainer, so pin a version.
 
 ## Deep dives
 

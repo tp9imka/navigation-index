@@ -2,7 +2,7 @@
 
 `repo:mavlink-router/mavlink-router` - <https://github.com/mavlink-router/mavlink-router>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 624 | C++ | Apache-2.0 | 2026-10-23 | False | production | high |
 
@@ -10,7 +10,7 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 
 **Why it matters:** Typical companion-computer plumbing to share one flight-controller link between GCS, autonomy and loggers.
 
-**Hackathon notes:** Build with meson; one config file. Run it before attaching multiple clients.
+**Build notes:** Build with meson; one config file. Run it before attaching multiple clients.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md) (alternative_to)
 - [mavp2p](../../catalog/repos/bluenviron__mavp2p.md) (alternative_to)

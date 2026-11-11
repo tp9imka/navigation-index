@@ -2,7 +2,7 @@
 
 `repo:ledesha/gnss-ak_model` - <https://github.com/Ledesha/GNSS-AK_model>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | C++ | ? | 2026-02-04 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Diploma C++ code modelling a moving user, GNSS operation and an astro-corrector 
 
 **Why it matters:** Rare open code pairing GNSS with celestial correction, the classic long-range fallback when GNSS is degraded.
 
-**Hackathon notes:** Undocumented; useful only as a reference for structuring a GNSS + celestial simulation.
+**Build notes:** Undocumented; useful only as a reference for structuring a GNSS + celestial simulation.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Diploma C++ code modelling a moving user, GNSS operation and an astro-corrector 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-round2_
 

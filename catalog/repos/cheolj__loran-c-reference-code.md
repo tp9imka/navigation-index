@@ -2,7 +2,7 @@
 
 `repo:cheolj/loran-c-reference-code` - <https://github.com/CheolJ/Loran-c-reference-code>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6 | Python | MIT | 2022-05-12 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ NumPy API that generates Loran-C master and secondary station pulse groups with 
 
 **Why it matters:** Synthetic Loran/eLoran signals for testing receivers without LF hardware.
 
-**Hackathon notes:** Small; translate README; combine with a tracking loop for a toy eLoran receiver.
+**Build notes:** Small; translate README; combine with a tracking loop for a toy eLoran receiver.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

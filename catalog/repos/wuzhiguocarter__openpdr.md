@@ -2,7 +2,7 @@
 
 `repo:wuzhiguocarter/openpdr` - <https://github.com/wuzhiguocarter/OpenPDR>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 60 | Matlab | ? | 2017-07-05 | False | archived | low |
 
@@ -10,7 +10,7 @@ Planned device-independent pedestrian dead reckoning platform that never got pas
 
 **Why it matters:** Simple step-and-heading baseline for phone-based indoor navigation.
 
-**Hackathon notes:** Unmaintained since 2017. Only the ellipsoid-fit IMU/magnetometer calibration scripts are reusable; for actual PDR code look elsewhere.
+**Build notes:** Unmaintained since 2017. Only the ellipsoid-fit IMU/magnetometer calibration scripts are reusable; for actual PDR code look elsewhere.
 
 **Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md)
 

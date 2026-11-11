@@ -2,7 +2,7 @@
 
 `repo:kq6up/navalm` - <https://github.com/kq6up/navalm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3 | C | MIT | 2026-11-09 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses 
 
 **Why it matters:** Self-contained offline almanac, handy for air-gapped demos.
 
-**Hackathon notes:** Very new and small; verify outputs against a published almanac.
+**Build notes:** Very new and small; verify outputs against a published almanac.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 

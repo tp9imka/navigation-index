@@ -2,7 +2,7 @@
 
 `repo:rokubun/rinex_leo` - <https://github.com/rokubun/rinex_leo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 |  | ? | 2024-07-07 | True | archived | low |
 
@@ -10,7 +10,7 @@ Proposal for RINEX format modifications to carry LEO-PNT observables and ephemer
 
 **Why it matters:** Shows how LEO-PNT data might be standardized into existing GNSS tooling.
 
-**Hackathon notes:** Archived; read-only reference.
+**Build notes:** Archived; read-only reference.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

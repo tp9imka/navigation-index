@@ -2,7 +2,7 @@
 
 `repo:luarvique/openwebrx` - <https://github.com/luarvique/openwebrx>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 655 | Python | AGPL-3.0 | 2026-11-07 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging im
 
 **Why it matters:** Same browser spectrum-monitoring capability with current maintenance.
 
-**Hackathon notes:** Use the provided packages/Docker; works with RTL-SDR, Airspy, SDRplay, HackRF.
+**Build notes:** Use the provided packages/Docker; works with RTL-SDR, Airspy, SDRplay, HackRF.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

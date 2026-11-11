@@ -2,7 +2,7 @@
 
 `repo:korogodin/gnssrec` - <https://github.com/Korogodin/gnssrec>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2 |  | NOASSERTION | 2024-05-19 | False | educational | low |
 
@@ -10,7 +10,7 @@ Source of a Russian-language textbook for the MPEI course on satellite navigatio
 
 **Why it matters:** One of the few open, maintained Russian-language GNSS receiver textbooks; useful to understand why jamming and spoofing break tracking loops.
 
-**Hackathon notes:** Reading material, not code. Pair with gnss-sdr for hands-on work.
+**Build notes:** Reading material, not code. Pair with gnss-sdr for hands-on work.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Source of a Russian-language textbook for the MPEI course on satellite navigatio
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [glnephexercise - GLONASS satellite position exercise](../../catalog/repos/korogodin__glnephexercise.md) (same_org)
 - [gnssrecbasics2020 - GNSS receiver course labs (MPEI)](../../catalog/repos/korogodin__gnssrecbasics2020.md) (same_org)
 

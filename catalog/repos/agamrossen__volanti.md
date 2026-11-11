@@ -2,7 +2,7 @@
 
 `repo:agamrossen/volanti` - <https://github.com/agamrossen/VolAnti>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 464 | C | NOASSERTION | 2026-10-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Open-source acoustic drone detector that listens for propeller noise; explicitly
 
 **Why it matters:** Acoustic sensing covers drones that emit no RF, such as fibre-optic FPVs.
 
-**Hackathon notes:** Breadboard build guide; new project, verify claims on your own recordings.
+**Build notes:** Breadboard build guide; new project, verify claims on your own recordings.
 
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

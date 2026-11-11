@@ -2,7 +2,7 @@
 
 `repo:huajianup/photo-slam` - <https://github.com/HuajianUP/Photo-SLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 782 | C++ | GPL-3.0 | 2024-06-12 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map fo
 
 **Why it matters:** Classic robust tracking plus a nice-looking map, closer to real time than pure splatting SLAM.
 
-**Hackathon notes:** LibTorch + CUDA build; check version pins carefully. Licence: GPL-3.0 overall, but the repo also ships the Inria Gaussian-Splatting licence (LICENSE.md), which limits that code to non-commercial research use.
+**Build notes:** LibTorch + CUDA build; check version pins carefully. Licence: GPL-3.0 overall, but the repo also ships the Inria Gaussian-Splatting licence (LICENSE.md), which limits that code to non-commercial research use.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

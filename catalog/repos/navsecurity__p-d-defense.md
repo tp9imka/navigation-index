@@ -2,7 +2,7 @@
 
 `repo:navsecurity/p-d-defense` - <https://github.com/navSecurity/P-D-defense>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 30 | MATLAB | MIT | 2020-03-27 | False | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB implementation of the power-distortion detector for GNSS spoofing and jam
 
 **Why it matters:** Classic signal-level spoofing detector from the Humphreys line of work.
 
-**Hackathon notes:** Inactive since 2020; read alongside the TEXBAT data.
+**Build notes:** Inactive since 2020; read alongside the TEXBAT data.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 

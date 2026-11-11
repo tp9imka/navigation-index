@@ -2,7 +2,7 @@
 
 `repo:locusrobotics/roscon-uk-2025-se-workshop` - <https://github.com/locusrobotics/roscon-uk-2025-se-workshop>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 71 | C++ | Apache-2.0 | 2025-09-16 | False | educational | high |
 
@@ -10,7 +10,7 @@ Materials for an eight-task ROS 2 state estimation workshop at ROSCon UK 2025, w
 
 **Why it matters:** Ready-made, containerized curriculum for wiring wheel odometry, IMU and GNSS into a ROS 2 estimator.
 
-**Hackathon notes:** docker compose run with the provided compose file; work through tasks in order. Fastest way to get a fused ROS 2 pose estimate running.
+**Build notes:** docker compose run with the provided compose file; work through tasks in order. Fastest way to get a fused ROS 2 pose estimate running.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 

@@ -2,7 +2,7 @@
 
 `repo:valhalla/valhalla` - <https://github.com/valhalla/valhalla>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,432 | C++ | NOASSERTION | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Tiled OSM routing engine with dynamic costing per request (auto, truck, pedestri
 
 **Why it matters:** Request-time costing makes it easy to avoid areas or prefer terrain types, and its map-matching snaps noisy tracks to roads.
 
-**Hackathon notes:** Docker images available; build tiles for a region once and run offline. Elevation tiles enable grade-aware costing.
+**Build notes:** Docker images available; build tiles for a region once and run offline. Elevation tiles enable grade-aware costing.
 
 ## Deep dives
 
@@ -30,10 +30,10 @@ Tiled OSM routing engine with dynamic costing per request (auto, truck, pedestri
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [GraphHopper](../../catalog/repos/graphhopper__graphhopper.md) (alternative_to)
 - [OSRM](../../catalog/repos/project-osrm__osrm-backend.md) (alternative_to)

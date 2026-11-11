@@ -2,7 +2,7 @@
 
 `repo:chennuo0125-hit/lidar_imu_calib` - <https://github.com/chennuo0125-HIT/lidar_imu_calib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 583 | C++ | ? | 2021-05-26 | False | archived | low |
 
@@ -10,7 +10,7 @@ Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
 
 **Why it matters:** Quick LiDAR-IMU rotation estimate for LIO setups.
 
-**Hackathon notes:** Inactive since 2021; rotation only.
+**Build notes:** Inactive since 2021; rotation only.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

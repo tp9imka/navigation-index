@@ -2,7 +2,7 @@
 
 `repo:mayitzin/ahrs` - <https://github.com/Mayitzin/ahrs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 737 | Python | MIT | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Python collection of attitude estimation algorithms (Madgwick, Mahony, complemen
 
 **Why it matters:** One import to compare attitude filters on your IMU log.
 
-**Hackathon notes:** pip install ahrs; numpy arrays in, quaternions out.
+**Build notes:** pip install ahrs; numpy arrays in, quaternions out.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 

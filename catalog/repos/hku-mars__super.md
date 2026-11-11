@@ -2,7 +2,7 @@
 
 `repo:hku-mars/super` - <https://github.com/hku-mars/SUPER>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | active-research | low |
 
@@ -10,7 +10,7 @@ LiDAR-based high-speed MAV planner that plans directly on point clouds. Each cyc
 
 **Why it matters:** The 2025 state of the art for safe flight through clutter with explicit handling of unknown space (Science Robotics). Good to cite as the target architecture.
 
-**Hackathon notes:** No license file in the repo (gh api shows none): read-only. Last push 2025-06-04. ROS 1 Noetic is tier 1; ROS 2 Foxy preview is flagged unstable in the README. Needs a 3D LiDAR + LIO for real flight. Cite it; do not build it in 48h.
+**Build notes:** No license file in the repo (gh api shows none): read-only. Last push 2025-06-04. ROS 1 Noetic is tier 1; ROS 2 Foxy preview is flagged unstable in the README. Needs a 3D LiDAR + LIO for real flight. Cite it; do not build it in 48h.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

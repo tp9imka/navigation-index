@@ -2,7 +2,7 @@
 
 `repo:rpng/open_vins` - <https://github.com/rpng/open_vins>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,174 | C++ | GPL-3.0 | 2025-11-30 | False | active-research | high |
 
@@ -10,7 +10,7 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 
 **Why it matters:** Probably the best-documented VIO codebase; filter-based, light enough for embedded boards.
 
-**Hackathon notes:** Supports ROS 1 and ROS 2. Its built-in simulator lets you test without hardware on day one. Docs site explains every estimator component.
+**Build notes:** Supports ROS 1 and ROS 2. Its built-in simulator lets you test without hardware on day one. Docs site explains every estimator component.
 
 ## Deep dives
 
@@ -32,14 +32,14 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) (integrates_with)
 - [maplab](../../catalog/repos/ethz-asl__maplab.md) (integrates_with)

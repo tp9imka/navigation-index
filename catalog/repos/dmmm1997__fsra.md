@@ -2,7 +2,7 @@
 
 `repo:dmmm1997/fsra` - <https://github.com/Dmmm1997/FSRA>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 122 | Python | ? | 2024-03-07 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Transformer-based feature segmentation and region alignment for drone-to-satelli
 
 **Why it matters:** Widely used baseline on University-1652.
 
-**Hackathon notes:** No licence file (all rights reserved). Trains on University-1652, which is request-only and research use only. Good comparison baseline.
+**Build notes:** No licence file (all rights reserved). Trains on University-1652, which is request-only and research use only. Good comparison baseline.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

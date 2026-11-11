@@ -2,7 +2,7 @@
 
 `repo:morgil/madgwick_py` - <https://github.com/morgil/madgwick_py>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 205 | Python | LGPL-3.0 | 2022-08-09 | False | educational | low |
 
@@ -10,7 +10,7 @@ Minimal Python implementation of Madgwick's IMU and AHRS algorithms.
 
 **Why it matters:** Readable algorithm reference.
 
-**Hackathon notes:** Tiny, unmaintained; use for reading.
+**Build notes:** Tiny, unmaintained; use for reading.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

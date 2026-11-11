@@ -2,7 +2,7 @@
 
 `repo:nasa/fprime` - <https://github.com/nasa/fprime>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11,858 | C++ | Apache-2.0 | 2026-11-08 | False | production | low |
 
@@ -10,7 +10,7 @@ JPL's component-based flight software framework: typed ports, a modelling langua
 
 **Why it matters:** Shows what flight-grade structure looks like (static allocation, explicit interfaces, telemetry/command dictionaries). A nav module written as an F' component is easier to argue about than a ROS node.
 
-**Hackathon notes:** Too heavy to adopt in 48 h. Cite it on the path-to-product slide as the target structure, and borrow its patterns (no dynamic allocation after init, rate groups).
+**Build notes:** Too heavy to adopt in 48 h. Cite it on the path-to-product slide as the target structure, and borrow its patterns (no dynamic allocation after init, rate groups).
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

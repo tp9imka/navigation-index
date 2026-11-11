@@ -2,7 +2,7 @@
 
 `repo:serizba/salad` - <https://github.com/serizba/salad>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 387 | Python | GPL-3.0 | 2025-10-27 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Place recognition descriptor using optimal-transport aggregation of DINOv2 featu
 
 **Why it matters:** Among the strongest off-the-shelf retrieval descriptors; good drop-in for the coarse stage.
 
-**Hackathon notes:** Load via torch.hub, compare with AnyLoc on your tiles.
+**Build notes:** Load via torch.hub, compare with AnyLoc on your tiles.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ Place recognition descriptor using optimal-transport aggregation of DINOv2 featu
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

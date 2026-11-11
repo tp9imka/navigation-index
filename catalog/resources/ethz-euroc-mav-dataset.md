@@ -27,11 +27,11 @@ Stereo camera and IMU sequences from a micro aerial vehicle in an industrial hal
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) (mentions)
 - [A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots](../../catalog/resources/delmerico-scaramuzza-2018-vio-benchmark-flying-robots.md) (uses)
 

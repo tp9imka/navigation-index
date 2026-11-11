@@ -2,7 +2,7 @@
 
 `repo:isaac-sim/isaacsim` - <https://github.com/isaac-sim/IsaacSim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,446 | Python | NOASSERTION | 2026-11-05 | False | production | medium |
 
@@ -10,7 +10,7 @@ NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simul
 
 **Why it matters:** Base layer for Pegasus, OmniDrones and Isaac Lab; strong for synthetic data generation for perception models.
 
-**Hackathon notes:** RTX GPU and a lot of disk required. Use the prebuilt container or pip install rather than building from source in a hackathon.
+**Build notes:** RTX GPU and a lot of disk required. Use the prebuilt container or pip install rather than building from source in a hackathon.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

@@ -2,7 +2,7 @@
 
 `repo:harshareddy1611/livox-mid360-slam-evaluation` - <https://github.com/harshareddy1611/livox-mid360-slam-evaluation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Community benchmark of KISS-ICP, DLIO, FAST-LIO2 and GLIM on Livox Mid-360 data 
 
 **Why it matters:** One of the few open comparisons of LiDAR-inertial odometry on the sensor small indoor drones actually carry, with the pipeline gotchas (point timestamps, clock offsets) written down.
 
-**Hackathon notes:** License MIT (gh api), last push 2026-09, 12 stars, single author, not peer reviewed. Reported UAV APE RMSE: GLIM (GPU) 0.040 m, DLIO 0.096 m, FAST-LIO2 0.112 m, KISS-ICP 0.123 m; ground truth was the Pixhawk EKF fused with VICON, so it is not raw mocap. Main value: the bag-conversion and timestamp pitfalls.
+**Build notes:** License MIT (gh api), last push 2026-09, 12 stars, single author, not peer reviewed. Reported UAV APE RMSE: GLIM (GPU) 0.040 m, DLIO 0.096 m, FAST-LIO2 0.112 m, KISS-ICP 0.123 m; ground truth was the Pixhawk EKF fused with VICON, so it is not raw mocap. Main value: the bag-conversion and timestamp pitfalls.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

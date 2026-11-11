@@ -2,7 +2,7 @@
 
 `repo:hkust-aerial-robotics/gvins-dataset` - <https://github.com/HKUST-Aerial-Robotics/GVINS-Dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 266 | C++ | NOASSERTION | 2026-08-29 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 **Why it matters:** One of few datasets with raw GNSS pseudoranges plus camera and IMU, needed for tightly coupled GNSS-VIO.
 
-**Hackathon notes:** ROS bags with custom GNSS message types; install the gnss_comm package. Dataset licence is CC BY-NC-SA 4.0 (non-commercial).
+**Build notes:** ROS bags with custom GNSS message types; install the gnss_comm package. Dataset licence is CC BY-NC-SA 4.0 (non-commercial).
 
 ## Deep dives
 
@@ -28,8 +28,8 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [GVINS](../../catalog/repos/hkust-aerial-robotics__gvins.md) (evaluated_on)
 
 _Indexed by lane(s): sim-data_

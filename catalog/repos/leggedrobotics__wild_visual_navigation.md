@@ -2,7 +2,7 @@
 
 `repo:leggedrobotics/wild_visual_navigation` - <https://github.com/leggedrobotics/wild_visual_navigation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 329 | Python | MIT | 2026-05-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ System that learns visual traversability online from pre-trained vision features
 
 **Why it matters:** Learned traversability that adapts in minutes, relevant for unstructured off-road nav.
 
-**Hackathon notes:** Needs a GPU and a camera bag; offline demo scripts help.
+**Build notes:** Needs a GPU and a camera bag; offline demo scripts help.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 

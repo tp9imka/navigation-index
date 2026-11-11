@@ -13,6 +13,6 @@ Peer-reviewed (Remote Sensing 12(3):524, open access). GNSS/INS integration with
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
-**Tags:** `integrity`, `protection-level`, `geofence`, `uav`, `peer-reviewed`, `loop-13`
+**Tags:** `integrity`, `protection-level`, `geofence`, `uav`, `peer-reviewed`
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

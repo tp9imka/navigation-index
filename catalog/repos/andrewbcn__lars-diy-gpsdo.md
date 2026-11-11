@@ -2,7 +2,7 @@
 
 `repo:andrewbcn/lars-diy-gpsdo` - <https://github.com/AndrewBCN/Lars-DIY-GPSDO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 13 | C++ | GPL-3.0 | 2022-01-24 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Archive of Lars Walenius' Arduino GPSDO from the EEVblog forum: a PI loop with a
 
 **Why it matters:** The design many hobby GPSDOs copy; its loop and time-interval counter trick are a compact reference.
 
-**Hackathon notes:** Reference files only; derivatives such as paulvee/Lars-GPSDO-V4.2 and W3AXL/Simple-GPSDO are maintained builds.
+**Build notes:** Reference files only; derivatives such as paulvee/Lars-GPSDO-V4.2 and W3AXL/Simple-GPSDO are maintained builds.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

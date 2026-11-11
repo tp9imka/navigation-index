@@ -2,7 +2,7 @@
 
 `repo:utiasstars/liegroups` - <https://github.com/utiasSTARS/liegroups>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 358 | Python | MIT | 2025-04-01 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Python implementation of SO2, SE2, SO3 and SE3 matrix Lie groups with numpy and 
 
 **Why it matters:** Lie group operations inside PyTorch for learned estimators.
 
-**Hackathon notes:** pip install from source; small and stable but no longer maintained (README points to PyMLG as the successor).
+**Build notes:** pip install from source; small and stable but no longer maintained (README points to PyMLG as the successor).
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

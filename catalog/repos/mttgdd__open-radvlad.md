@@ -2,7 +2,7 @@
 
 `repo:mttgdd/open-radvlad` - <https://github.com/mttgdd/open-radvlad>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 21 | Python | MIT | 2024-02-17 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Fast radar place recognition using VLAD-style aggregation over radar polar scans
 
 **Why it matters:** Simple radar relocalization baseline.
 
-**Hackathon notes:** Evaluate on Oxford Radar RobotCar.
+**Build notes:** Evaluate on Oxford Radar RobotCar.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:bluerobotics/blueos` - <https://github.com/bluerobotics/BlueOS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 473 | Vue | NOASSERTION | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot ma
 
 **Why it matters:** Strong base for maritime/underwater vehicle builds; extension system makes adding a nav service easy.
 
-**Hackathon notes:** Most useful with a BlueROV2; extensions are Docker images, so a nav add-on can be packaged quickly.
+**Build notes:** Most useful with a BlueROV2; extensions are Docker images, so a nav add-on can be packaged quickly.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot ma
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

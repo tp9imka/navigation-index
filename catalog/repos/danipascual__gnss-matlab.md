@@ -2,7 +2,7 @@
 
 `repo:danipascual/gnss-matlab` - <https://github.com/danipascual/GNSS-matlab>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 257 | MATLAB | NOASSERTION | 2019-01-16 | False | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spect
 
 **Why it matters:** Reference signal generation for interference and receiver studies.
 
-**Hackathon notes:** Old but self-contained; MATLAB needed.
+**Build notes:** Old but self-contained; MATLAB needed.
 
 **Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

@@ -14,10 +14,10 @@ Preprint (arXiv, no venue confirmed). GPS plus LiDAR system: fault-tolerant esti
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
-**Tags:** `control-barrier-function`, `fault-tolerant`, `uav`, `preprint`, `loop-13`
+**Tags:** `control-barrier-function`, `fault-tolerant`, `uav`, `preprint`
 
 ## Related
 
 - same_author: [Safe Control for Nonlinear Systems Under Faults and Attacks Via Control Barrier Functions](../../catalog/resources/zhang-li-clark-2025-ft-cbf.md)
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

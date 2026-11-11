@@ -8,17 +8,17 @@ Peer-reviewed (IEEE/RSJ IROS 2025, doi 10.1109/IROS60139.2025.11247729). Caltech
 
 ## Key takeaways
 
-- Closest prior art to loop-13 claim C: multirotor, PX4, geofence margin from a fault-tolerant subset-consistency bound
+- Closest prior art to the close-area innovation claim C: multirotor, PX4, geofence margin from a fault-tolerant subset-consistency bound
 - Deterministic worst case over bounded noise, no probabilistic protection level or integrity risk budget
 - Hardware test duplicated one EKF, so sensor independence was not exercised
-- No range-sensor barrier, no VIO; TII is a UAE lab that local judges may know
+- No range-sensor barrier, no VIO; TII is a UAE research lab
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
-**Tags:** `control-barrier-function`, `safety-filter`, `px4`, `geofence`, `sensor-attack`, `peer-reviewed`, `loop-13`
+**Tags:** `control-barrier-function`, `safety-filter`, `px4`, `geofence`, `sensor-attack`, `peer-reviewed`
 
 ## Related
 
 - cites: [Embedded Safe Reactive Navigation for Multirotors Systems using Control Barrier Functions](../../catalog/resources/misyats-px4-cbf-icuas2025.md)
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

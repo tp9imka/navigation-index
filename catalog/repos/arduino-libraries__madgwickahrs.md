@@ -2,7 +2,7 @@
 
 `repo:arduino-libraries/madgwickahrs` - <https://github.com/arduino-libraries/MadgwickAHRS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 585 | C++ | ? | 2026-09-27 | False | production | medium |
 
@@ -10,7 +10,7 @@ Official Arduino library implementing the Madgwick AHRS filter.
 
 **Why it matters:** Fastest hardware demo of attitude estimation on a microcontroller.
 
-**Hackathon notes:** Install from the Arduino library manager; set sample rate correctly.
+**Build notes:** Install from the Arduino library manager; set sample rate correctly.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

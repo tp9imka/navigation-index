@@ -2,7 +2,7 @@
 
 `repo:knio/pynmea2` - <https://github.com/Knio/pynmea2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 683 | Python | MIT | 2026-11-02 | False | production | medium |
 
@@ -10,7 +10,7 @@ Lightweight Python library for parsing NMEA 0183 sentences.
 
 **Why it matters:** Widely used minimal NMEA parser.
 
-**Hackathon notes:** pip install pynmea2; simpler than pynmeagps but less coverage.
+**Build notes:** pip install pynmea2; simpler than pynmeagps but less coverage.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

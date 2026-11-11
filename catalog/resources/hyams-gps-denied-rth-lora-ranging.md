@@ -21,7 +21,7 @@ Blog (shared on ArduPilot Discourse) on returning a plane home without GPS using
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): autopilots_

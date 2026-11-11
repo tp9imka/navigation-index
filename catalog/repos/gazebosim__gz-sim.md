@@ -2,7 +2,7 @@
 
 `repo:gazebosim/gz-sim` - <https://github.com/gazebosim/gz-sim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,570 | C++ | Apache-2.0 | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 
 **Why it matters:** The default SITL backend for both PX4 and ArduPilot today; the place to inject sensor noise, GNSS dropouts and degraded conditions into a full autopilot stack.
 
-**Hackathon notes:** Install a binary release (Harmonic or later) plus ros_gz. Pair with PX4 'make px4_sitl gz_x500' or ardupilot_gazebo. GPU helps for camera sensors; headless server mode works for CI.
+**Build notes:** Install a binary release (Harmonic or later) plus ros_gz. Pair with PX4 'make px4_sitl gz_x500' or ardupilot_gazebo. GPU helps for camera sensors; headless server mode works for CI.
 
 ## Deep dives
 
@@ -33,11 +33,11 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md) (integrates_with)
 - [Webots](../../catalog/repos/cyberbotics__webots.md) (alternative_to)

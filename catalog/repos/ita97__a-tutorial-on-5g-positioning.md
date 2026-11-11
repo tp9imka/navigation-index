@@ -2,7 +2,7 @@
 
 `repo:ita97/a-tutorial-on-5g-positioning` - <https://github.com/Ita97/A-tutorial-on-5G-positioning>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 15 | MATLAB | ? | 2026-02-10 | False | educational | medium |
 
@@ -10,7 +10,7 @@ MATLAB simulation code accompanying an IEEE tutorial on 5G positioning (timing, 
 
 **Why it matters:** Cellular positioning is a fallback PNT source; this is a didactic, runnable starting point.
 
-**Hackathon notes:** MATLAB with the 5G Toolbox and Phased Array System Toolbox is needed, so Octave will not work; only the outdoor scenario is included.
+**Build notes:** MATLAB with the 5G Toolbox and Phased Array System Toolbox is needed, so Octave will not work; only the outdoor scenario is included.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 

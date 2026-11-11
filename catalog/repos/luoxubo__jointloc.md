@@ -2,7 +2,7 @@
 
 `repo:luoxubo/jointloc` - <https://github.com/LuoXubo/JointLoc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 82 | C++ | MIT | 2024-11-29 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Real-time visual localization framework for planetary UAVs that jointly uses rel
 
 **Why it matters:** Planetary flight is the purest GNSS-free case; the joint relative+absolute design transfers to Earth.
 
-**Hackathon notes:** C++ build; mostly a design reference.
+**Build notes:** C++ build; mostly a design reference.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:taroz/gnss-sdrlib` - <https://github.com/taroz/GNSS-SDRLIB>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 540 | C | ? | 2015-08-26 | False | archived | low |
 
@@ -10,7 +10,7 @@ Older open-source GNSS software receiver library in C with a GUI, supporting sev
 
 **Why it matters:** Compact receiver codebase that is easier to read than GNSS-SDR; historically a common teaching receiver.
 
-**Hackathon notes:** Not updated since 2015 (repo not formally archived). v2.0 only runs on 64-bit Windows (Visual Studio 2012 build). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.
+**Build notes:** Not updated since 2015 (repo not formally archived). v2.0 only runs on 64-bit Windows (Visual Studio 2012 build). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

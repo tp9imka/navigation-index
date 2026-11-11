@@ -2,7 +2,7 @@
 
 `repo:akpozi/machine_learning_gnss_imu_integration` - <https://github.com/Akpozi/Machine_Learning_GNSS_IMU_Integration>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 22 | Python | ? | 2022-08-19 | False | archived | low |
 
@@ -10,7 +10,7 @@ GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-
 
 **Why it matters:** Example of learned GNSS/IMU fusion on phone data.
 
-**Hackathon notes:** Reference. No licence (all rights reserved).
+**Build notes:** Reference. No licence (all rights reserved).
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:utiasstars/pyshoe` - <https://github.com/utiasSTARS/pyshoe>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 112 | Python | ? | 2021-12-17 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Open Python foot-mounted INS from UTIAS with a public inertial dataset and sever
 
 **Why it matters:** Ready-to-run dismounted navigation pipeline with data for evaluation.
 
-**Hackathon notes:** Python; dataset download needed. Strap an IMU to a boot and compare detectors.
+**Build notes:** Python; dataset download needed. Strap an IMU to a boot and compare detectors.
 
 ## Deep dives
 
@@ -31,11 +31,11 @@ Open Python foot-mounted INS from UTIAS with a public inertial dataset and sever
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [ZUPT-aided INS (OpenShoe MATLAB)](../../catalog/repos/hcarlsso__zupt-aided-ins.md) (alternative_to)

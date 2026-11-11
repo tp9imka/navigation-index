@@ -2,7 +2,7 @@
 
 `repo:cvg/hierarchical-localization` - <https://github.com/cvg/Hierarchical-Localization>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,263 | Python | Apache-2.0 | 2025-12-10 | False | production | high |
 
@@ -10,7 +10,7 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 
 **Why it matters:** The standard plumbing for coarse-to-fine localization; ready-made wrappers for most retrieval and matching models.
 
-**Hackathon notes:** Use its retrieval + matching APIs even without the SfM part; pip-installable.
+**Build notes:** Use its retrieval + matching APIs even without the SfM part; pip-installable.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)

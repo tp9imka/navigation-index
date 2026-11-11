@@ -2,7 +2,7 @@
 
 `repo:hku-mars/ipc` - <https://github.com/hku-mars/IPC>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | research-prototype | low |
 
@@ -10,7 +10,7 @@ Quadrotor navigation that merges planning and control: a light A*-style front en
 
 **Why it matters:** The working example of 'MPC with obstacle constraints' for multirotors. Reacting inside the controller loop handles suddenly appearing obstacles and disturbances better than replanning at a few Hz.
 
-**Hackathon notes:** No license file in the repo (gh api shows none): treat as read-only. Last push 2024-07-19. Ubuntu 18.04-20.04 with ROS 1. Re-implement the idea (corridor half-planes as linear MPC constraints) in OSQP or acados if the team wants an MPC story.
+**Build notes:** No license file in the repo (gh api shows none): treat as read-only. Last push 2024-07-19. Ubuntu 18.04-20.04 with ROS 1. Re-implement the idea (corridor half-planes as linear MPC constraints) in OSQP or acados if the team wants an MPC story.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

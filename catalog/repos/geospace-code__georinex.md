@@ -2,7 +2,7 @@
 
 `repo:geospace-code/georinex` - <https://github.com/geospace-code/georinex>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 271 | Python | MIT | 2026-05-27 | False | production | high |
 
@@ -10,7 +10,7 @@ Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip
 
 **Why it matters:** Makes RINEX data accessible in the scientific Python stack without writing parsers.
 
-**Hackathon notes:** pip install georinex. Use it to load public CORS/IGS RINEX for analysis or ML features.
+**Build notes:** pip install georinex. Use it to load public CORS/IGS RINEX for analysis or ML features.
 
 ## Deep dives
 

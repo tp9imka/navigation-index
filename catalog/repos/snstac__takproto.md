@@ -2,7 +2,7 @@
 
 `repo:snstac/takproto` - <https://github.com/snstac/takproto>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 31 | Python | MIT | 2026-11-02 | False | production | medium |
 
@@ -10,7 +10,7 @@ Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and str
 
 **Why it matters:** Needed when talking to modern TAK clients that prefer protobuf over XML CoT.
 
-**Hackathon notes:** pip install takproto.
+**Build notes:** pip install takproto.
 
 ## Deep dives
 

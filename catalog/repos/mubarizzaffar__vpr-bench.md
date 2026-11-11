@@ -2,7 +2,7 @@
 
 `repo:mubarizzaffar/vpr-bench` - <https://github.com/MubarizZaffar/VPR-Bench>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 152 | Python | MIT | 2023-04-12 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Open-source visual place recognition evaluation framework from the IJCV paper, w
 
 **Why it matters:** Ready harness to compare VPR methods across conditions and viewpoints.
 
-**Hackathon notes:** Older dependencies; consider VPR-methods-evaluation for modern models. Bundled datasets and techniques keep their own licences (see each folder); the MIT licence covers the framework code only.
+**Build notes:** Older dependencies; consider VPR-methods-evaluation for modern models. Bundled datasets and techniques keep their own licences (see each folder); the MIT licence covers the framework code only.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

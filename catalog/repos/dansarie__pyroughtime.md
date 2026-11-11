@@ -2,7 +2,7 @@
 
 `repo:dansarie/pyroughtime` - <https://github.com/dansarie/pyroughtime>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | Python | GPL-3.0 | 2026-10-19 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Python Roughtime library and CLI implementing RFC 10049; validates signatures ag
 
 **Why it matters:** Python is the fastest route to put Roughtime into a hackathon notebook or detector.
 
-**Hackathon notes:** pip install pycryptodome in the venv. Query several servers, then run the bundled test server with a wrong clock to show detection.
+**Build notes:** pip install pycryptodome in the venv. Query several servers, then run the bundled test server with a wrong clock to show detection.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

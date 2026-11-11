@@ -2,7 +2,7 @@
 
 `repo:hongbiaoz/autonomous_exploration_development_environment` - <https://github.com/HongbiaoZ/autonomous_exploration_development_environment>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,015 | C++ | ? | 2026-05-25 | False | active-research | high |
 
@@ -10,7 +10,7 @@ CMU ground-robot development environment with simulated worlds, terrain analysis
 
 **Why it matters:** Fastest route to a GNSS-free autonomy demo: drop-in base for planners like TARE and FAR.
 
-**Hackathon notes:** Download the Unity/Gazebo environment and run; the local planner and terrain analysis nodes are reusable standalone.
+**Build notes:** Download the Unity/Gazebo environment and run; the local planner and terrain analysis nodes are reusable standalone.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
@@ -26,7 +26,7 @@ CMU ground-robot development environment with simulated worlds, terrain analysis
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [TARE Planner (CMU Explorer)](../../catalog/repos/caochao39__tare_planner.md) (depends_on)
 - [FAR Planner](../../catalog/repos/michaelfyang__far_planner.md) (depends_on)

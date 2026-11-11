@@ -1,24 +1,23 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 975 documents, talks, courses and datasets, 63 usage samples and 92 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy, resilient PNT and airspace awareness: 923 open-source repos, 975 documents, talks, courses and datasets, 63 usage samples and 90 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide, template or sample doc). Guides (kind `guide`, including templates/) are searchable like any other node.
 
 ## Entry points
 
-- [docs/challenge-2-autonomous-flight.md](docs/challenge-2-autonomous-flight.md): EDGE hackathon Challenge 2 (autonomous flight navigation): read first, it narrows the hub to what fits
-- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): got a problem statement? start here (statement => approach, stack, data, starting sample, risk, pitch)
-- [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md): close-area A to B with obstacles (likely Day-1 task): synthesis of planning, sims, localization and the recommended direction
+- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): brief decoder, got a task statement? start here (statement => approach, stack, data, starting sample, risk, one-line summary)
+- [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md): close-area A to B with obstacles: synthesis of planning, sims, localization and the recommended direction
 - [samples/close-area-arena/README.md](samples/close-area-arena/README.md): close-area A to B starter that ran: seeded synthetic arena, drone interface, truth scorer, estimator faults
 - [templates/drone-adapter/drivers/README.md](templates/drone-adapter/drivers/README.md): how to send setpoints on PX4, ArduPilot, Crazyflie or Tello behind one pose()/send_setpoint() seam (drivers unrun)
-- [docs/day0-runbook.md](docs/day0-runbook.md): the first three hours after the statement drops
+- [docs/first-three-hours.md](docs/first-three-hours.md): the first three hours after you get a task
 - [samples/README.md](samples/README.md): every sample with status, deps, first command, key result
 - [docs/README.md](docs/README.md): map of docs/ and read order
 - [AGENTS.md](AGENTS.md): how agents use and extend the hub
-- [INDEX.md](INDEX.md): concept tree and high hackathon-fit repos
+- [INDEX.md](INDEX.md): concept tree and high quick-build-fit repos
 - [docs/integration-cards/](docs/integration-cards/): per-repo install, wiring, gotchas, license
 - [docs/dataset-cards/README.md](docs/dataset-cards/README.md): checked dataset sizes and licenses
-- [templates/README.md](templates/README.md): team repo skeleton, demo dashboard, offline kit
+- [templates/README.md](templates/README.md): project repo skeleton, demo dashboard, offline kit
 - [site/index.html](site/index.html): static web UI (serve the repo root over HTTP, open /site/)
 - [docs/SCHEMA.md](docs/SCHEMA.md): data model
 - [index/records.jsonl](index/records.jsonl): every node as one JSON line
@@ -29,39 +28,36 @@ Read AGENTS.md for how to query and extend. For a problem statement, run `python
 - [Docs map](docs/README.md): Use this page when you need to know which page under docs/ answers your question, or the order to read them in.
 - [Data schema](docs/SCHEMA.md): The source of truth is JSON under data/.
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](docs/autopilot-gnss-fault-handling.md): What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
-- [Challenge 2 "Autonomous Frontiers": entry point](docs/challenge-2-autonomous-flight.md): Start here when the task is the EDGE Group internal hackathon, Challenge 2.
-- [Cheat sheets: pick one in 30 seconds](docs/cheatsheets/README.md): One page per likely brief family, readable in 3 minutes on the day.
+- [Cheat sheets: pick one in 30 seconds](docs/cheatsheets/README.md): One page per likely brief family, readable in 3 minutes when the task arrives.
+- [Cold-start drill: close-area A=>B from a fresh clone, one agent, no team](docs/cold-start-drill.md): Next action if you are starting a task now: read the blockers first (all are fixed; two of them change what you type), then follow quickstart-first-flight.md.
+- [Competition playbook: navigation and PNT under GNSS denial](docs/competition-playbook.md): For a team entering a navigation-themed competition or hackathon, including one with a defense-context track.
 - [Dataset cards](docs/dataset-cards/README.md): Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
-- [Day-0 runbook: the first 3 hours](docs/day0-runbook.md): What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
-- [Day-1 intake: close-area A=>B, organiser answers => stack](docs/day1-close-area-intake.md): Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
-- [Day-1 drill 2026-11: brief drops => scored first flight => regression bar (loop-92)](docs/day1-drill-2026-11.md): Next action if you are on Day 1: read Blockers (two of them change what you type), then follow day1-quickstart.md steps 2-6.
-- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](docs/day1-dry-run.md): Next action if you are on Day 1: read the blockers table first, then follow the runbook.
-- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](docs/day1-quickstart.md): Next action: run step 1, then work down.
-- [Differentiators scan: what to bring besides satellite matching](docs/differentiators-scan.md): Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
+- [Differentiators scan: what to bring besides satellite matching](docs/differentiators-scan.md): Scan date 2026-11-09, for an autonomous flight navigation task (details not yet known at the time).
 - [Evidence matrix](docs/evidence-matrix.md): Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 - [Export control and ethics](docs/export-control-and-ethics.md): Not legal advice.
-- [Guidance and planning for a navigation entry](docs/guidance-planning.md): Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
-- [Hackathon playbook: navigation and PNT under GNSS denial](docs/hackathon-playbook.md): For a team going into a navigation-themed hackathon that may have a military or defense track.
+- [First-day intake: close-area A=>B, answers => stack](docs/first-day-intake.md): Next action when the task arrives: ask questions 1-3 of section 1, then open section 2 for the stack.
+- [The first three hours](docs/first-three-hours.md): What a 4-5 person team does from the moment the problem statement drops until hour 3, when a walking skeleton should run end to end.
+- [Guidance and planning for a navigation entry](docs/guidance-planning.md): Written 2026-11-09 for an autonomous flight navigation task (full-brief routing).
+- [How it was built: method, kill tests and fact-check error rates](docs/how-it-was-built.md): This page describes how the hub's close-area toolkit was built and checked, which of its own headline ideas failed, and how often the catalog's records were wrong when checked.
 - [Navigation invention hypothesis cards](docs/hypotheses/README.md): Status: first POCs executed on 2026-11-09.
 - [H1: move to distinguish competing location hypotheses](docs/hypotheses/h1-active-disambiguation.md): Status: mechanism demonstrated synthetically; proposed improvement over the information-gain baseline NOT demonstrated.
 - [H2: request a localization fix before its navigation deadline](docs/hypotheses/h2-localization-scheduling.md): Status: synthetic predictive trigger is competitive, but advantage over a strong opportunity heuristic is not established.
 - [H3: adapt a navigation model only when the data identify it](docs/hypotheses/h3-selective-adaptation.md): Status: conditional synthetic benefit after observable model change.
-- [Research handoff: challenge the innovation claims](docs/hypotheses/research-agent-prompt.md): Work in this repository.
-- [Innovation experiments: hypotheses before claims](docs/innovation-experiments.md): For Challenge 2, start from an existing estimator and flight stack, then identify a specific algorithmic contribution with a strong baseline and a falsification test.
+- [Innovation experiments: hypotheses before claims](docs/innovation-experiments.md): For an autonomous flight navigation task, start from an existing estimator and flight stack, then identify a specific algorithmic contribution with a strong baseline and a falsification test.
 - [Integration cards](docs/integration-cards/README.md): Use this when you are about to install or wire a specific repo (autopilot SDK, VIO, planner, GNSS library, TAK bridge) and need its install steps, wiring, gotchas and license before you clone it.
-- [Integrity monitoring for navigation and alt-PNT](docs/integrity-monitoring.md): After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show judges a Stanford diagram that proves your navigator does ...
-- [Landscape: what judges already know](docs/landscape/README.md): Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
+- [Integrity monitoring for navigation and alt-PNT](docs/integrity-monitoring.md): After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show reviewers a Stanford diagram that proves your navigator ...
+- [Landscape: what reviewers already know](docs/landscape/README.md): Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](docs/landscape/blind-flight-teardown.md): The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft from a radar altimeter ...
-- [GNSS-denied navigation: products and companies](docs/landscape/gnss-denied-nav-products.md): What judges from industry already know.
+- [GNSS-denied navigation: products and companies](docs/landscape/gnss-denied-nav-products.md): What reviewers from industry already know.
 - [Programs, challenges and hackathons (2023-2026)](docs/landscape/programs-and-challenges.md): What funders publish as navigation problem statements.
 - [Navigation trends 2025-2026](docs/landscape/trends-2025-2026.md): Each item: what changed, the source, and what it means for a navigation hackathon project.
-- [Ukrainian- and Russian-language sources: what they add](docs/landscape/ua-ru-sources-overview.md): Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
+- [Sources in Ukrainian and Russian](docs/landscape/ua-ru-sources-overview.md): Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
 - [Learning paths](docs/learning-paths.md): Three study tracks built from the courses, talks, books and docs in this index.
 - [Model weights licenses: code vs weights vs training data](docs/model-weights-licenses.md): Learned models in navigation pipelines carry three separate sets of terms: 1.
 - [Paper digests](docs/paper-digests/README.md): Use this when you are about to build on a published method and need its real results, limits, code and license before you commit.
-- [Path to product: from a nav algorithm to something that flies](docs/path-to-product.md): Challenge 2 says the winning team "may take it towards real-world implementation".
+- [Path to product: from a nav algorithm to something that flies](docs/path-to-product.md): Some briefs say the winning team may take its solution towards real-world implementation.
 - [Choose a stack you can run](docs/practical-readiness.md): Start with the problem decoder, then narrow the candidates by the resources in the room.
-- [1. PNT fundamentals](docs/primer/01-pnt-fundamentals.md): After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution is "assured".
+- [1. PNT fundamentals](docs/primer/01-pnt-fundamentals.md): After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary reviewers use when they ask whether your solution is "assured".
 - [2. GNSS and its threats](docs/primer/02-gnss-and-threats.md): After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [3. Inertial navigation and sensor fusion](docs/primer/03-inertial-and-fusion.md): After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [4. Vision, LiDAR and radar odometry](docs/primer/04-vision-lidar-radar-odometry.md): After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
@@ -69,26 +65,27 @@ Read AGENTS.md for how to query and extend. For a problem statement, run `python
 - [6. Autopilots and C2](docs/primer/06-autopilots-and-c2.md): After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK common operating ...
 - [7. Maps, geodesy and planning](docs/primer/07-maps-geodesy-planning.md): After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 - [8. Maritime, underwater, ground and dismounted](docs/primer/08-maritime-underwater-ground.md): After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reckon, and which open ...
-- [9. Evaluation and datasets](docs/primer/09-evaluation-and-datasets.md): After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system does when it matters.
+- [9. Evaluation and datasets](docs/primer/09-evaluation-and-datasets.md): After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics reviewers expect, and design a GNSS-outage or interference test that shows what your system does when it matters.
 - [Navigation primer](docs/primer/README.md): Use this when a navigation term, sensor or failure mode is new to you and you need the plain explanation plus the repos to build with.
-- [Problem-statement decoder](docs/problem-statement-decoder.md): Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from, the main risk and ...
+- [Brief decoder](docs/problem-statement-decoder.md): Plausible problem statements for a navigation / PNT / GNSS-denied task, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from, the main risk and a ...
+- [Quickstart: fresh clone => flown, scored first flight => regression bar](docs/quickstart-first-flight.md): Next action: run step 1, then work down.
 - [Reference stacks: if you only have X, use Y](docs/reference-stacks.md): Opinionated picks for a 24-48h build.
 - [Research rounds: which one applies, and the innovation story per brief](docs/research/README.md): Use this when you need the innovation story, want to know which research round fits the brief, or need the kill test and status for a headline idea.
-- [Close-area A=>B: planning and mapping for a small multirotor](docs/research/close-area-nav/01-planning-and-mapping.md): Written 2026-11-09 for Challenge 2 (entry point).
+- [Close-area A=>B: planning and mapping for a small multirotor](docs/research/close-area-nav/01-planning-and-mapping.md): Written 2026-11-09 for a close-area A=>B task (full-brief routing).
 - [Close-area A=>B: simulators, platforms, competition formats](docs/research/close-area-nav/02-sims-platforms-competitions.md): Lane 2 of the close-area research pass (2026-11-09).
-- [03. Localization and state estimation for short-range A => B in a cluttered close area](docs/research/close-area-nav/03-close-area-localization.md): Research lane, 2026-11-09, for EDGE hackathon Challenge 2.
-- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](docs/research/close-area-nav/04-innovation-prior-art.md): Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
+- [03. Localization and state estimation for short-range A => B in a cluttered close area](docs/research/close-area-nav/03-close-area-localization.md): Research lane, 2026-11-09, for a close-area A=>B task.
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](docs/research/close-area-nav/04-innovation-prior-art.md): Prior-art scan, 2026-11-09, for a close-area A=>B task.
 - [05. CBF baselines for the idea C kill test, read faithfully](docs/research/close-area-nav/05-cbf-baselines-faithful.md): Loop-05, 2026-11-09.
-- [Close-area A=>B: how real events specify the task](docs/research/close-area-nav/06-task-phrasing-survey.md): Lane 6 of the close-area research pass (loop-12, 2026-11-09).
-- [07. Kill test for idea C: does a PL-margin safety filter already exist?](docs/research/close-area-nav/07-pl-margin-prior-art.md): Prior-art scan, 2026-11-09 (loop-13).
-- [08. Crazyflie sensing limits: what the planner and safety filter can rely on](docs/research/close-area-nav/08-crazyflie-sensing-limits.md): Research note, 2026-11-09 (loop-23).
+- [Close-area A=>B: how real events specify the task](docs/research/close-area-nav/06-task-phrasing-survey.md): Lane 6 of the close-area research pass (2026-11-09).
+- [07. Kill test for idea C: does a PL-margin safety filter already exist?](docs/research/close-area-nav/07-pl-margin-prior-art.md): Prior-art scan, 2026-11-09.
+- [08. Crazyflie sensing limits: what the planner and safety filter can rely on](docs/research/close-area-nav/08-crazyflie-sensing-limits.md): Research note, 2026-11-09.
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](docs/research/close-area-nav/09-vio-nees-feasibility.md): Loop-24, 2026-11-09.
-- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](docs/research/close-area-nav/10-relocalization-prior-art.md): Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
+- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](docs/research/close-area-nav/10-relocalization-prior-art.md): Prior-art scan, 2026-11-09, copying the method of 07.
 - [Close-area A=>B navigation: synthesis](docs/research/close-area-nav/README.md): Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
-- [01. Flyable maneuvers that separate competing location hypotheses](docs/research/innovation-prior-art/01-disambiguating-maneuvers.md): Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
-- [02. Deadline-aware scheduling of expensive absolute fixes](docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md): Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
-- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md): Research date 2026-11-09.
-- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](docs/research/innovation-prior-art/04-wider-innovation-scan.md): Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
+- [01. Flyable maneuvers that separate competing location hypotheses](docs/research/innovation-prior-art/01-disambiguating-maneuvers.md): Prior-art scan, 2026-11-09, for an autonomous flight navigation task.
+- [02. Deadline-aware scheduling of expensive absolute fixes](docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md): Prior-art scan, 2026-11-09, for an autonomous flight navigation task.
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md): Research date 2026-11-09, for an autonomous flight navigation task.
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](docs/research/innovation-prior-art/04-wider-innovation-scan.md): Scan date 2026-11-09, for an autonomous flight navigation task (full brief not yet known).
 - [Innovation prior art: synthesis](docs/research/innovation-prior-art/README.md): Use this when the brief is long range (km-scale legs, GNSS jammed or spoofed, fixed-wing, terrain or visual fixes) and you need the prior art, strongest baseline or falsifier for a long-range idea.
 - [Four selective offline starter bundles](docs/starter-bundles.md): Pick a bundle before downloading the broad offline kit.
 - [Timing resilience: the T in PNT](docs/timing-resilience.md): After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-48 h build that ...
@@ -192,20 +189,20 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [GNSS positioning](catalog/concepts/gnss.md): 150 items - GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [RTK / PPP precise positioning](catalog/concepts/gnss-rtk-ppp.md): 39 items - Carrier-phase differential and precise point positioning, corrections (RTCM, SSR, NTRIP).
 - [Software-defined GNSS receivers](catalog/concepts/gnss-sdr.md): 36 items - Acquisition, tracking, navigation-message decoding in software on SDR front-ends.
-- [Jamming and spoofing](catalog/concepts/gnss-interference.md): 198 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
-- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 316 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
+- [Jamming and spoofing](catalog/concepts/gnss-interference.md): 197 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
+- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 314 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
 - [Timing and time transfer](catalog/concepts/timing.md): 150 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 178 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
-- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 375 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
+- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 374 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 95 items - Loosely, tightly and deeply coupled GNSS/INS.
 - [Sensor calibration](catalog/concepts/calibration.md): 60 items - Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [Visual(-inertial) odometry](catalog/concepts/vio.md): 205 items - VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual SLAM](catalog/concepts/visual-slam.md): 103 items - Mapping and localization with loop closure from cameras.
-- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 119 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
+- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 120 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md): 35 items - Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md): 90 items - Global descriptors, image retrieval, LiDAR place recognition.
 - [Feature detection and matching](catalog/concepts/feature-matching.md): 78 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
-- [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 170 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
+- [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 169 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
 - [Terrain-relative navigation](catalog/concepts/terrain-nav.md): 74 items - TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain databases.
 - [Magnetic anomaly navigation](catalog/concepts/magnetic-nav.md): 47 items - MagNav: matching magnetometer readings to crustal anomaly maps; aircraft compensation.
 - [Celestial and star-tracker navigation](catalog/concepts/celestial-nav.md): 25 items - Star trackers, sun/sky polarization, celestial fixes.
@@ -214,7 +211,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md): 25 items - PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 - [Autopilots and flight control](catalog/concepts/autopilot.md): 169 items - Flight stacks, control loops, estimation inside autopilots, firmware.
 - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 59 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
-- [Path and motion planning](catalog/concepts/path-planning.md): 225 items - Global/local planners, sampling and search based planning, trajectory optimization.
+- [Path and motion planning](catalog/concepts/path-planning.md): 224 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 45 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
 - [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 158 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 91 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
@@ -225,8 +222,8 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 70 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 39 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 204 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
-- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 293 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 202 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 291 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 152 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 141 items - Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Tracking and data association](catalog/concepts/target-tracking.md): 32 items - Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).

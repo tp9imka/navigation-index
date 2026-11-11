@@ -2,7 +2,7 @@
 
 `repo:cjhhalla/rcv_uwb_dataset` - <https://github.com/cjhhalla/RCV_uwb_dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6 | C++ | ? | 2025-09-11 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Drone UWB dataset: six flight sequences with two-way ranging to four anchors, st
 
 **Why it matters:** Shows how anchor and tag orientation bias UWB ranges, which is what breaks naive UWB models in practice.
 
-**Hackathon notes:** CSV files are usable without ROS. No licence file, so reuse terms are unstated.
+**Build notes:** CSV files are usable without ROS. No licence file, so reuse terms are unstated.
 
 **Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

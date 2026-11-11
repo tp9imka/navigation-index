@@ -2,7 +2,7 @@
 
 `repo:robustfieldautonomylab/lego-loam` - <https://github.com/RobustFieldAutonomyLab/LeGO-LOAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,770 | C++ | BSD-3-Clause | 2024-08-17 | False | archived | low |
 
@@ -10,7 +10,7 @@ Lightweight ground-optimized LiDAR odometry and mapping that segments ground to 
 
 **Why it matters:** Classic UGV LiDAR SLAM for rough terrain on modest compute.
 
-**Hackathon notes:** ROS 1 only, unmaintained, tuned for Velodyne VLP-16. Use LIO-SAM or KISS-ICP instead unless reproducing baselines.
+**Build notes:** ROS 1 only, unmaintained, tuned for Velodyne VLP-16. Use LIO-SAM or KISS-ICP instead unless reproducing baselines.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

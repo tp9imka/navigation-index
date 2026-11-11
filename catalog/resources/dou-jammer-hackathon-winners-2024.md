@@ -26,10 +26,10 @@ English: 'Jammer Hackathon is over: which EW/ELINT projects won'. Results page: 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Шукають РЕБ/РЕР рішення для боротьби з ворожими дронами. Деталі про Jammer Hackathon](../../catalog/resources/dou-jammer-hackathon-2024.md) (part_of)
 
 _Indexed by lane(s): ua-ru-sources_

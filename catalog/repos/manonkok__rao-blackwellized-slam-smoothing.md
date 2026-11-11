@@ -2,7 +2,7 @@
 
 `repo:manonkok/rao-blackwellized-slam-smoothing` - <https://github.com/manonkok/Rao-Blackwellized-SLAM-smoothing>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 16 | MATLAB | MIT | 2024-05-31 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magneti
 
 **Why it matters:** Clean academic reference for magnetic field SLAM and particle-filter matching at small scale.
 
-**Hackathon notes:** Good for understanding magnetic map matching quickly.
+**Build notes:** Good for understanding magnetic map matching quickly.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

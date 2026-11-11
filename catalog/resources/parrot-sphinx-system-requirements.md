@@ -22,6 +22,6 @@ Hardware and OS requirements for Parrot's Sphinx drone simulator.
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 
 _Indexed by lane(s): close-area-sims_

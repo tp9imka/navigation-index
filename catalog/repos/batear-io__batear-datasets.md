@@ -2,7 +2,7 @@
 
 `repo:batear-io/batear-datasets` - <https://github.com/batear-io/batear-datasets>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 12 | Python | MIT | 2026-04-30 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Small Git LFS collection of drone and background audio for ESP32-S3 acoustic det
 
 **Why it matters:** Targets low-cost acoustic sensor nodes - the cheapest C-UAS tripwire.
 
-**Hackathon notes:** MIT. Run git lfs pull to get the audio. Pair with the Batear firmware for a microcontroller acoustic sensor demo.
+**Build notes:** MIT. Run git lfs pull to get the audio. Pair with the Batear firmware for a microcontroller acoustic sensor demo.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

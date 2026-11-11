@@ -2,7 +2,7 @@
 
 `repo:yuanjiayuuu/swa-pf` - <https://github.com/YuanJiayuuu/SWA-PF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 32 | Python | ? | 2025-09-22 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Semantic-weighted adaptive particle filter for 4-DoF UAV localization against sa
 
 **Why it matters:** Semantic particle weighting is one route to robustness against map age.
 
-**Hackathon notes:** No license file (gh api 2026-11-09): read only. MAFS dataset terms not checked.
+**Build notes:** No license file (gh api 2026-11-09): read only. MAFS dataset terms not checked.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:ptp-sim/libptp` - <https://github.com/ptp-sim/libPTP>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 35 | C++ | GPL-3.0 | 2021-07-22 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ OMNeT++/INET library for simulating IEEE 1588-2008 networks: ordinary, boundary 
 
 **Why it matters:** A packet-level PTP network simulator if a stdlib model is too coarse.
 
-**Hackathon notes:** OMNeT++ setup is heavy and the repo was last pushed in 2021. Prefer sample:timing-network-holdover or clknetsim unless packet-level detail is required.
+**Build notes:** OMNeT++ setup is heavy and the repo was last pushed in 2021. Prefer sample:timing-network-holdover or clknetsim unless packet-level detail is required.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

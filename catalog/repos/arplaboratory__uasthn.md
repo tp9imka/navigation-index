@@ -2,7 +2,7 @@
 
 `repo:arplaboratory/uasthn` - <https://github.com/arplaboratory/UASTHN>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 27 | Jupyter Notebook | MIT | 2026-02-28 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-therma
 
 **Why it matters:** Calibrated uncertainty is what lets a nav filter safely ingest visual fixes.
 
-**Hackathon notes:** Feed its uncertainty into your EKF measurement covariance.
+**Build notes:** Feed its uncertainty into your EKF measurement covariance.
 
 ## Deep dives
 

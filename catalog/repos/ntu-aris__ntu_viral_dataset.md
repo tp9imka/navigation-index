@@ -2,7 +2,7 @@
 
 `repo:ntu-aris/ntu_viral_dataset` - <https://github.com/ntu-aris/ntu_viral_dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 236 | SCSS | MIT | 2026-10-25 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 **Why it matters:** Rare UWB-equipped drone dataset for range-aided fusion experiments.
 
-**Hackathon notes:** ROS bags; download links on the site. Licensed CC BY-NC-SA 4.0 for non-commercial academic use; commercial use needs contact with the authors.
+**Build notes:** ROS bags; download links on the site. Licensed CC BY-NC-SA 4.0 for non-commercial academic use; commercial use needs contact with the authors.
 
 ## Deep dives
 
@@ -28,9 +28,9 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [MCD: Multi-Campus Dataset](../../catalog/repos/mcdviral__mcdviral.github.io.md) (same_org)
 
 _Indexed by lane(s): sim-data_

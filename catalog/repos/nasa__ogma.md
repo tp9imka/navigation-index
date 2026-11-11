@@ -2,7 +2,7 @@
 
 `repo:nasa/ogma` - <https://github.com/nasa/ogma>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 588 | Haskell | Apache-2.0 | 2026-11-08 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ NASA tool that turns formal requirements (FRET output, diagrams, temporal-logic 
 
 **Why it matters:** The shortest open path from 'the nav solution must never do X' to a running safety monitor next to your algorithm. That monitor is the piece a runtime-assurance argument is built on.
 
-**Hackathon notes:** Needs a Haskell toolchain (GHC + cabal) to build, which is the main setup cost. Write 3-5 properties (innovation gate, max position jump, staleness of the nav message) and generate a ROS 2 monitor node that subscribes to your estimate. Good slide material even if only run in SITL.
+**Build notes:** Needs a Haskell toolchain (GHC + cabal) to build, which is the main setup cost. Write 3-5 properties (innovation gate, max position jump, staleness of the nav message) and generate a ROS 2 monitor node that subscribes to your estimate. Good slide material even if only run in SITL.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

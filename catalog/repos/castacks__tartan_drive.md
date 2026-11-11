@@ -2,7 +2,7 @@
 
 `repo:castacks/tartan_drive` - <https://github.com/castacks/tartan_drive>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 127 | Python | MIT | 2026-02-10 | False | production | medium |
 
@@ -10,7 +10,7 @@ Tools and utilities for the TartanDrive off-road driving dataset from CMU's AirL
 
 **Why it matters:** Large-scale off-road vehicle dynamics and perception data for learning traversability.
 
-**Hackathon notes:** Data is large; use the provided loaders and a subset.
+**Build notes:** Data is large; use the provided loaders and a subset.
 
 ## Deep dives
 

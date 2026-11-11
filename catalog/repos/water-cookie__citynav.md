@@ -2,7 +2,7 @@
 
 `repo:water-cookie/citynav` - <https://github.com/water-cookie/citynav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 148 | Python | MIT | 2025-02-11 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Language-goal aerial navigation dataset over real-city 3D point clouds with geog
 
 **Why it matters:** Links language goals to real geography, close to how operators describe destinations.
 
-**Hackathon notes:** Dataset plus training code; GPU needed for baselines.
+**Build notes:** Dataset plus training code; GPU needed for baselines.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

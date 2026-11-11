@@ -2,7 +2,7 @@
 
 `repo:daniestevez/galileo-osnma` - <https://github.com/daniestevez/galileo-osnma>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 90 | Rust | Apache-2.0 | 2026-03-04 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Rust implementation of Galileo OSNMA that can run on embedded no_std targets, wi
 
 **Why it matters:** Lightweight, memory-safe OSNMA verifier suitable for embedding in drones or edge devices.
 
-**Hackathon notes:** Cargo build; includes a u-blox-based example. Embedded angle is a differentiator.
+**Build notes:** Cargo build; includes a u-blox-based example. Embedded angle is a differentiator.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
@@ -24,7 +24,7 @@ Rust implementation of Galileo OSNMA that can run on embedded no_std targets, wi
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OSNMAlib](../../catalog/repos/algafix__osnma.md) (alternative_to)

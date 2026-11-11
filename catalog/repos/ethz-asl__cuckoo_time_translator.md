@@ -2,7 +2,7 @@
 
 `repo:ethz-asl/cuckoo_time_translator` - <https://github.com/ethz-asl/cuckoo_time_translator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 96 | C++ | NOASSERTION | 2022-06-30 | False | archived | medium |
 
@@ -10,7 +10,7 @@ ROS algorithms that translate a sensor's own hardware timestamps into host syste
 
 **Why it matters:** Multi-sensor fusion (camera, IMU, LiDAR) breaks quietly when timestamps are off; this is the lightweight fix when PTP is not available on the sensor.
 
-**Hackathon notes:** ROS1 catkin package; inactive since 2022, port the algorithm if on ROS 2.
+**Build notes:** ROS1 catkin package; inactive since 2022, port the algorithm if on ROS 2.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

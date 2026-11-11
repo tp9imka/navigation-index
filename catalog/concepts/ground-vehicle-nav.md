@@ -11,7 +11,7 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 ## Guides (2)
 
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck
-- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics reviewers expect, and design a GNSS-outage or interference test that shows what your system does when it m
 
 ## Repositories (41)
 

@@ -2,7 +2,7 @@
 
 `repo:redlab-i/pps-tools` - <https://github.com/redlab-i/pps-tools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 63 | C | GPL-2.0 | 2024-03-14 | False | production | medium |
 
@@ -10,7 +10,7 @@ User-space tools and headers for the Linux PPS API (ppstest, ppsctl, ppswatch).
 
 **Why it matters:** First thing to run when wiring a GNSS 1PPS into a Linux box: confirms pulses arrive and shows their jitter.
 
-**Hackathon notes:** apt install pps-tools; `ppstest /dev/pps0`.
+**Build notes:** apt install pps-tools; `ppstest /dev/pps0`.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

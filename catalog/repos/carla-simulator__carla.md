@@ -2,7 +2,7 @@
 
 `repo:carla-simulator/carla` - <https://github.com/carla-simulator/carla>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14,578 | C++ | MIT | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GN
 
 **Why it matters:** Standard ground-vehicle testbed for localization and planning under weather, night and sensor-degradation conditions.
 
-**Hackathon notes:** Use packaged releases and the Python client; the ROS 2 bridge is separate. A decent GPU is required.
+**Build notes:** Use packaged releases and the Python client; the ROS 2 bridge is separate. A decent GPU is required.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
@@ -20,7 +20,7 @@ Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GN
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

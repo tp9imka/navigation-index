@@ -2,7 +2,7 @@
 
 `repo:skyy93/sample4geo` - <https://github.com/Skyy93/Sample4Geo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 172 | Python | ? | 2025-08-08 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Cross-view geo-localization training with hard negative sampling, reporting stro
 
 **Why it matters:** A strong, simple baseline that is easy to retrain for your own drone/satellite pairs.
 
-**Hackathon notes:** Pretrained checkpoints help; fine-tune on your tile set if time allows. No licence file, so code and weights are all rights reserved by default.
+**Build notes:** Pretrained checkpoints help; fine-tune on your tile set if time allows. No licence file, so code and weights are all rights reserved by default.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:mavlink/mavsdk-python` - <https://github.com/mavlink/MAVSDK-Python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 459 | Python | BSD-3-Clause | 2026-10-15 | False | production | high |
 
@@ -10,7 +10,7 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 **Why it matters:** Probably the fastest way to script missions or offboard control against PX4 SITL.
 
-**Hackathon notes:** pip install mavsdk-grpc and import mavsdk_grpc (the PyPI name 'mavsdk' now means the native binding with a different API); examples cover takeoff, missions, offboard velocity.
+**Build notes:** pip install mavsdk-grpc and import mavsdk_grpc (the PyPI name 'mavsdk' now means the native binding with a different API); examples cover takeoff, missions, offboard velocity.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md) (alternative_to)
 - [Полёт вслепую - GCS with terrain-referenced navigation](../../catalog/repos/drones-voronka__drones-backend.md) (depends_on)

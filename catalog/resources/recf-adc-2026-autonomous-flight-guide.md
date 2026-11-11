@@ -15,4 +15,4 @@ One-page guide to the school-level autonomous flight match: a 3-minute scripted 
 
 **Tags:** `recf`, `student`, `competition`, `indoor`
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

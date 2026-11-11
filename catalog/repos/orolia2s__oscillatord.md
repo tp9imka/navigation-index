@@ -2,7 +2,7 @@
 
 `repo:orolia2s/oscillatord` - <https://github.com/Orolia2s/oscillatord>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 26 | C | GPL-2.0 | 2026-06-23 | False | production | low |
 
@@ -10,7 +10,7 @@ Daemon that disciplines the oscillator on the Orolia (Safran) Atomic Reference T
 
 **Why it matters:** Real disciplining code for a miniature atomic clock on a time card, to compare with toy GPSDO loops.
 
-**Hackathon notes:** Needs the hardware; read the disciplining code for the loop design.
+**Build notes:** Needs the hardware; read the disciplining code for the loop design.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

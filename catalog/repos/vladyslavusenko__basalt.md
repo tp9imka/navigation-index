@@ -2,7 +2,7 @@
 
 `repo:vladyslavusenko/basalt` - <https://github.com/VladyslavUsenko/basalt>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,026 | C++ | BSD-3-Clause | 2026-03-22 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ GitHub mirror of Basalt, a visual-inertial odometry and mapping system built aro
 
 **Why it matters:** Fast, accurate stereo VIO that runs well on CPUs; also ships camera-IMU calibration.
 
-**Hackathon notes:** Submit issues upstream on GitLab. Install from GitLab release binaries (Ubuntu 22.04+ amd64, macOS arm64) or build from source with CMake presets + vcpkg; ROS integration is via community wrappers.
+**Build notes:** Submit issues upstream on GitLab. Install from GitLab release binaries (Ubuntu 22.04+ amd64, macOS arm64) or build from source with CMake presets + vcpkg; ROS integration is via community wrappers.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
@@ -24,7 +24,7 @@ GitHub mirror of Basalt, a visual-inertial odometry and mapping system built aro
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): slam_

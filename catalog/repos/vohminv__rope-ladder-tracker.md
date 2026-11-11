@@ -2,7 +2,7 @@
 
 `repo:vohminv/rope-ladder-tracker` - <https://github.com/VohminV/rope-ladder-tracker>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | Python | ? | 2025-08-14 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 
 **Why it matters:** A small, readable alternative to drift-prone flow integration for the specific job of getting home when GNSS is gone; the same idea as teach-and-repeat.
 
-**Hackathon notes:** Pure Python + OpenCV, runs on a laptop against recorded downward video. Integration with a flight controller is left to the user (README sends offsets; no MAVLink bridge verified). Good seed for a 'return home under jamming' demo.
+**Build notes:** Pure Python + OpenCV, runs on a laptop against recorded downward video. Integration with a flight controller is left to the user (README sends offsets; no MAVLink bridge verified). Good seed for a 'return home under jamming' demo.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Как я научил квадрокоптер возвращаться домой без GPS: алгоритм «верёвочной лестницы»](../../catalog/resources/habr-rope-ladder-return-home-2025.md) (has_code)
 
 _Indexed by lane(s): ua-ru-sources_

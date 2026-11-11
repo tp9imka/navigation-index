@@ -2,7 +2,7 @@
 
 `repo:perrysou/softgnss-python` - <https://github.com/perrysou/SoftGNSS-python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 45 | Python | ? | 2023-05-10 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Python port of the SoftGNSS software-defined GPS receiver toolkit.
 
 **Why it matters:** Python version of the textbook receiver; easier for teams without MATLAB.
 
-**Hackathon notes:** Not updated since 2023 and written for Python 2.7 (README system requirements; installation section says 'Coming soon'). Expect porting work before offline IQ experiments.
+**Build notes:** Not updated since 2023 and written for Python 2.7 (README system requirements; installation section says 'Coming soon'). Expect porting work before offline IQ experiments.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

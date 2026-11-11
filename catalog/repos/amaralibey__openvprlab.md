@@ -2,7 +2,7 @@
 
 `repo:amaralibey/openvprlab` - <https://github.com/amaralibey/OpenVPRLab>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 175 | Python | MIT | 2024-07-25 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Modular PyTorch framework for training VPR models as data -> backbone -> aggrega
 
 **Why it matters:** Fastest route to training or fine-tuning your own place-recognition model with swappable aggregators.
 
-**Hackathon notes:** Conda environment install; GSV-Cities-light is the quick start. MIT licence on code, but the GSV-Cities data is CC BY-NC-ND. No commits since mid-2024.
+**Build notes:** Conda environment install; GSV-Cities-light is the quick start. MIT licence on code, but the GSV-Cities data is CC BY-NC-ND. No commits since mid-2024.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

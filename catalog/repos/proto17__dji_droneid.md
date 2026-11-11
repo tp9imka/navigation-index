@@ -2,7 +2,7 @@
 
 `repo:proto17/dji_droneid` - <https://github.com/proto17/dji_droneid>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 550 | MATLAB | MIT | 2024-05-27 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Original reverse engineering of DJI DroneID with MATLAB/Octave scripts that demo
 
 **Why it matters:** Foundational work behind open DJI DroneID decoders.
 
-**Hackathon notes:** Use for understanding the PHY; prefer samples2djidroneid for decoding.
+**Build notes:** Use for understanding the PHY; prefer samples2djidroneid for decoding.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Original reverse engineering of DJI DroneID with MATLAB/Octave scripts that demo
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [samples2djidroneid](../../catalog/repos/anarkiwi__samples2djidroneid.md) (extends)
 
 _Indexed by lane(s): domains-swarm_

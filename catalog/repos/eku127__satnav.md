@@ -2,7 +2,7 @@
 
 `repo:eku127/satnav` - <https://github.com/Eku127/SatNav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 19 | Python | MIT | 2026-09-28 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Scalable benchmark and platform for long-horizon UAV vision-language navigation 
 
 **Why it matters:** Satellite-imagery grounding matches what a real UAV can carry as a prior map, so results transfer better to GNSS-denied ops.
 
-**Hackathon notes:** New release; check README for data availability before planning around it.
+**Build notes:** New release; check README for data availability before planning around it.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

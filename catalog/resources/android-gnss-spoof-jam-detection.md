@@ -22,7 +22,7 @@ Android developer documentation on the platform APIs and signals that apps can u
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Detecting GNSS Jamming and Spoofing on Android Devices](../../catalog/resources/ion-webinar-akos.md) (cites)
 

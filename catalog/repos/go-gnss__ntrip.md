@@ -2,7 +2,7 @@
 
 `repo:go-gnss/ntrip` - <https://github.com/go-gnss/ntrip>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 63 | Go | Apache-2.0 | 2026-02-17 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Go library implementing NTRIP client, server and caster components.
 
 **Why it matters:** Modern, embeddable NTRIP implementation for building custom correction services.
 
-**Hackathon notes:** Use as a library inside a Go backend; smaller community than BKG caster.
+**Build notes:** Use as a library inside a Go backend; smaller community than BKG caster.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 

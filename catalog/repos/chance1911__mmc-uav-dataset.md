@@ -2,7 +2,7 @@
 
 `repo:chance1911/mmc-uav-dataset` - <https://github.com/Chance1911/MMC-UAV-Dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5 |  | ? | 2025-10-24 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Placeholder for a multimodal low-altitude anti-drone dataset (RGB, infrared, act
 
 **Why it matters:** Rare dataset with all four C-UAS sensor modalities.
 
-**Hackathon notes:** No data, download link, paper or licence in the repo - not usable until the authors publish.
+**Build notes:** No data, download link, paper or licence in the repo - not usable until the authors publish.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

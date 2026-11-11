@@ -2,7 +2,7 @@
 
 `repo:px4/px4-autopilot` - <https://github.com/PX4/PX4-Autopilot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 12,979 | C++ | BSD-3-Clause | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 
 **Why it matters:** The most common permissive-licensed (BSD) autopilot base for defense and commercial UAS; EKF2 external-vision and flow fusion is the standard route to GPS-denied flight.
 
-**Hackathon notes:** Run `make px4_sitl gz_x500` for SITL with Gazebo in under an hour. Feed VIO/SLAM poses via the ROS 2 uXRCE-DDS bridge or MAVLink ODOMETRY; disable GPS with EKF2_GPS_CTRL to test GPS-denied behaviour.
+**Build notes:** Run `make px4_sitl gz_x500` for SITL with Gazebo in under an hour. Feed VIO/SLAM poses via the ROS 2 uXRCE-DDS bridge or MAVLink ODOMETRY; disable GPS with EKF2_GPS_CTRL to test GPS-denied behaviour.
 
 ## Deep dives
 
@@ -36,14 +36,14 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 ## Referenced by
 
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)

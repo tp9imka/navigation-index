@@ -2,7 +2,7 @@
 
 `repo:rosshartley/invariant-ekf` - <https://github.com/RossHartley/invariant-ekf>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 571 | C++ | BSD-3-Clause | 2019-08-17 | False | archived | medium |
 
@@ -10,7 +10,7 @@ C++ library implementing the invariant EKF for aided inertial navigation, includ
 
 **Why it matters:** Reference InEKF implementation; invariant filters behave better than standard EKF under large initial errors.
 
-**Hackathon notes:** Last push 2019; still compiles with Eigen. Pairs with the Hartley 2019 paper.
+**Build notes:** Last push 2019; still compiles with Eigen. Pairs with the Hartley 2019 paper.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

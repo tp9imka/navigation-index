@@ -2,7 +2,7 @@
 
 `repo:daniilidis-group/event_feature_tracking` - <https://github.com/daniilidis-group/event_feature_tracking>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 84 | MATLAB | NOASSERTION | 2022-02-15 | False | archived | low |
 
@@ -10,7 +10,7 @@ MATLAB implementations of event-based feature tracking methods from the Penn GRA
 
 **Why it matters:** Reference algorithms for event-based VIO front-ends.
 
-**Hackathon notes:** MATLAB; pair with MVSEC data.
+**Build notes:** MATLAB; pair with MVSEC data.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

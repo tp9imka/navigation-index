@@ -2,7 +2,7 @@
 
 `repo:andrewwalker/pydubins` - <https://github.com/AndrewWalker/pydubins>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 79 | C | MIT | 2025-08-17 | False | production | high |
 
@@ -10,7 +10,7 @@ Python wrapper around the C Dubins-Curves library: shortest paths for a vehicle 
 
 **Why it matters:** Minimum-radius 2D paths are the building block of fixed-wing route planning and loiter / re-fix manoeuvres.
 
-**Hackathon notes:** License MIT (gh api). Last push 2025-08-17. Builds a C extension on install; if no compiler, the closed-form Dubins words are short enough to write in numpy. 2D only and no wind: use EDuPlane when wind or climb limits matter.
+**Build notes:** License MIT (gh api). Last push 2025-08-17. Builds a C extension on install; if no compiler, the closed-form Dubins words are short enough to write in numpy. 2D only and no wind: use EDuPlane when wind or climb limits matter.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 

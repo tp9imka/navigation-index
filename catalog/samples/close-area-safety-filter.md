@@ -26,11 +26,11 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [How it was built: method, kill tests and fact-check error rates](../../docs/how-it-was-built.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [05. CBF baselines for the idea C kill test, read faithfully](../../docs/research/close-area-nav/05-cbf-baselines-faithful.md) (mentions)
 - [Close-area A=>B: how real events specify the task](../../docs/research/close-area-nav/06-task-phrasing-survey.md) (mentions)

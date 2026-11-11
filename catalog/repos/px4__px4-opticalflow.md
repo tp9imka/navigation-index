@@ -2,7 +2,7 @@
 
 `repo:px4/px4-opticalflow` - <https://github.com/PX4/PX4-OpticalFlow>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 201 | C++ | BSD-3-Clause | 2026-09-21 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Algorithms for computing optical flow from a downward camera to produce velocity
 
 **Why it matters:** Optical flow plus range finder is the cheapest GNSS-free velocity source for low-altitude hover and drift control.
 
-**Hackathon notes:** Library only (PX4Flow SAD block matching and an OpenCV KLT variant behind calcFlow()); there is no executable or MAVLink output, so you write the camera capture and OPTICAL_FLOW_RAD publishing yourself. The Gazebo Classic flow plugin is the reference user. Light maintenance commits in 2026.
+**Build notes:** Library only (PX4Flow SAD block matching and an OpenCV KLT variant behind calcFlow()); there is no executable or MAVLink output, so you write the camera capture and OPTICAL_FLOW_RAD publishing yourself. The Gazebo Classic flow plugin is the reference user. Light maintenance commits in 2026.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

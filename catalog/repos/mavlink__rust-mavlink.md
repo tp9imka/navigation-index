@@ -2,7 +2,7 @@
 
 `repo:mavlink/rust-mavlink` - <https://github.com/mavlink/rust-mavlink>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 297 | Rust | Apache-2.0 | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connec
 
 **Why it matters:** Memory-safe option for ground or embedded services.
 
-**Hackathon notes:** cargo add mavlink.
+**Build notes:** cargo add mavlink.
 
 **Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

@@ -2,7 +2,7 @@
 
 `repo:px4/px4_ros_com` - <https://github.com/PX4/px4_ros_com>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 232 | C++ | BSD-3-Clause | 2025-11-21 | False | production | high |
 
@@ -10,7 +10,7 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 
 **Why it matters:** Starting templates for offboard control and sending odometry into PX4.
 
-**Hackathon notes:** Clone alongside px4_msgs into a colcon workspace.
+**Build notes:** Clone alongside px4_msgs into a colcon workspace.
 
 ## Deep dives
 
@@ -31,8 +31,8 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

@@ -2,7 +2,7 @@
 
 `repo:miluta7/geoveil-cn0` - <https://github.com/miluta7/geoveil-cn0>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5 | Rust | NOASSERTION | 2026-09-29 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Rust library with a Python API (pip install geoveil-cn0) that scores GNSS signal
 
 **Why it matters:** Drop-in signal-quality monitor for a navigation stack.
 
-**Hackathon notes:** Input is plain RINEX 2-4 files (decompress Hatanaka first); the spoofing check needs a broadcast nav file. Licence is PolyForm Noncommercial with an attribution term - no commercial use.
+**Build notes:** Input is plain RINEX 2-4 files (decompress Hatanaka first); the spoofing check needs a broadcast nav file. Licence is PolyForm Noncommercial with an attribution term - no commercial use.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

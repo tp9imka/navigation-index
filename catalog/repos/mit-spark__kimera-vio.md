@@ -2,7 +2,7 @@
 
 `repo:mit-spark/kimera-vio` - <https://github.com/MIT-SPARK/Kimera-VIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,937 | C++ | BSD-2-Clause | 2026-08-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Stereo visual-inertial odometry with a factor-graph backend, robust loop closure
 
 **Why it matters:** Gives both a pose and a lightweight 3D mesh, useful for situational-awareness displays.
 
-**Hackathon notes:** Heavier build (GTSAM, OpenGV, DBoW2); use the Docker setup. The ROS wrapper lives in a separate repo.
+**Build notes:** Heavier build (GTSAM, OpenGV, DBoW2); use the Docker setup. The ROS wrapper lives in a separate repo.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

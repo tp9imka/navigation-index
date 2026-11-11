@@ -2,7 +2,7 @@
 
 `repo:xiotechnologies/fusion` - <https://github.com/xioTechnologies/Fusion>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,767 | C | MIT | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro o
 
 **Why it matters:** Production-grade embedded attitude filter with disturbance rejection, from the Madgwick filter's originators.
 
-**Hackathon notes:** Drop the C files into firmware or pip install imufusion for Python prototyping.
+**Build notes:** Drop the C files into firmware or pip install imufusion for Python prototyping.
 
 ## Deep dives
 

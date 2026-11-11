@@ -2,7 +2,7 @@
 
 `repo:opendronemap/odm` - <https://github.com/opendronemap/odm>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,591 | Python | AGPL-3.0 | 2026-10-29 | False | production | high |
 
@@ -10,7 +10,7 @@ Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 
 
 **Why it matters:** Build your own up-to-date reference orthophoto and DSM from a survey flight for visual and terrain navigation.
 
-**Hackathon notes:** docker run opendronemap/odm on a folder of images; WebODM gives a GUI. Processing time scales with image count.
+**Build notes:** docker run opendronemap/odm on a folder of images; WebODM gives a GUI. Processing time scales with image count.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
@@ -24,7 +24,7 @@ Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OpenDroneMap Aukerman Park eBee image set](../../catalog/resources/odm-aukerman-ebee-dataset.md) (has_code)

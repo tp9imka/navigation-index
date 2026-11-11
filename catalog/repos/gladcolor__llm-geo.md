@@ -2,7 +2,7 @@
 
 `repo:gladcolor/llm-geo` - <https://github.com/gladcolor/LLM-Geo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 462 | Jupyter Notebook | GPL-3.0 | 2026-10-18 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial questi
 
 **Why it matters:** Early worked example of LLM planning over geospatial workflows, a building block for agentic mission planning.
 
-**Hackathon notes:** Notebook-driven; needs an LLM API key. Use as design reference rather than a dependency.
+**Build notes:** Notebook-driven; needs an LLM API key. Use as design reference rather than a dependency.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

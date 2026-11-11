@@ -2,7 +2,7 @@
 
 `repo:paparazzi/paparazzi` - <https://github.com/paparazzi/paparazzi>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,722 | C | GPL-2.0 | 2026-11-09 | False | production | low |
 
@@ -10,7 +10,7 @@ Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, roto
 
 **Why it matters:** Strong research heritage in fixed-wing and micro air vehicles, including vision-based and swarm experiments; a non-MAVLink reference architecture.
 
-**Hackathon notes:** Toolchain and ground station setup takes hours; pick only if you know it already. Flight-plan XML is a nice example of declarative mission logic.
+**Build notes:** Toolchain and ground station setup takes hours; pick only if you know it already. Flight-plan XML is a nice example of declarative mission logic.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

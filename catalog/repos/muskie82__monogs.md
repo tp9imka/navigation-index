@@ -2,7 +2,7 @@
 
 `repo:muskie82/monogs` - <https://github.com/muskie82/MonoGS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,191 | Python | NOASSERTION | 2024-08-07 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and 
 
 **Why it matters:** Produces photorealistic maps useful for operator situational awareness and later simulation.
 
-**Hackathon notes:** Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo. Licence: Imperial College MonoGS licence - non-commercial, internal or academic research use only.
+**Build notes:** Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo. Licence: Imperial College MonoGS licence - non-commercial, internal or academic research use only.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

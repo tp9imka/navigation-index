@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_svo_pro_open` - <https://github.com/uzh-rpg/rpg_svo_pro_open>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,620 | C++ | GPL-3.0 | 2024-01-19 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omn
 
 **Why it matters:** Very low-latency front end suited to fast agile flight on compute-limited drones.
 
-**Hackathon notes:** ROS 1 / catkin build; dormant since 2024. Good when CPU budget is tight.
+**Build notes:** ROS 1 / catkin build; dormant since 2024. Good when CPU budget is tight.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

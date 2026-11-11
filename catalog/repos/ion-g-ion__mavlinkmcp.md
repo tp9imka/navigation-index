@@ -2,7 +2,7 @@
 
 `repo:ion-g-ion/mavlinkmcp` - <https://github.com/ion-g-ion/MAVLinkMCP>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 25 | Python | MIT | 2026-08-31 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 
 **Why it matters:** Direct template for a natural-language drone mission interface on PX4/ArduPilot SITL.
 
-**Hackathon notes:** Pair with PX4 or ArduPilot SITL; never point at a real vehicle without geofence and human confirm.
+**Build notes:** Pair with PX4 or ArduPilot SITL; never point at a real vehicle without geofence and human confirm.
 
 ## Deep dives
 
@@ -31,9 +31,9 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) (alternative_to)

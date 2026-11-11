@@ -2,7 +2,7 @@
 
 `repo:metaslam/alto` - <https://github.com/MetaSLAM/ALTO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 87 | None | BSD-3-Clause | 2022-06-20 | False | archived | low |
 
@@ -10,7 +10,7 @@ Placeholder repo for ALTO, an aerial-view, large-scale, terrain-oriented dataset
 
 **Why it matters:** Directly targets UAV localization over terrain when GNSS is unavailable.
 
-**Hackathon notes:** Inactive since 2022; only the competition subsets are downloadable (Dropbox), so check the links still work before planning around it. The BSD-3 licence covers the repo; no data terms are stated.
+**Build notes:** Inactive since 2022; only the competition subsets are downloadable (Dropbox), so check the links still work before planning around it. The BSD-3 licence covers the repo; no data terms are stated.
 
 ## Deep dives
 
@@ -24,8 +24,8 @@ Placeholder repo for ALTO, an aerial-view, large-scale, terrain-oriented dataset
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (evaluated_on)
 - [ALTO: A Large-Scale Dataset for UAV Visual Place Recognition and Localization](../../catalog/resources/alto-dataset-2022.md) (has_code)
 

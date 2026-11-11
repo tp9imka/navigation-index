@@ -2,7 +2,7 @@
 
 `repo:microsoft/airsim-drone-racing-lab` - <https://github.com/microsoft/AirSim-Drone-Racing-Lab>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ Archived AirSim-based framework used for the NeurIPS 2019 Game of Drones competi
 
 **Why it matters:** Shows how a sim competition structured A=>B-through-gates tiers and scoring.
 
-**Hackathon notes:** MIT, archived 2023. Unreal binaries, not practical on Apple Silicon. Use the paper for format ideas only.
+**Build notes:** MIT, archived 2023. Unreal binaries, not practical on Apple Silicon. Use the paper for format ideas only.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

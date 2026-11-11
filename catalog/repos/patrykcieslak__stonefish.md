@@ -2,7 +2,7 @@
 
 `repo:patrykcieslak/stonefish` - <https://github.com/patrykcieslak/stonefish>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 333 | C++ | GPL-3.0 | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ C++ simulation library for marine robotics with hydrodynamics, underwater render
 
 **Why it matters:** One of the few open sims with credible underwater nav sensors for AUV dead reckoning and sonar-based localization work.
 
-**Hackathon notes:** Build with CMake; use stonefish_ros for ROS integration. Good for a DVL+USBL EKF demo.
+**Build notes:** Build with CMake; use stonefish_ros for ROS integration. Good for a DVL+USBL EKF demo.
 
 ## Deep dives
 
@@ -32,11 +32,11 @@ C++ simulation library for marine robotics with hydrodynamics, underwater render
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [HoloOcean (documentation)](../../catalog/repos/byu-holoocean__holoocean-docs.md) (alternative_to)
 - [HoloOcean ROS bridge](../../catalog/repos/byu-holoocean__holoocean-ros.md) (alternative_to)

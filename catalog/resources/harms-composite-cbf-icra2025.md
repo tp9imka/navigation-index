@@ -21,4 +21,4 @@ Origin of the NTNU composite CBF: one soft-min barrier built from all position c
 - same_author: [Embedded Safe Reactive Navigation for Multirotors Systems using Control Barrier Functions](../../catalog/resources/misyats-px4-cbf-icuas2025.md)
 - has_code: [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md)
 
-_Indexed by lane(s): loop-05_
+_Indexed by lane(s): cbf-baselines_

@@ -2,7 +2,7 @@
 
 `repo:amaralibey/gsv-cities` - <https://github.com/amaralibey/gsv-cities>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 138 | Python | ? | 2024-07-03 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Official training and evaluation code for the GSV-Cities visual place recognitio
 
 **Why it matters:** The standard large training set for modern VPR descriptors; training without offline triplet mining makes fine-tuning on your own imagery fast.
 
-**Hackathon notes:** Dataset is on Kaggle under CC BY-NC-ND 4.0 (research only); the code repo has no licence file. Use it to pretrain or fine-tune a descriptor, then adapt to aerial tiles. Last push 2024.
+**Build notes:** Dataset is on Kaggle under CC BY-NC-ND 4.0 (research only); the code repo has no licence file. Use it to pretrain or fine-tune a descriptor, then adapt to aerial tiles. Last push 2024.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

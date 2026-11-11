@@ -2,7 +2,7 @@
 
 `repo:rosflight/rosflight_ros_pkgs` - <https://github.com/rosflight/rosflight_ros_pkgs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 99 | C++ | BSD-3-Clause | 2026-10-02 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ROS 2 interface, simulator and utilities for the ROSflight autopilot.
 
 **Why it matters:** Companion-side half of ROSflight, where navigation and autonomy live.
 
-**Hackathon notes:** Start with the sim launch files.
+**Build notes:** Start with the sim launch files.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

@@ -2,7 +2,7 @@
 
 `repo:google/gps-measurement-tools` - <https://github.com/google/gps-measurement-tools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 842 | Java | Apache-2.0 | 2026-10-19 | False | production | high |
 
@@ -10,7 +10,7 @@ Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB
 
 **Why it matters:** The canonical way to capture raw pseudoranges and carrier phase from phones, the basis for smartphone spoofing and integrity research.
 
-**Hackathon notes:** Install GnssLogger from the Play Store and log on any recent Android phone; parse logs with gnss_lib_py.
+**Build notes:** Install GnssLogger from the Play Store and log on any recent Android phone; parse logs with gnss_lib_py.
 
 ## Deep dives
 
@@ -31,12 +31,12 @@ Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Multi-frequency GNSS spoofing raw dataset](../../catalog/repos/s7am1na__gnss-spoofing-dataset.md) (depends_on)
 - [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md) (integrates_with)

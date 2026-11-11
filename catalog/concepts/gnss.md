@@ -16,7 +16,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 
 ## Guides (7)
 
-- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary reviewers use when they ask whether your solut
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
 - [Integration cards](../../docs/integration-cards/README.md) - Use this when you are about to install or wire a specific repo (autopilot SDK, VIO, planner, GNSS library, TAK bridge) and need its install steps, wiring, gotchas and license before you clone it.

@@ -2,7 +2,7 @@
 
 `repo:maplibre/martin` - <https://github.com/maplibre/martin>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,064 | Rust | Apache-2.0 | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile genera
 
 **Why it matters:** Serves live PostGIS layers (tracks, zones) as vector tiles alongside static basemaps.
 
-**Hackathon notes:** Single binary or docker; point at a PostGIS table to stream dynamic features.
+**Build notes:** Single binary or docker; point at a PostGIS table to stream dynamic features.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile genera
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)

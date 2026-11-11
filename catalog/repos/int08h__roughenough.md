@@ -2,7 +2,7 @@
 
 `repo:int08h/roughenough` - <https://github.com/int08h/roughenough>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 149 | Rust | Apache-2.0 | 2026-11-09 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Rust Roughtime (RFC 10049) server and client with a batching UDP server, optiona
 
 **Why it matters:** Quickest way to stand up an authenticated rough-time source and a client that checks several servers against each other.
 
-**Hackathon notes:** cargo build needs a recent Rust (README states MSRV 1.94.1). Run a local server plus public servers; show the client flagging a server whose time you skew.
+**Build notes:** cargo build needs a recent Rust (README states MSRV 1.94.1). Run a local server plus public servers; show the client flagging a server whose time you skew.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

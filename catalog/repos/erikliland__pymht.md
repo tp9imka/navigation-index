@@ -2,7 +2,7 @@
 
 `repo:erikliland/pymht` - <https://github.com/erikliland/pyMHT>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 106 | Python | BSD-3-Clause | 2023-09-19 | False | archived | low |
 
@@ -10,7 +10,7 @@ Track-oriented multi-hypothesis multi-target tracker in Python developed for mar
 
 **Why it matters:** Compact MHT implementation for comparison against Stone Soup.
 
-**Hackathon notes:** Dormant; useful as a readable algorithm reference.
+**Build notes:** Dormant; useful as a readable algorithm reference.
 
 **Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 

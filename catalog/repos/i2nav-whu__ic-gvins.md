@@ -2,7 +2,7 @@
 
 `repo:i2nav-whu/ic-gvins` - <https://github.com/i2Nav-WHU/IC-GVINS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 697 | C++ | GPL-3.0 | 2025-10-11 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise
 
 **Why it matters:** Template for camera-aided INS that keeps working through GNSS denial.
 
-**Hackathon notes:** ROS-based; heavier setup than KF-GINS. Use their datasets first.
+**Build notes:** ROS-based; heavier setup than KF-GINS. Use their datasets first.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

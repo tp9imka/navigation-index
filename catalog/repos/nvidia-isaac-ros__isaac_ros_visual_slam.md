@@ -2,7 +2,7 @@
 
 `repo:nvidia-isaac-ros/isaac_ros_visual_slam` - <https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_visual_slam>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,493 | C++ | Apache-2.0 | 2026-09-22 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 
 **Why it matters:** Real-time VIO on embedded Jetson hardware with low CPU load, a practical GNSS-denied odometry source for drones and UGVs.
 
-**Hackathon notes:** Use the Isaac ROS dev container; RealSense or ZED stereo works out of the box. Jetson Orin recommended.
+**Build notes:** Use the Isaac ROS dev container; RealSense or ZED stereo works out of the box. Jetson Orin recommended.
 
 ## Deep dives
 
@@ -31,9 +31,9 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Isaac ROS Benchmark](../../catalog/repos/nvidia-isaac-ros__isaac_ros_benchmark.md) (evaluated_on)
 - [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
 - [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md) (integrates_with)

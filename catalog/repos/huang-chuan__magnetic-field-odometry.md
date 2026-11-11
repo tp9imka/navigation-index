@@ -2,7 +2,7 @@
 
 `repo:huang-chuan/magnetic-field-odometry` - <https://github.com/Huang-Chuan/magnetic-field-odometry>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 17 | MATLAB | GPL-3.0 | 2023-10-18 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magne
 
 **Why it matters:** Shows magnetometer arrays as odometry where cameras fail.
 
-**Hackathon notes:** MATLAB simulation only, no real data. GPL-3.0.
+**Build notes:** MATLAB simulation only, no real data. GPL-3.0.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

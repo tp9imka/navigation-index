@@ -2,7 +2,7 @@
 
 `repo:robotics-star-lab/la-planner` - <https://github.com/Robotics-STAR-Lab/LA-Planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 68 | C++ | GPL-3.0 | 2025-07-21 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Localisation-aware quadrotor planner for unknown, feature-poor environments (IRO
 
 **Why it matters:** Recent, maintained example of planning that explicitly protects the estimator, which is the bridge between this hub's estimation focus and guidance.
 
-**Hackathon notes:** License GPL-3.0 (gh api). Last push 2025-07-21. Ubuntu 20.04 + ROS Noetic + nlopt 2.7.1 from source. Too much setup for 48h; useful as the citation for 'localisation-aware planning is current research'.
+**Build notes:** License GPL-3.0 (gh api). Last push 2025-07-21. Ubuntu 20.04 + ROS Noetic + nlopt 2.7.1 from source. Too much setup for 48h; useful as the citation for 'localisation-aware planning is current research'.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

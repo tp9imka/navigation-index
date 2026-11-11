@@ -2,7 +2,7 @@
 
 `repo:maximilian-nitsch/usbl-simulator` - <https://github.com/maximilian-nitsch/USBL-Simulator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14 | C++ | BSD-3-Clause | 2025-04-11 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ C++ library and ROS 2 (Humble) node that simulates ultra-short baseline acoustic
 
 **Why it matters:** USBL is the main absolute fix for submerged vehicles; simulated USBL lets a team test an aided-INS filter.
 
-**Hackathon notes:** ROS 2 colcon build; generate USBL fixes to fuse with DVL dead reckoning.
+**Build notes:** ROS 2 colcon build; generate USBL fixes to fuse with DVL dead reckoning.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
@@ -25,8 +25,8 @@ C++ library and ROS 2 (Humble) node that simulates ultra-short baseline acoustic
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

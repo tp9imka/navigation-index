@@ -2,7 +2,7 @@
 
 `repo:aavek/aeolus-ocean` - <https://github.com/aavek/Aeolus-Ocean>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 67 |  | BSD-3-Clause | 2023-07-14 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Collision avoidance simulator for COLREG-compliant autonomous ship navigation in
 
 **Why it matters:** Another research testbed for COLREGs logic with environmental variation.
 
-**Hackathon notes:** Binary only: download the v1.11 Windows release and run the .exe. Source is not published, so there are no build steps and nothing to modify or run on Linux. Little activity since 2023.
+**Build notes:** Binary only: download the v1.11 Windows release and run the .exe. Source is not published, so there are no build steps and nothing to modify or run on Linux. Little activity since 2023.
 
 **Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

@@ -2,7 +2,7 @@
 
 `repo:leggedrobotics/elevation_mapping_cupy` - <https://github.com/leggedrobotics/elevation_mapping_cupy>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,161 | Python | MIT | 2026-10-03 | False | active-research | high |
 
@@ -10,7 +10,7 @@ GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting
 
 **Why it matters:** Terrain-aware planning for off-road robots needs a live elevation and traversability map; this is the modern GPU version.
 
-**Hackathon notes:** Needs CUDA; Docker image available. Feed a depth camera or lidar and get a traversability layer.
+**Build notes:** Needs CUDA; Docker image available. Feed a depth camera or lidar and get a traversability layer.
 
 ## Deep dives
 

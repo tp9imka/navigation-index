@@ -2,7 +2,7 @@
 
 `repo:sasha-lobov/orb_slam3_system_local` - <https://github.com/sasha-lobov/ORB_SLAM3_system_local>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-05-31 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Pet project for local UAV navigation without GNSS: AirSim video streamed over Ze
 
 **Why it matters:** A minimal end-to-end sim loop (simulator => SLAM => control) that a team can copy to test VO under GNSS loss.
 
-**Hackathon notes:** Needs ORB-SLAM3 built separately and AirSim (archived upstream). Useful mainly as an architecture reference.
+**Build notes:** Needs ORB-SLAM3 built separately and AirSim (archived upstream). Useful mainly as an architecture reference.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Pet project for local UAV navigation without GNSS: AirSim video streamed over Ze
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [ViNet_AirSim_drone - learned VIO in AirSim](../../catalog/repos/sasha-lobov__vinet_airsim_drone.md) (same_org)
 
 _Indexed by lane(s): ua-ru-sources_

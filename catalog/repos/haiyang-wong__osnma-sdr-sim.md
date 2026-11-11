@@ -2,7 +2,7 @@
 
 `repo:haiyang-wong/osnma-sdr-sim` - <https://github.com/Haiyang-Wong/OSNMA-SDR-SIM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4 | C++ | ? | 2026-07-06 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 
 **Why it matters:** Rare open tool to generate authenticated (and deliberately broken) Galileo signals for testing OSNMA-aware receivers.
 
-**Hackathon notes:** Use file sink output into GNSS-SDR plus OSNMAlib for a full authenticate-or-alarm pipeline without RF. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
+**Build notes:** Use file sink output into GNSS-SDR plus OSNMAlib for a full authenticate-or-alarm pipeline without RF. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
 ## Deep dives
 
@@ -31,8 +31,8 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)

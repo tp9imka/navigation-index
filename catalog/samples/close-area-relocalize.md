@@ -28,14 +28,14 @@ Relocalizer for the close-area arena. After a detected VIO loss (reset_counter c
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) (mentions)
-- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) (mentions)
+- [Cold-start drill: close-area A=>B from a fresh clone, one agent, no team](../../docs/cold-start-drill.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [How it was built: method, kill tests and fact-check error rates](../../docs/how-it-was-built.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/quickstart-first-flight.md) (mentions)
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)

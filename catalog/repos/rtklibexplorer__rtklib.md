@@ -2,7 +2,7 @@
 
 `repo:rtklibexplorer/rtklib` - <https://github.com/rtklibexplorer/RTKLIB>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 994 | C | NOASSERTION | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox)
 
 **Why it matters:** The practical default for RTK/PPK with cheap F9P-class hardware; well documented through the rtklibexplorer blog.
 
-**Hackathon notes:** Prebuilt Windows binaries and Linux builds are easy. Pair with a u-blox F9P and a free NTRIP caster for cm-level fixes in an afternoon.
+**Build notes:** Prebuilt Windows binaries and Linux builds are easy. Pair with a u-blox F9P and a free NTRIP caster for cm-level fixes in an afternoon.
 
 ## Deep dives
 
@@ -32,7 +32,7 @@ Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox)
 
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [rtklib-py](../../catalog/repos/rtklibexplorer__rtklib-py.md) (extends)

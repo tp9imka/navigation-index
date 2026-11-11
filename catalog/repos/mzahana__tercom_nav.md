@@ -2,7 +2,7 @@
 
 `repo:mzahana/tercom_nav` - <https://github.com/mzahana/tercom_nav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 85 | Python | ? | 2026-04-26 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node c
 
 **Why it matters:** Bridges batch terrain matching into a recursive filter that a real autopilot stack could consume.
 
-**Hackathon notes:** Tested against PX4 SITL + Gazebo via MAVROS (no ArduPilot setup documented); colcon build, then launch with a GeoTIFF DEM path and world origin. GPS is used once to initialise the filter. Needs a rangefinder and barometer, real or simulated.
+**Build notes:** Tested against PX4 SITL + Gazebo via MAVROS (no ArduPilot setup documented); colcon build, then launch with a GeoTIFF DEM path and world origin. GPS is used once to initialise the filter. Needs a rangefinder and barometer, real or simulated.
 
 ## Deep dives
 
@@ -30,13 +30,13 @@ ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node c
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [python-tercom](../../catalog/repos/alti3__python-tercom.md) (alternative_to)

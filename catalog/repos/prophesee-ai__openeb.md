@@ -2,7 +2,7 @@
 
 `repo:prophesee-ai/openeb` - <https://github.com/prophesee-ai/openeb>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 308 | C++ | ? | 2026-05-15 | False | production | medium |
 
@@ -10,7 +10,7 @@ Prophesee's open SDK for event-based vision: camera drivers, data formats, visua
 
 **Why it matters:** Entry point for the most common commercial event sensors.
 
-**Hackathon notes:** Build from source or packages; sample recordings available without hardware.
+**Build notes:** Build from source or packages; sample recordings available without hardware.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

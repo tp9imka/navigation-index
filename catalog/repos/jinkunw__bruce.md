@@ -2,7 +2,7 @@
 
 `repo:jinkunw/bruce` - <https://github.com/jinkunw/bruce>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 18 | Python | BSD-3-Clause | 2020-04-26 | False | archived | low |
 
@@ -10,7 +10,7 @@ BlueROV underwater SLAM and exploration code from Stevens Institute, combining s
 
 **Why it matters:** Predecessor to sonar-SLAM; shows SLAM-driven exploration underwater.
 
-**Hackathon notes:** Dormant since 2020.
+**Build notes:** Dormant since 2020.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 

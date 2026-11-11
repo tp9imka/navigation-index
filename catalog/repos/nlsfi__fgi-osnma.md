@@ -2,7 +2,7 @@
 
 `repo:nlsfi/fgi-osnma` - <https://github.com/nlsfi/fgi-osnma>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 10 | Python | GPL-3.0 | 2023-11-16 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Python OSNMA implementation from the Finnish Geospatial Research Institute desig
 
 **Why it matters:** Second independent Python OSNMA implementation for cross-checking.
 
-**Hackathon notes:** Not updated since 2023; check against current ICD version.
+**Build notes:** Not updated since 2023; check against current ICD version.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

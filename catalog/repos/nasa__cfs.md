@@ -2,7 +2,7 @@
 
 `repo:nasa/cfs` - <https://github.com/nasa/cFS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,566 | C | Apache-2.0 | 2026-11-08 | False | production | low |
 
@@ -10,7 +10,7 @@ NASA Goddard's reusable flight software framework: a publish/subscribe software 
 
 **Why it matters:** The other mainstream flight-software reference architecture. Ogma generates monitors directly as cFS apps.
 
-**Hackathon notes:** Reference only for a hackathon. Builds on Linux in under an hour if you need to demo an Ogma monitor in its native host.
+**Build notes:** Reference only for a hackathon. Builds on Linux in under an hour if you need to demo an Ogma monitor in its native host.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

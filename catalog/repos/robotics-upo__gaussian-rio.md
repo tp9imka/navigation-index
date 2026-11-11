@@ -2,7 +2,7 @@
 
 `repo:robotics-upo/gaussian-rio` - <https://github.com/robotics-upo/gaussian-rio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 39 | Python | MIT | 2026-07-07 | False | active-research | low |
 
@@ -10,7 +10,7 @@
 
 **Why it matters:** Another recent open 4D radar odometry baseline, useful for comparison.
 
-**Hackathon notes:** Small research codebase; read the paper before integrating.
+**Build notes:** Small research codebase; read the paper before integrating.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

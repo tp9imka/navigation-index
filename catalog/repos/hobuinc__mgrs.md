@@ -2,7 +2,7 @@
 
 `repo:hobuinc/mgrs` - <https://github.com/hobuinc/mgrs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 136 | C++ | MIT | 2026-11-03 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library converting between latitude/longitude and MGRS grid references, b
 
 **Why it matters:** MGRS is the grid language of military users; needed for any C2 UI or report generator.
 
-**Hackathon notes:** pip install mgrs; mind the precision argument for 1 m vs 10 m references. Since 1.6.0 inverse conversion returns the grid-cell centre, not the south-west corner.
+**Build notes:** pip install mgrs; mind the precision argument for 1 m vs 10 m references. Since 1.6.0 inverse conversion returns the grid-cell centre, not the south-west corner.
 
 **Concepts:** [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

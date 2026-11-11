@@ -2,7 +2,7 @@
 
 `repo:koide3/fast_gicp` - <https://github.com/koide3/fast_gicp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,705 | C++ | BSD-3-Clause | 2025-04-24 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Collection of fast GICP and VGICP point-cloud registration implementations, mult
 
 **Why it matters:** Fast scan registration building block used by many LiDAR and radar SLAM systems.
 
-**Hackathon notes:** Successor library small_gicp is more actively maintained.
+**Build notes:** Successor library small_gicp is more actively maintained.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

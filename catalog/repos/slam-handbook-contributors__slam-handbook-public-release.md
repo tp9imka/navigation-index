@@ -2,7 +2,7 @@
 
 `repo:slam-handbook-contributors/slam-handbook-public-release` - <https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,681 | TeX | ? | 2026-05-28 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlo
 
 **Why it matters:** Current, expert-written reference covering factor graphs through spatial AI; free drafts for the whole team.
 
-**Hackathon notes:** Download chapter PDFs from the release page; factor-graph chapter is the best starting point.
+**Build notes:** Download chapter PDFs from the release page; factor-graph chapter is the best starting point.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

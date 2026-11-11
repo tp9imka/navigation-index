@@ -2,7 +2,7 @@
 
 `repo:princeton-vl/dpvo` - <https://github.com/princeton-vl/DPVO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,148 | C++ | MIT | 2026-09-20 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM 
 
 **Why it matters:** Lighter learned VO than DROID-SLAM, closer to real-time on a desktop GPU.
 
-**Hackathon notes:** CUDA build of custom kernels; follow the conda instructions.
+**Build notes:** CUDA build of custom kernels; follow the conda instructions.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

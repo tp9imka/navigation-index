@@ -2,7 +2,7 @@
 
 `repo:cvg/glue-factory` - <https://github.com/cvg/glue-factory>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,167 | Python | Apache-2.0 | 2026-07-20 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Training library for local feature detection and matching (trains LightGlue and 
 
 **Why it matters:** Lets you fine-tune a matcher on aerial/satellite pairs if off-the-shelf models struggle.
 
-**Hackathon notes:** Training takes longer than a hackathon; use for post-event work.
+**Build notes:** Training takes longer than a hackathon; use for post-event work.
 
 **Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

@@ -2,7 +2,7 @@
 
 `repo:tii-racing/drone-racing-dataset` - <https://github.com/tii-racing/drone-racing-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 151 | Python | MIT | 2026-01-25 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Annotated dataset of fast autonomous and human-piloted quadrotor flight with vis
 
 **Why it matters:** High-speed VIO and gate-relative state estimation data.
 
-**Hackathon notes:** Dataset CC BY 4.0, code MIT. 18 autonomous and 18 piloted flights per README, over 21 m/s with mocap ground truth; v3.0.0 (Oct 2025) adds six pro-pilot flights. Use to test VIO at high speed.
+**Build notes:** Dataset CC BY 4.0, code MIT. 18 autonomous and 18 piloted flights per README, over 21 m/s with mocap ground truth; v3.0.0 (Oct 2025) adds six pro-pilot flights. Use to test VIO at high speed.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

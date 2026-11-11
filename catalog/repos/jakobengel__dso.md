@@ -2,7 +2,7 @@
 
 `repo:jakobengel/dso` - <https://github.com/JakobEngel/dso>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,461 | C++ | GPL-3.0 | 2024-02-23 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Direct monocular visual odometry that optimizes photometric error over a sparse 
 
 **Why it matters:** Works in low-texture scenes where feature-based methods fail; the basis for DM-VIO and many direct methods.
 
-**Hackathon notes:** No IMU, no loop closure, scale-ambiguous; mostly useful as a building block or comparison.
+**Build notes:** No IMU, no loop closure, scale-ambiguous; mostly useful as a building block or comparison.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

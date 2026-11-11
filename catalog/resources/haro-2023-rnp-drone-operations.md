@@ -13,6 +13,6 @@ Conference paper (Engineering Proceedings 54(1):51, 2023). Proposes RNP specific
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
-**Tags:** `rnp`, `tse`, `containment`, `u-space`, `loop-13`
+**Tags:** `rnp`, `tse`, `containment`, `u-space`
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

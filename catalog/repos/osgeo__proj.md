@@ -2,7 +2,7 @@
 
 `repo:osgeo/proj` - <https://github.com/osgeo/proj>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,034 | C++ | NOASSERTION | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ Cartographic projection and coordinate transformation library with datum grids, 
 
 **Why it matters:** Correct datum and projection handling (WGS84, ITRF, local grids, UTM) is foundational for any nav system that mixes map sources.
 
-**Hackathon notes:** Bundle the proj-data grids offline if your demo has no internet.
+**Build notes:** Bundle the proj-data grids offline if your demo has no internet.
 
 ## Deep dives
 

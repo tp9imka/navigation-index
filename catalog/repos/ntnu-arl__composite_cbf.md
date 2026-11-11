@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/composite_cbf` - <https://github.com/ntnu-arl/composite_cbf>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | active-research | medium |
 
@@ -10,7 +10,7 @@ ROS implementation of the composite CBF safety filter that combines many range p
 
 **Why it matters:** Companion-computer version of PX4-CBF; easier to run next to a planner over MAVROS.
 
-**Hackathon notes:** License BSD-3-Clause (gh api), last push 2026-05-26. ROS-based; read the barrier construction and port the math to Python for the sim.
+**Build notes:** License BSD-3-Clause (gh api), last push 2026-05-26. ROS-based; read the barrier construction and port the math to Python for the sim.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

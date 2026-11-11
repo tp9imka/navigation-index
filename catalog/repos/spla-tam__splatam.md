@@ -2,7 +2,7 @@
 
 `repo:spla-tam/splatam` - <https://github.com/spla-tam/SplaTAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,219 | Python | BSD-3-Clause | 2024-06-19 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rend
 
 **Why it matters:** Reference Gaussian-splatting SLAM for RGB-D sensors.
 
-**Hackathon notes:** GPU-heavy and slower than real time; good for offline indoor captures. The repo is BSD-3, but it depends on diff-gaussian-rasterization-w-depth, which carries the Inria Gaussian-Splatting licence (non-commercial research use only).
+**Build notes:** GPU-heavy and slower than real time; good for offline indoor captures. The repo is BSD-3, but it depends on diff-gaussian-rasterization-w-depth, which carries the Inria Gaussian-Splatting licence (non-commercial research use only).
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

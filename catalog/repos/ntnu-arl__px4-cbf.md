@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/px4-cbf` - <https://github.com/ntnu-arl/PX4-CBF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? |  | ? | ? | ? | active-research | high |
 
@@ -10,7 +10,7 @@ Documentation and setup for a CBF safety filter inside the PX4 position controll
 
 **Why it matters:** The product-shaped close-area safety filter: already in PX4, range-only, tested on VOXL2 Mini.
 
-**Hackathon notes:** License BSD-3-Clause (gh api), last push 2025-10-16. Needs NTNU's PX4, mavlink and mavros forks. Fork branch cbf (HEAD e7ef0c61, 2025-02-12) ships only the closed-form single-constraint filter, with no FoV constraint; the paper's FoV-constrained qpOASES QP is in the earlier commit 338fb51f. README says the FoV variant crashes on PixRacer Pro. PX4 parameter defaults (CBF_EPSILON 0.5, CBF_KAPPA 10, CBF_ALPHA 1, CBF_POLE0 -2, CBF_ENABLED 0) differ from the paper's flight values (Table II: eps 0.7, kappa 70, alpha 2, p0 -2.5); use Table II, which matches composite_cbf. For 48h, re-implement in Python and run both arms (shipped closed form and FoV QP); see docs/research/close-area-nav/05-cbf-baselines-faithful.md.
+**Build notes:** License BSD-3-Clause (gh api), last push 2025-10-16. Needs NTNU's PX4, mavlink and mavros forks. Fork branch cbf (HEAD e7ef0c61, 2025-02-12) ships only the closed-form single-constraint filter, with no FoV constraint; the paper's FoV-constrained qpOASES QP is in the earlier commit 338fb51f. README says the FoV variant crashes on PixRacer Pro. PX4 parameter defaults (CBF_EPSILON 0.5, CBF_KAPPA 10, CBF_ALPHA 1, CBF_POLE0 -2, CBF_ENABLED 0) differ from the paper's flight values (Table II: eps 0.7, kappa 70, alpha 2, p0 -2.5); use Table II, which matches composite_cbf. For 48h, re-implement in Python and run both arms (shipped closed form and FoV QP); see docs/research/close-area-nav/05-cbf-baselines-faithful.md.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
@@ -25,8 +25,8 @@ Documentation and setup for a CBF safety filter inside the PX4 position controll
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md) (same_org)

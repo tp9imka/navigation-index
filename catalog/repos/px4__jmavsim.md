@@ -2,7 +2,7 @@
 
 `repo:px4/jmavsim` - <https://github.com/PX4/jMAVSim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 107 | Java | BSD-3-Clause | 2026-01-29 | False | production | medium |
 
@@ -10,7 +10,7 @@ Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-w
 
 **Why it matters:** Was the fastest way to get a PX4 SITL quad flying for MAVLink, GCS or mission-logic work when sensors and worlds do not matter; PX4 has since replaced it with SIH.
 
-**Hackathon notes:** Removed from PX4-Autopilot main in September 2026; 'make px4_sitl jmavsim' only exists up to PX4 v1.17. On current PX4 use 'make px4_sitl_sih sihsim_quadx' with Hawkeye. Needs a JDK. No cameras or lidar, so not for perception work. This repo is PX4's fork of DrTon/jMAVSim.
+**Build notes:** Removed from PX4-Autopilot main in September 2026; 'make px4_sitl jmavsim' only exists up to PX4 v1.17. On current PX4 use 'make px4_sitl_sih sihsim_quadx' with Hawkeye. Needs a JDK. No cameras or lidar, so not for perception work. This repo is PX4's fork of DrTon/jMAVSim.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

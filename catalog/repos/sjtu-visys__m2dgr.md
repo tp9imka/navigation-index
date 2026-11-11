@@ -2,7 +2,7 @@
 
 `repo:sjtu-visys/m2dgr` - <https://github.com/SJTU-ViSYS/M2DGR>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,222 | None | MIT | 2026-11-02 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Multi-modal, multi-scenario ground robot dataset from SJTU with cameras, lidar, 
 
 **Why it matters:** Indoor/outdoor transitions with GNSS make it useful for testing GNSS-loss handling in fusion.
 
-**Hackathon notes:** ROS bags; check repo for download mirrors. Repo says MIT but the dataset is 'provided for academic purpose'; commercial use requires contacting the authors.
+**Build notes:** ROS bags; check repo for download mirrors. Repo says MIT but the dataset is 'provided for academic purpose'; commercial use requires contacting the authors.
 
 ## Deep dives
 

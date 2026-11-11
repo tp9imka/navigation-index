@@ -2,7 +2,7 @@
 
 `repo:betaflight/betaflight` - <https://github.com/betaflight/betaflight>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11,757 | C | GPL-3.0 | 2026-11-08 | False | production | low |
 
@@ -10,7 +10,7 @@ Racing/freestyle-oriented flight controller firmware focused on attitude control
 
 **Why it matters:** Dominant firmware on FPV drones seen in current conflicts; its navigation is still limited (GPS Rescue plus newer altitude/position hold and basic waypoints), which matters for C-UAS and EW-impact analysis.
 
-**Hackathon notes:** Not a navigation platform; use for FPV-class hardware or to study how small drones react to link loss and GNSS jamming.
+**Build notes:** Not a navigation platform; use for FPV-class hardware or to study how small drones react to link loss and GNSS jamming.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 

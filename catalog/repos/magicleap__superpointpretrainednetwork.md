@@ -2,7 +2,7 @@
 
 `repo:magicleap/superpointpretrainednetwork` - <https://github.com/magicleap/SuperPointPretrainedNetwork>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,200 | Python | NOASSERTION | 2022-07-24 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Pretrained SuperPoint keypoint detector and descriptor.
 
 **Why it matters:** Feature front end for SuperGlue/LightGlue pipelines.
 
-**Hackathon notes:** Most users get SuperPoint via LightGlue/hloc now.
+**Build notes:** Most users get SuperPoint via LightGlue/hloc now.
 
 **Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

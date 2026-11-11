@@ -2,7 +2,7 @@
 
 `repo:batear-io/batear` - <https://github.com/batear-io/batear>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 436 | C | MIT | 2026-10-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Et
 
 **Why it matters:** Cheap distributed acoustic sensor network for perimeter awareness.
 
-**Hackathon notes:** ESP-IDF build; tune thresholds per site.
+**Build notes:** ESP-IDF build; tune thresholds per site.
 
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

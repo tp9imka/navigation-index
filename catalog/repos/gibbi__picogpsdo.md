@@ -2,7 +2,7 @@
 
 `repo:gibbi/picogpsdo` - <https://github.com/gibbi/PicoGPSDO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 23 | Python | ? | 2026-04-20 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ RP2040-based GPS-disciplined OCXO: firmware steers the OCXO via PWM from u-blox 
 
 **Why it matters:** A modern open GPSDO that uses the receiver's quantization-error correction, the step most hobby designs skip.
 
-**Hackathon notes:** Needs Pico SDK and the board; the web dashboard is a good pattern for a demo.
+**Build notes:** Needs Pico SDK and the board; the web dashboard is a good pattern for a demo.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

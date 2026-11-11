@@ -23,6 +23,6 @@ Reporting on Gdynia Maritime University research tracing Baltic jamming to Russi
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

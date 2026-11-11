@@ -26,6 +26,6 @@ Joint plan from a May 2025 EASA/IATA workshop setting out actions on reporting a
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

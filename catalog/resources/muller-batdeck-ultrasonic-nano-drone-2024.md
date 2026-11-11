@@ -21,4 +21,4 @@ Preprint on arXiv (ETH Zurich and University of Bologna). Adds TDK ultrasonic se
 - evaluates: [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md)
 - evaluates: [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md)
 
-_Indexed by lane(s): loop-23_
+_Indexed by lane(s): crazyflie-sensing_

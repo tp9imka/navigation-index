@@ -2,7 +2,7 @@
 
 `repo:osqp/osqp` - <https://github.com/osqp/osqp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,223 | C | Apache-2.0 | 2026-01-12 | False | production | high |
 
@@ -10,7 +10,7 @@ Operator-splitting solver for convex quadratic programs, with embedded C code ge
 
 **Why it matters:** Minimum-snap with fixed segment times and linear MPC are both QPs; OSQP solves them with no license friction.
 
-**Hackathon notes:** License Apache-2.0 (gh api). Last push 2026-01-12. pip install osqp. Write the min-snap QP yourself in ~100 lines of numpy + OSQP when a team wants code it fully owns.
+**Build notes:** License Apache-2.0 (gh api). Last push 2026-01-12. pip install osqp. Write the min-snap QP yourself in ~100 lines of numpy + OSQP when a team wants code it fully owns.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

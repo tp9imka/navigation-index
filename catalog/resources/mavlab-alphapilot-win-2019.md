@@ -21,6 +21,6 @@ TU Delft MAVLab's account of winning the 2019 Lockheed Martin AlphaPilot / AIRR 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

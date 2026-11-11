@@ -2,7 +2,7 @@
 
 `repo:kumarrobotics/kr_autonomous_flight` - <https://github.com/kumarrobotics/kr_autonomous_flight>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 797 | C++ | NOASSERTION | 2026-04-18 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state 
 
 **Why it matters:** Full reference stack for flying without GNSS in forests and under canopy, from a lab with many field deployments.
 
-**Hackathon notes:** Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner. Penn Software Licence: non-profit research use only, commercial use needs a licence from Penn. An experimental ROS 2 Jazzy port is on the ros2_dev branch.
+**Build notes:** Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner. Penn Software Licence: non-profit research use only, commercial use needs a licence from Penn. An experimental ROS 2 Jazzy port is on the ros2_dev branch.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

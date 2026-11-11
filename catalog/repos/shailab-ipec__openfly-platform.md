@@ -2,7 +2,7 @@
 
 `repo:shailab-ipec/openfly-platform` - <https://github.com/SHAILAB-IPEC/OpenFly-Platform>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 382 | C++ | MIT | 2026-01-13 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Platform for outdoor aerial vision-language navigation: multi-engine simulators 
 
 **Why it matters:** Largest open aerial VLN benchmark, for agents that fly to places described in words.
 
-**Hackathon notes:** Heavy downloads and GPU; use the released dataset with the baseline model rather than regenerating data.
+**Build notes:** Heavy downloads and GPU; use the released dataset with the baseline model rather than regenerating data.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

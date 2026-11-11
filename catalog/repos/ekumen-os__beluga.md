@@ -2,7 +2,7 @@
 
 `repo:ekumen-os/beluga` - <https://github.com/Ekumen-OS/beluga>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 329 | C++ | Apache-2.0 | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node th
 
 **Why it matters:** Map-based particle-filter localization for ground robots operating without GNSS; easier to extend than legacy AMCL.
 
-**Hackathon notes:** Swap beluga_amcl for nav2_amcl in a Nav2 launch file; same parameters. Good base for adding custom sensor models.
+**Build notes:** Swap beluga_amcl for nav2_amcl in a Nav2 launch file; same parameters. Good base for adding custom sensor models.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

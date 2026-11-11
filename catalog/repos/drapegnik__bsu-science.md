@@ -2,7 +2,7 @@
 
 `repo:drapegnik/bsu-science` - <https://github.com/Drapegnik/bsu-science>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | TeX | Apache-2.0 | 2018-07-03 | False | archived | low |
 
@@ -10,7 +10,7 @@ LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 
 
 **Why it matters:** A short student-level map of the visual-navigation design space in Russian.
 
-**Hackathon notes:** Slides only (see the GitHub Pages presentation); no runnable pipeline.
+**Build notes:** Slides only (see the GitHub Pages presentation); no runnable pipeline.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Разработка алгоритмов навигации БПЛА](../../catalog/resources/bsu-pazhitnykh-uav-nav-diploma-slides.md) (has_code)
 
 _Indexed by lane(s): ua-ru-round2_

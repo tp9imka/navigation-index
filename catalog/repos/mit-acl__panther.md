@@ -2,7 +2,7 @@
 
 `repo:mit-acl/panther` - <https://github.com/mit-acl/panther>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 243 | C++ | BSD-3-Clause | 2022-11-01 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Perception-aware trajectory planner for multirotors in dynamic environments: joi
 
 **Why it matters:** Example of coupling yaw (sensor pointing) with the trajectory; the same trick applies to keeping a downward or forward camera on matchable terrain.
 
-**Hackathon notes:** License BSD-3-Clause (gh api). Last push 2022-11-01. ROS Noetic, CGAL, CasADi from source and an HSL linear solver behind a registration form. Not a 48h install; read for the formulation.
+**Build notes:** License BSD-3-Clause (gh api). Last push 2022-11-01. ROS Noetic, CGAL, CasADi from source and an HSL linear solver behind a registration form. Not a 48h install; read for the formulation.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

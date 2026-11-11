@@ -2,7 +2,7 @@
 
 `repo:aprilrobotics/apriltag` - <https://github.com/AprilRobotics/apriltag>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C | ? | ? | ? | production | high |
 
@@ -10,7 +10,7 @@ C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose 
 
 **Why it matters:** The cheapest way to define goal B or anchor a drift-prone estimator in a close area: print tags, place them at A, B or on walls, and get a camera-relative pose with no map.
 
-**Hackathon notes:** License BSD-2-Clause (LICENSE.md read via gh api; GitHub reports NOASSERTION). Last push 2026-08. Builds with CMake in minutes, Python bindings available. Needs camera intrinsics, so calibrate on Day 1. Pose ambiguity on small or far tags at near-frontal views is the known gotcha; use tag bundles or larger tags for the goal marker.
+**Build notes:** License BSD-2-Clause (LICENSE.md read via gh api; GitHub reports NOASSERTION). Last push 2026-08. Builds with CMake in minutes, Python bindings available. Needs camera intrinsics, so calibrate on the actual camera first. Pose ambiguity on small or far tags at near-frontal views is the known gotcha; use tag bundles or larger tags for the goal marker.
 
 **Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
@@ -26,8 +26,8 @@ C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [apriltag_ros (ROS 2)](../../catalog/repos/christianrauch__apriltag_ros.md) (depends_on)
 - [AprilTag 2: Efficient and robust fiducial detection](../../catalog/resources/wang-olson-2016-apriltag2.md) (has_code)

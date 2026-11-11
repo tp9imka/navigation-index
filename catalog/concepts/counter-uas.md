@@ -14,8 +14,8 @@ Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defe
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
 - [Dataset cards](../../docs/dataset-cards/README.md) - Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) - What funders publish as navigation problem statements.
+- [The first three hours](../../docs/first-three-hours.md) - What a 4-5 person team does from the moment the problem statement drops until hour 3, when a walking skeleton should run end to end.
 
 ## Repositories (39)
 

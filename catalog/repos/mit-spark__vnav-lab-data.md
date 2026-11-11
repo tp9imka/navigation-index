@@ -2,7 +2,7 @@
 
 `repo:mit-spark/vnav-lab-data` - <https://github.com/MIT-SPARK/VNAV-lab-data>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 |  | ? | 2022-10-14 | False | educational | low |
 
@@ -10,7 +10,7 @@ Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomou
 
 **Why it matters:** Supplies the datasets that make the VNAV labs runnable outside MIT.
 
-**Hackathon notes:** Only a README with a download link; fetch bags alongside VNAV-labs.
+**Build notes:** Only a README with a download link; fetch bags alongside VNAV-labs.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

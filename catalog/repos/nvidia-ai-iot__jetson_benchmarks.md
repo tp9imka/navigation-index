@@ -2,7 +2,7 @@
 
 `repo:nvidia-ai-iot/jetson_benchmarks` - <https://github.com/NVIDIA-AI-IOT/jetson_benchmarks>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 401 | Python | MIT | 2024-06-20 | False | archived | low |
 
@@ -10,7 +10,7 @@ NVIDIA scripts that reproduce its published Jetson inference benchmarks with Ten
 
 **Why it matters:** Lets a team reproduce vendor numbers on their own board and power mode before quoting them.
 
-**Hackathon notes:** Last push 2024-06; covers Nano / Xavier generations more than Orin. Treat its numbers as vendor claims.
+**Build notes:** Last push 2024-06; covers Nano / Xavier generations more than Orin. Treat its numbers as vendor claims.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

@@ -2,7 +2,7 @@
 
 `repo:osrf/mbzirc` - <https://github.com/osrf/mbzirc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 94 | C++ | Apache-2.0 | 2022-08-31 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge wh
 
 **Why it matters:** Ready-made maritime GNSS-denied multi-vehicle scenario.
 
-**Hackathon notes:** Built for Ubuntu 20.04, ROS 2 Galactic and Ignition Fortress, all now end of life; use the osrf/mbzirc Docker image (needs nvidia-docker2). Apache-2.0.
+**Build notes:** Built for Ubuntu 20.04, ROS 2 Galactic and Ignition Fortress, all now end of life; use the osrf/mbzirc Docker image (needs nvidia-docker2). Apache-2.0.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

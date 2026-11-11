@@ -2,7 +2,7 @@
 
 `repo:lukasvst/dm-vio` - <https://github.com/lukasvst/dm-vio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,237 | C++ | GPL-3.0 | 2024-10-27 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Monocular visual-inertial odometry built on DSO using delayed marginalization an
 
 **Why it matters:** Strong monocular VIO accuracy; good for single-camera drones.
 
-**Hackathon notes:** Standalone build with an optional ROS wrapper repo. Expects photometrically calibrated input for best results.
+**Build notes:** Standalone build with an optional ROS wrapper repo. Expects photometrically calibrated input for best results.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

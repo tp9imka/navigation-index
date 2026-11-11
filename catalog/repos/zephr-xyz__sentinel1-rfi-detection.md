@@ -2,7 +2,7 @@
 
 `repo:zephr-xyz/sentinel1-rfi-detection` - <https://github.com/zephr-xyz/sentinel1-rfi-detection>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 30 | Python | MIT | 2026-03-25 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes
 
 **Why it matters:** Free satellite data as a wide-area RFI sensor, complementing ADS-B based maps - but Sentinel-1 is C-band, and the authors' own Jammertest analysis could not tie detections to L-band GNSS jammers.
 
-**Hackathon notes:** Needs a free Copernicus Data Space account. Pull Sentinel-1 scenes for a region and produce an RFI heatmap; present it as an RFI map, not a proven jamming map. MIT.
+**Build notes:** Needs a free Copernicus Data Space account. Pull Sentinel-1 scenes for a region and produce an RFI heatmap; present it as an RFI map, not a proven jamming map. MIT.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:hmf21/uavlocalization` - <https://github.com/hmf21/UAVLocalization>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 136 | Python | ? | 2024-07-19 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Geo-localization system for aerial platforms that first retrieves the right sate
 
 **Why it matters:** Shows the two-stage retrieve-then-align architecture end to end with field data, the design most practical systems converge on.
 
-**Hackathon notes:** Use its pipeline layout as the backbone of a demo; datasets need a separate download. Conda env file provided.
+**Build notes:** Use its pipeline layout as the backbone of a demo; datasets need a separate download. Conda env file provided.
 
 ## Deep dives
 
@@ -29,9 +29,9 @@ Geo-localization system for aerial platforms that first retrieves the right sate
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Large-area visual place recognition for lost-GNSS recovery (DINOv2 GeM / VLAD over a 49 km2 NAIP tile DB, chained to LightGlue fine matching)](../../catalog/samples/vpr-large-area.md) (explains)
 

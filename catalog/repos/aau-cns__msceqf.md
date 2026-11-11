@@ -2,7 +2,7 @@
 
 `repo:aau-cns/msceqf` - <https://github.com/aau-cns/MSCEqF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 145 | C++ | Apache-2.0 | 2026-07-03 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Multi-state-constraint equivariant filter for vision-aided inertial navigation (
 
 **Why it matters:** Permissive (Apache-2.0) reference implementation of an equivariant INS filter.
 
-**Hackathon notes:** Apache-2.0. Read for structure; for a 48h POC write the filter in Python and use this to check equations.
+**Build notes:** Apache-2.0. Read for structure; for a 48h POC write the filter in Python and use this to check equations.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

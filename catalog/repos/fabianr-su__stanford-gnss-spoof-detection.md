@@ -2,7 +2,7 @@
 
 `repo:fabianr-su/stanford-gnss-spoof-detection` - <https://github.com/fabianr-su/stanford-gnss-spoof-detection>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14 | MATLAB | MIT | 2020-01-30 | False | archived | low |
 
@@ -10,7 +10,7 @@ A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival sp
 
 **Why it matters:** Reference implementations of spoofing detection tests.
 
-**Hackathon notes:** Old MATLAB, one simulation script; useful only as an algorithm reference for DoA-based spoof detection.
+**Build notes:** Old MATLAB, one simulation script; useful only as an algorithm reference for DoA-based spoof detection.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 

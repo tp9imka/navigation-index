@@ -22,7 +22,7 @@ The UDP text command set for Tello EDU: control, set and read commands, mission 
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Rules for a Remote Student Robotics Competition (IEEE Region 5, 2021)](../../catalog/resources/ieee-r5-2021-tello-drone-rules.md) (uses)
 
 _Indexed by lane(s): close-area-sims_

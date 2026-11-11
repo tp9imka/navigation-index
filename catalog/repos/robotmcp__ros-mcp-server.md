@@ -2,7 +2,7 @@
 
 `repo:robotmcp/ros-mcp-server` - <https://github.com/robotmcp/ros-mcp-server>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,518 | Python | Apache-2.0 | 2026-11-08 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 
 **Why it matters:** Fastest way to let an LLM inspect and drive an existing robot without changing robot code.
 
-**Hackathon notes:** Run rosbridge on the robot and point the MCP client config at the server; works with sim (Gazebo/Isaac). Add safety limits before anything flies.
+**Build notes:** Run rosbridge on the robot and point the MCP client config at the server; works with sim (Gazebo/Isaac). Add safety limits before anything flies.
 
 ## Deep dives
 
@@ -31,9 +31,9 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md) (alternative_to)
 - [ROS MCP Server demos](../../catalog/repos/robotmcp__demos-ros-mcp-server.md) (extends)

@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_mpc` - <https://github.com/uzh-rpg/rpg_mpc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 525 | C | GPL-3.0 | 2022-04-04 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Quadrotor MPC built on ACADO code generation, including the Perception-Aware MPC
 
 **Why it matters:** The canonical example of putting a perception term into the controller cost, which is what keeps a visual-nav vehicle localisable when GNSS is gone.
 
-**Hackathon notes:** License GPL-3.0 (gh api). Last push 2022-04-04. ROS 1 and ACADO (not acados). Re-implement the PAMPC cost term in acados or do-mpc rather than reviving this build; cite the paper for the method.
+**Build notes:** License GPL-3.0 (gh api). Last push 2022-04-04. ROS 1 and ACADO (not acados). Re-implement the PAMPC cost term in acados or do-mpc rather than reviving this build; cite the paper for the method.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:openskynetwork/opensky-api` - <https://github.com/openskynetwork/opensky-api>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 476 | Python | GPL-3.0 | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ Python and Java bindings for the OpenSky Network REST API for live and recent ai
 
 **Why it matters:** Free crowd-sourced air picture when no local receiver is available.
 
-**Hackathon notes:** Anonymous access is rate-limited. Since March 2026 authenticated access uses OAuth2 client credentials (basic auth was dropped); create an API client in your OpenSky account.
+**Build notes:** Anonymous access is rate-limited. Since March 2026 authenticated access uses OAuth2 client credentials (basic auth was dropped); create an API client in your OpenSky account.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ Python and Java bindings for the OpenSky Network REST API for live and recent ai
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [traffic](../../catalog/repos/xoolive__traffic.md) (integrates_with)

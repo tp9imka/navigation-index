@@ -2,7 +2,7 @@
 
 `repo:rosflight/rosflight_firmware` - <https://github.com/rosflight/rosflight_firmware>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 157 | C | BSD-3-Clause | 2026-08-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Lean research autopilot (BYU) that keeps only attitude estimation and low-level 
 
 **Why it matters:** Clean split between embedded and onboard autonomy; good for teams who want full control of the estimator on the companion.
 
-**Hackathon notes:** Use with rosflight_ros_pkgs; includes a simulator so hardware is optional.
+**Build notes:** Use with rosflight_ros_pkgs; includes a simulator so hardware is optional.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

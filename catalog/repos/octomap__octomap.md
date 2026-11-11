@@ -2,7 +2,7 @@
 
 `repo:octomap/octomap` - <https://github.com/OctoMap/octomap>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | production | high |
 
@@ -10,7 +10,7 @@ Probabilistic 3D occupancy mapping on an octree, with explicit free, occupied an
 
 **Why it matters:** The default occupancy map in drone planning papers and the format most planners can ingest. Plain CMake C++ with no ROS dependency, and Python wheels exist for Apple Silicon, so it runs on a laptop CPU.
 
-**Hackathon notes:** License: the octomap library is New BSD (octomap/LICENSE.txt); octovis and dynamicEDT3D have their own license files, not checked here. Last push 2026-09-26 (gh api). ROS 2 server lives in OctoMap/octomap_mapping (ros2 branch). For a pure-Python build use the octomap-python wheel (macOS arm64 wheels on PyPI). Octree ray insertion is slow per point at fine resolution; for a small close area a dense numpy grid is simpler and faster.
+**Build notes:** License: the octomap library is New BSD (octomap/LICENSE.txt); octovis and dynamicEDT3D have their own license files, not checked here. Last push 2026-09-26 (gh api). ROS 2 server lives in OctoMap/octomap_mapping (ros2 branch). For a pure-Python build use the octomap-python wheel (macOS arm64 wheels on PyPI). Octree ray insertion is slow per point at fine resolution; for a small close area a dense numpy grid is simpler and faster.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

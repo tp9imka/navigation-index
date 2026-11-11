@@ -2,7 +2,7 @@
 
 `repo:tomojitakasu/rtklib` - <https://github.com/tomojitakasu/RTKLIB>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,166 | C | ? | 2024-05-28 | False | production | high |
 
@@ -10,7 +10,7 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 
 **Why it matters:** The reference implementation most GNSS research and low-cost RTK work is built on; reading its rtkpos.c is the fastest way to understand RTK.
 
-**Hackathon notes:** Use str2str to relay NTRIP/serial streams and rnx2rtkp for post-processing. Upstream is quiet since 2024; prefer the demo5 fork for current receivers.
+**Build notes:** Use str2str to relay NTRIP/serial streams and rnx2rtkp for post-processing. Upstream is quiet since 2024; prefer the demo5 fork for current receivers.
 
 ## Deep dives
 

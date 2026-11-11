@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/am_traj` - <https://github.com/ZJU-FAST-Lab/am_traj>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 195 | C++ | GPL-3.0 | 2021-06-10 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Alternating-minimisation trajectory generator for aggressive quadrotor flight: j
 
 **Why it matters:** A compact, fast time-allocation solver for waypoint-to-trajectory conversion, a step most teams hand-tune.
 
-**Hackathon notes:** License GPL-3.0 (gh api), copyleft: fine for a demo, a problem if EDGE wants to ship closed. Last push 2021-06-10. ROS 1 build. Read it for the algorithm; GCOPTER (MINCO) from the same lab is the newer successor.
+**Build notes:** License GPL-3.0 (gh api), copyleft: fine for a demo, a problem if you want to ship closed source. Last push 2021-06-10. ROS 1 build. Read it for the algorithm; GCOPTER (MINCO) from the same lab is the newer successor.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 

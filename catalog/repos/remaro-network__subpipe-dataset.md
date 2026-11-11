@@ -2,7 +2,7 @@
 
 `repo:remaro-network/subpipe-dataset` - <https://github.com/remaro-network/SubPipe-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 68 | Jupyter Notebook | GPL-3.0 | 2024-03-28 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline
 
 **Why it matters:** One of few open AUV datasets with a pose reference (estimated from the vehicle's own navigation sensors, not an external ground truth), useful for testing underwater VIO where GNSS never reaches.
 
-**Hackathon notes:** Full set is ~80 GB unzipped on Zenodo; start with SubPipeMini (~12 GB) and run an off-the-shelf VIO to show drift underwater. Data CC BY 4.0, repo code GPL-3.0.
+**Build notes:** Full set is ~80 GB unzipped on Zenodo; start with SubPipeMini (~12 GB) and run an off-the-shelf VIO to show drift underwater. Data CC BY 4.0, repo code GPL-3.0.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

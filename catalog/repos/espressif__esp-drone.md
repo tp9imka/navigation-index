@@ -2,7 +2,7 @@
 
 `repo:espressif/esp-drone` - <https://github.com/espressif/esp-drone>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,305 | C | GPL-3.0 | 2026-10-26 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyfl
 
 **Why it matters:** Very cheap, hackable airframe with Wi-Fi control; usable for indoor swarm or RF experiments.
 
-**Hackathon notes:** Builds with ESP-IDF; supports optical-flow deck style positioning only with extra sensors. Expect tuning effort on DIY frames.
+**Build notes:** Builds with ESP-IDF; supports optical-flow deck style positioning only with extra sensors. Expect tuning effort on DIY frames.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

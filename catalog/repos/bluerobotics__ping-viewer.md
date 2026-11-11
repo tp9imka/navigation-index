@@ -2,7 +2,7 @@
 
 `repo:bluerobotics/ping-viewer` - <https://github.com/bluerobotics/ping-viewer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 67 | C++ | GPL-3.0 | 2026-08-12 | False | production | low |
 
@@ -10,7 +10,7 @@ Desktop application to view and record data from Blue Robotics Ping echosounder 
 
 **Why it matters:** Fast way to record sonar logs for offline SLAM or odometry experiments.
 
-**Hackathon notes:** Prebuilt releases; logs can be replayed into ping-python.
+**Build notes:** Prebuilt releases; logs can be replayed into ping-python.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md)
 

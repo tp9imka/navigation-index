@@ -16,4 +16,4 @@ Rulebook v1.0 (October 2025) for the ICUAS 2026 multi-UAV competition: Crazyflie
 
 **Tags:** `icuas`, `competition`, `crazyflie`, `aruco`, `rules`
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

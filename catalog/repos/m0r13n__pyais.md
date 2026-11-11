@@ -2,7 +2,7 @@
 
 `repo:m0r13n/pyais` - <https://github.com/M0r13n/pyais>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 263 | Python | MIT | 2026-11-01 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), inclu
 
 **Why it matters:** The quickest path from raw AIS sentences to typed vessel positions for maritime picture building or AIS spoofing/anomaly detection.
 
-**Hackathon notes:** pip install pyais, point it at a public AIS TCP feed or a recorded NMEA file, and you have vessel tracks in an hour. Pair with AIS-catcher for live RF.
+**Build notes:** pip install pyais, point it at a public AIS TCP feed or a recorded NMEA file, and you have vessel tracks in an hour. Pair with AIS-catcher for live RF.
 
 ## Deep dives
 
@@ -32,11 +32,11 @@ Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), inclu
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md) (integrates_with)
 - [noaadata](../../catalog/repos/schwehr__noaadata.md) (alternative_to)

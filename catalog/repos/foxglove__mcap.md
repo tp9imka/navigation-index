@@ -2,7 +2,7 @@
 
 `repo:foxglove/mcap` - <https://github.com/foxglove/mcap>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,137 | Rust | MIT | 2026-11-03 | False | production | high |
 
@@ -10,7 +10,7 @@ Open container format and libraries for timestamped, heterogeneous robotics logs
 
 **Why it matters:** Give camera, IMU, pose and navigation-health adapters one portable recording to replay and inspect offline.
 
-**Hackathon notes:** Start with samples/recording-replay: stdlib JSONL main path and a verified mcap 1.3.1 container round trip. The format preserves timestamps but does not fix clock offsets, frames or false ground truth. Code license MIT, read upstream LICENSE. Avoid installing a full robotics framework just to replay this example.
+**Build notes:** Start with samples/recording-replay: stdlib JSONL main path and a verified mcap 1.3.1 container round trip. The format preserves timestamps but does not fix clock offsets, frames or false ground truth. Code license MIT, read upstream LICENSE. Avoid installing a full robotics framework just to replay this example.
 
 ## Deep dives
 

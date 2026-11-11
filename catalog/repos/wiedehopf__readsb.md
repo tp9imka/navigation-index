@@ -2,7 +2,7 @@
 
 `repo:wiedehopf/readsb` - <https://github.com/wiedehopf/readsb>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 707 | C | NOASSERTION | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON outpu
 
 **Why it matters:** Gives a team its own receiver for aircraft positions and navigation-integrity reports, the raw material for crowd-sourced jamming maps.
 
-**Hackathon notes:** Install on a Pi with a cheap RTL-SDR and 1090 MHz antenna; JSON output is easy to parse for NIC/NACp statistics.
+**Build notes:** Install on a Pi with a cheap RTL-SDR and 1090 MHz antenna; JSON output is easy to parse for NIC/NACp statistics.
 
 ## Deep dives
 
@@ -32,13 +32,13 @@ ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON outpu
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [dump1090-fa](../../catalog/repos/flightaware__dump1090.md) (alternative_to)
 - [pyModeS](../../catalog/repos/junzis__pymodes.md) (integrates_with)

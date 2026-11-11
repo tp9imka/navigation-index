@@ -2,7 +2,7 @@
 
 `repo:sentinel-hub/sentinelhub-py` - <https://github.com/sentinel-hub/sentinelhub-py>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 915 | Python | MIT | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ Python client for Sentinel Hub and Copernicus Data Space services to search, dow
 
 **Why it matters:** Pull recent satellite imagery of an AOI to build reference maps for visual geolocalization.
 
-**Hackathon notes:** Needs free Copernicus Data Space or Sentinel Hub credentials; set up before the event.
+**Build notes:** Needs free Copernicus Data Space or Sentinel Hub credentials; set up before the event.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

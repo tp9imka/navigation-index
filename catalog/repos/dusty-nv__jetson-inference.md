@@ -2,7 +2,7 @@
 
 `repo:dusty-nv/jetson-inference` - <https://github.com/dusty-nv/jetson-inference>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 9,035 | C++ | MIT | 2025-10-16 | False | production | high |
 
@@ -10,7 +10,7 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 
 **Why it matters:** Get onboard perception running on a Jetson in hours.
 
-**Hackathon notes:** Use the Docker container; works with CSI/USB cameras.
+**Build notes:** Use the Docker container; works with CSI/USB cameras.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [jetson-containers](../../catalog/repos/dusty-nv__jetson-containers.md) (same_org)

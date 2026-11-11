@@ -2,7 +2,7 @@
 
 `repo:nmayorov/pyins` - <https://github.com/nmayorov/pyins>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 109 | Python | MIT | 2026-05-26 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python package for modelling and analysing inertial navigation systems: strapdow
 
 **Why it matters:** Pure-Python INS/GNSS playground for quick outage and sensor-grade studies.
 
-**Hackathon notes:** pip install python-ins (the PyPI name; import as pyins), pure Python with numba; docs on readthedocs. Good for scripted what-if plots (tactical vs MEMS IMU drift).
+**Build notes:** pip install python-ins (the PyPI name; import as pyins), pure Python with numba; docs on readthedocs. Good for scripted what-if plots (tactical vs MEMS IMU drift).
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Python package for modelling and analysing inertial navigation systems: strapdow
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

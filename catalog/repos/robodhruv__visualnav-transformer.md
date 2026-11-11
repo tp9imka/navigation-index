@@ -2,7 +2,7 @@
 
 `repo:robodhruv/visualnav-transformer` - <https://github.com/robodhruv/visualnav-transformer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,342 | Python | MIT | 2024-09-15 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Code and checkpoints for general visual navigation foundation models (GNM, ViNT,
 
 **Why it matters:** Pretrained camera-only navigation policies that run on small robots, a ready learned navigation baseline.
 
-**Hackathon notes:** Deploy NoMaD on a Jetson-class robot with a fisheye camera; topological graph from a teleop run.
+**Build notes:** Deploy NoMaD on a Jetson-class robot with a fisheye camera; topological graph from a teleop run.
 
 ## Deep dives
 

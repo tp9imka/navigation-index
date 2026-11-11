@@ -2,7 +2,7 @@
 
 `repo:pinto0309/pinto_model_zoo` - <https://github.com/PINTO0309/PINTO_model_zoo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,636 | Python | MIT | 2026-10-24 | False | production | medium |
 
@@ -10,7 +10,7 @@ Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO,
 
 **Why it matters:** Saves conversion time when a needed model must run on an edge accelerator.
 
-**Hackathon notes:** Use the download scripts per model; check licences per model.
+**Build notes:** Use the download scripts per model; check licences per model.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

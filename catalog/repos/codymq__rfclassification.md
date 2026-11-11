@@ -2,7 +2,7 @@
 
 `repo:codymq/rfclassification` - <https://github.com/CodyMQ/RFClassification>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Jupyter Notebook | Apache-2.0 | 2022-09-29 | False | archived | high |
 
@@ -10,7 +10,7 @@ Notebooks that classify drone presence and type from RF using DroneRF and DroneD
 
 **Why it matters:** Ready-made baselines on the two most-cited public drone RF datasets.
 
-**Hackathon notes:** Fork of the archived IQTLabs/RFClassification; no commits since 2022-09. Includes Raspberry Pi 4 test scripts. Download DroneRF (Mendeley, CC BY 4.0) and DroneDetect (IEEE DataPort, CC BY 4.0, 65.8 GB, needs an IEEE account) separately.
+**Build notes:** Fork of the archived IQTLabs/RFClassification; no commits since 2022-09. Includes Raspberry Pi 4 test scripts. Download DroneRF (Mendeley, CC BY 4.0) and DroneDetect (IEEE DataPort, CC BY 4.0, 65.8 GB, needs an IEEE account) separately.
 
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

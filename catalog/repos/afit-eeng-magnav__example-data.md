@@ -2,7 +2,7 @@
 
 `repo:afit-eeng-magnav/example-data` - <https://github.com/AFIT-EENG-MagNav/example-data>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 |  | ? | 2025-03-26 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North Ame
 
 **Why it matters:** Ready-made data so a team can start without hunting for maps.
 
-**Hackathon notes:** Grab these files first.
+**Build notes:** Grab these files first.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North Ame
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (integrates_with)
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../../catalog/samples/magnav-quickstart.md) (explains)
 

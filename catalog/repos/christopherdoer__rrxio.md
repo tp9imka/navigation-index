@@ -2,7 +2,7 @@
 
 `repo:christopherdoer/rrxio` - <https://github.com/christopherdoer/rrxio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 115 | C++ | GPL-3.0 | 2022-07-08 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Radar visual/thermal inertial odometry fusing 4D mmWave radar with a visual or t
 
 **Why it matters:** Radar plus thermal is a strong combination for fog, smoke and darkness.
 
-**Hackathon notes:** ROS 1; datasets released by the author. Good for a degraded-visibility demo.
+**Build notes:** ROS 1; datasets released by the author. Good for a degraded-visibility demo.
 
 **Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:devmbs/crtclient` - <https://github.com/DevMBS/CRTClient>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2 | JavaScript | NOASSERTION | 2022-04-18 | False | archived | low |
 
@@ -10,7 +10,7 @@ Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's Copt
 
 **Why it matters:** Example finalist code.
 
-**Hackathon notes:** MIT. Reference only.
+**Build notes:** MIT. Reference only.
 
 **Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 

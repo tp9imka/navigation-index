@@ -2,7 +2,7 @@
 
 `repo:rainerkuemmerle/g2o` - <https://github.com/RainerKuemmerle/g2o>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,478 | C++ | ? | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ General framework for graph optimization, widely used for pose-graph SLAM back e
 
 **Why it matters:** Lightweight pose-graph back end when you need loop closure or map alignment on top of an inertial front end.
 
-**Hackathon notes:** Best for pose graphs; IMU factors are less turnkey than in GTSAM.
+**Build notes:** Best for pose graphs; IMU factors are less turnkey than in GTSAM.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

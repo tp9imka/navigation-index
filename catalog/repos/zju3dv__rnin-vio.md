@@ -2,7 +2,7 @@
 
 `repo:zju3dv/rnin-vio` - <https://github.com/zju3dv/rnin-vio>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 160 | Python | Apache-2.0 | 2022-04-06 | False | archived | low |
 
@@ -10,7 +10,7 @@ Inertial network from RNIN-VIO (ISMAR 2021) that regresses displacement and unce
 
 **Why it matters:** Shows the learned-inertial-plus-VIO coupling pattern a team would copy when the camera drops out at night or over water.
 
-**Hackathon notes:** Apache-2.0, last push 2022, pedestrian/handheld oriented. Use as a design reference.
+**Build notes:** Apache-2.0, last push 2022, pedestrian/handheld oriented. Use as a design reference.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

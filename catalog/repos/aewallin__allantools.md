@@ -2,7 +2,7 @@
 
 `repo:aewallin/allantools` - <https://github.com/aewallin/allantools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 276 | Python | LGPL-3.0 | 2026-10-26 | False | production | high |
 
@@ -10,7 +10,7 @@ Python library for time and frequency stability statistics: Allan, modified Alla
 
 **Why it matters:** The tool to turn a logged clock offset series into an ADEV/TDEV plot and to read holdover performance off it.
 
-**Hackathon notes:** pip install allantools; feed phase data from chronyc tracking logs, ptp4l offsets or a TICC. Plot ADEV per oscillator and compare with datasheet curves.
+**Build notes:** pip install allantools; feed phase data from chronyc tracking logs, ptp4l offsets or a TICC. Plot ADEV per oscillator and compare with datasheet curves.
 
 ## Deep dives
 

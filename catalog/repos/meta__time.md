@@ -2,7 +2,7 @@
 
 `repo:meta/time` - <https://github.com/meta/time>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 685 | Go | Apache-2.0 | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ Meta's Go libraries and tools for NTP and PTP: protocol implementations, PTP har
 
 **Why it matters:** Production code from a large-scale PTP deployment, including tools to inspect PTP clients and to monitor time cards.
 
-**Hackathon notes:** Go build; `ptpcheck` and `ntpcheck` are the quickest wins for diagnosing a lab setup.
+**Build notes:** Go build; `ptpcheck` and `ntpcheck` are the quickest wins for diagnosing a lab setup.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

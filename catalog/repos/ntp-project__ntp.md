@@ -2,7 +2,7 @@
 
 `repo:ntp-project/ntp` - <https://github.com/ntp-project/ntp>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 197 | C | NOASSERTION | 2026-08-27 | False | production | low |
 
@@ -10,7 +10,7 @@ The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntp
 
 **Why it matters:** The baseline that NTP attack papers were written against; useful to reproduce published time-shifting attacks in a lab.
 
-**Hackathon notes:** Mostly a reference for behaviour comparisons; prefer chrony or ntpd-rs for new builds.
+**Build notes:** Mostly a reference for behaviour comparisons; prefer chrony or ntpd-rs for new builds.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

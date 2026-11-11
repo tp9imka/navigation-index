@@ -2,7 +2,7 @@
 
 `repo:michaelbeechan/raim` - <https://github.com/MichaelBeechan/RAIM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 16 | MATLAB | ? | 2022-08-16 | False | educational | medium |
 
@@ -10,7 +10,7 @@ MATLAB implementation of classic receiver autonomous integrity monitoring (fault
 
 **Why it matters:** Compact RAIM example to adapt for spoofing/fault detection logic.
 
-**Hackathon notes:** Small and readable; port the residual test to Python for a quick FDE demo.
+**Build notes:** Small and readable; port the residual test to Python for a quick FDE demo.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
@@ -24,7 +24,7 @@ MATLAB implementation of classic receiver autonomous integrity monitoring (fault
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

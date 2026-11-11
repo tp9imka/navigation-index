@@ -2,7 +2,7 @@
 
 `repo:weisongwen/graphgnsslib` - <https://github.com/weisongwen/GraphGNSSLib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 633 | C | ? | 2022-12-29 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Open-source GNSS positioning and RTK package using factor graph optimization, bu
 
 **Why it matters:** Shows FGO-based GNSS positioning outperforming filters in urban canyons; good research baseline.
 
-**Hackathon notes:** ROS 1 + Ceres; uses RTKLIB internals for observation handling.
+**Build notes:** ROS 1 + Ceres; uses RTKLIB internals for observation handling.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:ctu-mrs/mrs_uav_system` - <https://github.com/ctu-mrs/mrs_uav_system>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 650 | Shell | BSD-3-Clause | 2026-10-22 | False | production | medium |
 
@@ -10,7 +10,7 @@ Czech Technical University's multi-robot UAV platform with control, estimation (
 
 **Why it matters:** Mature outdoor-swarm stack with several localization back-ends to choose from.
 
-**Hackathon notes:** Install via apt; simulation tutorials are good. Moving between ROS 1 and ROS 2 versions, so check the branch.
+**Build notes:** Install via apt; simulation tutorials are good. Moving between ROS 1 and ROS 2 versions, so check the branch.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

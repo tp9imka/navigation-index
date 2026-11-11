@@ -2,7 +2,7 @@
 
 `repo:josephtule/gps-spoofing-detect` - <https://github.com/josephtule/GPS-Spoofing-Detect>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 34 | MATLAB | ? | 2022-01-28 | False | educational | low |
 
@@ -10,7 +10,7 @@ MATLAB course project with a write-up that tests GNSS spoofing detection on the 
 
 **Why it matters:** Small educational example.
 
-**Hackathon notes:** Reference only. Needs TEXBAT processed data (open index on rnl-data.ae.utexas.edu, no terms stated) and spanikp's GNSS-toolbox. No licence file.
+**Build notes:** Reference only. Needs TEXBAT processed data (open index on rnl-data.ae.utexas.edu, no terms stated) and spanikp's GNSS-toolbox. No licence file.
 
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 

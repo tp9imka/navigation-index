@@ -2,7 +2,7 @@
 
 `repo:jvde-github/ais-catcher` - <https://github.com/jvde-github/AIS-catcher>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 808 | C++ | GPL-3.0 | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, Soapy
 
 **Why it matters:** Turns a 30-dollar dongle into a live maritime picture sensor, the cheapest real RF input for a maritime awareness build.
 
-**Hackathon notes:** Prebuilt binaries and Docker image; plug an RTL-SDR with a VHF antenna, run with the web viewer enabled, forward NMEA to pyais or OpenCPN. Inland sites may see few ships.
+**Build notes:** Prebuilt binaries and Docker image; plug an RTL-SDR with a VHF antenna, run with the web viewer enabled, forward NMEA to pyais or OpenCPN. Inland sites may see few ships.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, Soapy
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [pyais](../../catalog/repos/m0r13n__pyais.md) (integrates_with)
 - [OpenCPN](../../catalog/repos/opencpn__opencpn.md) (integrates_with)

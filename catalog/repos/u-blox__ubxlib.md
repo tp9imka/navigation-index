@@ -2,7 +2,7 @@
 
 `repo:u-blox/ubxlib` - <https://github.com/u-blox/ubxlib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 360 | C | Apache-2.0 | 2024-11-11 | True | archived | low |
 
@@ -10,7 +10,7 @@ u-blox's portable C libraries for building applications on their GNSS and cellul
 
 **Why it matters:** Vendor-maintained abstraction for u-blox hardware on embedded targets.
 
-**Hackathon notes:** Repository is archived; prefer the SparkFun library or pyubx2.
+**Build notes:** Repository is archived; prefer the SparkFun library or pyubx2.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md)
 

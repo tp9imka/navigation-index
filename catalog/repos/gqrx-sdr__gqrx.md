@@ -2,7 +2,7 @@
 
 `repo:gqrx-sdr/gqrx` - <https://github.com/gqrx-sdr/gqrx>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,720 | C++ | GPL-3.0 | 2026-10-27 | False | production | medium |
 
@@ -10,7 +10,7 @@ Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulato
 
 **Why it matters:** Quick local spectrum inspection when characterizing a jammer test signal in a shielded lab or checking band occupancy.
 
-**Hackathon notes:** Available via brew/apt. Only transmit-free monitoring; never radiate in GNSS bands outside licensed test ranges.
+**Build notes:** Available via brew/apt. Only transmit-free monitoring; never radiate in GNSS bands outside licensed test ranges.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 

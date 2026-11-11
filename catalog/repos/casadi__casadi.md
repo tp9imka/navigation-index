@@ -2,7 +2,7 @@
 
 `repo:casadi/casadi` - <https://github.com/casadi/casadi>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,332 | C++ | LGPL-3.0 | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Symbolic framework for numerical optimisation with automatic differentiation, in
 
 **Why it matters:** The modelling layer for nearly every open trajectory-optimisation and MPC prototype; pip-installable, so a team can write an optimal-control problem in an hour.
 
-**Hackathon notes:** License LGPL-3.0 (gh api): usable in a commercial product if linked dynamically and modifications to CasADi itself are shared; check with legal before static linking. Last push 2026-11-07. Python wheels exist, so offline-capable once cached. Good for an offline trajectory optimiser (min-time or min-energy route over a DEM) where solve time is not critical.
+**Build notes:** License LGPL-3.0 (gh api): usable in a commercial product if linked dynamically and modifications to CasADi itself are shared; check with legal before static linking. Last push 2026-11-07. Python wheels exist, so offline-capable once cached. Good for an offline trajectory optimiser (min-time or min-energy route over a DEM) where solve time is not critical.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

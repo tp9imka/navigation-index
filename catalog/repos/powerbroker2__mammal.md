@@ -2,7 +2,7 @@
 
 `repo:powerbroker2/mammal` - <https://github.com/PowerBroker2/MAMMAL>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 20 | Python | ? | 2024-05-24 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating 
 
 **Why it matters:** Map creation is the hidden half of MagNav; this covers it in Python.
 
-**Hackathon notes:** Use to generate maps or simulated surveys feeding a particle filter.
+**Build notes:** Use to generate maps or simulated surveys feeding a particle filter.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

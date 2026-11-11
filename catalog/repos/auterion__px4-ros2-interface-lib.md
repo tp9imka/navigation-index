@@ -2,7 +2,7 @@
 
 `repo:auterion/px4-ros2-interface-lib` - <https://github.com/Auterion/px4-ros2-interface-lib>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 188 | C++ | BSD-3-Clause | 2026-11-04 | False | production | high |
 
@@ -10,7 +10,7 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 **Why it matters:** Lets a team ship a custom autonomy mode or inject a local/global position estimate (e.g. a visual geolocalisation fix) cleanly into PX4.
 
-**Hackathon notes:** Needs recent PX4 (1.15+) and matching px4_msgs; examples include custom modes and external navigation interfaces.
+**Build notes:** Needs recent PX4 (1.15+) and matching px4_msgs; examples include custom modes and external navigation interfaces.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [aerial-autonomy-stack](../../catalog/repos/jacopopan__aerial-autonomy-stack.md) (integrates_with)
 - [mavros_controllers](../../catalog/repos/jaeyoung-lim__mavros_controllers.md) (alternative_to)

@@ -2,15 +2,15 @@
 
 `repo:ethz-asl/mav_control_rw` - <https://github.com/ethz-asl/mav_control_rw>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 458 | C | Apache-2.0 | 2019-09-05 | False | archived | low |
 
 Linear and nonlinear MPC position controllers for rotary-wing MAVs with disturbance observers, packaged for ROS 1 and RotorS.
 
-**Why it matters:** Shows an MPC with an explicit disturbance (wind) estimate in the loop, a simple robustness story judges understand.
+**Why it matters:** Shows an MPC with an explicit disturbance (wind) estimate in the loop, a simple robustness story reviewers understand.
 
-**Hackathon notes:** License Apache-2.0 (gh api). Last push 2019-09-05, ROS Kinetic/Melodic era. Use as a design reference only.
+**Build notes:** License Apache-2.0 (gh api). Last push 2019-09-05, ROS Kinetic/Melodic era. Use as a design reference only.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

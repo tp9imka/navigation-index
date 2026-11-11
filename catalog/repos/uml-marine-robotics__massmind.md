@@ -2,7 +2,7 @@
 
 `repo:uml-marine-robotics/massmind` - <https://github.com/uml-marine-robotics/MassMIND>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 68 |  | NOASSERTION | 2023-03-22 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Long-wave infrared image dataset of a harbour environment with semantic and inst
 
 **Why it matters:** Thermal perception is what keeps an autonomous surface vessel aware of obstacles at night and in haze, when RGB fails.
 
-**Hackathon notes:** Download the three Google Drive zips in the README (2,916 LWIR images at 640x512, 7 classes, semantic and instance masks); small enough to fine-tune a segmentation net in a few hours. Licence is CC BY-NC-SA 4.0 - non-commercial only.
+**Build notes:** Download the three Google Drive zips in the README (2,916 LWIR images at 640x512, 7 classes, semantic and instance masks); small enough to fine-tune a segmentation net in a few hours. Licence is CC BY-NC-SA 4.0 - non-commercial only.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 

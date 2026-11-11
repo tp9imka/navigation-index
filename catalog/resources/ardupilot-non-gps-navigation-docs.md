@@ -24,7 +24,7 @@ ArduPilot Copter documentation hub for flying without GPS: optical flow, visual 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [ArduPilot Developer Conference Kaga 2024 - Schedule and YouTube Links](../../catalog/resources/ardupilot-devcon-kaga-2024.md) (part_of)

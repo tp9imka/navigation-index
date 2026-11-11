@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/flightmare` - <https://github.com/uzh-rpg/flightmare>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,446 | C++ | NOASSERTION | 2024-06-14 | False | archived | low |
 
@@ -10,7 +10,7 @@ Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynami
 
 **Why it matters:** Simulation lineage behind UZH's drone-racing work; useful for training vision-based navigation without hardware.
 
-**Hackathon notes:** Last updated 2024 and ROS1-oriented; expect dependency fixing. Unity renderer binaries are separate downloads.
+**Build notes:** Last updated 2024 and ROS1-oriented; expect dependency fixing. Unity renderer binaries are separate downloads.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

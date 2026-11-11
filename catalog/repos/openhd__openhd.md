@@ -2,7 +2,7 @@
 
 `repo:openhd/openhd` - <https://github.com/OpenHD/OpenHD>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,704 | C++ | GPL-3.0 | 2026-11-07 | False | production | medium |
 
@@ -10,7 +10,7 @@ Open-source long-range digital HD video and telemetry link over Wi-Fi adapters i
 
 **Why it matters:** Low-cost resilient video/telemetry downlink for situational awareness; also a reference for link behaviour under interference.
 
-**Hackathon notes:** Needs supported Wi-Fi cards (RTL8812AU) and SBCs; budget a few hours for imaging.
+**Build notes:** Needs supported Wi-Fi cards (RTL8812AU) and SBCs; budget a few hours for imaging.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 

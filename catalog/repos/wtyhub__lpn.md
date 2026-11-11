@@ -2,7 +2,7 @@
 
 `repo:wtyhub/lpn` - <https://github.com/wtyhub/LPN>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 99 | Python | MIT | 2026-07-06 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 **Why it matters:** Widely used baseline in drone-satellite retrieval; useful to understand rotation-robust pooling.
 
-**Hackathon notes:** Mainly as a comparison baseline.
+**Build notes:** Mainly as a comparison baseline.
 
 ## Deep dives
 

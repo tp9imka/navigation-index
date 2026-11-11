@@ -21,7 +21,7 @@ Vendor documentation for Water Linked DVLs and Underwater GPS (USBL-style) syste
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

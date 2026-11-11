@@ -2,7 +2,7 @@
 
 `repo:msemitkin/fit-gps-spoof-fix` - <https://github.com/msemitkin/fit-gps-spoof-fix>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 | Python | MIT | 2026-10-28 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities c
 
 **Why it matters:** Encodes practical spoof signatures seen by civilians in Ukraine (position jumps, speed outliers) as simple detection rules; a quick start for track-level spoof detection.
 
-**Hackathon notes:** Tiny Python codebase; the detection heuristics can be lifted into any trajectory plausibility checker. Very new (Oct 2026).
+**Build notes:** Tiny Python codebase; the detection heuristics can be lifted into any trajectory plausibility checker. Very new (Oct 2026).
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities c
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Stone Nav - car navigation without GPS (iOS)](../../catalog/repos/foxfollow__stone-navigation-emulation.md) (alternative_to)
 
 _Indexed by lane(s): ua-ru-sources_

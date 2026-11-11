@@ -21,4 +21,4 @@ Extends belief CBFs from Gaussian EKF beliefs to sample-based beliefs, using con
 - same_author: [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md)
 - has_code: [sample_based_bcbf](../../catalog/repos/kth-rpl-planiacs__sample_based_bcbf.md)
 
-_Indexed by lane(s): loop-05_
+_Indexed by lane(s): cbf-baselines_

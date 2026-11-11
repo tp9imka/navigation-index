@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_esim` - <https://github.com/uzh-rpg/rpg_esim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 743 | C | MIT | 2023-12-25 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Event camera simulator from UZH RPG that renders event streams from simulated sc
 
 **Why it matters:** Generates event-camera data for high-speed or low-light VIO research without hardware.
 
-**Hackathon notes:** ROS1 and older build tooling. For converting existing video to events, rpg_vid2e is easier.
+**Build notes:** ROS1 and older build tooling. For converting existing video to events, rpg_vid2e is easier.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 

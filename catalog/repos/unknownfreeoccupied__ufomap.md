@@ -2,7 +2,7 @@
 
 `repo:unknownfreeoccupied/ufomap` - <https://github.com/UnknownFreeOccupied/ufomap>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | active-research | medium |
 
@@ -10,7 +10,7 @@ Octree occupancy mapping that represents unknown space explicitly and indexes fr
 
 **Why it matters:** The 'unknown is not free' failure mode is the main safety bug in close-area planners. UFOMap makes the unknown check a first-class query instead of an afterthought.
 
-**Hackathon notes:** License BSD-2-Clause, last push 2025-06-27 (gh api). Several devel branches (devel, v2, dufomap); pick master for stability. C++17 library, ROS 1 wrapper in a separate repo per the wiki. For 48h, copy the idea (three-state grid, collision checks reject unknown) into a numpy grid rather than integrating the library.
+**Build notes:** License BSD-2-Clause, last push 2025-06-27 (gh api). Several devel branches (devel, v2, dufomap); pick master for stability. C++17 library, ROS 1 wrapper in a separate repo per the wiki. For 48h, copy the idea (three-state grid, collision checks reject unknown) into a numpy grid rather than integrating the library.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

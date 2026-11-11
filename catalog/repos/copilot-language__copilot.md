@@ -2,7 +2,7 @@
 
 `repo:copilot-language/copilot` - <https://github.com/Copilot-Language/copilot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 840 | Haskell | ? | 2026-11-08 | False | active-research | low |
 
@@ -10,7 +10,7 @@ Stream-based runtime-verification language embedded in Haskell. It compiles moni
 
 **Why it matters:** Bounded-time, no-heap C output is what an embedded safety monitor needs. It is the engine behind Ogma.
 
-**Hackathon notes:** GitHub reports no license; the copilot/LICENSE file in the repo is BSD-3 text. Use through Ogma unless the team already knows Haskell. The generated C can be dropped into a PX4 module or a companion process.
+**Build notes:** GitHub reports no license; the copilot/LICENSE file in the repo is BSD-3 text. Use through Ogma unless the team already knows Haskell. The generated C can be dropped into a PX4 module or a companion process.
 
 **Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

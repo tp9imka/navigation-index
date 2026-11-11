@@ -8,14 +8,14 @@ Peer-reviewed (IEEE Transactions on Automatic Control 2025, doi 10.1109/TAC.2025
 
 ## Key takeaways
 
-- Safety filter margin from a bank of fault-excluded estimators, not one covariance: the mechanism of loop-13 claim C
+- Safety filter margin from a bank of fault-excluded estimators, not one covariance: the mechanism of the close-area innovation claim C (integrity-aware safety-filter margin)
 - Exclusion uses separation thresholds and pair-excluded filters, close to ARAIM-style subset exclusion
 - When no consistent set is found it drops the largest-residual estimates instead of declaring unavailable
 - Simulation only, ground robot and aircraft lateral dynamics; no multirotor, no range-sensor barrier
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
-**Tags:** `control-barrier-function`, `fault-tolerant`, `safety-filter`, `integrity`, `peer-reviewed`, `loop-13`
+**Tags:** `control-barrier-function`, `fault-tolerant`, `safety-filter`, `integrity`, `peer-reviewed`
 
 ## Related
 
@@ -25,4 +25,4 @@ Peer-reviewed (IEEE Transactions on Automatic Control 2025, doi 10.1109/TAC.2025
 
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) (same_author)
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

@@ -2,7 +2,7 @@
 
 `repo:ntnu-arl/gbplanner_ros` - <https://github.com/ntnu-arl/gbplanner_ros>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 881 | C++ | BSD-3-Clause | 2026-10-13 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Graph-based exploration planner from NTNU ARL; the main branch is now OmniPlanne
 
 **Why it matters:** Winning-team open code for autonomous exploration of GNSS-denied spaces with legged and aerial robots.
 
-**Hackathon notes:** The default branch is now OmniPlanner (GBPlanner 3.0, aerial/ground/underwater); GBPlanner 2.0 is on the gbplanner2 branch. ROS workspace with Gazebo worlds; heavy but realistic. Licence is BSD-3, but the README says it is intended for civilian use only.
+**Build notes:** The default branch is now OmniPlanner (GBPlanner 3.0, aerial/ground/underwater); GBPlanner 2.0 is on the gbplanner2 branch. ROS workspace with Gazebo worlds; heavy but realistic. Licence is BSD-3, but the README says it is intended for civilian use only.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

@@ -2,7 +2,7 @@
 
 `repo:nasa-jpl/rosa` - <https://github.com/nasa-jpl/rosa>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,683 | Python | Apache-2.0 | 2026-11-03 | False | active-research | high |
 
@@ -10,7 +10,7 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 
 **Why it matters:** A credible, lab-backed reference for putting an LLM in the loop of a robot stack, with tool boundaries an operator can audit.
 
-**Hackathon notes:** pip install jpl-rosa; demo runs against turtlesim in Docker. Add custom tools for your MAVROS/Nav2 topics.
+**Build notes:** pip install jpl-rosa; demo runs against turtlesim in Docker. Add custom tools for your MAVROS/Nav2 topics.
 
 ## Deep dives
 
@@ -30,9 +30,9 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ROS-LLM](../../catalog/repos/auromix__ros-llm.md) (alternative_to)
 - [ROS MCP Server](../../catalog/repos/robotmcp__ros-mcp-server.md) (alternative_to)

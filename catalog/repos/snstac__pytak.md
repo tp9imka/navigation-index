@@ -2,7 +2,7 @@
 
 `repo:snstac/pytak` - <https://github.com/snstac/pytak>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 256 | Python | Apache-2.0 | 2026-11-02 | False | production | high |
 
@@ -10,7 +10,7 @@ Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS 
 
 **Why it matters:** The glue that turns any sensor script (GNSS monitor, Remote ID sniffer, DF array) into a TAK layer in a few lines.
 
-**Hackathon notes:** pip install pytak; write a CoT generator for your detections. Lowest-friction way into the TAK ecosystem.
+**Build notes:** pip install pytak; write a CoT generator for your detections. Lowest-friction way into the TAK ecosystem.
 
 ## Deep dives
 
@@ -31,10 +31,10 @@ Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [DragonSync](../../catalog/repos/alphafox02__dragonsync.md) (integrates_with)
 - [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md) (integrates_with)

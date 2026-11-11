@@ -2,7 +2,7 @@
 
 `repo:halajun/smarc_navigation` - <https://github.com/halajun/smarc_navigation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1 |  | NOASSERTION | 2021-12-03 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Localization and SLAM components for the SMARC AUVs (KTH), including EKF localiz
 
 **Why it matters:** Research AUV navigation from a Swedish maritime robotics centre, showing map-aided underwater localization.
 
-**Hackathon notes:** Fork of smarc-project/smarc_navigation frozen in 2021; the upstream was updated until 2024, so start there. ROS 1 era; read for architecture.
+**Build notes:** Fork of smarc-project/smarc_navigation frozen in 2021; the upstream was updated until 2024, so start there. ROS 1 era; read for architecture.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 

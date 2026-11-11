@@ -2,7 +2,7 @@
 
 `repo:aerostack2/aerostack2` - <https://github.com/aerostack2/aerostack2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 407 | C++ | BSD-3-Clause | 2026-11-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ROS 2 framework for autonomous single and multi-aerial-robot systems with behavi
 
 **Why it matters:** One of the few ROS 2 native UAV mission frameworks that spans simulation to several real autopilots, good for multi-drone mission demos.
 
-**Hackathon notes:** Binary packages for Humble; Python mission API lets you script takeoff/goto/land for several drones quickly.
+**Build notes:** Binary packages for Humble; Python mission API lets you script takeoff/goto/land for several drones quickly.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
@@ -31,7 +31,7 @@ ROS 2 framework for autonomous single and multi-aerial-robot systems with behavi
 ## Referenced by
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MRS UAV System](../../catalog/repos/ctu-mrs__mrs_uav_system.md) (alternative_to)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (alternative_to)

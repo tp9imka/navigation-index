@@ -2,7 +2,7 @@
 
 `repo:acados/acados` - <https://github.com/acados/acados>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,519 | C | NOASSERTION | 2026-10-29 | False | production | high |
 
@@ -10,7 +10,7 @@ Fast embedded solvers for nonlinear optimal control and nonlinear MPC. Models ar
 
 **Why it matters:** The de-facto open NMPC engine behind most quadrotor and fixed-wing MPC research code; the generated C code is a credible path from a laptop demo to a flight computer.
 
-**Hackathon notes:** License BSD-2-Clause (LICENSE file read; GitHub shows NOASSERTION). Last push 2026-10-29, active. Python interface needs acados built from source plus the tera_renderer binary; plan 30-60 min the first time. Start from the bundled Python examples (pendulum, then a quadrotor model) before writing your own dynamics.
+**Build notes:** License BSD-2-Clause (LICENSE file read; GitHub shows NOASSERTION). Last push 2026-10-29, active. Python interface needs acados built from source plus the tera_renderer binary; plan 30-60 min the first time. Start from the bundled Python examples (pendulum, then a quadrotor model) before writing your own dynamics.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

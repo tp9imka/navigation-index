@@ -15,4 +15,4 @@ IROS 2024 (per arXiv comment); abstract read. Visual relocalization after tracki
 
 **Tags:** `relocalization`, `multi-hypothesis`, `pose-regression`, `peer-reviewed`
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

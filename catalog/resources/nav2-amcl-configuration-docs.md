@@ -20,4 +20,4 @@ Parameter reference for the ROS 2 AMCL node (Jazzy docs, read). Likelihood-field
 
 - part_of: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

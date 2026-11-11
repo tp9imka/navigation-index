@@ -2,7 +2,7 @@
 
 `repo:ardupilot/sitl_models` - <https://github.com/ArduPilot/SITL_Models>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 137 | HTML | ? | 2026-08-05 | False | production | medium |
 
@@ -10,7 +10,7 @@ Collection of aircraft and vehicle models and parameter files for ArduPilot SITL
 
 **Why it matters:** Ready-made airframes (including fixed-wing and VTOL) save hours when a hackathon scenario needs something other than a quadcopter.
 
-**Hackathon notes:** No top-level README. RealFlight is a paid commercial simulator; without it, only the Gazebo folder is usable. RealFlight model folders each have their own README.
+**Build notes:** No top-level README. RealFlight is a paid commercial simulator; without it, only the Gazebo folder is usable. RealFlight model folders each have their own README.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

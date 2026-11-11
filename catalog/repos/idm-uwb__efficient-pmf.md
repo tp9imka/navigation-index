@@ -2,7 +2,7 @@
 
 `repo:idm-uwb/efficient-pmf` - <https://github.com/IDM-UWB/efficient-PMF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | MATLAB | ? | 2024-03-19 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ MATLAB code for the efficient point-mass filter (FUSION 2023) for systems with l
 
 **Why it matters:** Small, readable reference implementation of a fast grid-based TAN filter.
 
-**Hackathon notes:** Needs MATLAB; no licence file. The pesslovany/Matlab-LagrangianPMF repo is the maintained successor.
+**Build notes:** Needs MATLAB; no licence file. The pesslovany/Matlab-LagrangianPMF repo is the maintained successor.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 

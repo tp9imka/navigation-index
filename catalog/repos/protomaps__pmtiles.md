@@ -2,7 +2,7 @@
 
 `repo:protomaps/pmtiles` - <https://github.com/protomaps/pmtiles>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,105 | TypeScript | NOASSERTION | 2026-09-16 | False | production | high |
 
@@ -10,7 +10,7 @@ Single-file tile archive format and tooling, served by HTTP range requests from 
 
 **Why it matters:** Ship an entire regional basemap as one file on a USB stick or static server - ideal for disconnected ops.
 
-**Hackathon notes:** pmtiles extract from a planet build to cut your AOI; load with the MapLibre protocol plugin.
+**Build notes:** pmtiles extract from a planet build to cut your AOI; load with the MapLibre protocol plugin.
 
 ## Deep dives
 
@@ -30,9 +30,9 @@ Single-file tile archive format and tooling, served by HTTP range requests from 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
 - [Offline kit](../../templates/offline-kit/README.md) (mentions)

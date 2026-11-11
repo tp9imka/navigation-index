@@ -2,7 +2,7 @@
 
 `repo:arborisers/uavision` - <https://github.com/ArboriseRS/UAVision>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 10 | Python | ? | 2025-07-29 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Map-matching-based visual localization software for UAVs in GNSS-denied settings
 
 **Why it matters:** One of the few projects packaged as an operator-facing tool rather than a paper repo.
 
-**Hackathon notes:** Useful for UI inspiration and a quick demo; inspect the matcher it uses before relying on accuracy.
+**Build notes:** Useful for UI inspiration and a quick demo; inspect the matcher it uses before relying on accuracy.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

@@ -2,7 +2,7 @@
 
 `repo:jzhzhang/navid-vln-ce` - <https://github.com/jzhzhang/NaVid-VLN-CE>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 460 | Python | MIT | 2025-10-15 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next nav
 
 **Why it matters:** Shows map-free, camera-only language navigation, relevant when maps and GNSS are unavailable.
 
-**Hackathon notes:** Requires Habitat and large checkpoints; evaluation only.
+**Build notes:** Requires Habitat and large checkpoints; evaluation only.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 

@@ -2,7 +2,7 @@
 
 `repo:naatyu/magnav` - <https://github.com/naatyu/MagNav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 66 | Jupyter Notebook | MIT | 2023-07-19 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Deep-learning approach to aircraft magnetic disturbance compensation built aroun
 
 **Why it matters:** Compensation quality dominates MagNav accuracy; shows a learned alternative to Tolles-Lawson.
 
-**Hackathon notes:** Unmaintained since 2023; dependencies may need pinning.
+**Build notes:** Unmaintained since 2023; dependencies may need pinning.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

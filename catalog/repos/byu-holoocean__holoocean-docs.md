@@ -2,7 +2,7 @@
 
 `repo:byu-holoocean/holoocean-docs` - <https://github.com/byu-holoocean/holoocean-docs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 23 | HTML | ? | 2026-11-04 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 **Why it matters:** Photorealistic underwater sim aimed at marine navigation and SLAM research, including acoustic modems for multi-agent setups.
 
-**Hackathon notes:** Follow the installation page of the docs; Python package plus downloadable worlds. Heavy GPU load for sonar rendering.
+**Build notes:** Follow the installation page of the docs; Python package plus downloadable worlds. Heavy GPU load for sonar rendering.
 
 ## Deep dives
 
@@ -28,9 +28,9 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md) (alternative_to)
 - [HoloOcean Documentation](../../catalog/resources/byu-holoocean-docs.md) (explains)
 

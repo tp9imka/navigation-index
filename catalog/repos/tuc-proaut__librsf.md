@@ -2,7 +2,7 @@
 
 `repo:tuc-proaut/librsf` - <https://github.com/TUC-ProAut/libRSF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 340 | C++ | GPL-3.0 | 2026-04-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Ceres-based robust sensor fusion library: factor graph formulation, sliding-wind
 
 **Why it matters:** The open reference for robust error models in navigation factor graphs; its GNSS datasets are reused by later integrity work (ION ITM 2026).
 
-**Hackathon notes:** GPL-3.0; Ubuntu 22.04/24.04 install script. Use its datasets and ideas; for a product prototype prefer GTSAM robust kernels.
+**Build notes:** GPL-3.0; Ubuntu 22.04/24.04 install script. Use its datasets and ideas; for a product prototype prefer GTSAM robust kernels.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

@@ -2,7 +2,7 @@
 
 `repo:gmberton/cosplace` - <https://github.com/gmberton/CosPlace>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 403 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ CVPR 2022 large-scale visual geo-localization treating place recognition as clas
 
 **Why it matters:** Scales to very large maps, a useful framing for country-sized reference databases.
 
-**Hackathon notes:** torch.hub weights available.
+**Build notes:** torch.hub weights available.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

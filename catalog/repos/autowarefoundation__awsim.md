@@ -2,7 +2,7 @@
 
 `repo:autowarefoundation/awsim` - <https://github.com/autowarefoundation/AWSIM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 761 | C# | NOASSERTION | 2026-10-20 | False | production | medium |
 
@@ -10,7 +10,7 @@ Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GN
 
 **Why it matters:** Lets a team exercise Autoware localization without a car.
 
-**Hackathon notes:** Prebuilt binaries for Ubuntu with an NVIDIA GPU. Licence is split: code Apache-2.0, but assets (including release content) are CC BY-NC, so non-commercial use only, and the docs may not be publicly re-hosted.
+**Build notes:** Prebuilt binaries for Ubuntu with an NVIDIA GPU. Licence is split: code Apache-2.0, but assets (including release content) are CC BY-NC, so non-commercial use only, and the docs may not be publicly re-hosted.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

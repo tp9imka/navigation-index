@@ -2,7 +2,7 @@
 
 `repo:gmberton/megaloc` - <https://github.com/gmberton/MegaLoc>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 321 | Python | MIT | 2026-08-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ General image-retrieval model for localization tasks, trained across many VPR da
 
 **Why it matters:** A permissive retrieval front end to compare against AnyLoc and DINOv2 GeM for the coarse stage of aerial visual fixes.
 
-**Hackathon notes:** MIT code; weight terms not checked separately. Drop-in for the retrieval stage of vpr-large-area.
+**Build notes:** MIT code; weight terms not checked separately. Drop-in for the retrieval stage of vpr-large-area.
 
 **Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

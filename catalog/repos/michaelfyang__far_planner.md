@@ -2,7 +2,7 @@
 
 `repo:michaelfyang/far_planner` - <https://github.com/MichaelFYang/far_planner>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,038 | C++ | ? | 2026-10-27 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Visibility-graph route planner for known and unknown environments from the CMU S
 
 **Why it matters:** Long-range routing companion to exploration planners in GNSS-denied environments.
 
-**Hackathon notes:** Runs in the same CMU development environment.
+**Build notes:** Runs in the same CMU development environment.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

@@ -2,7 +2,7 @@
 
 `repo:v-nav/clover` - <https://github.com/v-nav/clover>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | C++ | MIT | 2021-11-01 | True | archived | low |
 
@@ -10,7 +10,7 @@ Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry
 
 **Why it matters:** Shows how a Russian student team scoped GNSS-free navigation on the Clover/PX4 stack; a design reference more than working code.
 
-**Hackathon notes:** Read the article on the v-nav_article branch; the fork itself is mostly upstream Clover.
+**Build notes:** Read the article on the v-nav_article branch; the fork itself is mostly upstream Clover.
 
 ## Deep dives
 
@@ -28,10 +28,10 @@ Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-round2_
 

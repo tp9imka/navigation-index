@@ -2,7 +2,7 @@
 
 `repo:sauravag/edpl-ompl` - <https://github.com/sauravag/edpl-ompl>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 22 | HTML | ? | 2019-09-18 | False | archived | low |
 
@@ -10,7 +10,7 @@ C++ belief-space motion planning on top of OMPL (FIRM-style roadmaps with feedba
 
 **Why it matters:** One of the few open belief-space planners: it plans over the estimator's covariance, not just position.
 
-**Hackathon notes:** No license file (gh api returns none), so all rights reserved: read-only reference, not usable in a product. Last push 2019-09-18. For a hackathon, implement the core idea directly: propagate EKF covariance along candidate routes and pick the route that keeps it under the alert limit.
+**Build notes:** No license file (gh api returns none), so all rights reserved: read-only reference, not usable in a product. Last push 2019-09-18. For a hackathon, implement the core idea directly: propagate EKF covariance along candidate routes and pick the route that keeps it under the alert limit.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

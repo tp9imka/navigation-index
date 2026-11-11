@@ -2,7 +2,7 @@
 
 `repo:jks-prv/kiwiclient` - <https://github.com/jks-prv/kiwiclient>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 99 | Python | ? | 2026-08-03 | False | production | medium |
 
@@ -10,7 +10,7 @@ Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS
 
 **Why it matters:** GNSS-timestamped IQ from a public network of receivers is the input for HF TDOA; it also shows what breaks when the receivers' GNSS time is denied.
 
-**Hackathon notes:** Pure Python; record from public KiwiSDRs. Timestamps are only as good as each receiver's GNSS.
+**Build notes:** Pure Python; record from public KiwiSDRs. Timestamps are only as good as each receiver's GNSS.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 

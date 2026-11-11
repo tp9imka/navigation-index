@@ -2,7 +2,7 @@
 
 `repo:sikang/decompros` - <https://github.com/sikang/DecompROS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ ROS wrapper and visualisation for the DecompUtil convex decomposition.
 
 **Why it matters:** Quick way to see safe flight corridors in RViz.
 
-**Hackathon notes:** License BSD-3-Clause (gh api), last push 2018-09-10, ROS 1. Only needed for visualisation.
+**Build notes:** License BSD-3-Clause (gh api), last push 2018-09-10, ROS 1. Only needed for visualisation.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:px4/pyulog` - <https://github.com/PX4/pyulog>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 173 | Python | BSD-3-Clause | 2026-10-27 | False | production | high |
 
@@ -10,7 +10,7 @@ Python parser and command-line tools for PX4 ULog flight logs (to CSV, info, par
 
 **Why it matters:** The extractor for every PX4 log: ESC RPM, airspeed, wind estimate, actuator outputs and EKF innovations come out as tables for model-aided estimation experiments.
 
-**Hackathon notes:** pip install pyulog; ulog2csv flight.ulg. Pairs with public logs on PX4 Flight Review. Check each log for esc_status and airspeed topics before relying on them.
+**Build notes:** pip install pyulog; ulog2csv flight.ulg. Pairs with public logs on PX4 Flight Review. Check each log for esc_status and airspeed topics before relying on them.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

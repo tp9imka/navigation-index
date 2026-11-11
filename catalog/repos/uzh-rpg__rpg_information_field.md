@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_information_field` - <https://github.com/uzh-rpg/rpg_information_field>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 211 | C++ | MIT | 2020-10-13 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Implements the Fisher Information Field, a voxel map that stores how well a came
 
 **Why it matters:** The clearest open code for a 'localisability map': plan paths that stay where vision-based localisation works, the core idea behind perception-aware planning in GNSS-denied flight.
 
-**Hackathon notes:** License MIT (gh api), with Voxblox-derived code under its own license in third_party. Last push 2020-10-13. ROS 1 build with Unreal-based examples: too heavy for 48h. Re-implement the idea in 2D for aerial nav: a grid where each cell scores expected match quality (texture, terrain roughness) and feed it into the planner cost.
+**Build notes:** License MIT (gh api), with Voxblox-derived code under its own license in third_party. Last push 2020-10-13. ROS 1 build with Unreal-based examples: too heavy for 48h. Re-implement the idea in 2D for aerial nav: a grid where each cell scores expected match quality (texture, terrain roughness) and feed it into the planner cost.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

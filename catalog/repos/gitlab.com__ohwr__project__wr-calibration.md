@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ohwr/project/wr-calibration` - <https://gitlab.com/ohwr/project/wr-calibration>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? |  | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ Procedures and notes for calibrating White Rabbit equipment: fixed hardware dela
 
 **Why it matters:** Calibration is where path asymmetry gets removed in practice; the same A/2 error modelled in sample:timing-network-holdover.
 
-**Hackathon notes:** Reference reading for explaining why uncalibrated asymmetry biases two-way time transfer.
+**Build notes:** Reference reading for explaining why uncalibrated asymmetry biases two-way time transfer.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

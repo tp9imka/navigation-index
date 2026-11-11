@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/agile_autonomy` - <https://github.com/uzh-rpg/agile_autonomy>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ Code for 'Learning High-Speed Flight in the Wild': a policy trained in simulatio
 
 **Why it matters:** Reference for learned depth-to-trajectory obstacle flight and its sim-to-real recipe.
 
-**Hackathon notes:** GPL-3.0, last push 2023-01. Tested on Ubuntu 20.04 + ROS Noetic only, depends on Flightmare. Not buildable on the Mac in 48 h; cite the idea.
+**Build notes:** GPL-3.0, last push 2023-01. Tested on Ubuntu 20.04 + ROS Noetic only, depends on Flightmare. Not buildable on the Mac in 48 h; cite the idea.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

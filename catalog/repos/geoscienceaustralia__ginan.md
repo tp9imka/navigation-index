@@ -2,7 +2,7 @@
 
 `repo:geoscienceaustralia/ginan` - <https://github.com/GeoscienceAustralia/ginan>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 360 | C++ | NOASSERTION | 2026-09-16 | False | production | low |
 
@@ -10,7 +10,7 @@ Geoscience Australia's GNSS analysis toolkit for precise orbit determination and
 
 **Why it matters:** Government-backed open PPP and product-generation engine; relevant for sovereign correction services.
 
-**Hackathon notes:** Heavy build and configuration; Docker images help. Overkill for most 48h builds.
+**Build notes:** Heavy build and configuration; Docker images help. Overkill for most 48h builds.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 

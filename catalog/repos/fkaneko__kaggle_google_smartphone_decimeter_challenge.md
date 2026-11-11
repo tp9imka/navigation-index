@@ -2,7 +2,7 @@
 
 `repo:fkaneko/kaggle_google_smartphone_decimeter_challenge` - <https://github.com/Fkaneko/kaggle_Google_Smartphone_Decimeter_Challenge>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 30 | Python | Apache-2.0 | 2022-05-06 | False | archived | low |
 
@@ -10,7 +10,7 @@
 
 **Why it matters:** Readable Kaggle-style pipeline for smartphone GNSS post-processing.
 
-**Hackathon notes:** Apache-2.0 code; GSDC data is under Kaggle competition rules (not checked). Denoises host-baseline positions (STFT + CNN, LightGBM on IMU) and snaps to training ground truth with KNN, so it relies on repeated routes. Private score about 2.61 m.
+**Build notes:** Apache-2.0 code; GSDC data is under Kaggle competition rules (not checked). Denoises host-baseline positions (STFT + CNN, LightGBM on IMU) and snaps to training ground truth with KNN, so it relies on repeated routes. Private score about 2.61 m.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 

@@ -2,7 +2,7 @@
 
 `repo:f4exb/sdrangel` - <https://github.com/f4exb/sdrangel>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,158 | C++ | GPL-3.0 | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ General SDR receive/transmit application with many demodulator plugins; its Radi
 
 **Why it matters:** One GUI that decodes several LF time broadcasts and many other signals, useful for a signals-of-opportunity timing demo.
 
-**Hackathon notes:** Install packages or the Docker image; add the Radio Clock channel.
+**Build notes:** Install packages or the Docker image; add the Radio Clock channel.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

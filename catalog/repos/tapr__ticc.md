@@ -2,7 +2,7 @@
 
 `repo:tapr/ticc` - <https://github.com/TAPR/TICC>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 51 | C++ | MIT | 2026-11-02 | False | production | medium |
 
@@ -10,7 +10,7 @@ Firmware and design files for TAPR's Arduino-based sub-nanosecond time interval 
 
 **Why it matters:** Cheap way to measure a GPSDO or GNSS receiver PPS against a reference and get the phase data ADEV tools need.
 
-**Hackathon notes:** Needs the board; output is a text stream of timestamps that pipes into allantools.
+**Build notes:** Needs the board; output is a text stream of timestamps that pipes into allantools.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

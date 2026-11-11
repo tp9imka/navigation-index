@@ -13,10 +13,10 @@ Company blog (news). Shield AI and Level 5 Autonomy Labs build an ASTM F3269-21 
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-**Tags:** `runtime-assurance`, `astm-f3269`, `gcas`, `vendor`, `loop-13`
+**Tags:** `runtime-assurance`, `astm-f3269`, `gcas`, `vendor`
 
 ## Related
 
 - uses: [ASTM F3269-21: Standard Practice for Methods to Safely Bound Behavior of Aircraft Systems Containing Complex Functions Using Run-Time Assurance](../../catalog/resources/astm-f3269-21-rta.md)
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

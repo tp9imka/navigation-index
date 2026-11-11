@@ -2,7 +2,7 @@
 
 `repo:croatiacontrolltd/asterix` - <https://github.com/croatiacontrolltd/asterix>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 214 | C++ | GPL-2.0 | 2025-12-03 | False | production | medium |
 
@@ -10,7 +10,7 @@ C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, s
 
 **Why it matters:** ASTERIX is the format real radars and ATC surveillance use; decoding it lets a demo ingest professional air picture feeds.
 
-**Hackathon notes:** Python module is on PyPI as asterix_decoder; feed it recorded or live UDP ASTERIX and get JSON per record.
+**Build notes:** Python module is on PyPI as asterix_decoder; feed it recorded or live UDP ASTERIX and get JSON per record.
 
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

@@ -25,11 +25,10 @@ Product page for the larger 7-element GAJT CRPA unit in a hardened enclosure for
 
 ## Referenced by
 
-- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [Story bank](../../templates/pitch/story-bank.md) (mentions)
 - [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../../catalog/resources/infinidome-gpsdome.md) (cites)

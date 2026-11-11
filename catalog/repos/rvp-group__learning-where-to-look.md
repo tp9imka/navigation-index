@@ -2,7 +2,7 @@
 
 `repo:rvp-group/learning-where-to-look` - <https://github.com/rvp-group/learning-where-to-look>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 53 | Python | BSD-3-Clause | 2025-02-20 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Code for self-supervised viewpoint selection for active visual localization agai
 
 **Why it matters:** Permissive code for the 'look direction' part of active visual localization.
 
-**Hackathon notes:** License BSD-3-Clause (gh api 2026-11-09). Last push 2025-02-20. README requires CUDA (<12.1 known to work), so it will not run on a Mac laptop. Ground-level SfM scenes, not aerial nadir imagery.
+**Build notes:** License BSD-3-Clause (gh api 2026-11-09). Last push 2025-02-20. README requires CUDA (<12.1 known to work), so it will not run on a Mac laptop. Ground-level SfM scenes, not aerial nadir imagery.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 

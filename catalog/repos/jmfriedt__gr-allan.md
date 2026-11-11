@@ -2,7 +2,7 @@
 
 `repo:jmfriedt/gr-allan` - <https://github.com/jmfriedt/gr-allan>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | CMake | GPL-3.0 | 2023-07-05 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ GNU Radio sink block that wraps allantools to plot Allan deviation in real time 
 
 **Why it matters:** Live ADEV of an SDR-measured frequency or phase offset during a demo.
 
-**Hackathon notes:** Tested by the author on GNU Radio 3.10.5; needs allantools installed. Build with cmake.
+**Build notes:** Tested by the author on GNU Radio 3.10.5; needs allantools installed. Build with cmake.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

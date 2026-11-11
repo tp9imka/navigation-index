@@ -2,7 +2,7 @@
 
 `repo:isaac-sim/isaaclab` - <https://github.com/isaac-sim/IsaacLab>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8,598 | Python | NOASSERTION | 2026-11-08 | False | production | medium |
 
@@ -10,7 +10,7 @@ Robot-learning framework on Isaac Sim for massively parallel RL and imitation le
 
 **Why it matters:** Fast route to training learned navigation or locomotion policies with thousands of parallel simulated robots.
 
-**Hackathon notes:** Install via pip on a supported Isaac Sim version. Start from an existing nav task config rather than writing environments from scratch.
+**Build notes:** Install via pip on a supported Isaac Sim version. Start from an existing nav task config rather than writing environments from scratch.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 

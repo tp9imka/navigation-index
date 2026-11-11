@@ -2,7 +2,7 @@
 
 `repo:apolloauto/apollo` - <https://github.com/ApolloAuto/apollo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 26,894 | C++ | Apache-2.0 | 2026-04-16 | False | production | low |
 
@@ -10,7 +10,7 @@ Baidu's open autonomous driving platform, including the multi-sensor fusion loca
 
 **Why it matters:** Its MSF localization design is a well-documented reference for GNSS/INS/lidar fusion in vehicles.
 
-**Hackathon notes:** Very heavy to build; read the localization module docs and code rather than deploy.
+**Build notes:** Very heavy to build; read the localization module docs and code rather than deploy.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

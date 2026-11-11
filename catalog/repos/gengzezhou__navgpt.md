@@ -2,7 +2,7 @@
 
 `repo:gengzezhou/navgpt` - <https://github.com/GengzeZhou/NavGPT>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 356 | Python | MIT | 2023-11-07 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Purely LLM-based vision-and-language navigation agent that reasons explicitly ov
 
 **Why it matters:** Readable baseline for LLM reasoning in navigation, with prompts you can adapt.
 
-**Hackathon notes:** Needs an LLM API and R2R/Matterport data.
+**Build notes:** Needs an LLM API and R2R/Matterport data.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 

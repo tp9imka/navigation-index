@@ -2,7 +2,7 @@
 
 `repo:alliwong/auvestimator` - <https://github.com/alliWong/AuvEstimator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3 | Python | ? | 2021-05-14 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Work-in-progress AUV state estimator fusing DVL, IMU and barometer two ways, a 1
 
 **Why it matters:** Small, readable DVL-aided INS example to start a GNSS-free underwater nav filter from.
 
-**Hackathon notes:** Dormant since 2021; treat as a starting template, not a dependency. No LICENSE file, so all rights reserved by default.
+**Build notes:** Dormant since 2021; treat as a starting template, not a dependency. No LICENSE file, so all rights reserved by default.
 
 **Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

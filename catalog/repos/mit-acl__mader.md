@@ -2,7 +2,7 @@
 
 `repo:mit-acl/mader` - <https://github.com/mit-acl/mader>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 626 | C++ | BSD-3-Clause | 2022-12-07 | False | archived | low |
 
@@ -10,7 +10,7 @@ MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in d
 
 **Why it matters:** Multi-agent planning without synchronized clocks or central coordination, closer to real comms constraints.
 
-**Hackathon notes:** No commits since 2022; ROS1. Use for ideas rather than code reuse.
+**Build notes:** No commits since 2022; ROS1. Use for ideas rather than code reuse.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 

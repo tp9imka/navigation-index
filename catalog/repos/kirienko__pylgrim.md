@@ -2,7 +2,7 @@
 
 `repo:kirienko/pylgrim` - <https://github.com/kirienko/pylgrim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 21 | Python | GPL-3.0 | 2020-11-11 | False | archived | low |
 
@@ -10,7 +10,7 @@ Playground GNSS positioning code in Python/numpy that computes a static GPS posi
 
 **Why it matters:** Python-readable receiver chain for teaching and quick experiments.
 
-**Hackathon notes:** Unmaintained since 2020; use for learning.
+**Build notes:** Unmaintained since 2020; use for learning.
 
 **Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

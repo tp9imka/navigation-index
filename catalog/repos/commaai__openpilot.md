@@ -2,7 +2,7 @@
 
 `repo:commaai/openpilot` - <https://github.com/commaai/openpilot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 64,090 | Python | MIT | 2026-11-09 | False | production | low |
 
@@ -10,7 +10,7 @@ Open driver-assistance robotics stack. Its current locationd fuses IMU and camer
 
 **Why it matters:** Real-world example of a production fusion pipeline on consumer hardware, and of a stack that dropped GNSS from its localizer in favour of vision and IMU.
 
-**Hackathon notes:** Large codebase; study locationd (pose_kf) and the ubloxd GNSS parsing rather than running the full stack. For laika-style GNSS processing, look at the standalone commaai/laika repo or older openpilot releases.
+**Build notes:** Large codebase; study locationd (pose_kf) and the ubloxd GNSS parsing rather than running the full stack. For laika-style GNSS processing, look at the standalone commaai/laika repo or older openpilot releases.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

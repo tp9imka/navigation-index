@@ -2,7 +2,7 @@
 
 `repo:osrf/vrx` - <https://github.com/osrf/vrx>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 765 | C++ | Apache-2.0 | 2026-08-02 | False | production | high |
 
@@ -10,7 +10,7 @@ Gazebo-based simulation environment for the RobotX maritime autonomy competition
 
 **Why it matters:** Ready-made surface-vessel sim with nav and perception tasks; good for maritime autonomy demos.
 
-**Hackathon notes:** Current branch targets gz-sim and ROS 2. Task worlds (station keeping, wayfinding) work as hackathon challenges out of the box.
+**Build notes:** Current branch targets gz-sim and ROS 2. Task worlds (station keeping, wayfinding) work as hackathon challenges out of the box.
 
 ## Deep dives
 
@@ -30,12 +30,12 @@ Gazebo-based simulation environment for the RobotX maritime autonomy competition
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MBZIRC Maritime Grand Challenge simulator](../../catalog/repos/osrf__mbzirc.md) (alternative_to)
 

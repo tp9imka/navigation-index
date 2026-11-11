@@ -2,7 +2,7 @@
 
 `repo:bolotnaya-glesenb/drone_navigation` - <https://github.com/BOLOTNAYA-GLESENb/drone_navigation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-06-07 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Diploma project: autonomous quadcopter navigation in PX4 SITL + Gazebo with ROS 
 
 **Why it matters:** An integrated sim stack that wires SLAM, planning and avoidance to PX4, which is the glue most teams lose time on.
 
-**Hackathon notes:** Needs a working ROS 2 + PX4 SITL + Gazebo setup (hours, not minutes). Reuse the node layout and the SLAM-to-planner wiring.
+**Build notes:** Needs a working ROS 2 + PX4 SITL + Gazebo setup (hours, not minutes). Reuse the node layout and the SLAM-to-planner wiring.
 
 ## Deep dives
 
@@ -30,10 +30,10 @@ Diploma project: autonomous quadcopter navigation in PX4 SITL + Gazebo with ROS 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-round2_
 

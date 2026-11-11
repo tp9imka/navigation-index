@@ -2,7 +2,7 @@
 
 `repo:btx0424/omnidrones` - <https://github.com/btx0424/OmniDrones>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 591 | Python | MIT | 2026-01-20 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ GPU-parallel drone simulation and RL platform built on Isaac Sim.
 
 **Why it matters:** Supports multi-drone and transport tasks with vectorized environments for learning-based autonomy.
 
-**Hackathon notes:** Pinned to specific Isaac Sim versions (README badge: 4.1.0) and Linux only. The author states at the top of the README that this version is hard to maintain and will not be updated further; treat it as frozen.
+**Build notes:** Pinned to specific Isaac Sim versions (README badge: 4.1.0) and Linux only. The author states at the top of the README that this version is hard to maintain and will not be updated further; treat it as frozen.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

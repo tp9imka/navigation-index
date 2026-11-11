@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/event-based_vision_resources` - <https://github.com/uzh-rpg/event-based_vision_resources>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,680 |  | ? | 2026-10-23 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Community-curated list of event-camera papers, datasets, drivers, simulators and
 
 **Why it matters:** Fastest way to find event-camera datasets and odometry code.
 
-**Hackathon notes:** Use as a discovery index; not runnable code.
+**Build notes:** Use as a discovery index; not runnable code.
 
 ## Deep dives
 

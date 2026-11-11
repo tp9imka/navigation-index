@@ -2,7 +2,7 @@
 
 `repo:arplaboratory/satellite-thermal-geo-localization` - <https://github.com/arplaboratory/satellite-thermal-geo-localization>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 103 | Python | MIT | 2026-05-16 | False | active-research | high |
 
@@ -10,7 +10,7 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 
 **Why it matters:** Night flight is when GNSS-denied UAVs are most exposed; this is the main open line of work for thermal-to-satellite matching.
 
-**Hackathon notes:** Dataset on Hugging Face (gated). Use the pretrained model to show night-time matching in a demo.
+**Build notes:** Dataset on Hugging Face (gated). Use the pretrained model to show night-time matching in a demo.
 
 ## Deep dives
 
@@ -32,11 +32,11 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [CART - Caltech Aerial RGB-Thermal](../../catalog/repos/aerorobotics__caltech-aerial-rgbt-dataset.md) (alternative_to)
 - [STHN](../../catalog/repos/arplaboratory__sthn.md) (extends)

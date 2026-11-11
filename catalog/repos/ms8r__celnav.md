@@ -2,7 +2,7 @@
 
 `repo:ms8r/celnav` - <https://github.com/ms8r/celnav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 25 | Python | ? | 2024-08-20 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Small Tkinter desktop app for celestial navigation on a boat: computes the Nauti
 
 **Why it matters:** Scriptable sight reduction for a GNSS-free position fix.
 
-**Hackathon notes:** Python 2 code (imports ConfigParser, Tkinter) with no commits since 2018; port the celnav.py core to Python 3 or use it as an algorithm reference. Pair with a camera-based sun or star altitude to automate a fix.
+**Build notes:** Python 2 code (imports ConfigParser, Tkinter) with no commits since 2018; port the celnav.py core to Python 3 or use it as an algorithm reference. Pair with a camera-based sun or star altitude to automate a fix.
 
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 

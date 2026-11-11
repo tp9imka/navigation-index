@@ -2,7 +2,7 @@
 
 `repo:verlab/accelerated_features` - <https://github.com/verlab/accelerated_features>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,759 | Jupyter Notebook | Apache-2.0 | 2025-01-15 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Lightweight local feature extractor and matcher (CVPR 2024) designed for speed o
 
 **Why it matters:** Fits onboard compute on small drones where LightGlue on GPU is not available.
 
-**Hackathon notes:** Runs on CPU in real time; good for an embedded/Jetson story.
+**Build notes:** Runs on CPU in real time; good for an embedded/Jetson story.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Lightweight local feature extractor and matcher (CVPR 2024) designed for speed o
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)

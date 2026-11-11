@@ -2,7 +2,7 @@
 
 `repo:ntnu-itk-autonomous-ship-lab/colav-simulator` - <https://github.com/ntnu-itk-autonomous-ship-lab/colav-simulator>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 35 | Python | MIT | 2026-01-23 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python framework from the NTNU Autoship centre for simulating and evaluating aut
 
 **Why it matters:** One of the few open, evaluation-oriented COLAV simulators from a leading autonomous ship lab; good test bench for COLREGs logic.
 
-**Hackathon notes:** Python with uv; define scenarios and swap in your own planner. Pair with its VIMMJIPDA tracker for realistic target estimates.
+**Build notes:** Python with uv; define scenarios and swap in your own planner. Pair with its VIMMJIPDA tracker for realistic target estimates.
 
 ## Deep dives
 

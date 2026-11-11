@@ -2,7 +2,7 @@
 
 `repo:korogodin/gnssrecbasics2020` - <https://github.com/Korogodin/gnssrecbasics2020>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2 |  | ? | 2021-09-21 | False | educational | low |
 
@@ -10,7 +10,7 @@ Assignments and lab reports for the first semester of the MPEI navigation receiv
 
 **Why it matters:** Structured exercises for building intuition about correlators and positioning accuracy.
 
-**Hackathon notes:** Good pre-hackathon homework for whoever owns the GNSS side.
+**Build notes:** Good pre-hackathon homework for whoever owns the GNSS side.
 
 ## Deep dives
 
@@ -29,10 +29,10 @@ Assignments and lab reports for the first semester of the MPEI navigation receiv
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Приемники ГНСС - GNSS receiver design handbook (MPEI)](../../catalog/repos/korogodin__gnssrec.md) (same_org)
 
 _Indexed by lane(s): ua-ru-round2_

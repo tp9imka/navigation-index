@@ -13,10 +13,10 @@ Peer-reviewed (59th IEEE CDC 2020, pp. 796-803). Conference version of fault-tol
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
-**Tags:** `control-barrier-function`, `fault-tolerant`, `safety-filter`, `peer-reviewed`, `loop-13`
+**Tags:** `control-barrier-function`, `fault-tolerant`, `safety-filter`, `peer-reviewed`
 
 ## Referenced by
 
 - [Safe Control for Nonlinear Systems Under Faults and Attacks Via Control Barrier Functions](../../catalog/resources/zhang-li-clark-2025-ft-cbf.md) (cites)
 
-_Indexed by lane(s): loop-13_
+_Indexed by lane(s): pl-margin-prior-art_

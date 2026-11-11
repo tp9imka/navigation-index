@@ -2,7 +2,7 @@
 
 `repo:zhm-real/pathplanning` - <https://github.com/zhm-real/PathPlanning>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | educational | high |
 
@@ -10,7 +10,7 @@ Collection of search-based (A*, LPA*, D* Lite, ARA* and others) and sampling-bas
 
 **Why it matters:** MIT-licensed Python with 3D search and 3D RRT folders, so code can be lifted into a hackathon build without a license problem.
 
-**Hackathon notes:** License MIT, last push 2023-02-06 (gh api): static but stable. Search_3D and rrt_3D folders exist; not run here. Educational code, not optimised: fine for a 50x50x10 grid, slow for large 3D maps.
+**Build notes:** License MIT, last push 2023-02-06 (gh api): static but stable. Search_3D and rrt_3D folders exist; not run here. Educational code, not optimised: fine for a 50x50x10 grid, slow for large 3D maps.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 

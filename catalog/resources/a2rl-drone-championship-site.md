@@ -19,4 +19,4 @@ Official event page and season blogs. Season 1 (April 2025): single front-facing
 
 - part_of: [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md)
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

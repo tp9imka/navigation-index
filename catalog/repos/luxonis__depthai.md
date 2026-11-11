@@ -2,7 +2,7 @@
 
 `repo:luxonis/depthai` - <https://github.com/luxonis/depthai>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,071 | Python | ? | 2026-10-26 | False | production | high |
 
@@ -10,7 +10,7 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 
 **Why it matters:** Puts inference and depth on the sensor, freeing the companion computer.
 
-**Hackathon notes:** `pip install depthai` (v3 API; examples in luxonis/depthai-core). OAK camera required. Older v2 tutorials and examples will not run unchanged on v3.
+**Build notes:** `pip install depthai` (v3 API; examples in luxonis/depthai-core). OAK camera required. Older v2 tutorials and examples will not run unchanged on v3.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [DepthAI Core](../../catalog/repos/luxonis__depthai-core.md) (same_org)

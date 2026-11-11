@@ -8,7 +8,7 @@ Follow-up Kelvins challenge focused on bridging the domain gap: train on synthet
 
 ## Key takeaways
 
-- Sim-to-real gap is the core difficulty judges scored
+- Sim-to-real gap is the core difficulty the competition scored
 - Kelvins pages document rules and metrics
 
 **Concepts:** [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
@@ -21,7 +21,7 @@ Follow-up Kelvins challenge focused on bridging the domain gap: train on synthet
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [SPEED+ baseline](../../catalog/repos/tpark94__speedplusbaseline.md) (evaluated_on)

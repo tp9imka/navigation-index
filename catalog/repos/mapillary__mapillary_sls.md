@@ -2,7 +2,7 @@
 
 `repo:mapillary/mapillary_sls` - <https://github.com/mapillary/mapillary_sls>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 138 | Jupyter Notebook | MIT | 2026-04-13 | False | production | medium |
 
@@ -10,7 +10,7 @@ Tools for the Mapillary Street-level Sequences dataset for lifelong visual place
 
 **Why it matters:** Large, diverse street-level VPR benchmark used to train many current VPR models.
 
-**Hackathon notes:** Dataset download needs registration on Mapillary.
+**Build notes:** Dataset download needs registration on Mapillary.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

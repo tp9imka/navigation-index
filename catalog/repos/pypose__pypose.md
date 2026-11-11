@@ -2,7 +2,7 @@
 
 `repo:pypose/pypose` - <https://github.com/pypose/pypose>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,621 | Python | Apache-2.0 | 2026-11-06 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ PyTorch library for differentiable robotics on Lie groups: IMU pre-integration, 
 
 **Why it matters:** The base AirIO and AirIMU are built on; lets a team train a learned inertial or dynamics model end to end through the filter.
 
-**Hackathon notes:** Apache-2.0, pip install pypose. Use pp.module.IMUPreintegrator to propagate and plug a learned velocity in as an EKF update.
+**Build notes:** Apache-2.0, pip install pypose. Use pp.module.IMUPreintegrator to propagate and plug a learned velocity in as an EKF update.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

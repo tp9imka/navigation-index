@@ -2,7 +2,7 @@
 
 `repo:przemyslawpiekarski/starlink-leo-pnt` - <https://github.com/przemyslawpiekarski/starlink-leo-pnt>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | Python | ? | 2026-03-11 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 **Why it matters:** One of the very few open end-to-end attempts at Starlink-based PNT, a hot GNSS-alternative topic.
 
-**Hackathon notes:** Needs an SDR that covers Ku-band via LNB, or use the simulation path with TLEs. Treat claims as unverified.
+**Build notes:** Needs an SDR that covers Ku-band via LNB, or use the simulation path with TLEs. Treat claims as unverified.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
@@ -26,10 +26,10 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) (alternative_to)
 - [gr-iridium](../../catalog/repos/muccc__gr-iridium.md) (alternative_to)

@@ -2,7 +2,7 @@
 
 `repo:eliatarasov/eskf` - <https://github.com/EliaTarasov/ESKF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 183 | C++ | ? | 2019-03-01 | False | archived | medium |
 
@@ -10,7 +10,7 @@ ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magn
 
 **Why it matters:** PX4-style estimator outside the autopilot, easy to feed from a bag.
 
-**Hackathon notes:** ROS 1, unmaintained since 2019.
+**Build notes:** ROS 1, unmaintained since 2019.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

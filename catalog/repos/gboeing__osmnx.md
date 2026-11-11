@@ -2,7 +2,7 @@
 
 `repo:gboeing/osmnx` - <https://github.com/gboeing/osmnx>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 5,893 | Python | MIT | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Download, model and analyze street networks and other OSM features as NetworkX g
 
 **Why it matters:** Rapid road/path graph construction for planners and task allocation experiments in Python.
 
-**Hackathon notes:** pip install osmnx; needs internet for Overpass unless you load a local OSM file.
+**Build notes:** pip install osmnx; needs internet for Overpass unless you load a local OSM file.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ Download, model and analyze street networks and other OSM features as NetworkX g
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

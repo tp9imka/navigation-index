@@ -2,7 +2,7 @@
 
 `repo:mavlink/mavsdk` - <https://github.com/mavlink/MAVSDK>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 963 | C++ | BSD-3-Clause | 2026-11-09 | False | production | high |
 
@@ -10,7 +10,7 @@ C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetr
 
 **Why it matters:** Clean API for companion-side autonomy against PX4 (and to a degree ArduPilot) without ROS.
 
-**Hackathon notes:** For hackathon speed use the Python binding: since MAVSDK v4, `pip install mavsdk` installs a native binding built in this repo (sync API in `mavsdk`, asyncio in `mavsdk.asyncio`), with no mavsdk_server process. The older gRPC-based MAVSDK-Python with a bundled mavsdk_server lives on as `mavsdk-grpc`.
+**Build notes:** For hackathon speed use the Python binding: since MAVSDK v4, `pip install mavsdk` installs a native binding built in this repo (sync API in `mavsdk`, asyncio in `mavsdk.asyncio`), with no mavsdk_server process. The older gRPC-based MAVSDK-Python with a bundled mavsdk_server lives on as `mavsdk-grpc`.
 
 ## Deep dives
 

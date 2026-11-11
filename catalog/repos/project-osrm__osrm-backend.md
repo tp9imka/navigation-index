@@ -2,7 +2,7 @@
 
 `repo:project-osrm/osrm-backend` - <https://github.com/project-osrm/osrm-backend>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8,200 | C++ | BSD-2-Clause | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ High-performance road routing engine on OpenStreetMap data using contraction hie
 
 **Why it matters:** Offline road routing for ground vehicle convoy and logistics planning.
 
-**Hackathon notes:** Docker image + a Geofabrik regional extract gives a routing API in under an hour.
+**Build notes:** Docker image + a Geofabrik regional extract gives a routing API in under an hour.
 
 ## Deep dives
 
@@ -32,7 +32,7 @@ High-performance road routing engine on OpenStreetMap data using contraction hie
 
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OSMnx](../../catalog/repos/gboeing__osmnx.md) (alternative_to)
 - [Valhalla](../../catalog/repos/valhalla__valhalla.md) (alternative_to)

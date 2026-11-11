@@ -2,7 +2,7 @@
 
 `repo:zju3dv/loftr` - <https://github.com/zju3dv/LoFTR>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,979 | Jupyter Notebook | Apache-2.0 | 2024-05-31 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Detector-free transformer matcher producing dense-ish correspondences, good on l
 
 **Why it matters:** Low-texture terrain (fields, desert) breaks keypoint matchers; detector-free matching helps.
 
-**Hackathon notes:** Also available in kornia for easy use.
+**Build notes:** Also available in kornia for easy use.
 
 ## Deep dives
 

@@ -17,7 +17,7 @@ NATO's 2021 AI strategy summary setting six principles of responsible use: lawfu
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

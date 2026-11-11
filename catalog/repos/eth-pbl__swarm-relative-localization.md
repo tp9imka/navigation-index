@@ -2,7 +2,7 @@
 
 `repo:eth-pbl/swarm-relative-localization` - <https://github.com/ETH-PBL/swarm-relative-localization>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 11 | Python | GPL-3.0 | 2024-03-25 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Infrastructure-less relative localization for decentralized swarm formation of n
 
 **Why it matters:** Relative positioning without anchors, the realistic case for field swarms.
 
-**Hackathon notes:** The repo holds only a Python demo of the algorithm (demo.py) and a PDF supplement; no Crazyflie or UWB firmware is included.
+**Build notes:** The repo holds only a Python demo of the algorithm (demo.py) and a PDF supplement; no Crazyflie or UWB firmware is included.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
@@ -25,8 +25,8 @@ Infrastructure-less relative localization for decentralized swarm formation of n
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [GEARdrones](../../catalog/repos/excitablecell__geardrones.md) (alternative_to)
 - [UWB Software Library (USL)](../../catalog/repos/vladniculescu__uwb-software-library.md) (integrates_with)
 - [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)

@@ -2,7 +2,7 @@
 
 `repo:syroco-isir/flight-speed-estimation-airflow` - <https://github.com/SyRoCo-ISIR/Flight-Speed-Estimation-Airflow>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | MIT | 2022-05-13 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ GRU network that estimates multirotor flight speed from thermal anemometer readi
 
 **Why it matters:** A cheap airflow sensor as a velocity source for multirotors is a rare angle; the preprint reports 5.7 m drift over a 203 s indoor flight.
 
-**Hackathon notes:** MIT license but last push 2022, zero stars, needs custom hardware. Reference only.
+**Build notes:** MIT license but last push 2022, zero stars, needs custom hardware. Reference only.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

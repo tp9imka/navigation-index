@@ -2,7 +2,7 @@
 
 `repo:montecri/gnsstimeserver` - <https://github.com/Montecri/GNSSTimeServer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 242 | C | MIT | 2026-11-01 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ESP8266/ESP32 stratum-1 time server fed by a GNSS module and a TCXO-backed RTC, 
 
 **Why it matters:** Cheapest portable GNSS-fed time source for a field demo network.
 
-**Hackathon notes:** Bill of materials and firmware in the repo; an ESP32 plus GNSS module with PPS. Accuracy is MCU-class, not NIC hardware timestamping.
+**Build notes:** Bill of materials and firmware in the repo; an ESP32 plus GNSS module with PPS. Accuracy is MCU-class, not NIC hardware timestamping.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

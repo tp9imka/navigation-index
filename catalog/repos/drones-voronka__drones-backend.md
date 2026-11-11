@@ -2,7 +2,7 @@
 
 `repo:drones-voronka/drones-backend` - <https://github.com/drones-voronka/drones-backend>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-06-28 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Another team's take on the 2026 'Полёт вслепую' case, built as a gro
 
 **Why it matters:** An architecture reference for putting a TRN estimator behind a real telemetry pipeline and operator panel rather than in a notebook.
 
-**Hackathon notes:** docker compose up brings the whole stack; heavy for a 24-48h build. Useful mainly for the particle-filter TRN module and the MAVSDK bridge pattern. Docs in docs/ (domain.md covers TRN).
+**Build notes:** docker compose up brings the whole stack; heavy for a 24-48h build. Useful mainly for the particle-filter TRN module and the MAVSDK bridge pattern. Docs in docs/ (domain.md covers TRN).
 
 ## Deep dives
 
@@ -32,12 +32,12 @@ Another team's take on the 2026 'Полёт вслепую' case, built as a gro
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [KROT (Где мы, Бариста?) - terrain correlation from radar altimeter](../../catalog/repos/rub1kub__where-are-we-barista.md) (alternative_to)
 - [Хакатон: трек «Робототехника и сенсорика», кейс «Полёт вслепую»](../../catalog/resources/iqarium-polet-vslepuyu-hackathon-2026.md) (has_code)

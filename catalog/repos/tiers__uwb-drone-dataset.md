@@ -2,7 +2,7 @@
 
 `repo:tiers/uwb-drone-dataset` - <https://github.com/TIERS/uwb-drone-dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 110 | C | ? | 2022-09-14 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Dataset, ROS nodes and DWM1001 firmware from the IROS 2020 paper on UWB localiza
 
 **Why it matters:** Cheap Decawave hardware recipe plus real flight data for UWB-aided GNSS-denied flight.
 
-**Hackathon notes:** Use the data to tune a UWB EKF before buying hardware. No licence file. Not updated since 2022.
+**Build notes:** Use the data to tune a UWB EKF before buying hardware. No licence file. Not updated since 2022.
 
 **Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

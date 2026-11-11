@@ -2,7 +2,7 @@
 
 `repo:gao-tech1/graphgnsslib_leo_v1.2` - <https://github.com/Gao-tech1/GraphGNSSLib_LEO_V1.2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 20 | C | MIT | 2025-07-25 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Factor-graph positioning combining real GNSS pseudorange/Doppler with simulated 
 
 **Why it matters:** Shows how LEO observations slot into a factor graph alongside degraded GNSS.
 
-**Hackathon notes:** C/ROS build; reference.
+**Build notes:** C/ROS build; reference.
 
 **Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [GNSS positioning](../../catalog/concepts/gnss.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

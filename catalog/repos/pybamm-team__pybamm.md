@@ -2,7 +2,7 @@
 
 `repo:pybamm-team/pybamm` - <https://github.com/pybamm-team/PyBaMM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,727 | Python | BSD-3-Clause | 2026-11-06 | False | production | medium |
 
@@ -10,7 +10,7 @@ Python battery modelling library: equivalent-circuit to electrochemical (SPM, DF
 
 **Why it matters:** Lets an energy-aware planner use a battery model with voltage sag and capacity effects instead of a fixed watt-hour budget.
 
-**Hackathon notes:** License BSD-3-Clause (gh api). Last push 2026-11-06. pip install pybamm. Electrochemical models are overkill for routing; an equivalent-circuit model fitted to a pack datasheet is enough. Use it offline to make a remaining-range lookup.
+**Build notes:** License BSD-3-Clause (gh api). Last push 2026-11-06. pip install pybamm. Electrochemical models are overkill for routing; an equivalent-circuit model fitted to a pack datasheet is enough. Use it offline to make a remaining-range lookup.
 
 **Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

@@ -2,7 +2,7 @@
 
 `repo:opendatacube/odc-stac` - <https://github.com/opendatacube/odc-stac>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 207 | Python | Apache-2.0 | 2026-10-27 | False | production | medium |
 
@@ -10,7 +10,7 @@ Loads STAC items into xarray datasets with reprojection, resampling and mosaicki
 
 **Why it matters:** Turn a STAC search into a ready, aligned raster stack for map-matching experiments.
 
-**Hackathon notes:** Works with Dask for larger AOIs.
+**Build notes:** Works with Dask for larger AOIs.
 
 **Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

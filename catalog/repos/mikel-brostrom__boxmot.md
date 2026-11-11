@@ -2,7 +2,7 @@
 
 `repo:mikel-brostrom/boxmot` - <https://github.com/mikel-brostrom/boxmot>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8,326 | Python | AGPL-3.0 | 2026-11-04 | False | production | high |
 
@@ -10,7 +10,7 @@ Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SO
 
 **Why it matters:** Drop-in visual tracking for camera-based drone detection.
 
-**Hackathon notes:** pip install boxmot and wrap your detector; pick ByteTrack for speed.
+**Build notes:** pip install boxmot and wrap your detector; pick ByteTrack for speed.
 
 ## Deep dives
 
@@ -31,10 +31,10 @@ Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SO
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ByteTrack](../../catalog/repos/foundationvision__bytetrack.md) (integrates_with)
 - [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) (integrates_with)

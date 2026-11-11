@@ -2,7 +2,7 @@
 
 `repo:px4/px4-ecl` - <https://github.com/PX4/PX4-ECL>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 545 | C++ | BSD-3-Clause | 2024-05-01 | True | archived | low |
 
@@ -10,7 +10,7 @@ Former home of PX4's estimation and control library including the EKF2 navigatio
 
 **Why it matters:** Its history and docs remain a readable reference for the EKF2 derivation (SymPy-generated equations).
 
-**Hackathon notes:** Read the current EKF2 in PX4-Autopilot src/modules/ekf2 instead; use this for history.
+**Build notes:** Read the current EKF2 in PX4-Autopilot src/modules/ekf2 instead; use this for history.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

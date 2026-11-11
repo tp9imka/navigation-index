@@ -2,7 +2,7 @@
 
 `repo:huang-chuan/mainsvsmagekf` - <https://github.com/Huang-Chuan/MAINSvsMAGEKF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 45 | MATLAB | NOASSERTION | 2025-06-02 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Magnetic-field aided inertial navigation system for indoor positioning, compared
 
 **Why it matters:** Magnetic field anomalies as a GNSS-free position aid indoors.
 
-**Hackathon notes:** MATLAB with eight recorded datasets in data/. Clone with --recurse-submodules (MAINS is a submodule). MAINS code is GPL-3.0, MAGEKF Apache-2.0. Test on your own magnetometer arrays.
+**Build notes:** MATLAB with eight recorded datasets in data/. Clone with --recurse-submodules (MAINS is a submodule). MAINS code is GPL-3.0, MAGEKF Apache-2.0. Test on your own magnetometer arrays.
 
 **Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

@@ -28,10 +28,10 @@ Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apar
 ## Referenced by
 
 - [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [NOAA NGS CORS network RINEX data archive](../../catalog/resources/noaa-ngs-cors-rinex.md) (dataset_for)
 - [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) (uses)

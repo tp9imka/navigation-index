@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/chrony/chrony` - <https://gitlab.com/chrony/chrony>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C | ? | ? | ? | production | high |
 
@@ -10,7 +10,7 @@ NTP client and server that also disciplines the system clock from reference cloc
 
 **Why it matters:** The default Linux time daemon on most distributions; combining a GNSS refclock with several NTS servers is the quickest way to get a clock that notices when one source lies.
 
-**Hackathon notes:** Configure `refclock PPS /dev/pps0 lock NMEA` plus `refclock SHM 0` from gpsd, add `server ... nts` lines, then `chronyc sources -v` and `chronyc tracking` show offset, frequency and which sources are rejected. Good live demo of source selection when one GNSS source is walked off.
+**Build notes:** Configure `refclock PPS /dev/pps0 lock NMEA` plus `refclock SHM 0` from gpsd, add `server ... nts` lines, then `chronyc sources -v` and `chronyc tracking` show offset, frequency and which sources are rejected. Good live demo of source selection when one GNSS source is walked off.
 
 ## Deep dives
 

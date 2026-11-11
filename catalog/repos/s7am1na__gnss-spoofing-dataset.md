@@ -2,7 +2,7 @@
 
 `repo:s7am1na/gnss-spoofing-dataset` - <https://github.com/S7AM1NA/GNSS-Spoofing-Dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4 |  | MIT | 2025-12-07 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 **Why it matters:** Labelled smartphone spoofing data is scarce; this enables training and testing detectors without generating signals.
 
-**Hackathon notes:** Load logs with gnss_lib_py and build a consistency-check or ML detector. Verify labelling and scenario details in the README before trusting results.
+**Build notes:** Load logs with gnss_lib_py and build a consistency-check or ML detector. Verify labelling and scenario details in the README before trusting results.
 
 ## Deep dives
 
@@ -29,9 +29,9 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (explains)
 

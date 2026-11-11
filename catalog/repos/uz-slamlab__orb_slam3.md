@@ -2,7 +2,7 @@
 
 `repo:uz-slamlab/orb_slam3` - <https://github.com/UZ-SLAMLab/ORB_SLAM3>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 9,234 | C++ | GPL-3.0 | 2024-07-24 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-
 
 **Why it matters:** Still the most cited open VI-SLAM system; a solid GNSS-denied drift baseline for drones and ground robots.
 
-**Hackathon notes:** Build against Pangolin, OpenCV and Eigen; expect a few compile fixes. Run on EuRoC or TUM-VI first, then your own camera after Kalibr calibration. Upstream sees little activity.
+**Build notes:** Build against Pangolin, OpenCV and Eigen; expect a few compile fixes. Run on EuRoC or TUM-VI first, then your own camera after Kalibr calibration. Upstream sees little activity.
 
 ## Deep dives
 
@@ -33,7 +33,7 @@ Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)

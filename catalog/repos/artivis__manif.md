@@ -2,7 +2,7 @@
 
 `repo:artivis/manif` - <https://github.com/artivis/manif>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,828 | C++ | MIT | 2026-08-05 | False | production | high |
 
@@ -10,7 +10,7 @@ Header-only C++11 library for Lie theory (SO2, SE2, SO3, SE3, SE_2(3) and more) 
 
 **Why it matters:** Correct on-manifold Jacobians for custom ESKF or factor-graph code.
 
-**Hackathon notes:** Header-only C++; Python bindings (manifpy) via conda install -c conda-forge manifpy or pip install from a clone - there is no PyPI package. Use alongside the micro Lie theory paper.
+**Build notes:** Header-only C++; Python bindings (manifpy) via conda install -c conda-forge manifpy or pip install from a clone - there is no PyPI package. Use alongside the micro Lie theory paper.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:radagastttt/terrain-relative-navigation` - <https://github.com/radagastttt/terrain-relative-navigation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | ? | 2026-11-02 | False | educational | high |
 
@@ -10,7 +10,7 @@ Personal Python prototype of terrain-relative navigation: matches a height profi
 
 **Why it matters:** Clean, self-contained particle-filter TRN with a noise model, a good teaching companion to the hackathon correlation solutions.
 
-**Hackathon notes:** Laptop-only; load a GeoTIFF or generate a synthetic DEM. Swap its measurement model for real radar-altimeter logs to compare against NCC-based TERCOM.
+**Build notes:** Laptop-only; load a GeoTIFF or generate a synthetic DEM. Swap its measurement model for real radar-altimeter logs to compare against NCC-based TERCOM.
 
 ## Deep dives
 
@@ -30,12 +30,12 @@ Personal Python prototype of terrain-relative navigation: matches a height profi
 
 ## Referenced by
 
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 
 _Indexed by lane(s): ua-ru-round2_

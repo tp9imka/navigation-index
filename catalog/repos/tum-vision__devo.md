@@ -2,7 +2,7 @@
 
 `repo:tum-vision/devo` - <https://github.com/tum-vision/DEVO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 121 | Python | MIT | 2024-08-11 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Deep Event Visual Odometry: learned monocular event-only VO trained on simulated
 
 **Why it matters:** Event-only odometry without frames, useful at night or under strobing light.
 
-**Hackathon notes:** PyTorch + CUDA; pretrained checkpoint available.
+**Build notes:** PyTorch + CUDA; pretrained checkpoint available.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

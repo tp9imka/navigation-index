@@ -35,12 +35,12 @@ Defines the AFRL/MIT MagNav challenge: remove the aircraft's own magnetic field 
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (evaluated_on)
 - [Absolute Positioning Using the Earth's Magnetic Anomaly Field](../../catalog/resources/canciani-afit-magnetic-anomaly-dissertation-2016.md) (same_author)
 - [DIU launches new emerging tech portfolio, solicits industry for quantum sensing capabilities](../../catalog/resources/diu-transition-quantum-sensing-2024.md) (cites)

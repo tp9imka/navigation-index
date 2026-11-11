@@ -2,7 +2,7 @@
 
 `repo:px4/px4_msgs` - <https://github.com/PX4/px4_msgs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 163 | Shell | BSD-3-Clause | 2026-11-05 | False | production | high |
 
@@ -10,7 +10,7 @@ ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bri
 
 **Why it matters:** Required to talk to PX4 natively from ROS 2 (e.g. VehicleOdometry for external vision).
 
-**Hackathon notes:** Match the branch to your PX4 version or messages will mismatch.
+**Build notes:** Match the branch to your PX4 version or messages will mismatch.
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 

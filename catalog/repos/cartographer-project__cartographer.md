@@ -2,7 +2,7 @@
 
 `repo:cartographer-project/cartographer` - <https://github.com/cartographer-project/cartographer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8,005 | C++ | Apache-2.0 | 2024-01-05 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across m
 
 **Why it matters:** Widely deployed 2D LiDAR SLAM for indoor and warehouse robots.
 
-**Hackathon notes:** Project is in maintenance mode with little activity. Still available via ROS packages and works for 2D indoor mapping.
+**Build notes:** Project is in maintenance mode with little activity. Still available via ROS packages and works for 2D indoor mapping.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 

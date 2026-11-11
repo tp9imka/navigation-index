@@ -2,7 +2,7 @@
 
 `repo:fengyee/implicitterrainv2` - <https://github.com/Fengyee/implicitterrainv2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | MIT | 2026-09-12 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Code for wavelet-guided adaptive neural terrain fields with derivative-aware tra
 
 **Why it matters:** MIT neural DEM representation with good gradients, the piece a compressed-map TRN POC needs.
 
-**Hackathon notes:** MIT. Fit fields per GLO-30 window and swap them into terrain-heightmap-pf. Training time on CPU/MPS not measured.
+**Build notes:** MIT. Fit fields per GLO-30 window and swap them into terrain-heightmap-pf. Training time on CPU/MPS not measured.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

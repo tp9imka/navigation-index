@@ -2,7 +2,7 @@
 
 `repo:hstm/terrain-nav-preprocessing` - <https://github.com/hstm/terrain-nav-preprocessing>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4 | Python | MIT | 2025-12-17 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Preprocessing tools for terrain-referenced navigation, generating DEM tiles with
 
 **Why it matters:** Saves time preparing DEM data for TRN experiments.
 
-**Hackathon notes:** Use to build synthetic DEM test sets.
+**Build notes:** Use to build synthetic DEM test sets.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 

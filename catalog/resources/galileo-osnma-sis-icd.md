@@ -33,7 +33,7 @@ Defines Open Service Navigation Message Authentication: how TESLA-chain MACs and
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Galileo OSNMA Receiver Guidelines Issue 1.3](../../catalog/resources/galileo-osnma-receiver-guidelines.md) (part_of)

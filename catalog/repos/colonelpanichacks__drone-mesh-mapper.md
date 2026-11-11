@@ -2,7 +2,7 @@
 
 `repo:colonelpanichacks/drone-mesh-mapper` - <https://github.com/colonelpanichacks/drone-mesh-mapper>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 244 | Python | MIT | 2026-11-04 | False | active-research | high |
 
@@ -10,7 +10,7 @@ ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over 
 
 **Why it matters:** Cheap, distributed, off-grid drone-awareness network - very hackathon friendly hardware.
 
-**Hackathon notes:** ESP32 boards plus Meshtastic nodes cost little; flash and map in an afternoon.
+**Build notes:** ESP32 boards plus Meshtastic nodes cost little; flash and map in an afternoon.
 
 ## Deep dives
 

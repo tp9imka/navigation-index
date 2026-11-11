@@ -21,6 +21,6 @@ UZH's second-place AlphaPilot system: learned gate detection, nonlinear filterin
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

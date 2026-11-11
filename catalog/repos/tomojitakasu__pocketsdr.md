@@ -2,7 +2,7 @@
 
 `repo:tomojitakasu/pocketsdr` - <https://github.com/tomojitakasu/PocketSDR>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 536 | C | NOASSERTION | 2026-11-03 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKL
 
 **Why it matters:** Cheap path to multi-band raw IF capture and a readable receiver implementation, ideal for signal-level research.
 
-**Hackathon notes:** Software runs on recorded IF without the hardware; building the board is out of hackathon scope unless pre-built.
+**Build notes:** Software runs on recorded IF without the hardware; building the board is out of hackathon scope unless pre-built.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 

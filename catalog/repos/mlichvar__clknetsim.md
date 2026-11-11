@@ -2,7 +2,7 @@
 
 `repo:mlichvar/clknetsim` - <https://github.com/mlichvar/clknetsim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 37 | C | GPL-2.0 | 2026-10-20 | False | production | medium |
 
@@ -10,7 +10,7 @@ Clock and network simulator from the chrony author: runs real NTP/PTP daemons ag
 
 **Why it matters:** Lets a team test a time daemon's reaction to delay changes, steps or a lying server without hardware.
 
-**Hackathon notes:** Linux only (LD_PRELOAD); the chrony test suite shows usage patterns.
+**Build notes:** Linux only (LD_PRELOAD); the chrony test suite shows usage patterns.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

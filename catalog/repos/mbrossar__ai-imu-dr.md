@@ -2,7 +2,7 @@
 
 `repo:mbrossar/ai-imu-dr` - <https://github.com/mbrossar/ai-imu-dr>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,009 | Python | MIT | 2025-01-08 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Car dead reckoning from IMU only, using an invariant EKF whose noise covariances
 
 **Why it matters:** Ground vehicle navigation through GNSS outages using only the IMU.
 
-**Hackathon notes:** PyTorch; KITTI raw data needed. Clear demo of IMU-only drift reduction.
+**Build notes:** PyTorch; KITTI raw data needed. Clear demo of IMU-only drift reduction.
 
 ## Deep dives
 

@@ -2,7 +2,7 @@
 
 `repo:tiers/wildnav` - <https://github.com/TIERS/wildnav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 286 | Python | BSD-3-Clause | 2025-06-12 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Python pipeline that localizes a drone by matching its downward camera frames ag
 
 **Why it matters:** The canonical small, readable reference for absolute visual localization over non-urban terrain - exactly the 'visual GPS' building block a GNSS-denied team needs.
 
-**Hackathon notes:** Clone, drop in your own map tiles with corner coordinates and a few drone photos; runs on a laptop GPU. Brute-force tile search is slow - add a retrieval stage (AnyLoc/SALAD) to prune candidates.
+**Build notes:** Clone, drop in your own map tiles with corner coordinates and a few drone photos; runs on a laptop GPU. Brute-force tile search is slow - add a retrieval stage (AnyLoc/SALAD) to prune candidates.
 
 ## Deep dives
 
@@ -32,7 +32,7 @@ Python pipeline that localizes a drone by matching its downward camera frames ag
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)

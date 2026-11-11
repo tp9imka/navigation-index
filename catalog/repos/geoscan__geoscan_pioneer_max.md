@@ -2,7 +2,7 @@
 
 `repo:geoscan/geoscan_pioneer_max` - <https://github.com/geoscan/geoscan_pioneer_max>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 14 | CMake | MIT | 2024-03-15 | True | archived | low |
 
@@ -10,7 +10,7 @@ Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quad
 
 **Why it matters:** Shows how a Russian educational drone ecosystem packages ROS, mission tools and indoor positioning for schools and competitions.
 
-**Hackathon notes:** Hardware-specific; useful only as reference for packaging and docs. Last push March 2024.
+**Build notes:** Hardware-specific; useful only as reference for packaging and docs. Last push March 2024.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quad
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Дроны: Автономные беспилотные воздушные системы](../../catalog/resources/lektorium-geoscan-autonomous-drones-course.md) (uses)
 
 _Indexed by lane(s): ua-ru-sources_

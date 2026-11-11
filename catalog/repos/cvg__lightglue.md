@@ -2,7 +2,7 @@
 
 `repo:cvg/lightglue` - <https://github.com/cvg/LightGlue>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,868 | Python | Apache-2.0 | 2026-10-25 | False | production | high |
 
@@ -10,7 +10,7 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 
 **Why it matters:** The default fine-matching stage for drone-to-tile registration today: accurate and fast enough for near-real-time.
 
-**Hackathon notes:** Not on PyPI: install with `git clone https://github.com/cvg/LightGlue && pip install -e .`, or use the Hugging Face Transformers port. Use SuperPoint+LightGlue between a drone frame and top-k retrieved tiles, then RANSAC homography.
+**Build notes:** Not on PyPI: install with `git clone https://github.com/cvg/LightGlue && pip install -e .`, or use the Hugging Face Transformers port. Use SuperPoint+LightGlue between a drone frame and top-k retrieved tiles, then RANSAC homography.
 
 ## Deep dives
 
@@ -32,14 +32,14 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [AnyLoc](../../catalog/repos/anyloc__anyloc.md) (integrates_with)
 - [Glue Factory](../../catalog/repos/cvg__glue-factory.md) (same_org)

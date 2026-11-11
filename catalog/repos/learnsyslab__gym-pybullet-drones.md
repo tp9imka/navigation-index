@@ -2,7 +2,7 @@
 
 `repo:learnsyslab/gym-pybullet-drones` - <https://github.com/learnsyslab/gym-pybullet-drones>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,204 | Python | MIT | 2026-11-06 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 
 **Why it matters:** Lowest-friction multi-drone RL sandbox: pure Python, CPU-only, quick to modify.
 
-**Hackathon notes:** pip install in a venv and run examples within minutes. No photorealistic sensors; good for control, swarming and planning logic.
+**Build notes:** pip install in a venv and run examples within minutes. No photorealistic sensors; good for control, swarming and planning logic.
 
 ## Deep dives
 
@@ -30,11 +30,11 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [Genesis World](../../catalog/repos/genesis-embodied-ai__genesis-world.md) (alternative_to)

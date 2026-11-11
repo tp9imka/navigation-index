@@ -2,7 +2,7 @@
 
 `repo:gaowenliang/imu_utils` - <https://github.com/gaowenliang/imu_utils>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,750 | C++ | MIT | 2026-03-19 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ ROS package for analysing IMU performance with Allan variance to estimate noise 
 
 **Why it matters:** Common alternative to allan_variance_ros in VIO workflows.
 
-**Hackathon notes:** ROS 1, depends on Ceres; needs long static logs.
+**Build notes:** ROS 1, depends on Ceres; needs long static logs.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

@@ -2,7 +2,7 @@
 
 `repo:open-rmf/rmf_task` - <https://github.com/open-rmf/rmf_task>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 28 | C++ | Apache-2.0 | 2026-11-02 | False | production | medium |
 
@@ -10,7 +10,7 @@ Task allocation library from Open-RMF that assigns tasks to fleets of robots, ac
 
 **Why it matters:** Production-grade multi-robot task allocation with a fleet-level view, transferable from logistics to multi-vehicle missions.
 
-**Hackathon notes:** Part of the larger Open-RMF stack; worth it only if you want fleet management, otherwise use CBBA.
+**Build notes:** Part of the larger Open-RMF stack; worth it only if you want fleet management, otherwise use CBBA.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

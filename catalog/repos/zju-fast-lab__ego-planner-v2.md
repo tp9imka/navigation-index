@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/ego-planner-v2` - <https://github.com/ZJU-FAST-Lab/EGO-Planner-v2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 749 | C++ | GPL-3.0 | 2023-10-16 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based loc
 
 **Why it matters:** The current state of the ZJU B-spline / MINCO planner family that EGO-Planner and Fast-Planner started; shows how a full onboard planner is wired for real flights in clutter.
 
-**Hackathon notes:** License GPL-3.0 (gh api). Last push 2023-10-16. ROS 1 Noetic. Its bundled simulator runs without Gazebo, which makes a clutter-avoidance demo feasible in a day if the team already knows ROS. Needs a good pose: pair with the hub's VIO samples, and say so if the demo uses ground-truth odometry.
+**Build notes:** License GPL-3.0 (gh api). Last push 2023-10-16. ROS 1 Noetic. Its bundled simulator runs without Gazebo, which makes a clutter-avoidance demo feasible in a day if the team already knows ROS. Needs a good pose: pair with the hub's VIO samples, and say so if the demo uses ground-truth odometry.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

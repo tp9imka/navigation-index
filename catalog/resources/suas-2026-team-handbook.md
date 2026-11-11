@@ -16,4 +16,4 @@ Rules for the 2026 Student Unmanned Aerial Systems competition: GPS waypoint lap
 
 **Tags:** `suas`, `auvsi`, `competition`, `rules`, `waypoints`
 
-_Indexed by lane(s): loop-12_
+_Indexed by lane(s): competition-rules_

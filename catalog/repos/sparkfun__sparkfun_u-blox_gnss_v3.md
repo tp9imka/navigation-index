@@ -2,7 +2,7 @@
 
 `repo:sparkfun/sparkfun_u-blox_gnss_v3` - <https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 106 | C++ | NOASSERTION | 2026-09-19 | False | production | high |
 
@@ -10,7 +10,7 @@ Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configurat
 
 **Why it matters:** Easiest embedded route to an RTK-capable microcontroller node (ESP32 + F9P).
 
-**Hackathon notes:** Many examples, including NTRIP over Wi-Fi on ESP32. Good for a low-cost rover or base station.
+**Build notes:** Many examples, including NTRIP over Wi-Fi on ESP32. Good for a low-cost rover or base station.
 
 **Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 

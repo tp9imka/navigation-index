@@ -2,7 +2,7 @@
 
 `repo:maplibre/maplibre-gl-js` - <https://github.com/maplibre/maplibre-gl-js>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 12,042 | TypeScript | NOASSERTION | 2026-11-08 | False | production | high |
 
@@ -10,7 +10,7 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 
 **Why it matters:** Fast, license-clean 2D/2.5D web map for C2 dashboards, works fully offline with your own tiles.
 
-**Hackathon notes:** Pair with martin or tileserver-gl and a PMTiles extract for an offline basemap.
+**Build notes:** Pair with martin or tileserver-gl and a PMTiles extract for an offline basemap.
 
 ## Deep dives
 
@@ -32,10 +32,10 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
 - [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) (alternative_to)

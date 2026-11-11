@@ -2,7 +2,7 @@
 
 `repo:atsushisakai/pythonrobotics` - <https://github.com/atsushisakai/pythonrobotics>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 30,875 | Python | NOASSERTION | 2026-11-04 | False | educational | high |
 
@@ -10,7 +10,7 @@ Large collection of readable Python implementations of robotics algorithms: loca
 
 **Why it matters:** Best teaching and prototyping resource; copy a planner or filter into a hackathon prototype in minutes.
 
-**Hackathon notes:** Pure numpy/matplotlib; no build. Good for a quick 2D planner over a rasterized DEM.
+**Build notes:** Pure numpy/matplotlib; no build. Good for a quick 2D planner over a rasterized DEM.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
@@ -24,7 +24,7 @@ Large collection of readable Python implementations of robotics algorithms: loca
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)

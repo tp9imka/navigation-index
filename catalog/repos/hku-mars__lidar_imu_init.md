@@ -2,7 +2,7 @@
 
 `repo:hku-mars/lidar_imu_init` - <https://github.com/hku-mars/LiDAR_IMU_Init>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,540 | C++ | GPL-2.0 | 2026-04-30 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Real-time LiDAR-inertial initialization estimating extrinsics, time offset, grav
 
 **Why it matters:** Removes the extrinsic-calibration blocker when bolting a LiDAR and IMU onto a new platform.
 
-**Hackathon notes:** Builds like FAST_LIO; feed a bag with aggressive motion at start.
+**Build notes:** Builds like FAST_LIO; feed a bag with aggressive motion at start.
 
 **Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

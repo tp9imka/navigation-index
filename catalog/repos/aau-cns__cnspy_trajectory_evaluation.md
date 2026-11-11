@@ -2,7 +2,7 @@
 
 `repo:aau-cns/cnspy_trajectory_evaluation` - <https://github.com/aau-cns/cnspy_trajectory_evaluation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | Python | GPL-3.0 | 2024-09-10 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Python package that aligns an estimated trajectory with ground truth from CSV fi
 
 **Why it matters:** Consistency checks (NEES) matter as much as RMSE when judging a GNSS-denied filter; this tool computes both from plain CSV.
 
-**Hackathon notes:** pip install cnspy-trajectory-evaluation; estimated CSV must carry pose covariance. Use evo for quick plots, this when you need filter consistency.
+**Build notes:** pip install cnspy-trajectory-evaluation; estimated CSV must carry pose covariance. Use evo for quick plots, this when you need filter consistency.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

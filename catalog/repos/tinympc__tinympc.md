@@ -2,7 +2,7 @@
 
 `repo:tinympc/tinympc` - <https://github.com/TinyMPC/TinyMPC>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,120 | C++ | MIT | 2026-09-02 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ ADMM-based convex MPC solver small enough for microcontrollers, with Python bind
 
 **Why it matters:** Shows MPC running on autopilot-class hardware rather than a companion computer, which answers the 'how does this run on the aircraft' question.
 
-**Hackathon notes:** License MIT (gh api). Last push 2026-09-02. Linear (linearised) MPC only, so it suits hover / tracking around a trim, not large manoeuvres. A separate TinyMPC/tinympc-px4 repo exists (3 stars, MIT, not reviewed here).
+**Build notes:** License MIT (gh api). Last push 2026-09-02. Linear (linearised) MPC only, so it suits hover / tracking around a trim, not large manoeuvres. A separate TinyMPC/tinympc-px4 repo exists (3 stars, MIT, not reviewed here).
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

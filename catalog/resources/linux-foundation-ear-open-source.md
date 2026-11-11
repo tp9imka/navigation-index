@@ -22,8 +22,8 @@ Practical guide to how US Export Administration Regulations treat published open
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [U.S. Export Controls and "Published" Encryption Source Code Explained](../../catalog/resources/eff-export-encryption-source-explained.md) (cites)
 
 _Indexed by lane(s): defense-context_

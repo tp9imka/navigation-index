@@ -2,7 +2,7 @@
 
 `repo:fabio-sim/lightglue-onnx` - <https://github.com/fabio-sim/LightGlue-ONNX>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 824 | Python | Apache-2.0 | 2026-07-30 | False | production | high |
 
@@ -10,7 +10,7 @@ ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED
 
 **Why it matters:** Fast learned matching on embedded hardware for visual geolocalization and VO.
 
-**Hackathon notes:** Download prebuilt ONNX models from Releases and run with onnxruntime-gpu or TensorRT; for export, the repo now uses uv (uv sync with export/cuda/trt groups) and a lightglue-onnx CLI.
+**Build notes:** Download prebuilt ONNX models from Releases and run with onnxruntime-gpu or TensorRT; for export, the repo now uses uv (uv sync with export/cuda/trt groups) and a lightglue-onnx CLI.
 
 ## Deep dives
 
@@ -29,7 +29,7 @@ ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

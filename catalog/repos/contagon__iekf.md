@@ -2,7 +2,7 @@
 
 `repo:contagon/iekf` - <https://github.com/contagon/iekf>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 72 | Python | ? | 2024-01-23 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Invariant Kalman filter implementation on SE(2) and SE(3).
 
 **Why it matters:** Small Python-side InEKF example for learning.
 
-**Hackathon notes:** Small research repo; use for learning the algorithm.
+**Build notes:** Small research repo; use for learning the algorithm.
 
 **Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

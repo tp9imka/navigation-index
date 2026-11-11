@@ -2,7 +2,7 @@
 
 `repo:gaoxiang12/slambook2` - <https://github.com/gaoxiang12/slambook2>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 6,774 | C++ | MIT | 2024-12-27 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie g
 
 **Why it matters:** One of the most-used hands-on routes into visual SLAM internals; good for bringing a team up to speed fast.
 
-**Hackathon notes:** Each chapter builds standalone; dependency versions (Pangolin, Sophus, g2o) are old - use the bundled 3rdparty or a Docker image.
+**Build notes:** Each chapter builds standalone; dependency versions (Pangolin, Sophus, g2o) are old - use the bundled 3rdparty or a Docker image.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 

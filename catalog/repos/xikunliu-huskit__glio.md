@@ -2,7 +2,7 @@
 
 `repo:xikunliu-huskit/glio` - <https://github.com/XikunLiu-huskit/GLIO>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 445 | C | ? | 2023-12-27 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free st
 
 **Why it matters:** Shows how raw GNSS measurements can be kept in the loop even when only a few satellites are visible.
 
-**Hackathon notes:** ROS 1 research code; needs raw GNSS observables in the data.
+**Build notes:** ROS 1 research code; needs raw GNSS observables in the data.
 
 **Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

@@ -2,7 +2,7 @@
 
 `repo:gisbi-kim/sc-lio-sam` - <https://github.com/gisbi-kim/SC-LIO-SAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 855 | C++ | ? | 2023-04-27 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ LIO-SAM combined with Scan Context loop closure for more reliable large-scale Li
 
 **Why it matters:** Practical recipe for adding a global descriptor to an existing LIO.
 
-**Hackathon notes:** ROS 1; same setup as LIO-SAM.
+**Build notes:** ROS 1; same setup as LIO-SAM.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 

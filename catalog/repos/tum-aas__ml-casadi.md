@@ -2,7 +2,7 @@
 
 `repo:tum-aas/ml-casadi` - <https://github.com/TUM-AAS/ml-casadi>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 254 | Python | MIT | 2023-11-01 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Bridges PyTorch models into CasADi and acados so a neural network can be part of
 
 **Why it matters:** Lets a team plug a learned aerodynamics or propulsion residual into an MPC without rewriting the network in CasADi.
 
-**Hackathon notes:** License MIT (gh api). Last push 2023-11-01. pip-installable per its README (not run here). Only worth it if the team has a residual model to learn from logs; otherwise a physics model is the honest baseline.
+**Build notes:** License MIT (gh api). Last push 2023-11-01. pip-installable per its README (not run here). Only worth it if the team has a residual model to learn from logs; otherwise a physics model is the honest baseline.
 
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

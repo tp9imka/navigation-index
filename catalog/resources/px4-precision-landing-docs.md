@@ -23,7 +23,7 @@ PX4 guide to landing on a marked target from IR-LOCK or a companion computer sen
 
 ## Referenced by
 
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
 
 _Indexed by lane(s): close-area-localization_

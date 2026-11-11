@@ -2,7 +2,7 @@
 
 `repo:bitcraze/positioning_dataset` - <https://github.com/bitcraze/positioning_dataset>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | archived | low |
 
@@ -10,7 +10,7 @@ Scripts and recordings that measure the accuracy and jitter of the Crazyflie Lig
 
 **Why it matters:** Gives a measured, not marketed, error budget for a cheap indoor absolute-position source; useful as a reference if the hackathon arena has Lighthouse base stations.
 
-**Hackathon notes:** No license in gh api; last push 2021-03. Read it for numbers and method, not as a dependency. Companion to Taffanel et al. 2021 (about 2-4 cm mean error vs mocap).
+**Build notes:** No license in gh api; last push 2021-03. Read it for numbers and method, not as a dependency. Companion to Taffanel et al. 2021 (about 2-4 cm mean error vs mocap).
 
 **Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

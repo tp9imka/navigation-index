@@ -2,7 +2,7 @@
 
 `repo:pendulum-project/statime` - <https://github.com/pendulum-project/statime>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 322 | Rust | NOASSERTION | 2026-11-03 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ A PTP (IEEE 1588-2019) implementation in Rust: a platform-agnostic library with 
 
 **Why it matters:** A second PTP stack to compare against linuxptp, and a route to PTP on embedded targets.
 
-**Hackathon notes:** Try the Linux daemon against a linuxptp grandmaster; library use needs more effort.
+**Build notes:** Try the Linux daemon against a linuxptp grandmaster; library use needs more effort.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 

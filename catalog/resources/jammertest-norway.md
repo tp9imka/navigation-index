@@ -32,14 +32,14 @@ Annual open field event where Norwegian agencies transmit real jamming, spoofing
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md) (integrates_with)
 - [FGI Jammer Test 2023 Repository](../../catalog/resources/fgi-jammertest-2023-repository.md) (part_of)

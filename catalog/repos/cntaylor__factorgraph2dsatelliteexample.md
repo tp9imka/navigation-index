@@ -2,7 +2,7 @@
 
 `repo:cntaylor/factorgraph2dsatelliteexample` - <https://github.com/cntaylor/factorGraph2DsatelliteExample>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 59 | Python | ? | 2026-01-15 | False | educational | medium |
 
@@ -10,7 +10,7 @@ Companion code to the NAVIGATION 2024 factor-graph tutorial: a simple orbit simu
 
 **Why it matters:** The shortest path from an EKF mindset to a factor graph, with the same problem solved both ways.
 
-**Hackathon notes:** No license file. Read and port the pattern; do not ship it.
+**Build notes:** No license file. Read and port the pattern; do not ship it.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

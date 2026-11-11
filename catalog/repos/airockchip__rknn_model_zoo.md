@@ -2,7 +2,7 @@
 
 `repo:airockchip/rknn_model_zoo` - <https://github.com/airockchip/rknn_model_zoo>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 2,886 | C | Apache-2.0 | 2026-10-20 | False | production | medium |
 
@@ -10,7 +10,7 @@ Rockchip's examples and converted models for its NPU (RK3588 and similar), with 
 
 **Why it matters:** Low-cost non-NVIDIA edge AI option common on small drones and UGVs.
 
-**Hackathon notes:** Needs rknn-toolkit2 for conversion; run demos on an RK3588 board.
+**Build notes:** Needs rknn-toolkit2 for conversion; run demos on an RK3588 board.
 
 **Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

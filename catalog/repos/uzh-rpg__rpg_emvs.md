@@ -2,7 +2,7 @@
 
 `repo:uzh-rpg/rpg_emvs` - <https://github.com/uzh-rpg/rpg_emvs>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 149 | C++ | ? | 2021-08-19 | False | archived | low |
 
@@ -10,7 +10,7 @@ Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event 
 
 **Why it matters:** Mapping from event cameras for depth in HDR scenes.
 
-**Hackathon notes:** ROS1; reference implementation.
+**Build notes:** ROS1; reference implementation.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

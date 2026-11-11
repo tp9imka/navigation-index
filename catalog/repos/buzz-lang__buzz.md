@@ -2,7 +2,7 @@
 
 `repo:buzz-lang/buzz` - <https://github.com/buzz-lang/Buzz>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 319 | C | MIT | 2026-04-01 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Domain-specific programming language for robot swarms with swarm-level primitive
 
 **Why it matters:** Expresses swarm behaviours compactly; used with ROS and drones in MIST Lab research.
 
-**Hackathon notes:** Builds cleanly; bindings to real robots require extra work.
+**Build notes:** Builds cleanly; bindings to real robots require extra work.
 
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 

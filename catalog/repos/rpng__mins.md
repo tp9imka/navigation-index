@@ -2,7 +2,7 @@
 
 `repo:rpng/mins` - <https://github.com/rpng/MINS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 814 | C++ | GPL-3.0 | 2026-10-23 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 
 **Why it matters:** Directly relevant to assured PNT: one estimator that degrades gracefully as individual sensors (including GNSS) drop out.
 
-**Hackathon notes:** Start with the provided simulated data to see each sensor's contribution, then disable GNSS mid-run to demo a jamming scenario.
+**Build notes:** Start with the provided simulated data to see each sensor's contribution, then disable GNSS mid-run to demo a jamming scenario.
 
 ## Deep dives
 
@@ -30,7 +30,7 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)

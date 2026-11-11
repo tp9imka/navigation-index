@@ -2,7 +2,7 @@
 
 `repo:location-competition/indoor-location-competition-20` - <https://github.com/location-competition/indoor-location-competition-20>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 201 | Python | MIT | 2022-05-07 | False | archived | medium |
 
@@ -10,7 +10,7 @@ Data and baseline code from Microsoft Research's Indoor Location Competition 2.0
 
 **Why it matters:** Large real indoor dataset for Wi-Fi/magnetic fingerprinting plus PDR fusion.
 
-**Hackathon notes:** Sample data in repo; full set on Kaggle. Good for a fingerprinting + PDR fusion demo.
+**Build notes:** Sample data in repo; full set on Kaggle. Good for a fingerprinting + PDR fusion demo.
 
 ## Deep dives
 
@@ -25,7 +25,7 @@ Data and baseline code from Microsoft Research's Indoor Location Competition 2.0
 ## Referenced by
 
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): gap-fill_
 

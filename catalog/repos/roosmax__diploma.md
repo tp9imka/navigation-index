@@ -2,7 +2,7 @@
 
 `repo:roosmax/diploma` - <https://github.com/Roosmax/Diploma>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 0 | Python | MIT | 2026-07-22 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, cor
 
 **Why it matters:** Open, inspectable version of the 'ground beacons instead of satellites' approach that Ukrainian vendors also describe publicly (see Vyriy beacon navigation).
 
-**Hackathon notes:** Pure Python simulation, no hardware needed; good basis for a beacon-ranging + INS demo. No README; read Code/main.py and the thesis.
+**Build notes:** Pure Python simulation, no hardware needed; good basis for a beacon-ranging + INS demo. No README; read Code/main.py and the thesis.
 
 ## Deep dives
 
@@ -24,10 +24,10 @@ MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, cor
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
-- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Landscape: what reviewers already know](../../docs/landscape/README.md) (mentions)
+- [Sources in Ukrainian and Russian](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Vyriy створила маякову навігацію для дронів, яка працює без GPS і зв’язку](../../catalog/resources/devua-vyriy-beacon-navigation-2026.md) (explains)
 
 _Indexed by lane(s): ua-ru-sources_

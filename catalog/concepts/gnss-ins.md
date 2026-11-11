@@ -13,10 +13,10 @@ Loosely, tightly and deeply coupled GNSS/INS.
 
 ## Guides (4)
 
-- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09, for an autonomous flight navigation task.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
-- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What judges from industry already know.
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What reviewers from industry already know.
 
 ## Repositories (39)
 

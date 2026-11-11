@@ -2,7 +2,7 @@
 
 `repo:wtyhub/musenet` - <https://github.com/wtyhub/MuseNet>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 48 | Python | MIT | 2026-07-06 | False | research-prototype | medium |
 
@@ -10,7 +10,7 @@ Multiple-environment self-adaptive network for aerial-view geo-localization unde
 
 **Why it matters:** Weather robustness for drone-satellite matching.
 
-**Hackathon notes:** MIT code; needs University-1652 (request-only, research use). Its University-WX weather augmentation matches the UAVM 2024 multi-weather setting, but it is not named as the official challenge baseline.
+**Build notes:** MIT code; needs University-1652 (request-only, research use). Its University-WX weather augmentation matches the UAVM 2024 multi-weather setting, but it is not named as the official challenge baseline.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

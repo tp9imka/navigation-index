@@ -2,7 +2,7 @@
 
 `repo:gaoxiang12/slambook-en` - <https://github.com/gaoxiang12/slambook-en>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,938 | TeX | GPL-3.0 | 2025-07-07 | False | educational | medium |
 
@@ -10,7 +10,7 @@ English edition of Gao Xiang's open textbook on visual SLAM, from geometry and L
 
 **Why it matters:** Best free practical intro for a team ramping up on SLAM in a weekend.
 
-**Hackathon notes:** PDF and code exercises (slambook2 repo).
+**Build notes:** PDF and code exercises (slambook2 repo).
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 

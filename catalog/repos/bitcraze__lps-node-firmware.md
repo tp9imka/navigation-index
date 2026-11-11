@@ -2,7 +2,7 @@
 
 `repo:bitcraze/lps-node-firmware` - <https://github.com/bitcraze/lps-node-firmware>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 88 | C | LGPL-3.0 | 2026-11-04 | False | production | medium |
 
@@ -10,7 +10,7 @@ Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting
 
 **Why it matters:** Off-the-shelf UWB infrastructure for GNSS-denied indoor positioning tests.
 
-**Hackathon notes:** Needs Loco nodes; configure anchors with the Crazyflie client.
+**Build notes:** Needs Loco nodes; configure anchors with the Crazyflie client.
 
 **Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md)
 
@@ -25,8 +25,8 @@ Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
 - [uwb-localization (MAV swarm)](../../catalog/repos/lijx10__uwb-localization.md) (alternative_to)
 - [UTIL UWB TDoA dataset tools](../../catalog/repos/williamwenda__uwb_tdoa_dataset.md) (evaluated_on)

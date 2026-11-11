@@ -2,7 +2,7 @@
 
 `repo:kumarrobotics/jps3d` - <https://github.com/KumarRobotics/jps3d>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C++ | ? | ? | ? | archived | medium |
 
@@ -10,7 +10,7 @@ C++ Jump Point Search on 2D and 3D occupancy grids, plus a distance-map planner 
 
 **Why it matters:** JPS returns the same optimal grid path as A* on uniform grids while expanding far fewer nodes, which matters in 3D. The front end of several corridor-based drone planners (FASTER, Liu et al. RA-L 2017).
 
-**Hackathon notes:** License BSD-3-Clause, last push 2021-02-18 (gh api): unmaintained but small. Needs Eigen, yaml-cpp, Boost; ROS not required. In a Python build write A* with an octile heuristic instead; JPS is worth it only on large 3D grids.
+**Build notes:** License BSD-3-Clause, last push 2021-02-18 (gh api): unmaintained but small. Needs Eigen, yaml-cpp, Boost; ROS not required. In a Python build write A* with an octile heuristic instead; JPS is worth it only on large 3D grids.
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 

@@ -2,7 +2,7 @@
 
 `repo:dmmm1997/denseuav` - <https://github.com/Dmmm1997/DenseUAV>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 237 | Python | Apache-2.0 | 2025-12-12 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 **Why it matters:** Targets self-positioning (where am I) rather than target retrieval, with dense reference sampling.
 
-**Hackathon notes:** Good dataset for training a retrieval head for urban flights.
+**Build notes:** Good dataset for training a retrieval head for urban flights.
 
 ## Deep dives
 
@@ -28,8 +28,8 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (alternative_to)
 

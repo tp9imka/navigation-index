@@ -2,7 +2,7 @@
 
 `repo:mit-spark/loc-nerf` - <https://github.com/MIT-SPARK/Loc-NeRF>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 281 | Python | MIT | 2022-10-28 | False | archived | low |
 
@@ -10,7 +10,7 @@ Monte Carlo localization of a camera against a neural radiance field map.
 
 **Why it matters:** Reference for putting a neural field map inside a particle filter.
 
-**Hackathon notes:** MIT. Last push 2022-10. Read for the PF-against-neural-map loop; GPU and NeRF training needed to run.
+**Build notes:** MIT. Last push 2022-10. Read for the PF-against-neural-map loop; GPU and NeRF training needed to run.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 

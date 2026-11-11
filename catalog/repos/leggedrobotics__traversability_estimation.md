@@ -2,7 +2,7 @@
 
 `repo:leggedrobotics/traversability_estimation` - <https://github.com/leggedrobotics/traversability_estimation>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 520 | C++ | NOASSERTION | 2024-06-09 | False | archived | low |
 
@@ -10,7 +10,7 @@ ETH package that computes traversability from elevation maps using slope, roughn
 
 **Why it matters:** Simple, explainable geometric traversability baseline.
 
-**Hackathon notes:** ROS 1, dormant; reimplement the filters with grid_map.
+**Build notes:** ROS 1, dormant; reimplement the filters with grid_map.
 
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 

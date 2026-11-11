@@ -2,7 +2,7 @@
 
 `repo:gitlab.com/ohwr/project/wr-switch-sw` - <https://gitlab.com/ohwr/project/wr-switch-sw>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | C | ? | ? | ? | production | low |
 
@@ -10,7 +10,7 @@ Embedded Linux software for the White Rabbit switch, including the PTP daemon in
 
 **Why it matters:** Completes the White Rabbit picture for teams evaluating it as a distribution network.
 
-**Hackathon notes:** Hardware specific.
+**Build notes:** Hardware specific.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 

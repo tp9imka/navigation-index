@@ -2,7 +2,7 @@
 
 `repo:osqzss/gps-sdr-sim` - <https://github.com/osqzss/gps-sdr-sim>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,474 | C | MIT | 2025-01-26 | True | archived | high |
 
@@ -10,7 +10,7 @@ Generates GPS L1 C/A baseband IQ sample files for a user-defined static or movin
 
 **Why it matters:** The standard open test-signal generator for evaluating receiver behavior under simulated or spoofed conditions. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
-**Hackathon notes:** Generate IQ files and feed GNSS-SDR directly (no RF needed) to test detectors. Repository archived in 2025 but still works. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
+**Build notes:** Generate IQ files and feed GNSS-SDR directly (no RF needed) to test detectors. Repository archived in 2025 but still works. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
 ## Deep dives
 
@@ -30,8 +30,8 @@ Generates GPS L1 C/A baseband IQ sample files for a user-defined static or movin
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)

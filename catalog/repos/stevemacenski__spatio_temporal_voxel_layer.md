@@ -2,7 +2,7 @@
 
 `repo:stevemacenski/spatio_temporal_voxel_layer` - <https://github.com/stevemacenski/spatio_temporal_voxel_layer>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 879 | C++ | LGPL-2.1 | 2026-10-28 | False | production | medium |
 
@@ -10,7 +10,7 @@ Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obs
 
 **Why it matters:** Better 3D obstacle handling for ground robots in dynamic environments than the default voxel layer.
 
-**Hackathon notes:** Drop-in Nav2 plugin via apt.
+**Build notes:** Drop-in Nav2 plugin via apt.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 

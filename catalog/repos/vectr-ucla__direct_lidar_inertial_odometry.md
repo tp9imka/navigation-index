@@ -2,7 +2,7 @@
 
 `repo:vectr-ucla/direct_lidar_inertial_odometry` - <https://github.com/vectr-ucla/direct_lidar_inertial_odometry>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,067 | C++ | MIT | 2026-04-03 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Lightweight LiDAR-inertial odometry with coarse-to-fine continuous-time motion c
 
 **Why it matters:** Accurate and compute-light LIO for aerial and ground robots.
 
-**Hackathon notes:** ROS 1 on master; ROS 2 is supported on the repo's feature/ros2 branch.
+**Build notes:** ROS 1 on master; ROS 2 is supported on the repo's feature/ros2 branch.
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 

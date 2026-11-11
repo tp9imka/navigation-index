@@ -2,7 +2,7 @@
 
 `repo:ayushmankumar7/tercom-python` - <https://github.com/ayushmankumar7/TERCOM-python>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 8 | Python | ? | 2022-12-05 | False | educational | medium |
 
@@ -10,7 +10,7 @@ A single short OpenCV script that locates a Google Maps crop inside a larger map
 
 **Why it matters:** Minimal scene-matching (DSMAC-style) baseline; the TERCOM half exists only in the name.
 
-**Hackathon notes:** Small educational code; use for concept slides and quick baselines.
+**Build notes:** Small educational code; use for concept slides and quick baselines.
 
 **Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 

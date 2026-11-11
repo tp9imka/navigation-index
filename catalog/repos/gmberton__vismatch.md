@@ -2,7 +2,7 @@
 
 `repo:gmberton/vismatch` - <https://github.com/gmberton/vismatch>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 942 | Python | BSD-3-Clause | 2026-11-03 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Wrapper exposing 50+ image matching models behind one interface (formerly image-
 
 **Why it matters:** Swap SIFT, LightGlue, LoFTR, RoMa, MASt3R etc. with one line to find the best matcher for your imagery.
 
-**Hackathon notes:** Best first stop for matcher selection during the hackathon.
+**Build notes:** Best first stop for matcher selection during the hackathon.
 
 ## Deep dives
 
@@ -31,7 +31,7 @@ Wrapper exposing 50+ image matching models behind one interface (formerly image-
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)

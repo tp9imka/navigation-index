@@ -2,7 +2,7 @@
 
 `repo:pmonta/gnss-dsp-tools` - <https://github.com/pmonta/GNSS-DSP-tools>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 142 | Python | MIT | 2025-08-17 | False | active-research | high |
 
@@ -10,7 +10,7 @@ Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONA
 
 **Why it matters:** Broadest signal coverage among lightweight SDR toolkits; quick to test a new recording.
 
-**Hackathon notes:** Install numpy, scipy and numba (conda is the easy route), then run acquire-<system>-<signal>.py or track-*.py on an IQ file from any SDR. No compile step beyond Numba's JIT.
+**Build notes:** Install numpy, scipy and numba (conda is the easy route), then run acquire-<system>-<signal>.py or track-*.py on an IQ file from any SDR. No compile step beyond Numba's JIT.
 
 **Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 

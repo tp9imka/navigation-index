@@ -2,7 +2,7 @@
 
 `repo:sair-lab/airslam` - <https://github.com/sair-lab/AirSLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,218 | C++ | GPL-3.0 | 2025-11-19 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Point-and-line visual(-inertial) SLAM using learned features, designed for illum
 
 **Why it matters:** Targets lighting changes (dawn/dusk/night), a common failure mode for camera navigation.
 
-**Hackathon notes:** Needs an NVIDIA GPU (TensorRT). Docker recommended.
+**Build notes:** Needs an NVIDIA GPU (TensorRT). Docker recommended.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

@@ -2,7 +2,7 @@
 
 `repo:i2nav-whu/ob_gins` - <https://github.com/i2Nav-WHU/OB_GINS>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 655 | C++ | GPL-3.0 | 2024-03-27 | False | research-prototype | high |
 
@@ -10,7 +10,7 @@ Optimization-based GNSS/INS integration from Wuhan University i2Nav, using IMU p
 
 **Why it matters:** Shows the optimization alternative to KF-GINS on the same problem, useful for comparing filter vs smoother under outages.
 
-**Hackathon notes:** Same data formats as KF-GINS, so run both on one dataset for a side-by-side comparison.
+**Build notes:** Same data formats as KF-GINS, so run both on one dataset for a side-by-side comparison.
 
 ## Deep dives
 

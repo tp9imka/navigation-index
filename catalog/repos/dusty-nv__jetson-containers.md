@@ -2,7 +2,7 @@
 
 `repo:dusty-nv/jetson-containers` - <https://github.com/dusty-nv/jetson-containers>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 4,897 | Jupyter Notebook | NOASSERTION | 2026-11-02 | False | production | high |
 
@@ -10,7 +10,7 @@ Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs)
 
 **Why it matters:** Avoids the dependency hell of getting ROS and PyTorch onto a Jetson.
 
-**Hackathon notes:** Use autotag to pull a container matching your JetPack.
+**Build notes:** Use autotag to pull a container matching your JetPack.
 
 ## Deep dives
 

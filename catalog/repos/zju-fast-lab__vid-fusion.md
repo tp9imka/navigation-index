@@ -2,7 +2,7 @@
 
 `repo:zju-fast-lab/vid-fusion` - <https://github.com/ZJU-FAST-Lab/VID-Fusion>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 154 | C++ | GPL-3.0 | 2026-03-15 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Visual-inertial-dynamics odometry: adds a thrust-model (from measured rotor spee
 
 **Why it matters:** Shows how a propulsion model enters a VIO back-end as one more factor, and gives an external-force estimate that doubles as a wind or payload signal.
 
-**Hackathon notes:** GPL-3.0, ROS1 build. Needs hover data to identify the thrust coefficient. Useful as a reference design, not a 48h base.
+**Build notes:** GPL-3.0, ROS1 build. Needs hover data to identify the thrust coefficient. Useful as a reference design, not a 48h base.
 
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 

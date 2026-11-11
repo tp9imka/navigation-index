@@ -2,7 +2,7 @@
 
 `repo:locusrobotics/fuse` - <https://github.com/locusrobotics/fuse>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 885 | C++ | NOASSERTION | 2026-08-19 | False | production | medium |
 
@@ -10,7 +10,7 @@ ROS framework for sensor fusion as factor-graph optimization: plugin sensor mode
 
 **Why it matters:** A more flexible alternative to robot_localization EKF when you need delayed measurements, robust losses or custom constraints.
 
-**Hackathon notes:** Use the fuse tutorials or the ROSCon UK 2025 workshop Docker image; plugin config in YAML. Ceres dependency builds slowly.
+**Build notes:** Use the fuse tutorials or the ROSCon UK 2025 workshop Docker image; plugin config in YAML. Ceres dependency builds slowly.
 
 ## Deep dives
 

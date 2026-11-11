@@ -21,7 +21,7 @@ Describes the NeBula belief-space autonomy stack: multi-modal positioning, mappi
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): defense-context_

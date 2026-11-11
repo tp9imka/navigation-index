@@ -17,7 +17,7 @@ Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab 
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [A2RL Autonomous Drone Championship (official pages)](../../catalog/resources/a2rl-drone-championship-site.md) (part_of)
 - [CVAR-UPM Drone Team - A2RL](../../catalog/resources/cvar-upm-a2rl-team.md) (part_of)
 - [MAVLab wins the AlphaPilot AI challenge](../../catalog/resources/mavlab-alphapilot-win-2019.md) (same_author)

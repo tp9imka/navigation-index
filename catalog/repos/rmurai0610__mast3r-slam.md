@@ -2,7 +2,7 @@
 
 `repo:rmurai0610/mast3r-slam` - <https://github.com/rmurai0610/MASt3R-SLAM>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 3,242 | Python | NOASSERTION | 2025-11-09 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction pr
 
 **Why it matters:** Works with uncalibrated cameras, useful for opportunistic imagery from unknown cameras.
 
-**Hackathon notes:** Requires a capable NVIDIA GPU and model checkpoint downloads. Great demo value on handheld video. Licence: the code is CC BY-NC-SA 4.0 and the MASt3R checkpoints are also non-commercial - research and demo use only.
+**Build notes:** Requires a capable NVIDIA GPU and model checkpoint downloads. Great demo value on handheld video. Licence: the code is CC BY-NC-SA 4.0 and the MASt3R checkpoints are also non-commercial - research and demo use only.
 
 **Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

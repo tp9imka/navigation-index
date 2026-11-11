@@ -15,4 +15,4 @@ IEEE Transactions on Instrumentation and Measurement 2026 (doi 10.1109/TIM.2026.
 
 **Tags:** `kidnapped-robot`, `global-localization`, `scan-matching`, `peer-reviewed`
 
-_Indexed by lane(s): loop-57_
+_Indexed by lane(s): relocalization-prior-art_

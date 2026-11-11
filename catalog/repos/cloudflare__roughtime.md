@@ -2,7 +2,7 @@
 
 `repo:cloudflare/roughtime` - <https://github.com/cloudflare/roughtime>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 178 | Go | Apache-2.0 | 2026-04-28 | False | active-research | medium |
 
@@ -10,7 +10,7 @@ Go implementation of Roughtime, a protocol that returns signed coarse timestamps
 
 **Why it matters:** Gives a cryptographically checkable, coarse sanity bound on time, useful to catch large GNSS or NTP time shifts at boot.
 
-**Hackathon notes:** Query several public Roughtime servers at startup; reject GNSS time if it is outside their bound. Accuracy is seconds-level by design, not a fine timing source.
+**Build notes:** Query several public Roughtime servers at startup; reject GNSS time if it is outside their bound. Accuracy is seconds-level by design, not a fine timing source.
 
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 

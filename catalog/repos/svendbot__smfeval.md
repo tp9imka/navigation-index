@@ -2,7 +2,7 @@
 
 `repo:svendbot/smfeval` - <https://github.com/svendbot/smfeval>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | ? | Python | ? | ? | ? | active-research | medium |
 
@@ -10,7 +10,7 @@ Python tool that scores an odometry estimate together with its reported covarian
 
 **Why it matters:** Direct way to check whether the covariance a VIO or LIO stack publishes can be trusted before a planner or EKF2 consumes it. Ships covariance exporters for FAST-LIO2, Faster-LIO, Point-LIO and I2EKF-LO.
 
-**Hackathon notes:** License Apache-2.0 (gh api), created 2026-05. Depends only on NumPy and SciPy. README example (not run here): FAST-LIO2 on Oxford Spires christ-church-03 gives median NEES 1.04e3 vs calibrated 2.37, about 21x too tight per axis, 90% coverage 0.000. Use it on Day 1 recordings to set an honest covariance inflation before feeding VISION_POSITION_ESTIMATE.
+**Build notes:** License Apache-2.0 (gh api), created 2026-05. Depends only on NumPy and SciPy. README example (not run here): FAST-LIO2 on Oxford Spires christ-church-03 gives median NEES 1.04e3 vs calibrated 2.37, about 21x too tight per axis, 90% coverage 0.000. Use it on your first recordings to set an honest covariance inflation before feeding VISION_POSITION_ESTIMATE.
 
 **Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 

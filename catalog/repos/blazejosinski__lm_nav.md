@@ -2,7 +2,7 @@
 
 `repo:blazejosinski/lm_nav` - <https://github.com/blazejosinski/lm_nav>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 272 | Jupyter Notebook | MIT | 2025-01-14 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Code for LM-Nav, which composes a language model, CLIP and a visual navigation m
 
 **Why it matters:** Early demonstration of building language navigation from off-the-shelf pretrained parts.
 
-**Hackathon notes:** Mostly notebook-level; read for the architecture.
+**Build notes:** Mostly notebook-level; read for the architecture.
 
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 

@@ -2,7 +2,7 @@
 
 `repo:ardupilot/mavproxy` - <https://github.com/ArduPilot/MAVProxy>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 600 | Python | GPL-3.0 | 2026-11-07 | False | production | high |
 
@@ -10,7 +10,7 @@ Command-line, module-based ground station and MAVLink proxy with map, console an
 
 **Why it matters:** Default SITL console for ArduPilot; scriptable modules make it easy to prototype operator-side tools.
 
-**Hackathon notes:** Comes with sim_vehicle.py; write a module to add custom displays or alerts (e.g. GNSS anomaly warnings).
+**Build notes:** Comes with sim_vehicle.py; write a module to add custom displays or alerts (e.g. GNSS anomaly warnings).
 
 ## Deep dives
 
@@ -31,9 +31,9 @@ Command-line, module-based ground station and MAVLink proxy with map, console an
 
 ## Referenced by
 
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
 - [pymavlink](../../catalog/repos/ardupilot__pymavlink.md) (integrates_with)

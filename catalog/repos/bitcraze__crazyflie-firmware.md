@@ -2,7 +2,7 @@
 
 `repo:bitcraze/crazyflie-firmware` - <https://github.com/bitcraze/crazyflie-firmware>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 1,567 | C | GPL-3.0 | 2026-11-06 | False | production | high |
 
@@ -10,7 +10,7 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 
 **Why it matters:** Mature indoor research platform where UWB/Lighthouse localisation and GPS-free estimation are first-class; widely used in swarm papers.
 
-**Hackathon notes:** If you have Crazyflies, the Python lib gets you scripted flights in an hour. UWB Loco anchors make a good GNSS-denied testbed. Simulation via crazyswarm2 or the official SIL.
+**Build notes:** If you have Crazyflies, the Python lib gets you scripted flights in an hour. UWB Loco anchors make a good GNSS-denied testbed. Simulation via crazyswarm2 or the official SIL.
 
 ## Deep dives
 
@@ -33,13 +33,13 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 
 ## Referenced by
 
+- [Competition playbook: navigation and PNT under GNSS denial](../../docs/competition-playbook.md) (mentions)
 - [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
-- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
-- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
-- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [First-day intake: close-area A=>B, answers => stack](../../docs/first-day-intake.md) (mentions)
+- [The first three hours](../../docs/first-three-hours.md) (mentions)
 - [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
-- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)
 - [AI-deck GAP8 examples](../../catalog/repos/bitcraze__aideck-gap8-examples.md) (integrates_with)

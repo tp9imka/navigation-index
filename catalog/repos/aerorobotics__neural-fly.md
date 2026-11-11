@@ -2,7 +2,7 @@
 
 `repo:aerorobotics/neural-fly` - <https://github.com/aerorobotics/neural-fly>
 
-| stars | language | license | last push | archived | maturity | hackathon fit |
+| stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
 | 226 | Jupyter Notebook | ? | 2022-05-21 | False | research-prototype | low |
 
@@ -10,7 +10,7 @@ Training notebook and flight data for Neural-Fly, which learns a wind-invariant 
 
 **Why it matters:** Real flight logs at labelled wind speeds with motor commands, useful to test how a drag/propulsion model degrades as wind rises.
 
-**Hackathon notes:** No license file; README states personal and educational use only, written permission needed for further use. Fine for an offline wind-sensitivity plot, not for anything shipped.
+**Build notes:** No license file; README states personal and educational use only, written permission needed for further use. Fine for an offline wind-sensitivity plot, not for anything shipped.
 
 **Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 

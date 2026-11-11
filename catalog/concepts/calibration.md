@@ -12,7 +12,7 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 
 ## Guides (4)
 
-- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09, for an autonomous flight navigation task.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [Offline kit](../../templates/offline-kit/README.md) - Use this when you prepare laptops in the week or night before the event, or share a cache with teammates at the venue.
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4
