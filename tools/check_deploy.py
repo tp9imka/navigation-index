@@ -7,7 +7,9 @@ failed to load (fixed in a42d49f). Nothing checked the deployed site; this does.
 
 Checks (one output line each, PASS or FAIL; exit code 1 on any FAIL):
   1 missing-404      a missing path answers 404, not 200 HTML
-  2 pages            every page linked from the home page and site/nav.js answers 200 text/html
+  2 pages            every page linked from the home page and site/nav.js, plus REQUIRED_PAGES, answers
+                     200 text/html; each REDIRECT_PAGES stub reaches its target (HTTP redirect or
+                     <meta http-equiv="refresh"> to it)
   2 assets           every local script, stylesheet and JS module those pages load (with ?v=), plus
                      site/playground/worker.js, manifest.json and every manifest "files" src, answers
                      200; .js/.mjs/.json/.py/.css must not come back as HTML
@@ -51,6 +53,11 @@ IMPORT_RE = re.compile(r"""(?:\bimport|\bexport)\s[^;"'`]*?\bfrom\s*["']([^"']+)
 WORKER_URL_RE = re.compile(r"""\bWORKER_URL\s*=\s*["']([^"']+)["']""")
 WORKER_V_RE = re.compile(r"""\bWORKER_V\s*=\s*["']([^"']+)["']""")
 NAV_PATH_RE = re.compile(r"""\bpath:\s*["']([^"']*)["']""")
+# Pages that must exist even if nav.js or the home page stop linking them.
+REQUIRED_PAGES = ("site/results.html", "site/learn.html")
+# Old pages kept as redirect stubs: path => target (relative to the stub).
+REDIRECT_PAGES = {"site/showcase.html": "results.html"}
+META_REFRESH_RE = re.compile(r"""<meta\s+http-equiv=["']refresh["']\s+content=["']\s*\d+\s*;\s*url=([^"']+)["']""", re.I)
 
 
 class Resp:
@@ -185,7 +192,28 @@ def discover_pages(site, home):
     m = re.search(r"PAGES\s*=\s*\[(.*?)\];", nav_text, re.S)
     for p in NAV_PATH_RE.findall(m.group(1) if m else ""):
         pages.append(site.base + p)
+    pages += [site.base + p for p in REQUIRED_PAGES]
+    redirects = {site.base + p for p in REDIRECT_PAGES}
+    pages = [p for p in pages if p not in redirects]  # checked as redirects, not as pages
     return list(dict.fromkeys(pages)), list(dict.fromkeys(files))
+
+
+def redirect_problem(site, path, target):
+    """None if the stub at path reaches target by an HTTP redirect or a meta refresh, else the problem."""
+    url = site.base + path
+    want = urllib.parse.urljoin(url, target)
+    r = fetch(url)
+    if r.status != 200 or not is_html(r.ctype):
+        return f"{path} => {r.short()} (redirect stub to {target})"
+    if urllib.parse.urlsplit(r.url).path == urllib.parse.urlsplit(want).path:
+        return None  # the host redirected
+    m = META_REFRESH_RE.search(r.text())
+    if not m or urllib.parse.urlsplit(urllib.parse.urljoin(url, m.group(1).strip())).path != urllib.parse.urlsplit(want).path:
+        return f"{path} => no redirect to {target}"
+    t = fetch(want)
+    if t.status != 200 or not is_html(t.ctype):
+        return f"{path} => target {target} {t.short()}"
+    return None
 
 
 def js_imports(site, url, text):
@@ -215,6 +243,8 @@ def check_pages_assets(site):
                 assets.setdefault(u, f"loaded by {site.rel(p)}")
     for f in linked_files:
         assets.setdefault(f, "linked from home")
+    redirect_problems = [x for x in (redirect_problem(site, p, t) for p, t in REDIRECT_PAGES.items()) if x]
+    page_problems += redirect_problems
 
     ctx = {"manifest_url": None, "manifest": None, "bodies": {}}
     queue = list(assets)
@@ -262,8 +292,11 @@ def check_pages_assets(site):
         if not any(urllib.parse.urlsplit(a).path.endswith("/" + must) for a in assets):
             asset_problems.append(f"/{must} => not reached from any page (WORKER_URL or manifest lookup failed)")
 
+    n_bad_pages = len(page_problems) - len(redirect_problems)
     pr = _result("2 pages", not page_problems,
-                 f"{len(pages) - len(page_problems)}/{len(pages)} pages 200 text/html", page_problems)
+                 f"{len(pages) - n_bad_pages}/{len(pages)} pages 200 text/html, "
+                 f"{len(REDIRECT_PAGES) - len(redirect_problems)}/{len(REDIRECT_PAGES)} redirect stubs reach their target",
+                 page_problems)
     ar = _result("2 assets", not asset_problems,
                  f"{len(assets) - len(asset_problems)}/{len(assets)} assets 200, scripts/data not HTML",
                  asset_problems)

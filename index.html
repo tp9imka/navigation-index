@@ -4,49 +4,105 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Navigation Index</title>
-<meta name="description" content="A navigation knowledge hub and browser lab for flying a drone from A to B in a close area, built for an autonomous-flight hackathon. Solver, playground, showcase and search.">
+<meta name="description" content="Open navigation knowledge for drones and robots: a linked catalog, honest experiments, and a browser Arena that races path planners on your map.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="site/showcase.css?v=20261109s1">
-<link rel="stylesheet" href="site/nav.css?v=20261110n">
+<link rel="stylesheet" href="site/showcase.css?v=20261111w3">
+<link rel="stylesheet" href="site/nav.css?v=20261111w3">
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script defer src="site/nav.js?v=20261110n"></script>
+<script defer src="site/nav.js?v=20261111w3"></script>
 <style>
-  .home-hero { padding: 40px 0 22px; }
-  .home-hero h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.02em; max-width: 30ch; }
-  .home-hero p { margin: 0; max-width: 70ch; font-size: 17px; }
-  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 8px 0 26px; }
-  .tile {
-    display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line);
-    border-radius: 14px; overflow: hidden; color: var(--fg); text-decoration: none;
-    transition: border-color .15s, transform .15s;
+  .home { max-width: 1120px; padding: 0 32px; }
+  .home .kicker { margin-bottom: 10px; }
+  .h-hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 44px 0 32px; }
+  .h-hero h1 { font-size: clamp(32px, 4.4vw, 46px); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; text-wrap: balance; }
+  .h-hero .lead { font-size: 18px; color: var(--muted); margin: 0 0 22px; max-width: 62ch; }
+  .h-cta { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 18px; }
+  .h-cta .btn { font-size: 15px; font-weight: 600; padding: 10px 18px; border-radius: 10px; }
+  .h-badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 8px; }
+  .h-honest { font-size: 14px; color: var(--muted); margin: 0; max-width: 60ch; }
+  .h-honest strong { color: var(--fg); }
+  .arena-frame { border: 1px solid var(--line); border-radius: 16px; background: var(--panel); overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+  .arena-frame a.cv-link { display: block; }
+  #raceCv { width: 100%; height: 360px; display: block; }
+  .arena-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+  .h-legend { display: flex; gap: 14px; flex-wrap: wrap; }
+  .h-legend .sw { width: 14px; height: 4px; border: 0; border-radius: 2px; display: inline-block; margin-right: 5px; vertical-align: middle; }
+  .race-note { margin: 0 14px 12px; border: 1px dashed var(--line); border-radius: 10px; padding: 8px 12px; font: 12px/1.45 ui-monospace, Menlo, monospace; color: var(--muted); overflow-wrap: anywhere; }
+  .h-counters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 14px; background: var(--panel); margin: 0 0 18px; }
+  .h-counter { padding: 16px 20px; border-left: 1px solid var(--line); min-width: 0; }
+  .h-counter:first-child { border-left: 0; }
+  .h-counter .num { font-size: 30px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; color: var(--fg); display: block; }
+  .h-counter .lbl { margin-top: 6px; color: var(--muted); font-size: 13px; display: block; }
+  .h-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; padding: 0 0 36px; }
+  .h-tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; color: var(--fg); min-width: 0; }
+  .h-tile:hover { border-color: var(--accent); text-decoration: none; }
+  .h-tile .pic { width: 100%; height: 150px; display: block; background: var(--code); border-bottom: 1px solid var(--line); object-fit: cover; object-position: top left; }
+  .h-tile .tb { padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .h-tile .tn { display: none; }
+  .h-tile h3 { margin: 0; font-size: 19px; }
+  .h-tile p { margin: 0; color: var(--muted); font-size: 14px; }
+  .h-tile .q { color: var(--fg); font-weight: 600; }
+  .h-sect { padding: 36px 0; border-top: 1px solid var(--line); }
+  .h-sect-h { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+  .h-sect-h h2 { font-size: 26px; margin: 0; }
+  .h-proof { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  .h-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .h-card .ch { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .h-card h3 { margin: 0; font-size: 17px; }
+  .h-card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .h-card .src { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); overflow-wrap: anywhere; }
+  .mtx { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .mtx th { text-align: left; font: 600 11px ui-monospace, Menlo, monospace; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  .mtx td { padding: 8px; border-bottom: 1px solid var(--line); }
+  .mtx td.ci-td { width: 34%; }
+  .ci { position: relative; height: 8px; background: var(--code); border-radius: 4px; width: 100%; min-width: 60px; }
+  .ci i { position: absolute; top: 0; bottom: 0; background: var(--ok); border-radius: 4px; opacity: .85; }
+  .ci i.bad { background: var(--bad); } .ci i.mid { background: var(--warn); }
+  .ci b { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--fg); }
+  .ci .bar { position: absolute; top: -4px; width: 0; height: 16px; border-left: 2px dashed var(--bad); }
+  .verdict { padding: 10px 14px; border-radius: 10px; background: var(--warn-bg); color: var(--warn); font-weight: 600; font-size: 14px; }
+  .kv { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; font-size: 13px; }
+  .kv .row { display: flex; justify-content: space-between; gap: 10px; }
+  .kv .row b { font-variant-numeric: tabular-nums; }
+  .h-agents { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; align-items: center; border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; background: var(--panel); margin: 0 0 12px; }
+  .h-agents strong { display: block; font-size: 16px; }
+  .h-agents .links { font-size: 14px; color: var(--muted); }
+  .cmd { font: 13px ui-monospace, Menlo, monospace; background: var(--code); border-radius: 8px; padding: 10px 12px; color: var(--fg); overflow-wrap: anywhere; margin: 0; }
+  @media (max-width: 980px) {
+    .h-hero { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .h-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .h-proof { grid-template-columns: minmax(0, 1fr); }
   }
-  .tile:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); }
-  .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { .tile, .tile:hover { transition: none; transform: none; } }
-  .tile img {
-    display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left;
-    border-bottom: 1px solid var(--line); background: var(--code);
-  }
-  .tile .tile-body { padding: 14px 18px 18px; }
-  .tile h2 { font-size: 21px; margin: 0 0 4px; color: var(--accent); }
-  .tile p { margin: 0; }
-  .tile .q { font-weight: 600; }
-  .agents-box {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin: 0 0 18px;
-    display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline;
-  }
-  .agents-box strong { margin-right: 4px; }
-  .honesty {
-    margin: 0 0 40px; padding: 10px 14px; border-radius: 10px; background: var(--warn-bg); color: var(--warn);
-    font-weight: 600; font-size: 14px;
-  }
-  @media (max-width: 760px) {
-    .home-hero { padding: 26px 0 16px; }
-    .home-hero p { font-size: 16px; }
-    .tiles { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-    main { padding: 0 14px; }
+  @media (max-width: 640px) {
+    .home { padding: 0 16px; }
+    .h-hero { padding: 24px 0 20px; display: flex; flex-direction: column; align-items: stretch; }
+    .h-hero .h-text { display: contents; }
+    .h-hero .kicker { order: 1; } .h-hero h1 { order: 2; font-size: 30px; margin-bottom: 10px; } .h-hero .lead { order: 3; font-size: 16px; margin-bottom: 16px; }
+    .h-hero .arena-frame { order: 4; margin-bottom: 16px; }
+    .h-hero .h-cta { order: 5; flex-direction: column; } .h-cta .btn { text-align: center; }
+    .h-hero .h-badges { order: 6; } .h-hero .h-honest { order: 7; font-size: 13px; }
+    #raceCv { height: 240px; }
+    .race-note { display: none; }
+    .h-counters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .h-counter:nth-child(3) { border-left: 0; }
+    .h-counter:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .h-counter .num { font-size: 24px; }
+    .h-tiles { grid-template-columns: minmax(0, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--panel); }
+    .h-tile { border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+    .h-tile:first-child { border-top: 0; }
+    .h-tile .pic { display: none; }
+    .h-tile .tb { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 2px 10px; padding: 12px 16px; }
+    .h-tile .tn { display: block; font: 600 12px ui-monospace, Menlo, monospace; color: var(--muted); grid-row: 1 / span 2; padding-top: 3px; }
+    .h-tile .kicker { display: none; }
+    .h-tile h3 { font-size: 16px; color: var(--accent); }
+    .h-tile p { font-size: 13px; grid-column: 2; } .h-tile p .rest { display: none; }
+    .h-tile .tb::after { content: "\203A"; grid-column: 3; grid-row: 1; color: var(--muted); }
+    .h-sect-h h2 { font-size: 22px; }
+    .h-agents { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px 16px; }
+    .mtx th, .mtx td { padding: 6px 4px; }
+    .mtx td.ci-td { width: 26%; }
   }
 </style>
 </head>
@@ -55,74 +111,249 @@
   <a class="brand" href="./" title="Home">Navigation Index</a>
   <nav class="site-nav" id="siteNav" aria-label="Site">
     <ul class="nav-list">
-      <li><a href="./" aria-current="page">Home</a></li>
+      <li class="nav-grp" aria-hidden="true">Arena</li>
       <li><a href="site/solver/">Solver</a></li>
       <li><a href="site/playground/">Playground</a></li>
-      <li><a href="site/showcase.html">Showcase</a></li>
+      <li><a href="site/results.html">Results</a></li>
+      <li class="nav-grp" aria-hidden="true">Index</li>
       <li><a href="site/">Search</a></li>
+      <li><a href="site/learn.html">Learn</a></li>
       <li><a href="graph/">Graph</a></li>
-      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+      <li class="nav-gh"><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
     </ul>
   </nav>
-  <div class="topnav page-tools">
-    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
-  </div>
 </header>
 
-<main>
-<section class="home-hero">
-  <h1>Navigation Index</h1>
-  <p>A navigation knowledge hub and browser lab for flying a drone from A to B in a close area, built for an autonomous-flight hackathon.</p>
+<main class="home">
+<section class="h-hero">
+  <div class="h-text">
+    <p class="kicker">Open navigation knowledge for drones and robots</p>
+    <h1>Draw a room. Race <span id="raceCount">the</span> planners. See who reaches B.</h1>
+    <p class="lead">The Arena runs this hub's real Python planners in your browser and ranks them with confidence intervals. Around it: a linked catalog of open-source navigation work and runnable samples that say what ran on which data.</p>
+    <div class="h-cta">
+      <a class="btn primary" href="site/solver/">Race planners on your map</a>
+      <a class="btn" href="site/">Search the index</a>
+    </div>
+    <div class="h-badges"><span class="badge b-syn">synthetic</span><span class="badge b-sitl">SITL</span><span class="badge b-real">real</span></div>
+    <p class="h-honest">Every number says what it ran on: synthetic, SITL or real. <strong>Arena results are synthetic simulation scored on truth. None is a flight result.</strong></p>
+  </div>
+  <figure class="arena-frame" style="margin: 0">
+    <a class="cv-link" href="site/solver/index.html?map=glass_office_0" title="Open the Solver on this map">
+      <canvas id="raceCv" aria-label="Top-down view of the glass_office_0 map with a replay of committed Solver paths"></canvas>
+    </a>
+    <div class="arena-bar">
+      <span class="h-legend">
+        <span><i class="sw" style="background: var(--obst)"></i>wall</span>
+        <span><i class="sw" style="background: var(--glass)"></i>glass</span>
+        <span><i class="sw" style="background: var(--ok)"></i>reached</span>
+        <span><i class="sw" style="background: var(--warn)"></i>stuck or timeout</span>
+        <span><i class="sw" style="background: var(--bad)"></i>collision</span>
+      </span>
+      <span id="raceClock" class="mono"></span>
+      <span class="badge b-syn">synthetic</span>
+    </div>
+    <figcaption class="race-note" id="raceNote">map preview: glass_office_0 from site/playground/presets. Loading the committed race...</figcaption>
+  </figure>
 </section>
 
-<section class="tiles" aria-label="Tools">
-  <a class="tile" href="site/solver/">
-    <img src="site/solver/results/solver_race_mid.png" width="1280" height="900" alt="Solver: every planner racing on one map" loading="lazy">
-    <div class="tile-body">
-      <h2>Solver</h2>
-      <p><span class="q">Which planner is best for my map?</span> Run every planner on every sensor and VIO variation and get a ranked matrix.</p>
-    </div>
+<section class="h-counters" aria-label="Counts" id="counters">
+  <div class="h-counter"><span class="num" data-count="repos">-</span><span class="lbl">open-source repos</span></div>
+  <div class="h-counter"><span class="num" data-count="resources">-</span><span class="lbl">papers, datasets, standards and other documents</span></div>
+  <div class="h-counter"><span class="num" data-count="samples">-</span><span class="lbl">runnable samples</span></div>
+  <div class="h-counter"><span class="num" data-count="planners">-</span><span class="lbl">planners in the benchmark</span></div>
+</section>
+
+<section class="h-tiles" aria-label="Where to go">
+  <a class="h-tile" href="site/solver/">
+    <canvas class="pic" data-world="office_0" aria-hidden="true"></canvas>
+    <div class="tb"><span class="tn">01</span><span class="kicker">Arena</span><h3>Solver</h3>
+      <p><span class="q">Which planner for this room?</span><span class="rest"> Every planner, N seeds, ranked with 95 % intervals.</span></p></div>
   </a>
-  <a class="tile" href="site/playground/">
-    <img src="site/playground/results/pg_compare_random0.png" width="1280" height="900" alt="Playground: two planner configs overlaid on a drawn arena" loading="lazy">
-    <div class="tile-body">
-      <h2>Playground</h2>
-      <p>Draw an arena, place A and B, pick a planner, sensor, VIO fault and safety filter, and fly it in your browser.</p>
-    </div>
+  <a class="h-tile" href="site/playground/">
+    <canvas class="pic" data-world="maze_0" aria-hidden="true"></canvas>
+    <div class="tb"><span class="tn">02</span><span class="kicker">Arena</span><h3>Playground</h3>
+      <p><span class="q">Why did it crash?</span><span class="rest"> Draw walls and glass, fly one run, see the sensor.</span></p></div>
   </a>
-  <a class="tile" href="site/showcase.html">
-    <img src="site/screenshots/showcase-desktop.png" width="1280" height="900" alt="Showcase: hub counters and arena replays" loading="lazy">
-    <div class="tile-body">
-      <h2>Showcase</h2>
-      <p>What the hub holds in 30 seconds: live counts, arena replays and the runnable samples with their honest status.</p>
-    </div>
+  <a class="h-tile" href="site/results.html">
+    <img class="pic" src="site/screenshots/public-results-1280-light.png" alt="" loading="lazy">
+    <div class="tb"><span class="tn">03</span><span class="kicker">Arena</span><h3>Results</h3>
+      <p><span class="q">What was measured?</span><span class="rest"> Replays, the benchmark, and what failed.</span></p></div>
   </a>
-  <a class="tile" href="site/">
-    <img src="site/screenshots/desktop.png" width="1400" height="900" alt="Search: repos, documents, datasets and samples with filters" loading="lazy">
-    <div class="tile-body">
-      <h2>Search</h2>
-      <p>Find any repo, document, dataset, sample or deep-dive card, filtered by compute, hardware and setup time.</p>
-    </div>
+  <a class="h-tile" href="site/learn.html">
+    <img class="pic" src="site/screenshots/public-search-1280-light.png" alt="" loading="lazy">
+    <div class="tb"><span class="tn">04</span><span class="kicker">Index</span><h3>Search and Learn</h3>
+      <p><span class="q">What exists for this?</span><span class="rest"> Repos, papers, datasets, primer, cheat sheets.</span></p></div>
   </a>
 </section>
 
-<aside class="agents-box" aria-label="For coding agents">
-  <strong>For coding agents:</strong>
-  <a href="https://github.com/tp9imka/navigation-index/blob/main/AGENTS.md" rel="noopener">AGENTS.md</a>
-  <a href="llms.txt">llms.txt</a>
-  <a href="https://github.com/tp9imka/navigation-index#readme" rel="noopener">README on GitHub</a>
+<section class="h-sect" aria-labelledby="proofH">
+  <div class="h-sect-h"><h2 id="proofH">One real result, verdict included</h2><a href="site/results.html">All results</a></div>
+  <div class="h-proof">
+    <article class="h-card" id="quickCard">
+      <div class="ch"><h3>Solver, Quick sweep on random_0</h3><span class="badge b-syn" id="quickBadge">synthetic</span></div>
+      <p class="muted">Loading site/solver/results/quick_random_0.json...</p>
+    </article>
+    <article class="h-card" id="killCard">
+      <div class="ch"><h3>Our own idea, tested to failure</h3><span class="badge b-fail">fail</span></div>
+      <p class="muted">Loading site/data/showcase/story/kill_test.json...</p>
+    </article>
+  </div>
+</section>
+
+<aside class="h-agents" aria-label="For coding agents">
+  <div><strong>For coding agents</strong>
+    <span class="links"><a href="https://github.com/tp9imka/navigation-index/blob/main/AGENTS.md" rel="noopener">AGENTS.md</a>, <a href="llms.txt">llms.txt</a>, MCP server</span></div>
+  <p class="cmd">claude mcp add navigation-index -- python3 "$PWD/tools/mcp_server.py"</p>
 </aside>
-
-<p class="honesty">All browser results are synthetic simulation, scored on truth. None of them is a flight result.</p>
 </main>
 
 <script>
-  document.getElementById("themeBtn").onclick = function () {
-    var root = document.documentElement;
-    var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    root.dataset.theme = dark ? "light" : "dark";
-    try { localStorage.setItem("navidx-theme", root.dataset.theme); } catch (e) {}
-  };
+(function () {
+  "use strict";
+  var REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  var getJSON = function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status + " " + u); return r.json(); }); };
+  var pct = function (v) { return (100 * v).toFixed(1).replace(/\.0$/, "") + " %"; };
+
+  // ---------- counters and the planner number, from site/data/home.json (tools/build.py) ----------
+  getJSON("site/data/home.json").then(function (h) {
+    document.querySelectorAll("[data-count]").forEach(function (el) {
+      var v = h.counts[el.dataset.count];
+      if (typeof v === "number") el.textContent = v.toLocaleString("en-US");
+    });
+  }).catch(function () { /* counters stay "-", headline keeps "the planners" */ });
+
+  // ---------- top-down map renderer (adapted from docs/design/public-release/arena-preview.js) ----------
+  var worlds = {};
+  function loadWorld(name) {
+    if (!worlds[name]) worlds[name] = getJSON("site/playground/presets/" + name + ".json");
+    return worlds[name];
+  }
+  function frame(cv, w, pad) {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2), W = cv.clientWidth, H = cv.clientHeight;
+    if (!W || !H) return null;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    var g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var b = w.bounds, s = Math.min((W - 2 * pad) / (b[2] - b[0]), (H - 2 * pad) / (b[3] - b[1]));
+    var ox = (W - s * (b[2] - b[0])) / 2, oy = (H - s * (b[3] - b[1])) / 2;
+    return { g: g, W: W, H: H, s: s, X: function (x) { return ox + (x - b[0]) * s; }, Y: function (y) { return H - (oy + (y - b[1]) * s); } };
+  }
+  function drawMap(F, w, big) {
+    var g = F.g, b = w.bounds, X = F.X, Y = F.Y, s = F.s;
+    g.fillStyle = css("--panel"); g.fillRect(0, 0, F.W, F.H);
+    g.strokeStyle = css("--line"); g.lineWidth = 1;
+    for (var gx = Math.ceil(b[0]); gx <= b[2]; gx++) { g.beginPath(); g.moveTo(X(gx), Y(b[1])); g.lineTo(X(gx), Y(b[3])); g.stroke(); }
+    for (var gy = Math.ceil(b[1]); gy <= b[3]; gy++) { g.beginPath(); g.moveTo(X(b[0]), Y(gy)); g.lineTo(X(b[2]), Y(gy)); g.stroke(); }
+    var obst = css("--obst"), glass = css("--glass");
+    w.obstacles.forEach(function (o) {
+      var gl = o.material === "glass" || o.material === "mirror", c = gl ? glass : obst;
+      g.fillStyle = c; g.strokeStyle = c;
+      if (o.type === "wall") { g.lineWidth = Math.max(gl ? 3 : 2.2, (o.thickness || 0.1) * s); g.lineCap = "square"; g.beginPath(); g.moveTo(X(o.x0), Y(o.y0)); g.lineTo(X(o.x1), Y(o.y1)); g.stroke(); }
+      else if (o.type === "cylinder") { g.beginPath(); g.arc(X(o.cx), Y(o.cy), Math.max(o.r * s, 1.5), 0, 7); g.fill(); }
+      else { g.fillRect(X(o.cx - o.hx), Y(o.cy + o.hy), 2 * o.hx * s, 2 * o.hy * s); }
+    });
+    g.strokeStyle = obst; g.lineWidth = 1.5; g.strokeRect(X(b[0]), Y(b[3]), (b[2] - b[0]) * s, (b[3] - b[1]) * s);
+    var r = big ? 9 : 7;
+    function mark(p, label, col) {
+      g.fillStyle = col; g.beginPath(); g.arc(X(p[0]), Y(p[1]), r, 0, 7); g.fill();
+      g.fillStyle = css("--panel"); g.font = "700 " + (big ? 11 : 9) + "px system-ui, sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+      g.fillText(label, X(p[0]), Y(p[1]) + 0.5);
+    }
+    mark(w.a, "A", css("--accent")); mark(w.b, "B", css("--ok"));
+  }
+  function drawTiles() {
+    document.querySelectorAll("canvas[data-world]").forEach(function (cv) {
+      loadWorld(cv.dataset.world).then(function (w) { var F = frame(cv, w, 10); if (F) drawMap(F, w, false); }).catch(function () {});
+    });
+  }
+
+  // ---------- race replay: committed Solver paths (site/solver/results/race_glass_office_0.json) ----------
+  var RACE = { world: null, data: null, t: 0, tmax: 0, last: 0, hold: 0 };
+  var OUT_COL = { reached: "--ok", collision: "--bad", stuck: "--warn", timeout: "--warn" };
+  function idxAt(pts, t) { var lo = 0, hi = pts.length - 1; if (t >= pts[hi][0]) return hi; while (lo < hi) { var m = (lo + hi + 1) >> 1; if (pts[m][0] <= t) lo = m; else hi = m - 1; } return lo; }
+  function drawRace() {
+    var cv = $("#raceCv"), w = RACE.world; if (!w) return;
+    var F = frame(cv, w, 14); if (!F) return;
+    drawMap(F, w, true);
+    var d = RACE.data; if (!d) return;
+    var g = F.g, reached = 0;
+    d.paths.forEach(function (p) {
+      var end = p.pts[p.pts.length - 1][0], i = idxAt(p.pts, Math.min(RACE.t, end)), done = RACE.t >= end - 1e-6;
+      var col = done ? css(OUT_COL[p.outcome] || "--muted") : css("--accent");
+      g.strokeStyle = col; g.globalAlpha = done ? 0.75 : 0.55; g.lineWidth = 2; g.lineJoin = "round"; g.beginPath();
+      for (var k = 0; k <= i; k++) { var x = F.X(p.pts[k][1]), y = F.Y(p.pts[k][2]); k ? g.lineTo(x, y) : g.moveTo(x, y); }
+      g.stroke(); g.globalAlpha = 1;
+      var hx = F.X(p.pts[i][1]), hy = F.Y(p.pts[i][2]);
+      g.fillStyle = col; g.beginPath(); g.arc(hx, hy, 3.5, 0, 7); g.fill();
+      if (done && p.outcome === "reached") reached++;
+    });
+    $("#raceClock").textContent = "t = " + RACE.t.toFixed(1) + " s, " + reached + "/" + d.paths.length + " at B";
+  }
+  function tick(now) {
+    var dt = Math.min(0.1, (now - (RACE.last || now)) / 1000); RACE.last = now;
+    if (RACE.t >= RACE.tmax) { RACE.hold += dt; if (RACE.hold > 2.5) { RACE.t = 0; RACE.hold = 0; } }
+    else RACE.t = Math.min(RACE.tmax, RACE.t + dt * 4);
+    drawRace();
+    requestAnimationFrame(tick);
+  }
+  loadWorld("glass_office_0").then(function (w) {
+    RACE.world = w; drawRace();
+    return getJSON("site/solver/results/race_glass_office_0.json");
+  }).then(function (d) {
+    if (!d || !d.paths || !d.paths.length) throw new Error("no paths");
+    // the headline counts what the browser Solver races; the benchmark counter also has planners Pyodide cannot run
+    $("#raceCount").textContent = d.paths.length;
+    RACE.data = d;
+    RACE.tmax = Math.max.apply(null, d.paths.map(function (p) { return p.pts[p.pts.length - 1][0]; }));
+    var o = d.outcomes || {};
+    $("#raceNote").innerHTML = "replay: seed 0 of a real Solver Quick sweep on glass_office_0 (ideal sensor, truth pose), " +
+      esc(d.paths.length) + " Solver planners, " + esc(o.reached || 0) + " reached B. Loops at 4x; tap opens the Solver on this map. " +
+      'Paths: <a href="site/solver/results/race_glass_office_0.json">race_glass_office_0.json</a>, captured by <code>' + esc(d.command) + "</code> on " + esc(String(d.date).slice(0, 10)) + ".";
+    if (REDUCED) { RACE.t = RACE.tmax; drawRace(); } else requestAnimationFrame(tick);
+  }).catch(function (err) {
+    $("#raceNote").textContent = "map preview: glass_office_0 from site/playground/presets (" + err.message + "). No race paths shown.";
+  });
+
+  // ---------- proof: Solver Quick table and the kill-test card ----------
+  function ciBar(lo, hi, p, cls, bar) {
+    return '<div class="ci" role="img" aria-label="95 % interval ' + pct(lo) + " to " + pct(hi) + '"><i class="' + (cls || "") + '" style="left:' + (100 * lo).toFixed(1) + "%;width:" + Math.max(1, 100 * (hi - lo)).toFixed(1) + '%"></i>' +
+      '<b style="left:calc(' + (100 * p).toFixed(1) + '% - 1px)"></b>' + (bar != null ? '<span class="bar" style="left:' + (100 * bar).toFixed(1) + '%" title="bar"></span>' : "") + "</div>";
+  }
+  Promise.all([getJSON("site/solver/results/quick_random_0.json"), fetch("site/solver/results/race_glass_office_0.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })])
+    .then(function (res) {
+      var q = res[0], labels = {};
+      (res[1] && res[1].paths || []).forEach(function (p) { labels[p.planner] = p.label; });
+      var rows = q.ranking.slice(0, 3).map(function (r) {
+        return "<tr><td>" + esc(labels[r.planner] || r.planner) + "</td><td>" + r.reached + "/" + r.n + '</td><td class="ci-td">' + ciBar(r.success.lo, r.success.hi, r.success.p) +
+          "</td><td>" + (r.median_time_s != null ? r.median_time_s.toFixed(1) + " s" : "-") + "</td></tr>";
+      }).join("");
+      $("#quickBadge").textContent = "synthetic, n = " + q.spec.seeds;
+      $("#quickCard").innerHTML = '<div class="ch"><h3>Solver, Quick sweep on random_0</h3><span class="badge b-syn">synthetic, n = ' + esc(q.spec.seeds) + "</span></div>" +
+        '<table class="mtx"><thead><tr><th>Planner</th><th>Reached</th><th>95 % interval</th><th>Median</th></tr></thead><tbody>' + rows + "</tbody></table>" +
+        '<p class="verdict">' + esc(q.headline.text) + "</p>" +
+        '<p class="src">' + esc(q.spec.planners.length) + " planners x " + esc(q.spec.presets.join(", ")) + " sensor x " + esc(q.spec.seeds) + ' seeds. Top 3 of the ranking. <a href="site/solver/results/quick_random_0.json">quick_random_0.json</a></p>';
+    }).catch(function (err) { $("#quickCard").innerHTML = '<p class="muted">Could not load quick_random_0.json (' + esc(err.message) + ").</p>"; });
+
+  getJSON("site/data/showcase/story/kill_test.json").then(function (k) {
+    var h = k.headline, H = h.F5_jump_heldout, F4 = h.F4_jump_seeds012, scale = 0.2; // bars on a 0-20 % axis
+    function row(lbl, c) {
+      return '<div class="row"><span>' + esc(lbl) + "</span><b>" + c.collision_pct.toFixed(1) + " % [" + c.ci95[0].toFixed(1) + ", " + c.ci95[1].toFixed(1) + "]</b></div>" +
+        ciBar(c.ci95[0] / 100 / scale, c.ci95[1] / 100 / scale, c.collision_pct / 100 / scale, "bad", 0.01 / scale);
+    }
+    $("#killCard").innerHTML = '<div class="ch"><h3>Our own idea, tested to failure</h3><span class="badge b-fail">' + esc(h.verdict) + '</span><span class="badge b-syn">' + esc(h.input) + "</span></div>" +
+      "<p>Integrity-aware safety filter (F5): the bar was set before the held-out seeds ran. Under a 0.5 m VIO jump it collided more often than the 1 % bar, and a hand-tuned fixed bound was as safe within noise.</p>" +
+      '<div class="kv">' + row("F5, held-out seeds 1-2 (" + H.collisions + " of " + H.runs + " runs)", H) + row("fixed 0.2 m bound, seeds 0-2 (" + F4.collisions + " of " + F4.runs + ")", F4) + "</div>" +
+      '<p class="src">Collision % with 95 % Wilson interval, axis 0-20 %, dashed line = 1 % bar. <a href="site/data/showcase/story/kill_test.json">kill_test.json</a> - <a href="site/results.html">all six results</a></p>';
+  }).catch(function (err) { $("#killCard").innerHTML = '<p class="muted">Could not load kill_test.json (' + esc(err.message) + ").</p>"; });
+
+  function redraw() { drawTiles(); drawRace(); }
+  redraw();
+  window.addEventListener("resize", redraw);
+  document.addEventListener("navidx-theme", redraw);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redraw);
+})();
 </script>
 </body>
 </html>

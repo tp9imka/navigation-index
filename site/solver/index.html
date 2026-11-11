@@ -6,10 +6,10 @@
 <title>Navigation Index - Solver: which planner is best for this map?</title>
 <meta name="description" content="Pick or import a close-area map, run every planner on every sensor and VIO variation for N seeds in your browser (Pyodide), watch the race, and get a ranked result matrix with Wilson intervals.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="../showcase.css?v=20261110">
-<link rel="stylesheet" href="solver.css?v=20261110e">
-<link rel="stylesheet" href="../nav.css?v=20261110n">
-<script defer src="../nav.js?v=20261110n"></script>
+<link rel="stylesheet" href="../showcase.css?v=20261111w3">
+<link rel="stylesheet" href="solver.css?v=20261111w3">
+<link rel="stylesheet" href="../nav.css?v=20261111w3">
+<script defer src="../nav.js?v=20261111w3"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -20,13 +20,15 @@
   <a class="brand" href="../../" title="Home">Navigation Index</a>
   <nav class="site-nav" id="siteNav" aria-label="Site">
     <ul class="nav-list">
-      <li><a href="../../">Home</a></li>
+      <li class="nav-grp" aria-hidden="true">Arena</li>
       <li><a href="./" aria-current="page">Solver</a></li>
       <li><a href="../playground/">Playground</a></li>
-      <li><a href="../showcase.html">Showcase</a></li>
+      <li><a href="../results.html">Results</a></li>
+      <li class="nav-grp" aria-hidden="true">Index</li>
       <li><a href="../">Search</a></li>
+      <li><a href="../learn.html">Learn</a></li>
       <li><a href="../../graph/">Graph</a></li>
-      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+      <li class="nav-gh"><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
     </ul>
   </nav>
   <div class="topnav page-tools">
@@ -34,21 +36,35 @@
   </div>
 </header>
 
+<div class="bar-honest"><span class="badge b-syn">synthetic</span><span><span id="honestLabel">Synthetic simulation, 2.5D point mass. Scored on truth. Not a flight result.</span>
+  <span id="sampleNote">N seeds on one map is a small sample: read the intervals, not just the rank.</span></span></div>
+
 <main>
 <section class="sv-head">
-  <h1>Solver: which planner is best for this map?</h1>
-  <p class="muted">Pick a map, choose the sweep, press Run. Every planner flies every variation for N seeds, in parallel
-    Web Workers running the hub's real Python arena (<a href="../playground/README.md">same worker as the playground</a>).</p>
-  <p class="honest"><span class="badge synthetic" id="honestLabel">SYNTHETIC SIMULATION, 2.5D POINT MASS. Scored on truth. Not a flight result.</span>
-    <span class="muted small" id="sampleNote">N seeds on one map is a small sample: read the intervals, not just the rank.</span></p>
+  <div class="pg-header">
+    <div>
+      <p class="kicker">Arena / Solver</p>
+      <h1>Which planner gets your drone from A to B in this room?</h1>
+      <p class="pg-sub">Pick a map, choose the sweep, press Run. Every planner flies every variation for N seeds, in parallel
+        Web Workers running the hub's real Python arena (<a href="../playground/README.md">same worker as the playground</a>).</p>
+    </div>
+    <div class="pg-act"><button class="btn primary pg-primary" id="hdrRun" type="button" disabled title="Same as Run sweep in step 2">Run sweep</button></div>
+  </div>
   <div id="load" class="load" aria-live="polite">
     <progress id="loadBar" max="100" value="0"></progress>
     <span id="loadText" class="small">Loading Python (about 22 MB on first visit, cached after)...</span>
   </div>
 </section>
 
+  <nav class="steps" id="steps" aria-label="Solver steps">
+    <a class="step" href="#stepMap" data-step="stepMap"><span class="sn">1</span><b>Map</b><span class="sd">preset, import or link</span></a>
+    <a class="step" href="#stepSweep" data-step="stepSweep"><span class="sn">2</span><b>Sweep</b><span class="sd">Quick, Thorough, Stress, your drone</span></a>
+    <a class="step" href="#stepRace" data-step="stepRace"><span class="sn">3</span><b>Race</b><span class="sd">live paths per planner</span></a>
+    <a class="step" href="#stepResult" data-step="stepResult"><span class="sn">4</span><b>Result</b><span class="sd">ranking, Pareto, Recommend</span></a>
+  </nav>
+
 <div class="sv-grid">
-  <section class="panel" aria-label="Map">
+  <section class="panel" aria-label="Map" id="stepMap">
     <h2>1. Map</h2>
     <label class="row small">Preset <select id="presetSel" aria-label="Preset map"><option value="">loading...</option></select></label>
     <div class="row">
@@ -63,7 +79,7 @@
     <p class="small" id="worldMsg" aria-live="polite"></p>
   </section>
 
-  <section class="panel" aria-label="Sweep">
+  <section class="panel" aria-label="Sweep" id="stepSweep">
     <h2>2. Sweep</h2>
     <div class="row">
       <button class="btn sm" id="quickBtn" title="5 seeds, your drone's sensor only (ideal by default), truth pose, then run">Quick</button>
@@ -113,7 +129,7 @@
   </section>
 </div>
 
-<section class="panel race" aria-label="Race">
+<section class="panel race" aria-label="Race" id="stepRace">
   <h2>3. Race</h2>
   <div class="race-grid">
     <div>
@@ -137,7 +153,7 @@
   </div>
 </section>
 
-<section class="panel" aria-label="Results">
+<section class="panel" aria-label="Results" id="stepResult">
   <h2>4. Result</h2>
   <p class="headline" id="headline">Run a sweep to see the ranking.</p>
   <p class="small muted" id="limitLine"></p>
@@ -166,5 +182,26 @@
   Solver source: <a href="README.md">site/solver/README.md</a>. Runs use <a href="../playground/worker.js">site/playground/worker.js</a> unchanged.
   All runs are synthetic.
 </footer>
+<script>
+  // Page frame only: header Run button mirrors #runBtn; the step strip marks the section in view.
+  (function () {
+    var run = document.getElementById("runBtn"), hdr = document.getElementById("hdrRun");
+    var sync = function () { hdr.disabled = run.disabled; };
+    sync(); new MutationObserver(sync).observe(run, { attributes: true, attributeFilter: ["disabled"] });
+    hdr.addEventListener("click", function () { if (!run.disabled) run.click(); });
+    var steps = [].slice.call(document.querySelectorAll("#steps .step"));
+    var seen = {};
+    function mark(id) { steps.forEach(function (s) { var on = s.dataset.step === id; s.classList.toggle("on", on); if (on) s.setAttribute("aria-current", "step"); else s.removeAttribute("aria-current"); }); }
+    mark("stepMap");
+    if (!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { seen[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+      var best = null, r = 0;
+      steps.forEach(function (s) { var v = seen[s.dataset.step] || 0; if (v > r) { r = v; best = s.dataset.step; } });
+      if (best) mark(best);
+    }, { rootMargin: "-120px 0px -35% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+    steps.forEach(function (s) { io.observe(document.getElementById(s.dataset.step)); });
+  })();
+</script>
 </body>
 </html>

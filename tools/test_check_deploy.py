@@ -77,6 +77,20 @@ class HostFallback(Host404):
         self._send_file(200, "index.html")
 
 
+class HostStaleShowcase(Host404):
+    """site/showcase.html answers the old full page (no redirect to results.html)."""
+    def do_GET(self):
+        if self.path.split("?")[0] == "/site/showcase.html":
+            body = b"<!doctype html><title>Showcase</title><p>old page</p>"
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+        super().do_GET()
+
+
 @contextlib.contextmanager
 def serve(handler):
     srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(handler, directory=str(ROOT)))
@@ -104,6 +118,7 @@ class CheckDeployTest(unittest.TestCase):
     def test_host_with_404_passes_every_check(self):
         with serve(Host404) as base:
             results = check_deploy.run_checks(base, pyodide_base=base + FAKE_CDN.lstrip("/"))
+            pages = check_deploy.discover_pages(check_deploy.Site(base), check_deploy.fetch(base))[0]
         failed = [r for r in results if r["status"] == "FAIL"]
         self.assertEqual(failed, [], json.dumps(failed, indent=2))
         res = by_check(results)
@@ -111,6 +126,18 @@ class CheckDeployTest(unittest.TestCase):
         # the crawl reached the playground worker, the manifest and its .py files
         self.assertRegex(res["2 assets"]["detail"], r"^(\d+)/\1 ")
         self.assertGreater(int(res["2 assets"]["detail"].split("/")[0]), 40)
+        # Results and Learn are crawled; the showcase stub counts as a redirect, not a page
+        self.assertIn("1/1 redirect stubs reach their target", res["2 pages"]["detail"])
+        rel = {p[len(base):] for p in pages}
+        self.assertTrue({"site/results.html", "site/learn.html"} <= rel, rel)
+        self.assertNotIn("site/showcase.html", rel)
+
+    def test_showcase_without_redirect_fails_pages(self):
+        with serve(HostStaleShowcase) as base:
+            results = check_deploy.run_checks(base, pyodide_base=base + FAKE_CDN.lstrip("/"))
+        res = by_check(results)
+        self.assertEqual(res["2 pages"]["status"], "FAIL")
+        self.assertIn("site/showcase.html => no redirect to results.html", json.dumps(res["2 pages"]))
 
     def test_host_with_html_fallback_fails_check_1_and_local_probe(self):
         with serve(HostFallback) as base:

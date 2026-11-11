@@ -7,10 +7,10 @@
 <meta name="description" content="Draw or load a close-area arena, place A and B, pick a planner, sensor, VIO fault, VIO loss recovery and safety filter, and run the hub's real Python arena code in your browser (Pyodide).">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../showcase.css?v=20261109">
-<link rel="stylesheet" href="playground.css?v=20261110d">
+<link rel="stylesheet" href="playground.css?v=20261111w3">
 <link rel="stylesheet" href="advisor.css?v=20261109">
-<link rel="stylesheet" href="../nav.css?v=20261110n">
-<script defer src="../nav.js?v=20261110n"></script>
+<link rel="stylesheet" href="../nav.css?v=20261111w3">
+<script defer src="../nav.js?v=20261111w3"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -22,13 +22,15 @@
   <a class="brand" href="../../" title="Home">Navigation Index</a>
   <nav class="site-nav" id="siteNav" aria-label="Site">
     <ul class="nav-list">
-      <li><a href="../../">Home</a></li>
+      <li class="nav-grp" aria-hidden="true">Arena</li>
       <li><a href="../solver/">Solver</a></li>
       <li><a href="./" aria-current="page">Playground</a></li>
-      <li><a href="../showcase.html">Showcase</a></li>
+      <li><a href="../results.html">Results</a></li>
+      <li class="nav-grp" aria-hidden="true">Index</li>
       <li><a href="../">Search</a></li>
+      <li><a href="../learn.html">Learn</a></li>
       <li><a href="../../graph/">Graph</a></li>
-      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+      <li class="nav-gh"><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
     </ul>
   </nav>
   <div class="topnav page-tools">
@@ -36,22 +38,28 @@
   </div>
 </header>
 
+<div class="bar-honest"><span class="badge b-syn">synthetic</span><span>Synthetic simulation, 2.5D point mass. Simulated layout, vehicle, range sensor and VIO. Scored on truth. Not a flight result.</span></div>
+
 <main>
 <section class="pg-head">
-  <h1>Arena playground</h1>
-  <p class="muted">Draw or load an arena, drag A and B, pick a planner, sensor, VIO fault, VIO loss recovery and safety filter, then run.
-    Your browser runs the hub's real Python code (<a href="../../samples/close-area-arena/README.md">close-area-arena</a>,
-    <a href="../../samples/close-area-planner-reactive/README.md">reactive planners</a>,
-    <a href="../../samples/close-area-planner-dwa-bug/README.md">DWA and Bug</a>,
-    <a href="../../samples/close-area-planner-dstar/README.md">D* Lite</a>,
-    <a href="../../samples/close-area-planner-sampling/README.md">Informed RRT*</a>,
-    <a href="../../samples/close-area-planner-thetastar/README.md">Theta*</a>,
-    <a href="../../samples/close-area-planner-mppi/README.md">MPPI</a>,
-    <a href="../../samples/close-area-planner-hybrid-astar/README.md">Hybrid A*</a>,
-    <a href="../../samples/close-area-safety-filter/README.md">F2 safety filter</a>,
-    <a href="../../samples/close-area-relocalize/README.md">relocalization after VIO loss</a>) with Pyodide in a Web Worker. No JS re-implementation.</p>
-  <p class="honest"><span class="badge synthetic">synthetic simulation, 2.5D point mass</span>
-    <span class="muted small">Simulated layout, vehicle, range sensor and VIO. Scored on truth. Not a flight result.</span></p>
+  <div class="pg-header">
+    <div>
+      <p class="kicker">Arena / Playground</p>
+      <h1>Draw a room, fly one run, see why it fails.</h1>
+      <p class="pg-sub">Draw or load an arena, drag A and B, pick a planner, sensor, VIO fault, VIO loss recovery and safety filter, then run.
+        Your browser runs the hub's real Python code (<a href="../../samples/close-area-arena/README.md">close-area-arena</a>,
+        <a href="../../samples/close-area-planner-reactive/README.md">reactive planners</a>,
+        <a href="../../samples/close-area-planner-dwa-bug/README.md">DWA and Bug</a>,
+        <a href="../../samples/close-area-planner-dstar/README.md">D* Lite</a>,
+        <a href="../../samples/close-area-planner-sampling/README.md">Informed RRT*</a>,
+        <a href="../../samples/close-area-planner-thetastar/README.md">Theta*</a>,
+        <a href="../../samples/close-area-planner-mppi/README.md">MPPI</a>,
+        <a href="../../samples/close-area-planner-hybrid-astar/README.md">Hybrid A*</a>,
+        <a href="../../samples/close-area-safety-filter/README.md">F2 safety filter</a>,
+        <a href="../../samples/close-area-relocalize/README.md">relocalization after VIO loss</a>) with Pyodide in a Web Worker. No JS re-implementation.</p>
+    </div>
+    <div class="pg-act"><button class="btn primary pg-primary" id="hdrRun" type="button" disabled title="Same as Run in the Run panel">Run</button></div>
+  </div>
   <div id="load" class="load" aria-live="polite">
     <progress id="loadBar" max="100" value="0"></progress>
     <span id="loadText" class="small">Loading Python (about 22 MB on first visit, cached after)...</span>
@@ -159,5 +167,14 @@
   Playground source: <a href="README.md">site/playground/README.md</a>. Arena contract: <a href="../../samples/close-area-arena/CONTRACT.md">CONTRACT.md</a>.
   All runs are synthetic. Feasibility spike: <a href="spike.html">spike.html</a>.
 </footer>
+<script>
+  // Page frame only: the header Run button mirrors #runBtn.
+  (function () {
+    var run = document.getElementById("runBtn"), hdr = document.getElementById("hdrRun");
+    var sync = function () { hdr.disabled = run.disabled; };
+    sync(); new MutationObserver(sync).observe(run, { attributes: true, attributeFilter: ["disabled"] });
+    hdr.addEventListener("click", function () { if (!run.disabled) run.click(); });
+  })();
+</script>
 </body>
 </html>

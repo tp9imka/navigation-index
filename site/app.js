@@ -1,6 +1,8 @@
 "use strict";
 
 const DATA_URL = "data/index.json";
+const HOME_URL = "data/home.json"; // tools/build.py write_home: sample_inputs (the input badge on sample rows)
+const INPUT_BADGE = { synthetic: ["b-syn", "synthetic"], sitl: ["b-sitl", "SITL"], real: ["b-real", "real"], mixed: ["b-none", "mixed real + sim"], unstated: ["b-none", "input not stated"] };
 const ROOT = "../"; // repo root relative to site/
 const PAGE_SIZE = 50;
 const FACET_COLLAPSED = 8;
@@ -22,7 +24,7 @@ const BUDGETS = [
 
 const FACETS = [
   { key: "kind", title: "Kind", vals: e => [e.k] },
-  { key: "fit", title: "Hackathon fit", vals: e => e.f ? [e.f] : [], order: ["high", "medium", "low"] },
+  { key: "fit", title: "Quick-build fit", vals: e => e.f ? [e.f] : [], order: ["high", "medium", "low"] },
   ...["compute", "hardware", "offline", "validation"].map(key => ({
     key, title: { compute: "Compute", hardware: "Hardware", offline: "Offline use", validation: "Validation" }[key],
     single: true, order: Object.keys(READINESS_LABELS[key]),
@@ -62,6 +64,10 @@ async function load() {
     byPage.set(e.p, e);
     if (e.sd) byPage.set(`samples/${e.sd}/README.md`, e);
   });
+  try {
+    const si = (await (await fetch(HOME_URL)).json()).sample_inputs || {};
+    E.forEach(e => { if (e.k === "sample" && e.sd) e.inp = si[e.sd] || "unstated"; });
+  } catch (err) { /* input badges are optional; rows still render */ }
   E.forEach(e => {
     (e.r || []).forEach(([t, rel]) => {
       if (!incoming.has(t)) incoming.set(t, []);
@@ -402,6 +408,11 @@ function fmtStars(n) {
   return typeof n === "number" ? n.toLocaleString("en-US") : "";
 }
 
+function inputBadge(inp) {
+  const [cls, label] = INPUT_BADGE[inp] || INPUT_BADGE.unstated;
+  return `<span class="badge ${cls}" title="Input the sample ran on">${esc(label)}</span>`;
+}
+
 function kindBadge(e) {
   const cls = e.isDoc || e.k === "guide" ? "k-doc-card" : "k-" + e.k;
   return `<span class="kind ${cls}">${esc(DOC_KINDS[e.k] || e.k)}</span>`;
@@ -414,12 +425,13 @@ function metaLine(e) {
   if (e.l) bits.push(`<span title="license">${esc(e.l)}</span>`);
   if (e.pu) bits.push(`pushed ${esc(e.pu)}`);
   if (e.ar) bits.push(`<span class="fit-low">archived</span>`);
-  if (e.f) bits.push(`<span class="fit-${e.f}">fit: ${esc(e.f)}</span>`);
+  if (e.f) bits.push(`<span class="fit-${e.f}">quick-build fit: ${esc(e.f)}</span>`);
   if (e.m) bits.push(esc(e.m));
   if (e.y) bits.push(esc(e.y));
   if (e.lv) bits.push(esc(e.lv));
   if (e.d) bits.push(esc(e.d.join(", ")));
   if (e.vs) bits.push(`<span class="badge ${e.vs}">${VERIFY_LABEL[e.vs]}</span>`);
+  if (e.inp) bits.push(inputBadge(e.inp));
   return bits.length ? `<div class="meta">${bits.map(b => b.startsWith("<span") ? b : `<span>${b}</span>`).join("")}</div>` : "";
 }
 

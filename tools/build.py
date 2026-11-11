@@ -491,6 +491,8 @@ def main():
     write_llms(nodes, concepts, members)
     write_site(nodes, edges, meta)
     write_samples_readme(nodes)
+    write_home(nodes)
+    write_learn(nodes)
     kinds = defaultdict(int)
     for n in nodes.values():
         kinds[n["kind"]] += 1
@@ -850,6 +852,275 @@ def write_site(nodes, edges, meta):
     sdir.mkdir(parents=True, exist_ok=True)
     payload = {"generated_by": "tools/build.py", "nodes": out_nodes, "docs": out_docs}
     (sdir / "index.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
+
+
+# ---------- Home counters (site/data/home.json) and the Learn page (site/learn.html) ----------
+NON_RESOURCE_KINDS = frozenset(("repo", "sample", "concept", "guide"))
+BENCHMARK_MATRIX = "samples/close-area-benchmark/results/matrix_0.json"
+
+
+def write_home(nodes):
+    """site/data/home.json: the counters on the Home page, the planner count of the benchmark and each
+    sample's input type (the Search page shows it as a badge). Counted here so no page hand-types them."""
+    kinds = defaultdict(int)
+    for n in nodes.values():
+        kinds[n["kind"]] += 1
+    matrix_path = ROOT / BENCHMARK_MATRIX
+    matrix = json.loads(matrix_path.read_text()) if matrix_path.exists() else {}
+    samples = sorted((n for n in nodes.values() if n["kind"] == "sample"), key=lambda n: n["_dir"])
+    payload = {
+        "generated_by": "tools/build.py write_home",
+        "counts": {
+            "repos": kinds["repo"],
+            "resources": sum(v for k, v in kinds.items() if k not in NON_RESOURCE_KINDS),
+            "papers": kinds["paper"], "datasets": kinds["dataset"], "standards": kinds["standard"],
+            "samples": kinds["sample"],
+            "guides": kinds["guide"],
+            "planners": len(matrix.get("planners", {})),
+            "families": len(matrix.get("families", [])),
+        },
+        "benchmark": {
+            "source": BENCHMARK_MATRIX,
+            "command": matrix.get("command"),
+            "input": matrix.get("input"),
+            "layouts": matrix.get("layouts"),
+            "presets": sorted(matrix.get("presets", {})),
+            "families": matrix.get("families", []),
+        },
+        "sources": {
+            "repos": "data/repos/*.json (merged)",
+            "resources": "data/resources/*.json (merged): every kind except repo, sample, concept and guide",
+            "samples": "samples/*/sample.json",
+            "planners": BENCHMARK_MATRIX + " planners",
+            "families": BENCHMARK_MATRIX + " families",
+        },
+        "sample_inputs": {n["_dir"]: (n.get("input") or "").lower() or None for n in samples},
+    }
+    sdir = ROOT / "site" / "data"
+    sdir.mkdir(parents=True, exist_ok=True)
+    (sdir / "home.json").write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n")
+
+
+# Cheat-sheet display titles (spec section 5, civil titles). File names stay; titles not listed here
+# come from the sheet's own "# Cheat sheet: ..." heading.
+CHEAT_TITLES = {
+    "counter-uas-remote-id": "Airspace awareness: counter-UAS detection and Remote ID",
+    "jammer-ew-map": "Jamming detection, localization and maps",
+}
+CHEAT_ORDER = ("close-area-a-to-b", "gnss-denied-drone-nav", "spoofing-keep-flying", "dismounted-indoor-tunnel",
+               "terrain-night-celestial", "resilient-timing", "swarm-cooperative", "maritime-ais",
+               "jammer-ew-map", "counter-uas-remote-id", "llm-agent-ops")
+# Guides row: (title, candidate paths newest first, one-line description). The first path that exists wins,
+# so the page follows the wave-2 renames without an edit here.
+LEARN_GUIDES = (
+    ("Brief decoder", ("docs/problem-statement-decoder.md",),
+     "From a task statement to an approach, stack, dataset and starting sample."),
+    ("Quickstart: first flight", ("docs/quickstart-first-flight.md", "docs/day1-quickstart.md"),
+     "Fresh clone, scored first flight in the Arena, regression bar."),
+    ("Competition playbook", ("docs/competition-playbook.md", "docs/hackathon-playbook.md"),
+     "Project ideas, reference stacks and a plan for a navigation prototype on a deadline."),
+)
+LEARN_CARDS = (
+    ("docs/integration-cards", "Integration cards", "Install, wiring, gotchas and licence for one repo each."),
+    ("docs/dataset-cards", "Dataset cards", "Checked sizes, sensors, ground truth and licence terms."),
+    ("docs/paper-digests", "Paper digests", "Headline numbers with table and figure references, in our own words."),
+)
+WORDS_PER_MINUTE = 200
+
+
+def html_esc(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;"))
+
+
+def doc_view_href(path):
+    """Link from site/learn.html to the Search page's doc view (site/app.js pageHref: #page=<path>)."""
+    from urllib.parse import quote
+    return "index.html#page=" + quote(path, safe="")
+
+
+def md_title(path):
+    text = (ROOT / path).read_text()
+    return next((ln[2:].strip() for ln in text.splitlines() if ln.startswith("# ")), Path(path).stem)
+
+
+def write_learn(nodes):
+    """site/learn.html: primer chapters in order, cheat sheets as chips (civil titles), card counts and
+    the guides row, all read from docs/ at build time so the counts stay true."""
+    primer = sorted((ROOT / "docs" / "primer").glob("0*.md"))
+    chapters = []
+    words = 0
+    for f in primer:
+        path = f.relative_to(ROOT).as_posix()
+        title = re.sub(r"^\d+\.\s*", "", md_title(path))
+        num = re.match(r"(\d+)", f.name).group(1)
+        words += len(md_plain(f.read_text()).split())
+        chapters.append((num, title, path))
+    minutes = round(words / WORDS_PER_MINUTE / 10) * 10
+
+    sheets = {}
+    for f in (ROOT / "docs" / "cheatsheets").glob("*.md"):
+        if f.name == "README.md":
+            continue
+        path = f.relative_to(ROOT).as_posix()
+        title, lead, _, _ = site_doc(path)
+        t = CHEAT_TITLES.get(f.stem) or re.sub(r"^Cheat sheet:\s*", "", title)
+        sheets[f.stem] = (t[:1].upper() + t[1:], path, trim_words(lead, 260))
+    order = [s for s in CHEAT_ORDER if s in sheets] + sorted(s for s in sheets if s not in CHEAT_ORDER)
+
+    cards = []
+    for d, title, desc in LEARN_CARDS:
+        n = len([f for f in (ROOT / d).glob("*.md") if f.name != "README.md"])
+        index = f"{d}/README.md"
+        cards.append((n, title, desc, index if (ROOT / index).exists() else None))
+    guides = []
+    for title, paths, desc in LEARN_GUIDES:
+        path = next((p for p in paths if (ROOT / p).exists()), None)
+        if path:
+            guides.append((title, path, desc))
+
+    e = html_esc
+    gh = "https://github.com/tp9imka/navigation-index"
+    li_chapters = "\n".join(
+        f'    <a class="li" href="{e(doc_view_href(p))}"><span class="n">{e(num)}</span><span class="t">{e(t)}</span>'
+        f'<span class="go" aria-hidden="true">&#8250;</span></a>' for num, t, p in chapters)
+    chips = "\n".join(
+        f'    <a class="lchip{" on" if i == 0 else ""}" href="{e(doc_view_href(sheets[s][1]))}" data-title="{e(sheets[s][0])}"'
+        f' data-lead="{e(sheets[s][2])}">{e(sheets[s][0])}</a>' for i, s in enumerate(order))
+    first = sheets[order[0]] if order else ("", "", "")
+    card_html = "\n".join(
+        f'    <a class="lcard" href="{e(doc_view_href(idx)) if idx else e(gh + "/tree/main/" + "docs")}"><span class="big">{n:,}</span>'
+        f"<h3>{e(t)}</h3><p>{e(desc)}</p></a>" for n, t, desc, idx in cards)
+    guide_html = "\n".join(
+        f'    <a class="lcard" href="{e(doc_view_href(p))}"><h3>{e(t)}</h3><p>{e(desc)}</p></a>' for t, p, desc in guides)
+    sources = ", ".join(["docs/primer/0*.md", "docs/cheatsheets/*.md"] + [d + "/*.md" for d, _, _ in LEARN_CARDS])
+    page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index - Learn</title>
+<meta name="description" content="A {len(chapters)}-chapter navigation primer, one-page cheat sheets per task, and integration cards, dataset cards and paper digests.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="showcase.css?v=20261111w3">
+<link rel="stylesheet" href="nav.css?v=20261111w3">
+<script defer src="nav.js?v=20261111w3"></script>
+<script>
+  try {{ var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; }} catch (e) {{}}
+</script>
+<style>
+  .learn {{ max-width: 1120px; }}
+  .learn .lead {{ font-size: 17px; color: var(--muted); margin: 6px 0 0; max-width: 70ch; }}
+  .lgrid {{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: 20px; align-items: start; padding: 18px 0 34px; }}
+  .sect-h {{ display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 0 0 10px; flex-wrap: wrap; }}
+  .sect-h h2 {{ margin: 0; font-size: 22px; }}
+  .sect-h span {{ color: var(--muted); font-size: 13px; }}
+  .llist {{ display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }}
+  .llist .li {{ display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 12px 16px; border-top: 1px solid var(--line); color: var(--accent); font-weight: 600; }}
+  .llist .li:first-child {{ border-top: 0; }}
+  .llist .li:hover {{ background: var(--accent-bg); text-decoration: none; }}
+  .llist .n {{ font: 600 12px ui-monospace, Menlo, monospace; color: var(--muted); }}
+  .llist .go {{ color: var(--muted); }}
+  .lchips {{ display: flex; gap: 8px; flex-wrap: wrap; }}
+  .lchip {{ font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--accent); }}
+  .lchip:hover {{ border-color: var(--accent); text-decoration: none; }}
+  .lchip.on {{ background: var(--fg); color: var(--bg); border-color: var(--fg); }}
+  .lprev {{ margin-top: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }}
+  .lprev h3 {{ margin: 0; font-size: 18px; }}
+  .lprev p {{ margin: 0; color: var(--muted); font-size: 14px; }}
+  .lsect {{ padding: 30px 0; border-top: 1px solid var(--line); }}
+  .lcards {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }}
+  .lcard {{ background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; color: var(--fg); }}
+  .lcard:hover {{ border-color: var(--accent); text-decoration: none; }}
+  .lcard .big {{ font-size: 28px; font-weight: 800; font-variant-numeric: tabular-nums; }}
+  .lcard h3 {{ margin: 0; font-size: 18px; }}
+  .lcard p {{ margin: 0; color: var(--muted); font-size: 14px; }}
+  .lsrc {{ font-size: 12px; color: var(--muted); }}
+  @media (max-width: 860px) {{ .lgrid, .lcards {{ grid-template-columns: minmax(0, 1fr); }} }}
+</style>
+</head>
+<body>
+<!-- Generated by tools/build.py write_learn - do not edit by hand. -->
+<header class="top">
+  <a class="brand" href="../" title="Home">Navigation Index</a>
+  <nav class="site-nav" id="siteNav" aria-label="Site">
+    <ul class="nav-list">
+      <li class="nav-grp" aria-hidden="true">Arena</li>
+      <li><a href="solver/">Solver</a></li>
+      <li><a href="playground/">Playground</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li class="nav-grp" aria-hidden="true">Index</li>
+      <li><a href="./">Search</a></li>
+      <li><a href="learn.html" aria-current="page">Learn</a></li>
+      <li><a href="../graph/">Graph</a></li>
+      <li class="nav-gh"><a href="{gh}" class="nav-ext" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="learn">
+<section class="pg-header">
+  <div>
+    <p class="kicker">Index / Learn</p>
+    <h1>Learn navigation, then go deep.</h1>
+    <p class="lead">A {len(chapters)}-chapter primer from PNT basics to evaluation, one-page cheat sheets per task, and cards that say how to install, wire and license what you find.</p>
+  </div>
+</section>
+
+<div class="lgrid">
+  <section aria-labelledby="primerH">
+    <div class="sect-h"><h2 id="primerH">Primer</h2><span>read in order, {words:,} words, about {minutes} min at {WORDS_PER_MINUTE} words per minute</span></div>
+    <nav class="llist" aria-label="Primer chapters">
+{li_chapters}
+    </nav>
+  </section>
+  <section aria-labelledby="cheatH">
+    <div class="sect-h"><h2 id="cheatH">Cheat sheets</h2><span>{len(order)} sheets, one page each</span></div>
+    <div class="lchips" id="cheatChips">
+{chips}
+    </div>
+    <div class="lprev" id="cheatPrev" aria-live="polite">
+      <p class="kicker">Preview</p>
+      <h3 id="prevTitle">{e(first[0])}</h3>
+      <p id="prevLead">{e(first[2])}</p>
+      <a id="prevLink" href="{e(doc_view_href(first[1])) if first[1] else "#"}">Open the cheat sheet</a>
+    </div>
+  </section>
+</div>
+
+<section class="lsect" aria-labelledby="cardsH">
+  <div class="sect-h"><h2 id="cardsH">Cards</h2><span>read, not run, unless the card says so</span></div>
+  <div class="lcards">
+{card_html}
+  </div>
+</section>
+
+<section class="lsect" aria-labelledby="guidesH">
+  <div class="sect-h"><h2 id="guidesH">Guides</h2></div>
+  <div class="lcards">
+{guide_html}
+  </div>
+  <p class="lsrc">Counted by tools/build.py from {e(sources)} (README.md files excluded). Links open the doc view of the Search page; every file is also on <a href="{gh}/tree/main/docs" rel="noopener">GitHub</a>.</p>
+</section>
+</main>
+<script>
+  (function () {{
+    var chips = document.querySelectorAll("#cheatChips .lchip");
+    function show(c) {{
+      for (var i = 0; i < chips.length; i++) chips[i].classList.toggle("on", chips[i] === c);
+      document.getElementById("prevTitle").textContent = c.dataset.title;
+      document.getElementById("prevLead").textContent = c.dataset.lead;
+      document.getElementById("prevLink").setAttribute("href", c.getAttribute("href"));
+    }}
+    for (var i = 0; i < chips.length; i++) {{
+      chips[i].addEventListener("mouseenter", function () {{ show(this); }});
+      chips[i].addEventListener("focus", function () {{ show(this); }});
+    }}
+  }})();
+</script>
+</body>
+</html>
+"""
+    (ROOT / "site" / "learn.html").write_text(page)
 
 
 if __name__ == "__main__":
