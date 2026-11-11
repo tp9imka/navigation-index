@@ -3,7 +3,8 @@
 make(known_map=True)  => plans on the arena's prior 0.1 m OccGrid (upper bound, uses_grid=True).
 make(known_map=False) => builds its own log-odds grid from RangeScan hits only (unknown / free /
                          occupied, free space ray-traced) and treats unknown cells as traversable
-                         with a cost penalty.
+                         with a cost penalty. A beam the sensor flags dropped adds nothing
+                         (loop-88, SKIP_DROPPED_BEAMS); a beam with no return is traced free.
 
 Every replan (REPLAN_PERIOD_S, plus at once when a newly seen obstacle touches the current
 path):
@@ -67,6 +68,12 @@ MAP_RES = 0.1                 # m, same as the arena grid
 LO_HIT, LO_MISS = 0.9, 0.4    # log-odds increment for a hit, decrement for a pass-through
 LO_MIN, LO_MAX = -2.0, 3.5    # log-odds clamp
 LO_OCC, LO_FREE = 0.5, -0.3   # occupied above, free below, unknown between
+SKIP_DROPPED_BEAMS = False    # True: a beam the sensor flags dropped (scan.dropped) adds nothing to the map.
+                              # Off until the benchmark is regenerated with it (loop-88c), so the published
+                              # numbers match the code; False traces a dropped beam free to max_range.
+NO_RETURN_FREE_TO_MAX_RANGE = True   # a measured beam with no return clears free space out to max_range
+                                     # (False = option A of loop-85: such a beam adds nothing either)
+NO_TRACE_REACH = -1.0         # m, free-space reach of a beam that adds nothing: below every sample (r >= 0)
 
 SQRT2 = math.sqrt(2.0)
 
@@ -156,12 +163,26 @@ class LogOddsMap:
         self.res, self.x0, self.y0 = MAP_RES, MAP_X0, MAP_Y0
 
     def update(self, pose, scan) -> np.ndarray:
-        """Integrate one scan. Returns (k, 2) indices of cells that became occupied."""
+        """Integrate one scan. Returns (k, 2) indices of cells that became occupied.
+
+        A hit clears free space up to a cell short of the hit. A beam with no return (inf) clears
+        free space out to max_range (NO_RETURN_FREE_TO_MAX_RANGE), except a beam the sensor flags
+        dropped (scan.dropped, sensors.RangeScanDrops), which adds nothing (SKIP_DROPPED_BEAMS).
+        Scans without the flag (real drivers) treat every inf as no return."""
         n = self.lo.shape[0]
         ang = pose.yaw + np.asarray(scan.angles)
         d = np.asarray(scan.distances, float)
         hit = np.isfinite(d)
         reach = np.where(hit, d - self.res, scan.max_range)     # free space stops a cell short
+        if not NO_RETURN_FREE_TO_MAX_RANGE:
+            reach = np.where(hit, reach, NO_TRACE_REACH)
+        dropped = getattr(scan, "dropped", None)
+        if SKIP_DROPPED_BEAMS and dropped is not None:
+            drop = np.asarray(dropped, bool)
+            if drop.shape != d.shape:
+                raise ValueError(f"scan.dropped has {drop.size} flags for {d.size} beams")
+            reach = np.where(drop, NO_TRACE_REACH, reach)
+            hit = hit & ~drop       # sensors write inf for a dropped beam; a flagged beam never counts as a hit
         ca, sa = np.cos(ang), np.sin(ang)
         step = self.res / 2
         k = np.arange(int(scan.max_range / step) + 1) * step

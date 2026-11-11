@@ -19,7 +19,8 @@ SimAdapter takes it unchanged. What it adds, per beam:
 - Noise: Gaussian with std(d) = sqrt(noise_std^2 + zr(d)^2) when noise_model == "zranger",
   zr(d) = 0.0025 (1 + exp(k (d - 2.5))), k = ln(80) / 1.5 (Bitcraze zranger2.c, doc 08 section
   2.3), else std = noise_std. Readings are clipped at 0; above max_range => inf.
-- Dropout: each beam reads inf with probability dropout.
+- Dropout: each beam reads inf with probability dropout. The returned sensors.RangeScanDrops
+  flags these beams in .dropped (a beam with no surface in range is not flagged).
 
 Truth geometry is untouched: world.sdf / world.clearance (collision, scoring) see every
 obstacle, whatever its material.
@@ -31,9 +32,9 @@ import math
 import numpy as np
 
 try:
-    from .adapter import RangeScan
+    from .sensors import RangeScanDrops
 except ImportError:
-    from adapter import RangeScan
+    from sensors import RangeScanDrops
 
 ZR_A = 0.0025                     # m, zranger2.c noise at short range (doc 08 2.3)
 ZR_K = math.log(80.0) / 1.5       # 1/m
@@ -157,6 +158,6 @@ class ConeRangeFan:
         meas = np.maximum(df + z * std, 0.0)
         meas = np.where(df < self.min_range, u * self.min_range, meas)
         meas = np.where(fin & ~drop & (meas <= self.max_range), meas, np.inf)
-        return RangeScan(t=float(t), angles=[float(a) for a in self.angles],
-                         distances=[math.inf if not np.isfinite(v) else float(v) for v in meas],
-                         max_range=float(self.max_range))
+        return RangeScanDrops(t=float(t), angles=[float(a) for a in self.angles],
+                              distances=[math.inf if not np.isfinite(v) else float(v) for v in meas],
+                              max_range=float(self.max_range), dropped=[bool(v) for v in drop])
