@@ -31,6 +31,8 @@ jobs:
         run: python3 tools/check_sample_tests.py
       - name: Readiness schema and filter contracts
         run: python3 tools/test_readiness.py
+      - name: Deploy smoke check tests (local server, no network)
+        run: python3 -m unittest tools/test_check_deploy.py
       - name: Browser readiness filters and share links
         run: node --test site/test_constraints.js site/solver/test_sweep.mjs site/test_nav.mjs
       - name: Stdlib sample and template tests

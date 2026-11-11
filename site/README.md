@@ -140,6 +140,11 @@ edit by hand.
 
 ## Verification
 
+After a deploy: `python3 tools/check_deploy.py` checks the live site (missing path => 404, pages
+and scripts with the right content type, worker versions agree, deployed js equals the checkout,
+Pyodide CDN answers). For a local server: `python3 tools/check_deploy.py http://127.0.0.1:8000/`.
+CI runs it about 3 minutes after every push to main (`.github/workflows/deploy-smoke.yml`).
+
 Constraint checks (2026-11-07): `node --test site/test_constraints.js` runs the actual browser
 filtering, hash parsing and copy functions against replay, cached visual-localization and
 unknown-readiness fixtures. It covers exact platform labels, zero and inclusive ceilings,

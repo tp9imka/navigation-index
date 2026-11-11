@@ -1,0 +1,26 @@
+name: deploy-smoke
+# Post-deploy smoke check of the live site (tools/check_deploy.py): missing path => 404, pages and
+# scripts answer with the right content type, worker versions agree, deployed js equals this commit,
+# Pyodide CDN answers. Cloudflare Pages deploys main on its own; the sleep gives it time to finish.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deploy-smoke
+  cancel-in-progress: true
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Wait for the Cloudflare Pages deploy
+        if: github.event_name == 'push'
+        run: sleep 180
+      - name: Smoke check the live site
+        run: python3 tools/check_deploy.py https://navigation-index.pages.dev/
