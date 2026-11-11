@@ -143,9 +143,15 @@ three map strides (union of candidate pairs) took 231 s wall.
 ## Dashboard
 
 ```sh
+.venv/bin/python fetch_truth.py      # VPAIR truth track (not redistributed: academic use only); downloads the sample if missing
 python3 -m http.server 8000          # from the repo root
 # http://localhost:8000/templates/demo-dashboard/?manifest=../../samples/e2e-visual-nav-vpair/results/navdash/manifest.json
 ```
+
+`results/navdash/truth.jsonl` is the VPAIR query poses, so it is not in the repo. `fetch_truth.py` writes it
+(same writer as `run_fusion.py`), adds it back to the manifest and checks it against the SHA-256 of the
+committed run. Without it the dashboard loads the estimate tracks only and reads no error. The screenshots
+below were taken with the truth track loaded.
 
 ![dashboard at t=100 s](results/screenshots/e2e-t100.jpg)
 
@@ -162,6 +168,7 @@ fused (with `pl_m`, health, alarm), voted fixes (`role: altpnt`). Time is frame 
 | `frontend.py` | VO, map descriptors, retrieval, LightGlue; writes `results/frontend*.json` |
 | `nav_core.py` | numpy geometry, `vote()`, error profile |
 | `run_fusion.py` | tile calibration, fix producers, altpnt v2 filter runs, tables, CSV/SVG, navdash |
+| `fetch_truth.py` | writes `results/navdash/truth.jsonl` from the VPAIR download (git-ignored) |
 | `test_e2e.py` | voting / geometry / filter unit tests (need numpy, cv2) + checks on the committed results (stdlib) |
 | `screenshot.sh` | headless capture through `../golden-demo/screenshot.mjs` |
 

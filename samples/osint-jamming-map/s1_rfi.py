@@ -10,6 +10,8 @@ Two independent signals per scene of one relative-orbit stack:
    resolution, scene-median normalisation, DEM slope mask, 0.01 deg baseline grid,
    per-pixel z-score, z > 3 flags. Deviation: the scored scene is left out of its own
    baseline (zephr includes it).
+   Upstream: https://github.com/zephr-xyz/sentinel1-rfi-detection (MIT); method and constants
+   follow it, the code is rewritten. Attribution in THIRD_PARTY.md.
 
 Usage: python s1_rfi.py --date 2026-10-01 --orbit 51 --point 20.5 54.7
 """

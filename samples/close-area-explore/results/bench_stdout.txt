@@ -36,4 +36,4 @@
 | crazyflie | unknown | lawnmower | 60 | 8.3 [3.6, 18.1] | 8.3 [3.6, 18.1] | 75.0 [62.8, 84.2] | 1.7 | 15.0 | 151.7 | 153.3 |
 | crazyflie | unknown | random_walk | 60 | 5.0 [1.7, 13.7] | 5.0 [1.7, 13.7] | 56.7 [44.1, 68.4] | 0.0 | 38.3 | 157.4 | 160.86 |
 
-wall 460.5 s; wrote /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-112055-kiro-cf66/samples/close-area-explore/results/bench_0.json, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-112055-kiro-cf66/samples/close-area-explore/results/bench_0.md
+wall 460.5 s; wrote <checkout>/samples/close-area-explore/results/bench_0.json, <checkout>/samples/close-area-explore/results/bench_0.md

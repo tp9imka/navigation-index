@@ -88,7 +88,26 @@ $PY -m unittest test_relnav_benchmark
 KITTI_SEQS="04 07" ./run.sh lidar   # optional, adds the 4.42 GB seq 07 drive (not run here)
 ```
 
-Dashboard (serve the repo root so the page can reach `samples/`):
+### Ground truth is fetched, not committed
+
+KITTI and UZH-FPV ground truth is CC BY-NC-SA 3.0 and VPAIR is academic use only, so the repo keeps
+only the trajectories this sample computed (`*_kiss_icp.tum`, `*_openvins.tum`, `*_mono_vo.tum`,
+`vpair_*` VO variants, navdash estimate tracks, `*_result.json`). The truth files are rebuilt from the
+public downloads, with no estimator run:
+
+```sh
+$PY fetch_truth.py all      # or lidar | vio | aerial; downloads as above, then writes:
+# results/lidar/kitti04_gt.tum, results/lidar/kitti04_oxts.tum, results/navdash/kitti04/truth.jsonl
+# results/vio/uzhfpv_indoor_forward_3_gt.tum, results/navdash/uzhfpv_indoor_forward_3/truth.jsonl
+# results/aerial/vpair_gt.tum, results/navdash/vpair/truth.jsonl
+```
+
+It adds `truth.jsonl` back to each navdash manifest and compares every file with the SHA-256 in
+[results/truth_sha256.json](results/truth_sha256.json), the copy behind the numbers above. The
+paths are git-ignored. `./run.sh integrate` stops with "run fetch_truth.py first" when a GT file is missing.
+
+Dashboard (serve the repo root so the page can reach `samples/`; without `fetch_truth.py` the
+manifests load the estimate tracks only):
 
 ```sh
 python3 -m http.server 8000      # from the repo root
@@ -98,7 +117,7 @@ python3 -m http.server 8000      # from the repo root
 
 ![VPAIR in the demo dashboard](results/screenshots/vpair.jpg)
 
-Headless Chrome capture of `navdash/vpair` at the last frame. Blue is attitude-aided nadir VO, 58 m
+Headless Chrome capture of `navdash/vpair` at the last frame, taken with the truth track loaded. Blue is attitude-aided nadir VO, 58 m
 off after 9 km. Orange is image-only, 1.4 km off. The white truth sits under blue. Other captures:
 [KITTI 04](results/screenshots/kitti04.jpg), [UZH-FPV](results/screenshots/uzhfpv_indoor_forward_3.jpg)
 (the indoor loop drawn on a placeholder origin; the street map under it means nothing).
@@ -141,7 +160,8 @@ once for more than 2 minutes, so `fetch_data.sh` resumes with `curl -C -`.
 | evo | GPL-3.0 | GitHub API |
 | rosbags | Apache-2.0 | package metadata |
 
-All three datasets are non-commercial. Fine for a hackathon demo, not for a product. evo and
+All three datasets are non-commercial. Fine for a hackathon demo, not for a product. For the same
+reason the repo does not redistribute their ground truth (see "Ground truth is fetched, not committed"). evo and
 OpenVINS are GPL. Keep them as separate tools, not linked into shipped code.
 
 ## Not run, and why
@@ -185,11 +205,12 @@ OpenVINS are GPL. Keep them as separate tools, not linked into shipped code.
 | Path | What |
 |---|---|
 | `run.sh`, `fetch_data.sh` | one command per part; downloads with resume |
+| `fetch_truth.py` | downloads a part and writes its GT files (not redistributed), checked against `results/truth_sha256.json` |
 | `common.py` | TUM IO, evo metrics (SE3 ATE, origin-anchored drift, RPE), KITTI segment errors, navdash/1 writer |
 | `lidar/run_kiss_icp_kitti.py` | part 1 |
 | `vio/Dockerfile.openvins`, `vio/run_openvins.sh` | OpenVINS v2.7 build and serial run |
 | `vio/mono_vo.py`, `vio/eval_uzhfpv.py` | mono VO baseline, bag GT extraction, OpenVINS conversion, scoring |
 | `aerial/run_nadir_vo.py` | part 3 |
 | `integrate/vo_to_altpnt.py` | part 4 |
-| `results/` | TUM trajectories, `*_result.json`, `altpnt_from_vo.json`, `navdash/*/manifest.json` + JSONL, screenshots |
+| `results/` | estimated TUM trajectories, `*_result.json`, `altpnt_from_vo.json`, `navdash/*/manifest.json` + estimate JSONL, screenshots, `truth_sha256.json` (GT files come from `fetch_truth.py`) |
 | `test_relnav_benchmark.py` | 5 unit tests on metrics, error-model fit and navdash export |

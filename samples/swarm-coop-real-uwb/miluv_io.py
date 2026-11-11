@@ -14,6 +14,31 @@ DATA_DIR = os.path.join(HERE, "data")
 ROBOTS = ("ifo001", "ifo002", "ifo003")
 TAGS = {"ifo001": (10, 11), "ifo002": (20, 21), "ifo003": (30, 31)}
 TAG_ROBOT = {t: r for r, ts in TAGS.items() for t in ts}
+
+# ---- TAG_ARMS, HEIGHT_BIAS, ANCHORS and EXPERIMENTS are copied from the MILUV devkit,
+# https://github.com/decargroup/miluv config/, under this licence:
+#
+# MIT License
+#
+# Copyright (c) 2024 DECAR
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 TAG_ARMS = {  # config/uwb/tags.yaml, body frame, m
     10: (0.13189, -0.17245, -0.05249), 11: (-0.17542, 0.15712, -0.05307),
     20: (0.16544, -0.15085, -0.03456), 21: (-0.15467, 0.16972, -0.01680),
@@ -33,6 +58,7 @@ EXPERIMENTS = {  # config/experiments.csv: anchor constellation per experiment
     "default_3_random_0": "0",
     "cirObstacles_3_random_0": "0",
 }
+# ---- end of values copied from the MILUV devkit (MIT licence, notice above) ----
 MOCAP_MAX_GAP = 0.1  # s, no interpolation across mocap dropouts longer than this
 
 

@@ -27,6 +27,9 @@ RETUNE_MARGIN = 1.25
 
 
 def load_tum(p):
+    if not Path(p).exists():
+        # Ground truth is not redistributed (KITTI / UZH-FPV CC BY-NC-SA, VPAIR academic use only).
+        sys.exit(f"{p} not found. Run `.venv/bin/python fetch_truth.py all` in samples/relative-nav-benchmark first.")
     a = np.loadtxt(p)
     return a[:, 0], a[:, 1:4]
 

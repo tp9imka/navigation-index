@@ -1,0 +1,29 @@
+Navigation Index documentation and data licence
+
+Copyright Navigation Index contributors.
+
+The documentation and data in this repository are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0).
+
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:    https://creativecommons.org/licenses/by/4.0/
+
+Paths covered by CC BY 4.0:
+
+- docs/
+- data/
+- catalog/
+- index/
+- INDEX.md
+- llms.txt
+- prose in templates/ (Markdown and other text written for people to read; code and
+  scripts in templates/ are under the Apache-2.0 licence in LICENSE)
+
+Everything else, including all source code (tools/, samples/, site/, templates/ code), is
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Exceptions: third-party material that keeps its own licence is listed in THIRD_PARTY.md. CC BY
+4.0 does not apply to it, and its own terms and attribution strings take precedence.
+
+Suggested attribution: "Navigation Index contributors, https://github.com/tp9imka/navigation-index,
+CC BY 4.0". Say whether you changed the material.

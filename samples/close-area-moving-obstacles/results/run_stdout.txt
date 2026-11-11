@@ -89,4 +89,4 @@ Every collided run:
 | astar_5hz | 1.0 | 44 | 3 | mover | 6.18 | 3.38 | 0.304 | 0.124 |
 | apf | 1.0 | 13 | 2 | mover | 9.7 | 7.6 | 0.27 | 0.07 |
 
-wrote /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-133247-kiro-8ad4/samples/close-area-moving-obstacles/results/moving_0.json, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-133247-kiro-8ad4/samples/close-area-moving-obstacles/results/moving_0.md
+wrote <checkout>/samples/close-area-moving-obstacles/results/moving_0.json, <checkout>/samples/close-area-moving-obstacles/results/moving_0.md

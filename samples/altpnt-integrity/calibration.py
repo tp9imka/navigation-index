@@ -53,6 +53,8 @@ def load_json(*p):
 
 
 def load_tum(path):
+    if not os.path.exists(path):
+        raise SystemExit(f"{path} missing: run ../relative-nav-benchmark/fetch_truth.py all first")
     t, xy = [], []
     with open(path) as fh:
         for line in fh:

@@ -167,6 +167,8 @@ def main():
     parser.add_argument("--out", type=Path, default=ROOT / "replay-results")
     args = parser.parse_args()
     paths = [args.source / "frontend_yaw2.json", args.source / "navdash/vo_only.jsonl", args.source / "navdash/truth.jsonl"]
+    if not paths[2].exists():
+        raise SystemExit(f"{paths[2]} missing: run ../e2e-visual-nav-vpair/fetch_truth.py first")
     frontend = json.loads(paths[0].read_text())
     truth, origin = read_track(paths[2])
     vo, _ = read_track(paths[1], origin)

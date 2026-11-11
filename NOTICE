@@ -1,0 +1,25 @@
+Navigation Index
+Copyright Navigation Index contributors
+
+This product includes software and documentation developed by the Navigation Index
+contributors (https://github.com/tp9imka/navigation-index).
+
+Code is licensed under the Apache License, Version 2.0 (LICENSE). Documentation and data are
+licensed under CC BY 4.0 (LICENSE-docs). Third-party material keeps its own licence and
+attribution; see THIRD_PARTY.md.
+
+Purpose, export and radio compliance
+
+Navigation Index is provided for research, education and resilience purposes: navigation of
+small autonomous vehicles, integrity monitoring, detection of GNSS interference, and safe
+operation when GNSS is degraded. It contains no targeting, terminal guidance or payload logic.
+
+Navigation code is dual-use. You are responsible for complying with the export-control,
+sanctions and radio regulations that apply where you use, modify or distribute this material.
+The GNSS signal-generation sample works on IQ files only and opens no SDR device. Do not
+transmit GNSS or other radio signals over the air without the authorisation your
+jurisdiction requires. Fly only under the
+drone rules that apply to you.
+
+This notice does not change the law. It sets expectations. Background and sources:
+docs/export-control-and-ethics.md.

@@ -148,4 +148,4 @@ Every collided run:
 | 1 | st_astar | 1.0 | 4 | mover | 9.24 | 5.84 | 0.635 |
 | 1 | st_astar | 1.0 | 49 | mover | 10.6 | 4.5 | 0.214 |
 
-wrote /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-112052-kiro-6d9b/samples/close-area-moving-obstacles/results/predict_0_1.json, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-112052-kiro-6d9b/samples/close-area-moving-obstacles/results/predict_0_1.md
+wrote <checkout>/samples/close-area-moving-obstacles/results/predict_0_1.json, <checkout>/samples/close-area-moving-obstacles/results/predict_0_1.md

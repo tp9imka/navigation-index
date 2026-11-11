@@ -179,9 +179,14 @@ What this shows:
 ## Dashboard
 
 ```sh
+.venv/bin/python fetch_truth.py      # VPAIR truth track (not redistributed: academic use only); downloads the sample if missing
 python3 -m http.server 8000          # from the repo root
 # http://localhost:8000/templates/demo-dashboard/?manifest=../../samples/two-source-integrity-vpair/results/navdash/manifest.json
 ```
+
+`results/navdash/truth.jsonl` is the VPAIR query poses, so it is not in the repo. `fetch_truth.py` writes it
+through `../e2e-visual-nav-vpair/fetch_truth.py` and adds it back to the manifest. Without it the dashboard
+loads the estimate tracks only. The screenshots below were taken with the truth track loaded.
 
 ![dashboard at frame 130](results/screenshots/two-source-t130.jpg)
 
@@ -201,6 +206,7 @@ visual fixes, TRN fixes (`r95_m` = 2.45 sigma), fused two-source / visual-only /
 | `trn.py` | Altimeter simulation, TERCOM with secondary peak and no-truth sigma, heightmap PF loop on the VPAIR track, fault hook |
 | `run_two_source.py` | Visual fixes from the e2e cache, TRN fixes, altpnt v2 filter runs, fault injection, `results/two_source_result.json` |
 | `report.py` | `results/pl_vs_frame.svg`, `results/navdash/` |
+| `fetch_truth.py` | writes `results/navdash/truth.jsonl` from the VPAIR download (git-ignored) |
 | `test_two_source.py` | 7 unit tests (numpy, scipy) + 7 checks on the committed results (stdlib) |
 | `screenshot.sh` | Headless dashboard capture through `../golden-demo/screenshot.mjs` |
 | `results/run_output.txt` | Console output of the run above |

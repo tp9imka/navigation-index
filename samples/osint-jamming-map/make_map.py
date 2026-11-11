@@ -139,8 +139,13 @@ def main():
         fh.write(json.dumps({"t": round(t_pass, 1), "event": "s1_overpass",
                              "text": f"{s1_sum['target'][:3]} orbit {s1_sum['relative_orbit']}: "
                                      f"{s1_sum['n_hex_candidates']} temporal-z candidate hexes"}) + "\n")
+    # Raw ADS-B Exchange reports are not redistributed; the dashboard shows them only after a local fetch.
+    adsb_tracks = [f for f in ("adsb-good.jsonl", "adsb-bad.jsonl") if (OUT / f).exists()]
+    if len(adsb_tracks) < 2:
+        print("out/adsb-good.jsonl / adsb-bad.jsonl not found: the dashboard manifest lists hexes and the S1 event "
+              "only. Run `.venv/bin/python adsb_hexmap.py` first to add the aircraft report tracks.")
     manifest = {"title": f"OSINT interference map {adsb_sum['date']} (ADS-B NACp + Sentinel-1 RFI)",
-                "tracks": ["adsb-good.jsonl", "adsb-bad.jsonl", "s1-overpass.jsonl"], "zones": "zones.geojson"}
+                "tracks": [*adsb_tracks, "s1-overpass.jsonl"], "zones": "zones.geojson"}
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=1))
     draw(adsb, s1, adsb_sum, s1_sum, OUT / "map.png")
     print(f"zones {len(zones['features'])}, S1 overpass at t={t_pass:.0f} s of the ADS-B window")

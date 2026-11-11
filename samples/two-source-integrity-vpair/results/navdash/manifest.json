@@ -1,7 +1,6 @@
 {
  "title": "VPAIR: visual fixes + TRN, two-source integrity",
  "tracks": [
-  "truth.jsonl",
   "vo_only.jsonl",
   "fixes_visual.jsonl",
   "fixes_trn.jsonl",

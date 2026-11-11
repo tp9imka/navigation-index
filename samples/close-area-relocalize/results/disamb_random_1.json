@@ -1,6 +1,6 @@
 {
  "input": "synthetic",
- "command": "python run_disambiguate.py --layouts 100 --seed 1 --out /private/tmp/claude-502/-Users-aiva6306-Projects--Sandbox--obsidian/3446b4da-766b-4304-8a6a-07191aa3c485/scratchpad/disamb1",
+ "command": "python run_disambiguate.py --layouts 100 --seed 1 --out <scratch>/disamb1",
  "family": "random",
  "seed": 1,
  "wall_s": 76.5,

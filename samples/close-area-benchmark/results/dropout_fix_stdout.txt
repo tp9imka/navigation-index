@@ -171,13 +171,13 @@ wall 135.0 s for 960 runs; 8320 runs in results/dropout_fix_runs.json
 150/1280 runs, 1265 s
 200/1280 runs, 1833 s
 Traceback (most recent call last):
-  File "/Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-121238-kiro-322a/samples/close-area-benchmark/dropout_fix.py", line 395, in <module>
+  File "<checkout>/samples/close-area-benchmark/dropout_fix.py", line 395, in <module>
     raise SystemExit(main())
                      ^^^^^^
-  File "/Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-121238-kiro-322a/samples/close-area-benchmark/dropout_fix.py", line 391, in main
+  File "<checkout>/samples/close-area-benchmark/dropout_fix.py", line 391, in main
     return cmd_run(a) if a.cmd == "run" else cmd_report(a)
            ^^^^^^^^^^
-  File "/Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-121238-kiro-322a/samples/close-area-benchmark/dropout_fix.py", line 186, in cmd_run
+  File "<checkout>/samples/close-area-benchmark/dropout_fix.py", line 186, in cmd_run
     for k, r in enumerate(ex.map(task, tasks, chunksize=1)):
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/process.py", line 636, in _chain_from_iterable_of_lists

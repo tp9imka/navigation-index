@@ -5,7 +5,7 @@ uv venv ../../samples/close-area-arena/.venv && uv pip install --python ../../sa
 Using CPython 3.11.15
 Creating virtual environment at: ../../samples/close-area-arena/.venv
 Activate with: source ../../samples/close-area-arena/.venv/bin/activate
-Using Python 3.11.15 environment at: /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-133245-kiro-8370/samples/close-area-arena/.venv
+Using Python 3.11.15 environment at: <checkout>/samples/close-area-arena/.venv
 Resolved 12 packages in 1.30s
 Downloading numpy (5.2MiB)
 Downloading scipy (19.4MiB)

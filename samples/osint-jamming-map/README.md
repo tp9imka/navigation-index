@@ -64,8 +64,11 @@ outside the server root (404).
 yellow hex, amber; `c-band-rfi` = Sentinel-1 flag, purple), `label`, `t_start`/`t_end` on the
 ADS-B window clock (s since 03:51:00 UTC). The Sentinel-1 zones are active for +-30 s around the
 overpass (t = 3617 s). Aircraft reports load as two `navdash/1` point tracks (`adsb-bad`,
-`adsb-good`, role `gnss`) so the replay shows them fading in and out. There is no fused track, so
-the metrics panel reads "NO DATA"; that is expected. Headless Chrome capture:
+`adsb-good`, role `gnss`) so the replay shows them fading in and out. Those two files are raw ADS-B
+Exchange reports and are not in the repo: run `.venv/bin/python adsb_hexmap.py` first, then
+`make_map.py` adds them to `out/manifest.json`. The committed manifest lists only the hex zones and
+the S-1 event. There is no fused track, so the metrics panel reads "NO DATA"; that is expected.
+Headless Chrome capture of the full run (with the report tracks):
 [out/dashboard.png](out/dashboard.png).
 
 ## Results (2026-10-01)
@@ -188,11 +191,11 @@ normalisation. Differences:
 
 | File | |
 |---|---|
-| `adsb_hexmap.py` | fetch + bbox filter + H3 GPSJam percentage => `adsb_cells.geojson`, `adsb_summary.json`, `adsb-bad.jsonl`, `adsb-good.jsonl` |
+| `adsb_hexmap.py` | fetch + bbox filter + H3 GPSJam percentage => `adsb_cells.geojson`, `adsb_summary.json`, `adsb-bad.jsonl`, `adsb-good.jsonl` (the last two are raw reports, git-ignored) |
 | `s1_rfi.py` | STAC stack search, ESA RFI XML parse, temporal z-score => `s1_cells.geojson` (footprint, scored hexes, ESA strips, ESA recurrence strips), `s1_summary.json` |
 | `make_map.py` | `zones.geojson` + `manifest.json` + `s1-overpass.jsonl` (event) for the dashboard, `map.png` |
 | `test_osint.py` | 8 unit tests: GPSJam formula and levels, classification incl. MLAT, one-count-per-aircraft, RFI XML parse, z-score flags only the planted anomaly, rank test |
-| `out/` | outputs of the run above (1.1 MB), plus `control_adsb_summary.json` and `dashboard.png` |
+| `out/` | outputs of the run above without the raw ADS-B report tracks, plus `control_adsb_summary.json` and `dashboard.png` |
 | `cache/` | git-ignored: filtered ADS-B snapshots, S1 VH arrays (npz), RFI XMLs, DEM tiles, Natural Earth |
 
 ## Data licenses
@@ -205,8 +208,9 @@ normalisation. Differences:
 - **ADS-B Exchange samples:** "Complete data from the 1st of each month are made available free of
   charge". The sample page names no open licence and the site footer says all rights reserved;
   their Terms of Use and Acceptable Use Policy apply. This sample commits only derived aggregates
-  and ~2300 position reports (`out/adsb-*.jsonl`); check the terms before redistributing raw
-  snapshots or using them commercially.
+  (per-hex counts in `out/adsb_cells.geojson`, `out/adsb_summary.json`, the maps). The position
+  reports (`out/adsb-*.jsonl`) are written locally by `adsb_hexmap.py` and git-ignored; check the
+  terms before redistributing them or the raw snapshots, or using them commercially.
 - **Natural Earth** (map background): public domain.
 - **zephr-xyz/sentinel1-rfi-detection:** MIT.
 

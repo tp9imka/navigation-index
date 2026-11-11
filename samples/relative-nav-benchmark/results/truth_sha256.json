@@ -1,0 +1,12 @@
+{
+ "note": "SHA-256 of the ground-truth files behind the README numbers (run 2026-11-06). The files are not in the repo: KITTI and UZH-FPV are CC BY-NC-SA 3.0, VPAIR is academic use only. fetch_truth.py regenerates them from the public downloads and compares against these hashes.",
+ "files": {
+  "results/lidar/kitti04_gt.tum": "48d61cc1fc4a1e0e92e688b3323525c5c20faa1deb3c461cd36186b213aac11d",
+  "results/lidar/kitti04_oxts.tum": "bb9f6024b55001fac78961c95c42036a5145899573f92b873404b6c972faeaf5",
+  "results/navdash/kitti04/truth.jsonl": "48219bc82e200ae6b73555735887a02c01792b8d7cb6c462c763b9ff5a88219d",
+  "results/vio/uzhfpv_indoor_forward_3_gt.tum": "432d95a4b792ae568bc6d36de2a26cdef9bc13178e2d2004c1026b2c913cf4a9",
+  "results/navdash/uzhfpv_indoor_forward_3/truth.jsonl": "dcac916479d513e6fd550595ab329e43b8663515566cd404080f85f202eecb14",
+  "results/aerial/vpair_gt.tum": "9090589d2c1f9af446234ade09f8bfc498f5b95b5bcaf45baf850ef0d18c5c0d",
+  "results/navdash/vpair/truth.jsonl": "91d2b9c0ee5bbb84e6e425cf8233be12217fecfe68165152c4906cf49c52e636"
+ }
+}

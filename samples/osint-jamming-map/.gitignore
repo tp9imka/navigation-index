@@ -1,2 +1,5 @@
 cache/
 __pycache__/
+# Raw ADS-B Exchange position reports: written by adsb_hexmap.py, not redistributed
+out/adsb-bad.jsonl
+out/adsb-good.jsonl

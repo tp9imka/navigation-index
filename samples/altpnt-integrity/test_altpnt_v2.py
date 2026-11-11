@@ -9,6 +9,8 @@ import altpnt_v2 as v
 import calibration as cal
 
 SIBLINGS = all(os.path.isdir(cal.rel(s)) for s in (cal.RELNAV, cal.GEOLOC, cal.TRN, cal.GOLDEN))
+# ground truth is fetched on demand (../relative-nav-benchmark/fetch_truth.py all), not committed
+SIBLINGS = SIBLINGS and all(os.path.exists(cal.rel(cal.RELNAV, gt)) for gt, _ in cal.TUM_PAIRS.values())
 
 
 class TestCalibration(unittest.TestCase):

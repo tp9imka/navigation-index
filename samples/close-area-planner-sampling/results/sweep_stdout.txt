@@ -47,4 +47,4 @@
 | 1.2 | rrt_star | 5000 | 30 | 300 | 100.0 | 0.0 | 24.9 | 0.03 | 0.974 | 309.7 | 352.3 | 11.8 | 0.211 |
 | 1.2 | informed_rrt_star | 1000 | 30 | 300 | 100.0 | 7.3 | 25.02 | 0.209 | 0.978 | 53.0 | 90.1 | 11.3 | 0.147 |
 | 1.2 | informed_rrt_star | 5000 | 30 | 300 | 100.0 | 0.0 | 24.88 | 0.013 | 0.973 | 436.7 | 643.3 | 12.5 | 0.211 |
-wrote /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-123944-kiro-536a/samples/close-area-planner-sampling/results/sweep_0.json, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-123944-kiro-536a/samples/close-area-planner-sampling/results/sweep_0.md
+wrote <checkout>/samples/close-area-planner-sampling/results/sweep_0.json, <checkout>/samples/close-area-planner-sampling/results/sweep_0.md

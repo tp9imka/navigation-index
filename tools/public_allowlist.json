@@ -1,0 +1,39 @@
+[
+ {"path": "tools/check_public.py", "term": "*", "reason": "the checker defines the terms it looks for"},
+ {"path": "tools/test_check_public.py", "term": "*", "reason": "test fixtures contain the terms on purpose"},
+ {"path": "site/test_nav.mjs", "term": "/Users/", "text": "/Users/x/", "reason": "placeholder path in a unit test of baseFromScript, not a machine path"},
+
+ {"path": "site/playground/spike.js", "term": "/home/<name>/", "text": "/home/pyodide/", "reason": "Pyodide's own in-browser filesystem home, not a machine path"},
+ {"path": "site/playground/worker.js", "term": "/home/<name>/", "text": "/home/pyodide/", "reason": "Pyodide's own in-browser filesystem home, not a machine path"},
+ {"path": "site/playground/README.md", "term": "/home/<name>/", "text": "/home/pyodide/", "reason": "Pyodide's own in-browser filesystem home, not a machine path"},
+ {"path": "site/playground/results/playground_custom.json", "term": "/home/<name>/", "text": "/home/pyodide/", "reason": "Python traceback from inside Pyodide's filesystem, not a machine path"},
+ {"path": "site/playground/results/playground_custom.md", "term": "/home/<name>/", "text": "/home/pyodide/", "reason": "Python traceback from inside Pyodide's filesystem, not a machine path"},
+ {"path": "docs/integration-cards/signalk__signalk-server.md", "term": "/home/<name>/", "text": "/home/node/", "reason": "path inside the upstream signalk-server Docker image (user node), quoted from its docs"},
+
+ {"path": "data/resources/backlog.json", "term": "Ivan", "text": "Ivan Cisneros", "reason": "paper author (ALTO dataset, arXiv 2207.12317)"},
+ {"path": "data/resources/backlog.json", "term": "Ivan", "text": "Ivan Moskalenko", "reason": "paper author (arXiv 2406.00885)"},
+ {"path": "data/resources/loop-12.json", "term": "Ivan", "text": "Ivan Loncar", "reason": "paper author (LARICS, University of Zagreb)"},
+
+ {"path": "data/resources/loop-12.json", "term": "organiser", "text": "run by the organisers", "reason": "ICUAS 2026 UAV Competition rulebook: how the real competition runs entries"},
+ {"path": "data/resources/loop-12.json", "term": "organiser", "text": "(organiser answer)", "reason": "ICUAS 2026 rulebook Q&A: answers from that competition's organisers"},
+ {"path": "data/resources/loop-12.json", "term": "judges", "text": "Judges reveal the grid cells", "reason": "IEEE Region 5 2021 student competition rules: what its judges do"},
+ {"path": "data/resources/loop-12.json", "term": "judges", "text": "Judges' awards instead of a published score", "reason": "EnRicH 2025 European Robotics Hackathon: how that real event scores"},
+ {"path": "data/resources/defense-context.json", "term": "judges", "text": "Navy judges reward working prototypes", "reason": "ONR / NavalX HACKtheMACHINE: what that real competition's judges reward"},
+ {"path": "data/repos/ua-ru-round2.json", "term": "organiser", "text": "what the organisers' technical expert clarified", "reason": "third-party team repo (KROT) recording the Blind flight hackathon organisers' clarifications"},
+ {"path": "data/repos/ua-ru-round2.json", "term": "organiser", "text": "organiser constraints", "reason": "Blind flight (Polet vslepuyu) 2026 hackathon, a real third-party event"},
+ {"path": "data/repos/ua-ru-sources.json", "term": "organiser", "text": "against the organisers' baseline", "reason": "third-party repo README compares against its event organisers' baseline"},
+ {"path": "data/resources/ua-ru-sources.json", "term": "organiser", "text": "Organisers named concrete commercial reference drones", "reason": "fact about third-party Ukrainian/Russian events and their problem statements"},
+ {"path": "data/resources/close-area-sims.json", "term": "organiser", "text": "Organisers and teams review the IROS 2016 and 2017 autonomous drone races", "reason": "summary of a third-party paper written by the IROS race organisers"},
+ {"path": "data/resources/domains-swarm.json", "term": "organiser", "text": "Anti-UAV workshop organizers", "reason": "author field of a third-party workshop resource"},
+ {"path": "data/resources/innovation-poc-foundations.json", "term": "organiser", "text": "RSS workshop organizers", "reason": "author field of a third-party workshop resource"},
+ {"path": "data/resources/learning.json", "term": "organiser", "text": "Image Matching Workshop organizers", "reason": "author field of a third-party workshop resource"},
+ {"path": "data/resources/learning.json", "term": "Day 1", "text": "recorded student talks (Day 1)", "reason": "Stanford SCPNT symposium programme day, a third-party event"},
+ {"path": "data/resources/landscape.json", "term": "organiser", "text": "looking-our-next-8-local-organisers", "reason": "URL of the EC DEFIS EUDIS hackathon announcement"},
+ {"path": "data/resources/landscape.json", "term": "organiser", "text": "European Defense Tech Hackathon organisers", "reason": "author field of a third-party event resource"},
+
+ {"path": "docs/landscape/programs-and-challenges.md", "term": "organiser", "text": "looking-our-next-8-local-organisers", "reason": "URL of the EC DEFIS EUDIS hackathon announcement"},
+ {"path": "docs/landscape/trends-2025-2026.md", "term": "organiser", "text": "looking-our-next-8-local-organisers", "reason": "URL of the EC DEFIS EUDIS hackathon announcement"},
+ {"path": "docs/landscape/ua-ru-sources-overview.md", "term": "organiser", "text": "organiser ООО «ИННОКУБ»", "reason": "named organiser of the Krasnodar Blind flight hackathon, a real third-party event"},
+ {"path": "docs/landscape/ua-ru-sources-overview.md", "term": "organiser", "text": "write-up of the organiser constraints", "reason": "third-party KROT repo describing its event's constraints"},
+ {"path": "docs/landscape/blind-flight-teardown.md", "term": "organiser", "reason": "teardown of third-party Blind flight hackathon repos; every organiser mention is about that event's organisers and their PDFs"}
+]
