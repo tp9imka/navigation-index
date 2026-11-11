@@ -3,10 +3,10 @@
 Briefs like "resilient timing for a sensor network", "time server", "critical infrastructure",
 "time push", "trustworthy GNSS for the grid / telecom". Decoder rows 6, 19.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 Each node knows when its time source is lying and how long it can hold time without it.
-Judges from infrastructure want holdover in microseconds against a stated budget, a time push
+Reviewers from infrastructure operators want holdover in microseconds against a stated budget, a time push
 caught by cross-checking, and authentication where it exists (Galileo OSNMA), with its limits.
 
 ## 2. The demo in 24-48 h

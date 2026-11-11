@@ -2,7 +2,7 @@
 
 Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform
 driver, a demo script, a pitch, a plan or a checklist. For what to build on, read
-[hackathon-playbook.md](../docs/hackathon-playbook.md) and
+[competition-playbook.md](../docs/competition-playbook.md) and
 [reference-stacks.md](../docs/reference-stacks.md) instead.
 
 ## Close-area A=>B (likely Day-1 task)

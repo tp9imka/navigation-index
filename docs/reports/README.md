@@ -11,7 +11,7 @@ The top-level `reports/` folder is different: `reports/quality.md` there is gene
 
 | Page | Use it when | You get |
 |---|---|---|
-| [docs-navigation-audit-2026-11-09.md](docs-navigation-audit-2026-11-09.md) | You want to know how a cold agent reaches the close-area files, or which navigation fixes are open | 12 Day-1 question walkthroughs with hop counts, orphan docs, stale "pending" pointers, a ranked fix list split into work packages. Current |
+| [docs-navigation-audit-2026-11-09.md](docs-navigation-audit-2026-11-09.md) | You want to know how a cold agent reaches the close-area files, or which navigation fixes are open | 12 first-day question walkthroughs with hop counts, orphan docs, stale "pending" pointers, a ranked fix list split into work packages. Current |
 | [review-round3.md](review-round3.md) | You want the newest whole-hub review (2026-11-06) | A cold day-0 pass with an unknown statement; lists which round-2 items are still open. Predates the close-area work |
 | [review-round2.md](review-round2.md) | You trace an older finding | Four drills as a team member and as an LLM agent. Superseded by round 3 for open items |
 | [cold-start-review.md](cold-start-review.md) | You trace the first finding on a topic | First fresh-eyes pass (2026-11-06), three statements worked as human and as agent. Superseded by rounds 2 and 3 for open items |

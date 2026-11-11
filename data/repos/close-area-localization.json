@@ -25,7 +25,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "License BSD-2-Clause (LICENSE.md read via gh api; GitHub reports NOASSERTION). Last push 2026-08. Builds with CMake in minutes, Python bindings available. Needs camera intrinsics, so calibrate on Day 1. Pose ambiguity on small or far tags at near-frontal views is the known gotcha; use tag bundles or larger tags for the goal marker.",
+    "hackathon_notes": "License BSD-2-Clause (LICENSE.md read via gh api; GitHub reports NOASSERTION). Last push 2026-08. Builds with CMake in minutes, Python bindings available. Needs camera intrinsics, so calibrate on the actual camera first. Pose ambiguity on small or far tags at near-frontal views is the known gotcha; use tag bundles or larger tags for the goal marker.",
     "related": [
       {
         "id": "repo:christianrauch/apriltag_ros",
@@ -103,7 +103,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "License Apache-2.0 (gh api); repo moved from IntelRealSense to realsenseai, last push 2026-11. T265 is end of life (Intel EOL notice, sales stopped 2022), so do not plan on one unless the organisers hand it out. For VIO, turn the IR emitter off or use the IR stream with emitter off, otherwise the dot pattern corrupts feature tracking. IMU on D435i is unsynchronised with images by default; check unite_imu and timestamps.",
+    "hackathon_notes": "License Apache-2.0 (gh api); repo moved from IntelRealSense to realsenseai, last push 2026-11. T265 is end of life (Intel EOL notice, sales stopped 2022), so do not plan on one unless whoever set the task hands one out. For VIO, turn the IR emitter off or use the IR stream with emitter off, otherwise the dot pattern corrupts feature tracking. IMU on D435i is unsynchronised with images by default; check unite_imu and timestamps.",
     "related": [
       {
         "id": "repo:rpng/open_vins",
@@ -141,7 +141,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "License Apache-2.0 (gh api), created 2026-05. Depends only on NumPy and SciPy. README example (not run here): FAST-LIO2 on Oxford Spires christ-church-03 gives median NEES 1.04e3 vs calibrated 2.37, about 21x too tight per axis, 90% coverage 0.000. Use it on Day 1 recordings to set an honest covariance inflation before feeding VISION_POSITION_ESTIMATE.",
+    "hackathon_notes": "License Apache-2.0 (gh api), created 2026-05. Depends only on NumPy and SciPy. README example (not run here): FAST-LIO2 on Oxford Spires christ-church-03 gives median NEES 1.04e3 vs calibrated 2.37, about 21x too tight per axis, 90% coverage 0.000. Use it on your first recordings to set an honest covariance inflation before feeding VISION_POSITION_ESTIMATE.",
     "related": [
       {
         "id": "repo:hku-mars/fast_lio",

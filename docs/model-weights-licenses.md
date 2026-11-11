@@ -98,14 +98,14 @@ for one, has an explicit trade-compliance clause.
    README example, in hloc configs and in most UAV-to-satellite papers. The Magic Leap terms
    limit use to "your own noncommercial internal research purposes". They forbid giving third
    parties access. They also say that "all and any such derivatives and modifications will be
-   owned by Licensor". A hackathon entry is shown to judges and often handed to a sponsor, which
+   owned by Licensor". A hackathon entry is shown to reviewers and often handed to a sponsor, which
    is hard to call internal research. Swap to ALIKED or DISK + LightGlue: it is a one-line
    change (`LightGlue(features="aliked")`). The sample in
    [samples/geoloc-license-clean](../samples/geoloc-license-clean/) shows those swaps working.
 2. **"Non-commercial" plus prize money or a sponsor is ambiguous.** CC BY-NC defines
    NonCommercial as "not primarily intended for or directed towards commercial advantage or
    monetary compensation". A defense-sponsored hackathon with prizes, or one whose terms give the
-   organizer a license to your submission, can fall on the wrong side. If the hackathon terms
+   event host a license to your submission, can fall on the wrong side. If the hackathon terms
    assign IP or grant the sponsor a license, you cannot pass on rights you do not have: NC, AGPL,
    no-license and Magic Leap components break that. Read the event's IP clause first. Decide your
    stack before writing code, not at submission.

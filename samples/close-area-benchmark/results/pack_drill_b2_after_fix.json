@@ -1,6 +1,6 @@
 {
  "input": "synthetic",
- "world": "docs/drill-2026-11/our_room.world.json",
+ "world": "docs/cold-start-drill/our_room.world.json",
  "vehicle": {
   "radius_m": 0.2,
   "v_max": 1.5,

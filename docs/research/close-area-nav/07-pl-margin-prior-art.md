@@ -1,6 +1,6 @@
 # 07. Kill test for idea C: does a PL-margin safety filter already exist?
 
-Prior-art scan, 2026-11-09 (loop-13). Claim under test, from
+Prior-art scan, 2026-11-09. Claim under test, from
 [04-innovation-prior-art.md](04-innovation-prior-art.md) section 3.2 and the
 [README](README.md) headline:
 
@@ -150,7 +150,7 @@ USPTO full-text, ION GNSS+ 2024-2026 proceedings beyond search summaries, defenc
 
 ## 5. Not verified
 
-Reconciled 2026-11-09 (loop-28) against
+Reconciled 2026-11-09 against
 [close-area-safety-filter](../../../samples/close-area-safety-filter/README.md). Still open:
 
 - Tan 2025 IROS venue comes from a Nature Index listing; the arXiv page says "Submitted to
@@ -176,4 +176,4 @@ Reconciled 2026-11-09 (loop-28) against
 - Section 2, "the sentence a judge would accept": the composition it describes (F5) did not beat
   a fixed 0.2 m bound; see the note at the end of section 2.
 
-Records added: `data/resources/loop-13.json` (7 resources).
+Records added: the PL-margin prior-art lane file in `data/resources/` (7 resources).

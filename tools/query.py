@@ -266,7 +266,7 @@ DECODE_TRIGGER_W = 2.0   # per matched trigger group, times the row's position d
 DECODE_TRIGGER_DECAY = 0.5
 DECODE_PHRASE_W = 1.0    # extra share per additional word of a multi-word trigger: "ground robot" beats "underground"
 # idf of statement tokens found in each row column; the problem statement is the row's own wording
-DECODE_FIELD_W = {"name": 1.5, "approach": 0.3, "pitch": 0.3, "risk": 0.15, "datasets": 0.15}
+DECODE_FIELD_W = {"name": 1.5, "approach": 0.3, "summary": 0.3, "risk": 0.15, "datasets": 0.15}
 DECODE_KEEP = 0.35       # rows after the first are kept when they score at least this share of the best
 DECODE_PLATFORM_CONFLICT = 0.2  # a named platform outweighs generic GNSS / distance cues for another platform
 # Without a matching wording trigger, require overlap with a meaningful share of the brief.
@@ -436,7 +436,7 @@ def decoder_rows(text=None):
             ni = header.index("#")
             col = {k: column(header, *keys) for k, keys in (
                 ("name", ("problem statement",)), ("approach", ("approach",)), ("stack", ("stack",)),
-                ("datasets", ("dataset",)), ("start", ("start from",)), ("risk", ("risk",)), ("pitch", ("pitch",)))}
+                ("datasets", ("dataset",)), ("start", ("start from",)), ("risk", ("risk",)), ("summary", ("one-line summary", "summary")))}
             for cells in body:
                 if len(cells) <= ni or not cells[ni].isdigit():
                     continue
@@ -444,7 +444,7 @@ def decoder_rows(text=None):
                 rows.append({"row": int(cells[ni]), "name": plain(get("name")), "approach": plain(get("approach")),
                              "start_from": links(get("start"), "sample"), "start_from_text": plain(get("start")),
                              "cards": links(get("stack"), "card"), "datasets": plain(get("datasets")),
-                             "risk": plain(get("risk")), "pitch": plain(get("pitch"))})
+                             "risk": plain(get("risk")), "summary": plain(get("summary"))})
     for row in rows:
         row["platforms"] = [tr["platform"] for tr in triggers
                             if tr.get("platform") and row["row"] in tr["rows"]]
@@ -515,7 +515,7 @@ def decode(statement, limit=DECODE_MAX_ROWS, text=None):
             seen |= cols[f]
             shared = {s for s in toks for t in hit if tok_match(t, s, False)}
             evidence[n] |= shared
-            if f in ("name", "approach", "pitch"):
+            if f in ("name", "approach", "summary"):
                 task_evidence[n] |= shared - context
     for row in rows:
         if platforms and row["platforms"] and not platforms.intersection(row["platforms"]):

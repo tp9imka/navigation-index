@@ -41,7 +41,7 @@ Cross-view geo-localization had ground<=>satellite benchmarks only; the viewpoin
 Estimate: dataset request + download same day if the email reply arrives. Eval with the released baseline on one 8 GB+ GPU: ~1-2 hours. Training the ResNet-50 baseline: a few hours on a single modern GPU (training time not reported in the paper). Real-drone results are not reproducible (qualitative, single YouTube video).
 
 ## What a hackathon team can take from it
-- Standard evaluation protocol (drone=>satellite R@1 + AP, building-disjoint split) - report your retriever on it so judges can compare to published numbers.
+- Standard evaluation protocol (drone=>satellite R@1 + AP, building-disjoint split) - report your retriever on it so reviewers can compare to published numbers.
 - Pretraining source for a drone=>satellite retriever before fine-tuning on your own flight area; check the non-commercial terms first.
 - Multi-query trick: aggregating several consecutive drone frames lifts R@1 from 58.49 to 69.33 (Table 4) - in a nav stack, fuse retrieval over a short window instead of trusting one frame.
 - Weight sharing between drone and satellite branches matters (Table 6) - keep a single encoder when training your own.

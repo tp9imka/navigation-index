@@ -287,7 +287,7 @@ Related in the index:
 - Context: [concept page](../../catalog/concepts/celestial-nav.md),
   [primer: absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md),
   [GAO-21-320SP](../../catalog/resources/gao-21-320sp-gps-alternatives.md) (DoD alt-PNT
-  assessment incl. celestial), [hackathon playbook](../../docs/hackathon-playbook.md).
+  assessment incl. celestial), [hackathon playbook](../../docs/competition-playbook.md).
 
 ## Not verified
 

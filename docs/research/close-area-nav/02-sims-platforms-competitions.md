@@ -2,7 +2,7 @@
 
 Lane 2 of the close-area research pass (2026-11-09). Task assumption: move a small drone
 from A to B in a confined space, possibly with obstacles. Platform, sensors, indoor vs
-outdoor and sim vs real are unknown until Day 1. Team laptop: Apple Silicon Mac, `uv`
+outdoor and sim vs real are unknown until the task is announced. Team laptop: Apple Silicon Mac, `uv`
 and `docker` present, no numpy/pybullet in system python.
 
 Source labels: **[code]** = read in the repo via `gh api` on 2026-11-09, **[docs]** =
@@ -29,7 +29,7 @@ measurements.
   decks), DJI Tello / RoboMaster TT, or a PX4 quad (Holybro X500 class, maybe ModalAI
   VOXL 2). Write the planner against a thin "setpoint + range scan + pose" interface so
   it ports across all three.
-- **What judges score** (IMAV 2026 rules are the closest public analogue): completion
+- **What reviewers score** (IMAV 2026 rules are the closest public analogue): completion
   first, then onboard autonomy (off-board compute or beacons => 0.7x, any manual
   intervention => 0.4x), then risk-graded choices (smaller window, harder bar), mass,
   and a precision landing bonus.
@@ -115,7 +115,7 @@ PX4_GZ_WORLD=walls make px4_sitl gz_x500_depth              # obstacle world + d
 Second terminal: `uv pip install mavsdk` and fly an offboard position/velocity loop; or
 ROS 2 offboard with `TrajectorySetpoint` (hub: `res:px4-ros2-offboard-control`). The
 `PX4_GZ_WORLD` variable and the `gz_x500_depth` target name follow the PX4 gz docs
-pattern; confirm on Day 0.
+pattern; confirm before the task starts.
 
 Sanity note: the `--sim-tools` script trusts third-party Homebrew taps and installs
 XQuartz. That is an install; get the go-ahead before running it on the team laptop.
@@ -134,7 +134,7 @@ XQuartz. That is an install; get the go-ahead before running it on the team lapt
 
 **Design rule from this table:** every platform reduces to three ports: `pose()`,
 `ranges()` or `depth()`, and `send_setpoint(pos | vel)`. Write the planner against that
-interface on Day 0, back it with gym-pybullet-drones and PX4 SITL, and swap in the real
+interface before the task starts, back it with gym-pybullet-drones and PX4 SITL, and swap in the real
 driver once the platform is known.
 
 ## 3. Competition formats and lessons
@@ -170,7 +170,7 @@ driver once the platform is known.
 
 ## 4. Not verified
 
-Reconciled 2026-11-09 (loop-28): no sample installed or ran any simulator or platform SDK named
+Reconciled 2026-11-09: no sample installed or ran any simulator or platform SDK named
 here. The hub compares planners in its own numpy arena instead
 ([close-area-arena](../../../samples/close-area-arena/README.md), synthetic), and the drone-adapter
 drivers are unrun stubs ([drivers](../../../templates/drone-adapter/drivers/README.md)). Every

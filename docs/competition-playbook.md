@@ -1,8 +1,9 @@
-# Hackathon playbook: navigation and PNT under GNSS denial
+# Competition playbook: navigation and PNT under GNSS denial
 
-For a team going into a navigation-themed hackathon that may have a military or defense
-track. Everything here is framed as defensive: keeping position, navigation and timing
-trustworthy, detecting interference, and giving operators an honest picture. Weapon
+For a team entering a navigation-themed competition or hackathon, including one with a
+defense-context track. Everything here is about resilient PNT and airspace awareness: keeping
+position, navigation and timing trustworthy, detecting interference, and giving operators an
+honest picture. Weapon
 terminal guidance and targeting are out of scope (see
 [DoDD 3000.09](../catalog/resources/dodd-3000-09-autonomy-weapons-2023.md) for where that
 line sits, and [Policy, export control and ethics](../catalog/concepts/policy-ethics.md)).
@@ -21,8 +22,8 @@ large-area retrieval and the end-to-end VPAIR chain (18), thermal (18 stretch), 
 Companion docs:
 
 - [reference-stacks.md](reference-stacks.md) - "if you only have X, use Y", with a license column.
-- [day0-runbook.md](day0-runbook.md) - the first 3 hours after the problem statement drops.
-- [problem-statement-decoder.md](problem-statement-decoder.md) - likely statements by type => approach, stack, data, sample, risk, pitch. Start here when the statement drops, except for EDGE Challenge 2: start at [challenge-2-autonomous-flight.md](challenge-2-autonomous-flight.md), which picks the decoder rows for you.
+- [first-three-hours.md](first-three-hours.md) - the first 3 hours after the problem statement drops.
+- [problem-statement-decoder.md](problem-statement-decoder.md) - the brief decoder: likely statements by type => approach, stack, data, sample, risk, one-line summary. Start here when the statement arrives; for a full brief with several themes, start at its [full-brief routing table](problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages), which picks the decoder rows for you.
 - [samples/README.md](../samples/README.md) - every sample by problem: status, deps, first command, key result.
 - [evidence-matrix.md](evidence-matrix.md) - every measured number across samples, real vs simulated input.
 - [landscape/](landscape/README.md) - what vendors already sell and what funders ask for.
@@ -30,8 +31,8 @@ Companion docs:
 
 Contents:
 
-1. [What judges reward](#1-what-judges-reward)
-   - [1.1 Differentiators judges have not seen](#11-differentiators-judges-have-not-seen)
+1. [What reviewers look for](#1-what-reviewers-look-for)
+   - [1.1 Differentiators reviewers have not seen](#11-differentiators-reviewers-have-not-seen)
 2. [Problem space map](#2-problem-space-map)
 3. [Project ideas (24-48h)](#3-project-ideas-24-48h)
 4. [Reference architectures](#4-reference-architectures)
@@ -40,26 +41,26 @@ Contents:
 
 ---
 
-## 1. What judges reward
+## 1. What reviewers look for
 
 Pulled from past challenge designs, funder problem statements and post-mortems in the hub.
 The common thread: a working, measured, honest prototype on a realistic scenario beats a
 clever slide.
 
-| Judges reward | Evidence in the hub | What it means for your demo |
+| Reviewers look for | Evidence in the hub | What it means for your demo |
 |---|---|---|
 | A working prototype on a realistic simulated system | [ONR HACKtheMACHINE Unmanned](../catalog/resources/onr-hackthemachine-unmanned-2021.md) - Navy judges reward working prototypes on realistic simulated systems | Run against PX4 or ArduPilot SITL, real recorded data, or real hardware. Not a notebook with synthetic sine waves. |
 | Measured accuracy, not coverage | [DARPA SubT](../catalog/resources/darpa-subt-challenge.md) scored accurate localization of reported artifacts; [Kelvins SPEC2019](../catalog/resources/kelvins-spec2019-paper.md) shows how ESA scores a nav competition | Show one number with ground truth: ATE in metres via [evo](../catalog/repos/michaelgrupp__evo.md), OSPA via [Stone Soup](../catalog/resources/stone-soup-docs.md), error vs time during an outage. |
 | Multi-sensor fusion, not one magic sensor | [EDF-2024 drone navigation challenge](../catalog/resources/edf-2024-drone-navigation-challenge.md) - "multi-sensor fusion, not a single sensor, is the ask"; DARPA [ASPN](../catalog/resources/darpa-aspn-briefing-2019.md) pushes plug-and-play all-source fusion | Architect for sensor dropout and plug-in sources even if you only finish two. Show the filter surviving one source going away. |
 | Integrity and plausibility over raw accuracy | [OPSGROUP 2024 report](../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md) - "is my position plausible?" checks matter more than accuracy; [FAA SAFO 24002](../catalog/resources/faa-safo-24002-gnss-disruptions.md) - hybrid GPS/INS can also be corrupted by spoofing | Detect and flag before you fuse. A spoofing alarm that fires and a filter that refuses the bad fix is the strongest 30-second demo moment. |
-| Detect, respond, recover vocabulary | [DHS Resilient PNT Conformance Framework](../catalog/resources/dhs-resilient-pnt-conformance-framework.md) (four resilience levels), [NISTIR 8323](../catalog/resources/nist-ir-8323-pnt-profile.md) (identify/protect/detect/respond/recover, GNSS as untrusted input) | Put your features on a slide mapped to these words. Judges from government recognise them. |
+| Detect, respond, recover vocabulary | [DHS Resilient PNT Conformance Framework](../catalog/resources/dhs-resilient-pnt-conformance-framework.md) (four resilience levels), [NISTIR 8323](../catalog/resources/nist-ir-8323-pnt-profile.md) (identify/protect/detect/respond/recover, GNSS as untrusted input) | Put your features on a slide mapped to these words. Reviewers from government programmes recognise them. |
 | Holdover time as the value metric | [DIU Transition of Quantum Sensing](../catalog/resources/diu-transition-quantum-sensing-2024.md) - value is reduced drift and longer holdover without GPS | Report "minutes until error exceeds N metres" with and without your aid. |
 | Deployable, testable, dual-use | [NATO DIANA challenges](../catalog/resources/nato-diana-10-challenges-2025.md), [DIANA cohort feature](../catalog/resources/nato-diana-secure-comms-navigation.md) - selection favors deployable, testable dual-use products | Name the civil use (aviation, shipping, timing) next to the defense one. Show it runs on hardware a unit could buy. |
 | Rapid field relevance, frontline users | [Brave1-NATO competition](../catalog/resources/brave1-nato-counter-drone-ew-competition.md), [Ukrainian anti-drone hackathon](../catalog/resources/militarnyi-anti-drone-hackathon-ukraine.md), [Kyiv Independent on EW cycles](../catalog/resources/kyiv-independent-invisible-war-ew.md) - adaptation cycles measured in weeks | Show reconfigurability: config-driven sources, thresholds, frequency plans. Say how a field user retunes it. |
 | Sim-to-real honesty | [Kelvins SPEED+](../catalog/resources/kelvins-pose-estimation-2021.md) scored the synthetic-to-hardware gap; [Swift](../catalog/resources/swift-champion-drone-racing-nature.md) used residual models from real data | If you only ran in sim, say so and show what breaks on real data. |
 | Operator workflow and interop | [CERBERUS SubT win](../catalog/resources/cerberus-subt-final-paper.md) - field-hardening and operator workflow mattered as much as algorithms; [NeBula](../catalog/resources/nebula-costar-subt-paper.md) - reasoning over localization uncertainty improves decisions | Put the output on a map operators already use (TAK via CoT). Show uncertainty, not just a dot. |
 | Lightweight onboard beats heavy | [MAVLab AlphaPilot win](../catalog/resources/mavlab-alphapilot-win-2019.md), [A2RL 2025](../catalog/resources/a2rl-2025-season.md) - university labs beat well-funded teams | Measure latency and compute. A CPU-real-time pipeline is a feature. |
-| Governable, traceable AI | [DoD AI principles](../catalog/resources/dod-ai-ethical-principles-2020.md), [NATO AI principles](../catalog/resources/nato-ai-strategy-principles-2021.md) - judges ask how an AI component can be disengaged | Any learned or LLM component needs a log, a confidence, and an off switch with a safe fallback. |
+| Governable, traceable AI | [DoD AI principles](../catalog/resources/dod-ai-ethical-principles-2020.md), [NATO AI principles](../catalog/resources/nato-ai-strategy-principles-2021.md) - reviewers ask how an AI component can be disengaged | Any learned or LLM component needs a log, a confidence, and an off switch with a safe fallback. |
 | Compliance awareness | [Stony Brook ITAR/EAR guide](../catalog/resources/stonybrook-export-publicly-available.md), [EAR and open source](../catalog/resources/linux-foundation-ear-open-source.md), [EU 2021/821](../catalog/resources/eu-dual-use-regulation-2021-821.md) | Stay on public civil signals and published methods. Never radiate GNSS signals; cabled or shielded only. One slide line on this pre-empts the question. |
 | Skepticism toward unverified claims | [Vermeer optical navigation report](../catalog/resources/militarnyi-vermeer-optical-nav-2025.md) - vendor claims not independently tested; [RUSI Meatgrinder](../catalog/resources/rusi-meatgrinder-2023.md) - loss figures are contested | Cite numbers with their caveat. Overclaiming in front of practitioners loses points. |
 
@@ -74,9 +75,9 @@ framing: [EUDIS Defence Hackathon 2025](../catalog/resources/eudis-defence-hacka
 made GNSS-denied navigation one of two common challenges across eight sites; funder problem
 statements are collected in [programs and challenges](landscape/programs-and-challenges.md).
 
-### 1.1 Differentiators judges have not seen
+### 1.1 Differentiators reviewers have not seen
 
-Judges at a defense hackathon will have seen camera-to-satellite-map matching (at least ten
+Reviewers at a navigation competition will have seen camera-to-satellite-map matching (at least ten
 vendors sell it, and one started at a 2024 hackathon), plain VIO, and GNSS+IMU boxes with a
 jamming flag ([landscape](landscape/README.md), [products](landscape/gnss-denied-nav-products.md)).
 Expect other teams to bring the same satellite-matching demo. What is rare, ordered by how
@@ -643,7 +644,7 @@ Repos: [GTSAM](../catalog/repos/borglab__gtsam.md), [Crazyswarm2](../catalog/rep
 ## 5. 48h execution plan template
 
 Assumes 4-5 people. For a 24h event, compress each block by half and cut the stretch goal
-at H+0. The first three hours are scripted minute by minute in [day0-runbook.md](day0-runbook.md).
+at hour 0. The first three hours are scripted minute by minute in [first-three-hours.md](first-three-hours.md).
 
 Fill-in versions of this plan and its artifacts live in [templates/](../templates/README.md):
 [team roles and 48h plan](../templates/team-roles-and-48h-plan.md),
@@ -662,15 +663,15 @@ detector, metrics), **Platform** (SITL, autopilot, hardware), **Viz/C2** (TAK, m
 
 | Window | Goal | Exit criterion |
 |---|---|---|
-| H+0 to H+2 | Lock the problem statement against the challenge text. Pick one idea and one fallback. Write the demo script in five lines. | Demo script agreed; one metric named (ATE, time-to-detect, holdover minutes, false-alarm rate). |
-| H+2 to H+6 | Walking skeleton: data in => dumb algorithm => output on the map. Everything end to end, nothing good. | A fake detection or a raw position shows up in TAK / the web map. |
-| H+6 to H+12 | Real core algorithm on real or recorded data. Metric computed automatically. | First honest number on a plot, committed with the script that made it. |
-| H+12 to H+14 | Checkpoint: is the core working? If not, switch to the fallback idea now. | Go / switch decision written down. |
-| H+14 to H+22 | Sleep in shifts. Integration into SITL or hardware. Failure case found and recorded. | Full demo runs once without manual fixes. |
-| H+22 to H+30 | Improve the metric; add the integrity/alarm layer; add the "what we did not verify" list. | Before/after comparison plot. |
-| H+30 to H+36 | Feature freeze. Record a backup demo video. Rehearse the live run three times. | Video saved locally and on a second laptop. |
-| H+36 to H+42 | Pitch: problem (cite one incident source), approach, live demo, number, limits, next steps, compliance line. | 3-minute pitch timed. |
-| H+42 to H+48 | Buffer, judge Q&A prep, clean README with run instructions. | README reproduces the demo on a clean machine. |
+| Hour 0-2 | Lock the problem statement against the challenge text. Pick one idea and one fallback. Write the demo script in five lines. | Demo script agreed; one metric named (ATE, time-to-detect, holdover minutes, false-alarm rate). |
+| Hour 2-6 | Walking skeleton: data in => dumb algorithm => output on the map. Everything end to end, nothing good. | A fake detection or a raw position shows up in TAK / the web map. |
+| Hour 6-12 | Real core algorithm on real or recorded data. Metric computed automatically. | First honest number on a plot, committed with the script that made it. |
+| Hour 12-14 | Checkpoint: is the core working? If not, switch to the fallback idea now. | Go / switch decision written down. |
+| Hour 14-22 | Sleep in shifts. Integration into SITL or hardware. Failure case found and recorded. | Full demo runs once without manual fixes. |
+| Hour 22-30 | Improve the metric; add the integrity/alarm layer; add the "what we did not verify" list. | Before/after comparison plot. |
+| Hour 30-36 | Feature freeze. Record a backup demo video. Rehearse the live run three times. | Video saved locally and on a second laptop. |
+| Hour 36-42 | Pitch: problem (cite one incident source), approach, live demo, number, limits, next steps, compliance line. | 3-minute pitch timed. |
+| Hour 42-48 | Buffer, judge Q&A prep, clean README with run instructions. | README reproduces the demo on a clean machine. |
 
 Pitch skeleton (map to Section 1):
 
@@ -722,7 +723,7 @@ the manual view and the parts the kit cannot do (accounts, hardware, rules).
 - [ ] Offline basemap: [PMTiles](../catalog/repos/protomaps__pmtiles.md) extract of the venue region + [Martin](../catalog/repos/maplibre__martin.md) or [TileServer GL](../catalog/repos/maptiler__tileserver-gl.md).
 - [ ] Copy [templates/project-repo](../templates/project-repo/) to the team repo and run `make test eval demo` on every laptop.
 - [ ] Run each sample you plan to use, from [samples/README.md](../samples/README.md) (status, deps, first command). Most samples ran end to end on 2026-11-06, including the SITL, pyubx2, RTKLIB, Stone Soup, LightGlue and MagNav.jl paths; the few unrun parts are marked `partial` there. Use one `.venv` per sample, never global pip.
-- [ ] Register the hub as an MCP server and try the example queries in [day0-runbook.md](day0-runbook.md#5-find-components-fast-with-the-hub-via-mcp).
+- [ ] Register the hub as an MCP server and try the example queries in [first-three-hours.md](first-three-hours.md#5-find-components-fast-with-the-hub-via-mcp).
 
 ### 6.3 Datasets to pre-download
 

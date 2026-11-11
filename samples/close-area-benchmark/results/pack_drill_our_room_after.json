@@ -19,7 +19,7 @@
  "pack": {
   "schema": "close-area-pack/1",
   "name": "drill_our_room",
-  "description": "loop-99 re-run of the drill pack docs/drill-2026-11/pack_our_room.json (loop-92 drill, our hall = copy of close-area-arena/rooms/hall_8x6.json), world from docs/drill-2026-11/our_room.world.json. Same vehicle, sensor, planners, seeds and bar as the drill pack.",
+  "description": "loop-99 re-run of the drill pack docs/cold-start-drill/pack_our_room.json (loop-92 drill, our hall = copy of close-area-arena/rooms/hall_8x6.json), world from docs/cold-start-drill/our_room.world.json. Same vehicle, sensor, planners, seeds and bar as the drill pack.",
   "vehicle": {
    "radius_m": 0.2,
    "v_max": 1.5,
@@ -67,7 +67,7 @@
  },
  "worlds": [
   {
-   "ref": "../../../docs/drill-2026-11/our_room.world.json",
+   "ref": "../../../docs/cold-start-drill/our_room.world.json",
    "name": "our_room",
    "family": "custom",
    "max_time_s": 60.0

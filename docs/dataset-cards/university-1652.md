@@ -58,7 +58,7 @@ g = ImageFolder("University-1652/test/gallery_satellite")
 ## Pitfalls
 
 - Results reported as Recall@1 on building IDs do not translate into meters of error;
-  judges asking "how many meters" need a different dataset (UAV-VisLoc, AnyVisLoc, VPAIR).
+  reviewers asking "how many meters" need a different dataset (UAV-VisLoc, AnyVisLoc, VPAIR).
 - Access depends on a human answering email; request a week ahead.
 - Domain gap: synthetic renders vs real drone frames.
 

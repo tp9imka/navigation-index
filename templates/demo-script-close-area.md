@@ -6,7 +6,7 @@ point mass, scored on truth) and comes from a committed results file named next 
 or flight.
 
 What we pitch: the measured toolkit, plus a narrow claim only if the real brief fits it
-([case study](../docs/case-study/README.md), [research decision](../docs/research/README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
+([case study](../docs/how-it-was-built.md), [research decision](../docs/research/README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
 The two-arm safety-filter demo that used to be on this page is gone: that headline failed its own
 kill test (F5 collided in 1.7 % [0.7, 3.8] of jump-fault runs against a 1 % bar,
 [kill_e_tables.md](../samples/close-area-safety-filter/results/kill_e_tables.md), `[synthetic]`).
@@ -53,7 +53,7 @@ cold `make first-flight` took 205.89 s, warm 4.94 s,
       optional pack beat.
 - [ ] Local server running in its own terminal from the hub root: `python3 -m http.server 8000`.
 - [ ] `python3 tools/venue_kit.py prepare` then `verify` ran with network and said `PASS`
-      ([day-0 runbook](../docs/day0-runbook.md#browser-tools-offline)). Without it `?pyodide=local`
+      ([day-0 runbook](../docs/first-three-hours.md#browser-tools-offline)). Without it `?pyodide=local`
       has nothing to load.
 
 Files downloaded and folders ready:
@@ -157,7 +157,7 @@ the relocalization arm passed only on the open families (random, u_trap) and fai
 office, warehouse, maze and glass_office
 ([relocalize README](../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
 With 4 beams the best arm reached 66-89 % against a 90 % bar
-([case study](../docs/case-study/README.md#relocalization-on-4-beams)). Do not claim novelty
+([case study](../docs/how-it-was-built.md#relocalization-on-4-beams)). Do not claim novelty
 (prior art in [doc 10](../docs/research/close-area-nav/10-relocalization-prior-art.md)).
 
 ### Variant rows for the alternative hooks

@@ -1,7 +1,7 @@
 # Threat model: TODO project name
 
 Fill at H+0 to H+2, freeze at H+14. Every "not mitigated" row is a line on the limits slide.
-Background: [playbook 2.1](../docs/hackathon-playbook.md#21-threat-model-gnss-denial-and-deception),
+Background: [playbook 2.1](../docs/competition-playbook.md#21-threat-model-gnss-denial-and-deception),
 [NISTIR 8323](../catalog/resources/nist-ir-8323-pnt-profile.md) (GNSS as untrusted input),
 [DHS Resilient PNT Conformance Framework](../catalog/resources/dhs-resilient-pnt-conformance-framework.md).
 

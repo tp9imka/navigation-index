@@ -2,7 +2,7 @@
 
 <!-- about: concept:assured-pnt -->
 
-Use this when you are about to build on a published method and need its real results, limits, code and license before you commit. For the close-area A=>B task (likely on Day 1) the useful rows are the VIO ones (OpenVINS, VINS-Mono, ORB-SLAM3, cuVSLAM); planners and safety filters are not digested here, they are in [close-area-nav](../research/close-area-nav/README.md) docs 01, 04, 05 and 07.
+Use this when you are about to build on a published method and need its real results, limits, code and license before you commit. For the close-area A=>B task (likely on the first day) the useful rows are the VIO ones (OpenVINS, VINS-Mono, ORB-SLAM3, cuVSLAM); planners and safety filters are not digested here, they are in [close-area-nav](../research/close-area-nav/README.md) docs 01, 04, 05 and 07.
 
 There are 46 digests, one per paper or standard, written 2026-11-06. We picked them as the papers most likely to decide what a team builds in a GNSS-denied or contested-navigation hackathon. Each digest covers the problem, the method in a few lines, sensors and data, headline results quoted with their table or figure reference, limitations (the authors' own, plus ours, labelled), code and weights with license, a labelled reproduction-effort estimate, and what a team can reuse.
 

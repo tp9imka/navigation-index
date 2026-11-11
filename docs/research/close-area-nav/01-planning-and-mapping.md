@@ -1,8 +1,8 @@
 # Close-area A=>B: planning and mapping for a small multirotor
 
-Written 2026-11-09 for Challenge 2 ([entry point](../../challenge-2-autonomous-flight.md)). Working
+Written 2026-11-09 for a close-area A=>B task ([full-brief routing](../../problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages)). Working
 assumption: "fly a drone from A to B in a close area, maybe with obstacles". Platform, sensors,
-indoor or outdoor, sim or real are unknown until Day 1.
+indoor or outdoor, sim or real are unknown until the task is announced.
 
 Scope: the vehicle's own path through obstacles. No targeting, homing or intercept.
 
@@ -34,7 +34,7 @@ space. Harness (a) is RotorPy or gym-pybullet-drones. Harness (b) is the hub's h
 map and setpoints going out through MAVSDK Offboard (PX4) or GUIDED position targets (ArduPilot).
 That stands up in hours, runs on an Apple Silicon laptop, is commercially licensable, and every
 piece can later be swapped for a C++ component (OctoMap, jps3d, DecompUtil, acados) without changing
-the architecture. EGO-Planner and friends are the "what good looks like" reference, not the Day 1
+the architecture. EGO-Planner and friends are the "what good looks like" reference, not the first-day
 build.
 
 ## 2. Global path options
@@ -44,7 +44,7 @@ build.
 | A* on a 3D grid | Optimal grid path; easy to add clearance cost | Yes: small volumes make 3D A* cheap | [zhm-real/PathPlanning](https://github.com/zhm-real/PathPlanning) Search_3D, [PythonRobotics](../../../catalog/repos/atsushisakai__pythonrobotics.md) | MIT / MIT | Yes (Python) | Default choice. Grid-aligned, jagged: needs shortcutting and smoothing |
 | JPS (Jump Point Search) | Same optimal path as A* on uniform grids, far fewer expansions | Worth it on big 3D grids only | [jps3d](https://github.com/KumarRobotics/jps3d) | BSD-3 | Yes (plain CMake) | Last push 2021-02-18. Uniform cost only: a clearance-weighted grid breaks the pruning assumption |
 | RRT / RRT* / Informed RRT* | Feasible (RRT) or asymptotically optimal (RRT*) paths in continuous space | Fine; narrow gaps are slow to find | [OMPL](../../../catalog/repos/ompl__ompl.md) (pip `ompl` 2.0.1 has macOS arm64 wheels), zhm-real rrt_3D | BSD-3 / MIT | Yes | Random output differs run to run, which hurts a demo. Narrow passages are its classic weakness |
-| PRM | Roadmap built once, queried many times | Good if the map is known and static | OMPL | BSD-3 | Yes | Pre-build on Day 1 from a known floor plan |
+| PRM | Roadmap built once, queried many times | Good if the map is known and static | OMPL | BSD-3 | Yes | Pre-build on the first day from a known floor plan |
 | Hybrid A* | A* with continuous state per node and feasible motions | Built for curvature-limited cars; overkill for a multirotor | Nav2 Smac planner (ground) | Apache-2.0 (not checked) | No (ROS 2) | For drones the analogue is kinodynamic search |
 | Kinodynamic search (motion primitives) | Dynamically feasible path directly | Only if aggressive flight is the pitch | [mpl_ros](https://github.com/sikang/mpl_ros); Fast-Planner front end | Apache-2.0 / GPL-3.0 | No (ROS 1) | Slow in Python in 3D |
 
@@ -118,11 +118,11 @@ is a sub-second operation on a laptop CPU in typical use, which is fast enough t
 few Hz. Measured since: 182.95 ms median over 7 calls on 200 x 200 x 50 cells, 5 % random
 occupancy, Apple M3 Max (synthetic grid, laptop timing;
 [arena results](../../../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)).
-Re-time it on the Day-1 machine.
+Re-time it on the machine you will fly from.
 
 GPU summary: only nvblox needs CUDA. Everything else on this table runs on an Apple Silicon CPU,
 either natively (numpy/scipy, octomap-python) or inside a Linux Docker image (voxblox, UFOMap,
-wavemap, ROG-Map). If the Day 1 platform carries a Jetson and a depth camera, nvblox is the
+wavemap, ROG-Map). If the actual platform carries a Jetson and a depth camera, nvblox is the
 natural map on the vehicle.
 
 Sources: [peer] Hornung et al. 2013 (OctoMap); [preprint, published IROS 2017] Oleynikova et al.
@@ -186,9 +186,9 @@ equivalent (OctoMap, jps3d, DecompUtil/GCOPTER, acados) for the product story.
    `OA_TYPE` to Dijkstra's or BendyRuler. If the companion plan fails, the autopilot still
    avoids the fence-defined obstacles. Not tested in this hub.
 5. Log planned vs flown path and minimum ESDF distance along the flown path. That one plot is
-   the core evidence for the judges.
+   the core evidence for reviewers.
 
-If the Day 1 platform runs ROS 1 with a depth camera and the team has a Linux box, EGO-Swarm
+If the actual platform runs ROS 1 with a depth camera and the team has a Linux box, EGO-Swarm
 in its bundled simulator is the fastest way to show a state-of-the-art local planner. Its GPL-3.0
 license is fine for the demo; say so in the pitch.
 
@@ -206,7 +206,7 @@ license is fine for the demo; say so in the pitch.
 
 ## 7. Not verified
 
-Reconciled 2026-11-09 (loop-28) against the samples that ran after this page was written. Still open:
+Reconciled 2026-11-09 against the samples that ran after this page was written. Still open:
 
 - The external stacks in sections 2-4 (EGO-Planner, FASTER, OctoMap, voxblox and the rest) were
   not built or run. Their setup times are estimates from README steps.

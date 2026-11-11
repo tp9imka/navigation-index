@@ -5,10 +5,10 @@ integrity", "fixed-wing 20-30 km through spoofing". Multicopter and fixed-wing. 
 4, 20, 27. On a ship: [maritime-ais](maritime-ais.md). Receiver-only monitoring with no vehicle:
 [jammer-ew-map](jammer-ew-map.md).
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 The moment that sells: the spoof starts, the stock EKF follows it, your monitor fires, the
-vehicle switches source and keeps its track. Judges want time to detect, false alarms, and
+vehicle switches source and keeps its track. Reviewers want time to detect, false alarms, and
 deviation with vs without the monitor, plus honesty about the slow drag you still miss.
 
 ## 2. The demo in 24-48 h

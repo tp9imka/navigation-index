@@ -4,7 +4,7 @@
 
 After this page you can explain what a protection level is and why it is different from an
 accuracy number, run a solution-separation monitor over several alt-PNT sources, and show
-judges a Stanford diagram that proves your navigator does not lie silently.
+reviewers a Stanford diagram that proves your navigator does not lie silently.
 
 Working code: [samples/altpnt-integrity](../samples/altpnt-integrity/) (stdlib Python, run
 and tested). Numbers quoted on this page from that sample are its observed output.
@@ -249,14 +249,14 @@ How to overbound a measured error distribution:
   TRN particle spread became R after its coverage against truth was measured (82 / 99 / 100 %
   at 1 / 2 / 3x spread) and inflated to the worst region.
 
-Message for judges: "We tuned on assumed errors and got zero misleading information. Then we
+Message for reviewers: "We tuned on assumed errors and got zero misleading information. Then we
 measured the errors on real data, re-ran, and got misleading information in most epochs. Here is
 the model change that removed it and the availability it cost." That sequence is more credible
 than any zero-MI claim on its own.
 
-## 9. Presenting it to judges
+## 9. Presenting it to reviewers
 
-Judges see accuracy plots every round. Show the four things below instead.
+Reviewers see accuracy plots every round. Show the four things below instead.
 
 1. **Stanford diagram.** PE on x, PL on y, both log scale; diagonal PE = PL; vertical and
    horizontal lines at AL. Regions: nominal (PE < PL < AL), unavailable (PL >= AL), MI
@@ -270,7 +270,7 @@ Judges see accuracy plots every round. Show the four things below instead.
    Full-monitor availability on seed 1 is 45.8 % at AL 50 m and 91.7 % at 250 m. Showing
    it is what makes the zero-HMI claim credible.
 4. **Monitor log on the timeline.** "330 s vgeo excluded (map misregistration), 435 s
-   ambiguous alert (spoof), 485 s GNSS blamed." Judges remember events, not tables.
+   ambiguous alert (spoof), 485 s GNSS blamed." Reviewers remember events, not tables.
 
 5. **Assumed vs measured.** The section 8 table: the same monitor with assumed and with
    measured error models, and what it took to get back to zero MI.

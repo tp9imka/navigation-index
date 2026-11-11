@@ -19,7 +19,7 @@
  "pack": {
   "schema": "close-area-pack/1",
   "name": "our_room",
-  "description": "loop-92 drill: our hall (copy of close-area-arena/rooms/hall_8x6.json as rooms/our_room.json), PX4-class quad radius 0.2 m, v_max 1.5 m/s, forward depth camera depth_cam_87 (87 deg, 0.3-5 m). Planners: the Solver pick (thetastar_known), the flight-repo default stack (astar_known) and the best no-map member of the tied set (lazy_thetastar_unknown). Bar as hall_8x6; 35 seeds because reached_rate >= 0.9 needs 35 clean distinct runs to PASS. Moving people are not in the pack (no schema key).",
+  "description": "2026-11-10 cold-start drill: our hall (copy of close-area-arena/rooms/hall_8x6.json as rooms/our_room.json), PX4-class quad radius 0.2 m, v_max 1.5 m/s, forward depth camera depth_cam_87 (87 deg, 0.3-5 m). Planners: the Solver pick (thetastar_known), the flight-repo default stack (astar_known) and the best no-map member of the tied set (lazy_thetastar_unknown). Bar as hall_8x6; 35 seeds because reached_rate >= 0.9 needs 35 clean distinct runs to PASS. Moving people are not in the pack (no schema key).",
   "vehicle": {
    "radius_m": 0.2,
    "v_max": 1.5,

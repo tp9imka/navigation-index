@@ -50,7 +50,7 @@
     "domains": ["underwater"],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "License MIT per gh api, last push 2025-07-21. README says to use a mamba environment from environment.yml; on the day use a sample-local venv instead. Not run. Implements the sample-based variant, not the 2023 EKF version.",
+    "hackathon_notes": "License MIT per gh api, last push 2025-07-21. README says to use a mamba environment from environment.yml; when time is short use a sample-local venv instead. Not run. Implements the sample-based variant, not the 2023 EKF version.",
     "related": []
   },
   {
@@ -66,7 +66,7 @@
     "domains": ["ground"],
     "maturity": "archived",
     "hackathon_fit": "low",
-    "hackathon_notes": "No license field per gh api, so read-only. Last push 2020-12-31, default branch perception. ROS Melodic on Ubuntu 18.04; do not try to run it on the day, read it.",
+    "hackathon_notes": "No license field per gh api, so read-only. Last push 2020-12-31, default branch perception. ROS Melodic on Ubuntu 18.04; do not try to run it under time pressure, read it.",
     "related": []
   }
 ]

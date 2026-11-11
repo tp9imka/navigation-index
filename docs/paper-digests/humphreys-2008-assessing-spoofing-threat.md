@@ -52,7 +52,7 @@ Estimate: not reproducible as a system, and reproducing the attack side is out o
 - Vestigial signal search: needs raw IQ and a custom acquisition pass. Expect 2-3 days to get a first detection plot.
 
 ## What a hackathon team can take from it
-- **A threat-tier vocabulary for judges:** simplistic, intermediate, sophisticated, with the defense that still works at each tier. Use it to state honestly what your detector does and does not cover.
+- **A threat-tier vocabulary for reviewers:** simplistic, intermediate, sophisticated, with the defense that still works at each tier. Use it to state honestly what your detector does and does not cover.
 - **A cheap software check:** flag receiver clock or time jumps beyond a bound (the paper's example is 100 ns, Sec. II-A). Pair it with your platform's clock-drift model.
 - **The vestigial-signal idea:** after tracking, search for a second peak of the same PRN. This is the ancestor of the "continuous re-acquisition" defense in [Psiaki and Humphreys 2016](psiaki-humphreys-2016-gnss-spoofing-detection.md), and it works on TEXBAT ds3/ds4 IQ.
 - **The detection window is the drag-off:** capture took about 30 s in the demo (Fig. 11). Monitors that only look at PVT output miss it, so log correlator-level data if the stack exposes it.

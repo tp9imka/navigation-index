@@ -66,11 +66,11 @@ OpenVINS detail that matters for scoring:
 | UZH-FPV indoor_45_2 (Snapdragon) | bag 1.24 GB (HEAD 2026-11-09: 1,244,666,706 B) | same type | not checked | `uzhfpv_indoor_45` | No | Probably, but the config was never run here |
 | EuRoC V1_01 / V2_01 | only inside `vicon_room1.zip` 6.04 GB / `vicon_room2.zip` 6.01 GB ([card](../../dataset-cards/euroc-mav.md)). On 2026-11-09 the per-sequence `robotics.ethz.ch` URL did not answer and the Research Collection answered HTTP 429 | Vicon 6D | not checked | `euroc_mav` | No | **No**: 6 GB at 1 to 2 MB/s is 50 to 100 min |
 | TUM-VI room1, 512 | calibrated bag 2.97 GB (HEAD 2026-11-09: 2,971,525,053 B). The EuRoC-format tar is 1.71 GB but `ros1_serial_msckf` needs a bag | mocap, full trajectory ([card](../../dataset-cards/tum-vi.md)) | 120 Hz (card) | `tum_vi` | No | **No**: 25 to 50 min download. GT topic inside the bag not checked |
-| KAIST VIO (3.15 x 3.60 x 2.50 m arena, closest to a Day-1 close area) | Google Drive, size not checked | OptiTrack ([OpenVINS docs](https://docs.openvins.com/gs-datasets.html)) | 50 Hz (same source) | `kaist_vio` | No | Unknown |
+| KAIST VIO (3.15 x 3.60 x 2.50 m arena, closest to a first-day close area) | Google Drive, size not checked | OptiTrack ([OpenVINS docs](https://docs.openvins.com/gs-datasets.html)) | 50 Hz (same source) | `kaist_vio` | No | Unknown |
 
 UZH-FPV is the only one where the hub already has the pipeline, the config and the GT. It is
 also a fast racing flight (indoor top speed 12.8 m/s per the OpenVINS docs). That is not the
-slow close-area flight we expect on Day 1, so treat its factor as a prior, not as a tuning value.
+slow close-area flight we expect on the first day, so treat its factor as a prior, not as a tuning value.
 
 ## 4. What the number means, and what biases it
 
@@ -268,7 +268,7 @@ stereo on UZH-FPV, EuRoC Vicon rooms or TUM-VI room. The UZH-FPV run in section 
 
 ## 7. Not verified
 
-Reconciled 2026-11-09 (loop-28): the plan was not run since (it needs the Docker build), so every
+Reconciled 2026-11-09: the plan was not run since (it needs the Docker build), so every
 bullet below is still open. The arena's "overconfident" fault case is a synthetic stand-in
 (reported sigma x0.25), not a VIO NEES measurement.
 
@@ -279,5 +279,5 @@ bullet below is still open. The arena's "overconfident" fault case is a syntheti
 - Whether `poseimu` can be recorded without drops in serial mode, and whether the 2026-11-06 raw
   output still exists anywhere.
 - UZH-FPV GT accuracy and frame convention, and the GT topics inside the TUM-VI and KAIST VIO bags.
-- Download speed on the day. At under 1 MB/s the 30 min wall budget breaks.
+- Download speed at the venue. At under 1 MB/s the 30 min wall budget breaks.
 - Lisus et al. numbers come from the v1 HTML. The published v4 tables were not compared.

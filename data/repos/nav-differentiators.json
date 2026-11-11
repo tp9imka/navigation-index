@@ -674,7 +674,7 @@
     "name": "FGO_gnss_integrity",
     "url": "https://github.com/cntaylor/FGO_gnss_integrity",
     "summary": "Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with solution-separation ARAIM on real GNSS epochs (from libRSF datasets) plus Monte Carlo outliers.",
-    "why_it_matters": "Recent bridge between robust factor graphs and classic integrity monitoring, the comparison judges ask about when a team says 'robust kernel'.",
+    "why_it_matters": "Recent bridge between robust factor graphs and classic integrity monitoring, the comparison reviewers ask about when a team says 'robust kernel'.",
     "concepts": [
       "concept:sensor-fusion",
       "concept:assured-pnt",

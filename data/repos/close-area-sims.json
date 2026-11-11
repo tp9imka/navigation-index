@@ -340,7 +340,7 @@
     "name": "AI-deck GAP8 examples",
     "url": "https://github.com/bitcraze/aideck-gap8-examples",
     "summary": "Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming over WiFi and small onboard CNN inference.",
-    "why_it_matters": "Path to onboard vision on a 30 g drone, which matters if judges reward onboard compute.",
+    "why_it_matters": "Path to onboard vision on a 30 g drone, which matters if the scoring rewards onboard compute.",
     "concepts": [
       "concept:edge-ai",
       "concept:obstacle-avoidance"

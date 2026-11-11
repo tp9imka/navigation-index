@@ -1,7 +1,7 @@
 # Pitch deck outline
 
 9 slides, 3 minutes plus Q&A. Each slide maps to a row in
-[playbook "What judges reward"](../docs/hackathon-playbook.md#1-what-judges-reward). The
+[playbook "What judges reward"](../docs/competition-playbook.md#1-what-reviewers-look-for). The
 common thread there: a working, measured, honest prototype on a realistic scenario beats a
 clever slide.
 

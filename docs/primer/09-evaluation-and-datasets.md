@@ -1,7 +1,7 @@
 # 9. Evaluation and datasets
 
 After this chapter you can pick a dataset or simulator that matches your scenario, compute
-the trajectory metrics judges and reviewers expect, and design a GNSS-outage or
+the trajectory metrics reviewers expect, and design a GNSS-outage or
 interference test that shows what your system does when it matters.
 
 Prev: [Maritime, underwater and ground](08-maritime-underwater-ground.md) | [Primer index](README.md)

@@ -33,7 +33,7 @@
     "domains": ["air"],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "License GPL-3.0 (gh api), copyleft: fine for a demo, a problem if EDGE wants to ship closed. Last push 2021-06-10. ROS 1 build. Read it for the algorithm; GCOPTER (MINCO) from the same lab is the newer successor.",
+    "hackathon_notes": "License GPL-3.0 (gh api), copyleft: fine for a demo, a problem if you want to ship closed source. Last push 2021-06-10. ROS 1 build. Read it for the algorithm; GCOPTER (MINCO) from the same lab is the newer successor.",
     "related": [
       {"id": "repo:zju-fast-lab/gcopter", "rel": "alternative_to"},
       {"id": "repo:ethz-asl/mav_trajectory_generation", "rel": "alternative_to"}
@@ -248,7 +248,7 @@
     "domains": ["air"],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "No license file on GitHub. README points to an academic-use-only license agreement and an access request form, so it is not usable for a product and code cannot be fetched on the day. Last push 2023-03-07. Listed so nobody wastes time on it.",
+    "hackathon_notes": "No license file on GitHub. README points to an academic-use-only license agreement and an access request form, so it is not usable for a product and code cannot be fetched at short notice. Last push 2023-03-07. Listed so nobody wastes time on it.",
     "related": [
       {"id": "repo:uzh-rpg/rpg_quadrotor_control", "rel": "same_org"},
       {"id": "repo:uzh-rpg/flightmare", "rel": "integrates_with"}
@@ -260,7 +260,7 @@
     "name": "mav_control_rw",
     "url": "https://github.com/ethz-asl/mav_control_rw",
     "summary": "Linear and nonlinear MPC position controllers for rotary-wing MAVs with disturbance observers, packaged for ROS 1 and RotorS.",
-    "why_it_matters": "Shows an MPC with an explicit disturbance (wind) estimate in the loop, a simple robustness story judges understand.",
+    "why_it_matters": "Shows an MPC with an explicit disturbance (wind) estimate in the loop, a simple robustness story reviewers understand.",
     "concepts": ["concept:autopilot", "concept:ros"],
     "tags": ["mpc", "disturbance-observer", "multirotor", "ros1", "apache-2.0"],
     "language": "C",
@@ -364,7 +364,7 @@
     "domains": ["air"],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2025-08-14. ROS 1 catkin stack. Borrow the planner / evaluator split as architecture; do not attempt to build it on day 1.",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2025-08-14. ROS 1 catkin stack. Borrow the planner / evaluator split as architecture; do not attempt to build it in the first day.",
     "related": [
       {"id": "repo:ethz-asl/rotors_simulator", "rel": "integrates_with"},
       {"id": "repo:uzh-rpg/rpg_information_field", "rel": "alternative_to"},
@@ -423,7 +423,7 @@
     "domains": ["air"],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2025-07-01. README provides docker build for ROS Noetic; image size quoted there is 774 MB (not rebuilt here). Use it to get pictures of terrain-aware routes on day 1, then port the cost.",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2025-07-01. README provides docker build for ROS Noetic; image size quoted there is 774 MB (not rebuilt here). Use it to get pictures of terrain-aware routes in the first day, then port the cost.",
     "related": [
       {"id": "repo:ethz-asl/terrain-navigation2", "rel": "alternative_to"}
     ]

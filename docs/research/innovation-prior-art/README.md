@@ -6,7 +6,7 @@ long-range idea. For a close-area A=>B brief, the default, go to
 [close-area-nav](../close-area-nav/README.md); both rounds are compared in
 [research/README.md](../README.md).
 
-Deeper research round for EDGE hackathon Challenge 2, 2026-11-09. Four lanes checked what
+Deeper research round for an autonomous flight navigation task, 2026-11-09. Four lanes checked what
 already exists before we build POCs. Each lane doc gives: prior art with a source-type label
 (peer-reviewed / preprint / abstract only / slides viewed / recording not viewed / code), the
 narrow contribution that might remain, the strongest baseline, a falsification experiment with
@@ -29,7 +29,7 @@ a novelty claim. No experiment in these docs has been run; every threshold is a 
   `FuseDragForces` sets gains only for the two wind states. PX4 EKF2 `fuseDrag` applies the full
   gain (velocity is corrected), gated on `!fake_pos`. The drag differentiator therefore has to
   be our own filter; [differentiators-scan.md](../../differentiators-scan.md) section 2.1 and
-  the [Challenge 2 page](../../challenge-2-autonomous-flight.md) are corrected.
+  the [full-brief routing table](../../problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages) are corrected.
 - **PX4 EKF2 cannot fuse a fix much older than its delay horizon** (`EKF2_DELAY_MAX` default
   200 ms, max 1000 ms). The hub's top-5 visual match is 0.82 s at p95 on an M2 Max.
 - **Visual fix failures cluster.** On the cached VPAIR front end, after a failed attempt the next

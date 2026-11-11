@@ -13,13 +13,17 @@ loss.
 
 | Page | Use it when | You get |
 |---|---|---|
-| [close-area-nav/](close-area-nav/README.md) (round 2, 2026-11-09, follow-up docs 05-09 the same day) | The brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B. This is the likely Day-1 task. | Baseline planner, sims, local localization, Crazyflie sensing limits, how events phrase the task, the old headline (integrity-aware safety filter) with its kill test and FAIL verdict, and the new one (relocalization after VIO loss) |
+| [close-area-nav/](close-area-nav/README.md) (round 2, 2026-11-09, follow-up docs 05-09 the same day) | The brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B. This is the likely first-day task. | Baseline planner, sims, local localization, Crazyflie sensing limits, how events phrase the task, the old headline (integrity-aware safety filter) with its kill test and FAIL verdict, and the new one (relocalization after VIO loss) |
 | [innovation-prior-art/](innovation-prior-art/README.md) (round 1, 2026-11-09) | The brief is long range: km-scale legs, GNSS jammed or spoofed, fixed-wing, terrain or visual fixes | Prior art, strongest baseline and a falsifier for three long-range ideas, plus a ten-direction scan |
-| [hypotheses/](../hypotheses/README.md) + [innovation lab](../../samples/navigation-innovation-lab/README.md) (2026-11-09, Codex lane) | You want the long-range ideas H1-H3 tested, not just searched | Hypothesis cards and a stdlib falsification lab: H1 active disambiguation fell to the info-gain baseline, H2 predictive fix scheduling showed no general win, H3 selective calibration helped only after observable model changes (synthetic, negatives kept) |
+| [hypotheses/](../hypotheses/README.md) + [innovation lab](../../samples/navigation-innovation-lab/README.md) (2026-11-09) | You want the long-range ideas H1-H3 tested, not just searched | Hypothesis cards and a stdlib falsification lab: H1 active disambiguation fell to the info-gain baseline, H2 predictive fix scheduling showed no general win, H3 selective calibration helped only after observable model changes (synthetic, negatives kept) |
 
 Round 2 replaced round 1 as the default after the news that the task is likely "move a drone from
 A to B in a close area" ([close-area-nav README](close-area-nav/README.md), first paragraph). For
-the long-range pitch shape, see also [Challenge 2 section 5](../challenge-2-autonomous-flight.md#5-what-the-pre-day-1-research-added).
+a long-range GNSS-denied brief the suggested shape is: differentiator 2.1 of the
+[differentiators scan](../differentiators-scan.md) (propulsion and drag as a virtual velocity sensor)
+as the headline, the runtime-assurance monitor from [path-to-product](../path-to-product.md) as the
+safety story, and G2 of [guidance-planning](../guidance-planning.md) (integrity drives guidance) as the
+stretch. Routing for a full brief: [decoder](../problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages).
 
 ## Brief family => headline idea => kill test => status
 
@@ -74,8 +78,8 @@ Both candidate headlines were tested to failure, and that is the main result of 
   sensor; 7 % collisions with unmapped obstacles; the mechanism exists (Jensfelt 2001, AF-MCL 2026,
   [doc 10](close-area-nav/10-relocalization-prior-art.md)). Against an AF-MCL-style particle filter
   run with the paper's parameters, the hub's arm reached B as often or more in every ideal-sensor
-  cell with 0 wrong commits against 0-32 (seed 2, held out); on 4 beams every arm fails; the best 4-beam arm so far (rolling submap built while flying, loop-68) reaches 66-89 % with 0-6 wrong commits, still below the bar. All synthetic.
-- **What to pitch on Day 1:** the measured toolkit (14 planners x 8 arenas x 2 sensors, browser
+  cell with 0 wrong commits against 0-32 (seed 2, held out); on 4 beams every arm fails; the best 4-beam arm so far (rolling submap built while flying) reaches 66-89 % with 0-6 wrong commits, still below the bar. All synthetic.
+- **What to pitch on the first day:** the measured toolkit (14 planners x 8 arenas x 2 sensors, browser
   playground, honest kill tests) plus whichever narrow claim fits the real brief: the hover-on-tie
   relocalization wrapper for an open arena with a dense sensor, or "range safety filter under any
   planner" when people move (14-36 % => 0 % collisions). Do not claim novelty for either.

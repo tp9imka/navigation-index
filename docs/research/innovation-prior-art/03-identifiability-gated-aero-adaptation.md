@@ -2,7 +2,7 @@
 
 <!-- about: res:sharma-laupre-skaloud-2023-identifying-aerodynamics-fixed-wing, res:laupre-pirlet-skaloud-2023-reliable-vdm-navigation, res:ardupilot-ekf3-drag-wind-source-copter-4-6-3, res:px4-ekf2-drag-wind-source-v1-16, res:ardupilot-pr-33326-wind-truth-cross-covariance, res:hausman-2016-observability-aware-trajectory-optimization, res:borup-fossen-johansen-2016-wind-velocity-observer, res:khaghani-skaloud-2018-vdm-navigation, res:leishman-2014-quadrotors-accelerometers -->
 
-Research date 2026-11-09. Challenge 2 "Autonomous Frontiers" (EDGE hackathon). This is a
+Research date 2026-11-09, for an autonomous flight navigation task. This is a
 robustness layer for the top pick in [differentiators-scan.md](../../differentiators-scan.md)
 section 2.1 (propulsion and drag as a virtual velocity sensor), not a standalone entry.
 

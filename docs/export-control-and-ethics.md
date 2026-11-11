@@ -175,7 +175,7 @@ must fly:
 
 ## 5. Responsible AI principles
 
-If your project uses ML (learned matching, detection, learned odometry), defense judges
+If your project uses ML (learned matching, detection, learned odometry), defense reviewers
 increasingly ask how it maps to these principles:
 
 - **DoD AI ethical principles:** responsible, equitable, traceable, reliable, governable

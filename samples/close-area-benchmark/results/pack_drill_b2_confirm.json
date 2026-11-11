@@ -2,7 +2,7 @@
  "note": "loop-99 confirmation run, before pack.py had its own override: pack_shipped = pack.fly() with untouched module constants (the drill pack), pack_override = pack.fly() inside worker.js DRIVER_PY radius_override(0.2). Script version: pack_drill_b2_repro.py before the --after mode was added.",
  "runs": 60,
  "input": "synthetic",
- "world": "docs/drill-2026-11/our_room.world.json",
+ "world": "docs/cold-start-drill/our_room.world.json",
  "vehicle": {
   "radius_m": 0.2,
   "v_max": 1.5,

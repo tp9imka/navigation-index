@@ -681,7 +681,7 @@
     "year": 2024,
     "summary": "Spirent's lab simulators generate multi-GNSS RF with controllable interference and spoofing (meaconing, trajectory spoofing, nav data spoofing) for hardware-in-the-loop receiver testing; PNT X extends this to combined PNT/sensor simulation.",
     "key_takeaways": [
-      "Lab-grade, export-controlled tooling; judges from industry will know it",
+      "Lab-grade, export-controlled tooling; reviewers from industry will know it",
       "Open alternatives are SDR-based signal simulators - legal only into a cable or shielded enclosure"
     ],
     "concepts": [
@@ -905,7 +905,7 @@
     "summary": "US startup whose founders started at the February 2024 El Segundo Defense Tech Hackathon (Aviation Week coverage). Its VNS uses a camera, an IMU and pre-loaded satellite imagery to estimate position and feeds the drone a substitute GPS signal.",
     "key_takeaways": [
       "Vendor claims: six months from hackathon to a SOCOM sale (YC launch post); integration under 30 minutes (company statement relayed by press)",
-      "Direct precedent that a hackathon visual-nav demo can become a product - and that judges have seen this pitch"
+      "Direct precedent that a hackathon visual-nav demo can become a product - and that reviewers have seen this pitch"
     ],
     "concepts": [
       "concept:visual-geolocalization",

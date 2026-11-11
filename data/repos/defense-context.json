@@ -5,7 +5,7 @@
     "name": "Stone Soup",
     "url": "https://github.com/dstl/Stone-Soup",
     "summary": "UK Dstl's open Python framework for building and benchmarking multi-target trackers: Kalman/particle filters, data association, track initiation and metrics in composable components.",
-    "why_it_matters": "A government-backed, permissively developed tracking toolkit - the closest thing to a reference library for situational-awareness fusion that defense judges will recognize.",
+    "why_it_matters": "A government-backed, permissively developed tracking toolkit - the closest thing to a reference library for situational-awareness fusion that defense-context reviewers will recognize.",
     "concepts": [
       "concept:target-tracking",
       "concept:sensor-fusion",
@@ -117,7 +117,7 @@
     "name": "ATAK-CIV (DoD release, archived)",
     "url": "https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV",
     "summary": "The DoD's public source release of the civilian Android Team Awareness Kit: map engine, Cursor-on-Target messaging and plugin SDK.",
-    "why_it_matters": "TAK is the de facto common operating picture across US/NATO units, so a plugin or CoT feed is an instantly legible demo for defense judges.",
+    "why_it_matters": "TAK is the de facto common operating picture across US/NATO units, so a plugin or CoT feed is an instantly legible demo for defense-context reviewers.",
     "concepts": [
       "concept:situational-awareness",
       "concept:gis-mapping"

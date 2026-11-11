@@ -6,7 +6,7 @@ Decoder rows 1, 2, 20, 26. Fixed-wing over 20 km: see also
 [terrain-night-celestial](terrain-night-celestial.md) and
 [spoofing-keep-flying](spoofing-keep-flying.md).
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 They have seen camera-to-satellite matching from vendors and other teams. They reward an
 error-vs-distance curve on open data, a gate that refuses bad visual fixes before the filter,

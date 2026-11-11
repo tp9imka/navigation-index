@@ -59,7 +59,7 @@ form-to-email turnaround.
 
 ## Pitfalls
 
-- Request-form access; not something to start on hackathon day.
+- Request-form access; not something to start under time pressure.
 - MulRan file player needs IMU/GPS folders present even if unused (site note).
 - Non-commercial license (MulRan); HeLiPR license not found on the pages read.
 - HeLiPR lidars are asynchronous; use per-lidar GT, not a shared frame index.

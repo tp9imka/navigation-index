@@ -1,11 +1,11 @@
-# Cheat sheet: counter-UAS detection and Remote ID to TAK
+# Airspace awareness: counter-UAS detection and Remote ID
 
 Briefs like "detect and track drones for airspace awareness", "small drones near a FOB",
 "hostile drones", "common operating picture". Decoder rows 13, 12. Detection and awareness only.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
-Every drone in the area becomes a track on the shared map, cooperative or not. Judges want
+Every drone in the area becomes a track on the shared map, cooperative or not. Reviewers want
 fused sources (Remote ID, RF, radar or camera) => tracks => TAK, with a classifier number that
 survives a cross-site or held-out test, and a clear line that the project stops at awareness.
 

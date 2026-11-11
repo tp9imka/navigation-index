@@ -3,10 +3,10 @@
 Briefs like "swarm relative localization without GNSS", "team keeps a shared picture",
 "coordination under GNSS denial" (EUDIS 2026 common challenge). Decoder rows 10, 11.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 The team keeps one shared estimate when GNSS and some links are gone, and each agent knows how
-sure it is. Coordination demos hide weak localization, so judges who know the field will ask
+sure it is. Coordination demos hide weak localization, so reviewers who know the field will ask
 for both: localization error and task outcome, with a defined behaviour on comms loss.
 
 ## 2. The demo in 24-48 h

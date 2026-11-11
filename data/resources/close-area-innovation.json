@@ -499,7 +499,7 @@
   "year": 2024,
   "summary": "Lightweight check between a planner and a controller: simulate the nominal trajectory to a switch time, then a backup controller such as hover, and commit the safe candidate with the latest switch time. Quadrotor hardware with an online map; 3-10x faster than MPC in simulation per the authors. Peer-reviewed: IEEE T-RO 40:4358-4375, 2024, doi 10.1109/TRO.2024.3454415, plus IROS 2023 pp. 259-266 (Crossref, per docs/research/close-area-nav/05-cbf-baselines-faithful.md).",
   "key_takeaways": [
-   "Planner-agnostic, easy to explain to judges",
+   "Planner-agnostic, easy to explain to reviewers",
    "Needs a backup controller and backup set"
   ],
   "concepts": [

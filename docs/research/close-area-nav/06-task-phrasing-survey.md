@@ -1,9 +1,9 @@
 # Close-area A=>B: how real events specify the task
 
-Lane 6 of the close-area research pass (loop-12, 2026-11-09). Question: when an event asks a
-drone to go from A to B in a confined space, how do the organisers state B, the arena, the
-sensors, the compute rule and the score? Goal: guess the Day-1 shape of EDGE Challenge 2 and
-ask the organisers the right questions. This extends the competition table in
+Lane 6 of the close-area research pass (2026-11-09). Question: when an event asks a
+drone to go from A to B in a confined space, how does it state B, the arena, the
+sensors, the compute rule and the score? Goal: guess the likely shape of a new close-area task and
+ask whoever set it the right questions. This extends the competition table in
 [02](02-sims-platforms-competitions.md) section 3 and replaces the "no primary source was
 searched" note in [03](03-close-area-localization.md) section 3.
 
@@ -11,7 +11,7 @@ Nothing here was run. Every number below is quoted from the cited source. No num
 measurement by the hub.
 
 **Source labels:** [rules] = official rulebook or handbook, [docs] = official event or project
-page, [code] = repository file read via `gh api`, [forum] = organiser answer in the official
+page, [code] = repository file read via `gh api`, [forum] = an answer from the event's own staff in the official
 GitHub discussions, [preprint] = arXiv, [news] = press or team blog. "Full" = the whole text
 was read; "part" = only the sections named; "abstract" = abstract only.
 
@@ -39,7 +39,7 @@ misaligned).
   standalone off-board computer [rules]. A2RL requires onboard compute (Jetson Orin NX) [docs].
 - **Scores reward completion and accuracy first, then speed.** Time is the primary score only
   in the racing events (LSY, IROS ADR, A2RL). Elsewhere time is a weight or a tie-break.
-- **Most likely Day-1 shape:** fly to a marked B (pad or tag) in a small known arena with a few
+- **Most likely task shape:** fly to a marked B (pad or tag) in a small known arena with a few
   static obstacles, sim or a small drone, with an onboard-vs-offboard penalty. See section 3.
 
 ## 1. Survey table
@@ -61,7 +61,7 @@ One row per event, latest edition found. "A / B" is how start and goal are state
 | AUVSI SUAS, 2026 [rules, part] | A = runway (40 x 500 ft or 40 x 40 ft VTOL pad). Route = GPS waypoints with altitudes, up to 15 per lap, about 2 miles, given at check-in; pass within 100 ft. B for delivery = a mannequin and a tent to detect in a search boundary | GPS polygon flight boundary, 150 to 400 ft AGL; out of bounds ends the mission. Search boundary about 10 acres. Trees up to 100 ft | Free (team payload). GCS display of position, speed, altitude mandatory | Not restricted. Fewer operators score more | Mission 1000 pts: endurance 250 = 20 (take-off and landing) + 30 (all autonomous) + 200 x (N_L/10)^2 for N_L of 10 laps; operators 200 x min(1, (4 - O)/2); rapid response 200; risk mapping 150; delivery 2 x 100 = 20 survive + 50 within 50 ft + 30 correct target. Docs 250 | [2026 handbook](https://robonation.gitbook.io/suas-resources/2026-team-handbook) |
 | ENRICH (industrial indoor inspection), 2025 [docs, full page] | UAV and UGV start from the same point. B = radiation sources to find and map, a 3D map, dummies to find, a valve to close | Real never-operated nuclear plant (Zwentendorf): low or no light, closed doors, dead ends, stairs, narrow passages. Unknown interior | Radiation sensor mandatory or no start. GoPro mount required | Comms hard (concrete, metal); no one may accompany the robot; about 30 min per run | No point formula; judges' awards. Deliverables: map readable in CloudCompare, ROS bags | [ENRICH 2025](https://enrich.european-robotics.eu/enrich-2025/) |
 
-## 2. Patterns that matter for Day 1
+## 2. Patterns that matter for a new task
 
 **How B is given.** Four forms recur:
 
@@ -76,7 +76,7 @@ One row per event, latest edition found. "A / B" is how start and goal are state
 
 **Goal tolerance is always stated.** 15 cm full, 1 m cut-off (ICUAS, organiser answer); 100 ft
 (SUAS waypoints); 50 ft (SUAS drop); 5 m (IMAV outdoor GPS report); 1 x 1 m pad (IMAV outdoor);
-10 m measuring radius (Teknofest). If EDGE does not state one, ask.
+10 m measuring radius (Teknofest). If your task does not state one, ask.
 
 **Off-board help is penalised, not banned.** IMAV 0.7, Teknofest 0.7 for manual take-off or
 landing, IEEE R5 separate division. Only A2RL mandates onboard. Beacons (UWB) are allowed at
@@ -89,10 +89,10 @@ leaving bounds; SUAS ends the mission out of bounds; IEEE R5 ends on any touch. 
 **Time limits are short.** 3 min (IEEE R5, RECF), 5 min (IROS 2019), 30 min slot (IMAV,
 ENRICH), 8 min set-up (Teknofest). The first attempt has to work.
 
-## 3. Ranked Day-1 task shapes
+## 3. Ranked task shapes
 
 Ranking is judgement, from how often each shape appears above and how easy it is to judge in
-one day. Not verified against any EDGE information.
+one day. Not verified against any specific upcoming task.
 
 1. **Marked B in a small known arena, few static obstacles.** "Take off at A, fly to the pad /
    tag at B, avoid the boxes, land." Seen at IMAV indoor, ICUAS, IEEE R5, RECF. Likely scored on
@@ -113,8 +113,8 @@ one day. Not verified against any EDGE information.
    2 to 5 Hz, lane 04 replan trigger.
 4. **Find B, then go there.** Search a room or area for an object, report or land on it. Seen at
    ICUAS, MBZIRC, SUAS, ENRICH. Hub material: thinnest coverage. Lane 01 for mapping
-   (OctoMap, unknown-is-not-free), `repo:osrf/mbzirc` for a reference sim, a detector chosen on
-   Day 1. Exploration planners are not covered by a sample.
+   (OctoMap, unknown-is-not-free), `repo:osrf/mbzirc` for a reference sim, a detector chosen once
+   the real target is known. Exploration planners are not covered by a sample.
 
 All four shapes share one need: B must be a runtime input, and the drone must stop safely when
 its estimate is bad. That supports the lane 04 safety-filter headline under every shape.
@@ -124,7 +124,7 @@ held-out seeds (2.5 % [1.1, 5.7] jump collisions vs <= 1.0 % for a fixed 0.2 m b
 the "stop safely" need stands, the pitch choice is in the
 [research decision](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is).
 
-## 4. Questions for the organisers (revised)
+## 4. Questions for whoever set the task (revised)
 
 Start-point list from the [README](README.md), regrouped and extended with what the events
 above made explicit. Ask in this order; the first group decides the stack.
@@ -137,7 +137,7 @@ above made explicit. Ask in this order; the first group decides the stack.
 **How A and B are given**
 3. Is B a coordinate, a marker, a GPS point, or something to find? In which frame (start
    frame, venue / mocap frame, WGS84) and units?
-4. When is B revealed: before Day 1, at check-in, or at run start? Can B change between runs?
+4. When is B revealed: before the task starts, at check-in, or at run start? Can B change between runs?
 5. What counts as "at B": hover within a radius, land on a pad, touch? What radius or pad size?
 6. Are markers (AprilTag, ArUco) at A or B provided, allowed, or forbidden? Are our own beacons
    (UWB, tags) allowed, and do they cost points?
@@ -163,7 +163,7 @@ above made explicit. Ask in this order; the first group decides the stack.
 
 ## 5. Not verified
 
-Reconciled 2026-11-09 (loop-28): no sample measures event rules, so every bullet below is still
+Reconciled 2026-11-09: no sample measures event rules, so every bullet below is still
 open. The one body claim a sample contradicted is marked in section 3.
 
 - IMAV 2026 weight-factor formula and the exact total-score formulas (garbled in extraction;
@@ -185,7 +185,7 @@ open. The one body claim a sample contradicted is marked in section 3.
 
 ## 6. Records added
 
-`data/resources/loop-12.json`: ICUAS 2026 rulebook, Teknofest 2026 UAV specification, IEEE R5
+The competition-rules lane file in `data/resources/`: ICUAS 2026 rulebook, Teknofest 2026 UAV specification, IEEE R5
 2021 Tello rules, A2RL drone championship page, SUAS 2026 handbook, Peti 2023 MBZIRC preprint,
 ENRICH 2025 page, Kaufmann 2018 IROS ADR preprint, RECF 2026 autonomous flight quick guide,
 UMD IROS 2019 news.

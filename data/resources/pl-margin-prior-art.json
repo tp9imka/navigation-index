@@ -8,13 +8,13 @@
     "year": 2025,
     "summary": "Peer-reviewed (IEEE Transactions on Automatic Control 2025, doi 10.1109/TAC.2025.3571338). Fault-tolerant CBFs: one EKF per sensor fault pattern, each omitting that pattern's sensors, and a CBF constraint for every estimate with its own error bound. When the constraints conflict, estimates are dropped by a solution-separation-style test against pair-excluded filters, then by largest residual. Wheeled-robot sensor-attack and Boeing 747 actuator-failure case studies in simulation.",
     "key_takeaways": [
-      "Safety filter margin from a bank of fault-excluded estimators, not one covariance: the mechanism of loop-13 claim C",
+      "Safety filter margin from a bank of fault-excluded estimators, not one covariance: the mechanism of the close-area innovation claim C (integrity-aware safety-filter margin)",
       "Exclusion uses separation thresholds and pair-excluded filters, close to ARAIM-style subset exclusion",
       "When no consistent set is found it drops the largest-residual estimates instead of declaring unavailable",
       "Simulation only, ground robot and aircraft lateral dynamics; no multirotor, no range-sensor barrier"
     ],
     "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion", "concept:assured-pnt"],
-    "tags": ["control-barrier-function", "fault-tolerant", "safety-filter", "integrity", "peer-reviewed", "loop-13"],
+    "tags": ["control-barrier-function", "fault-tolerant", "safety-filter", "integrity", "peer-reviewed"],
     "level": "advanced",
     "access": "open",
     "related": [
@@ -34,7 +34,7 @@
       "A judge can name it as prior art for any PL-margin safety filter"
     ],
     "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion"],
-    "tags": ["control-barrier-function", "fault-tolerant", "safety-filter", "peer-reviewed", "loop-13"],
+    "tags": ["control-barrier-function", "fault-tolerant", "safety-filter", "peer-reviewed"],
     "level": "advanced",
     "access": "open",
     "related": []
@@ -53,7 +53,7 @@
       "Simulation only"
     ],
     "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion", "concept:lidar-slam"],
-    "tags": ["control-barrier-function", "fault-tolerant", "uav", "preprint", "loop-13"],
+    "tags": ["control-barrier-function", "fault-tolerant", "uav", "preprint"],
     "level": "advanced",
     "access": "open",
     "related": [
@@ -69,13 +69,13 @@
     "year": 2025,
     "summary": "Peer-reviewed (IEEE/RSJ IROS 2025, doi 10.1109/IROS60139.2025.11247729). Caltech with TII Abu Dhabi. A secure state reconstructor enumerates sensor subsets over a sliding window, keeps every state consistent with at least p-s sensors under bounded noise, and inflates these plausible states into boxes; a robust CBF filter on velocity setpoints keeps all of them inside the safe set. PX4 SITL (X500, Gazebo) and Holybro X500 hardware with two flight controllers, safe set a square keep-in geofence, attacks injected on one EKF output copy. Code at github.com/tiiuae/px4-secure-state-reconstruction (no license file, checked with gh api 2026-11-09).",
     "key_takeaways": [
-      "Closest prior art to loop-13 claim C: multirotor, PX4, geofence margin from a fault-tolerant subset-consistency bound",
+      "Closest prior art to the close-area innovation claim C: multirotor, PX4, geofence margin from a fault-tolerant subset-consistency bound",
       "Deterministic worst case over bounded noise, no probabilistic protection level or integrity risk budget",
       "Hardware test duplicated one EKF, so sensor independence was not exercised",
-      "No range-sensor barrier, no VIO; TII is a UAE lab that local judges may know"
+      "No range-sensor barrier, no VIO; TII is a UAE research lab"
     ],
     "concepts": ["concept:obstacle-avoidance", "concept:autopilot", "concept:assured-pnt", "concept:gnss-interference"],
-    "tags": ["control-barrier-function", "safety-filter", "px4", "geofence", "sensor-attack", "peer-reviewed", "loop-13"],
+    "tags": ["control-barrier-function", "safety-filter", "px4", "geofence", "sensor-attack", "peer-reviewed"],
     "level": "advanced",
     "access": "open",
     "related": [
@@ -95,7 +95,7 @@
       "Monitoring, not a safety filter: no control law found in the abstract"
     ],
     "concepts": ["concept:gnss-ins", "concept:assured-pnt", "concept:mission-planning"],
-    "tags": ["integrity", "protection-level", "geofence", "uav", "peer-reviewed", "loop-13"],
+    "tags": ["integrity", "protection-level", "geofence", "uav", "peer-reviewed"],
     "level": "intermediate",
     "access": "open",
     "related": []
@@ -113,7 +113,7 @@
       "Containment is a planning and approval margin, not a live safety filter"
     ],
     "concepts": ["concept:standards", "concept:mission-planning", "concept:assured-pnt"],
-    "tags": ["rnp", "tse", "containment", "u-space", "loop-13"],
+    "tags": ["rnp", "tse", "containment", "u-space"],
     "level": "intermediate",
     "access": "open",
     "related": []
@@ -131,7 +131,7 @@
       "No public statement that its margins come from a navigation protection level"
     ],
     "concepts": ["concept:autopilot", "concept:standards", "concept:obstacle-avoidance"],
-    "tags": ["runtime-assurance", "astm-f3269", "gcas", "vendor", "loop-13"],
+    "tags": ["runtime-assurance", "astm-f3269", "gcas", "vendor"],
     "level": "intro",
     "access": "open",
     "related": [

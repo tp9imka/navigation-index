@@ -1,10 +1,10 @@
-# Landscape: what judges already know
+# Landscape: what reviewers already know
 
 <!-- about: res:auterion-skynode-visual-navigation, res:theseus-visual-navigation-system, res:twist-robotics-oscar, res:qctrl-ironstone-opal, res:sandboxaq-aqnav, res:xona-pulsar-leo-pnt, res:iridium-pnt-stl-asic, res:honeywell-vision-aided-navigation, res:inertial-labs-vins, res:infinidome-gpsdome, res:uk-dasa-emp-pnt-problem-statement-2024, res:eudis-defence-hackathon-2026, res:brave-nato-unite-2026, res:diu-tqs-program -->
 
 Use this when you must check whether an idea is already sold or funded, or how a past
 navigation hackathon brief was solved. It covers long-range GNSS-denied navigation. For the
-close-area A to B task (likely on Day 1), how events phrase and score it is in
+close-area A to B task (likely on the first day), how events phrase and score it is in
 [06-task-phrasing-survey](../research/close-area-nav/06-task-phrasing-survey.md) and the prior
 art is in [close-area-nav](../research/close-area-nav/README.md).
 
@@ -28,7 +28,7 @@ search snippets were read. Nothing here was run or tested.
 
 ## What is commoditized
 
-Judges from industry, funders or the military will treat these as solved or for sale:
+Reviewers from industry, funders or the military will treat these as solved or for sale:
 
 1. **Camera-to-satellite-map position fix for small drones.** At least ten vendors (Auterion,
    Theseus, Twist Robotics, Vermeer, Blue Arrow, Spleenlab, UAVOS, Honeywell, Inertial Labs/Maxar,
@@ -54,7 +54,7 @@ Ordered by how reachable they are in 24-48 h with the open tools in this index.
    `repo:cra-ros-pkg/robot_localization`, `repo:borglab/gtsam`.
 2. **Honest numbers on open data.** Vendors quote RNP levels and "x times better than INS".
    Showing error vs distance on a public benchmark (`repo:uav-avl/benchmark`,
-   `res:magnav-challenge-site`, `repo:hmf21/aerialvl`) with failure cases is something judges
+   `res:magnav-challenge-site`, `repo:hmf21/aerialvl`) with failure cases is something reviewers
    cannot get from a brochure.
 3. **The hard conditions vendors skip in marketing:** night/thermal imagery
    (`repo:arplaboratory/satellite-thermal-geo-localization`), low altitude, snow/season change,
@@ -71,7 +71,7 @@ Ordered by how reachable they are in 24-48 h with the open tools in this index.
 
 ## What to avoid
 
-- Claiming accuracy you did not measure; judges know vendor numbers are unverified and will
+- Claiming accuracy you did not measure; reviewers know vendor numbers are unverified and will
   ask how you measured yours.
 - Anything that depends on quantum sensors, FOG IMUs or LEO PNT signals you cannot access. Use
   the software problem with public data instead.

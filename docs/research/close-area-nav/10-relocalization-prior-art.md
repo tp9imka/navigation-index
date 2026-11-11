@@ -1,6 +1,6 @@
 # 10. Kill test for the new headline: does relocalization after VIO loss already exist?
 
-Prior-art scan, 2026-11-09 (loop-57), copying the method of [07](07-pl-margin-prior-art.md).
+Prior-art scan, 2026-11-09, copying the method of [07](07-pl-margin-prior-art.md).
 Claim under test, from [close-area-relocalize](../../../samples/close-area-relocalize/README.md)
 and the [README](README.md) headline:
 
@@ -38,7 +38,7 @@ already runs on a Crazyflie:
 
 **For small indoor drones, augmented MCL on the range sensors is the obvious baseline.** AMCL has
 had kidnap recovery (slow / fast likelihood averages) for two decades. AF-MCL is that baseline on
-the exact Day-1 platform. An AF-MCL-style arm was added later (loop-67, seed 2 held out, synthetic: on the 72-beam sensor the hub's arm reached B as often or more than an AF-MCL-style filter in all 4 cells, 0 wrong commits vs 0-32; on 4 beams every arm fails; [relocalize README](../../../samples/close-area-relocalize/README.md#af-mcl-baseline-particle-filter-with-random-particle-injection-loop-67)).
+the exact first-day platform. An AF-MCL-style arm was added later (seed 2 held out, synthetic: on the 72-beam sensor the hub's arm reached B as often or more than an AF-MCL-style filter in all 4 cells, 0 wrong commits vs 0-32; on 4 beams every arm fails; [relocalize README](../../../samples/close-area-relocalize/README.md)).
 
 **Novel composition, one sentence (engineering only):** a hover gate plus a "never commit on a
 tie" acceptance rule plus a collision check over every live hypothesis, wrapped around the
@@ -53,8 +53,8 @@ reset hands them (section 4).
 | AF-MCL (augmented MCL, beam filtering) on a Crazyflie | arXiv 2610.32645; Webots simulation for kidnapping, real flights for accuracy | Kidnap recovery 2.9 s vs 16.9 s for plain MCL (sim). Real flights in a 2.10 x 1.63 m arena: 6.4-7.7 cm mean error, filter on a host PC |
 | Global MCL from two 8x8 ToF sensors on a nano drone | arXiv 2212.00710; recorded real flights replayed offline, 6 seeds | 0.15 m accuracy, above 95 % success in a 31.2 m2 map |
 | Jensfelt MHT with H0 and active moves | T-RA 2001; real ground robot | 90 % of 20 runs, 2 min, 17.5 m travelled |
-| Our (f) Fox-style info-gain move | [close-area-relocalize](../../../samples/close-area-relocalize/README.md), synthetic | Corridor 80 % reached vs (e) 70 %; random layouts 99-100 %, 0 wrong commits (seed 0 and held-out seed 1). **Narrowed since:** held-out seeds 2-4 pass only on random and u_trap (100 %, 0 wrong); 83.3-97.2 % in five other families, 33 wrong commits in warehouse ([held-out matrix](../../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)) |
-| Our (b) commit at once + innovation re-check | same sample, synthetic | 100 % reached on random layouts and on the corridor, with 2-8 wrong commits per 100 or 20 runs that later matches corrected. Held-out matrix since: 69 wrong commits and 17 of 180 runs collided in warehouse; on a stale map it reached 97-100 % on every rung with 0-2 % collisions ([stale map](../../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)) |
+| Our (f) Fox-style info-gain move | [close-area-relocalize](../../../samples/close-area-relocalize/README.md), synthetic | Corridor 80 % reached vs (e) 70 %; random layouts 99-100 %, 0 wrong commits (seed 0 and held-out seed 1). **Narrowed since:** held-out seeds 2-4 pass only on random and u_trap (100 %, 0 wrong); 83.3-97.2 % in five other families, 33 wrong commits in warehouse ([held-out matrix](../../../samples/close-area-relocalize/README.md)) |
+| Our (b) commit at once + innovation re-check | same sample, synthetic | 100 % reached on random layouts and on the corridor, with 2-8 wrong commits per 100 or 20 runs that later matches corrected. Held-out matrix since: 69 wrong commits and 17 of 180 runs collided in warehouse; on a stale map it reached 97-100 % on every rung with 0-2 % collisions ([stale map](../../../samples/close-area-relocalize/README.md)) |
 
 The hardest baseline in our own data is (b). It reached B every time; the safety case for (c)
 to (f) rests on 0 wrong commits, not on reach rate. A judge who knows AMCL will say (b) plus
@@ -166,11 +166,11 @@ are safe for every hypothesis it still holds. In our synthetic arena that gave 0
 against 2-8 for committing at once."
 **Narrowed since (synthetic):** say "on open layouts with a dense range sensor and an exact map".
 The 0 wrong commits held on random and u_trap only; warehouse gave 33 and maze 6
-([held-out matrix](../../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
+([held-out matrix](../../../samples/close-area-relocalize/README.md)).
 Unmapped added obstacles gave 16 / 21 wrong commits and 7 % collisions; all 12 hits on an
-unmapped obstacle came after a move ([stale map](../../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).
+unmapped obstacle came after a move ([stale map](../../../samples/close-area-relocalize/README.md)).
 A 4-beam deck gave 48 / 64 % reached
-([4-beam](../../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54)).
+([4-beam](../../../samples/close-area-relocalize/README.md)).
 "Safe for every hypothesis" checks moves against the map, not the live scan.
 
 **Closest prior art a judge will name:** AF-MCL (same platform and sensor, same likelihood model).
@@ -212,11 +212,11 @@ forum, IMAV / IROS drone-race team reports, Chinese and Russian literature.
 
 ## 7. Not verified
 
-Reconciled 2026-11-09 (loop-28) against
+Reconciled 2026-11-09 against
 [close-area-relocalize](../../../samples/close-area-relocalize/README.md). The sample's later runs
 narrowed our own numbers (sections 2 and 5) but verified none of the source claims below. Still open:
 
-- The section 5 kill test ran after this doc (loop-67): see the AF-MCL baseline section of the
+- The section 5 kill test ran after this doc: see the AF-MCL baseline section of the
   relocalize README. Not re-run here: the paper's own kidnap scenario.
 - AF-MCL author list: only the arXiv submitter and the last author were visible; the 2.9 s /
   16.9 s kidnapping result is Webots simulation; its real flights ran the filter on a host PC.
@@ -238,4 +238,4 @@ narrowed our own numbers (sections 2 and 5) but verified none of the source clai
 - "Not found" in section 3 means not found by these queries; Skydio, DJI and defence vendors may
   do map relocalization internally without publishing it.
 
-Records added: `data/resources/loop-57.json` (7 resources).
+Records added: the relocalization prior-art lane file in `data/resources/` (7 resources).

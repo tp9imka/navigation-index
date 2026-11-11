@@ -17,4 +17,3 @@ and [experiment design](../innovation-experiments.md).
 
 Each card contains the failure case, nearest prior art, proposed difference,
 observable inputs, baselines, disproof condition, measured result, and next test.
-The [research-agent prompt](research-agent-prompt.md) defines the remaining literature work.

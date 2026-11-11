@@ -52,7 +52,7 @@ bump versions). Follow-ups from the same author: DRL, SWA-PF (linked from README
 
 - Idea 18 / 20 when the demo is a low urban flight: retrieval output can be turned into
   meters via the GPS file, unlike University-1652.
-- Old vs new satellite epoch lets you show map-age robustness, a point judges like.
+- Old vs new satellite epoch lets you show map-age robustness, a point reviewers like.
 
 ## Pitfalls
 

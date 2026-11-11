@@ -1,6 +1,6 @@
 # 04. Close-area navigation: prior art for three innovation angles, plus a wider scan
 
-Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2. Assumed task: fly a multirotor from
+Prior-art scan, 2026-11-09, for a close-area A=>B task. Assumed task: fly a multirotor from
 A to B in a close area (indoor, under canopy, between buildings) with obstacles. Scope: the
 vehicle's own navigation only. Method and labels follow
 [innovation-prior-art/README.md](../innovation-prior-art/README.md) and
@@ -330,7 +330,7 @@ Notes:
   work (doc 01) in a new setting. Risk: needs a prior map or a first pass; in a never-seen room
   the hypotheses have nothing to match against.
 - **LLM goal spec** demos well and fits our filter story (the LLM picks the goal, the filter
-  keeps it safe), but adds no navigation innovation and judges asking for "real-world
+  keeps it safe), but adds no navigation innovation and reviewers asking for "real-world
   implementation" will discount it. Use as a demo garnish at most.
 - **NoMaD/ViNT** is the best "any planner" to put under the filter in idea C: it shows the
   filter carrying safety for a learned policy. Trained on ground robots, so its own flight
@@ -350,7 +350,7 @@ navigation integrity drops it widens margins, slows down and holds a safe hover.
 
 Why this one:
 
-- It is the product shape judges recognise: runtime assurance (Simplex, ASTM F3269), a minimal
+- It is the product shape reviewers recognise: runtime assurance (Simplex, ASTM F3269), a minimal
   change to the autopilot setpoint, and PX4-CBF proves it can live inside PX4 (BSD-3).
 - It is the one place where the hub's strength (integrity, protection levels, FDE) adds
   something the prior art does not show: BCBF and MR-CBF use Gaussian or bounded error, not a
@@ -371,7 +371,7 @@ Murali-style "yaw toward features" as the filter's recovery action only if time 
 
 ## 6. Not verified
 
-Reconciled 2026-11-09 (loop-28) against the samples and docs written after this page. Still open:
+Reconciled 2026-11-09 against the samples and docs written after this page. Still open:
 
 - The idea A falsifier (1.4) and the idea B falsifier (2.4) were not run. Of the section 3.4
   kill test, P1, P3, F2 with the FoV QP, F3f, F3t, gatekeeper and 200 layouts per seed were not
@@ -433,9 +433,9 @@ Reconciled 2026-11-09 (loop-28) against the samples and docs written after this 
   headline): narrowed, synthetic. The info-gain move arm passed (>= 95 % reached, 0 wrong
   commits) only on random and u_trap (100 % on held-out seeds 2-4); office 94.4 %, glass_office
   83.3 %, narrow_gap 85.6 %, warehouse 97.2 % with 33 wrong commits, maze 97.2 % with 6
-  ([held-out matrix](../../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56));
+  ([held-out matrix](../../../samples/close-area-relocalize/README.md));
   48 / 64 % reached on a 4-beam sensor (dropout / jump)
-  ([4-beam](../../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54));
+  ([4-beam](../../../samples/close-area-relocalize/README.md));
   7 % collisions with unmapped added obstacles
-  ([stale map](../../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).
+  ([stale map](../../../samples/close-area-relocalize/README.md)).
   The mechanism is prior art ([10](10-relocalization-prior-art.md)).

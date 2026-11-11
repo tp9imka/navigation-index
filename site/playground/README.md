@@ -154,7 +154,7 @@ the 4-decimal JSON rounding of check B below. Screenshot: [pg_reloc_arms.png](re
 
 ## Loading: retries and the Retry button (loop-63)
 
-Dry-run blocker 7 ([docs/day1-dry-run.md](../../docs/day1-dry-run.md)): a cold load stalled 122.5 s and
+Dry-run blocker 7 ([docs/day1-dry-run.md](../../docs/cold-start-drill.md)): a cold load stalled 122.5 s and
 failed with "Failed to fetch"; there was no retry. Now `worker.js` runs each load step as a named
 step with 3 attempts and waits of 2 s and 6 s between them: `manifest.json`, `Pyodide runtime`
 (`pyodide.mjs` + `loadPyodide`; a retry imports `pyodide.mjs?attempt=N`, because a failed module import
@@ -175,7 +175,7 @@ retried again. The 122 s stall itself (a fetch that hangs, then fails) was not r
 
 One command does all of this: `python3 tools/venue_kit.py prepare` vendors Pyodide with sha256 checks,
 `verify` checks the playground and the Solver with the CDN blocked, `bundle` writes a zip that runs
-with `python3 serve.py` ([day0-runbook](../../docs/day0-runbook.md)). The manual steps below do the same by hand.
+with `python3 serve.py` ([day0-runbook](../../docs/first-three-hours.md)). The manual steps below do the same by hand.
 
 The playground needs Pyodide 314.0.7, numpy and scipy. By default it loads them from
 cdn.jsdelivr.net. To run without the CDN (venue Wi-Fi that blocks it, or no network), vendor them

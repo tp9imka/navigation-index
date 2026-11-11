@@ -12,12 +12,12 @@
 
  {"path": "data/resources/backlog.json", "term": "Ivan", "text": "Ivan Cisneros", "reason": "paper author (ALTO dataset, arXiv 2207.12317)"},
  {"path": "data/resources/backlog.json", "term": "Ivan", "text": "Ivan Moskalenko", "reason": "paper author (arXiv 2406.00885)"},
- {"path": "data/resources/loop-12.json", "term": "Ivan", "text": "Ivan Loncar", "reason": "paper author (LARICS, University of Zagreb)"},
+ {"path": "data/resources/competition-rules.json", "term": "Ivan", "text": "Ivan Loncar", "reason": "paper author (LARICS, University of Zagreb)"},
 
- {"path": "data/resources/loop-12.json", "term": "organiser", "text": "run by the organisers", "reason": "ICUAS 2026 UAV Competition rulebook: how the real competition runs entries"},
- {"path": "data/resources/loop-12.json", "term": "organiser", "text": "(organiser answer)", "reason": "ICUAS 2026 rulebook Q&A: answers from that competition's organisers"},
- {"path": "data/resources/loop-12.json", "term": "judges", "text": "Judges reveal the grid cells", "reason": "IEEE Region 5 2021 student competition rules: what its judges do"},
- {"path": "data/resources/loop-12.json", "term": "judges", "text": "Judges' awards instead of a published score", "reason": "EnRicH 2025 European Robotics Hackathon: how that real event scores"},
+ {"path": "data/resources/competition-rules.json", "term": "organiser", "text": "run by the organisers", "reason": "ICUAS 2026 UAV Competition rulebook: how the real competition runs entries"},
+ {"path": "data/resources/competition-rules.json", "term": "organiser", "text": "(organiser answer)", "reason": "ICUAS 2026 rulebook Q&A: answers from that competition's organisers"},
+ {"path": "data/resources/competition-rules.json", "term": "judges", "text": "Judges reveal the grid cells", "reason": "IEEE Region 5 2021 student competition rules: what its judges do"},
+ {"path": "data/resources/competition-rules.json", "term": "judges", "text": "Judges' awards instead of a published score", "reason": "EnRicH 2025 European Robotics Hackathon: how that real event scores"},
  {"path": "data/resources/defense-context.json", "term": "judges", "text": "Navy judges reward working prototypes", "reason": "ONR / NavalX HACKtheMACHINE: what that real competition's judges reward"},
  {"path": "data/repos/ua-ru-round2.json", "term": "organiser", "text": "what the organisers' technical expert clarified", "reason": "third-party team repo (KROT) recording the Blind flight hackathon organisers' clarifications"},
  {"path": "data/repos/ua-ru-round2.json", "term": "organiser", "text": "organiser constraints", "reason": "Blind flight (Polet vslepuyu) 2026 hackathon, a real third-party event"},
@@ -35,5 +35,15 @@
  {"path": "docs/landscape/trends-2025-2026.md", "term": "organiser", "text": "looking-our-next-8-local-organisers", "reason": "URL of the EC DEFIS EUDIS hackathon announcement"},
  {"path": "docs/landscape/ua-ru-sources-overview.md", "term": "organiser", "text": "organiser ООО «ИННОКУБ»", "reason": "named organiser of the Krasnodar Blind flight hackathon, a real third-party event"},
  {"path": "docs/landscape/ua-ru-sources-overview.md", "term": "organiser", "text": "write-up of the organiser constraints", "reason": "third-party KROT repo describing its event's constraints"},
- {"path": "docs/landscape/blind-flight-teardown.md", "term": "organiser", "reason": "teardown of third-party Blind flight hackathon repos; every organiser mention is about that event's organisers and their PDFs"}
+ {"path": "docs/landscape/blind-flight-teardown.md", "term": "organiser", "reason": "teardown of third-party Blind flight hackathon repos; every organiser mention is about that event's organisers and their PDFs"},
+
+ {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "on the day", "text": "provided on the day of the competition", "reason": "quote from the IMAV 2026 outdoor rulebook, a real third-party competition"},
+ {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "organiser", "text": "run on the organisers' machine", "reason": "ICUAS 2026 UAV Competition rulebook: how that real competition runs entries"},
+ {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "judges", "text": "judges screen-share each balloon", "reason": "IEEE Region 5 2021 student competition rules: what its judges do"},
+ {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "judges", "text": "judges' awards", "reason": "EnRicH 2025 European Robotics Hackathon: how that real event scores"},
+ {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "organiser", "text": "(ICUAS, organiser answer)", "reason": "ICUAS 2026 rulebook Q&A: answers from that competition's organisers"},
+ {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "organiser", "text": "are an organiser forum answer", "reason": "ICUAS 2026 rulebook Q&A: answers from that competition's organisers"},
+ {"path": "docs/reports/fact-check-round4.md", "term": "organiser", "text": "aerial-robotics workshop organizers", "reason": "author field of a third-party ICRA 2025 workshop resource"},
+ {"path": "docs/competition-playbook.md", "term": "judges", "text": "Navy judges reward working prototypes", "reason": "ONR / NavalX HACKtheMACHINE: what that real competition's judges reward"},
+ {"path": "docs/research/close-area-nav/02-sims-platforms-competitions.md", "term": "organiser", "text": "Organisers add textured floor wallpaper", "reason": "IMAV 2026 indoor rulebook: what that real competition's organisers do"}
 ]

@@ -1,6 +1,6 @@
 # 01. Flyable maneuvers that separate competing location hypotheses
 
-Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers". Scope: the
+Prior-art scan, 2026-11-09, for an autonomous flight navigation task. Scope: the
 vehicle's own navigation only. Records added: `data/resources/innovation-pa-maneuvers.json`
 (17 resources) and `data/repos/innovation-pa-maneuvers.json` (4 repos, each checked with
 `gh api repos/...` on 2026-11-09).
@@ -85,7 +85,7 @@ What was **not found in this search** (queries listed below) is the combination:
    standard S-turn, Fisher/CRB-greedy and expected-entropy-greedy on the same library, with
    **wrong-lock rate** as a first-class metric.
 
-Phrase it to judges as an engineering contribution: "Fox and Platt's active disambiguation,
+Phrase it to reviewers as an engineering contribution: "Fox and Platt's active disambiguation,
 made flyable for a fixed-wing over real terrain, with a guard for the case where the truth is
 not among the hypotheses." Not as a new theory.
 

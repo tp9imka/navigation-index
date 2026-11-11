@@ -98,7 +98,7 @@
     "summary": "ICRA 2021. Observes that EKF means are accurate while covariances are not, and that the covariance error in visual-inertial localization is systematic. Learns a nonlinear map from the reported covariance to an empirically calibrated one, tested in simulation and on a real-world VIO system.",
     "key_takeaways": [
       "VIO covariance error is systematic, so it can be calibrated from logged flights",
-      "Implies a cheap fix: fit an inflation from Day 1 recordings against a reference"
+      "Implies a cheap fix: fit an inflation from your first recordings against a reference"
     ],
     "concepts": [
       "concept:vio",

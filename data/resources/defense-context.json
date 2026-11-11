@@ -1514,7 +1514,7 @@
     "year": 2021,
     "summary": "Follow-up Kelvins challenge focused on bridging the domain gap: train on synthetic images, test on hardware-in-the-loop lightbox and sunlamp images.",
     "key_takeaways": [
-      "Sim-to-real gap is the core difficulty judges scored",
+      "Sim-to-real gap is the core difficulty the competition scored",
       "Kelvins pages document rules and metrics"
     ],
     "concepts": [
@@ -1765,7 +1765,7 @@
     "summary": "Announcement of the DoD's AI ethical principles - responsible, equitable, traceable, reliable, governable - recommended by the Defense Innovation Board.",
     "key_takeaways": [
       "Traceable and governable map to logging and safe fallback in nav autonomy",
-      "Judges increasingly ask how an AI component can be disengaged"
+      "Reviewers increasingly ask how an AI component can be disengaged"
     ],
     "concepts": [
       "concept:policy-ethics"

@@ -241,7 +241,7 @@
   "name": "gatekeeper",
   "url": "https://github.com/dev10110/gatekeeper",
   "summary": "Supplementary materials for the gatekeeper paper: PDF with appendix, videos and notebook code for backup-trajectory safety verification.",
-  "why_it_matters": "Planner-agnostic safety layer with a hover backup; a simple story for judges.",
+  "why_it_matters": "Planner-agnostic safety layer with a hover backup; a simple story for reviewers.",
   "concepts": [
    "concept:obstacle-avoidance",
    "concept:path-planning"

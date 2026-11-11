@@ -1,8 +1,8 @@
 # Navigation primer
 
 Use this when a navigation term, sensor or failure mode is new to you and you need the plain
-explanation plus the repos to build with. It does not tell you what to build: for EDGE
-Challenge 2 start at [challenge-2-autonomous-flight.md](../challenge-2-autonomous-flight.md),
+explanation plus the repos to build with. It does not tell you what to build: for a full
+brief start at the decoder's [full-brief routing table](../problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages),
 and for the close-area A to B task at [close-area-nav](../research/close-area-nav/README.md).
 
 A field guide to navigation and PNT (positioning, navigation and timing) for software
@@ -37,7 +37,7 @@ with it".
 
 ## Suggested order
 
-- **Close-area A=>B team (likely Day-1 task):** 1 => 4 => 6 => 7 => 9, then
+- **Close-area A=>B team (likely first-day task):** 1 => 4 => 6 => 7 => 9, then
   [close-area-nav](../research/close-area-nav/README.md) and
   [samples/close-area-arena](../../samples/close-area-arena/README.md).
 - **Air-domain alt-nav team (long range):** 1 => 3 => 2 => 5 => 4 => 6 => 9.

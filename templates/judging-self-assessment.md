@@ -2,7 +2,7 @@
 
 Score yourself at H+22 and H+40. Replace these criteria with the event's published rubric
 if there is one; keep the evidence column either way. Criteria derived from
-[playbook "What judges reward"](../docs/hackathon-playbook.md#1-what-judges-reward).
+[playbook "What judges reward"](../docs/competition-playbook.md#1-what-reviewers-look-for).
 
 Score 0-3: 0 = absent, 1 = claimed only, 2 = shown, 3 = shown and measured with evidence a judge can open.
 

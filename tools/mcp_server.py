@@ -77,7 +77,7 @@ TOOLS = [
                        "read the decoder by hand and search with your own nouns; no rows means the statement "
                        "shares almost nothing with the decoder. With low or no rows, guides lists up to 3 hub "
                        "guides that match a how-to question (read them by id). Use read on the decoder for stack, datasets "
-                       "and pitch. " + READ_NOTE,
+                       "and one-line summary. " + READ_NOTE,
         "inputSchema": {"type": "object", "required": ["statement"], "properties": {
             "statement": {"type": "string", "description": "the problem statement as given, any length up to "
                                                            f"{MAX_STATEMENT_CHARS} characters"},
@@ -110,7 +110,7 @@ TOOLS = [
     {
         "name": "read",
         "description": "Full markdown of one hub page: a guide (guide:problem-statement-decoder, "
-                       "guide:day0-runbook, ...), a sample README (sample:x), or the integration card, "
+                       "guide:first-three-hours, ...), a sample README (sample:x), or the integration card, "
                        "dataset card or paper digest of a record (repo:x, res:x; else its catalog page). "
                        "Pass id or a repo-relative path (docs/**/*.md, templates/**/*.md such as "
                        "templates/drone-adapter/drivers/README.md, samples/<name>/*.md such as "
@@ -204,7 +204,7 @@ def tool_decode(args):
         nxt = query.DECODE_LOW_NOTE.replace("docs/problem-statement-decoder.md",
                                             "guide:problem-statement-decoder") + hint
     else:
-        nxt = "search with each row's keywords; read guide:problem-statement-decoder for stack, datasets and pitch"
+        nxt = "search with each row's keywords; read guide:problem-statement-decoder for stack, datasets and one-line summary"
     out = {"rows": [{k: r[k] for k in keep} for r in rows], "confidence": "none" if not rows else
            "low" if low else "ok", "untrusted": READ_NOTE, "next": nxt}
     if guides:

@@ -4,7 +4,7 @@ Briefs like "fixed-wing by terrain (TERCOM)", "blind flight", "navigate at night
 smoke", "magnetic anomaly navigation", "heading backup at sea", "no RF at all". Decoder rows 15,
 16, 18, 25, and the absolute-fix half of 27.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 Absolute position from something that cannot be jammed (terrain, the magnetic field, stars,
 thermal imagery), measured on real terrain or real sensor data, with the conditions where it

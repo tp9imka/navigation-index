@@ -555,7 +555,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "Header-friendly library; Groot2 GUI helps demo mission logic to judges.",
+    "hackathon_notes": "Header-friendly library; Groot2 GUI helps demo mission logic to reviewers.",
     "related": [
       {
         "id": "repo:ros-navigation/navigation2",
@@ -1888,7 +1888,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "high",
-    "hackathon_notes": "go build or release binary; web map client is handy for judges without ATAK installed.",
+    "hackathon_notes": "go build or release binary; web map client is handy for reviewers without ATAK installed.",
     "related": [
       {
         "id": "repo:brian7704/opentakserver",

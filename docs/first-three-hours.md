@@ -1,24 +1,24 @@
-# Day-0 runbook: the first 3 hours
+# The first three hours
 
-What a 4-5 person team does from the moment the problem statement drops until H+3, when a
+What a 4-5 person team does from the moment the problem statement drops until hour 3, when a
 walking skeleton should run end to end. It assumes the
-[prep checklist](hackathon-playbook.md#6-pre-hackathon-prep-checklist) is done: datasets on
+[prep checklist](competition-playbook.md#6-pre-hackathon-prep-checklist) is done: datasets on
 disk, SITL images built, the [project-repo template](../templates/project-repo/) green on
 every laptop, the hub registered as an MCP server.
 
 Companions: [problem-statement-decoder.md](problem-statement-decoder.md) (statement => approach;
 the single source for "where to start"), [samples/README.md](../samples/README.md) (status and
 first command per sample), [evidence-matrix.md](evidence-matrix.md) (numbers you can cite),
-[hackathon-playbook.md](hackathon-playbook.md) (ideas, differentiators, 48h plan),
+[competition-playbook.md](competition-playbook.md) (ideas, differentiators, 48h plan),
 [reference-stacks.md](reference-stacks.md) (what to build on, licenses),
 [templates/](../templates/README.md) (fill-in files).
 
 Brief family known? Read its [cheat sheet](cheatsheets/README.md) first (3 minutes each).
 
 **Close-area A=>B brief** ("fly from A to B", "obstacles", "arena", "indoor drone", "marker";
-decoder rows 31-33, the likely EDGE Challenge 2 task): take the
+decoder rows 31-33): take the
 [close-area branch](#close-area-branch-rows-31-33) below. It replaces the 0:10-1:45 rows of the
-timeline; the rubric and the H+3 checkpoint still apply.
+timeline; the rubric and the hour-3 checkpoint still apply.
 
 Times are a plan, not a measurement. If a block overruns by more than 10 minutes, the Lead
 cuts scope, not the next block.
@@ -30,7 +30,7 @@ cuts scope, not the next block.
 | 0:00-0:10 | All | Read the statement twice, silently. Then the judging criteria, rules, provided data and hardware. Highlight nouns: platform, threat, deliverable, constraints. | Highlighted statement |
 | 0:10-0:20 | Lead + Pitch | Fill the decode sheet ([section 1](#1-decode-the-statement)). Match it to 1-3 rows of the [decoder](problem-statement-decoder.md). | Decode sheet, 3 candidates |
 | 0:10-0:20 | Nav, Platform, Viz | For each candidate row: open its samples in [samples/README.md](../samples/README.md) (status, deps, first command) and its numbers in [evidence-matrix.md](evidence-matrix.md); then the linked integration and dataset cards; MCP queries with the row's keywords ([section 5](#5-find-components-fast-with-the-hub-via-mcp)). | One stack and one starting sample per candidate |
-| 0:20-0:25 | Lead | Send organisers the open questions (data provided? RF allowed? hardware on site? scoring weights? submission format?). | Questions sent |
+| 0:20-0:25 | Lead | Send whoever set the task the open questions (data provided? RF allowed? hardware on site? scoring weights? submission format?). | Questions sent |
 | 0:25-0:40 | All | Score the 3 candidates independently with the rubric ([section 2](#2-pick-the-idea-scoring-rubric)), then compare. Discuss only the criteria where scores differ by 2 or more. | Scores table |
 | 0:40-0:50 | Lead | Decide idea + fallback. Name the one metric. Write the five-line demo script ([demo-script](../templates/demo-script.md)). Record the decision in ADR-001 ([adr](../templates/adr.md)). | ADR-001, demo script v0 |
 | 0:50-1:00 | Lead | Assign roles and stage owners ([section 3](#3-assign-roles)). | Roles table filled |
@@ -43,7 +43,7 @@ cuts scope, not the next block.
 | 1:45-2:30 | Platform + Nav | Real input => template filter => template monitor => publisher. Dumb algorithm on purpose. | Real data on the map |
 | 1:45-2:30 | Pitch | Write the evaluation plan: baseline vs ours, which ground truth, which alert limit. Check dataset and model licenses ([reference-stacks](reference-stacks.md#license-traps-from-the-cards)). | `docs/eval-plan.md` |
 | 2:30-2:50 | All | Fix whatever blocks the end-to-end run. No new features. | `make demo` on real input |
-| 2:50-3:00 | Lead | H+3 checkpoint ([section 7](#7-h3-checkpoint)). | Go, or switch to the fallback now |
+| 2:50-3:00 | Lead | Hour-3 checkpoint ([section 7](#7-hour-3-checkpoint)). | Go, or switch to the fallback now |
 
 ### Close-area branch (rows 31-33)
 
@@ -51,28 +51,28 @@ Same clock, different inputs. Sheet: [close-area-a-to-b](cheatsheets/close-area-
 
 | Clock | Who | Do | Output |
 |---|---|---|---|
-| 0:10-0:20 | Lead | Ask Q1-Q10 of the [Day-1 intake](day1-close-area-intake.md#1-questions-in-the-order-to-ask) (drone + SDK, sim or real, how B is given, scoring) | Intake card |
-| 0:10-0:20 | Platform | Run the two smoke tests in [intake section 2](day1-close-area-intake.md#2-if-we-only-get-3-answers) (drone-adapter mock, arena straight baseline) | Both green or a named failure |
-| 0:20-0:25 | Lead + Nav | Pick the sim and the driver from the intake tables: arena for planner work, [sitl-docker](../samples/sitl-docker/) or the organisers' sim for credibility, one [drone-adapter driver](../templates/drone-adapter/drivers/README.md) (unrun stubs) | Sim + driver in ADR-001 |
+| 0:10-0:20 | Lead | Ask Q1-Q10 of the [first-day intake](first-day-intake.md#1-questions-in-the-order-to-ask) (drone + SDK, sim or real, how B is given, scoring) | Intake card |
+| 0:10-0:20 | Platform | Run the two smoke tests in [intake section 2](first-day-intake.md#2-if-you-only-get-3-answers) (drone-adapter mock, arena straight baseline) | Both green or a named failure |
+| 0:20-0:25 | Lead + Nav | Pick the sim and the driver from the intake tables: arena for planner work, [sitl-docker](../samples/sitl-docker/) or the sim provided with the task for credibility, one [drone-adapter driver](../templates/drone-adapter/drivers/README.md) (unrun stubs) | Sim + driver in ADR-001 |
 | 0:25-0:50 | All | Rubric ([section 2](#2-pick-the-idea-scoring-rubric)): candidates are rows 31, 32, 33 and the headline from the [synthesis](research/close-area-nav/README.md#recommended-direction). A `ran` arena counts as "half of it" for the skeleton criterion | ADR-001, demo script from [demo-script-close-area](../templates/demo-script-close-area.md) |
 | 1:00-1:15 | Platform | Repo from [flight-repo](../templates/flight-repo/README.md) instead of project-repo; `make test sim` | Team repo green |
 | 1:15-1:45 | Nav | Planner in the arena: `astar_esdf` with a map, APF with escape on sparse ranges ([which planner first](cheatsheets/close-area-a-to-b.md#3-which-planner-first)) | Arena reached % on 20 layouts |
 | 1:15-1:45 | Platform | Driver bench checks from the drivers README, or SITL up | Setpoint moves the vehicle the right way |
 | 1:45-2:50 | Nav + Platform | Same planner through flight-repo on the mock, then on the chosen driver or SITL. Arena kill-test harness: chosen planner plus one fault case with `run_faults.py` | Kill-test command runs end to end, even if the numbers are bad |
 
-The full kill test (200 layouts, VIO jump and bias faults) runs after H+3; thresholds are in the
+The full kill test (200 layouts, VIO jump and bias faults) runs after hour 3; thresholds are in the
 synthesis and are proposals.
 
 ## 1. Decode the statement
 
 Answer each line from the statement text, not from what you hoped it would say. "Not stated"
-is an answer; turn it into a question for the organisers.
+is an answer; turn it into a question for whoever set the task.
 
 | Question | Why it matters |
 |---|---|
-| Platform (UAS multirotor / fixed-wing / UGV / USV / UUV / person / team / fixed site)? | Picks the [platform row](hackathon-playbook.md#22-platforms) and the simulator |
+| Platform (UAS multirotor / fixed-wing / UGV / USV / UUV / person / team / fixed site)? | Picks the [platform row](competition-playbook.md#22-platforms) and the simulator |
 | Threat (jamming / spoofing / both / link loss / no GNSS at all / timing)? | Detect-only vs navigate-through |
-| Deliverable (vehicle that navigates / monitor or map / C2 picture / analysis tool)? | Vehicle demos need SITL by H+6 |
+| Deliverable (vehicle that navigates / monitor or map / C2 picture / analysis tool)? | Vehicle demos need SITL by hour 6 |
 | Scoring (accuracy / robustness / time to detect / operator value / business case)? | Picks the one metric |
 | Distance, duration or area named? | Sets the drift budget and whether absolute aiding is needed |
 | Data or hardware provided? Any provided log format? | A provided format beats any pre-downloaded set |
@@ -115,9 +115,9 @@ the judging criteria say otherwise, and write the change in ADR-001.
 | Criterion | Weight | 1 | 5 |
 |---|---|---|---|
 | Fit to the statement and its judging criteria | x3 | Tangential; needs re-framing | Uses the statement's own words; hits the main scoring line |
-| Skeleton by H+6 with what is on disk | x3 | New toolchain, nothing built, no data local | A sample marked `ran` that already does half of it, + a shortlisted dataset or a built SITL image |
+| Skeleton by hour 6 with what is on disk | x3 | New toolchain, nothing built, no data local | A sample marked `ran` that already does half of it, + a shortlisted dataset or a built SITL image |
 | Measurable with ground truth | x2 | Only "it looks right" | ATE / time-to-detect / false alarms vs ground truth, automated in `eval/` |
-| Differentiation ([playbook 1.1](hackathon-playbook.md#11-differentiators-judges-have-not-seen)) | x2 | The demo every team brings | Integrity, honest uncertainty or a hard condition, measured |
+| Differentiation ([playbook 1.1](competition-playbook.md#11-differentiators-reviewers-have-not-seen)) | x2 | The demo every team brings | Integrity, honest uncertainty or a hard condition, measured |
 | Team skill match | x2 | Nobody has used the core library | Someone shipped with it before |
 | Risk (version traps, gated data, GPU, licenses) | x1 | Several red flags in the cards | Cards show a clean install and permissive licenses |
 
@@ -130,13 +130,13 @@ natural - it is the hardest thing for other teams to copy in 48h.
 From [team roles and 48h plan](../templates/team-roles-and-48h-plan.md). One owner per
 template stage; interface changes need an ADR.
 
-| Role | Owns in the template | First task at H+1 |
+| Role | Owns in the template | First task at hour 1 |
 |---|---|---|
 | Lead / integrator | Repo, `main` green, go/switch call | Bootstrap review, merge order |
 | Nav / estimation | `NavFilter`, `IntegrityMonitor`, `eval/metrics.py` | Card reading, adapter interface, baseline numbers |
 | Platform | `PoseSource` adapters, SITL, docker, hardware | SITL or dataset loader |
 | Viz / C2 | `Publisher`s, TAK / web map | Map on screen with synthetic data |
-| Pitch / evidence | Threat model, risk register, eval plan, deck, tests | Threat model v0, licenses, questions to organisers |
+| Pitch / evidence | Threat model, risk register, eval plan, deck, tests | Threat model v0, licenses, questions for whoever set the task |
 
 With 3 people: Lead also owns Pitch, Platform also owns Viz.
 
@@ -238,10 +238,10 @@ The [sitl-docker](../samples/sitl-docker/) compose file pins ArduCopter 4.6.3 an
 | Close-area A=>B drone (rows 31-33) | Nothing to download for the arena; SITL images from sitl-docker for credibility | [close-area-arena](../samples/close-area-arena/) `.venv/bin/python run.py --planner straight --layouts 20 --seed 0` (~2 s after install); first commands in the [close-area sheet](cheatsheets/close-area-a-to-b.md#2-first-3-commands) | Arena is 2.5D synthetic; drivers are unrun stubs; PX4 no longer plans around obstacles (Collision Prevention only stops) |
 | Celestial | cedar-solve test frames, SkyView cutouts, DE421 via [celestial-star-tracker](../samples/celestial-star-tracker/) `python3 fetch_data.py` (~190 MB, ~5 min) | `.venv/bin/python plate_solve_eval.py` (~10 s) | cedar-solve from git tag v0.6.0 with `--no-deps` (PyPI 0.5.1 predates its NumPy 2 fix); SkyView sometimes answers "Too Many Processes" |
 
-If the organisers provide data, start there instead and keep one shortlisted set as a
+If the task comes with data, start there instead and keep one shortlisted set as a
 cross-check.
 
-## 7. H+3 checkpoint
+## 7. Hour-3 checkpoint
 
 Go if all of these are true; otherwise switch to the fallback now, while it is cheap.
 
@@ -250,10 +250,10 @@ Go if all of these are true; otherwise switch to the fallback now, while it is c
       mock or SITL, and the arena kill-test command runs end to end.
 - [ ] The one metric is named in ADR-001 and `eval/` can compute it, even if the number is bad.
 - [ ] Ground truth for that metric exists on disk.
-- [ ] No unresolved hard-gate question from the organisers.
+- [ ] No unresolved hard-gate question for whoever set the task.
 - [ ] Threat model v0 and risk register v0 are committed.
-- [ ] Every person knows their H+3 to H+6 task (the playbook's
-      [48h plan](hackathon-playbook.md#5-48h-execution-plan-template) takes over from here).
+- [ ] Every person knows their hour 3 to hour 6 task (the playbook's
+      [48h plan](competition-playbook.md#5-48h-execution-plan-template) takes over from here).
 
 
 ## Browser tools offline

@@ -1,6 +1,6 @@
 # Guidance and planning for a navigation entry
 
-Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" ([entry point](challenge-2-autonomous-flight.md)).
+Written 2026-11-09 for an autonomous flight navigation task ([full-brief routing](problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages)).
 The hub is strong on estimation and integrity. This page covers the other half of GNC: where
 the vehicle should go, and how it gets there, given what the estimator knows.
 
@@ -37,7 +37,7 @@ or offboard setpoints. Replacing the autopilot's guidance in 48h is a trap (sect
 ## 2. Capability table
 
 Setup cost is a reading of each README, not a measured install, unless a hub sample says
-otherwise. "Copyleft" means GPL: fine for the demo, rewrite or relicense before EDGE ships it.
+otherwise. "Copyleft" means GPL: fine for the demo, rewrite or relicense before anyone ships it closed.
 
 | Need | Pick | License | Setup cost |
 |---|---|---|---|
@@ -150,7 +150,7 @@ Prototype an NMPC in [do-mpc](../catalog/repos/do-mpc__do-mpc.md) on RotorPy dyn
 tracking weights scaled by the EKF covariance from
 [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/): track loosely while uncertain, tightly
 after a fix. Port to [acados](../catalog/repos/acados__acados.md) only if time remains. Lower
-priority than G1-G3: harder to demo and judges see MPC often.
+priority than G1-G3: harder to demo and reviewers see MPC often.
 
 Measured MPC number for close-area A=>B: [close-area-planner-mpc](../samples/close-area-planner-mpc/README.md)
 (synthetic arena, known map, M3 Max laptop in Python): same outcomes as the A* carrot follower

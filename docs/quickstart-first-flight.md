@@ -1,12 +1,11 @@
-# Day-1 quickstart: fresh clone => flown, scored first flight => regression bar
+# Quickstart: fresh clone => flown, scored first flight => regression bar
 
-**Next action:** run step 1, then work down. One pass took 6 min 7 s agent-driven ([day1-drill-2026-11.md](day1-drill-2026-11.md)); budget 15 minutes by hand once the room is measured
-([cheat sheet](cheatsheets/close-area-a-to-b.md#day-1-flow-with-the-browser-tools)), plus up to 4
+**Next action:** run step 1, then work down. One pass took 6 min 7 s agent-driven ([cold-start-drill.md](cold-start-drill.md)); budget 15 minutes by hand once the room is measured
+([cheat sheet](cheatsheets/close-area-a-to-b.md#first-day-flow-with-the-browser-tools)), plus up to 4
 minutes for the first cold venv (step 4).
 
-For the EDGE internal hackathon (18 Nov 2026), brief likely "drone A=>B in a close area with
-obstacles". Ask the organiser questions first: [day1-close-area-intake](day1-close-area-intake.md)
-(20 minutes). Every number on this page is **synthetic** (simulated room, vehicle, sensor and
+For a task like "drone A=>B in a close area with obstacles". Ask whoever set the task the intake
+questions first: [first-day intake](first-day-intake.md) (20 minutes). Every number on this page is **synthetic** (simulated room, vehicle, sensor and
 estimator, scored on truth), quoted from the linked README or results file. None is a flight or
 SITL result. "From source" marks an expected line read from the script, not from a README.
 
@@ -16,8 +15,8 @@ SITL result. "From source" marks an expected line read from the script, not from
 git clone -q https://github.com/tp9imka/navigation-index < /dev/null
 ```
 
-- Source: URL from [case-study](case-study/README.md) (the `origin` remote); `-q` and `< /dev/null`
-  from [day1-dry-run step 1](day1-dry-run.md#1-clone-wall-5485-s-on-the-attempt-that-finished-1-hop-agentsmd)
+- Source: URL from [how-it-was-built](how-it-was-built.md); `-q` and `< /dev/null`
+  from [cold-start drill run 1, step 1](cold-start-drill.md#1-clone-wall-5485-s-on-the-attempt-that-finished-1-hop-agentsmd)
   and [AGENTS.md](../AGENTS.md).
 - cwd: any parent folder. Last line: none (`-q`).
 - Wall: 54.85 s for a local clone of 66 MB on a loaded machine, 0.26 s CPU (dry run).
@@ -52,7 +51,7 @@ uv pip install --python .venv -r requirements-image.txt
   - Both CLIs exit 1 when A and B have no free path (0.15 m radius + 0.1 m), or on a bad spec.
   - Outputs are named after the spec file stem (or `--name`), and both CLIs refuse to overwrite a
     git-tracked file unless `--force` (exit 2). So run the shipped examples on a copy, as above
-    (fixed after drill 2026-11 blocker B1, loop-99).
+    (fixed on 2026-11-10 after cold-start drill blocker B1).
   - Axis-aligned boxes only; `world_from_room.py` rejects a diagonal wall. Any dark mark in an image
     becomes an obstacle; no perspective correction. A door can lose up to 0.2 m on the planner grid.
   - `--ref X1 Y1 X2 Y2 D`: two pixel points and their distance in metres; a 100 px reference gives
@@ -77,10 +76,10 @@ then open `http://localhost:8000/site/solver/`. Clicks, in order:
 5. **Recommend** => `recommend.md` / `recommend.json` with the pick, the tied set and the step-4 command.
 
 - Expected headline on an easy map: `17 planners tie at the top; run Thorough or more seeds to separate them`
-  (random_0, [Recommend result](../site/solver/README.md#result-quick-sweeps-on-narrow_gap_0-and-random_0-loop-87-quick--5-seeds)).
+  (random_0, [Recommend result](../site/solver/README.md)).
 - Wall (headless Chrome 140, M3 Max, 4 workers, 18 planners): Quick 48.3 s (random_0, 90 runs),
   68.1 s (narrow_gap_0); Stress 166.3 s (random_0, 270 runs,
-  [Stress](../site/solver/README.md#stress-and-the-pareto-view-loop-89)). Thorough: not measured.
+  [Stress](../site/solver/README.md)). Thorough: not measured.
   Python ready 6.8 s after navigation on a fresh profile.
   Custom world (hall_8x6 copy, 8 obstacles) with Your drone 0.2 m, 1.5 m/s, depth_cam_87: Quick 21.05 s for 90 runs, whole step 30 s incl. load, import and Recommend; 8 tied, 1 Pareto-optimal (drill 2026-11, synthetic).
 - Gotchas:
@@ -102,7 +101,7 @@ make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0|F2>
 make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json
 ```
 
-Copied out of the hub (the H+0 team-repo case, [Run it](../templates/flight-repo/README.md#run-it)):
+Copied out of the hub (the case where the team repo starts as a copy, [Run it](../templates/flight-repo/README.md#run-it)):
 
 ```sh
 make first-flight HUB=/path/to/navigation-index PLANNER=bench:dstar_lite WORLD=/path/to/navigation-index/site/playground/presets/narrow_gap_0.json
@@ -164,7 +163,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena dep
   1 worker): `wall 21.1 s for 60 runs on 1 workers; wrote results/pack_hall_8x6.json, .md`.
   Exit code 0 = at least one planner passes every criterion, 1 = none does, 2 = invalid pack.
 - Wall: about 8 s (hall_8x6, 60 runs, 14 workers), about 15 s (office_crazyflie, 75 runs); 51 s for 105 runs on 4 workers on a fresh venv (16.4 s inside the script, drill 2026-11). On a laptop use `--workers 4`.
-  - Before loop-99 the Solver and the pack disagreed on a no-map planner: on the drill room `lazy_thetastar_unknown` reached 5/5 in Solver Quick and 2/5 in the pack on the same seeds, A, B, vehicle and sensor (known-map planners agreed). Cause (loop-99): the pack's benchmark loop inflated by 0.15 m while the Solver plans with the drone radius. Fixed: `pack.py` now applies the same per-run radius override, and the two agree on all 15 drill runs ([solver_vs_pack.md](../samples/close-area-benchmark/results/pack_drill_solver_vs_pack.md)). `--shipped-inflation` gives the old behaviour.
+  - Before the 2026-11-10 fix the Solver and the pack disagreed on a no-map planner: on the drill room `lazy_thetastar_unknown` reached 5/5 in Solver Quick and 2/5 in the pack on the same seeds, A, B, vehicle and sensor (known-map planners agreed). Cause: the pack's benchmark loop inflated by 0.15 m while the Solver plans with the drone radius. Fixed: `pack.py` now applies the same per-run radius override, and the two agree on all 15 drill runs ([solver_vs_pack.md](../samples/close-area-benchmark/results/pack_drill_solver_vs_pack.md)). `--shipped-inflation` gives the old behaviour.
 - Gotchas:
   - **Use a count rule for safety** (`"collisions": "== 0"`), not `collision_rate <= 0`, which can
     never pass. A count rule says only "0 in these n runs": 15 clean runs support a rate of at most 0.20.
@@ -177,7 +176,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena dep
 ## 7. Offline fallbacks
 
 Before the event, with network, from the hub root
-([day-0 runbook, Browser tools offline](day0-runbook.md#browser-tools-offline)):
+([first three hours, Browser tools offline](first-three-hours.md#browser-tools-offline)):
 
 ```sh
 python3 tools/venue_kit.py prepare

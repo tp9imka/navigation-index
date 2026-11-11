@@ -1,22 +1,22 @@
-# Day-1 intake: close-area A=>B, organiser answers => stack
+# First-day intake: close-area A=>B, answers => stack
 
-**Next action on Day 1:** ask questions 1-3 of [section 1](#1-questions-in-the-order-to-ask), then
-open [section 2](#2-if-we-only-get-3-answers) for the stack. The rest of the page refines it.
+**Next action when the task arrives:** ask questions 1-3 of [section 1](#1-questions-in-the-order-to-ask), then
+open [section 2](#2-if-you-only-get-3-answers) for the stack. The rest of the page refines it.
 
-Use this page in the first 20 minutes after the brief drops, when the task is "fly a drone from
+Use this page in the first 20 minutes after the brief arrives, when the task is "fly a drone from
 A to B in a close area, potentially with obstacles" (decoder rows 31, 32, 33 in
-[problem-statement-decoder.md](problem-statement-decoder.md)). It routes each organiser answer
-to an adapter driver, a sim, samples and docs. It does not repeat the research; it points into
+[problem-statement-decoder.md](problem-statement-decoder.md)). It routes each answer from whoever set
+the task to an adapter driver, a sim, samples and docs. It does not repeat the research; it points into
 [research/close-area-nav](research/close-area-nav/README.md).
 
 Status, 2026-11-09: this page is a routing table, not a measured result. Nothing on it was run
 for this page. Numbers are quoted from the hub files they link to, with the input type of each.
 "Estimate" means a setup time read from READMEs, not timed. "gap:" marks what the hub does not
-have yet. Gap notes refreshed 2026-11-09 (loop-52) after the safety-filter kill test (held-out verdict
+have yet. Gap notes refreshed 2026-11-09 after the safety-filter kill test (held-out verdict
 FAIL), relocalization, moving obstacles, sensor presets, complex arenas and the flight-repo first
-flight landed; refreshed again (loop-61) after the planner benchmark, the 3D window_bar family, the
-relocalization held-out runs and the Day-1 dry run ([day1-dry-run](day1-dry-run.md#blockers)).
-The Q5 and Q7 defaults were changed in loop-61 so that together they lead to a stack the hub has
+flight landed; refreshed again later that day after the planner benchmark, the 3D window_bar family, the
+relocalization held-out runs and the first cold-start run ([cold-start drill](cold-start-drill.md#blockers)).
+The Q5 and Q7 defaults were changed in that refresh so that together they lead to a stack the hub has
 measured (see [why these defaults](#why-these-defaults)).
 
 ## 0. The 20-minute clock
@@ -25,15 +25,15 @@ measured (see [why these defaults](#why-these-defaults)).
 |---|---|---|---|
 | 0:00-0:05 | Lead | Ask Q1-Q3. Write the answers in the [intake card](#6-intake-card). | 3 answers |
 | 0:05-0:10 | Lead | Ask Q4-Q10. "Don't know yet" is an answer: take the default in the card. | 10 answers or defaults |
-| 0:05-0:10 | Platform | Run the two smoke tests in [section 2](#2-if-we-only-get-3-answers) on the team laptop. | Both green or a named failure |
+| 0:05-0:10 | Platform | Run the two smoke tests in [section 2](#2-if-you-only-get-3-answers) on the team laptop. | Both green or a named failure |
 | 0:10-0:15 | Lead + Nav | Walk [section 3](#3-decision-tree) branch by branch. Circle one path per question. | Stack, driver, sim, first sample |
-| 0:15-0:20 | Lead | Read [section 4](#4-scoring-rule-implications) for the stated scoring. Write ADR-001 ([adr](../templates/adr.md)). Hand over to the [day-0 runbook](day0-runbook.md) at its 0:25 row. | ADR-001 |
+| 0:15-0:20 | Lead | Read [section 4](#4-scoring-rule-implications) for the stated scoring. Write ADR-001 ([adr](../templates/adr.md)). Hand over to the [first-three-hours guide](first-three-hours.md) at its 0:25 row. | ADR-001 |
 
 ## 1. Questions, in the order to ask
 
 Q1-Q3 decide most of the stack. Q4 decides what to optimise. Ask them first even if time runs out.
 
-| # | Ask the organisers | Why it is this early | Default if no answer |
+| # | Ask whoever set the task | Why it is this early | Default if no answer |
 |---|---|---|---|
 | Q1 | Which drone, and which autopilot or SDK do we command it through (PX4, ArduPilot, Crazyflie cflib, Tello SDK, DJI MSDK, other)? | Picks the adapter driver, the sim and the keep-alive rules | PX4-class quad over MAVSDK; write against the [adapter](../templates/drone-adapter/README.md) so it ports |
 | Q2 | Is the judged run in sim, on a real drone, or both? If real: how many flight slots, when, with a net or a safety pilot? If sim: do you provide the sim and world? | Sim-only lets us skip hardware work; real flight makes estimation and safety the main risk | Both: sim first, real port in the last 24 h |
@@ -50,7 +50,7 @@ Q1-Q3 decide most of the stack. Q4 decides what to optimise. Ask them first even
 
 The old pair (Q5 "no obstacle sensor" + Q7 "unknown and moved") was the hard gate in
 [3.4](#34-q5-and-q6-sensors-and-venue-localization): no planner can avoid obstacles it cannot
-sense or look up, and no benchmark row covers it ([day1-dry-run blocker 5](day1-dry-run.md#blockers)).
+sense or look up, and no benchmark row covers it ([cold-start drill blocker 5](cold-start-drill.md#blockers)).
 The new Q5 default is the cheapest obstacle sensor a small indoor drone usually carries, and the
 arena's `crazyflie` preset models it, so every number below has a measured row. With it, the
 defaults lead to a working stack: **`astar_unknown` + F2 range filter** from
@@ -61,11 +61,11 @@ rooms (5 % reached, 45 % collision), so ask for a floor plan as part of Q7: with
 `astar_known` reached 100 % with 0 % collisions in every family on both sensors. If Q5 turns out
 to be "no obstacle sensor" after all, the gate in 3.4 still applies.
 
-## 2. If we only get 3 answers
+## 2. If you only get 3 answers
 
 Run these two smoke tests while the Lead asks (synthetic input; about 2 s each once warm on the
 laptop that produced the quoted results). The first run on a fresh venv can take minutes of
-waiting: 75.69 s wall for 1.78 s CPU in the [dry run](day1-dry-run.md#4-smoke-tests-and-sample-venv-0-extra-hops-commands-are-in-intake-section-2),
+waiting: 75.69 s wall for 1.78 s CPU in the [dry run](cold-start-drill.md#4-smoke-tests-and-sample-venv-0-extra-hops-commands-are-in-intake-section-2),
 205.89 s for a cold `make first-flight`
 ([flight-repo](../templates/flight-repo/README.md#brief-to-first-flight)). Run long commands with
 stdin closed (`< /dev/null`) or in the background so an agent shell does not hang:
@@ -99,7 +99,7 @@ Then pick one cell per row. Everything not asked takes the default in [section 1
 |---|---|
 | Sim only | Planner + safety filter in close-area-arena, repeat the best arm in SITL. Real-flight items in [frames.md](../templates/drone-adapter/frames.md) marked "not confirmed" do not matter |
 | Real only | Driver first, bench-test the "not confirmed" sign and unit items in frames.md before the first flight. Planner still developed in the arena |
-| Both | Arena by H+6, SITL by H+12 (targets from [01 section 5](research/close-area-nav/01-planning-and-mapping.md#5-fastest-credible-baseline)), real port after that |
+| Both | Arena by hour 6, SITL by hour 12 (targets from [01 section 5](research/close-area-nav/01-planning-and-mapping.md#5-fastest-credible-baseline)), real port after that |
 
 | Q3 how B is given | Goal pipeline | Decoder row |
 |---|---|---|
@@ -121,13 +121,13 @@ people move. The integrity-aware safety filter failed its held-out kill test
 
 ### Answers that map to a tool
 
-Added 2026-11-10 (loop-90). All tools run on synthetic input; the full flow is in the
-[cheat sheet](cheatsheets/close-area-a-to-b.md#day-1-flow-with-the-browser-tools).
+Added 2026-11-10. All tools run on synthetic input; the full flow is in the
+[cheat sheet](cheatsheets/close-area-a-to-b.md#first-day-flow-with-the-browser-tools).
 
-| Organiser answer | Tool | First command or click |
+| Answer | Tool | First command or click |
 |---|---|---|
 | Q7: "here is the floor plan" (image, PDF screenshot, whiteboard photo) | [world_from_image.py](../samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic) | `world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D --a-m X Y --b-m X Y -o room.world.json --preview room.png`; a measured room without a drawing: `world_from_room.py <room>.json` |
-| Q1 / Q5: drone size, top speed, sensor specs | Solver **Your drone** panel ([site/solver](../site/solver/README.md#your-drone-loop-76)) | Set radius, v_max, a_max and a sensor preset or Custom (beams, FoV, range), then **Quick**; **Recommend** gives the flight-repo command |
+| Q1 / Q5: drone size, top speed, sensor specs | Solver **Your drone** panel ([site/solver](../site/solver/README.md)) | Set radius, v_max, a_max and a sensor preset or Custom (beams, FoV, range), then **Quick**; **Recommend** gives the flight-repo command |
 | Q7: "people walk through" | VO gate in [close-area-moving-obstacles](../samples/close-area-moving-obstacles/README.md#prediction-arms-constant-velocity-tracks-space-time-a-vo-gate-ran-2026-11-10) | `run_predict.py --layouts 50 --seeds 0,1 --workers 14`. A* + VO gate reached B in 100 of 100 held-out runs with 0 collisions vs 92 % for A* + F2; the sim people walk straight lines |
 | Q3: "B is a marker" and its position is not given | [close-area-explore](../samples/close-area-explore/README.md) to find it, then [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md) for the last metres | `bench.py --layouts 20 --seed 0 --jobs 14`. With B unknown nearest-frontier found it in 43.3 % [31.6, 55.9]; with a nominal within 2 m every arm found it in 88.3-100 %. Ask for a nominal B |
 | Any answer, before tuning | Scenario pack in [close-area-benchmark](../samples/close-area-benchmark/README.md#scenario-packs) | `pack.py run packs/<name>.json`: our room + our drone + the bar, re-run after each change |
@@ -202,7 +202,7 @@ Each leaf names the hub paths to open. Status words come from
 - **Parrot ANAFI (Olympe)**
   - Olympe ships Linux x86-64 wheels only; Sphinx needs Ubuntu + NVIDIA
     ([Sphinx requirements](../catalog/resources/parrot-sphinx-system-requirements.md)).
-  - gap: no hub driver; not runnable on the Mac. Needs an x86 Linux box from the organisers.
+  - gap: no hub driver; not runnable on the Mac. Needs an x86 Linux box from whoever set the task.
 - **Custom or unknown airframe**
   - Speaks MAVLink => treat as PX4 or ArduPilot above, after reading its heartbeat autopilot type.
   - Anything else => gap: no driver. Keep the planner on `MockAdapter` and ask for SDK docs today.
@@ -231,11 +231,11 @@ Each leaf names the hub paths to open. Status words come from
     `--planner arena:<name>` loads an arena planner unchanged; `make first-flight` flies arena A* +
     F2 and scores the log: reached in 19.76 s, synthetic,
     [Brief to first flight](../templates/flight-repo/README.md#brief-to-first-flight)).
-- **Sim only, organisers provide the sim and world**
+- **Sim only, the task provides the sim and world**
   - gz / Gazebo => [Gazebo card](integration-cards/gazebosim__gz-sim.md), PX4 or ArduPilot driver from 3.1.
   - AirSim / Colosseum, Isaac Sim, Flightmare => not practical on the Mac
     ([02 section 1.1](research/close-area-nav/02-sims-platforms-competitions.md#11-comparison-table)); ask for their Linux box.
-  - gap: no driver for an organiser sim. Write one more `Adapter` class against their API.
+  - gap: no driver for a provided sim. Write one more `Adapter` class against their API.
 - **Real only**
   - Driver plus a bench session before any flight: check every "not confirmed" item in
     [frames.md](../templates/drone-adapter/frames.md) (command +x, watch which way it moves).
@@ -265,7 +265,7 @@ Marker branch details:
 - Tag size and hand-over range: [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md)
   (synthetic: 0.16 m tag36h11 detected at >= 90 % to 5 m frontal, 2 m at 70 deg; tag-relative
   final approach within 0.1 m in 50/50 seeds; a 0.40 m pad tag fails at 0.5 m, so nest a small tag).
-- Fiducials forbidden => learned detector trained on Day 1 frames of the real marker.
+- Fiducials forbidden => learned detector trained on frames of the real marker, recorded as soon as it is available.
   gap: no marker-approach dataset and no learned-detector sample in the hub.
 
 ### 3.4 Q5 and Q6: sensors and venue localization
@@ -287,14 +287,14 @@ Localization source, first match wins:
   - Gate on ODOMETRY `quality`, `reset_counter` and EV innovation rejects, not on covariance
     ([03 section 4](research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume)).
   - On VIO loss with a map or a first pass of the room => hover, scan-to-map relocalization and
-    a short disambiguating move ([close-area-relocalize](../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b):
+    a short disambiguating move ([close-area-relocalize](../samples/close-area-relocalize/README.md):
     99-100 % reached, 0 wrong commits, against 36-64 % with the estimator alone; synthetic, known map).
     Limits from the held-out runs: it holds on random and u_trap layouts only; office 94.4 %,
     glass_office 83.3 %, narrow_gap 85.6 %, warehouse 33 wrong commits per 180 runs; 48-64 % on a
     4-beam fan even with a yaw-spin; 7 % collisions with unmapped added obstacles
-    ([held-out matrix](../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56),
-    [4-beam](../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54),
-    [stale map](../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).
+    ([held-out matrix](../samples/close-area-relocalize/README.md),
+    [4-beam](../samples/close-area-relocalize/README.md),
+    [stale map](../samples/close-area-relocalize/README.md)).
 - **Optical flow + downward rangefinder only** => position is integrated velocity and drifts;
   fine for short offsets from A, weak for venue coordinates. Needs textured floors.
 - **Outdoor with GNSS** => [03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available); VIO as fallback.
@@ -316,8 +316,8 @@ Obstacle sensing:
   office 50 % reached / 5 % collision, maze 55 / 0, warehouse 0 / 0
   ([close-area-benchmark](../samples/close-area-benchmark/README.md#preset-crazyflie)); with a map
   `astar_known` 100 / 0.
-- **None** => known-map planning only. Unknown obstacles + no sensor is a hard gate: ask the
-  organisers again before committing (day-0 [hard gates](day0-runbook.md#2-pick-the-idea-scoring-rubric)).
+- **None** => known-map planning only. Unknown obstacles + no sensor is a hard gate: ask
+  whoever set the task again before committing (first-three-hours [hard gates](first-three-hours.md#2-pick-the-idea-scoring-rubric)).
 
 ### 3.5 Q7: obstacles
 
@@ -414,8 +414,8 @@ The pitch switches to H1, relocalization after VIO loss
 - gap: no marker-approach dataset (row 32); the marker-goal sample
   [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/) is synthetic only.
 - gap: no close-area starter bundle in [starter-bundles.md](starter-bundles.md) or the offline kit.
-- gap: no Tello sim, no DJI MSDK or Olympe path on the Mac, no driver for an organiser-provided sim.
-- Filled 2026-11-09 (loop-61 refresh): planner benchmark (14 planners x 8 families x 2 sensors), 3D
+- gap: no Tello sim, no DJI MSDK or Olympe path on the Mac, no driver for a sim provided with the task.
+- Filled 2026-11-09 (second refresh): planner benchmark (14 planners x 8 families x 2 sensors), 3D
   `window_bar` family with a 3D A* on a prior map, D* Lite, DWA and Bug planners, browser playground. All synthetic.
 - gap: no 3D unknown-map planner, no up / down sensing in the arena, and no recorded close-area obstacle flight.
 - gap: the question order above was written before
@@ -444,8 +444,8 @@ Copy into the team repo's `docs/` and fill during 0:00-0:10.
 - No branch was walked end to end. Every driver named above is an unrun stub; every sim except
   close-area-arena and sitl-docker was not run in the hub.
 - Setup times are README-based estimates from [doc 02](research/close-area-nav/02-sims-platforms-competitions.md), not timings.
-- IMAV 2026 factors come from doc 02's PDF extraction of the rulebook; the EDGE scoring is unknown until Day 1.
-- The defaults in section 1 are guesses about a likely venue, not information from the organisers.
+- IMAV 2026 factors come from doc 02's PDF extraction of the rulebook; the scoring of your task is unknown until it is announced.
+- The defaults in section 1 are guesses about a likely venue, not information from whoever set the task.
 - Platform frame and unit items marked "not confirmed" in [frames.md](../templates/drone-adapter/frames.md)
   still need a bench test.
 
@@ -456,6 +456,6 @@ Hub files only, read on 2026-11-09:
 [02](research/close-area-nav/02-sims-platforms-competitions.md), [03](research/close-area-nav/03-close-area-localization.md),
 [04](research/close-area-nav/04-innovation-prior-art.md), [07](research/close-area-nav/07-pl-margin-prior-art.md),
 [drone-adapter README](../templates/drone-adapter/README.md), [frames.md](../templates/drone-adapter/frames.md),
-[close-area-arena README](../samples/close-area-arena/README.md), [day-0 runbook](day0-runbook.md),
-[decoder rows 31-33](problem-statement-decoder.md), [challenge-2 entry point](challenge-2-autonomous-flight.md).
+[close-area-arena README](../samples/close-area-arena/README.md), [first three hours](first-three-hours.md),
+[decoder rows 31-33](problem-statement-decoder.md), [full-brief routing](problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages).
 External facts (PX4, ArduPilot, Bitcraze, Tello, DJI, IMAV) are as cited in those files.

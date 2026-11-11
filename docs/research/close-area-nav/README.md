@@ -5,10 +5,10 @@ B, and you need the baseline, the localization stack or the headline idea. For a
 go to [innovation-prior-art](../innovation-prior-art/README.md); both rounds are compared in
 [research/README.md](../README.md).
 
-Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task
+Research round for a close-area A=>B task, 2026-11-09, after new information that the task
 is likely "move a drone from A to B in a close area, potentially with obstacles". This replaces
 the long-range GNSS-denied frame of [innovation-prior-art](../innovation-prior-art/README.md) as
-the default. Platform, sensors, indoor or outdoor, and sim vs real are still unknown until Day 1.
+the default. Platform, sensors, indoor or outdoor, and sim vs real are still unknown until the task is announced.
 
 The lane docs below are research: nothing in them was run, and thresholds are proposals. The
 baseline they recommend has since run on synthetic inputs (2.5D point-mass arena, rendered tag
@@ -19,7 +19,7 @@ images), not SITL or flight:
 kill test, relocalization, moving obstacles, sensor presets and complex arenas (all synthetic).
 Numbers: [evidence matrix section 14](../../evidence-matrix.md#14-close-area-ab). The headline's
 kill test ran to a verdict. **Verdict after held-out seeds (Part e, synthetic):** FAIL. A hand-tuned fixed bound (MR-CBF 0.2 m) stays at <= 1 % collisions in every case on seeds 0-2; ours (F5, PL margin + hover on ambiguity) collides in 2.5 % [1.1, 5.7] of held-out jump runs and reaches B less often. Headline moves to relocalization after VIO loss; the range filter under any planner and the integrity monitor remain supporting results ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md)).
-**Status after loop-61 (2026-11-09):** the planner question is answered by measurement, not by
+**Status after the 2026-11-09 refresh:** the planner question is answered by measurement, not by
 the lane docs: [close-area-benchmark](../../../samples/close-area-benchmark/README.md) flies 14
 planners x 8 room families x 2 range sensors (20 layouts per cell, synthetic). With a prior map A*
 reached 100 % with 0 % collisions everywhere; without one, 4 beams break offices, warehouses and
@@ -35,11 +35,11 @@ and has a "not verified" section.
 | Page | Use it when | You get |
 |---|---|---|
 | [01](01-planning-and-mapping.md) planning and mapping | You pick the planner and map | Python baseline: 3D numpy grid + ESDF (scipy) => A* with clearance cost => shortcut => RotorPy MinSnap, replan 2-5 Hz. Same planner drives SITL over MAVSDK Offboard (PX4) or GUIDED (ArduPilot) |
-| [02](02-sims-platforms-competitions.md) sims, platforms, competitions | You pick a simulator or need to know what judges score | Light sim: gym-pybullet-drones (fallback RotorPy). Product sim: PX4 SITL + gz Harmonic native on Apple Silicon (`x500_depth`, `walls`, `forest`). Judges reward completion, onboard autonomy, no manual help |
+| [02](02-sims-platforms-competitions.md) sims, platforms, competitions | You pick a simulator or need to know what competitions score | Light sim: gym-pybullet-drones (fallback RotorPy). Product sim: PX4 SITL + gz Harmonic native on Apple Silicon (`x500_depth`, `walls`, `forest`). Reviewers reward completion, onboard autonomy, no manual help |
 | [03](03-close-area-localization.md) localization | You pick the estimator, or VIO is lost indoors, or B is a marker | Indoor: stereo VIO into EKF2 / EKF3 as ODOMETRY, AprilTags at A and B, flow + rangefinder as backup. Outdoor: GNSS (RTK if offered) with VIO as fallback, marker for the last metres |
 | [04](04-innovation-prior-art.md) innovation prior art | You need the headline idea, its prior art and the kill test (section 3.4) | Headline proposed there: integrity-aware safety filter (kill test FAIL on held-out seeds, see below). Support: uncertainty-aware replan trigger. Perception-aware planning parked. Its wider scan ranks relocalization after VIO loss, now the headline |
 | [05](05-cbf-baselines-faithful.md) safety-filter baselines read in full | You implement a kill-test arm (PX4-CBF, Belief-CBF, gatekeeper, MR-CBF) | Shipped PX4-CBF (NTNU fork, branch `cbf`) has no FoV constraint; the paper's FoV QP is in an older commit. MR-CBF and gatekeeper already take an error bound, so the claim is producing a bound that stays valid under faults. Belief-CBF also predicts covariance growth; a plain sqrt(lambda_max) inflation is weaker than the paper |
-| [06](06-task-phrasing-survey.md) task phrasing survey | You guess the Day-1 task shape, scoring, or questions for the organisers | 10 events. B is usually a marker or pad, late-issued coordinates, or a nominal pose revealed up close (LSY within 0.7 m). Off-board help is penalised, not banned (IMAV 1.0 / 0.7 / 0.4). Most likely Day-1 shape: a marked B in a small known arena with a few static obstacles |
+| [06](06-task-phrasing-survey.md) task phrasing survey | You guess the likely task shape, scoring, or questions for whoever set the task | 10 events. B is usually a marker or pad, late-issued coordinates, or a nominal pose revealed up close (LSY within 0.7 m). Off-board help is penalised, not banned (IMAV 1.0 / 0.7 / 0.4). Most likely first-day shape: a marked B in a small known arena with a few static obstacles |
 | [07](07-pl-margin-prior-art.md) kill search for the headline | You pitch the headline and must say what is new | **The idea as first worded exists.** Tan et al. IROS 2025 (Caltech + TII, PX4 X500 with a geofence) and Zhang, Li, Clark TAC 2025 (fault-excluded EKF bank feeding a CBF) already set safety margins from fault-excluded estimates. What survives is a composition, see below |
 | [08](08-crazyflie-sensing-limits.md) Crazyflie sensing limits | The platform is a Crazyflie with Multi-ranger and Flow decks, or you set arena sensor realism | Four 27 deg beams see 30 % of the horizontal circle; obstacles passed close drop out of view; glass is invisible (BatDeck preprint: one forward ranger crashed in 10 of 10 real flights, mostly at glass doors); range falls from about 3.6 m in the dark to about 0.73 m in strong light; 10 Hz. Derived geometry, not measured. Its "crazyflie" preset is now in the arena: glass-family collisions 90-100 % ([sensor realism](../../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic), synthetic) |
 | [09](09-vio-nees-feasibility.md) VIO NEES feasibility | You want one measured number for VIO overconfidence | Plan, not run: yes, with OpenVINS on the UZH-FPV bag relative-nav-benchmark already uses (~21-29 min, needs a Docker build). Only OpenVINS writes a covariance; VINS-Fusion and ORB-SLAM3 do not. Published NEES: 131-363 vs 3 expected for a sliding-window VI filter on EuRoC (Lisus et al. RA-L 2023) |
@@ -86,7 +86,7 @@ drone is wrong about where it is.**
    VFH+, 4-beam fan), [fiducial-goal-apriltag](../../../samples/fiducial-goal-apriltag/README.md)
    (marker goal at B), the [flight-repo](../../../templates/flight-repo/README.md) loop and the
    [drone-adapter drivers](../../../templates/drone-adapter/drivers/README.md) (unrun stubs).
-   Day-1 routing: [day1-close-area-intake](../../day1-close-area-intake.md). Measured numbers:
+   First-day routing: [first-day-intake](../../first-day-intake.md). Measured numbers:
    [evidence matrix section 14](../../evidence-matrix.md#14-close-area-ab).
 2. **Headline: integrity-aware safety filter** (doc 04 idea C). Two barrier sets: obstacles the
    range sensor sees, in the body frame (no position needed, as PX4-CBF); map and geofence
@@ -126,7 +126,7 @@ From the wider scan: multi-hypothesis relocalization after VIO loss (23/30) is n
 (measured, see the status at the top of this section); VLM goal specification (20/30) and
 NoMaD/ViNT as the planner under the filter (19/30) stay backups.
 
-## Ask the organisers on Day 1
+## Ask whoever set the task on the first day
 
 Full ranked list with reasons: [06 section 4](06-task-phrasing-survey.md). Short form:
 

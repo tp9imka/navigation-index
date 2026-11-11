@@ -2,7 +2,7 @@
 
 <!-- about: sample:navigation-innovation-lab, concept:path-planning, concept:sensor-fusion, concept:assured-pnt -->
 
-For Challenge 2, start from an existing estimator and flight stack, then identify a
+For an autonomous flight navigation task, start from an existing estimator and flight stack, then identify a
 specific algorithmic contribution with a strong baseline and a falsification test.
 These experiments were authorized on 2026-11-09 after discussion of the three ideas.
 They complement the completed [differentiator](differentiators-scan.md),
@@ -16,8 +16,8 @@ They complement the completed [differentiator](differentiators-scan.md),
    dependency-free POCs with a shared reproduction command.
 3. [Measured report](../samples/navigation-innovation-lab/results/report.md): all
    policies and stress cases, including unfavorable results and paired intervals.
-4. [Research handoff](hypotheses/research-agent-prompt.md): search tasks for the
-   parallel research agent, with separate file ownership.
+4. Prior art: each card's "Closest work and proposed difference" section lists what was
+   searched and what is still open.
 
 ## Experimental contract
 

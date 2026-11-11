@@ -558,7 +558,7 @@ seeds 0-2 and matched the PL arm's safety, which ended the headline
 
 ## 8. Not verified
 
-Reconciled 2026-11-09 (loop-28) against
+Reconciled 2026-11-09 against
 [close-area-safety-filter](../../../samples/close-area-safety-filter/README.md). Still open:
 
 - The BCBF derivative terms, the MR-CBF Lipschitz shortcut and the use of `Lam` at the current
@@ -572,7 +572,7 @@ Reconciled 2026-11-09 (loop-28) against
   the BCBF follow-up code and cyberpod_sim_ros were not opened beyond README.
 - Dean and Cosner appendices (proofs, SOCP standard form) were not read.
 - Table II tau ambiguity and the meaning of the PX4 LP gains in seconds were not resolved.
-- Records added for new sources: `data/resources/loop-05.json`, `data/repos/loop-05.json`.
+- Records added for new sources: the CBF-baselines lane files in `data/resources/` and `data/repos/`.
 
 ### Verified since
 

@@ -1,14 +1,14 @@
 # Cheat sheets: pick one in 30 seconds
 
-One page per likely brief family, readable in 3 minutes on the day. Each sheet has: what judges
-likely want, the demo with exact samples and first commands, a first-2-hours plan, 3 numbers
+One page per likely brief family, readable in 3 minutes when the task arrives. Each sheet has: what
+reviewers likely want, the demo with exact samples and first commands, a first-2-hours plan, 3 numbers
 with their input type (real / SITL / synthetic), top traps, a stretch goal and links. They
 condense the [decoder](../problem-statement-decoder.md), [samples/README.md](../../samples/README.md)
 and the [evidence matrix](../evidence-matrix.md); when a sheet and those disagree, those win.
 Snapshot 2026-11-06; close-area sheet added 2026-11-09.
 
-EDGE hackathon Challenge 2 (autonomous flight navigation): start at
-[challenge-2-autonomous-flight](../challenge-2-autonomous-flight.md), which picks among these.
+A full brief with several themes (for example autonomous flight navigation): start at the decoder's
+[full-brief routing table](../problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages), which picks among these.
 
 | The brief says... | Sheet | Decoder rows |
 |---|---|---|
@@ -22,7 +22,7 @@ EDGE hackathon Challenge 2 (autonomous flight navigation): start at
 | "drone detection", "counter-UAS", "airspace awareness", "Remote ID", "FOB", "TAK" | [counter-uas-remote-id](counter-uas-remote-id.md) | 12, 13 |
 | "terrain", "TERCOM", "blind flight", "night", "thermal", "smoke", "stars", "magnetic", "no RF" | [terrain-night-celestial](terrain-night-celestial.md) | 15, 16, 18, 25, 27 |
 | "AI", "LLM", "agent", "assistant", "incident analysis" | [llm-agent-ops](llm-agent-ops.md) | 21, 22 |
-| "point A to B", "A to B", "obstacles", "close area", "arena", "indoor drone", "avoid", "VIO lost" | [close-area-a-to-b](close-area-a-to-b.md) (first commands, which planner first, platform notes, traps). Also: [day1-close-area-intake](../day1-close-area-intake.md), [close-area-arena](../../samples/close-area-arena/) (A* + ESDF, estimator faults, log scorer), [flight-repo](../../templates/flight-repo/) and the [close-area-nav synthesis](../research/close-area-nav/README.md). "no map", "Crazyflie", "Multi-ranger", "reactive", "potential field": [close-area-planner-reactive](../../samples/close-area-planner-reactive/) (APF + escape beats VFH+ in a U trap, VFH+ beats APF through a narrow gap, both collide often on 4 beams). "moving obstacles", "people", "dynamic obstacles": [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md) (A* replan alone collides with walking people in 14-36 % of runs; a PX4-CBF style range filter removes them at a 16 % stuck cost, synthetic). "VIO lost", "relocalize", "tracking loss": [close-area-relocalize](../../samples/close-area-relocalize/README.md) (the recommended headline after the safety-filter kill test failed) | 31, 33 |
+| "point A to B", "A to B", "obstacles", "close area", "arena", "indoor drone", "avoid", "VIO lost" | [close-area-a-to-b](close-area-a-to-b.md) (first commands, which planner first, platform notes, traps). Also: [first-day-intake](../first-day-intake.md), [close-area-arena](../../samples/close-area-arena/) (A* + ESDF, estimator faults, log scorer), [flight-repo](../../templates/flight-repo/) and the [close-area-nav synthesis](../research/close-area-nav/README.md). "no map", "Crazyflie", "Multi-ranger", "reactive", "potential field": [close-area-planner-reactive](../../samples/close-area-planner-reactive/) (APF + escape beats VFH+ in a U trap, VFH+ beats APF through a narrow gap, both collide often on 4 beams). "moving obstacles", "people", "dynamic obstacles": [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md) (A* replan alone collides with walking people in 14-36 % of runs; a PX4-CBF style range filter removes them at a 16 % stuck cost, synthetic). "VIO lost", "relocalize", "tracking loss": [close-area-relocalize](../../samples/close-area-relocalize/README.md) (the recommended headline after the safety-filter kill test failed) | 31, 33 |
 | "marker", "land on the pad", "landing pad / helipad", "fly to the tag", "precision landing", "AprilTag / ArUco" | [close-area-a-to-b](close-area-a-to-b.md) section 3, then [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/) for tag size vs detection range, then [close-area-arena](../../samples/close-area-arena/) for the path that brings the tag into view | 32, 31 |
 
 No sheet (thin coverage, go straight to the [decoder](../problem-statement-decoder.md#the-table)
@@ -33,4 +33,4 @@ of opportunity (row 24: no sample).
 
 Two families fit? Pick the one whose demo is a vehicle if the brief names a platform and a
 distance; pick the awareness sheet (jammer, C-UAS) if it names an area or an operator. Then score
-both with the [day-0 rubric](../day0-runbook.md#2-pick-the-idea-scoring-rubric).
+both with the [scoring rubric](../first-three-hours.md#2-pick-the-idea-scoring-rubric).

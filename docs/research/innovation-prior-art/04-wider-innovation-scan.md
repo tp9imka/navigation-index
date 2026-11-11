@@ -2,8 +2,8 @@
 
 <!-- about: res:sier-2026-safevpr-empirical-fdr-vpr, res:yang-pavone-2023-conformal-keypoint-pose, res:weisman-2026-conformalized-kalman-filters, res:delama-2026-galilean-ins-unknown-time-delay, res:fornasier-2023-equivariant-symmetries-ins, res:gupta-gao-2024-reliable-urban-localization-faulty-gnss, res:park-bang-2026-contours-seeking-pf-trn, res:feng-2026-implicitterrainv2, res:trukhina-2026-sasgeo-semantic-map-localization, res:sarkka-nummenmaa-2009-vb-adaptive-kalman -->
 
-Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief
-2026-11-18). Scope: navigation of the vehicle's own flight. Nothing here covers targeting or
+Scan date 2026-11-09, for an autonomous flight navigation task (full brief
+not yet known). Scope: navigation of the vehicle's own flight. Nothing here covers targeting or
 terminal guidance.
 
 Status: **not verified by running anything.** Every number below is quoted from a paper
@@ -35,7 +35,7 @@ texts were not read unless stated.
 
 ## 1. Ranked table
 
-Each column 1-5, total out of 30. Novelty = how new it looks to judges who have seen
+Each column 1-5, total out of 30. Novelty = how new it looks to reviewers who have seen
 camera-to-map demos. Evidence = strength of published support. 48h = buildable by a small team
 on hub samples. Data = open data or SITL that can falsify it. License = commercial path for code
 and data. Fit = match with "GNC, propulsion, applied maths, applied physics".
@@ -53,7 +53,7 @@ and data. Fit = match with "GNC, propulsion, applied maths, applied physics".
 | 9 | Cooperative inter-aircraft ranging without a ground station | 3 | 2 | 4 | 3 | 4 | 2 | 18 |
 | 10 | Skylight polarization heading | 3 | 2 | 2 | 2 | 3 | 4 | 16 |
 
-Ties broken by novelty to judges. Directions 1 and 2 share a theme the hub has already measured
+Ties broken by novelty to reviewers. Directions 1 and 2 share a theme the hub has already measured
 from the other side: the [altpnt-integrity](../../../samples/altpnt-integrity/) v2 map-age stress
 showed "the overbound from the golden table does not hold under a different map age"
 ([evidence matrix](../../evidence-matrix.md)). Both directions are ways to make the error bound
@@ -441,7 +441,7 @@ measurements, wind: not involved.
 
 **Code and data, license.** ImplicitTerrainV2 MIT; GLO-30 Copernicus licence. 48h
 buildability: high on CPU or MPS for a few 36 x 35 km windows (training time not measured).
-Weak spot: judges may read it as compression, not navigation.
+Weak spot: reviewers may read it as compression, not navigation.
 
 ### 2.6 Optical flow + rangefinder + vehicle model
 
@@ -512,7 +512,7 @@ features degrade sharply from drone-to-drone to drone-to-satellite (search snipp
 already in the hub.
 
 **Open angle.** Narrow: a measured failure map (altitude, obliquity, map vintage, texture) with a
-cheap failure predictor (Miller SD/RS margin). Mostly benchmarking; low novelty to judges.
+cheap failure predictor (Miller SD/RS margin). Mostly benchmarking; low novelty to reviewers.
 
 **Falsification.** MegaLoc vs AnyLoc vs the hub's DINOv2 GeM on vpr-large-area queries by
 vintage. Pass: a failure predictor with AUROC >= 0.85 for wrong top-1. Failure modes: missing

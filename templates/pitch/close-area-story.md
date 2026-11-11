@@ -372,7 +372,7 @@ asks for evidence. "pending: X" means the hub has no answer yet; fill X on Day 1
   range delay, wind. For H1: a symmetric corridor (80 %, median recovery about 11 s after a move) and a
   room with no map.
 - **Where the answer lives:** [doc 04 section 3.5](../../docs/research/close-area-nav/04-innovation-prior-art.md#35-failure-modes);
-  [doc 03 section 6](../../docs/research/close-area-nav/03-close-area-localization.md#6-failure-modes-to-rehearse-on-day-1).
+  [doc 03 section 6](../../docs/research/close-area-nav/03-close-area-localization.md#6-failure-modes-to-rehearse-before-the-first-flight).
   Our failure run: pending: `<run id from runs/results.md>`.
 
 ## 6. Numbers to fill and where they come from

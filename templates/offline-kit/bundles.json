@@ -594,7 +594,7 @@
         "prepare": "python3 tools/venue_kit.py prepare",
         "verify": "python3 tools/venue_kit.py verify",
         "target": "site/playground/pyodide-local/",
-        "doc": "docs/day0-runbook.md#browser-tools-offline",
+        "doc": "docs/first-three-hours.md#browser-tools-offline",
         "note": "Separate tool, not fetched by prep.py; rehearse runs its verify only when the target exists."
       },
       "runtime_tools": {

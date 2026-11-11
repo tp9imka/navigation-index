@@ -175,7 +175,7 @@ def render_repo(n, nodes, back, meta):
         "",
         f"`{n['id']}` - <{n['url']}>",
         "",
-        "| stars | language | license | last push | archived | maturity | hackathon fit |",
+        "| stars | language | license | last push | archived | maturity | quick-build fit |",
         "|---|---|---|---|---|---|---|",
         f"| {stars(m)} | {m.get('language') or n.get('language', '?')} | {m.get('license') or '?'} | "
         f"{(m.get('pushed_at') or '?')[:10]} | {m.get('archived', '?')} | {n.get('maturity', '?')} | "
@@ -187,7 +187,7 @@ def render_repo(n, nodes, back, meta):
     if n.get("why_it_matters"):
         lines += ["**Why it matters:** " + n["why_it_matters"], ""]
     if n.get("hackathon_notes"):
-        lines += ["**Hackathon notes:** " + n["hackathon_notes"], ""]
+        lines += ["**Build notes:** " + n["hackathon_notes"], ""]
     lines += common_tail(n, nodes, back)
     if m.get("fetched"):
         lines += ["", f"_GitHub metadata fetched {m['fetched']}._"]
@@ -538,7 +538,7 @@ def write_index(nodes, concepts, members, children):
     lines += ["## Concept tree", ""]
     for c in roots:
         emit(c, 0)
-    lines += ["", "## High hackathon-fit repositories", "", "| repo | stars | concepts | why |", "|---|---|---|---|"]
+    lines += ["", "## High quick-build-fit repositories", "", "| repo | stars | concepts | why |", "|---|---|---|---|"]
     top = [n for n in nodes.values() if n["kind"] == "repo" and n.get("hackathon_fit") == "high"]
     for n in sorted(top, key=sort_key)[:TOP_PER_CONCEPT]:
         cs = ", ".join(nodes[c]["name"] for c in n.get("concepts", []) if c in nodes)
@@ -666,7 +666,7 @@ def write_llms(nodes, concepts, members):
     lines = [
         "# navigation-index",
         "",
-        f"> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: {nrepo} open-source repos, "
+        f"> Knowledge hub for navigation / PNT / GNSS-denied autonomy, resilient PNT and airspace awareness: {nrepo} open-source repos, "
         f"{nres} documents, talks, courses and datasets, {nsample} usage samples and {nguide} guides, "
         f"linked in one graph over {len(concepts)} concepts.",
         "",
@@ -679,24 +679,22 @@ def write_llms(nodes, concepts, members):
         "",
         "## Entry points",
         "",
-        "- [docs/challenge-2-autonomous-flight.md](docs/challenge-2-autonomous-flight.md): EDGE hackathon "
-        "Challenge 2 (autonomous flight navigation): read first, it narrows the hub to what fits",
-        "- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): got a problem statement? start here "
-        "(statement => approach, stack, data, starting sample, risk, pitch)",
+        "- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): brief decoder, got a task statement? start here "
+        "(statement => approach, stack, data, starting sample, risk, one-line summary)",
         "- [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md): close-area A to B "
-        "with obstacles (likely Day-1 task): synthesis of planning, sims, localization and the recommended direction",
+        "with obstacles: synthesis of planning, sims, localization and the recommended direction",
         "- [samples/close-area-arena/README.md](samples/close-area-arena/README.md): close-area A to B starter "
         "that ran: seeded synthetic arena, drone interface, truth scorer, estimator faults",
         "- [templates/drone-adapter/drivers/README.md](templates/drone-adapter/drivers/README.md): how to send "
         "setpoints on PX4, ArduPilot, Crazyflie or Tello behind one pose()/send_setpoint() seam (drivers unrun)",
-        "- [docs/day0-runbook.md](docs/day0-runbook.md): the first three hours after the statement drops",
+        "- [docs/first-three-hours.md](docs/first-three-hours.md): the first three hours after you get a task",
         "- [samples/README.md](samples/README.md): every sample with status, deps, first command, key result",
         "- [docs/README.md](docs/README.md): map of docs/ and read order",
         "- [AGENTS.md](AGENTS.md): how agents use and extend the hub",
-        "- [INDEX.md](INDEX.md): concept tree and high hackathon-fit repos",
+        "- [INDEX.md](INDEX.md): concept tree and high quick-build-fit repos",
         "- [docs/integration-cards/](docs/integration-cards/): per-repo install, wiring, gotchas, license",
         "- [docs/dataset-cards/README.md](docs/dataset-cards/README.md): checked dataset sizes and licenses",
-        "- [templates/README.md](templates/README.md): team repo skeleton, demo dashboard, offline kit",
+        "- [templates/README.md](templates/README.md): project repo skeleton, demo dashboard, offline kit",
         "- [site/index.html](site/index.html): static web UI (serve the repo root over HTTP, open /site/)",
         "- [docs/SCHEMA.md](docs/SCHEMA.md): data model",
         "- [index/records.jsonl](index/records.jsonl): every node as one JSON line",
@@ -915,9 +913,9 @@ CHEAT_ORDER = ("close-area-a-to-b", "gnss-denied-drone-nav", "spoofing-keep-flyi
 LEARN_GUIDES = (
     ("Brief decoder", ("docs/problem-statement-decoder.md",),
      "From a task statement to an approach, stack, dataset and starting sample."),
-    ("Quickstart: first flight", ("docs/quickstart-first-flight.md", "docs/day1-quickstart.md"),
+    ("Quickstart: first flight", ("docs/quickstart-first-flight.md",),
      "Fresh clone, scored first flight in the Arena, regression bar."),
-    ("Competition playbook", ("docs/competition-playbook.md", "docs/hackathon-playbook.md"),
+    ("Competition playbook", ("docs/competition-playbook.md",),
      "Project ideas, reference stacks and a plan for a navigation prototype on a deadline."),
 )
 LEARN_CARDS = (

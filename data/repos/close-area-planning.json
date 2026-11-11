@@ -265,7 +265,7 @@
     "domains": ["ground", "air"],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "License GPL-3.0 (copyleft: fine for a demo, not for EDGE product code). Last push 2026-09-15 (gh api); PyPI version 2.1. Mostly 2D AGV examples; 3D support not checked. Read and re-implement rather than import into product code.",
+    "hackathon_notes": "License GPL-3.0 (copyleft: fine for a demo, not for closed product code). Last push 2026-09-15 (gh api); PyPI version 2.1. Mostly 2D AGV examples; 3D support not checked. Read and re-implement rather than import into product code.",
     "related": [
       {"id": "repo:zhm-real/pathplanning", "rel": "alternative_to"},
       {"id": "repo:atsushisakai/pythonrobotics", "rel": "alternative_to"}

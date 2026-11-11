@@ -1,10 +1,10 @@
-# Cheat sheet: jammer detection, localization, EW map
+# Jamming detection, localization and maps
 
 Briefs like "detect and map GNSS jamming over an area", "low-cost sensor network", "find the
 jammer", "common operating picture under EW". Decoder rows 3, 5, 12. Awareness product, not a
 vehicle.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 A map an operator can act on, built from receivers a unit already owns, on real recorded
 attacks. They will check that "no data" looks different from "no interference", that alerts

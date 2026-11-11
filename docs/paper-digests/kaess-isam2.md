@@ -48,4 +48,4 @@ Estimate:
 - Use `gtsam.ISAM2` as the online back end for any IMU + intermittent-fix estimator: each new keyframe is one `update()` call, and a late or out-of-order GNSS / visual fix is just another factor. See the [GTSAM integration card](../integration-cards/borglab__gtsam.md).
 - Tuning knobs with meaning: relinearization threshold (beta, paper 0.1) and relinearize skip (paper 10). Lower beta for agile platforms; raise skip if per-step latency spikes.
 - For a demo that runs for hours, wrap in a fixed-lag smoother to cap the worst-case step time.
-- Smoothing vs filtering argument for judges: iSAM2 revises past poses when a fix arrives after an outage, which an EKF cannot.
+- Smoothing vs filtering argument for reviewers: iSAM2 revises past poses when a fix arrives after an outage, which an EKF cannot.

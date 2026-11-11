@@ -48,7 +48,7 @@ evo_ape euroc mav0/mocap0/data.csv est_tum.txt -va
 
 ## Hackathon fit
 
-- Idea 10 (VIO => PX4 GPS-free flight with measured drift): the corridor/magistrale/outdoors sequences give a "drift after N metres with no external fix" number, which is the figure judges want.
+- Idea 10 (VIO => PX4 GPS-free flight with measured drift): the corridor/magistrale/outdoors sequences give a "drift after N metres with no external fix" number, which is the figure reviewers want.
 - Idea 5 (INS holdover budget calculator): imu-static (111 h) is real data for Allan variance of a consumer-grade IMU.
 - Pedestrian/dismounted demos: handheld walking motion is closer to a soldier-worn camera than any drone dataset.
 

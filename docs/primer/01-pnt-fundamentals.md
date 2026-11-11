@@ -2,7 +2,7 @@
 
 After this chapter you can describe any navigation system as "a state, an uncertainty,
 a set of measurements and a way to check they agree", and you will know the vocabulary
-judges use when they ask whether your solution is "assured".
+reviewers use when they ask whether your solution is "assured".
 
 Next: [GNSS and its threats](02-gnss-and-threats.md) | [Primer index](README.md)
 

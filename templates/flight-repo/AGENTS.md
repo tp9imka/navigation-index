@@ -29,7 +29,7 @@ Read these before searching the web or cloning repos (paths relative to the hub 
 - `samples/close-area-arena/CONTRACT.md`: seeded arena and truth scorer; its planners plug into
   this loop (`python3 main.py --mock --planner arena:<name> --arena <hub>/samples/close-area-arena`).
 - `templates/drone-adapter/frames.md`: ENU / NED, FLU / FRD and yaw conventions per platform.
-- `docs/challenge-2-autonomous-flight.md`: which hub rows and samples fit Challenge 2.
+- `docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages`: which hub rows and samples fit Challenge 2.
 
 Lookups: MCP `navigation-index` (`search`, `decode`, `show`, `read`), or
 `python3 <hub>/tools/query.py search "close area obstacle avoidance range sensor"`.

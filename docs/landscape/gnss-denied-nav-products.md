@@ -2,7 +2,7 @@
 
 <!-- about: res:auterion-skynode-visual-navigation, res:shield-ai-hivemind, res:helsing-hx2-navigation, res:qctrl-ironstone-opal, res:sandboxaq-aqnav, res:xona-pulsar-leo-pnt, res:trustpoint-leo-pnt, res:iridium-pnt-stl-asic, res:honeywell-vision-aided-navigation, res:honeywell-hguide-o480, res:advanced-navigation-boreas, res:inertial-labs-vins, res:safran-versapnt, res:sbg-new-ellipse-firmware, res:vectornav-stl-aided-ins, res:spirent-gss7000-pntx, res:safran-skydel-gsg8, res:infinidome-gpsdome, res:twist-robotics-oscar, res:blue-arrow-visual-nav, res:theseus-visual-navigation-system, res:spleenlab-visionairy, res:uavos-navai, res:septentrio-aim-plus, res:novatel-gajt-710ml -->
 
-What judges from industry already know. Every performance figure below is a **vendor claim**
+What reviewers from industry already know. Every performance figure below is a **vendor claim**
 or press report unless it says otherwise. Nothing here was tested by us. Sources were found via
 web search on 2026-11-06; several vendor and GPS World pages block scripted fetches (HTTP 403),
 so for those only the search snippet was read.

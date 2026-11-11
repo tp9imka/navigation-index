@@ -73,7 +73,7 @@ Shows the shape, using only hub numbers. In your pitch, beats 4 and 5 carry your
 ## Funder vocabulary without overclaiming
 
 Funder words come from [programs-and-challenges.md](../../docs/landscape/programs-and-challenges.md)
-and the [playbook](../../docs/hackathon-playbook.md#1-what-judges-reward). Use the words; claim
+and the [playbook](../../docs/competition-playbook.md#1-what-reviewers-look-for). Use the words; claim
 only what the right-hand column allows.
 
 | Funder says | Source | You can honestly claim | Do not claim |
@@ -81,7 +81,7 @@ only what the right-hand column allows.
 | Detect, respond, recover | [NISTIR 8323](../../catalog/resources/nist-ir-8323-pnt-profile.md), [DHS RPNT framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md) | "Detects [X] in [N runs, label]; responds by [source switch / exclusion]; recovers by [re-validation rule]" | A DHS resilience level, unless you ran their conformance tests |
 | Multi-source fusion, AI for spoofing detection | [DASA PNT problem statement](../../catalog/resources/uk-dasa-emp-pnt-problem-statement-2024.md), [EDF 2024](../../catalog/resources/edf-2024-drone-navigation-challenge.md) | "Fuses [list] and refuses a source when [test]"; if a model is involved, what it was trained and tested on | "AI-powered" with no false-alarm rate |
 | Plug-in replacement for COTS GNSS | DASA | "Feeds [autopilot] via [`GPS_INPUT` / external vision] in SITL" | "Drop-in for any receiver" |
-| Small, cheap, many | DASA, EDF, Brave1 ([patterns](../../docs/landscape/programs-and-challenges.md#patterns-in-the-problem-statements)) | Hardware class from the [playbook shopping list](../../docs/hackathon-playbook.md#64-hardware-shopping-list-cost-class-only) and the CPU time you measured | A unit cost or power draw you did not measure |
+| Small, cheap, many | DASA, EDF, Brave1 ([patterns](../../docs/landscape/programs-and-challenges.md#patterns-in-the-problem-statements)) | Hardware class from the [playbook shopping list](../../docs/competition-playbook.md#64-hardware-shopping-list-cost-class-only) and the CPU time you measured | A unit cost or power draw you did not measure |
 | Deployable, testable, dual-use | [NATO DIANA](../../catalog/resources/nato-diana-10-challenges-2025.md) | Civil twin (aviation, shipping, timing) and the test you ran | "Field-proven", "TRL 6" |
 | Non-lethal / robust navigation | [Brave NATO UNITE](../../catalog/resources/brave-nato-unite-2026.md) | Navigation, integrity and awareness only | Anything near targeting or terminal guidance |
 | Integrity, protection level | [integrity guide](../../docs/integrity-monitoring.md) | "PL from [method] over [N epochs], 0 HMI observed" | "Certified", "1e-7 integrity risk": a few thousand epochs cannot show that |
@@ -159,7 +159,7 @@ terrain PF update ~1.1 ms (M2 Max)
 ([terrain-heightmap-pf](../../samples/terrain-heightmap-pf/README.md#results-ran-2026-11-06-cpython-31315-apple-m2-max-single-python-process)),
 star plate solve ~25-30 ms per 1 MP frame
 ([celestial-star-tracker](../../samples/celestial-star-tracker/README.md#1a-accuracy-against-a-known-wcs)).
-Hardware cost classes: [playbook 6.4](../../docs/hackathon-playbook.md#64-hardware-shopping-list-cost-class-only).
+Hardware cost classes: [playbook 6.4](../../docs/competition-playbook.md#64-hardware-shopping-list-cost-class-only).
 
 ### 6. "What is your false-alarm rate?"
 
@@ -275,7 +275,7 @@ Pattern: say whether you tested it. If not: "not tested; the onboard part runs w
 GCS, and the defined behaviour is [loiter / RTH]". If yes, show it.
 
 Evidence: the hub has no measured GNSS + link loss run; the playbook lists it as a
-differentiator ([playbook 1.1](../../docs/hackathon-playbook.md#11-differentiators-judges-have-not-seen)).
+differentiator ([playbook 1.1](../../docs/competition-playbook.md#11-differentiators-reviewers-have-not-seen)).
 Nearest: an ArduPilot GPS cut without a source switch coasted ~6 s, then LAND failsafe, with
 ~3.6 m dead-reckoning error the EKF had not reported, `[SITL]`, one flight
 ([ardupilot-ekf3-source-switch](../../samples/ardupilot-ekf3-source-switch/README.md#contrast-run-gps-cut-without-the-source-switch)).

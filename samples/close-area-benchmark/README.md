@@ -424,7 +424,7 @@ changes. The result JSON lists what was set under `planner_inflation`. Before lo
 disagreed (drill 2026-11, blocker B2).
 
 Drill room check (synthetic, [results/pack_drill_solver_vs_pack.md](results/pack_drill_solver_vs_pack.md)):
-on docs/drill-2026-11/our_room.world.json, radius 0.2 m, `depth_cam_87`, seeds 0-4, the worker driver
+on docs/cold-start-drill/our_room.world.json, radius 0.2 m, `depth_cam_87`, seeds 0-4, the worker driver
 without the override equals the old pack and the driver with it equals the pack with it, 15 of 15
 (planner, seed) runs, all four score fields
 ([results/pack_drill_b2_confirm.json](results/pack_drill_b2_confirm.json)). After the fix the 35-seed pack

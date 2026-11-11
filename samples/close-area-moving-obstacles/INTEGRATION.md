@@ -26,7 +26,7 @@ Search keywords for the row: `moving obstacles people replan`, `dynamic obstacle
 |---|---|---|---|---|---|
 | [close-area-moving-obstacles](./README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181) | 1-3 cylinders r 0.25 m per random layout on seeded segments across A-B, constant-speed ping-pong at 0.0 (frozen control), 0.5, 1.0 m/s; arms: arena A* + ESDF on prior map + latest scan hits (2.5 Hz, early replan to 5 Hz; and 5 Hz periodic), the same + F2 PX4-CBF as shipped (close-area-safety-filter), APF with escape (close-area-planner-reactive) | Collision 0 / 0.5 / 1.0 m/s: A* 0 / 14 / 36 %, A* 5 Hz 0 / 12 / 36 %, A* + F2 0 / 0 / 0 %, APF 0 / 0 / 2 %. Reached: A* 100 / 86 / 64 %, A* + F2 80 / 84 / 84 % (stuck 20 / 16 / 16 %, all but one on layouts F2 already sticks on without movers), APF 96 / 98 / 94 %. A* collisions: contact 4.9-15.3 s after take-off, mover visible 2.7-8.7 s before contact, vehicle at median 0.30-0.39 m/s with near-zero closing speed | synthetic (2.5D point-mass arena, truth pose) | 50 random layouts x 3 speeds x 4 arms, seed 0 | No motion prediction; people walk straight lines and ignore the drone; 360 deg ideal fan; one family, one seed; planner and filter defaults from sibling samples, not tuned for movers; APF cruises at 1.0 vs A* 1.5 m/s |
 
-## Day-1 intake (docs/day1-close-area-intake.md), section 3.5 Q7, replace the "Dynamic" bullet
+## Day-1 intake (docs/first-day-intake.md), section 3.5 Q7, replace the "Dynamic" bullet
 
 - **Dynamic (people, other drones)** => A* replanning on the latest scan is not enough: in the
   arena it collided in 14 % (0.5 m/s people) and 36 % (1.0 m/s) of runs, 5 Hz replans did not

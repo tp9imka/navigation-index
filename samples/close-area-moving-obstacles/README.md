@@ -1,7 +1,7 @@
 # close-area-moving-obstacles: walking people in the arena, A* replan vs A* + PX4-CBF filter vs APF
 
 Goal: give the Day-1 intake question "static or moving obstacles?"
-([Q7](../../docs/day1-close-area-intake.md#35-q7-obstacles)) a measured answer. One to three
+([Q7](../../docs/first-day-intake.md#35-q7-obstacles)) a measured answer. One to three
 person-sized cylinders walk seeded segments across the A-B corridor at 0.5 or 1.0 m/s. Three
 approaches already in the hub fly through them in the shared
 [close-area-arena](../close-area-arena/README.md), scored on truth:

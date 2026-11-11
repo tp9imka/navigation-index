@@ -1,4 +1,4 @@
-// loop-92 drill: drive the Solver like a team would, in headless Chrome (no browser installed).
+// 2026-11-10 cold-start drill: drive the Solver like a team would, in headless Chrome (no browser installed).
 // Copied from site/solver/results/measure_recommend.mjs (server, CDP client, Chrome flags).
 // Usage (from the hub clone root): node drill_solver.mjs <world.json> <outdir>
 // Clicks: Import world JSON (file input), Your drone (radius 0.2, v_max 1.5, depth_cam_87), Quick,

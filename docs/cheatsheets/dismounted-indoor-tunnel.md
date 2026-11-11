@@ -3,10 +3,10 @@
 Briefs like "soldier / first responder navigation indoors or underground", "squad on foot",
 "basement, stairwell, multi-storey", "tunnel". Decoder row 9; on wheels or rails, row 14.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 A squad's positions stay on the shared map with no GNSS, and the error circle tells the truth.
-Judges want error per distance walked on real IMU data, occasional absolute updates (door, floor,
+Reviewers want error per distance walked on real IMU data, occasional absolute updates (door, floor,
 UWB anchor), and growing uncertainty shown to the operator, not a confident dot.
 
 ## 2. The demo in 24-48 h

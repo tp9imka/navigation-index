@@ -25,7 +25,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt
 # multi stuck (event at 13.0 s still open), multi_ig reached (accepted after 1.7 s at 0.0748 m)
 ```
 
-The demo took 55.31 s wall in the [Day-1 dry run](../../docs/day1-dry-run.md#blockers) on a loaded
+The demo took 55.31 s wall in the [Day-1 dry run](../../docs/cold-start-drill.md#blockers) on a loaded
 machine; the first run on a fresh venv can wait longer. Full experiments:
 
 ```sh
@@ -496,7 +496,7 @@ Limits of this addition:
 ## Imperfect prior map (loop-55)
 
 The headline above matches against the exact layout grid. The Day-1 intake default for Q7 is
-"unknown and moved between runs" ([intake](../../docs/day1-close-area-intake.md)). This run
+"unknown and moved between runs" ([intake](../../docs/first-day-intake.md)). This run
 measures the same arms on a ladder of map errors. Synthetic inputs only.
 
 ```sh

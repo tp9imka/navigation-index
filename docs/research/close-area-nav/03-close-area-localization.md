@@ -1,8 +1,8 @@
 # 03. Localization and state estimation for short-range A => B in a cluttered close area
 
-Research lane, 2026-11-09, for EDGE hackathon Challenge 2. Working assumption: "move a drone
+Research lane, 2026-11-09, for a close-area A=>B task. Working assumption: "move a drone
 from A to B in a close area, possibly with obstacles". Indoor vs outdoor, GNSS, sensors and
-platform are unknown until Day 1. Scope: the vehicle's own navigation.
+platform are unknown until the task is announced. Scope: the vehicle's own navigation.
 
 Records added: `data/repos/close-area-localization.json` (7 repos, each checked with
 `gh api repos/...` on 2026-11-09) and `data/resources/close-area-localization.json`
@@ -34,7 +34,7 @@ Source labels:
   running in parallel as the local and fallback source, B as a GNSS point plus a fiducial
   or detected marker for the last few metres.**
 - **Do not trust reported covariance as-is.** Every source checked says VIO / LIO filters
-  are overconfident. Inflate by a factor fitted on Day 1 logs and gate on tracking
+  are overconfident. Inflate by a factor fitted on first-day logs and gate on tracking
   quality, feature count and reset events instead.
 
 ## 2. Sensor options
@@ -73,8 +73,8 @@ are analysis.
 drone only needs (1) odometry good enough to explore without hitting things and (2) a
 detector. Fiducials (AprilTag 3, `apriltag_ros`) give metric pose from a calibrated camera.
 A learned detector (any YOLO-class model) gives a bearing and maybe range from size or depth;
-it needs training data that only exists on Day 1. Recommendation: put an AprilTag next to
-the official marker in testing, and keep the learned detector only if the organisers forbid
+it needs training data that only exists on the first day. Recommendation: put an AprilTag next to
+the official marker in testing, and keep the learned detector only if whoever set the task forbids
 fiducials.
 
 ## 4. Estimator health signals a planner can consume
@@ -115,7 +115,7 @@ fiducials.
   VINS-Fusion) in a small indoor arena. Treat the overconfidence factor for VIO as unknown and
   measure it.
 
-**Practical rule for 48 h.** Record one Day 1 flight with any reference (mocap, tape-measured
+**Practical rule for 48 h.** Record one first-day flight with any reference (mocap, tape-measured
 tags, or two estimators against each other with `smfeval pair`, which gives a lower bound on
 overconfidence without ground truth). Fit one inflation factor. Feed EKF2 with
 `EKF2_EV_NOISE_MD=0` plus that inflation, or `=1` with honest fixed noise. Gate the planner on
@@ -139,12 +139,12 @@ quality / features / `reset_counter` / innovation rejects, not on the covariance
 
 | Layer | Choice | Why |
 |---|---|---|
-| Global frame | GNSS in EKF2 / EKF3; RTK if the organisers offer a base | Removes drift; RTK gets close to the obstacle-gap tolerance |
+| Global frame | GNSS in EKF2 / EKF3; RTK if whoever set the task offers a base | Removes drift; RTK gets close to the obstacle-gap tolerance |
 | Local / fallback | The same VIO as indoor, fused as velocity or as a second source; ArduPilot source sets (`EK3_SRC2_*`) or PX4 EV + GNSS together | Bridges multipath near obstacles and GNSS dropouts under cover |
 | Goal | GNSS point to get close, AprilTag / marker detection for the last metres | GNSS error is metres; the last metres need a relative cue |
 | Health | GNSS fix type / satellites / EKF2 GNSS checks + the VIO signals above | Switch to VIO-led on GNSS degradation |
 
-## 6. Failure modes to rehearse on Day 1
+## 6. Failure modes to rehearse before the first flight
 
 - **Low texture / white walls / dark corners** => VIO feature count collapses. Mitigation:
   flow backup, slow down, yaw toward texture, posters / tags on walls if allowed.
@@ -162,7 +162,7 @@ quality / features / `reset_counter` / innovation rejects, not on the covariance
 
 ## 7. Not verified
 
-Reconciled 2026-11-09 (loop-28) against the samples and docs written after this page. Still open:
+Reconciled 2026-11-09 against the samples and docs written after this page. Still open:
 
 - No accuracy number for optical flow drift was verified. Vendor pages give height accuracy
   only.

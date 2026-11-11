@@ -5,17 +5,17 @@ Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or ex
 ## Given a problem statement
 
 For the EDGE internal hackathon, Challenge 2 "Autonomous Frontiers", read
-[docs/challenge-2-autonomous-flight.md](docs/challenge-2-autonomous-flight.md) first (MCP: `read`
-with `guide:challenge-2-autonomous-flight`). It narrows the hub to the rows, samples and guides
+[docs/problem-statement-decoder.md, full-brief routing](docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages) first (MCP: `read`
+with `guide:problem-statement-decoder`). It narrows the hub to the rows, samples and guides
 that fit an autonomous flight product and lists the rows to skip.
 
 ### Close-area A=>B (likely Day-1 task)
 
 Use this block when the brief is "fly a drone from A to B in a close area, maybe with obstacles".
 
-Start here: one ordered script, fresh clone => scored first flight => regression bar: [docs/day1-quickstart.md](docs/day1-quickstart.md).
+Start here: one ordered script, fresh clone => scored first flight => regression bar: [docs/quickstart-first-flight.md](docs/quickstart-first-flight.md).
 
-1. First 20 minutes: [docs/day1-close-area-intake.md](docs/day1-close-area-intake.md) - organiser
+1. First 20 minutes: [docs/first-day-intake.md](docs/first-day-intake.md) - organiser
    questions in order, each answer => driver, sim, sample. Research behind it:
    [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md).
 2. Runnable baseline: [samples/close-area-arena](samples/close-area-arena/README.md) (status `ran`,
@@ -43,8 +43,8 @@ Start here: one ordered script, fresh clone => scored first flight => regression
    - People walking through: `run_predict.py --layouts 50 --seeds 0,1` in [close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) (VO gate PASS on held-out seed 1).
    - B is a marker at an unknown spot: `bench.py --layouts 20 --seed 0` in [close-area-explore](samples/close-area-explore/README.md) (frontier finds B in 43 % with B unknown; ask for a nominal B).
    - More planners: [thetastar](samples/close-area-planner-thetastar/README.md), [mppi](samples/close-area-planner-mppi/README.md), [hybrid-astar](samples/close-area-planner-hybrid-astar/README.md) (negative result); all are `bench:` ids.
-   - Offline browser tools: `python3 tools/venue_kit.py prepare` then `verify` ([day-0 runbook](docs/day0-runbook.md#browser-tools-offline)).
-   - How it was built: [docs/case-study](docs/case-study/README.md); live site: https://navigation-index.pages.dev/.
+   - Offline browser tools: `python3 tools/venue_kit.py prepare` then `verify` ([first-three-hours](docs/first-three-hours.md#browser-tools-offline)).
+   - How it was built: [docs/how-it-was-built.md](docs/how-it-was-built.md); live site: https://navigation-index.pages.dev/.
 
 MCP-only clients: `read` serves `docs/**/*.md`, `templates/**/*.md` and `samples/<name>/*.md`
 (README, CONTRACT, INTEGRATION), so every page above is reachable without file access.

@@ -1,6 +1,6 @@
 # Team roles and 48h plan
 
-Derived from [playbook section 5](../docs/hackathon-playbook.md#5-48h-execution-plan-template).
+Derived from [playbook section 5](../docs/competition-playbook.md#5-48h-execution-plan-template).
 4-5 people. For 24h, halve each block and cut the stretch goal at H+0.
 
 ## Roles

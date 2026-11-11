@@ -432,7 +432,7 @@ themselves. Not upstream defects: Stone Soup set-order nondeterminism, evo on a 
   matrix_0.json, the playground parity tables and the advisor stay as they are, with this bias noted.
   The fix (option B) is backlog item 88: patch the arena and regenerate every unknown-map row.
 - **Channel:** hub.
-- **Status:** fix written and verified (loop-88b, [verification](../samples/close-area-benchmark/results/dropout_fix_verify_88b.md)), shipped off (`SKIP_DROPPED_BEAMS = False`) until the benchmark is regenerated with it (item 88c).
+- **Status:** fix written and verified (2026-11-11, [verification](../samples/close-area-benchmark/results/dropout_fix_verify_88b.md)), shipped off (`SKIP_DROPPED_BEAMS = False`) until the benchmark is regenerated with it (item 88c).
 
 ## Checked and not filed
 

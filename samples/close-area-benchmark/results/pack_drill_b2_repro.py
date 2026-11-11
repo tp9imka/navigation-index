@@ -3,7 +3,7 @@
 Run from the repo root with the benchmark venv:
     samples/close-area-benchmark/.venv/bin/python samples/close-area-benchmark/results/pack_drill_b2_repro.py [--seeds 0,1,2,3,4]
 
-World docs/drill-2026-11/our_room.world.json, vehicle radius 0.2 m / v_max 1.5 / a_max 3 / tau 0.15,
+World docs/cold-start-drill/our_room.world.json, vehicle radius 0.2 m / v_max 1.5 / a_max 3 / tau 0.15,
 sensor depth_cam_87, A and B per seed from pack.seed_jitter (the drill's Solver export shows the same points).
 Four ways per (planner, seed):
   driver_inflate      worker.js simulate(), planners inflate by 0.2 m (what the Solver flew, loop-75b)

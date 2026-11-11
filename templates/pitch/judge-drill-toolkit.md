@@ -1,7 +1,7 @@
 # Judge drill: close-area A=>B, measured-toolkit pitch
 
 Use this at H+36 to rehearse the hard questions for the toolkit pitch: the measured toolkit, plus a
-narrow claim only if the real brief fits it ([case study](../../docs/case-study/README.md#summary-2-minutes),
+narrow claim only if the real brief fits it ([case study](../../docs/how-it-was-built.md#summary-2-minutes),
 [research decision](../../docs/research/README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
 The demo it backs is the 2-minute toolkit demo in [demo-script-close-area.md](../demo-script-close-area.md#script).
 If the pitch leads with relocalization after VIO loss (H1), use
@@ -128,7 +128,7 @@ arrived. So A* stays the default, and the page says when to pick Hybrid A*."
 
 - **Number:** 81.9 % vs 91.2 % reached; median 0.94 s faster when both reached, 152 paired runs `[synthetic]`, 8 families x 20 layouts, ideal sensor.
 - **Source:** [hybrid-astar reading](../../samples/close-area-planner-hybrid-astar/README.md#reading),
-  [case study: Hybrid A*](../../docs/case-study/README.md#hybrid-a).
+  [case study: Hybrid A*](../../docs/how-it-was-built.md#hybrid-a).
 - **Say also:** our own untuned implementation, no path smoothing.
 
 ### 8. "Nothing here is novel. What is the contribution?"
@@ -139,8 +139,8 @@ a browser page that ranks planners for your map. We ran kill tests against our o
 ideas and both failed. Those failures are in the repo with their numbers."
 
 - **Number:** 21 planners, 8 families, 2 sensor presets, 6720 runs; safety filter 1.7 % [0.7, 3.8] collisions against a 1 % bar; relocalization on 4 beams 66-89 % against a 90 % bar `[synthetic]`.
-- **Source:** [case study summary](../../docs/case-study/README.md#summary-2-minutes),
-  [what failed and why](../../docs/case-study/README.md#what-failed-and-why),
+- **Source:** [case study summary](../../docs/how-it-was-built.md#summary-2-minutes),
+  [what failed and why](../../docs/how-it-was-built.md#what-failed-and-why),
   [research decision](../../docs/research/README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is).
 
 ### 9. "How long from brief to first flight?"
@@ -151,8 +151,8 @@ ideas and both failed. Those failures are in the repo with their numbers."
 page suggests budgeting 15 minutes once the room is measured."
 
 - **Number:** 367 s total, 146 s of commands; 198 simulated runs. Wall time real (Apple M3 Max, warm uv cache), flights `[synthetic]`.
-- **Source:** [day1-drill-2026-11.md Total](../../docs/day1-drill-2026-11.md#total),
-  [timed steps](../../docs/day1-drill-2026-11.md#timed-steps).
+- **Source:** [cold-start-drill.md Total](../../docs/cold-start-drill.md#run-2-total),
+  [timed steps](../../docs/cold-start-drill.md#run-2-timed-steps).
 
 ### 10. "Is your arena biased?"
 

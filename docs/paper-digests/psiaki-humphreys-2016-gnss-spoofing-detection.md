@@ -59,7 +59,7 @@ Estimate: as a survey there is nothing to reproduce. Implementing individual def
 - Multi-antenna DoA: needs hardware (2+ phase-coherent receivers). Not realistic in 48 h unless the kit is provided.
 
 ## What a hackathon team can take from it
-- **Use Table I as a design checklist.** State which attack columns (A1-A13) your detector targets and grade it honestly. Judges familiar with the field will recognise the framework.
+- **Use Table I as a design checklist.** State which attack columns (A1-A13) your detector targets and grade it honestly. Reviewers familiar with the field will recognise the framework.
 - **Make the detector multi-pronged.** The paper's argument (Sec. III-E) is that RPM covers the overpowered case where correlation distortion fails, and drift monitoring forces a slow drag-off so the other detectors get more time.
 - **Drift monitoring fits a GNSS-denied nav stack directly.** Gate GNSS updates in your EKF by checking clock-drift rate against oscillator class and position-drift rate against IMU propagation. These are the D4 checks, and they are cheap.
 - **Recovery is the open problem.** A team that shows detection followed by a clean switch to INS/VIO has gone beyond what this survey reports as solved. Compare [Humphreys 2008](humphreys-2008-assessing-spoofing-threat.md) for the original threat tiers.

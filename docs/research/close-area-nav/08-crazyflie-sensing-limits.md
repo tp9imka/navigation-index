@@ -1,6 +1,6 @@
 # 08. Crazyflie sensing limits: what the planner and safety filter can rely on
 
-Research note, 2026-11-09 (loop-23). Question: if the Day-1 platform is a Crazyflie 2.x with
+Research note, 2026-11-09. Question: if the first-day platform is a Crazyflie 2.x with
 the Multi-ranger and Flow v2 decks, what can it sense, what can it not sense, and what sensor
 settings should the [close-area arena](../../../samples/close-area-arena/README.md) use so that
 sim results transfer?
@@ -221,7 +221,7 @@ What this does to the planner and safety filter:
 - Yawing to scan the blind wedges costs Flow deck drift (section 3). Prefer translating along
   beam axes over yawing.
 - Glass, low bars and thin poles can only be handled by the map half of the filter (known
-  obstacles from the organisers, or a map built under better sensing). That is the protection
+  obstacles from whoever set the task, or a map built under better sensing). That is the protection
   level half of the hub headline. Since measured (synthetic): for map-only obstacles a fixed
   0.2 m bound did as well as the protection level, and the headline failed
   ([research decision](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
@@ -281,7 +281,7 @@ Other arena settings that follow from the platform, all proposals:
 
 ## 7. Not verified
 
-Reconciled 2026-11-09 (loop-28): every bullet below is still open. The arena now simulates the
+Reconciled 2026-11-09: every bullet below is still open. The arena now simulates the
 section 6 preset, which tests the planners against this doc's model, not the model against a
 real deck.
 
@@ -296,7 +296,7 @@ real deck.
   warehouse (50 % collisions), 20 layouts per cell, synthetic
   ([benchmark crazyflie preset](../../../samples/close-area-benchmark/README.md#preset-crazyflie)).
 
-## Ask on Day 1
+## Ask on the first day
 
 Which decks are fitted (Multi-ranger, Flow v2, AI deck, Lighthouse or Loco); floor texture and
 lighting; any glass, mesh or thin poles in the arena; whether obstacle positions are given.

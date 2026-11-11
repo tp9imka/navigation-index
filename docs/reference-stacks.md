@@ -17,8 +17,8 @@ Updated 2026-11-06 (v2.1): picks that a sample already runs now link that sample
 and first command in [samples/README.md](../samples/README.md); measured numbers in
 [evidence-matrix.md](evidence-matrix.md)).
 
-Companion docs: [hackathon-playbook.md](hackathon-playbook.md),
-[day0-runbook.md](day0-runbook.md), [problem-statement-decoder.md](problem-statement-decoder.md).
+Companion docs: [competition-playbook.md](competition-playbook.md),
+[first-three-hours.md](first-three-hours.md), [problem-statement-decoder.md](problem-statement-decoder.md).
 
 **License column.** First linked repo in the Default and Alternative cells. Where a card
 exists the note is the card's reading of LICENSE files and weight terms; otherwise it is the
@@ -87,7 +87,7 @@ the pitch says "product". Weights terms per model, read from source:
 | MAVLink scripting | [pymavlink](../catalog/repos/ardupilot__pymavlink.md) ([card](integration-cards/ardupilot__pymavlink.md)) | [MAVSDK-Python](../catalog/repos/mavlink__mavsdk-python.md) ([card](integration-cards/mavlink__mavsdk-python.md)) for missions and offboard (`pip install mavsdk-grpc`) | [DroneKit](../catalog/repos/dronekit__dronekit-python.md) - archived, breaks on recent Python | LGPL-3.0, generated code MIT; alt: BSD-3 |
 | Link sharing between GCS and tools | [mavlink-router](../catalog/repos/mavlink-router__mavlink-router.md) ([card](integration-cards/mavlink-router__mavlink-router.md)) | [mavp2p](../catalog/repos/bluenviron__mavp2p.md) - single binary, no build | Pointing several clients at one UDP port without a router | Apache-2.0; alt: MIT |
 | GCS | [QGroundControl](../catalog/repos/mavlink__qgroundcontrol.md) ([card](integration-cards/mavlink__qgroundcontrol.md)) prebuilt | [MAVProxy](../catalog/repos/ardupilot__mavproxy.md) ([card](integration-cards/ardupilot__mavproxy.md)) - write a module for custom alerts | QGC custom builds - Qt setup takes hours. [Mission Planner](../catalog/repos/ardupilot__missionplanner.md) on Linux/mac - Mono caveats | Apache-2.0 / GPL-3.0 dual; alt: GPL-3.0 |
-| Custom nav-health messages | [MAVLink](../catalog/repos/mavlink__mavlink.md) dialect XML + regenerated bindings | STATUSTEXT with a fixed prefix for a quick hack | Repurposing unrelated common messages - confuses GCS and judges | unclear (NOASSERTION); alt: - |
+| Custom nav-health messages | [MAVLink](../catalog/repos/mavlink__mavlink.md) dialect XML + regenerated bindings | STATUSTEXT with a fixed prefix for a quick hack | Repurposing unrelated common messages - confuses GCS and reviewers | unclear (NOASSERTION); alt: - |
 | ROS 2 bridge to PX4 | [px4_ros_com](../catalog/repos/px4__px4_ros_com.md) ([card](integration-cards/px4__px4_ros_com.md)) + [px4_msgs](../catalog/repos/px4__px4_msgs.md) (matching branch) | [MAVROS](../catalog/repos/mavlink__mavros.md) ([card](integration-cards/mavlink__mavros.md)) - mind ENU/NED | Mismatched px4_msgs branch - messages silently mismatch | BSD-3; alt: BSD / GPL-3.0 / LGPL-3.0 |
 
 ### GNSS, integrity and interference
@@ -156,12 +156,12 @@ the pitch says "product". Weights terms per model, read from source:
 
 | Capability | Default | Alternative | Avoid because | License (default; alt) |
 |---|---|---|---|---|
-| TAK server | [OpenTAKServer](../catalog/repos/brian7704__opentakserver.md) ([card](integration-cards/brian7704__opentakserver.md)) | [GoATAK](../catalog/repos/kdudkov__goatak.md) ([card](integration-cards/kdudkov__goatak.md)) - web client for judges without ATAK | [FreeTAKServer](../catalog/repos/freetakteam__freetakserver.md) - activity slowed since 2024 | GPL-3.0; alt: AGPL-3.0 |
+| TAK server | [OpenTAKServer](../catalog/repos/brian7704__opentakserver.md) ([card](integration-cards/brian7704__opentakserver.md)) | [GoATAK](../catalog/repos/kdudkov__goatak.md) ([card](integration-cards/kdudkov__goatak.md)) - web client for reviewers without ATAK | [FreeTAKServer](../catalog/repos/freetakteam__freetakserver.md) - activity slowed since 2024 | GPL-3.0; alt: AGPL-3.0 |
 | CoT from Python | [PyTAK](../catalog/repos/snstac__pytak.md) ([card](integration-cards/snstac__pytak.md)) | [takproto](../catalog/repos/snstac__takproto.md) for protobuf | Writing an ATAK plugin - [ATAK-CIV](../catalog/repos/tak-product-center__atak-civ.md) SDK toolchain takes half a day | Apache-2.0; alt: MIT |
 | CoT from Node | [node-CoT](../catalog/repos/dfpc-coe__node-cot.md) | - | [CloudTAK](../catalog/repos/dfpc-coe__cloudtak.md) full deploy - AWS-oriented, AGPL | MIT; alt: - |
 | Vehicle to TAK | [mavlink-to-tak-cot sample](../samples/mavlink-to-tak-cot/) | [ADSBCOT](../catalog/repos/snstac__adsbcot.md) for aircraft | - | -; alt: Apache-2.0 |
 | Drone detection (C-UAS, detect only) | [remote-id-to-tak](../samples/remote-id-to-tak/) (Remote ID decoder validated against opendroneid-core-c) | [cuas-classifiers](../samples/cuas-classifiers/) (radar UAV vs bird, DroneRF) | Interception or effector logic - out of scope | -; alt: - |
-| Military symbology | [milsymbol](../catalog/repos/spatialillusions__milsymbol.md) ([card](integration-cards/spatialillusions__milsymbol.md)) | [MIL-STD-2525D](../catalog/resources/mil-std-2525d.md) reference | Hand-drawn icons - judges notice | MIT; alt: - |
+| Military symbology | [milsymbol](../catalog/repos/spatialillusions__milsymbol.md) ([card](integration-cards/spatialillusions__milsymbol.md)) | [MIL-STD-2525D](../catalog/resources/mil-std-2525d.md) reference | Hand-drawn icons - reviewers notice | MIT; alt: - |
 | 2D web map (offline) | [MapLibre GL JS](../catalog/repos/maplibre__maplibre-gl-js.md) ([card](integration-cards/maplibre__maplibre-gl-js.md)) + [PMTiles](../catalog/repos/protomaps__pmtiles.md) ([card](integration-cards/protomaps__pmtiles.md)) | [Leaflet](../catalog/repos/leaflet__leaflet.md) | Online tile services at a venue with bad Wi-Fi | BSD-3; alt: BSD-2-Clause |
 | Many tracks / heatmaps | [deck.gl](../catalog/repos/visgl__deck.gl.md) | [tar1090](../catalog/repos/wiedehopf__tar1090.md) for ADS-B | - | MIT; alt: unclear (NOASSERTION) |
 | 3D picture | [CesiumJS](../catalog/repos/cesiumgs__cesium.md) ([card](integration-cards/cesiumgs__cesium.md)) | - | Default Cesium ion assets when offline - serve your own terrain ([cesium-terrain-builder](../catalog/repos/geo-data__cesium-terrain-builder.md)) | Apache-2.0, ion content separate terms; alt: - |

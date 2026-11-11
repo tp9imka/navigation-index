@@ -1,6 +1,6 @@
 # 02. Deadline-aware scheduling of expensive absolute fixes
 
-Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers". Scope: the
+Prior-art scan, 2026-11-09, for an autonomous flight navigation task. Scope: the
 vehicle's own navigation only. Records added: `data/resources/innovation-pa-scheduling.json`
 (20 resources) and `data/repos/innovation-pa-scheduling.json` (2 repos, each checked with
 `gh api repos/...` on 2026-11-09). JointLoc's repo was already indexed (`repo:luoxubo/jointloc`,
@@ -78,7 +78,7 @@ Hub overlap:
   **when to compute**. The same grid can feed (b).
 - [terrain-heightmap-pf](../../../samples/terrain-heightmap-pf/) has a CRB information gate on
   TRN updates, an informativeness signal for (b) on the TRN side.
-- [hackathon-playbook.md section 17](../../hackathon-playbook.md) lists "USBL fix scheduling" as a
+- [competition-playbook.md section 17](../../competition-playbook.md) lists "USBL fix scheduling" as a
   stretch, underwater. Same question, other domain.
 - [gnss-ins-ekf-outage](../../../samples/gnss-ins-ekf-outage/) and
   [altpnt-integrity](../../../samples/altpnt-integrity/) give the covariance growth and the PL

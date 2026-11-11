@@ -3,11 +3,11 @@
 Briefs like "USV operating in a spoofed area", "port / coast / patrol vessel", "spot GNSS
 manipulation zones from AIS". Decoder rows 7, 8. Underwater (row 17) is at the end: no sample.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 Two products: own-ship ("the bridge sees the moment GNSS stops agreeing with physics, and which
 position to trust") or shore-side ("public AIS shows where GNSS is manipulated, hours not
-weeks later"). Judges want real AIS or chart data, alarm time, and what the system shows as
+weeks later"). Reviewers want real AIS or chart data, alarm time, and what the system shows as
 trusted.
 
 ## 2. The demo in 24-48 h

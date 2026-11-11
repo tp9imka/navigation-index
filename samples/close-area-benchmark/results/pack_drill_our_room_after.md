@@ -2,7 +2,7 @@
 
 `python pack.py run results/pack_drill_our_room.json --workers 4 --out results/pack_drill_our_room_after` from samples/close-area-benchmark, 2026-11-10. Input: synthetic (simulated world, vehicle and sensor, 2.5D point mass), planner sees the true pose, scored on truth. 105 runs, 4 worker processes, wall 24.5 s, Python 3.11.15, numpy 2.4.6.
 
-Worlds: `our_room` (../../../docs/drill-2026-11/our_room.world.json, family custom, limit 60 s).
+Worlds: `our_room` (../../../docs/cold-start-drill/our_room.world.json, family custom, limit 60 s).
 Vehicle: radius 0.2 m, v_max 1.5 m/s, a_max 3.0 m/s^2, tau 0.15 s. Sensor `depth_cam_87`: 30 beams, fov 87 deg, 0.3-5.0 m, noise 0.04 m, cone 3 deg, dropout 0.05.
 Seeds 0-34: seed 0 exact A/B, seeds > 0 move A and B up to 0.5 m (same points for every planner).
 Planner inflation: 0.2 m (planners inflate by the pack radius for each run, as site/playground/worker.js radius_override).

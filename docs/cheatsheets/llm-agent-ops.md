@@ -4,9 +4,9 @@ Briefs like "AI assistant for operators of unmanned systems under EW", "analyse 
 across a fleet", "agentic mission planning". Decoder rows 21, 22. Pair it with a navigation
 core from another sheet: the LLM narrates and proposes, deterministic tools decide.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
-"The agent can explain and propose; only a human can make the vehicle move." Judges ask how an
+"The agent can explain and propose; only a human can make the vehicle move." Reviewers ask how an
 AI component is disengaged, logged and bounded. They reward deterministic extractors with the
 LLM on top, every claim traceable to a log line, and hard guards on any command.
 

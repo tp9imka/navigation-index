@@ -31,7 +31,7 @@ GitHub repo by id even if another lane indexes it. The builder reports dangling 
   "name": "PX4 Autopilot",
   "url": "https://github.com/PX4/PX4-Autopilot",
   "summary": "1-3 sentences in our own words: what it is.",
-  "why_it_matters": "1-2 sentences: why a navigation / defense hackathon team would care.",
+  "why_it_matters": "1-2 sentences: why a team building navigation or resilient PNT would care.",
   "concepts": ["concept:autopilot", "concept:sensor-fusion"],
   "tags": ["ekf2", "uav", "c++"],
   "language": "C++",
@@ -45,6 +45,10 @@ GitHub repo by id even if another lane indexes it. The builder reports dangling 
   ]
 }
 ```
+
+`hackathon_fit` and `hackathon_notes` keep their key names; every reader-facing label calls them
+"Quick-build fit" and "Build notes": how well the repo fits a short time-boxed build, and how to
+use it in one.
 
 `domains`: any of `air, ground, maritime, underwater, space, dismounted, multi`.
 `rel` values: `depends_on, integrates_with, alternative_to, fork_of, extends, evaluated_on, same_org`.

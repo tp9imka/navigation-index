@@ -3,14 +3,14 @@
 Briefs like "fly a drone from A to B in a close area", "through obstacles", "indoor arena",
 "land on the pad / fly to the marker", "keep flying when VIO is lost". Decoder rows 31 (A to B
 through obstacles), 32 (goal is a marker, pad or tag), 33 (indoor, VIO loss). Platform, sensors,
-indoor or outdoor, and sim or real are unknown until Day 1: ask with the
-[Day-1 intake](../day1-close-area-intake.md) first (20 minutes). Research behind this sheet:
+indoor or outdoor, and sim or real are unknown until the task arrives: ask with the
+[first-day intake](../first-day-intake.md) first (20 minutes). Research behind this sheet:
 [close-area-nav synthesis](../research/close-area-nav/README.md).
 
 Every number below is **synthetic** (simulated layouts, vehicle and sensor) unless marked
 otherwise. None is a flight or SITL result.
 
-## 1. What judges likely want (30 s)
+## 1. What reviewers likely want (30 s)
 
 Completion first, then no collisions, then no manual help. IMAV 2026 indoor multiplies the score
 by 1.0 onboard, 0.7 with off-board compute or beacons, 0.4 with any manual intervention
@@ -45,9 +45,9 @@ OK, `final_distance_m=0.096 collided=False` on the mock. Fly the arena planners 
 real loop with [flight-repo](../../templates/flight-repo/README.md) (`make sim`,
 `--planner arena:<name>`).
 
-### Day-1 flow with the browser tools
+### First-day flow with the browser tools
 
-All synthetic. One pass took 6 min 7 s in the loop-92 drill (clone to pack verdict, agent-driven, warm uv cache; 2 min 26 s of that was commands: Solver Quick 30 s, cold first flight 44 s, 105-run pack 51 s on 4 workers), see [day1-drill-2026-11.md](../day1-drill-2026-11.md). Budget 15 minutes by hand once the room is measured (hand clicks not timed).
+All synthetic. One pass took 6 min 7 s in the 2026-11-10 cold-start drill (clone to pack verdict, agent-driven, warm uv cache; 2 min 26 s of that was commands: Solver Quick 30 s, cold first flight 44 s, 105-run pack 51 s on 4 workers), see [cold-start-drill.md](../cold-start-drill.md). Budget 15 minutes by hand once the room is measured (hand clicks not timed).
 
 1. **Room => world JSON.** Measured room: `world_from_room.py rooms/<room>.json`. Floor plan or
    whiteboard photo: `world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D ...` (both in
@@ -73,7 +73,7 @@ All synthetic. One pass took 6 min 7 s in the loop-92 drill (clone to pack verdi
    runs before it can PASS.
 
 Venue network blocks the CDN? `python3 tools/venue_kit.py prepare`, then `verify`, before the event
-([day-0 runbook, Browser tools offline](../day0-runbook.md#browser-tools-offline)).
+([first three hours, Browser tools offline](../first-three-hours.md#browser-tools-offline)).
 
 ## 3. Which planner first
 
@@ -84,7 +84,7 @@ glass. "4 beams" = the Crazyflie-like preset (4 x 27 deg cones, 3 m, glass invis
 picks in the browser: [playground](../../site/playground/index.html) (its advisor panel shows the
 same table; runs get 120 s on maze and warehouse, 60 s elsewhere, as in the benchmark). "Depth
 camera" = depth_cam_87 (30 beams over 87 deg forward, 0.3-5 m, glass invisible, RealSense D435i class),
-yaw held toward B; 6 layouts per cell ([forward depth camera](../../samples/close-area-benchmark/README.md#forward-depth-camera-loop-94)),
+yaw held toward B; 6 layouts per cell ([forward depth camera](../../samples/close-area-benchmark/README.md)),
 so read it as a direction, not a ranking.
 
 | Family | With a map (all sensors) | Without a map, ideal | Without a map, 4 beams | Without a map, depth camera (n = 6, directional) |
@@ -159,7 +159,7 @@ identical results.
 - Corridor MPC (OSQP) vs the A* carrot follower, 50 layouts per family: both 100 % reached, 0 % collision; MPC 21.97 vs 24.23 s to goal through narrow gaps; QP 0.22 ms median on an M3 Max laptop. Not re-run ([close-area-planner-mpc](../../samples/close-area-planner-mpc/README.md)).
 - RRT* vs A* on the same grid: A* plans a 0.4 m gap in 100 % of layouts, RRT* with 1000 samples in 28.3 % (5000: 85.7 %); keep A* as the default. Not re-run ([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)).
 - Benchmark, 20 layouts per cell: without a map on 4 beams, `astar_unknown` reaches office 35 % (25 % collision), warehouse 0 % (50 %), glass_office 5 % (65 %); with a map every prior-map planner 100 / 0. Not re-run ([close-area-benchmark](../../samples/close-area-benchmark/README.md)).
-- VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions, but with 2-4 wrong commits; a hover-until-unique rule deadlocks in a corridor (20 of 20). Hover plus a short info-gain move after 1 s: 99-100 % reached, 0 wrong commits, held-out seed 1 included; corridor 80 %. Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b)). Held-out seeds 2-4 narrowed it: 100 %, 0 wrong commits on random and u_trap only; office 94.4 %, glass_office 83.3 %, narrow_gap 85.6 %, warehouse 97.2 % with 33 wrong commits; 48-64 % on 4 beams with a yaw-spin; 7 % collisions with unmapped added obstacles ([held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
+- VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions, but with 2-4 wrong commits; a hover-until-unique rule deadlocks in a corridor (20 of 20). Hover plus a short info-gain move after 1 s: 99-100 % reached, 0 wrong commits, held-out seed 1 included; corridor 80 %. Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md)). Held-out seeds 2-4 narrowed it: 100 %, 0 wrong commits on random and u_trap only; office 94.4 %, glass_office 83.3 %, narrow_gap 85.6 %, warehouse 97.2 % with 33 wrong commits; 48-64 % on 4 beams with a yaw-spin; 7 % collisions with unmapped added obstacles ([held-out matrix](../../samples/close-area-relocalize/README.md)).
 - Replan cost: a full 200 x 200 x 50 scipy EDT took 183 ms median on an M3 Max (synthetic grid),
   so a 20 x 20 x 5 m ESDF at 0.1 m fits a 2-5 Hz replan. Not re-run.
 - **Real dataset** reference for VIO drift: OpenVINS ATE 0.36 m over 278 m on UZH-FPV
@@ -217,7 +217,7 @@ before any planner flight. Rules per platform: [frames.md](../../templates/drone
    Recommend switches to `ARM=F0` with a warning below 1.4 m.
 7. **Quick ties on easy maps.** On random_0 a 5-seed Quick sweep tied 17 of 18 planners at 5 of 5
    (95 % Wilson 57-100 %); only `straight` dropped out (synthetic,
-   [Solver](../../site/solver/README.md#result-quick-sweeps-on-narrow_gap_0-and-random_0-loop-87-quick--5-seeds)).
+   [Solver](../../site/solver/README.md)).
    A tie is not a winner: read the Pareto view, then run Stress, Thorough or a harder map.
 8. **Frontier search is not a search for B.** With B unknown, nearest-frontier found B in 43.3 %
    [31.6, 55.9] of runs in 180 s; with a nominal B within 2 m every arm found it in 88.3-100 %. The
@@ -254,9 +254,9 @@ Pitch: [close-area story](../../templates/pitch/close-area-story.md); demo:
 
 ## 8. Links
 
-- Decoder: [rows 31, 32, 33](../problem-statement-decoder.md#the-table); Day-1 routing:
-  [day1-close-area-intake](../day1-close-area-intake.md); Challenge 2 page:
-  [challenge-2-autonomous-flight](../challenge-2-autonomous-flight.md).
+- Decoder: [rows 31, 32, 33](../problem-statement-decoder.md#the-table); first-day routing:
+  [first-day-intake](../first-day-intake.md); full-brief routing:
+  [decoder section](../problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages).
 - Samples: [close-area-arena](../../samples/close-area-arena/README.md) (and its
   [CONTRACT.md](../../samples/close-area-arena/CONTRACT.md), [log_format.md](../../samples/close-area-arena/log_format.md)
   for `score_log.py`), [close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md),
@@ -279,7 +279,7 @@ Pitch: [close-area story](../../templates/pitch/close-area-story.md); demo:
   [flight-repo](../../templates/flight-repo/README.md).
 - Browser: [home page](https://navigation-index.pages.dev/), [Solver](../../site/solver/README.md),
   [playground](../../site/playground/README.md). How the toolkit was built:
-  [case study](../case-study/README.md).
+  [case study](../how-it-was-built.md).
 - Research: [01 planning](../research/close-area-nav/01-planning-and-mapping.md),
   [02 sims and platforms](../research/close-area-nav/02-sims-platforms-competitions.md),
   [03 localization](../research/close-area-nav/03-close-area-localization.md),

@@ -1,7 +1,7 @@
 # Drill B2: Solver vs scenario pack on the drill room (loop-99)
 
 Input: synthetic (2.5D point mass, simulated depth_cam_87, truth pose, scored on truth). Not a flight result.
-World docs/drill-2026-11/our_room.world.json, vehicle radius 0.2 m, v_max 1.5 m/s, a_max 3, tau 0.15, seeds 0-4 with the Solver's jittered A and B.
+World docs/cold-start-drill/our_room.world.json, vehicle radius 0.2 m, v_max 1.5 m/s, a_max 3, tau 0.15, seeds 0-4 with the Solver's jittered A and B.
 
 ## Cause (confirmed)
 
@@ -25,7 +25,7 @@ World docs/drill-2026-11/our_room.world.json, vehicle radius 0.2 m, v_max 1.5 m/
 | thetastar_known | 4 | reached 21.1 s, clr 0.2479 m | reached 21.38 s, clr 0.2442 m | reached 21.38 s, clr 0.2442 m | reached 21.1 s, clr 0.2479 m |
 | astar_known | 4 | reached 22.62 s, clr 0.2105 m | reached 22.9 s, clr 0.2141 m | reached 22.9 s, clr 0.2141 m | reached 22.62 s, clr 0.2105 m |
 
-The drill's pack run (docs/drill-2026-11/pack_our_room.json) matches the `pack, shipped` column; the drill's Solver export (docs/drill-2026-11/quick_export.json) matches the `driver, inflate` column.
+The drill's pack run (docs/cold-start-drill/pack_our_room.json) matches the `pack, shipped` column; the drill's Solver export (docs/cold-start-drill/quick_export.json) matches the `driver, inflate` column.
 
 ## After the fix: pack.py inflates by the pack radius
 

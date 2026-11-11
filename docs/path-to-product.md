@@ -2,7 +2,7 @@
 
 <!-- about: repo:px4/px4-autopilot, repo:ardupilot/ardupilot, repo:nasa/ogma, repo:act3-ace/run-time-assurance, res:astm-f3269-21-rta, res:faa-ac-20-115d-do-178c, res:easa-ai-concept-paper-issue-2 -->
 
-Challenge 2 says the winning team "may take it towards real-world implementation". After
+Some briefs say the winning team may take its solution towards real-world implementation. After
 this page you can say where your algorithm runs, how it talks to the autopilot, what timing
 it needs, which standards it would meet on the way to an aircraft, and how you ship a novel
 estimator next to a certified baseline without betting the aircraft on it.
@@ -244,7 +244,7 @@ Rules that keep the argument honest:
    run and its drift over the time it takes to reach a safe state.
 4. Log every switch with the reason. That log is your evidence.
 
-A demo judges will remember: replay a flight log where GNSS is spoofed, show the new nav
+A demo reviewers will remember: replay a flight log where GNSS is spoofed, show the new nav
 function being accepted, then rejected by the monitor when it drifts, and the EKF falling back
 without a position jump.
 
