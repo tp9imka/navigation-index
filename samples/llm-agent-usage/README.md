@@ -10,7 +10,7 @@ grepping markdown. `tools/mcp_server.py` is a stdlib-only MCP server over stdio 
 |---|---|---|
 | `search` | `query` (required), `kind`, `fit`, `domain`, `concept`, `limit` | ranked briefs: id, kind, name, summary, url, fit, catalog page, stars, score |
 | `show` | `id` (required) | the full record (summary, why_it_matters, hackathon_notes, related, github meta) |
-| `concept` | `id` (omit to list all concepts with counts), `kind`, `fit`, `domain`, `limit` | records tagged with the concept, high hackathon fit first |
+| `concept` | `id` (omit to list all concepts with counts), `kind`, `fit`, `domain`, `limit` | records tagged with the concept, high quick-build fit first |
 | `neighbors` | `id` (required), `depth` (1-3), `kind`, `fit`, `domain`, `limit` | graph neighbours with the linking edge in `via` |
 
 Unknown ids come back as a tool result with `isError: true`, so the model can retry.
@@ -120,7 +120,7 @@ about to build with it.
    yet, start at `AGENTS.md`.
 2. `INDEX.md` - concept tree with counts and the high-fit repos. Pick 1-3 concepts.
 3. `catalog/concepts/<concept>.md` - every repo, resource and sample for that concept,
-   high hackathon fit first. Then `catalog/repos/<owner>__<name>.md` for hackathon notes
+   high quick-build fit first. Then `catalog/repos/<owner>__<name>.md` for build notes
    and related links.
 4. `index/records.jsonl` - one JSON record per line, for filtering in bulk
    (`grep '"hackathon_fit": "high"' index/records.jsonl`), or the MCP tools /
@@ -151,7 +151,7 @@ Paste these into Claude Code / Cursor once the server is registered.
 - "Before recommending any repo, `show` it and quote its `maturity` and `hackathon_notes`.
   Do not recommend repos whose maturity is `archived` unless nothing else fits."
 
-## Extending it in a hackathon
+## Extending it
 
 - Add a tool: write a `tool_<name>(args)` function in `tools/mcp_server.py`, add it to
   `HANDLERS` and its schema to `TOOLS`.

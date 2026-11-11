@@ -131,7 +131,7 @@ ArduPilot and PX4 dataflash / ulog files carry baro, rangefinder and EKF velocit
 convert lat/lon to the DEM's UTM zone first. If the log has no truth, print only the
 PF estimate and its 1-sigma.
 
-## Hackathon extensions
+## Extensions
 
 - Batch TERCOM vs PF: run `repo:alti3/python-tercom` on the same DEM and profile, compare
   time to lock and robustness to a 300 m initial error.

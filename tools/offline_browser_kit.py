@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Venue kit for the browser tools (playground and Solver) when cdn.jsdelivr.net is blocked.
+"""Offline browser kit for the browser tools (playground and Solver) when cdn.jsdelivr.net is blocked.
 
 Stdlib only. Run from anywhere; paths are resolved from this file.
 
-  python3 tools/venue_kit.py prepare   # download Pyodide core + numpy + scipy (+ deps) into
+  python3 tools/offline_browser_kit.py prepare   # download Pyodide core + numpy + scipy (+ deps) into
                                        # site/playground/pyodide-local/, check sha256 vs pyodide-lock.json
-  python3 tools/venue_kit.py verify    # local server + headless Chrome with cdn.jsdelivr.net mapped to
+  python3 tools/offline_browser_kit.py verify    # local server + headless Chrome with cdn.jsdelivr.net mapped to
                                        # 127.0.0.1: one playground run, one Solver Quick sweep
-  python3 tools/venue_kit.py bundle    # dist/venue-kit.zip: site/ + manifest files + vendored folder + serve.py
-  python3 tools/venue_kit.py verify --kit /path/to/unzipped   # same checks, served by the kit's serve.py
+  python3 tools/offline_browser_kit.py bundle    # dist/offline-browser-kit.zip: site/ + manifest files + vendored folder + serve.py
+  python3 tools/offline_browser_kit.py verify --kit /path/to/unzipped   # same checks, served by the kit's serve.py
 
 verify uses a Chrome already on the machine (CHROME=..., the macOS default path, or a Playwright
 cache); it never installs one. Reports go to site/playground/pyodide-local/venue-kit-*.json (gitignored).
@@ -407,7 +407,7 @@ def find_chrome():
     for c in cands:
         if c and os.path.isfile(c) and os.access(c, os.X_OK):
             return c
-    sys.exit("No Chrome found (set CHROME=/path/to/chrome). venue_kit never installs one.")
+    sys.exit("No Chrome found (set CHROME=/path/to/chrome). offline_browser_kit never installs one.")
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -608,7 +608,7 @@ def cmd_verify(args):
 # ------------------------------------------------------------------ bundle
 
 SERVE_PY = '''#!/usr/bin/env python3
-"""Venue kit server (stdlib only). Serves this folder so the playground and the Solver load Pyodide
+"""Offline browser kit server (stdlib only). Serves this folder so the playground and the Solver load Pyodide
 from site/playground/pyodide-local/ instead of cdn.jsdelivr.net.
   python3 serve.py [--port 8000] [--bind 127.0.0.1]
 """
@@ -662,7 +662,7 @@ def cmd_bundle(args):
     m = load_manifest()
     folder = local_dir(m)
     if not (folder / "pyodide-lock.json").is_file():
-        sys.exit(f"{folder.relative_to(ROOT)}/ is empty: run `python3 tools/venue_kit.py prepare` first")
+        sys.exit(f"{folder.relative_to(ROOT)}/ is empty: run `python3 tools/offline_browser_kit.py prepare` first")
     missing_core = [f for f in CORE_FILES if not (folder / f).is_file()]
     checks = check_wheels(folder, wheel_entries(parse_lock((folder / "pyodide-lock.json").read_text()), m["packages"]))
     bad = [c for c in checks if c[1] != "ok"] + [(f, "missing") for f in missing_core]
@@ -686,7 +686,7 @@ def cmd_bundle(args):
     outside = sum(1 for r in rels if not r.startswith("site/"))
     print(f"{out}: {out.stat().st_size / MB:.1f} MB zipped ({src_mb:.1f} MB unzipped), {len(rels) + 1} files "
           f"({vend} vendored Pyodide, {outside} manifest files outside site/, serve.py), {time.monotonic() - t0:.1f} s")
-    print(f"use: unzip {out.name} -d venue-kit && cd venue-kit && python3 serve.py  => http://localhost:8000/site/playground/")
+    print(f"use: unzip {out.name} -d offline-browser-kit && cd offline-browser-kit && python3 serve.py  => http://localhost:8000/site/playground/")
 
 
 def main(argv=None):
@@ -696,10 +696,10 @@ def main(argv=None):
     p.add_argument("--force", action="store_true", help="download again even when cached")
     p.add_argument("--version", default="314.0.7", help="expected Pyodide version (must match manifest.json)")
     v = sub.add_parser("verify", help="headless Chrome, CDN blocked: one playground run, one Solver Quick sweep")
-    v.add_argument("--kit", help="unzipped venue kit folder: serve it with its own serve.py instead of the repo")
+    v.add_argument("--kit", help="unzipped offline browser kit folder: serve it with its own serve.py instead of the repo")
     v.add_argument("--playground-only", action="store_true")
     b = sub.add_parser("bundle", help="zip site/ + manifest files + vendored Pyodide + serve.py")
-    b.add_argument("--out", default=str(ROOT / "dist" / "venue-kit.zip"))
+    b.add_argument("--out", default=str(ROOT / "dist" / "offline-browser-kit.zip"))
     a = ap.parse_args(argv)
     {"prepare": cmd_prepare, "verify": cmd_verify, "bundle": cmd_bundle}[a.cmd](a)
 

@@ -5,8 +5,8 @@
 .venv/bin/python run_submap.py --tune          # static seed-1 sweep behind WINDOW_S and the ratio (no fault)
 
 Arms (A* known map, planners/astar_esdf.py known_map=True, scored on truth by the arena):
-  spin_ig    (i) loop-54 reference: hover + yaw spin stack + info-gain move (sparse.py, via run_mcl.run_task)
-  mcl        (m) loop-67 reference: AF-MCL-style particle filter, planner flies the mean (mcl.py, via run_mcl.run_task)
+  spin_ig    (i) 4-beam spin reference: hover + yaw spin stack + info-gain move (sparse.py, via run_mcl.run_task)
+  mcl        (m) AF-MCL reference: AF-MCL-style particle filter, planner flies the mean (mcl.py, via run_mcl.run_task)
   submap     (s) rolling submap in the odometry frame, matched on loss, hover until accept (submap.py)
   submap_ig  (s+ig) (s) + info-gain move after 1 s without accept; the move's returns join the submap
   submap_arc, submap_arc_ig  extra: (s), (s+ig) with ArcScanMatcher (cone arc) instead of the cone opening

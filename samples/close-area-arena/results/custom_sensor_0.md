@@ -1,4 +1,4 @@
-# Forward depth camera vs ideal 360 deg fan (loop-75, synthetic, seed 0)
+# Forward depth camera vs ideal 360 deg fan (synthetic, seed 0)
 
 `samples/close-area-arena/.venv/bin/python samples/close-area-arena/results/custom_sensor_0.py`
 ([script](custom_sensor_0.py), [json](custom_sensor_0.json), [generated table](custom_sensor_0.table.md)).
@@ -6,7 +6,7 @@ Input: **synthetic**. One preset world per family (`site/playground/presets/{ran
 2.5D point-mass vehicle, simulated sensors, truth pose, no filter. Run time limit 60 s, maze 120 s. Python 3.12.10,
 numpy 2.5.4, scipy 1.18.1, arm64. One layout per family: these are 3 examples, not success rates.
 
-Why: a forward-only depth camera is the likeliest real sensor on a hackathon drone. Every arena number so far
+Why: a forward-only depth camera is the likeliest real sensor on a small indoor drone. Every arena number so far
 used a 360 deg fan.
 
 ## Sensors

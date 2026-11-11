@@ -28,7 +28,7 @@ it lists.
   ([how it works](site/solver/README.md)). **Your drone** sets radius, speed and sensor;
   **Recommend** downloads `recommend.md` with the pick and the `make first-flight PLANNER=bench:<id>`
   command for [templates/flight-repo](templates/flight-repo/README.md#fly-what-the-solver-picks-benchid-in-a-world-file).
-  Venue blocks the CDN: `python3 tools/venue_kit.py prepare` then `verify`
+  Venue blocks the CDN: `python3 tools/offline_browser_kit.py prepare` then `verify`
   ([first-three-hours](docs/first-three-hours.md#browser-tools-offline)).
 - [Search UI](https://navigation-index.pages.dev/site/) - every record, doc and sample.
 
@@ -48,7 +48,7 @@ it lists.
 | More planners | [Theta*](samples/close-area-planner-thetastar/README.md), [MPPI](samples/close-area-planner-mppi/README.md), [Hybrid A*](samples/close-area-planner-hybrid-astar/README.md) (negative: 81.9 vs 91.2 % reached, synthetic) |
 | How the toolkit was built | [docs/how-it-was-built.md](docs/how-it-was-built.md) |
 | What we tested as innovation, and what failed | [docs/research/README.md](docs/research/README.md) (decision at the end) |
-| Pitch, demo, judge questions | [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md), [templates/demo-script-close-area.md](templates/demo-script-close-area.md), [templates/pitch/judge-drill-close-area.md](templates/pitch/judge-drill-close-area.md) |
+| Pitch, demo, judge questions | [templates/presenting/close-area-story.md](templates/presenting/close-area-story.md), [templates/presenting/live-demo-script-close-area.md](templates/presenting/live-demo-script-close-area.md), [templates/presenting/hard-questions.md](templates/presenting/hard-questions.md) |
 | How this hub was built (agent loop) | [loop/DRIVER.md](loop/DRIVER.md), [loop/JOURNAL.md](loop/JOURNAL.md) |
 
 ## Got a problem statement? Four hops

@@ -1,6 +1,6 @@
 # Flight log format `close-area-log/1` (JSONL)
 
-One format for the arena, SITL and a real drone, so judges get the same numbers and the same
+One format for the arena, SITL and a real drone, so reviewers get the same numbers and the same
 plot from each. Score it with [score_log.py](score_log.py), which imports only numpy and
 matplotlib (no arena code):
 

@@ -257,7 +257,7 @@ unaided max 2.44 m / final 1.14 %; aided final 0.60 % but max 2.91 m (aiding doe
 every trial). The JSONL was checked for parseability and schema fields, **not rendered in a
 browser**.
 
-## Extending it in a hackathon
+## Extending it
 
 - Real UWB: replace `uwb_at` in `run()` with logged ranges (DW1000/DW3000 TWR); keep the
   inflation + gate. Anchors dropped by the team at entry points are the realistic case.

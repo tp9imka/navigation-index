@@ -1,5 +1,5 @@
 # Skeleton. Only `app` runs out of the box; `sim` and `tak` are placeholders behind profiles.
-# Pin every image to a tag you tested before the event; venue Wi-Fi will not pull them.
+# Pin every image to a tag you tested while online; shared or field Wi-Fi will not pull them.
 #   docker compose up app                     # synthetic scenario, no sim, no TAK
 #   docker compose --profile sim --profile tak up
 name: navapp

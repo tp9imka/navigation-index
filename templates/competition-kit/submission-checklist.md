@@ -1,6 +1,6 @@
 # Submission checklist
 
-Run H+42 to H+48, before the final push. One person reads, another checks.
+Run hours 42-48, before the final push. One person reads, another checks.
 
 ## Repo and reproducibility
 
@@ -14,15 +14,15 @@ Run H+42 to H+48, before the final push. One person reads, another checks.
 
 ## Licence
 
-- [ ] `LICENSE` file present (team agreed on it; Apache-2.0 / MIT / BSD are common for hackathon code).
-- [ ] Event rules on IP and licence checked (some events require a specific licence or grant rights to the organiser).
+- [ ] `LICENSE` file present (team agreed on it; Apache-2.0 / MIT / BSD are common for prototype code).
+- [ ] Event rules on IP and licence checked (some events require a specific licence or grant rights to whoever runs them).
 - [ ] Third-party code: each copied file or vendored repo keeps its licence header; GPL-licensed code noted if you link it.
 - [ ] Dataset and map licences allow your use and redistribution of any derived files you commit.
 
 ## Export control and scope
 
-Read [export-control-and-ethics.md](../docs/export-control-and-ethics.md), then tick its
-[checklist](../docs/export-control-and-ethics.md#7-checklist):
+Read [export-control-and-ethics.md](../../docs/export-control-and-ethics.md), then tick its
+[checklist](../../docs/export-control-and-ethics.md#7-checklist):
 
 - [ ] Everything in the repo is your own work or public, with licences noted.
 - [ ] No non-public technical data from any defense programme or NDA.
@@ -40,7 +40,7 @@ Read [export-control-and-ethics.md](../docs/export-control-and-ethics.md), then 
       `git log -p | grep -nE '(api[_-]?key|token|secret|password|BEGIN .*PRIVATE KEY)'` returns nothing real.
 - [ ] `.env.example` committed, `.env` ignored.
 - [ ] No personal data in logs or recordings (faces, phone numbers, precise home locations of team members).
-- [ ] No venue Wi-Fi credentials or internal URLs in notes.
+- [ ] No site Wi-Fi credentials or internal URLs in notes.
 
 ## Submission form
 

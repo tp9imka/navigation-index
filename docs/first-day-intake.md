@@ -27,7 +27,7 @@ measured (see [why these defaults](#why-these-defaults)).
 | 0:05-0:10 | Lead | Ask Q4-Q10. "Don't know yet" is an answer: take the default in the card. | 10 answers or defaults |
 | 0:05-0:10 | Platform | Run the two smoke tests in [section 2](#2-if-you-only-get-3-answers) on the team laptop. | Both green or a named failure |
 | 0:10-0:15 | Lead + Nav | Walk [section 3](#3-decision-tree) branch by branch. Circle one path per question. | Stack, driver, sim, first sample |
-| 0:15-0:20 | Lead | Read [section 4](#4-scoring-rule-implications) for the stated scoring. Write ADR-001 ([adr](../templates/adr.md)). Hand over to the [first-three-hours guide](first-three-hours.md) at its 0:25 row. | ADR-001 |
+| 0:15-0:20 | Lead | Read [section 4](#4-scoring-rule-implications) for the stated scoring. Write ADR-001 ([adr](../templates/competition-kit/adr.md)). Hand over to the [first-three-hours guide](first-three-hours.md) at its 0:25 row. | ADR-001 |
 
 ## 1. Questions, in the order to ask
 
@@ -242,7 +242,7 @@ Each leaf names the hub paths to open. Status words come from
   - Log every run: [recording-replay](../samples/recording-replay/) (`ran`, stdlib) writes JSONL / MCAP;
     flight-repo writes one JSONL line per tick. Score real and sim logs the same way with the arena's
     `score_log.py` ([log_format.md](../samples/close-area-arena/log_format.md); synthetic logs only so far).
-  - Safety: [demo-script-close-area](../templates/demo-script-close-area.md) setup list (safety pilot, net, geofence).
+  - Safety: [live-demo-script-close-area](../templates/presenting/live-demo-script-close-area.md) setup list (safety pilot, net, geofence).
 - **Both**
   - Order: arena => SITL => real. One planner, three `Adapter` backends. Real flight never
     debugs planner logic.
@@ -362,8 +362,8 @@ Obstacle sensing:
 
 - **Tags allowed** => AprilTag at A (frame) and B (goal), 2-3 on walls for drift resets (decoder rows 32, 33).
 - **Firmware locked** => everything stays in the companion; PX4-CBF-style in-firmware filtering is off the table, so the filter runs on setpoints.
-- **Few counted runs** => reliability over peak speed; rehearse the [fallback plan](../templates/demo-script-close-area.md#fallback-plan).
-- **Video or deck judged** => [close-area pitch](../templates/pitch/close-area-story.md) and its [kill test gate](../templates/pitch/close-area-story.md#2-kill-test-gate-decide-the-story-at-h24).
+- **Few counted runs** => reliability over peak speed; rehearse the [fallback plan](../templates/presenting/live-demo-script-close-area.md#fallback-plan).
+- **Video or deck judged** => [close-area pitch](../templates/presenting/close-area-story.md) and its [kill test gate](../templates/presenting/close-area-story.md#2-kill-test-gate-decide-the-story-at-hour-24).
 
 ## 4. Scoring-rule implications
 
@@ -383,8 +383,8 @@ These are another event's rules; replace them with Q4's answer.
 | Precision at B or a landing bonus | AprilTag at B, precision landing, final-error metric | Mid-route accuracy | row 32, [3.3](#33-q3-how-b-is-given) |
 | Randomized or moved layouts | Replanning shown live; no hard-coded path | Pre-computed optimal routes | arena families `random`, `u_trap`, `narrow_gap` |
 | Mass factor (IMAV: 1.13x at 3 kg to 2.0x at 0.1 kg) | If we may choose: the lightest airframe (Crazyflie class) | Payload | [02 section 2](research/close-area-nav/02-sims-platforms-competitions.md#2-platform-cheat-table) |
-| Innovation or "real-world implementation" judged | Relocalization after VIO loss (the headline); the range filter and the kill-test result as the honest supporting story; runtime-assurance product story | Polish on the baseline planner | [close-area-relocalize](../samples/close-area-relocalize/README.md), [close-area story H1](../templates/pitch/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails), [path-to-product section 4](path-to-product.md#4-runtime-assurance-ship-the-new-algorithm-next-to-a-trusted-baseline) |
-| Best of N attempts | Peak performance on one good run is fine; still record the backup | Variance | [demo-script-close-area](../templates/demo-script-close-area.md#recording-the-backup) |
+| Innovation or "real-world implementation" judged | Relocalization after VIO loss (the headline); the range filter and the kill-test result as the honest supporting story; runtime-assurance product story | Polish on the baseline planner | [close-area-relocalize](../samples/close-area-relocalize/README.md), [close-area story H1](../templates/presenting/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails), [path-to-product section 4](path-to-product.md#4-runtime-assurance-ship-the-new-algorithm-next-to-a-trusted-baseline) |
+| Best of N attempts | Peak performance on one good run is fine; still record the backup | Variance | [live-demo-script-close-area](../templates/presenting/live-demo-script-close-area.md#recording-the-backup) |
 | All N attempts averaged | Reliability; run the arena on 200 layouts, not 20 | Peak speed | [arena](../samples/close-area-arena/README.md#run) |
 
 Headline kill test, whatever the scoring: 200 layouts with injected VIO jump and bias faults; pass
@@ -395,7 +395,7 @@ of held-out jump runs and reached 0.55 of PX4-CBF's jump reach; a fixed 0.2 m bo
 1.0 % or less on seeds 0-2
 ([Part e](../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
 The pitch switches to H1, relocalization after VIO loss
-([close-area-story section 3](../templates/pitch/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails)).
+([close-area-story section 3](../templates/presenting/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails)).
 
 ## 5. Gaps this tree exposed
 

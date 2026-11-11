@@ -44,11 +44,11 @@ Exit code 0 if at least one planner passes every criterion, 1 otherwise, 2 on a 
 
 The flight loop is bench.run_one's own code object, run with its world, vehicle, sensor and time
 limit swapped in (see fly()). Scored on truth by the arena scorer. Synthetic only.
-Vehicle radius: changes the vehicle, the collision stop and the scoring, and (loop-99) the planners'
-inflation, as the Solver's worker does (site/playground/worker.js radius_override, loop-75b): for each
+Vehicle radius: changes the vehicle, the collision stop and the scoring, and (since 2026-11-10) the planners'
+inflation, as the Solver's worker does (site/playground/worker.js radius_override): for each
 run the RADIUS_CONSTS module constants are set to radius + (shipped value - 0.15 m), APF / VFH+ get the
 radius on the instance, and everything is restored after the run. At 0.15 m nothing is touched.
---shipped-inflation keeps the shipped 0.15 m constants (the pack before loop-99).
+--shipped-inflation keeps the shipped 0.15 m constants (the pack before 2026-11-10).
 """
 from __future__ import annotations
 
@@ -77,8 +77,8 @@ JITTER_MARGIN_M = 0.1
 JITTER_DRAWS = 50
 M32 = 0xFFFFFFFF
 CLEAR_TOL_M = 2e-4             # check-matrix: world JSON rounding (0.1 mm) may move min clearance this much
-# Planner inflation by the run's vehicle radius (loop-99): the same constants as site/playground/worker.js
-# RADIUS_CONSTS (loop-75b). (bench.py global, key in that dict or None, attribute).
+# Planner inflation by the run's vehicle radius: the same constants as site/playground/worker.js
+# RADIUS_CONSTS. (bench.py global, key in that dict or None, attribute).
 RADIUS_DEFAULT_M = 0.15        # close-area-arena run.DEFAULTS vehicle radius, the planners' shipped value
 RADIUS_CONSTS = [
     ("astar_esdf", None, "RADIUS"),
@@ -657,7 +657,7 @@ def fly(planner: str, w, wname: str, sensor_ref, sensor_name: str, vk: dict, t_m
     """bench.run_one's code, run with this world, vehicle, sensor and limit in its globals.
     run_one reads run.DEFAULTS, world_glass.make_any_world / nearest_material, presets.make_sensor,
     max_time(family) and PLANNERS from module globals; those five are swapped, nothing else.
-    inflate (loop-99): the planners inflate by vk["radius"] for this run (radius_override), as the Solver;
+    inflate: the planners inflate by vk["radius"] for this run (radius_override), as the Solver;
     False keeps the shipped 0.15 m constants."""
     import bench
     r = float(vk["radius"]) if inflate else RADIUS_DEFAULT_M
@@ -872,12 +872,12 @@ def main(argv=None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    r = sub.add_parser("run", help="run a pack and judge it")
+    r = sub.add_parser("run", help="run a pack and check it against its criteria")
     r.add_argument("pack")
     r.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     r.add_argument("--out", default=None, help="output stem (default results/pack_<name>)")
     r.add_argument("--shipped-inflation", action="store_true",
-                   help="planners keep their shipped 0.15 m inflation (the pack before loop-99); default: the pack radius")
+                   help="planners keep their shipped 0.15 m inflation (the pack before 2026-11-10); default: the pack radius")
     c = sub.add_parser("check-matrix", help="seed-0 rows of a pack result vs results/matrix_0.json")
     c.add_argument("result")
     a = ap.parse_args(argv)

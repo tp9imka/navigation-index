@@ -6,7 +6,7 @@ specific platform (PX4, ArduPilot, Crazyflie, Tello), go straight to
 filter around this seam, use [../flight-repo/](../flight-repo/README.md).
 
 Planner code calls three things: `pose()`, `ranges()`, `send_setpoint()`. Today they run on
-`MockAdapter` (no simulator). On Day 1 a platform driver implements the same three calls for
+`MockAdapter` (no simulator). Once the platform is known, a platform driver implements the same three calls for
 Crazyflie, Tello, PX4 or ArduPilot, and the planner does not change.
 
 Stdlib Python only (3.12 and 3.14 tested). Nothing here touches a real vehicle or a SITL.
@@ -78,7 +78,7 @@ Status of all four: unrun, written from docs. Each class implements `pose()`, `r
 [frames.md](frames.md). Each one also owns the keep-alive stream (PX4 Offboard, ArduPilot GUIDED,
 Crazyflie and Tello all stop or land without fresh commands), arming and mode changes, and storing
 the pose at A to make it the origin. `import drivers` needs no SDK: each driver imports its SDK in
-`connect()`. On Day 1, open the driver for your platform and do the 3 bench checks in its
+`connect()`. On the first day, open the driver for your platform and do the 3 bench checks in its
 docstring first. The Tello driver refuses to fly until its stick scale constants are set.
 
 ## Limits

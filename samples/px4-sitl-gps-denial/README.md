@@ -10,7 +10,7 @@ ground-truth position for the outage, turns the GPS back on, and returns home. A
 analyzer turns the log into drift numbers: mean and max horizontal error per phase and
 time from GPS loss to 5 m error.
 
-This is the baseline every GPS-denied hackathon project needs: "without our aiding the
+This is the baseline every GPS-denied navigation project needs: "without our aiding the
 vehicle drifts X m in Y s; with it, Z".
 
 ## Repos used
@@ -221,7 +221,7 @@ listener estimator_status_flags     # watch cs_gnss_pos go false
 failure gps ok
 ```
 
-## Extending it in a hackathon
+## Extending it
 
 - Make the outage long and the drift numbers your baseline, then add an aiding source
   and rerun: `samples/vio-to-mavlink-bridge` (vision), `make px4_sitl gz_x500_vision`

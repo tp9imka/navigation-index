@@ -25,7 +25,7 @@ plan frame: bounds [0, 0, w, h] and "a" as given (from_json moves the origin to 
 --fly flies astar_esdf with the known map (run.run_one, truth pose, ideal arena defaults) and
 writes results/room_<name>.json; --preview writes the map and flown path as a PNG.
 <name> is the spec FILE stem (rooms/our_room.json => our_room), or --name. The spec's "name" field
-is not used for file names (loop-99, drill 2026-11 blocker B1: a copied spec kept "hall_8x6" and
+is not used for file names (fixed 2026-11-10, drill 2026-11 blocker B1: a copied spec kept "hall_8x6" and
 overwrote the committed results/room_hall_8x6.json).
 No overwrite of a git-tracked file (git ls-files --error-unmatch) unless --force: the record, the
 preview PNG, and the world JSON when its content would change. Skipped when git is not installed.

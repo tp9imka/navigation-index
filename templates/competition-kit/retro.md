@@ -1,24 +1,24 @@
-# Post-hackathon retro
+# Retro
 
 Within a week, 45 minutes, whole team. Facts first, then opinions. No blame: talk about
 the plan and the tools, not about people.
 
 ## Facts
 
-- Event, date, challenge text (link):
+- Event or project, date, task text (link):
 - What we submitted (commit, video, deck):
-- Result / judges' feedback (quote it):
+- Result / reviewers' feedback (quote it):
 - Final numbers from `runs/results.md`:
-- Time actually spent per block vs the plan (H+0 to H+48 table):
+- Time actually spent per block vs the plan (hours 0-48 table):
 
 ## Timeline check
 
 | Planned exit criterion | Planned hour | Actual hour | Why the gap |
 |---|---|---|---|
-| Walking skeleton on map | H+6 | | |
-| First honest number | H+12 | | |
-| Full demo without manual fixes | H+22 | | |
-| Video recorded | H+36 | | |
+| Walking skeleton on map | Hour 6 | | |
+| First honest number | Hour 12 | | |
+| Full demo without manual fixes | Hour 22 | | |
+| Video recorded | Hour 36 | | |
 
 ## What worked (keep)
 
@@ -31,7 +31,7 @@ the plan and the tools, not about people.
 ## Surprises
 
 - Technical (a library, SITL, data, hardware):
-- Judging (what they actually asked and rewarded):
+- Review (what reviewers actually asked and rewarded):
 
 ## Risk register review
 

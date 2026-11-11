@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pre-hackathon offline cache: datasets, Docker images, pip wheels, git bundles, JS, map tiles.
+"""Offline cache, filled while you still have a network: datasets, Docker images, pip wheels, git bundles, JS, map tiles.
 
   python3 prep.py --dry-run --profile full            # sizes, totals, licenses from the manifest
   python3 prep.py --dry-run --probe                   # also ask hosts for unknown sizes

@@ -385,7 +385,7 @@ def build():
     items.append(dict(id="pip:integration-cards", type="pip", tier="full", license="per package",
                       source=f"Install rows of {len(card_pip_src)} integration cards", requirements=card_pip, vcs=[],
                       size=None, size_complete=False, each=True,
-                      note="unpinned names, fetched one by one; resolve against your Python before the event"))
+                      note="unpinned names, fetched one by one; resolve against your Python while still online"))
 
     images = {}
 
@@ -464,7 +464,7 @@ def build():
                       license="Protomaps basemap: ODbL (OpenStreetMap data), attribution required",
                       source="templates/demo-dashboard/README.md (Offline), docs/integration-cards/protomaps__pmtiles.md",
                       size=None, size_complete=False,
-                      note="override --bbox for the venue; size from `pmtiles extract --dry-run` (prep.py --probe)"))
+                      note="override --bbox for your area; size from `pmtiles extract --dry-run` (prep.py --probe)"))
 
     return dict(version=1, generated_by="templates/offline-kit/build_manifest.py", tiers=list(TIERS),
                 pip_platforms={"linux-amd64": ["manylinux_2_28_x86_64", "manylinux2014_x86_64"],

@@ -234,7 +234,7 @@ the same failure geoloc-license-clean reported for these 2016 frames. A 50 m win
 - **Without place de-duplication a top-10 list from the 8x DB is the same place at several headings.**
   `TileIndex.search_places` keeps the best hit per place.
 
-## Hackathon extensions
+## Extensions
 
 - Feed `out/` DBs to an EKF as a "global fix candidate" generator: VPR top-k + fine-match gate =>
   position measurement with covariance from inliers, as suggested in geoloc-license-clean.

@@ -138,7 +138,7 @@ reached 40 % random, 0 % narrow_gap
 - **Where sampling would pay** (from the literature and lane 01, not measured here): large or
   fine 3D volumes where a grid gets too big, kinodynamic or higher-dimensional state, or a
   continuous map without a grid. For a 20 x 20 m 2.5D area at 0.1 m (40 000 cells), the grid
-  is cheap. If a sampling planner is used on the day, give it a budget big enough for the
+  is cheap. If you fly a sampling planner for real, give it a budget big enough for the
   narrowest gap and check its result, rather than trusting a silent fallback.
 
 ## Limits

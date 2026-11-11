@@ -148,7 +148,7 @@ OK
 NGS sheet's own geodetic values for P731 to 1e-7 deg and 1 cm. The `.pos` parser is tested
 on a synthetic file in the `-e` layout, not on real RTKLIB output.
 
-## Extend it in a hackathon
+## Extend it
 
 1. Fault injection: drop satellites below 30 deg, or add a ramp to one SV's pseudorange in
    the RINEX, and watch SPP vs RTK and RTKLIB's residual output (`-y 2`).

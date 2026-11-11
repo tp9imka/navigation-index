@@ -150,7 +150,7 @@ its "unreachable" exit in 1 of 150 runs with 72 beams (u_trap) and in none with 
 - **What to do on a Crazyflie-like 4-beam drone.** Use APF with the wall-follow escape from the
   reactive sample as the local layer, add a short scan memory (the DWA result says it removes
   about two thirds of the collisions; it was not tried on APF), and do not count on any local
-  planner for U traps or narrow gaps. If the organisers give the map, the known-map A* in the
+  planner for U traps or narrow gaps. If whoever set the task gives you the map, the known-map A* in the
   arena reached 100 % on u_trap. With 72 beams and no map, TangentBug is the best all-round
   pick here: 92 % random, 86 % u_trap, 58 % narrow_gap, 0 % collisions.
 

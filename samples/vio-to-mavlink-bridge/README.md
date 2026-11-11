@@ -173,7 +173,7 @@ then pass the result to `send()` in `bridge.py`. Check first that the VIO really
 publishes ENU/FLU (REP-103). Some estimators publish camera-optical frames
 (z forward, x right, y down) and need one more fixed rotation.
 
-## Extending it in a hackathon
+## Extending it
 
 - Stream Gazebo ground truth through the bridge with added noise and bias to emulate a
   VIO of known quality, then measure how EKF position error grows with that bias.

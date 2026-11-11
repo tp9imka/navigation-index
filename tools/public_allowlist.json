@@ -45,5 +45,11 @@
  {"path": "docs/research/close-area-nav/06-task-phrasing-survey.md", "term": "organiser", "text": "are an organiser forum answer", "reason": "ICUAS 2026 rulebook Q&A: answers from that competition's organisers"},
  {"path": "docs/reports/fact-check-round4.md", "term": "organiser", "text": "aerial-robotics workshop organizers", "reason": "author field of a third-party ICRA 2025 workshop resource"},
  {"path": "docs/competition-playbook.md", "term": "judges", "text": "Navy judges reward working prototypes", "reason": "ONR / NavalX HACKtheMACHINE: what that real competition's judges reward"},
- {"path": "docs/research/close-area-nav/02-sims-platforms-competitions.md", "term": "organiser", "text": "Organisers add textured floor wallpaper", "reason": "IMAV 2026 indoor rulebook: what that real competition's organisers do"}
+ {"path": "docs/research/close-area-nav/02-sims-platforms-competitions.md", "term": "organiser", "text": "Organisers add textured floor wallpaper", "reason": "IMAV 2026 indoor rulebook: what that real competition's organisers do"},
+
+ {"path": "samples/blind-flight-bench/README.md", "term": "organiser", "text": "(the organiser", "reason": "Blind flight (Polyot vslepuyu) 2026 hackathon, a real third-party event: the checkpoint shape its organisers specified"},
+ {"path": "samples/blind-flight-bench/sim.py", "term": "organiser", "text": "(organiser-style)", "reason": "Blind flight (Polyot vslepuyu) 2026 hackathon, a real third-party event: flight family shaped like its organisers' task"},
+ {"path": "samples/close-area-benchmark/results/pack_drill_b2_confirm.json", "term": "loop-NN", "line": 2, "text": "loop-99 confirmation run", "reason": "recorded run output (note field written at run time); editing it would alter a committed result record"},
+ {"path": "samples/close-area-benchmark/results/pack_drill_our_room.json", "term": "loop-NN", "line": 4, "text": "loop-99 re-run of the drill pack", "reason": "recorded run output (pack description copied into the result JSON at run time); editing it would alter a committed result record"},
+ {"path": "samples/close-area-benchmark/results/pack_drill_our_room_after.json", "term": "loop-NN", "line": 22, "text": "loop-99 re-run of the drill pack", "reason": "recorded run output (pack description copied into the result JSON at run time); editing it would alter a committed result record"}
 ]

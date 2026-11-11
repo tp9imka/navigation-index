@@ -33,7 +33,7 @@ button and an offline path in site/playground/README.md "Offline / blocked CDN".
 | 1 | Clone | (agent shell, not the hub) | `git clone` of the local checkout hung past 120 s in the agent's shell; with `< /dev/null` it finished in 54.85 s wall, 0.26 s CPU | Harness issue more than a hub issue. AGENTS.md could say: run long commands with stdin closed or in the background |
 | 2 | First flight | [templates/flight-repo/Makefile](../templates/flight-repo/Makefile), [README](../templates/flight-repo/README.md#brief-to-first-flight) | Copied out of the hub (as the README says to do at the start), `make first-flight` fails in 0.67 s: `ARENA` defaults to `../../samples/close-area-arena`. The failed target first creates a stray venv at `../../samples/close-area-arena/.venv` relative to the copy | Makefile: check `$(ARENA)/requirements.txt` before `uv venv` and print "set ARENA=<hub>/samples/close-area-arena SAFETY=<hub>/samples/close-area-safety-filter". README: show the `ARENA=` / `SAFETY=` form in "Brief to first flight" |
 | 3 | Arena smoke | [first-day-intake.md section 2](first-day-intake.md#2-if-you-only-get-3-answers) | "About 2 s each" for the smoke tests; the first run on a fresh venv took 75.69 s wall (1.78 s CPU), the second 9.06 s | Say "first run on a fresh venv can take 1-4 minutes of waiting" next to the 2 s, as flight-repo's README already budgets 4 minutes |
-| 4 | Relocalization demo | [samples/close-area-relocalize/README.md](../samples/close-area-relocalize/README.md) | The demo command (`run_disambiguate.py --seed 1 --arms single,multi,multi_ig --out .venv/demo-out` plus the run-97 query) is only in [demo-script-close-area.md](../templates/demo-script-close-area.md); the README's top Run block lists `experiment.py`, which is not the headline arm | Put the demo command first in the README's Run block, or link it from AGENTS.md step 4 next to the relocalize sample |
+| 4 | Relocalization demo | [samples/close-area-relocalize/README.md](../samples/close-area-relocalize/README.md) | The demo command (`run_disambiguate.py --seed 1 --arms single,multi,multi_ig --out .venv/demo-out` plus the run-97 query) is only in [live-demo-script-close-area.md](../templates/presenting/live-demo-script-close-area.md); the README's top Run block lists `experiment.py`, which is not the headline arm | Put the demo command first in the README's Run block, or link it from AGENTS.md step 4 next to the relocalize sample |
 | 5 | Intake defaults | [first-day-intake.md](first-day-intake.md#1-questions-in-the-order-to-ask) | Q5 default "no obstacle sensor" plus Q7 default "unknown and moved" is the hard gate in section 3.4. With no answers the defaults lead to a stack the page says not to commit to; no benchmark row covers "no sensor" | Change the Q5 default to the most likely small-drone sensor (for example a 4-beam ToF fan, which the arena's `crazyflie` preset models), or name the gate in the Q5 row |
 | 6 | Showcase | site/showcase.html line 32 (hero lead) | Hero says the story is "a safety filter keeps it safe when the drone is wrong about where it is". The hub's headline is relocalization after VIO loss; the filter headline failed | Rewrite the lead to the relocalization story (the page is hand-written, not generated) |
 | 7 | Playground | [site/playground/README.md](../site/playground/README.md) | First load failed after 122.5 s ("Failed to fetch", 6 of 22 MB) under load; the retry was ready in 6.15 s. Needs cdn.jsdelivr.net; no retry button, no offline path | Add a retry on fetch failure in the worker; state in the README that the playground needs the CDN and fails offline. Test once on the venue's Wi-Fi |
@@ -215,7 +215,7 @@ processes per the README).
 
 The relocalize README's Run section listed `experiment.py` and, further down, `run_disambiguate.py`
 without the demo's `--out` and query line. The demo command lived in
-[demo-script-close-area.md](../templates/demo-script-close-area.md), found with a grep (blocker 4).
+[live-demo-script-close-area.md](../templates/presenting/live-demo-script-close-area.md), found with a grep (blocker 4).
 
 ```sh
 cd samples/close-area-relocalize
@@ -238,7 +238,7 @@ Works. All six table rows are identical to the committed
 `single`, `multi` open, `multi_ig` accepted after 1.7 s at 0.0748 m). Synthetic, seed 1. `git
 status` in the clone stayed clean: `--out .venv/demo-out` keeps `results/` untouched.
 
-#### 8. Three hard-question answers (1 hop: [judge-drill-close-area.md](../templates/pitch/judge-drill-close-area.md))
+#### 8. Three hard-question answers (1 hop: [hard-questions.md](../templates/presenting/hard-questions.md))
 
 Picked the three questions most likely for this task, where the platform is unknown. Numbers
 are from the run in step 7 where marked "re-run", else from the question page and its sources.

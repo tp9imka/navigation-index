@@ -1,4 +1,4 @@
-# loop-59 hub-layout runs, 2026-11-09 17:13, synthetic (close-area-arena), arm64, CPython 3.11.15 numpy 2.4.6 scipy 1.17.1
+# hub-layout runs, 2026-11-09 17:13, synthetic (close-area-arena), arm64, CPython 3.11.15 numpy 2.4.6 scipy 1.17.1
 $ make first-flight
 .venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
 score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.165 t_s=21.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=423 intervened=136 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:402 health=ok:423 log=results/first_flight.jsonl

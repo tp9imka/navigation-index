@@ -1,12 +1,12 @@
-# Judging self-assessment
+# Self-assessment
 
-Score yourself at H+22 and H+40. Replace these criteria with the event's published rubric
+Score yourself at hour 22 and hour 40. Replace these criteria with the published rubric
 if there is one; keep the evidence column either way. Criteria derived from
-[playbook "What judges reward"](../docs/competition-playbook.md#1-what-reviewers-look-for).
+[playbook "What reviewers look for"](../../docs/competition-playbook.md#1-what-reviewers-look-for).
 
-Score 0-3: 0 = absent, 1 = claimed only, 2 = shown, 3 = shown and measured with evidence a judge can open.
+Score 0-3: 0 = absent, 1 = claimed only, 2 = shown, 3 = shown and measured with evidence a reviewer can open.
 
-| # | Criterion | Question a judge will ask | Evidence (file, run, video timestamp) | H+22 | H+40 | Fix before pitch |
+| # | Criterion | Question a reviewer will ask | Evidence (file, run, video timestamp) | Hour 22 | Hour 40 | Fix before pitch |
 |---|---|---|---|---|---|---|
 | 1 | Working prototype on a realistic system | Is it running on SITL, recorded data or hardware, or only synthetic? | | | | |
 | 2 | Measured result with ground truth | What is the number, against what truth, over how many runs? | `runs/results.md` | | | |
@@ -22,17 +22,17 @@ Score 0-3: 0 = absent, 1 = claimed only, 2 = shown, 3 = shown and measured with 
 | 12 | Sim-to-real honesty | What did you not verify? What breaks it? | README "What we did not verify" | | | |
 | 13 | Compliance | Signals, transmission, export, licence, scope? | submission checklist | | | |
 | 14 | Dual-use | Who else uses this (aviation, maritime, timing)? | slide 8 | | | |
-| 15 | Reproducibility | Can a judge rerun it from README on a clean machine? | `make test eval` | | | |
+| 15 | Reproducibility | Can a reviewer rerun it from README on a clean machine? | `make test eval` | | | |
 
-Total H+22: __ / 45. Total H+40: __ / 45.
+Total hour 22: __ / 45. Total hour 40: __ / 45.
 
-## Weakest three (H+22)
+## Weakest three (hour 22)
 
-1. TODO => action, owner, by H+__
+1. TODO => action, owner, by hour __
 2.
 3.
 
-## Claims audit (H+40)
+## Claims audit (hour 40)
 
 Every claim on a slide or in README:
 

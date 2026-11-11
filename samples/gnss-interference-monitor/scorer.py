@@ -17,7 +17,7 @@ Four kinds of detector:
 Any alert latches the alarm (`Assessment.alarm`); it clears only after CLEAR_EPOCHS
 consecutive epochs that pass every clear condition, or on `acknowledge()`.
 
-Thresholds are starting points for a hackathon, not certified detection limits: tune them on
+Thresholds are starting points for a prototype, not certified detection limits: tune them on
 recordings from your own antenna and platform.
 """
 

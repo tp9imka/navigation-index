@@ -2,7 +2,7 @@
 
 <!-- about: repo:ardupilot/ardupilot, repo:ardupilot/pymavlink, repo:maplibre/maplibre-gl-js, repo:cvg/lightglue, repo:rasterio/rasterio -->
 
-The minute-one demo for judges. An ArduCopter SITL flies an AUTO survey; at t = 25 s its GPS
+The minute-one demo for reviewers. An ArduCopter SITL flies an AUTO survey; at t = 25 s its GPS
 starts to drift east. A companion process checks GNSS against an independent dead-reckoning +
 visual-geolocation reference, raises the alarm, and switches EKF3 to a non-GPS source set. The
 contrast run has the same attack and no reaction: the copter believes it is on the survey line
@@ -391,7 +391,7 @@ circle around the flight area, not an emitter footprint.
   `samples/ardupilot-ekf3-source-switch`), `ODOMETRY` instead of `VISION_POSITION_ESTIMATE`, the
   LOITER / RTL response, live mode inside the Monte Carlo (too slow on CPU).
 
-## Extending it in a hackathon
+## Extending it
 
 - Swap the VIO oracle for a real VIO (`samples/vio-to-mavlink-bridge`) and feed its velocity to
   the monitors; it is the weakest assumption here.

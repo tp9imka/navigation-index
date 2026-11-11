@@ -138,7 +138,7 @@ a cold start over a whole region, tile the map and retrieve candidates first:
 
 Then run `geolocalize.py` on each top-k tile and keep the one with most inliers.
 
-## Hackathon extensions
+## Extensions
 
 - Fuse fixes into an INS/EKF as position measurements, gated on inlier count. Feed the
   EKF prediction back as `--prior` so each crop stays small.

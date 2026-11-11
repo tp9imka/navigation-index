@@ -9,7 +9,7 @@ file when applying.
 Add to the "Start from" cell of row 31 (drone A=>B through obstacles in a close area):
 
 [close-area-benchmark](./README.md) (every hub planner on 8 room
-types x 2 range sensors, one table; pick the row that matches the venue)
+types x 2 range sensors, one table; pick the row that matches your room)
 
 Add to row 31's "Main risk": without a prior map and with only 4 horizontal beams (Crazyflie
 Multi-ranger), the unknown-map A* reaches 35 % in offices, 0 % in warehouses and 5 % in a glass

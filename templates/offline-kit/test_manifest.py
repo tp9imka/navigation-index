@@ -186,10 +186,10 @@ class CloseAreaBundleTests(unittest.TestCase):
         self.assertTrue(os.path.isfile(world))
 
     def test_browser_pointer_and_guarded_venue_kit(self):
-        self.assertTrue(os.path.isfile(os.path.join(bm.ROOT, "tools", "venue_kit.py")))
-        self.assertEqual(self.d["browser"]["verify"], "python3 tools/venue_kit.py verify")
+        self.assertTrue(os.path.isfile(os.path.join(bm.ROOT, "tools", "offline_browser_kit.py")))
+        self.assertEqual(self.d["browser"]["verify"], "python3 tools/offline_browser_kit.py verify")
         self.assertTrue(os.path.isfile(os.path.join(bm.ROOT, self.d["browser"]["doc"].split("#")[0])))
-        step = self.steps["venue-kit-verify"]
+        step = self.steps["offline-browser-kit-verify"]
         self.assertEqual(step["skip_unless_exists"], "{repo}/site/playground/pyodide-local")
         import bundle
         commands = []

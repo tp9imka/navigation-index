@@ -1,6 +1,6 @@
 """Rolling-submap relocalization for sparse range sensors (adds to relocalize.py, does not edit it).
 
-Problem (README loop-54, loop-67): a Crazyflie-like Multi-ranger gives 4 beams per scan. One scan
+Problem (README sections "Relocalization with a 4-beam sensor" and "AF-MCL baseline"): a Crazyflie-like Multi-ranger gives 4 beams per scan. One scan
 never reaches ScanMatcher's MIN_RETURNS = 10. The spin-stack arm (sparse.py) hovers and yaws to
 collect returns after the loss, and reached 36-64 %. AF-MCL (mcl.py) failed too.
 

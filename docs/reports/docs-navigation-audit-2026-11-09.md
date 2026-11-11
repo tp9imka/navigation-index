@@ -185,8 +185,8 @@ Mentions of close-area / research/ / drone-adapter / close-area-arena per file (
 
 The llms.txt "Entry points" list has 14 items and 0 close-area items. The brief entry page
 section 4 "working set" (13 rows) has no close-area-arena and no drone-adapter. templates/README.md
-lists neither [demo-script-close-area.md](../../templates/demo-script-close-area.md) nor
-[pitch/close-area-story.md](../../templates/pitch/close-area-story.md).
+lists neither [live-demo-script-close-area.md](../../templates/presenting/live-demo-script-close-area.md) nor
+[presenting/close-area-story.md](../../templates/presenting/close-area-story.md).
 
 ### 2.8 Tooling gaps found on the way
 

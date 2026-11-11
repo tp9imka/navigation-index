@@ -85,7 +85,7 @@ NEW = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite", "informed_rrt_star
 # loop-75b: planners also checked against bench.py's factory (E) and matrix_0.json (F), besides A and B
 BENCH_TOO = ("astar_unknown",)
 # loop-63: VIO loss recovery arms (world, planner, preset, fault, filter, seed, recovery). The demo world is
-# world.make_world("random", 1, 97) through world_json (templates/demo-script-close-area.md H1), saved by this script.
+# world.make_world("random", 1, 97) through world_json (templates/presenting/live-demo-script-close-area.md H1), saved by this script.
 DEMO = "reloc_demo_random_1_97"
 RELOC_CASES = [
     (DEMO, "astar_known", "ideal", "jump", "none", 1, "single"),

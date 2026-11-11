@@ -10,7 +10,7 @@ and where it breaks:
 - an EKF that blindly trusts GNSS follows a spoofer that walks the position off slowly;
 - a chi-square innovation gate catches a fast walk-off but not a slow one.
 
-The last point is the one to take into a hackathon pitch: a gate is a necessary layer,
+The last point is the one to take into a talk or review: a gate is a necessary layer,
 not a spoofing detector on its own.
 
 ## What it simulates
@@ -114,7 +114,7 @@ empty). Negative control: with R inflated 100x in the filterpy path only, the no
 row moved from 1.9 / 5.7 / 1.8 to 2.1 / 5.9 / 2.0, so the comparison does exercise
 filterpy. This rules out an algebra slip in `matlite.py`; it does not validate the model.
 
-## Extend it in a hackathon
+## Extend it
 
 1. Swap the trajectory and IMU for `gnss-ins-sim` output: `sim.run(1)` then
    `sim.results('./data/')` writes the reference and simulated sensor data as files.

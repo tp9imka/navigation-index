@@ -1,4 +1,4 @@
-"""loop-94: depth_cam_87 rows (matrix_depth_0.json) next to the ideal and crazyflie rows of
+"""depth_cam_87 rows (matrix_depth_0.json) next to the ideal and crazyflie rows of
 matrix_0.json on the same layouts (indices 0-5, seed 0). Writes matrix_depth_0.compare.md.
 Reads JSON only, flies nothing. Run from samples/close-area-benchmark:
   python3 results/matrix_depth_0.compare.py

@@ -6,8 +6,8 @@ incremental replanning (D* Lite) is worth it over re-running A* every replan.
 D* Lite on the same inflated grid and cost model as the arena's
 [astar_esdf](../close-area-arena/README.md) unknown-map mode, reusing its follower. Only cells that
 changed since the last replan are updated. All inputs are synthetic (simulated layouts, vehicle and
-range sensor). The job that built this hit its time limit before writing a README; the loop driver
-wrote this page from the files in [results/](results/).
+range sensor). The run that built this hit its time limit before writing a README; this page was written
+afterwards from the files in [results/](results/).
 
 ## Run
 

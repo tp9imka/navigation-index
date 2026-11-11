@@ -32,11 +32,11 @@ cuts scope, not the next block.
 | 0:10-0:20 | Nav, Platform, Viz | For each candidate row: open its samples in [samples/README.md](../samples/README.md) (status, deps, first command) and its numbers in [evidence-matrix.md](evidence-matrix.md); then the linked integration and dataset cards; MCP queries with the row's keywords ([section 5](#5-find-components-fast-with-the-hub-via-mcp)). | One stack and one starting sample per candidate |
 | 0:20-0:25 | Lead | Send whoever set the task the open questions (data provided? RF allowed? hardware on site? scoring weights? submission format?). | Questions sent |
 | 0:25-0:40 | All | Score the 3 candidates independently with the rubric ([section 2](#2-pick-the-idea-scoring-rubric)), then compare. Discuss only the criteria where scores differ by 2 or more. | Scores table |
-| 0:40-0:50 | Lead | Decide idea + fallback. Name the one metric. Write the five-line demo script ([demo-script](../templates/demo-script.md)). Record the decision in ADR-001 ([adr](../templates/adr.md)). | ADR-001, demo script v0 |
+| 0:40-0:50 | Lead | Decide idea + fallback. Name the one metric. Write the five-line demo script ([live-demo-script](../templates/presenting/live-demo-script.md)). Record the decision in ADR-001 ([adr](../templates/competition-kit/adr.md)). | ADR-001, demo script v0 |
 | 0:50-1:00 | Lead | Assign roles and stage owners ([section 3](#3-assign-roles)). | Roles table filled |
 | 1:00-1:15 | Platform | Bootstrap the repo from the template ([section 4](#4-bootstrap-from-templatesproject-repo)); push; everyone clones and runs `make test eval`. | Team repo green |
 | 1:00-1:15 | Viz | Start the TAK side: GoATAK or OpenTAKServer locally; point `make demo` CoT at it. | Synthetic track visible on a map |
-| 1:00-1:15 | Pitch | Threat model v0 ([threat-model](../templates/threat-model.md)), risk register v0 ([risk-register](../templates/risk-register.md)). | Two files committed |
+| 1:00-1:15 | Pitch | Threat model v0 ([threat-model](../templates/competition-kit/threat-model.md)), risk register v0 ([risk-register](../templates/competition-kit/risk-register.md)). | Two files committed |
 | 1:15-1:45 | Platform | Start the SITL or load the dataset subset picked in [section 6](#6-which-sitl-or-dataset-to-start). | Raw data or telemetry flowing |
 | 1:15-1:45 | Nav | Read the 2-3 integration cards for the chosen core; write the real `PoseSource` adapter interface against the template's `Epoch`. | Adapter stub + test |
 | 1:15-1:45 | Viz | Map the metric and the integrity state onto the operator view (colour, `ce`/`le`, alert text). | Mock operator view |
@@ -54,7 +54,7 @@ Same clock, different inputs. Sheet: [close-area-a-to-b](cheatsheets/close-area-
 | 0:10-0:20 | Lead | Ask Q1-Q10 of the [first-day intake](first-day-intake.md#1-questions-in-the-order-to-ask) (drone + SDK, sim or real, how B is given, scoring) | Intake card |
 | 0:10-0:20 | Platform | Run the two smoke tests in [intake section 2](first-day-intake.md#2-if-you-only-get-3-answers) (drone-adapter mock, arena straight baseline) | Both green or a named failure |
 | 0:20-0:25 | Lead + Nav | Pick the sim and the driver from the intake tables: arena for planner work, [sitl-docker](../samples/sitl-docker/) or the sim provided with the task for credibility, one [drone-adapter driver](../templates/drone-adapter/drivers/README.md) (unrun stubs) | Sim + driver in ADR-001 |
-| 0:25-0:50 | All | Rubric ([section 2](#2-pick-the-idea-scoring-rubric)): candidates are rows 31, 32, 33 and the headline from the [synthesis](research/close-area-nav/README.md#recommended-direction). A `ran` arena counts as "half of it" for the skeleton criterion | ADR-001, demo script from [demo-script-close-area](../templates/demo-script-close-area.md) |
+| 0:25-0:50 | All | Rubric ([section 2](#2-pick-the-idea-scoring-rubric)): candidates are rows 31, 32, 33 and the headline from the [synthesis](research/close-area-nav/README.md#recommended-direction). A `ran` arena counts as "half of it" for the skeleton criterion | ADR-001, demo script from [live-demo-script-close-area](../templates/presenting/live-demo-script-close-area.md) |
 | 1:00-1:15 | Platform | Repo from [flight-repo](../templates/flight-repo/README.md) instead of project-repo; `make test sim` | Team repo green |
 | 1:15-1:45 | Nav | Planner in the arena: `astar_esdf` with a map, APF with escape on sparse ranges ([which planner first](cheatsheets/close-area-a-to-b.md#3-which-planner-first)) | Arena reached % on 20 layouts |
 | 1:15-1:45 | Platform | Driver bench checks from the drivers README, or SITL up | Setpoint moves the vehicle the right way |
@@ -127,7 +127,7 @@ natural - it is the hardest thing for other teams to copy in 48h.
 
 ## 3. Assign roles
 
-From [team roles and 48h plan](../templates/team-roles-and-48h-plan.md). One owner per
+From [team roles and 48h plan](../templates/competition-kit/team-roles-and-48h-plan.md). One owner per
 template stage; interface changes need an ADR.
 
 | Role | Owns in the template | First task at hour 1 |
@@ -259,7 +259,7 @@ Go if all of these are true; otherwise switch to the fallback now, while it is c
 ## Browser tools offline
 
 - The venue network may block cdn.jsdelivr.net; then the playground and the Solver cannot load Pyodide.
-- Before the event, with network: `python3 tools/venue_kit.py prepare` (vendors Pyodide 314.0.7 + numpy + scipy into `site/playground/pyodide-local/`, checks sha256).
-- Then `python3 tools/venue_kit.py verify`: headless Chrome with the CDN blocked runs one playground run and one Solver Quick sweep, PASS or FAIL.
-- `python3 tools/venue_kit.py bundle` writes `dist/venue-kit.zip`; on any laptop: unzip, `python3 serve.py`, open http://localhost:8000/site/playground/.
+- Before the event, with network: `python3 tools/offline_browser_kit.py prepare` (vendors Pyodide 314.0.7 + numpy + scipy into `site/playground/pyodide-local/`, checks sha256).
+- Then `python3 tools/offline_browser_kit.py verify`: headless Chrome with the CDN blocked runs one playground run and one Solver Quick sweep, PASS or FAIL.
+- `python3 tools/offline_browser_kit.py bundle` writes `dist/offline-browser-kit.zip`; on any laptop: unzip, `python3 serve.py`, open http://localhost:8000/site/playground/.
 - Details: [site/playground/README.md](../site/playground/README.md#offline--blocked-cdn) and the `browser` row in [templates/offline-kit](../templates/offline-kit/README.md).

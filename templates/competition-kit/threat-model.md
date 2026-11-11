@@ -1,9 +1,9 @@
 # Threat model: TODO project name
 
-Fill at H+0 to H+2, freeze at H+14. Every "not mitigated" row is a line on the limits slide.
-Background: [playbook 2.1](../docs/competition-playbook.md#21-threat-model-gnss-denial-and-deception),
-[NISTIR 8323](../catalog/resources/nist-ir-8323-pnt-profile.md) (GNSS as untrusted input),
-[DHS Resilient PNT Conformance Framework](../catalog/resources/dhs-resilient-pnt-conformance-framework.md).
+Fill at hours 0-2, freeze at hour 14. Every "not mitigated" row is a line on the limits slide.
+Background: [playbook 2.1](../../docs/competition-playbook.md#21-threat-model-gnss-denial-and-deception),
+[NISTIR 8323](../../catalog/resources/nist-ir-8323-pnt-profile.md) (GNSS as untrusted input),
+[DHS Resilient PNT Conformance Framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md).
 
 ## 1. System under consideration
 
@@ -44,7 +44,7 @@ Mark each row: M = mitigated, D = detected only, N = not addressed, X = out of s
 
 ## 4. Assumptions
 
-State them so judges can attack them, not discover them.
+State them so reviewers can attack them, not discover them.
 
 - A1: First fix at start-up is trusted (true in the shipped skeleton: `DeadReckoningFilter.predict`).
 - A2: IMU / odometry is not attacked and its bias is bounded by TODO m/s.
@@ -67,4 +67,4 @@ State them so judges can attack them, not discover them.
 | T3 | Synthetic drag-off 1.5 m/s, seed 7 | `runs/spoof.jsonl` | from `make eval`, not retyped |
 
 Untested rows say "not tested". Real-signal tests use cabled or shielded setups only
-([export control and ethics](../docs/export-control-and-ethics.md#3-gnss-signal-simulation-and-rf-transmission)).
+([export control and ethics](../../docs/export-control-and-ethics.md#3-gnss-signal-simulation-and-rf-transmission)).

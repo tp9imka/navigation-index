@@ -227,7 +227,7 @@ the system had already declared itself unusable.
   but only because the PL grows while GNSS and vgeo disagree. Probation needs the spoof
   offset to outgrow the dead-reckoning bound within 45 s; slower spoofers win that race.
 
-## Extend it in a hackathon
+## Extend it
 
 1. Replace the synthetic vgeo fixes with real matcher output from
    [samples/visual-geolocalization-lightglue](../visual-geolocalization-lightglue/) and

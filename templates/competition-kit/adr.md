@@ -1,7 +1,7 @@
 # ADR-NNNN: TODO decision title
 
 - Status: proposed | accepted | superseded by ADR-NNNN
-- Date / hour: TODO (e.g. H+5)
+- Date / hour: TODO (e.g. hour 5)
 - Deciders: TODO
 - Undo cost: TODO hours
 
@@ -9,7 +9,7 @@ Write one when a choice costs more than an hour to undo. Five minutes, not fifty
 
 ## Context
 
-What forces the decision. Constraints: time left, hardware on the table, challenge text, data
+What forces the decision. Constraints: time left, hardware on the table, task text, data
 available. Link the hub record you looked at (`repo:...`, `res:...`).
 
 ## Options
@@ -32,4 +32,4 @@ We pick TODO because TODO.
 
 ## Revisit when
 
-TODO trigger (e.g. "if ATE on the dataset is above 20 m at H+12, switch to option B").
+TODO trigger (e.g. "if ATE on the dataset is above 20 m at hour 12, switch to option B").

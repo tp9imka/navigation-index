@@ -136,7 +136,7 @@ as passable with a penalty. This is the planner the safety filters sit on.
 
 Source: [random](results/astar_esdf_random_0.md), [u_trap](results/astar_esdf_u_trap_0.md),
 [narrow_gap](results/astar_esdf_narrow_gap_0.md). Tuned on seed-0 layouts 0-9, so seed 0 is not
-held out. A held-out spot check by the loop driver (seed 3, 10 u_trap layouts) gave the same:
+held out. A separate held-out spot check (seed 3, 10 u_trap layouts) gave the same:
 straight 0 %, known 100 %, unknown 100 %.
 
 - Unknown-map "stuck" runs on narrow_gap are loops, not stops: the planner follows an unseen
@@ -337,7 +337,7 @@ writes `results/room_<name>.json` and a PNG of map and path.
 `"name"` field is not used for file names. Neither CLI overwrites a git-tracked file without `--force`
 (check: `git ls-files --error-unmatch`, skipped when git is not installed): the record, the preview
 PNG, and the world JSON when its content would change. On a refusal they exit 2 and write nothing.
-Before loop-99 the name came from the spec's `"name"`, so a copied example spec silently overwrote the
+Before 2026-11-10 the name came from the spec's `"name"`, so a copied example spec silently overwrote the
 committed `results/room_hall_8x6.json` (drill 2026-11, blocker B1).
 
 ```sh
@@ -354,7 +354,7 @@ uv pip install --python .venv -r requirements-image.txt
     --a-m 0.8 0.8 --b-m 7.2 1.0 -o rooms/sketch_hall.world.json --preview results/room_sketch_hall.png --force
 ```
 
-Checked (loop-99, synthetic): with a copy `rooms/our_room.json` that still says `"name": "hall_8x6"`,
+Checked (2026-11-10, synthetic): with a copy `rooms/our_room.json` that still says `"name": "hall_8x6"`,
 `world_from_room.py rooms/our_room.json --preview results/room_our_room.png` exits 0, prints a note
 about the name, writes `results/room_our_room.json` and the score line "astar_known on our_room:
 reached, time to goal 23.98 s" (the same run as the committed [room_hall_8x6.json](results/room_hall_8x6.json)), and leaves `results/room_hall_8x6.json` untouched. The two example

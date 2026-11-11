@@ -1,6 +1,6 @@
-# Prediction arms for close-area-moving-obstacles (loop-81): proposed wiring, text only
+# Prediction arms for close-area-moving-obstacles (2026-11-10): proposed wiring, text only
 
-The driver applies these. This job added only `predict.py`, `planners_st.py`, `vo.py`,
+A maintainer applies these. The change that built the prediction arms added only `predict.py`, `planners_st.py`, `vo.py`,
 `run_predict.py`, `results/predict_*` and this file; no existing file was edited. Links are
 relative to this folder (samples/close-area-moving-obstacles/).
 

@@ -18,7 +18,7 @@ Rungs (base = world.make_world("random", seed, index), the layout the team was g
               truth trace the known-map A* flies on the base layout with the truth pose, so the
               truth arm never hits them by construction (a selection, stated in the results)
   d_shift01   every obstacle (not the walls) moved 0.1 m in its own random direction
-  d_shift02   same, 0.2 m ("furniture moved between runs", Day-1 intake Q7 default)
+  d_shift02   same, 0.2 m ("furniture moved between runs", first-day intake Q7 default)
   e_selfmap   built in run_stalemap.py: map = log-odds grid of the unknown-map A* after an
               outbound A => B leg on the VIO-like estimator (no fault, dark zones on); see
               selfmap_grids() and shift_world()

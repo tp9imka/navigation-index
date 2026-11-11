@@ -4,7 +4,7 @@ make(known_map=True)  => plans on the arena's prior 0.1 m OccGrid (upper bound, 
 make(known_map=False) => builds its own log-odds grid from RangeScan hits only (unknown / free /
                          occupied, free space ray-traced) and treats unknown cells as traversable
                          with a cost penalty. A beam the sensor flags dropped adds nothing
-                         (loop-88, SKIP_DROPPED_BEAMS); a beam with no return is traced free.
+                         (SKIP_DROPPED_BEAMS); a beam with no return is traced free.
 
 Every replan (REPLAN_PERIOD_S, plus at once when a newly seen obstacle touches the current
 path):
@@ -69,10 +69,10 @@ LO_HIT, LO_MISS = 0.9, 0.4    # log-odds increment for a hit, decrement for a pa
 LO_MIN, LO_MAX = -2.0, 3.5    # log-odds clamp
 LO_OCC, LO_FREE = 0.5, -0.3   # occupied above, free below, unknown between
 SKIP_DROPPED_BEAMS = False    # True: a beam the sensor flags dropped (scan.dropped) adds nothing to the map.
-                              # Off until the benchmark is regenerated with it (loop-88c), so the published
+                              # Off until the benchmark is regenerated with it, so the published
                               # numbers match the code; False traces a dropped beam free to max_range.
 NO_RETURN_FREE_TO_MAX_RANGE = True   # a measured beam with no return clears free space out to max_range
-                                     # (False = option A of loop-85: such a beam adds nothing either)
+                                     # (False = option A of the dropout-fix study: such a beam adds nothing either)
 NO_TRACE_REACH = -1.0         # m, free-space reach of a beam that adds nothing: below every sample (r >= 0)
 
 SQRT2 = math.sqrt(2.0)

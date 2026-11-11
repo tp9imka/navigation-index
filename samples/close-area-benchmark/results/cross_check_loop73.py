@@ -1,4 +1,4 @@
-"""loop-73 checks for the 7 rows added to matrix_0 by `bench.py --add-to matrix_0` (stdlib only).
+"""Checks for the 7 rows added to matrix_0 by `bench.py --add-to matrix_0` (stdlib only).
 
     python3 samples/close-area-benchmark/results/cross_check_loop73.py     # from the repo root, < 2 s
 
@@ -53,7 +53,7 @@ def main():
                 diffs.append(f"{p} {r['preset']} {r['family']} #{r['index']}")
         rows += [(path, p, pr, f"{c[0]}/{c[1]}") for (p, pr), c in per.items()]
     md = ["`python3 samples/close-area-benchmark/results/cross_check_loop73.py`. Input: synthetic. Checks for the 7 rows "
-          "added by `bench.py --add-to matrix_0` in loop-73.", "",
+          "added by `bench.py --add-to matrix_0` on 2026-11-10.", "",
           f"1. Older rows unchanged vs the committed matrix_0.json (git HEAD): {len(old)} runs "
           f"{'identical' if same_runs else 'DIFFER'}, summaries {'identical' if same_summ else 'DIFFER'}.", "",
           "2. Matrix rows vs the source sample's own run (same family, preset, layout index, seed 0), identical in "

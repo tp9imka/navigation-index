@@ -109,7 +109,7 @@ Reading:
 - **A nominal is worth more than any search rule.** With an ideal sensor, every arm given a
   nominal within 2 m found B in 88.3-100 % of runs, about as fast as the oracle (median time to
   B 21.82-28.96 s vs 22.8 s). With B unknown the best arm, `frontier`, found it in 43.3 % [31.6, 55.9]
-  within 180 s. Ask the organisers for a nominal B, even a rough one.
+  within 180 s. Ask whoever set the task for a nominal B, even a rough one.
 - **Frontier exploration finishes the map, not the search.** The 6 m range sensor maps the
   room faster than a 2 m detector sweeps it. In the ideal `frontier` runs that missed B, the
   map was complete: median coverage 1.03 in the 8 runs that ended hovering (a rerun confirmed

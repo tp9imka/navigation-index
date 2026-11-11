@@ -1,11 +1,11 @@
-# Pitch deck outline
+# Deck outline
 
 9 slides, 3 minutes plus Q&A. Each slide maps to a row in
-[playbook "What judges reward"](../docs/competition-playbook.md#1-what-reviewers-look-for). The
+[playbook "What reviewers look for"](../../docs/competition-playbook.md#1-what-reviewers-look-for). The
 common thread there: a working, measured, honest prototype on a realistic scenario beats a
 clever slide.
 
-| # | Slide | Content | Judges reward (playbook) | Time |
+| # | Slide | Content | Reviewers look for (playbook) | Time |
 |---|---|---|---|---|
 | 1 | Threat | One sentence, one real public incident source, one map or number with its caveat | Skepticism toward unverified claims | 15 s |
 | 2 | User and platform | Who, on what vehicle, under what constraints (SWaP, comms, operator) | Rapid field relevance, frontline users | 15 s |
@@ -23,8 +23,8 @@ clever slide.
 - Every number on a slide is in `runs/results.md` and reproducible with `make eval`.
 - Label synthetic and SITL results as such on the slide itself, not only in the talk.
 - Put uncertainty on the map screenshot, not just a dot.
-- Cite incident sources from the hub (e.g. [EASA SIB 2022-02](../catalog/resources/easa-sib-2022-02-gnss-outages.md),
-  [OPSGROUP 2024](../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md)) with their caveat.
+- Cite incident sources from the hub (e.g. [EASA SIB 2022-02](../../catalog/resources/easa-sib-2022-02-gnss-outages.md),
+  [OPSGROUP 2024](../../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md)) with their caveat.
 
 ## Backup slides (for Q&A only)
 
@@ -33,7 +33,7 @@ clever slide.
 - Per-seed / per-run results.
 - Hardware bill of materials (cost class) and power draw, if measured; "not measured" otherwise.
 
-## Judge questions to rehearse (from the playbook)
+## Reviewer questions to rehearse (from the playbook)
 
 - How is it tested?
 - What happens when your second sensor fails too?

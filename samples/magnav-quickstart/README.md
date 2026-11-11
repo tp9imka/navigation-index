@@ -67,7 +67,7 @@ water and at night, unlike vision.
   script itself 43 s once everything was cached.
 - The data is under a USAF Data Sharing Agreement: non-profit research, education, or
   US government purposes only. Read `readmes/DATA_SHARING_AGREEMENT.md` before using it
-  in a commercial hackathon entry.
+  in a commercial project or competition entry.
 
 ## Run (Docker, as verified)
 
@@ -156,7 +156,7 @@ How to read it:
 - The filter still used the Tolles-Lawson signal (`mag_1_c`); swapping in `mag_1_uc`
   is a one-line change worth trying.
 
-## Hackathon extensions
+## Extensions
 
 - Swap `mag_1_uc` for `mag_4_uc` or `mag_5_uc` (in-cabin sensors) and watch compensation
   and navigation degrade; that gap is the realistic installation problem.
@@ -175,7 +175,7 @@ How to read it:
 - Artifact hash mismatch on download: the MagNav.jl README says to rename the folder in
   `~/.julia/artifacts` to the `git-tree-sha1` from `Artifacts.toml`.
 - First run is slow (package precompilation plus artifact downloads); do it before the
-  hackathon clock starts.
+  clock starts.
 - **FFTA 0.3.x breaks precompilation** (seen 2026-11-06 with a fresh resolve):
   `MethodError: plan_rfft(::Matrix{Float64}, ::Int64) is ambiguous` between FFTA 0.3.2
   and FFTW, raised while precompiling GlobalSensitivity (pulled in through

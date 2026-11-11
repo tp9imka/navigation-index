@@ -1,4 +1,4 @@
-# Drill B2: Solver vs scenario pack on the drill room (loop-99)
+# Drill B2: Solver vs scenario pack on the drill room (2026-11-10)
 
 Input: synthetic (2.5D point mass, simulated depth_cam_87, truth pose, scored on truth). Not a flight result.
 World docs/cold-start-drill/our_room.world.json, vehicle radius 0.2 m, v_max 1.5 m/s, a_max 3, tau 0.15, seeds 0-4 with the Solver's jittered A and B.

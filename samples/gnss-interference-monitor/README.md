@@ -438,7 +438,7 @@ python3 adsb_area_map.py snaps/*.json --cell-deg 0.5
 A single station only maps aircraft within its own radio horizon (a few hundred km at
 cruise altitude, less in practice). Aggregator feeds cover more.
 
-## Extend it in a hackathon
+## Extend it
 
 1. Write a small adapter from Android GNSS Logger `Raw` rows (GNSS-Spoofing-Dataset) to
    `Epoch` (C/N0 per SV from `Cn0DbHz`, clock from `FullBiasNanos`/`BiasNanos`), replay the

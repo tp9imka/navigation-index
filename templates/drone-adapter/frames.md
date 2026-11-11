@@ -3,7 +3,7 @@
 The planner always works in local **ENU** (x east, y north, z up, origin at point A) with body
 **FLU** (x forward, y left, z up), yaw in rad CCW from +x. Each driver converts at its own
 boundary with the helpers in `adapter.py`. Nothing here was flown or run against an SDK; it is
-read from the sources listed at the bottom. "Not confirmed" means check it on the bench on Day 1.
+read from the sources listed at the bottom. "Not confirmed" means check it on the bench on the first day.
 
 ## Summary
 
@@ -70,7 +70,7 @@ read from the sources listed at the bottom. "Not confirmed" means check it on th
 - **What "ENU-like" means here.** The CF global frame matches our ENU axes only if the positioning
   system was calibrated with X east, or if the drone takes off at A facing +x of our frame. Otherwise
   the driver applies one fixed yaw rotation (`world_to_body` / `body_to_world` with the offset angle)
-  at the boundary. Check this on Day 1 by commanding +x and watching which way it moves.
+  at the boundary. Check this on the first day by commanding +x and watching which way it moves.
 - **Command.** `cflib` `Commander.send_velocity_world_setpoint(vx, vy, vz, yawrate)`: velocities in
   m/s in the world frame, yaw rate in deg/s. With firmware protocol version 8 or older, cflib sends
   a legacy packet and negates `yawrate` itself (cflib `commander.py`; code, read the function). The

@@ -178,7 +178,7 @@ Reading:
   PyPI metadata says MIT; the wheel's LICENSE file also carries the AprilTag C code's
   BSD-2-Clause notice (University of Michigan). Both permissive. Used as installed.
 - [code] AprilTag 3, hub record [aprilrobotics/apriltag](../../catalog/repos/aprilrobotics__apriltag.md)
-  (BSD-2-Clause per the hub record). Its hackathon note flags pose ambiguity on small or far tags
+  (BSD-2-Clause per the hub record). Its build note flags pose ambiguity on small or far tags
   near frontal views; this sample measures it.
 - [code] OpenCV 5.0.0 (opencv-python-headless, Apache-2.0): `cv2.aruco` `DICT_APRILTAG_36h11`
   for the tag bitmap, `warpPerspective` for rendering. numpy (BSD-3-Clause).

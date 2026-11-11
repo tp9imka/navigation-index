@@ -160,7 +160,7 @@ once for more than 2 minutes, so `fetch_data.sh` resumes with `curl -C -`.
 | evo | GPL-3.0 | GitHub API |
 | rosbags | Apache-2.0 | package metadata |
 
-All three datasets are non-commercial. Fine for a hackathon demo, not for a product. For the same
+All three datasets are non-commercial. Fine for a research demo, not for a product. For the same
 reason the repo does not redistribute their ground truth (see "Ground truth is fetched, not committed"). evo and
 OpenVINS are GPL. Keep them as separate tools, not linked into shipped code.
 

@@ -3,7 +3,7 @@
 Goal: show your drone on ATAK / WinTAK / iTAK maps. Read `GLOBAL_POSITION_INT` from an
 autopilot over MAVLink, turn each fix into a Cursor-on-Target (CoT) XML event, and send it
 to a TAK server or straight onto the Mesh SA multicast group. This is the "friendly blue
-force track" piece of situational awareness for a hackathon UAV build.
+force track" piece of situational awareness for a quick UAV build.
 
 ## Repos used
 
@@ -108,7 +108,7 @@ python3 bridge.py --mavlink udpin:0.0.0.0:14550 --cot-url tcp://127.0.0.1:8087  
 with ArduPilot SITL (`sim_vehicle.py -v ArduPlane --out udp:127.0.0.1:14550`) or PX4 SITL
 (`make px4_sitl gz_x500`, MAVLink on UDP 14550) as the source.
 
-## Extending it in a hackathon
+## Extending it
 
 - Fill `ce`/`le` from the EKF: `GPS_RAW_INT.eph`/`epv` or `ESTIMATOR_STATUS` accuracies.
   In GNSS-denied tests this makes degraded navigation visible to the whole team.

@@ -11,7 +11,7 @@ sensors_cone.ConeRangeFan (cone beams, minimum range, range-dependent noise, mat
 
 make_sensor(name, rng) builds the sensor for one run.
 
-Custom sensors and vehicles (loop-75). make_sensor also takes a dict in the team-facing schema
+Custom sensors and vehicles. make_sensor also takes a dict in the user-facing schema
   {"beams", "fov_deg", "max_range_m", "min_range_m", "noise_sigma_m"}  required
   {"cone_deg", "dropout"}                                            optional (0 deg, 0.02)
 and vehicle_kwargs(spec) turns a vehicle name or dict {"radius_m", "v_max", "a_max", "tau"} into the
@@ -90,7 +90,7 @@ _RAY_KEYS = ("n_beams", "fov", "max_range", "noise_std", "dropout")
 _CONE_KEYS = _RAY_KEYS + ("noise_model", "cone_deg", "n_sub", "min_fill", "min_range",
                           "invisible", "dark_max_range")
 
-# ---- team-facing sensor schema (loop-75) ----
+# ---- user-facing sensor schema ----
 SENSOR_SPEC_REQUIRED = ("beams", "fov_deg", "max_range_m", "min_range_m", "noise_sigma_m")
 SENSOR_SPEC_DEFAULTS = {"cone_deg": 0.0,   # 0 = one exact ray per beam
                         "dropout": 0.02}   # as ideal (CONTRACT.md)
@@ -102,7 +102,7 @@ SPEC_INVISIBLE = ("glass", "mirror")   # [doc08 2.4] ToF; lidar and active IR st
 # Forward depth camera, Intel RealSense D435i class.
 #   fov 87 deg horizontal: Intel D435i specifications page ("Depth Field of View H:87 V:58")
 #   https://www.intel.com/content/www/us/en/products/sku/190004/intel-realsense-depth-camera-d435i/specifications.html
-#   min 0.3 m: same page ("Operating Range ~.3m - 3m"). max 5 m: [proposal, loop-75 brief], beyond
+#   min 0.3 m: same page ("Operating Range ~.3m - 3m"). max 5 m: [proposal, from the task brief], beyond
 #   Intel's ~3 m operating range, where the error grows (community answers: drift after 3-4 m).
 #   noise 0.04 m: D400 datasheet depth accuracy "< 2% at 2 m" (0.04 m at 2 m), held constant over range
 #   (ConeRangeFan has no d^2 stereo noise model) [proposal].
@@ -135,7 +135,7 @@ SENSOR_SPECS = {
                  "dropout": LIDAR_2D_DROPOUT},
 }
 
-# ---- team-facing vehicle schema (loop-75) ----
+# ---- user-facing vehicle schema ----
 VEHICLE_SPEC_KEYS = ("radius_m", "v_max", "a_max", "tau")
 VEHICLE_SPECS = {
     # = run.DEFAULTS["vehicle"]: radius world.RADIUS 0.15 m, v_max 2 m/s, a_max 3 m/s^2, tau 0.15 s

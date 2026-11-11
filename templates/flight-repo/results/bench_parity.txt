@@ -1,4 +1,4 @@
-# loop-78 bench_parity, 2026-11-10 11:28, input synthetic, world ../../site/playground/presets/narrow_gap_0.json, Python 3.11.15, numpy 2.4.6, scipy 1.17.1
+# bench_parity, 2026-11-10 11:28, input synthetic, world ../../site/playground/presets/narrow_gap_0.json, Python 3.11.15, numpy 2.4.6, scipy 1.17.1
 REFERENCE run.run_one 10 Hz, no filter, dstar_lite: {"outcome": "reached", "time_to_goal_s": 24.52, "min_clearance_m": 0.3288, "path_length_m": 25.187, "duration_s": 24.52, "planner_ms_mean": 2.6684, "planner_ms_max": 51.4653} wall_s=0.71
 id | needs_world | arm | rc | reached | final_dist_m | t_s | min_clearance_m | keepalive | wall_s
 straight | False | F0 | 0 | False | 14.768 | 60.00 | 0.357 | 0 | 1.1

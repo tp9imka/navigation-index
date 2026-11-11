@@ -28,8 +28,8 @@ TangentBug, D* Lite) were run into the existing matrix without re-running the ol
 .venv/bin/python export_replays.py --merge --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite   # ~35 s, 40 replays
 ```
 
-The seven rows of loop-73 (Theta* x 4, MPPI x 2, Hybrid A*) were added the same way, without a recheck run
-(`matrix_0_recheck.*` still holds the loop-46c check):
+The seven rows added on 2026-11-10 (Theta* x 4, MPPI x 2, Hybrid A*) were added the same way, without a recheck run
+(`matrix_0_recheck.*` still holds the 2026-11-09 check):
 
 ```sh
 .venv/bin/python bench.py --add-to matrix_0 --planners thetastar_known,lazy_thetastar_known,thetastar_unknown,\
@@ -44,7 +44,7 @@ with 14 worker processes (2,880 flights). The replay export took 58.0 s, one pro
 with 14 processes for 2,240 flights (1,600 new + 640 re-check), same interpreter and versions
 ([results/add_46c_stdout.txt](results/add_46c_stdout.txt), `additions` in matrix_0.json); their
 replay export took 35.3 s ([results/export_replays_add_0.log](results/export_replays_add_0.log)).
-The loop-73 rows took 2058.5 s wall with 14 processes for 2,240 flights, same interpreter and versions, on a
+The 2026-11-10 rows took 2058.5 s wall with 14 processes for 2,240 flights, same interpreter and versions, on a
 host shared with other jobs ([results/add_73_stdout.txt](results/add_73_stdout.txt), `additions` in
 matrix_0.json). No replays were exported for them.
 
@@ -106,7 +106,7 @@ Checks for the five added rows:
   runs each identical in outcome, min clearance, path length and time to goal
   ([results/matrix_0_recheck.md](results/matrix_0_recheck.md)). The 2,880 old rows in
   matrix_0.json are kept as they were.
-- **loop-73 rows** ([results/matrix_0_loop73_checks.md](results/matrix_0_loop73_checks.md)): the 4,480
+- **2026-11-10 rows** ([results/matrix_0_loop73_checks.md](results/matrix_0_loop73_checks.md)): the 4,480
   older runs and their summaries equal the committed matrix_0.json; every run that the three source samples
   flew themselves is identical in outcome, min clearance, time to goal and path length, 1,440 of 1,440
   (Theta* flights_0.json, MPPI bench_ideal_0 / bench_crazyflie_0, Hybrid A* bench_0 stock vehicle).
@@ -118,7 +118,7 @@ Checks for the five added rows:
 ## Results (ran 2026-11-09, synthetic)
 
 `python bench.py --layouts 20 --seed 0 --workers 14 --parity`, wall 323.4 s, plus the five rows
-added by `bench.py --add-to matrix_0` (above), wall 216.2 s, and the seven loop-73 rows (2026-11-10),
+added by `bench.py --add-to matrix_0` (above), wall 216.2 s, and the seven rows added on 2026-11-10,
 wall 2058.5 s. Cell = reached % / collision %. Source: [results/matrix_0.md](results/matrix_0.md) (also stuck, timeout, median time,
 min clearance, material hit), per-run rows in [results/matrix_0.json](results/matrix_0.json).
 
@@ -149,8 +149,8 @@ min clearance, material hit), per-run rows in [results/matrix_0.json](results/ma
 | hybrid_astar | 100 / 0 | 100 / 0 | 70 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 85 / 0 |
 
 Best planner per family: the prior-map planners (`astar_known`, `informed_rrt_star`, `astar_mpc`,
-and since loop-73 `thetastar_known`, `lazy_thetastar_known`) reach 100 % with 0 % collisions in every
-family. The paragraph below compares the 14 older rows; the loop-73 rows are in "Reading, loop-73 rows". Best without a prior map:
+and since 2026-11-10 `thetastar_known`, `lazy_thetastar_known`) reach 100 % with 0 % collisions in every
+family. The paragraph below compares the 14 older rows; the 2026-11-10 rows are in "Reading, rows added 2026-11-10". Best without a prior map:
 `astar_unknown` in every family (random 100, u_trap 100, narrow_gap 90, office 95, warehouse 55,
 forest 100, maze 95, glass_office 95). `dstar_lite` ties it on random, u_trap, warehouse
 (55 / 0), forest and glass_office (95 / 0) and is 5 points lower on narrow_gap (85), office (90)
@@ -192,7 +192,7 @@ collision %): random `astar_unknown`, `astar_unknown_f2` and `dstar_lite` (100 /
 are weak: warehouse had no reach at all before (best 0 / 0, `astar_unknown_f2`), and on
 glass_office `freest_beam` and `dwa_mem` (5 / 5) are far safer than `dstar_lite`'s 65 % collisions.
 
-### Reading, loop-73 rows
+### Reading, rows added 2026-11-10
 
 - **Theta* with a prior map ties A* known map**: 100 / 0 in every family on both presets.
 - **Without a map, on ideal, `mppi_astar` is the best or tied-best map-free row in every family** (by the
@@ -245,10 +245,10 @@ glass_office `freest_beam` and `dwa_mem` (5 / 5) are far safer than `dstar_lite`
 - **glass_office on ideal is just an office.** The ideal ray fan sees glass. The glass cost shows
   only on the crazyflie preset, which is why the replays use it for that family.
 
-## Forward depth camera (loop-94)
+## Forward depth camera
 
 A RealSense D435i-class forward depth camera is the likeliest range sensor on a PX4-class drone.
-This section adds it as a third sensor column for the five map-free planners that matter on Day 1.
+This section adds it as a third sensor column for the five map-free planners that matter on the first day.
 Ran 2026-11-10, synthetic (simulated layouts, vehicle and sensor), scored on truth.
 
 ```
@@ -262,7 +262,7 @@ python3 results/matrix_depth_0.compare.py                  # pairs it with matri
   in bench.py was needed: `--presets` takes any `presets.SENSOR_PRESETS` name and `--stem` exists.
 - **Yaw:** the benchmark loop sets yaw toward B at the start and none of the five planners sends a yaw
   rate, so the camera stays pointed at B for the whole flight (fixed yaw). That is the same as the
-  playground default (`fixed`, loop-75b, [site/playground](../../site/playground/README.md)).
+  playground default (`fixed`, [site/playground](../../site/playground/README.md)).
   "Look where you go" was not run here.
 - **Prior-map planners are not re-run.** They never read the scan: in matrix_0 their ideal and
   crazyflie rows are identical in 160/160 runs each
@@ -330,8 +330,8 @@ the first 72, 35.3 s for the 40 added.
 
 ## Scenario packs
 
-A scenario pack is one JSON file that holds "our room + our drone + the bar". On the day the team
-writes it once and re-runs it after every tuning change. [pack.py](pack.py) flies it with this
+A scenario pack is one JSON file that holds "our room + our drone + the bar". On the first day you
+write it once and re-runs it after every tuning change. [pack.py](pack.py) flies it with this
 benchmark's own flight loop and prints PASS / FAIL / NOT PROVEN per planner and criterion.
 
 ```sh
@@ -342,7 +342,7 @@ benchmark's own flight loop and prints PASS / FAIL / NOT PROVEN per planner and 
 
 Exit code: 0 if at least one planner passes every criterion, 1 if none does, 2 if the pack is invalid.
 `--out results/<stem>` changes the output stem (default `results/pack_<name>`).
-`--shipped-inflation` keeps the planners' shipped 0.15 m inflation (the pack before loop-99, see "Vehicle radius").
+`--shipped-inflation` keeps the planners' shipped 0.15 m inflation (the pack before 2026-11-10, see "Vehicle radius").
 
 ### Schema `close-area-pack/1`
 
@@ -414,12 +414,12 @@ outcome and min clearance, 15 of 15
 ([results/pack_office_crazyflie_matrix_check.md](results/pack_office_crazyflie_matrix_check.md)).
 
 **Vehicle radius.** The pack radius changes the vehicle, the collision stop, the scoring and (since
-loop-99) how far the planners inflate obstacles. pack.py applies the Solver worker's per-run override
-(site/playground/worker.js `radius_override`, loop-75b): each constant in `pack.RADIUS_CONSTS`
+2026-11-10) how far the planners inflate obstacles. pack.py applies the Solver worker's per-run override
+(site/playground/worker.js `radius_override`): each constant in `pack.RADIUS_CONSTS`
 (`astar_esdf.RADIUS`, `astar_esdf.CARROT_CLEAR_M`, `hybrid_astar.RADIUS`, `rrt_star.RADIUS`,
 `mppi.R_COLL`, `mppi.D_SAFE`, `dwa.RADIUS`, `bug.RADIUS`) is set to radius + (shipped value - 0.15 m)
 for that run and restored after it; APF and VFH+ get the radius on the instance. At 0.15 m nothing
-changes. The result JSON lists what was set under `planner_inflation`. Before loop-99 a pack with
+changes. The result JSON lists what was set under `planner_inflation`. Before that change a pack with
 `radius_m` 0.2 flew planners that planned for 0.15 m, while the Solver inflated by 0.2 m, so the two
 disagreed (drill 2026-11, blocker B2).
 
@@ -439,7 +439,7 @@ direction of travel; that policy is not applied here. This matters for `depth_ca
 
 ### Results (ran 2026-11-10, synthetic)
 
-These two packs ran before loop-99, so their planners inflated by the shipped 0.15 m. The office pack
+These two packs ran before the radius change, so their planners inflated by the shipped 0.15 m. The office pack
 uses the default 0.15 m vehicle and is unaffected; the hall numbers (0.2 m) were not re-run with the
 override.
 
@@ -480,7 +480,7 @@ Sample-size hint: astar_known: NOT PROVEN only on sample size. reached_rate >= 0
 
 Reading:
 
-- **No planner passes either pack.** Both exit with code 1. With the count rule for collisions (loop-86),
+- **No planner passes either pack.** Both exit with code 1. With the count rule for collisions,
   A* with the true map passes the collision and time bars and is NOT PROVEN only on sample size: 15 or 10
   runs are below the 35 that `reached_rate >= 0.9` needs. Under the old rate rule `collision_rate <= 0`
   could never pass.
@@ -500,8 +500,8 @@ Reading:
 
 ## Not included yet
 
-- Replays (`export_replays.py --merge`) for the seven loop-73 rows: not exported, since the replay folder
-  is generated site data outside loop-73's paths.
+- Replays (`export_replays.py --merge`) for the seven rows added 2026-11-10: not exported, since the replay folder
+  is generated site data outside the paths that change could touch.
 - The diagnostic shipped-prior run for `dstar_lite` (only `astar_unknown` has one), and a scan
   memory for APF, VFH+ or the Bug planners.
 - The other safety-filter arms (F1 CP-stop, the map-based CBFs) and the estimator faults: the

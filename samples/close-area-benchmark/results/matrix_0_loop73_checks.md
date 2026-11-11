@@ -1,4 +1,4 @@
-`python3 samples/close-area-benchmark/results/cross_check_loop73.py`. Input: synthetic. Checks for the 7 rows added by `bench.py --add-to matrix_0` in loop-73.
+`python3 samples/close-area-benchmark/results/cross_check_loop73.py`. Input: synthetic. Checks for the 7 rows added by `bench.py --add-to matrix_0` on 2026-11-10.
 
 1. Older rows unchanged vs the committed matrix_0.json (git HEAD): 4480 runs identical, summaries identical.
 

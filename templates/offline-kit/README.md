@@ -2,12 +2,12 @@
 
 <!-- about: concept:datasets-benchmarks, repo:protomaps/pmtiles -->
 
-Use this when you prepare laptops in the week or night before the event, or share a cache with
-teammates at the venue. For a small rehearsed selection, start at
+Use this when you prepare laptops in the week or night before you work without a reliable network
+(a field site, a lab with locked-down Wi-Fi, an air-gapped room), or share a cache with teammates there. For a small rehearsed selection, start at
 [starter-bundles.md](../../docs/starter-bundles.md).
 
-Venue Wi-Fi will not carry datasets, Docker images or a `pip install torch`. This kit fills one
-cache directory (a USB disk is fine) with everything a team may need, before the event:
+Shared or field Wi-Fi will not carry datasets, Docker images or a `pip install torch`. This kit fills one
+cache directory (a USB disk is fine) with everything a team may need, before you go offline:
 
 | Type | What | Built from |
 |---|---|---|
@@ -18,14 +18,14 @@ cache directory (a USB disk is fine) with everything a team may need, before the
 | `git` | `git clone --mirror` => `git bundle` for the 40 most-linked carded repos (83 in `full`) | integration cards ranked by inbound links in `index/records.jsonl` |
 | `js` | maplibre-gl, milsymbol, pmtiles for the demo dashboard | `templates/demo-dashboard/fetch-vendor.sh` |
 | `tool` / `tiles` | `pmtiles` CLI (4 platforms) and a regional vector basemap extract | `protomaps__pmtiles` card, Protomaps daily build |
-| `browser` | Pyodide 314.0.7 + numpy + scipy for the playground and Solver when the CDN is blocked; `dist/venue-kit.zip` with `serve.py` (separate tool, not in `prep.py`) | `python3 tools/venue_kit.py prepare`, `verify`, `bundle` |
+| `browser` | Pyodide 314.0.7 + numpy + scipy for the playground and Solver when the CDN is blocked; `dist/offline-browser-kit.zip` with `serve.py` (separate tool, not in `prep.py`) | `python3 tools/offline_browser_kit.py prepare`, `verify`, `bundle` |
 
 Files: `prep.py` (fetcher, stdlib only), `build_manifest.py` (regenerates `manifest.json` from the
 repo), `manifest.json`, `test_manifest.py`.
 
 For a smaller, rehearsable selection, use [the starter bundles](../../docs/starter-bundles.md):
 `receiver-log` (real-attack-replay), `vehicle-sim` (golden-demo v2 SITL), `vision`
-(e2e-visual-nav-vpair), and `close-area` (the Day-1 Python flow: arena, benchmark pack, one
+(e2e-visual-nav-vpair), and `close-area` (the first-day Python flow: arena, benchmark pack, one
 flight-repo flight, from cp311 + cp312 wheels in fresh uv venvs). `bundle.py` selects existing prep items plus a few explicit additions from
 `bundles.json`; it reuses this cache, `.prep-state.json`, `SHA256SUMS` and the existing fetchers.
 It adds per-bundle input hashes, runtime versions, command logs and measured receipts under
@@ -80,12 +80,12 @@ python3 prep.py --out /Volumes/USB/navkit --profile standard --bbox <minlon,minl
   `drive.usercontent.google.com` with `confirm=t`. When Drive answers with an HTML quota page the item
   fails with that message; rerun later or use `gdown` in the project venv.
 - `docker-build` items build `samples/sitl-docker` (ArduPilot, PX4, client), `rtklib-demo5` and
-  `gnss-signal-chain`. The Dockerfiles clone and compile at build time, so build them here, not at the
-  venue. Builds are saved for the host platform only.
+  `gnss-signal-chain`. The Dockerfiles clone and compile at build time, so build them here, not on the
+  offline site. Builds are saved for the host platform only.
 - Manual items (`magnav-ottawa-maps`, `tartanair-one-env`) print instructions instead of downloading,
   because their URLs are not in this repo. The Ottawa maps arrive when you run
   [magnav-quickstart](../../samples/magnav-quickstart/README.md) once online.
-- Pick the map area once the venue or problem region is known: `--bbox` and `--maxzoom` (default 14).
+- Pick the map area once the field site or problem region is known: `--bbox` and `--maxzoom` (default 14).
   The default bbox is the project-repo compose `ORIGIN` (59.0, 10.0). `--dry-run --probe` asks
   `pmtiles extract --dry-run` for the archive size; the default bbox at z14 estimated 6.6 MB.
 - Model weights are not in the manifest. LightGlue / SuperPoint and the other matchers download weights
@@ -126,7 +126,7 @@ offline; the dependencies of such a package are not fetched for that platform.
 
 USB: copy the directory, then `python3 prep.py --verify --out <copy>`.
 
-Local network (venue LAN or a travel router, no internet needed):
+Local network (site LAN or a travel router, no internet needed):
 
 ```bash
 # on the laptop that holds the cache

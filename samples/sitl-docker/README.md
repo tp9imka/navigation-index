@@ -2,7 +2,7 @@
 
 <!-- about: repo:ardupilot/ardupilot, repo:px4/px4-autopilot, repo:mavlink/mavsdk-python, repo:ardupilot/pymavlink -->
 
-One `docker compose` command gives a hackathon team a flying simulated copter without
+One `docker compose` command gives a team a flying simulated copter without
 Gazebo, a GPU or a GUI. Used by `samples/ardupilot-ekf3-source-switch`,
 `samples/px4-sitl-gps-denial` and `samples/vio-to-mavlink-bridge`.
 

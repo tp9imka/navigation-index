@@ -200,7 +200,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Interference awareness is the first layer of resilience ([NAVGUARD](../catalog/resources/edf21-navguard-factsheet.md) funds exactly this; [EASA/IATA plan](../catalog/resources/easa-iata-gnss-interference-plan-2025.md) calls for better civil-military sharing of interference data). Units need to know "GNSS here is not trustworthy" before they rely on it.
 - **Stack:** [pyubx2](../catalog/repos/semuconsulting__pyubx2.md) (MON-RF jamming indicator, NAV-STATUS spoof flags, C/N0), [PyGPSClient](../catalog/repos/semuconsulting__pygpsclient.md) for bench viewing, [PyTAK](../catalog/repos/snstac__pytak.md) for CoT, [OpenTAKServer](../catalog/repos/brian7704__opentakserver.md) or [GoATAK](../catalog/repos/kdudkov__goatak.md) web client, [milsymbol](../catalog/repos/spatialillusions__milsymbol.md). Phone alternative: [Android detection APIs](../catalog/resources/android-gnss-spoof-jam-detection.md). Sample: [gnss-interference-monitor](../samples/gnss-interference-monitor/) (`ubx_monitor.py`, plus a scorer); CoT plumbing: [mavlink-to-tak-cot](../samples/mavlink-to-tak-cot/).
 - **Data:** [Jammertest](../catalog/resources/jammertest-norway.md) participant recordings for replay; [multi-frequency spoofing dataset](../catalog/repos/s7am1na__gnss-spoofing-dataset.md).
-- **Kit:** Cards [pyubx2](integration-cards/semuconsulting__pyubx2.md) (MON-RF / NAV-STATUS / NAV-PVT flags), [PyTAK](integration-cards/snstac__pytak.md) (`ce`/`le` for uncertainty), [OpenTAKServer](integration-cards/brian7704__opentakserver.md), [GoATAK](integration-cards/kdudkov__goatak.md), [milsymbol](integration-cards/spatialillusions__milsymbol.md). Data [Jammertest](dataset-cards/jammertest-data.md) (VAARA 1.57 GB + one Fraunhofer chunk pair 2.9 GB), [TEXBAT](dataset-cards/texbat.md) (cleanStatic80 8.0 GB). Start: [gnss-interference-monitor](../samples/gnss-interference-monitor/) (scorer with latched alarm and reasons, pyubx2 replay) for one node, and [real-attack-replay](../samples/real-attack-replay/) to show it on real Jammertest 2024 jamming and spoofing; [jammer-sensor-network](../samples/jammer-sensor-network/) for many nodes => map + CoT. Fill [threat-model](../templates/threat-model.md) on day 0.
+- **Kit:** Cards [pyubx2](integration-cards/semuconsulting__pyubx2.md) (MON-RF / NAV-STATUS / NAV-PVT flags), [PyTAK](integration-cards/snstac__pytak.md) (`ce`/`le` for uncertainty), [OpenTAKServer](integration-cards/brian7704__opentakserver.md), [GoATAK](integration-cards/kdudkov__goatak.md), [milsymbol](integration-cards/spatialillusions__milsymbol.md). Data [Jammertest](dataset-cards/jammertest-data.md) (VAARA 1.57 GB + one Fraunhofer chunk pair 2.9 GB), [TEXBAT](dataset-cards/texbat.md) (cleanStatic80 8.0 GB). Start: [gnss-interference-monitor](../samples/gnss-interference-monitor/) (scorer with latched alarm and reasons, pyubx2 replay) for one node, and [real-attack-replay](../samples/real-attack-replay/) to show it on real Jammertest 2024 jamming and spoofing; [jammer-sensor-network](../samples/jammer-sensor-network/) for many nodes => map + CoT. Fill [threat-model](../templates/competition-kit/threat-model.md) on day 0.
 - **Demo plan:** Replay a Jammertest log (or cabled GPS-SDR-SIM into the receiver) => monitor flags jamming, then spoofing => a hazard polygon with timestamp and confidence appears in TAK.
 - **Stretch:** Several monitors => coarse emitter area by intersecting affected regions ([Defense News](../catalog/resources/defensenews-baltic-jamming-origins-2025.md) shows distributed monitors work).
 - **Risk:** Live jamming not available at the venue; mitigate with replay. Thresholds tuned on one receiver model do not transfer.
@@ -647,12 +647,12 @@ Assumes 4-5 people. For a 24h event, compress each block by half and cut the str
 at hour 0. The first three hours are scripted minute by minute in [first-three-hours.md](first-three-hours.md).
 
 Fill-in versions of this plan and its artifacts live in [templates/](../templates/README.md):
-[team roles and 48h plan](../templates/team-roles-and-48h-plan.md),
-[threat model](../templates/threat-model.md), [risk register](../templates/risk-register.md),
-[ADR](../templates/adr.md), [demo script](../templates/demo-script.md),
-[pitch deck outline](../templates/pitch-deck-outline.md),
-[judging self-assessment](../templates/judging-self-assessment.md),
-[submission checklist](../templates/submission-checklist.md). Start the code from
+[team roles and 48h plan](../templates/competition-kit/team-roles-and-48h-plan.md),
+[threat model](../templates/competition-kit/threat-model.md), [risk register](../templates/competition-kit/risk-register.md),
+[ADR](../templates/competition-kit/adr.md), [demo script](../templates/presenting/live-demo-script.md),
+[pitch deck outline](../templates/competition-kit/deck-outline.md),
+[judging self-assessment](../templates/competition-kit/self-assessment.md),
+[submission checklist](../templates/competition-kit/submission-checklist.md). Start the code from
 [templates/project-repo](../templates/project-repo/): `make test eval` gives a working
 PoseSource => NavFilter => IntegrityMonitor => Publisher pipeline with metrics on synthetic
 clean / jam / spoof scenarios.

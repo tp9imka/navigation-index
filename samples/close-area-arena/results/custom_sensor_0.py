@@ -1,4 +1,4 @@
-"""Forward depth camera vs the ideal 360 deg fan (loop-75), synthetic, seed 0.
+"""Forward depth camera vs the ideal 360 deg fan, synthetic, seed 0.
 
 Run from the repo root with the arena venv:
     samples/close-area-arena/.venv/bin/python samples/close-area-arena/results/custom_sensor_0.py

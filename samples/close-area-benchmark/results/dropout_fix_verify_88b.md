@@ -1,12 +1,12 @@
-# loop-88b: arena dropout fix (option B), verification
+# Arena dropout fix (option B), verification
 
 Input: synthetic (simulated layouts, vehicle and sensors), seed 0, scored on truth. Run on 2026-11-11,
-Python 3.12, numpy 2.4.6, scipy 1.17.1, osqp 1.1.3 (the loop-85 runs used numpy 2.5.4, scipy 1.18.1),
+Python 3.12, numpy 2.4.6, scipy 1.17.1, osqp 1.1.3 (the 2026-11-10 dropout-fix study runs used numpy 2.5.4, scipy 1.18.1),
 macOS arm64, 4 worker processes, load average 6.6 at the start. No benchmark table was regenerated.
 
 Shipped state: the code landed with `SKIP_DROPPED_BEAMS = False` in `planners/astar_esdf.py`, so the
 published tables (matrix_0, matrix_depth_0, advisor, explore, packs) still describe the unfixed map.
-The runs below set it to True. loop-88c turns it on and regenerates every unknown-map row.
+The runs below set it to True. A follow-up change turns it on and regenerates every unknown-map row.
 
 ## What changed
 
@@ -15,8 +15,8 @@ The runs below set it to True. loop-88c turns it on and regenerates every unknow
 - `../../close-area-arena/sensors_cone.py`: `ConeRangeFan.scan` returns `RangeScanDrops` with its drop mask.
 - `../../close-area-arena/planners/astar_esdf.py`: `LogOddsMap.update` skips beams with `dropped[i]` True
   (no free trace, no hit). A beam with no return and no flag is still traced free to `max_range`.
-  Named constants: `SKIP_DROPPED_BEAMS = True` (False = shipped behaviour before loop-88),
-  `NO_RETURN_FREE_TO_MAX_RANGE = True` (False = option A of loop-85), `NO_TRACE_REACH = -1.0`.
+  Named constants: `SKIP_DROPPED_BEAMS = True` (False = shipped behaviour before this fix),
+  `NO_RETURN_FREE_TO_MAX_RANGE = True` (False = option A of the dropout-fix study), `NO_TRACE_REACH = -1.0`.
   A `dropped` list whose length differs from `distances` raises `ValueError` instead of misaligning.
   A scan without the field (real drivers, or a scan rebuilt as a plain `RangeScan`) keeps the old behaviour.
 
@@ -44,7 +44,7 @@ Wall 4.5 s.
 ## 2. Option B reproduction: patched arena vs dropout_fix.py `status` arm
 
 108 runs: 6 planners x 3 presets x 6 layouts. Per cell, 3 layouts where the `status` row differs from the
-unpatched row (loop-85 `before` arm where it exists, else matrix_0.json) and 3 where it does not, drawn
+unpatched row (dropout-fix study `before` arm where it exists, else matrix_0.json) and 3 where it does not, drawn
 with `np.random.default_rng(88)`. Compared fields: outcome, min_clearance_m, path_length_m, time_to_goal_s
 (exact equality).
 
@@ -84,13 +84,13 @@ Sampled runs whose outcome the fix changes (unpatched => patched, patched = `sta
 | dstar_lite | glass_office | crazyflie_bright | 9 | stuck | collision |
 | hybrid_astar | u_trap | crazyflie_bright | 14 | reached | stuck |
 
-Thetastar_unknown and lazy_thetastar_unknown were not in the loop-85 `status` arm, so they are not in this
+Thetastar_unknown and lazy_thetastar_unknown were not in the dropout-fix study `status` arm, so they are not in this
 sample.
 
 ## 3. No-dropout identity: before vs after
 
 Preset `ideal_nodrop` (the ideal fan with dropout 0, in memory as in dropout_fix.py). 30 runs: astar_unknown,
-mppi, hybrid_astar x 10 layouts (rng 88). Before = the recorded loop-85 `before` rows (shipped code); also
+mppi, hybrid_astar x 10 layouts (rng 88). Before = the recorded dropout-fix study `before` rows (shipped code); also
 re-run here with `SKIP_DROPPED_BEAMS = False`.
 
 **Result: identical in 30/30 runs against the recorded rows and 30/30 against the same-machine re-run**
@@ -130,7 +130,7 @@ re-run here with `SKIP_DROPPED_BEAMS = False`.
 | hybrid_astar | forest | 11 | reached / reached | 24.46 / 24.46 | 24.468 / 24.468 |
 
 Environment control: 12 of the option B runs re-run with `SKIP_DROPPED_BEAMS = False` match the unpatched
-rows (matrix_0.json / loop-85 `before`) in 12/12, so the numpy/scipy version gap does not move these runs.
+rows (matrix_0.json / dropout-fix study `before`) in 12/12, so the numpy/scipy version gap does not move these runs.
 Every worker found exactly one module with `LogOddsMap` (`close_area_arena.planners.astar_esdf`), so the
 switch reached every planner.
 
@@ -141,7 +141,7 @@ Sections 2 and 3: 180 runs, wall 65.2 s, 4 workers (fork).
 | test | result | note |
 |---|---|---|
 | close-area-arena `test_smoke` | OK, 2 tests, 8.8 s | |
-| close-area-benchmark `test_smoke` | **FAIL**, 1 of 3 | pins `astar_unknown_f2 / u_trap / crazyflie / 0` to matrix_0.json. Patched: reached, min clearance 0.5879 m (= loop-85 `status` row); `SKIP_DROPPED_BEAMS = False`: 0.6525 m (= matrix_0.json). Expected until matrix_0 is regenerated. |
+| close-area-benchmark `test_smoke` | **FAIL**, 1 of 3 | pins `astar_unknown_f2 / u_trap / crazyflie / 0` to matrix_0.json. Patched: reached, min clearance 0.5879 m (= dropout-fix study `status` row); `SKIP_DROPPED_BEAMS = False`: 0.6525 m (= matrix_0.json). Expected until matrix_0 is regenerated. |
 | close-area-explore `test_smoke` | **FAIL**, 1 of 3 | pins lawnmower / random / 0 / ideal to results/bench_0.json. Path 26.729 => 26.73 m; `SKIP_DROPPED_BEAMS = False` gives 26.729 again. Not in the brief; run for side effects. |
 | mppi, dstar, thetastar, hybrid-astar, mpc, relocalize, safety-filter, moving-obstacles, dwa-bug, reactive `test_smoke`; flight-repo `test_flightloop` | OK | benchmark venv, run for side effects |
 
@@ -173,11 +173,11 @@ only), `sparse.py` / `submap.py` (finite returns only, so nothing to flag), flig
 
 ## 6. Not verified
 
-- thetastar_unknown, lazy_thetastar_unknown: never run with option B (no loop-85 rows); covered only by
+- thetastar_unknown, lazy_thetastar_unknown: never run with option B (no dropout-fix study rows); covered only by
   the shared LogOddsMap code path.
 - Presets dense, depth_cam_87, lidar_2d: sensor stream checked (section 1), no flights.
-- No full-matrix regeneration; the reached / collision deltas in dropout_fix_tables.md stay loop-85
-  numbers until the overnight job.
+- No full-matrix regeneration; the reached / collision deltas in dropout_fix_tables.md stay the dropout-fix study
+  numbers until the full regeneration.
 - The site playground runs the patched files from its manifest; not run in a browser.
 
 ## Commands

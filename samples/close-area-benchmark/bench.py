@@ -26,7 +26,7 @@ Planners (imported by path from their samples, nothing edited there):
   hybrid_astar        close-area-planner-hybrid-astar hybrid_astar.make(bounds=...), unknown map
 Diagnostic only (--planners astar_unknown_prior): astar_esdf known_map=False exactly as shipped.
 
-Adding rows to an existing matrix without re-running the old ones (loop-46c):
+Adding rows to an existing matrix without re-running the old ones (first used 2026-11-09):
   .venv/bin/python bench.py --add-to matrix_0 --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite \
       --recheck vfh_plus,astar_unknown --workers 14     # merge + run-by-run check of 2 old rows
   .venv/bin/python bench.py --cross-check matrix_0      # DWA/Bug rows vs the dwa-bug sample's own run
@@ -198,7 +198,7 @@ DEFAULT_PLANNERS = ("straight", "freest_beam", "apf_escape", "vfh_plus", "astar_
                     "dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite",
                     "thetastar_known", "lazy_thetastar_known", "thetastar_unknown", "lazy_thetastar_unknown",
                     "mppi", "mppi_astar", "hybrid_astar")
-NEW_PLANNERS = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite")   # added by --add-to (loop-46c)
+NEW_PLANNERS = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite")   # added by --add-to on 2026-11-09
 NEEDS = {"apf_escape": (_reactive, "apf"), "vfh_plus": (_reactive, "vfh_plus"),
          "informed_rrt_star": (_sampling, "rrt_star"), "astar_mpc": (_mpc, "mpc"),
          "astar_unknown_f2": (_filters, "filters"), "dwa": (_dwabug, "dwa"), "dwa_mem": (_dwabug, "dwa"),

@@ -134,7 +134,7 @@ now in `geoloc.prepare_query`, is a `cv2.resize(INTER_AREA)` first and the rotat
 Synthetic frames hid the bug, because their scale change was only 1-2x. Real frames exposed it
 (10-20x).
 
-## Hackathon extensions
+## Extensions
 
 - Retrieval first: DINOv2 (Apache-2.0) + GeM/VLAD over map tiles to find the window, then this
   matcher. See the license doc for which VPR heads are clean.

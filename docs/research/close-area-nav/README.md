@@ -71,7 +71,7 @@ wrong commits on random and u_trap layouts (held-out seeds 2-4), against 36-64 %
 estimator alone, but failed in office, warehouse, maze, narrow_gap and glass_office, on a 4-beam
 sensor (48-64 %) and with unmapped added obstacles (7 % collisions); known map only. Final
 decision: [research README](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is).
-For the step-1 planner pick use [close-area-benchmark](../../../samples/close-area-benchmark/README.md). Pitch: [close-area story H1](../../../templates/pitch/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails).
+For the step-1 planner pick use [close-area-benchmark](../../../samples/close-area-benchmark/README.md). Pitch: [close-area story H1](../../../templates/presenting/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails).
 Steps 1 and 3 and the range filter of step 2 still stand.
 
 The original story: **any planner gets the drone from A to B; our filter keeps it safe when the

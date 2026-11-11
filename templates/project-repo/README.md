@@ -7,7 +7,7 @@
 > One line: what it does, for which platform, under which threat.
 > Example: "Detects GNSS spoofing on a small UAS within 10 s and keeps navigating on dead reckoning, shown live in TAK."
 
-Status: hackathon prototype, TODO: event name and date. Not flight-tested. Not for operational use.
+Status: prototype, TODO: context (course, competition or project) and date. Not flight-tested. Not for operational use.
 
 ## Problem
 
@@ -17,7 +17,7 @@ Status: hackathon prototype, TODO: event name and date. Not flight-tested. Not f
 
 ## Threat model
 
-Short version here; full version in `docs/threat-model.md` (from the kit's `templates/threat-model.md`).
+Short version here; full version in `docs/threat-model.md` (from the kit's `templates/competition-kit/threat-model.md`).
 
 | Threat | In scope | How we handle it |
 |---|---|---|
@@ -38,13 +38,13 @@ PoseSource => NavFilter => IntegrityMonitor => Publisher (CoT to TAK, STATUSTEXT
 - Detect before fuse: fixes failing the integrity test never reach the filter.
 - Map features to detect / respond / recover.
 - Name the repos and papers you build on (hub ids help: `repo:...`, `res:...`).
-- Decisions: `docs/adr/` (one file per decision, from `templates/adr.md`).
+- Decisions: `docs/adr/` (one file per decision, from `templates/competition-kit/adr.md`).
 
 ## Demo
 
 - Video: TODO link (recorded before the live demo, saved on two machines).
 - Live: `make demo` streams the spoof scenario as CoT to `127.0.0.1:6969` and STATUSTEXT to `127.0.0.1:14550`.
-- Script: `docs/demo-script.md` (from `templates/demo-script.md`).
+- Script: `docs/demo-script.md` (from `templates/presenting/live-demo-script.md`).
 
 ## Results
 

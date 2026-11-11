@@ -1,4 +1,4 @@
-# loop-78, 2026-11-10 11:30, synthetic, macOS arm64, ./.venv (uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1)
+# 2026-11-10 11:30, synthetic, macOS arm64, ./.venv (uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1)
 $ make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json
 .venv/bin/python main.py --adapter world:../../site/playground/presets/narrow_gap_0.json --planner bench:dstar_lite --safety arm:F2  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --bench-dir ../../samples/close-area-benchmark --log results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl
 [bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'

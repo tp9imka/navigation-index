@@ -1,6 +1,6 @@
 # AGENTS.md
 
-For coding agents (Claude Code, Cursor, Codex, Copilot) working in this repo during a 48h hackathon.
+For coding agents (Claude Code, Cursor, Copilot and others) working in this repo during a 48-hour build.
 
 ## Ground rules
 

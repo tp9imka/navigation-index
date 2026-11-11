@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Unit tests for tools/venue_kit.py: lock parsing, dependency order, sha256 checks, file listing.
-No network. Run: python3 -m unittest tools/test_venue_kit.py"""
+"""Unit tests for tools/offline_browser_kit.py: lock parsing, dependency order, sha256 checks, file listing.
+No network. Run: python3 -m unittest tools/test_offline_browser_kit.py"""
 import hashlib
 import json
 import sys
@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import venue_kit as vk  # noqa: E402
+import offline_browser_kit as vk  # noqa: E402
 
 LOCK = {
     "info": {"python": "3.14.2"},

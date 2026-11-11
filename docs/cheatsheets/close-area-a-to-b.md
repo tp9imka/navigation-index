@@ -72,7 +72,7 @@ All synthetic. One pass took 6 min 7 s in the 2026-11-10 cold-start drill (clone
    rule (`collisions == 0`) for a safety bar on a small pack; `reached_rate >= 0.9` needs 35 clean
    runs before it can PASS.
 
-Venue network blocks the CDN? `python3 tools/venue_kit.py prepare`, then `verify`, before the event
+Network blocks the CDN? `python3 tools/offline_browser_kit.py prepare`, then `verify`, while you still have internet
 ([first three hours, Browser tools offline](../first-three-hours.md#browser-tools-offline)).
 
 ## 3. Which planner first
@@ -249,8 +249,8 @@ Claim novelty for neither: the relocalization mechanism exists (Jensfelt 2001, A
 [doc 10](../research/close-area-nav/10-relocalization-prior-art.md)), and the integrity-aware
 safety filter failed: a hand-tuned fixed 0.2 m bound matched its safety
 ([Part e](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
-Pitch: [close-area story](../../templates/pitch/close-area-story.md); demo:
-[demo-script-close-area](../../templates/demo-script-close-area.md).
+Pitch: [close-area story](../../templates/presenting/close-area-story.md); demo:
+[live-demo-script-close-area](../../templates/presenting/live-demo-script-close-area.md).
 
 ## 8. Links
 

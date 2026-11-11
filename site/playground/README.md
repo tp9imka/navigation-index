@@ -137,7 +137,7 @@ the hypotheses each scan produced, a status per 10 Hz frame, and `run_disambigua
 - The preset menu adds **VIO-loss demo: random seed 1, layout 97 (jump)**: `world.make_world("random", 1, 97)`
   through `world_json` ([results/reloc_demo_random_1_97.json](results/reloc_demo_random_1_97.json),
   written by `native_parity.py`), the H1 case of
-  [demo-script-close-area.md](../../templates/demo-script-close-area.md). Loading it sets seed 1, jump
+  [live-demo-script-close-area.md](../../templates/presenting/live-demo-script-close-area.md). Loading it sets seed 1, jump
   and compare all arms.
 
 Result on the demo world (synthetic, [results/playground_check.md](results/playground_check.md)):
@@ -173,7 +173,7 @@ retried again. The 122 s stall itself (a fetch that hangs, then fails) was not r
 
 ## Offline / blocked CDN
 
-One command does all of this: `python3 tools/venue_kit.py prepare` vendors Pyodide with sha256 checks,
+One command does all of this: `python3 tools/offline_browser_kit.py prepare` vendors Pyodide with sha256 checks,
 `verify` checks the playground and the Solver with the CDN blocked, `bundle` writes a zip that runs
 with `python3 serve.py` ([day0-runbook](../../docs/first-three-hours.md)). The manual steps below do the same by hand.
 

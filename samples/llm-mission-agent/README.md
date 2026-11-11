@@ -248,7 +248,7 @@ as survey areas, no inclusion geofence on commands and no dry-run mode.
 | Transports | stdio | stdio, streamable-http, sse |
 
 Use **this** when the demo is ArduPilot, the story is GNSS loss and source switching, or you
-want a server small enough to read and change during a hackathon and a hard fence in front
+want a server small enough to read and change in a short build and a hard fence in front
 of the model. Use **MAVLinkMCP** for PX4, for richer planning and map context, or for an
 HTTP-served operator assistant; add a fence in front of `upload_plan` and `move_to_relative`
 before anything flies. From their index records only (source not read):

@@ -1,7 +1,7 @@
 # flight-repo: close-area A=>B flight loop starter
 
-Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at
-H+0 as the team repo. Platform drivers: [../drone-adapter/drivers/](../drone-adapter/drivers/README.md).
+Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it in the first hour
+as your team's repo. Platform drivers: [../drone-adapter/drivers/](../drone-adapter/drivers/README.md).
 Planners and measured baselines (synthetic): [close-area-arena](../../samples/close-area-arena/README.md).
 For a GNSS / PNT-integrity brief use [../project-repo/](../project-repo/README.md) instead.
 
@@ -12,7 +12,7 @@ Adapter.pose() + ranges() => NavHealth => Planner.step() => SafetyFilter.filter(
 ```
 
 Stdlib Python only (runs below on 3.14.6; unit tests also pass on 3.12). Nothing here has touched a real vehicle or a SITL.
-Status: hackathon starter, not flight-tested, not for operational use.
+Status: quick-build starter, not flight-tested, not for operational use.
 
 ## Run it
 
@@ -27,7 +27,7 @@ make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/n
 make bench-list     # the PLANNER=bench:<id> ids
 ```
 
-Copied out of the hub (the H+0 case), every target that needs the hub takes its path:
+Copied out of the hub (the usual first-hour case), every target that needs the hub takes its path:
 
 ```sh
 make first-flight HUB=/path/to/navigation-index        # sets ARENA, SAFETY, RELOC and BENCH below it
@@ -42,7 +42,7 @@ Both forms were run on a copy in a temp dir: [results/copied_out_dry_run.txt](re
 
 ## Brief to first flight
 
-Hour 0-1 on the day: clone, plug in a planner, fly, score. This chain runs as one command, in
+First hour of the task: clone, plug in a planner, fly, score. This chain runs as one command, in
 the hub's shared [close-area-arena](../../samples/close-area-arena/README.md) world. All
 numbers below are **synthetic** (simulated layout, vehicle, range sensor and estimator).
 
@@ -111,7 +111,7 @@ Log [results/first_flight.jsonl](results/first_flight.jsonl), metrics
 [results/first_flight_score.json](results/first_flight_score.json).
 
 Wall time, `make first-flight` from cold (no arena venv, empty uv cache, so all 12 wheels
-download; measured when the venv lived in the arena folder, before loop-59 moved it to `./.venv`):
+download; measured when the venv lived in the arena folder, before it moved to `./.venv` on 2026-11-09):
 
 | Run | Wall s | Source |
 |---|---|---|
@@ -224,7 +224,7 @@ How it is wired:
 Limits of this result: one layout, one seed, one fault, synthetic. The relocalizer's rates come
 from the sample's held-out matrix: arm (f) passed (>= 95 % reached, 0 wrong commits) only on the
 open layouts, random and u_trap (100 % each, 180 runs); it failed on narrow_gap, office,
-warehouse, maze and glass_office ([sample README](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
+warehouse, maze and glass_office ([sample README](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults)).
 It needs a prior map and a dense range fan (72 beams, 6 m); yaw is truth in the sim.
 
 ## Fly what the Solver picks: `bench:<id>` in a `world:` file

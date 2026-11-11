@@ -1,4 +1,4 @@
-# loop-59 copied-out dry run, 2026-11-09 17:14, synthetic. Template copied to $T/team (T = a fresh temp dir), HUB = this checkout
+# copied-out dry run, 2026-11-09 17:14, synthetic. Template copied to $T/team (T = a fresh temp dir), HUB = this checkout
 $ ls $T  # before
 team
 $ make first-flight

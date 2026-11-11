@@ -165,7 +165,7 @@ Not run: `--switch-via rc` (RC8 aux switch path).
 The autotest `GPSViconSwitching` instead sets `GPS1_TYPE=0` (driver off), which also
 works on real hardware.
 
-## Extending it in a hackathon
+## Extending it
 
 - Replace the vicon simulator with your own pose source through
   `samples/vio-to-mavlink-bridge` (`VISO_TYPE=1`).

@@ -33,8 +33,8 @@ Start here: one ordered script, fresh clone => scored first flight => regression
    every arena: [samples/close-area-benchmark](samples/close-area-benchmark/README.md); try it in
    the browser: [site/playground/](site/playground/index.html).
 5. One-page summary: [docs/cheatsheets/close-area-a-to-b.md](docs/cheatsheets/close-area-a-to-b.md). Demo and
-   pitch: [templates/demo-script-close-area.md](templates/demo-script-close-area.md),
-   [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md).
+   pitch: [templates/presenting/live-demo-script-close-area.md](templates/presenting/live-demo-script-close-area.md),
+   [templates/presenting/close-area-story.md](templates/presenting/close-area-story.md).
 6. Day-1 tools, one entry command each (all synthetic; flow in the cheat sheet "Day-1 flow with the browser tools"):
    - Room => world JSON: `world_from_room.py rooms/hall_8x6.json` or `world_from_image.py <plan>.png --ref ...` in [close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic).
    - Rank planners on that world: [site/solver/](site/solver/README.md) (Import world JSON, Your drone, Quick / Stress / Thorough, Pareto view, Recommend => `recommend.md`).
@@ -43,7 +43,7 @@ Start here: one ordered script, fresh clone => scored first flight => regression
    - People walking through: `run_predict.py --layouts 50 --seeds 0,1` in [close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) (VO gate PASS on held-out seed 1).
    - B is a marker at an unknown spot: `bench.py --layouts 20 --seed 0` in [close-area-explore](samples/close-area-explore/README.md) (frontier finds B in 43 % with B unknown; ask for a nominal B).
    - More planners: [thetastar](samples/close-area-planner-thetastar/README.md), [mppi](samples/close-area-planner-mppi/README.md), [hybrid-astar](samples/close-area-planner-hybrid-astar/README.md) (negative result); all are `bench:` ids.
-   - Offline browser tools: `python3 tools/venue_kit.py prepare` then `verify` ([first-three-hours](docs/first-three-hours.md#browser-tools-offline)).
+   - Offline browser tools: `python3 tools/offline_browser_kit.py prepare` then `verify` ([first-three-hours](docs/first-three-hours.md#browser-tools-offline)).
    - How it was built: [docs/how-it-was-built.md](docs/how-it-was-built.md); live site: https://navigation-index.pages.dev/.
 
 MCP-only clients: `read` serves `docs/**/*.md`, `templates/**/*.md` and `samples/<name>/*.md`

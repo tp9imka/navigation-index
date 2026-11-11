@@ -1,9 +1,9 @@
 # Slides outline
 
 A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch. One message per slide;
-the slide title is the message. The 9-slide version mapped to judging criteria is
-[pitch-deck-outline.md](../pitch-deck-outline.md); use that one when the slot is 5 minutes or
-more and judges score per criterion.
+the slide title is the message. The 9-slide version mapped to review criteria is
+[deck-outline.md](../competition-kit/deck-outline.md); use that one when the slot is 5 minutes or
+more and reviewers score per criterion.
 
 Every figure path below was checked to exist in the hub on 2026-11-06. Hub figures are context;
 your own screenshot replaces them as soon as you have one. Put the input label (`[real]`,
@@ -42,15 +42,15 @@ Six-slide version: merge 6 into 5 as a "not measured / breaks when" row.
 ## Demo failed live: fallback plan
 
 No recorded video or GIF ships in the hub (checked 2026-11-06: no `.mp4`, `.webm`, `.mov` or
-`.gif` anywhere). You record your own. Full procedure: [demo-script.md](../demo-script.md#fallback-plan).
+`.gif` anywhere). You record your own. Full procedure: [live-demo-script.md](live-demo-script.md#fallback-plan).
 
 | Layer | What | Where it lives | Made when |
 |---|---|---|---|
-| 1. Live | `make demo` + dashboard on localhost, no network | Demo laptop | Rehearsed at H+36 |
-| 2. Recorded video | Full demo, screen + narration, commit hash on the first frame; second 30 s clip of attack + alarm only | Demo laptop, laptop 2, USB stick; plays offline | H+30 to H+36 ([demo-script.md](../demo-script.md#recording-the-backup-h30-to-h36)) |
-| 3. GIF in the deck | The 30 s clip as a GIF embedded in slide 4, so the deck itself carries the demo | Deck file | H+36. Convert with whatever is already on the laptop (e.g. `ffmpeg` if installed); do not install tools on demo day |
-| 4. Screenshots | Three stills: before attack, alarm, end state. The dashboard's S key saves `navdash-t<time>.png` with a metrics box ([dashboard controls](../demo-dashboard/README.md#controls)); samples with a `screenshot.sh` (golden-demo, golden-demo-px4, golden-demo-fixedwing, e2e-visual-nav-vpair, two-source-integrity-vpair) show how to capture headless | `slides/fallback/` in your repo | H+30 |
+| 1. Live | `make demo` + dashboard on localhost, no network | Demo laptop | Rehearsed at hour 36 |
+| 2. Recorded video | Full demo, screen + narration, commit hash on the first frame; second 30 s clip of attack + alarm only | Demo laptop, laptop 2, USB stick; plays offline | Hours 30-36 ([live-demo-script.md](live-demo-script.md#recording-the-backup-hours-30-36)) |
+| 3. GIF in the deck | The 30 s clip as a GIF embedded in slide 4, so the deck itself carries the demo | Deck file | Hour 36. Convert with whatever is already on the laptop (e.g. `ffmpeg` if installed); do not install tools on demo day |
+| 4. Screenshots | Three stills: before attack, alarm, end state. The dashboard's S key saves `navdash-t<time>.png` with a metrics box ([dashboard controls](../demo-dashboard/README.md#controls)); samples with a `screenshot.sh` (golden-demo, golden-demo-px4, golden-demo-fixedwing, e2e-visual-nav-vpair, two-source-integrity-vpair) show how to capture headless | `slides/fallback/` in your repo | Hour 30 |
 | 5. Hub stills | Last resort, labelled "reference run, not ours": [demo-dashboard/screenshots/spoof-t100.jpg](../demo-dashboard/screenshots/spoof-t100.jpg), [golden-demo/screenshots/golden-t36.jpg](../../samples/golden-demo/screenshots/golden-t36.jpg) (just after detection), [golden-demo/screenshots/golden-t100.jpg](../../samples/golden-demo/screenshots/golden-t100.jpg) | Hub | Already there |
 
 Switch rule: no output on the map 10 s after start => say "switching to the recording made at
-H+30" and play layer 2. Never debug on stage. Offer the live run at the judging table afterwards.
+hour 30" and play layer 2. Never debug on stage. Offer the live run at the review table afterwards.

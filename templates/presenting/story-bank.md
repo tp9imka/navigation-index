@@ -12,7 +12,7 @@ How to read a row:
   breath: `[real]` recorded public data, `[SITL]` real autopilot firmware with simulated
   sensors, `[synthetic]` simulated vehicle and sensors (sometimes over real terrain, maps or
   traffic), `[mixed]` part real, part simulated.
-- **Say also**: the caveat. If a judge would find it in the README, say it first.
+- **Say also**: the caveat. If a reviewer would find it in the README, say it first.
 
 These are context numbers, not your results. A hook sets up the problem; your own measured
 number answers it. Never say "we showed" about a hub number.

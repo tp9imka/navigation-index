@@ -62,7 +62,7 @@ time. They are lists now and are wrapped in `set(...)` only where Stone Soup wan
 4. Scores with `OSPAMetric(c, p, measure=Euclidean((0, 2)))` inside a `MultiManager`
    (position only; velocity in the distance would mix units).
 
-## Extending it in a hackathon
+## Extending it
 
 - Replace known priors with `MultiMeasurementInitiator` and a `UpdateTimeStepsDeleter`
   (tutorial `09_Initiators_&_Deleters.py`) so pop-up drones start tracks on their own.

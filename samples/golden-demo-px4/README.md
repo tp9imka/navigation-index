@@ -3,7 +3,7 @@
 <!-- about: repo:px4/px4-autopilot, repo:ardupilot/pymavlink, repo:mavlink/mavlink, repo:maplibre/maplibre-gl-js -->
 
 The `samples/golden-demo` v2 scenario ported to **PX4 v1.17.0 SIH** (`sihsim_quadx`, headless in
-Docker), for teams whose hackathon stack is PX4. Same survey, same attack, same monitor: a
+Docker), for teams whose stack is PX4. Same survey, same attack, same monitor: a
 companion process feeds the quad a GPS that starts drifting east 25 s into the AUTO mission
 (coherent: position and velocity dragged together at 1 m/s), checks GNSS against an
 independent VIO + real-visual-geolocation reference, and on alarm takes GNSS out of EKF2 and
@@ -223,7 +223,7 @@ Reused unchanged: `samples/golden-demo` (`companion.py`, `ss_fde.py`, `vgeo_repl
   path, `failure gps` injection (SIH does not implement it, see `samples/px4-sitl-gps-denial`),
   an RTL or hold response.
 
-## Extending it in a hackathon
+## Extending it
 
 - Swap the response for a mode change (`AUTO.LOITER`, custom mode main 4 sub 3) next to the
   param switch, or for a ROS 2 external mode via px4-ros2-interface-lib.

@@ -46,7 +46,7 @@ Use these when the brief is "fly a drone from A to B in a close area, maybe with
 | [../samples/close-area-arena/](../samples/close-area-arena/README.md) | You need a runnable A=>B baseline and scorer | 2.5D arena, straight, A* + ESDF and freest_beam planners, estimator faults (status `ran`, synthetic inputs) |
 | [../templates/flight-repo/](../templates/flight-repo/README.md) | You start the team repo | 20 Hz loop skeleton: adapter => nav health => planner => safety filter (mock only) |
 | [../templates/drone-adapter/](../templates/drone-adapter/README.md) and [drivers](../templates/drone-adapter/drivers/README.md) | You must send setpoints to PX4, ArduPilot, Crazyflie or Tello | `pose()`, `ranges()`, `send_setpoint()` seam and a platform table (drivers unrun, written from SDK docs) |
-| [../templates/demo-script-close-area.md](../templates/demo-script-close-area.md) and [../templates/pitch/close-area-story.md](../templates/pitch/close-area-story.md) | Demo and talk | Live-demo steps with a VIO fault, and the 3-minute pitch scaffold |
+| [../templates/presenting/live-demo-script-close-area.md](../templates/presenting/live-demo-script-close-area.md) and [../templates/presenting/close-area-story.md](../templates/presenting/close-area-story.md) | Demo and talk | Live-demo steps with a VIO fault, and the 3-minute pitch scaffold |
 
 ## While building
 

@@ -241,7 +241,7 @@ Field of view and star count (centroid noise 20 arcsec):
 - Floor achieved here: about 5 m with perfect inputs. So the star side (Skyfield reduction
   plus the stdlib solver) is not the bottleneck at any realistic level accuracy.
 
-## 3. When to use it at a hackathon
+## 3. When to use it
 
 Useful when:
 
@@ -287,7 +287,7 @@ Related in the index:
 - Context: [concept page](../../catalog/concepts/celestial-nav.md),
   [primer: absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md),
   [GAO-21-320SP](../../catalog/resources/gao-21-320sp-gps-alternatives.md) (DoD alt-PNT
-  assessment incl. celestial), [hackathon playbook](../../docs/competition-playbook.md).
+  assessment incl. celestial), [competition playbook](../../docs/competition-playbook.md).
 
 ## Not verified
 

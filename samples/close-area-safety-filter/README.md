@@ -215,7 +215,7 @@ Full tables and barrier diagnostics: [kill_b_summary_0.md](results/kill_b_summar
   collisions are QP-infeasible slack, not unsensed hits.
 - F3 Belief-CBF removes most fault collisions except jumps (9 %): a jump is not in the covariance.
 - The 0.2 m value was swept on seed 0 itself, so it is tuned on the test seed. Part e reruns on
-  held-out seeds. The job hit its time limit before writing this section; the loop driver wrote it
+  held-out seeds. The run hit its time limit before writing this section; it was written afterwards
   from the result files.
 
 ## Integrity monitor (ran 2026-11-09, synthetic)
@@ -232,7 +232,7 @@ Table: [integrity/results/monitor_0.md](integrity/results/monitor_0.md).
   That is the number a margin can use; the tuned fixed bound in part b was 0.2 m.
 - **Max-separation exclusion picks the wrong source** (9 runs NLOS, 19 runs both faults), as the
   hub's multi-source-fde saw. The headline's "hover when ambiguous" rule exists for this case.
-- The job hit its time limit before writing a README; the loop driver wrote this from the result
+- The run hit its time limit before writing a README; this was written afterwards from the result
   files. Used by the F5 arm in Part d.
 
 ## Part d: ours (F5) against the baselines (ran 2026-11-09, synthetic, seed 0 only)

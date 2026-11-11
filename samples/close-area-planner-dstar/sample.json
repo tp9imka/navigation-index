@@ -27,7 +27,7 @@
     "scipy",
     "cpu-only"
   ],
-  "verified": "2026-11-09: compare run/verify/scale/fuzz ran on Apple M3 Max, CPython 3.12.10 (results/ files); README written by the loop driver from those files after the job timed out.",
+  "verified": "2026-11-09: compare run/verify/scale/fuzz ran on Apple M3 Max, CPython 3.12.10 (results/ files); README written afterwards from those files after the build run timed out.",
   "verified_status": "ran",
   "deps": "venv",
   "first_command": ".venv/bin/python compare.py run --layouts 50 --seed 0",

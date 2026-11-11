@@ -4,7 +4,7 @@
 
 ## Goal
 
-Answer three questions a timing-resilience hackathon team gets asked, with numbers that come
+Answer three questions a timing-resilience project gets asked, with numbers that come
 from a run rather than a slide:
 
 1. If GNSS goes away, how fast does my clock drift for a TCXO, OCXO, rubidium or chip-scale

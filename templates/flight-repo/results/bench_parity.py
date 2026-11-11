@@ -1,4 +1,4 @@
-"""loop-78 check: every bench:<id> through this loop on one world file, plus the arena's own
+"""Check: every bench:<id> through this loop on one world file, plus the arena's own
 10 Hz reference loop for narrow_gap_0 / dstar_lite. Synthetic. Run from templates/flight-repo:
 
     .venv/bin/python results/bench_parity.py [--hub ../..] > results/bench_parity.txt
@@ -42,7 +42,7 @@ def main() -> int:
     load_arena(arena_dir)
     import numpy, scipy                                          # noqa: E401
     rows = bench_planner.describe(bench_dir)
-    print(f"# loop-78 bench_parity, {time.strftime('%Y-%m-%d %H:%M')}, input synthetic, world {rel(world)}, "
+    print(f"# bench_parity, {time.strftime('%Y-%m-%d %H:%M')}, input synthetic, world {rel(world)}, "
           f"Python {sys.version.split()[0]}, numpy {numpy.__version__}, scipy {scipy.__version__}")
 
     run = importlib.import_module("close_area_arena.run")

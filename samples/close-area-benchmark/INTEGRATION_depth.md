@@ -1,4 +1,4 @@
-# Proposed hub wiring for the depth-camera column (loop-94, text only, not applied)
+# Proposed hub wiring for the depth-camera column (text only, not applied)
 
 The driver applies these. This change edited no shared file. Links resolve from this file
 (samples/close-area-benchmark/); rewrite them relative to the target file when applying.
@@ -6,7 +6,7 @@ The driver applies these. This change edited no shared file. Links resolve from 
 Source of every number: [results/matrix_depth_0.md](results/matrix_depth_0.md) and
 [results/matrix_depth_0.compare.md](results/matrix_depth_0.compare.md). Input: synthetic (2.5D
 point-mass arena, simulated sensor), seed 0, 6 layouts per cell, scored on truth. Directional only.
-Yaw fixed toward B (benchmark loop and playground default, loop-75b). The rows carry the parked
+Yaw fixed toward B (benchmark loop and playground default). The rows carry the parked
 dropout-map bias ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)).
 
 ## Cheat sheet (docs/cheatsheets/close-area-a-to-b.md), planner table
@@ -44,4 +44,4 @@ Add to "Main risk":
 With a forward depth camera (RealSense class, 87 deg, 0.3-5 m) and no map, the best map-free planner
 in the synthetic arena (`dstar_lite`) reaches B in 79 % [66, 88] of 48 runs with 10 % collisions,
 against 92 % and 0 % on an ideal 360 deg fan, and glass walls still cause most of the collisions
-([close-area-benchmark](./README.md#forward-depth-camera-loop-94)).
+([close-area-benchmark](./README.md#forward-depth-camera)).

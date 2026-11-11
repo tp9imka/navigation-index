@@ -1,6 +1,6 @@
 # AGENTS.md
 
-For coding agents working in this repo during the hackathon.
+For coding agents working in this repo during a time-boxed build.
 
 ## Ground rules
 
@@ -25,11 +25,11 @@ targeting, homing, intercept or weapons guidance.
 Read these before searching the web or cloning repos (paths relative to the hub root):
 
 - `docs/research/close-area-nav/README.md`: close-area A=>B synthesis, recommended direction,
-  questions for the organisers. Lanes 01 (planning), 02 (sims), 03 (localization).
+  questions for whoever set the task. Lanes 01 (planning), 02 (sims), 03 (localization).
 - `samples/close-area-arena/CONTRACT.md`: seeded arena and truth scorer; its planners plug into
   this loop (`python3 main.py --mock --planner arena:<name> --arena <hub>/samples/close-area-arena`).
 - `templates/drone-adapter/frames.md`: ENU / NED, FLU / FRD and yaw conventions per platform.
-- `docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages`: which hub rows and samples fit Challenge 2.
+- `docs/problem-statement-decoder.md#route-a-full-brief-to-rows-and-first-pages`: which hub rows and samples fit an autonomous flight brief.
 
 Lookups: MCP `navigation-index` (`search`, `decode`, `show`, `read`), or
 `python3 <hub>/tools/query.py search "close area obstacle avoidance range sensor"`.

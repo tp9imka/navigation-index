@@ -1,13 +1,13 @@
 # Pitch structure
 
 Two skeletons (3 and 5 minutes) for a PNT-resilience pitch, the funder vocabulary to use and
-not to stretch, and 15 hard judge questions with answer patterns. Hub numbers below are copied
+not to stretch, and 15 hard reviewer questions with answer patterns. Hub numbers below are copied
 from [evidence-matrix.md](../../docs/evidence-matrix.md) with their input label; replace them
 with your own measured numbers wherever you have one.
 
 Contents: [The five beats](#the-five-beats) - [3-minute skeleton](#3-minute-skeleton) -
 [5-minute skeleton](#5-minute-skeleton) - [Worked example](#worked-example-spoof-on-a-small-uas-3-min) -
-[Funder vocabulary](#funder-vocabulary-without-overclaiming) - [Judge questions](#judge-questions)
+[Funder vocabulary](#funder-vocabulary-without-overclaiming) - [Reviewer questions](#reviewer-questions)
 
 ## The five beats
 
@@ -19,7 +19,7 @@ Contents: [The five beats](#the-five-beats) - [3-minute skeleton](#3-minute-skel
 | 4. Honest numbers | Your measured result vs a baseline, with ground truth and run count | "[Ours] vs [baseline], [N runs], [label]. Not measured: [X]." | Only the good number is shown |
 | 5. What's next | The next three steps to a field test, and the scope line | "Next: [real data / hardware / longer runs]. Defensive only, no transmission." | It asks for money before it shows a gap |
 
-The order matters. Judges decide in the first 30 s whether you understand the problem; the
+The order matters. Reviewers decide in the first 30 s whether you understand the problem; the
 honest-numbers beat is what separates you from the vendor brochure they have already read
 ([landscape](../../docs/landscape/README.md#what-is-commoditized)).
 
@@ -30,7 +30,7 @@ honest-numbers beat is what separates you from the vendor brochure they have alr
 | 0:00-0:20 | Problem | Hook from [story-bank.md](story-bank.md) (one sentence) + the platform and user from the brief | Title slide with the hook's figure |
 | 0:20-0:40 | Why it matters | The hook's number with its label: "in SITL, one flight" / "on a real recorded flight" | Problem slide |
 | 0:40-1:00 | What we built | One sentence per box: sources => integrity check => filter => output (TAK / GCS / autopilot). Say which boxes are real, which are stubs | Architecture slide |
-| 1:00-2:00 | Live demo | Attack starts, alarm fires, source switch or exclusion, uncertainty grows honestly, one failure case | Demo dashboard ([demo-script.md](../demo-script.md)) |
+| 1:00-2:00 | Live demo | Attack starts, alarm fires, source switch or exclusion, uncertainty grows honestly, one failure case | Demo dashboard ([live-demo-script.md](live-demo-script.md)) |
 | 2:00-2:35 | Honest numbers | Ours vs baseline, run count, label, ground truth; one "not measured" | Numbers slide |
 | 2:35-3:00 | What's next | Three next steps, the scope line, team | Next slide |
 
@@ -88,9 +88,9 @@ only what the right-hand column allows.
 
 Words that lose points with practitioners: "spoof-proof", "jam-proof", "works anywhere",
 "centimetre accuracy without GPS", "military-grade". The [landscape](../../docs/landscape/README.md#what-to-avoid)
-lists what judges already treat as solved or for sale.
+lists what reviewers already treat as solved or for sale.
 
-## Judge questions
+## Reviewer questions
 
 15 questions to rehearse, each with an answer pattern and the hub evidence behind it. Pattern =
 the shape of a good answer; fill the brackets with your project. Evidence labels as in the

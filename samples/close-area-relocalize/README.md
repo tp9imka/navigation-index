@@ -13,7 +13,7 @@ SITL, no flight.
 ## Run
 
 Demo command first (the headline arm, held-out seed 1, from
-[demo-script-close-area](../../templates/demo-script-close-area.md)). `--out .venv/demo-out`
+[live-demo-script-close-area](../../templates/presenting/live-demo-script-close-area.md)). `--out .venv/demo-out`
 keeps the committed `results/` untouched:
 
 ```sh
@@ -25,7 +25,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt
 # multi stuck (event at 13.0 s still open), multi_ig reached (accepted after 1.7 s at 0.0748 m)
 ```
 
-The demo took 55.31 s wall in the [Day-1 dry run](../../docs/cold-start-drill.md#blockers) on a loaded
+The demo took 55.31 s wall in the [cold-start drill](../../docs/cold-start-drill.md#blockers) on a loaded
 machine; the first run on a fresh venv can wait longer. Full experiments:
 
 ```sh
@@ -159,7 +159,7 @@ No dark zones. Point A varies by +-0.3 m per run.
   [innovation-prior-art 01](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md)),
   or a bounded hover with a fallback. Both are measured in the section on disambiguating moves below.
 
-## Disambiguating moves after a hover timeout (loop-22b)
+## Disambiguating moves after a hover timeout
 
 Adds the missing piece named above: when (c) has not accepted 1 s after a trigger, fly one short
 move chosen to separate the hypotheses, then let the same `RatioPersistence` rule decide. Up to
@@ -304,7 +304,7 @@ widening are the only guards.
 - Arena: [CONTRACT.md](../close-area-arena/CONTRACT.md), `estimator.py`, `faults.py`,
   `planners/astar_esdf.py`, used as checked out.
 
-### Held-out check (seed 1, run by the loop driver)
+### Held-out check (seed 1, independent rerun)
 
 `.venv/bin/python run_disambiguate.py --layouts 100 --seed 1` (76.5 s,
 [results/disamb_random_1.md](results/disamb_random_1.md); nothing was tuned on seed 1). Reached %
@@ -314,7 +314,7 @@ after a hover timeout recovers almost every run without wrong commits, and the i
 is as good as or better than the proposed separation score (e). Earlier-iteration JSON files
 (v1, v2) were dropped to keep the repo small; their .md tables stay.
 
-### Held-out matrix: seeds 2-4, 7 families, harder faults (loop-56)
+### Held-out matrix: seeds 2-4, 7 families, harder faults
 
 ```sh
 .venv/bin/python run_matrix.py --part parity   # 9 s: seed 1 random, 30 layouts, 180/180 runs match disamb_random_1.json
@@ -365,7 +365,7 @@ Limits:
 
 
 
-## Relocalization with a 4-beam sensor: hover and yaw-spin (loop-54)
+## Relocalization with a 4-beam sensor: hover and yaw-spin
 
 The headline above uses the arena's ideal 72-beam, 6 m fan. `ScanMatcher` needs at least 10
 finite returns per scan. The arena's `crazyflie` preset (Multi-ranger: 4 cones of 27 deg, front,
@@ -493,9 +493,9 @@ Limits of this addition:
   cone correction that works without a spin), a verification spin at B before landing, or a
   longer-range sensor.
 
-## Imperfect prior map (loop-55)
+## Imperfect prior map
 
-The headline above matches against the exact layout grid. The Day-1 intake default for Q7 is
+The headline above matches against the exact layout grid. The first-day intake default for Q7 is
 "unknown and moved between runs" ([intake](../../docs/first-day-intake.md)). This run
 measures the same arms on a ladder of map errors. Synthetic inputs only.
 
@@ -536,7 +536,7 @@ Median recover stays 0.2 s for (b) and 0.4 s for (c) and (f) on every rung. Wron
 
 Limits: one seed (2), no held-out check. Added obstacles are off the truth path by construction. The 0.2 m shift is per obstacle, not a rigid map offset. The e_selfmap truth arm is not an upper bound. The arena's 2 s dropout and 0.5 m jump only. The move check still ignores the live scan; checking moves against scan endpoints is the obvious next fix and was not run.
 
-## Yaw search: 3-DoF relocalization (loop-60)
+## Yaw search: 3-DoF relocalization
 
 The matcher above takes yaw from the estimator. [relocalize_yaw.py](relocalize_yaw.py) adds a
 yaw search to arm (f) without editing it. `YawScanMatcher` scores the same 0.1 m xy lattice at
@@ -626,7 +626,7 @@ a reset_counter trigger. The move chooser predicts all hypotheses at one common 
 setpoint-rotation vehicle model is an assumption. One corridor geometry, seed 2 only for
 random layouts. The flight rows of a second run were identical; the timings differ by load.
 
-## AF-MCL baseline: particle filter with random-particle injection (loop-67)
+## AF-MCL baseline: particle filter with random-particle injection
 
 Doc 10's kill test: does a published-style particle filter (no hover gate, output = particle mean) do as well as the hub's (f)? The reference is AF-MCL, [arXiv 2610.32645](https://arxiv.org/abs/2610.32645) (full HTML read 2026-11-09). It runs on a Crazyflie with 4 single-point ranges plus heading. It uses an EDT likelihood field, rejects beams at the previous estimate, and injects random particles when the short-term likelihood falls below the long-term one. All inputs here are **synthetic**.
 
@@ -721,7 +721,7 @@ Limits:
 
 ---
 
-## Rolling submap: collect returns while flying (loop-68)
+## Rolling submap: collect returns while flying
 
 The 4-beam arms above collect returns only after the loss. They spin (sparse.py) or rely on a particle filter (mcl.py). This arm keeps a rolling local submap of range returns while flying. On loss, it matches the whole submap against the map. All inputs are **synthetic**.
 

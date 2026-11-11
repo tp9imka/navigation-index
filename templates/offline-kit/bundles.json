@@ -569,7 +569,7 @@
         "templates/flight-repo/Makefile",
         "templates/flight-repo/main.py",
         "templates/flight-repo/flightloop/*.py",
-        "tools/venue_kit.py"
+        "tools/offline_browser_kit.py"
       ],
       "cache_inputs": [
         "pip/{pip_platform}/*.whl",
@@ -591,8 +591,8 @@
       "weights": "None: synthetic arena worlds, no models.",
       "browser": {
         "item": "browser (Pyodide for site/playground and site/solver)",
-        "prepare": "python3 tools/venue_kit.py prepare",
-        "verify": "python3 tools/venue_kit.py verify",
+        "prepare": "python3 tools/offline_browser_kit.py prepare",
+        "verify": "python3 tools/offline_browser_kit.py verify",
         "target": "site/playground/pyodide-local/",
         "doc": "docs/first-three-hours.md#browser-tools-offline",
         "note": "Separate tool, not fetched by prep.py; rehearse runs its verify only when the target exists."
@@ -873,10 +873,10 @@
           "measure": "{run}/flight-repo/results"
         },
         {
-          "name": "venue-kit-verify",
+          "name": "offline-browser-kit-verify",
           "argv": [
             "{python}",
-            "{repo}/tools/venue_kit.py",
+            "{repo}/tools/offline_browser_kit.py",
             "verify"
           ],
           "cwd": "{repo}",

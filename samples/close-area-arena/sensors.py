@@ -14,7 +14,7 @@ except ImportError:
 
 @dataclass
 class RangeScanDrops(RangeScan):
-    """RangeScan plus a per-beam drop flag (loop-88, docs/upstream-findings.md section 22).
+    """RangeScan plus a per-beam drop flag (docs/upstream-findings.md section 22).
 
     distances are unchanged: a dropped beam still reads math.inf, so every consumer that only
     reads the published fields behaves as before. dropped[i] is True when beam i was dropped

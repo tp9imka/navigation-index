@@ -179,13 +179,13 @@ Before the event, with network, from the hub root
 ([first three hours, Browser tools offline](first-three-hours.md#browser-tools-offline)):
 
 ```sh
-python3 tools/venue_kit.py prepare
-python3 tools/venue_kit.py verify
-python3 tools/venue_kit.py bundle
+python3 tools/offline_browser_kit.py prepare
+python3 tools/offline_browser_kit.py verify
+python3 tools/offline_browser_kit.py bundle
 ```
 
 - Last lines (from source and `--help`): `prepare` and `verify` end `PASS` or `FAIL`; `bundle` ends
-  `use: unzip venue-kit.zip -d venue-kit && cd venue-kit && python3 serve.py  => http://localhost:8000/site/playground/`.
+  `use: unzip offline-browser-kit.zip -d offline-browser-kit && cd offline-browser-kit && python3 serve.py  => http://localhost:8000/site/playground/`.
 - Wall: not measured. Disk: about 30 MB, 7 files for the manual vendoring
   ([playground, Offline](../site/playground/README.md#offline--blocked-cdn)).
 - Gotchas: `verify` needs a Chrome already on the machine (`CHROME=...`); it never installs one.

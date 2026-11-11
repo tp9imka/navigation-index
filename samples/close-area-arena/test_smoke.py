@@ -71,7 +71,7 @@ class SmokeTest(unittest.TestCase):
         self.assertEqual(problems, [])
         self.assertAlmostEqual(w.goal[0], 6.4)               # B moved into the A-origin frame
         self.assertGreater(w.clearance(5.0 - 0.8, 4.05 - 0.8), 0.4)   # door centre is free
-        # loop-99 (drill B1): a copied spec keeps "name": "hall_8x6"; outputs follow the file stem
+        # drill B1: a copied spec keeps "name": "hall_8x6"; outputs follow the file stem
         self.assertEqual(wfr.output_name("rooms/our_room.json"), "our_room")
         self.assertEqual(wfr.output_name("rooms/our_room.json", "lab"), "lab")
         import shutil

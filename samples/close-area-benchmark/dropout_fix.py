@@ -1,4 +1,4 @@
-"""loop-85: size the dropped-beam bug in astar_esdf.LogOddsMap.update, as a monkeypatch (arena not edited).
+"""Size the dropped-beam bug in astar_esdf.LogOddsMap.update, as a monkeypatch (arena not edited).
 
 The bug (docs/upstream-findings.md section 22): RangeScan reads math.inf both for "no surface within
 max_range" and for a dropped beam (sensors.py, sensors_cone.py). LogOddsMap.update traces every inf

@@ -8,8 +8,8 @@ version = "0.1.0"
 description = "TODO: one line - what it does, for whom, under which threat"
 readme = "README.md"
 requires-python = ">=3.10"
-license = "Apache-2.0"   # TODO: pick before the first push; see templates/submission-checklist.md
-dependencies = []        # core is stdlib-only; keep it that way so the demo survives a bad venue network
+license = "Apache-2.0"   # TODO: pick before the first push; see templates/competition-kit/submission-checklist.md
+dependencies = []        # core is stdlib-only; keep it that way so the demo survives a bad network
 
 [project.optional-dependencies]
 # Uncomment what you use; pin versions you tested. Check each install line in the hub catalog page.

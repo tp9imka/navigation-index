@@ -1,12 +1,12 @@
-# Demo script
+# Live demo script
 
-Live demo inside a 3-minute pitch (adjust times to the event). One driver, one narrator. The
+Live demo inside a 3-minute talk (adjust times to your slot). One driver, one narrator. The
 driver never types free text on stage: every step is a command already in shell history or a
 button.
 
 ## Setup (T-30 min)
 
-- [ ] Demo laptop on mains power, sleep and notifications off, screen mirrored and tested on the venue projector.
+- [ ] Demo laptop on mains power, sleep and notifications off, screen mirrored and tested on the room's projector.
 - [ ] `make test` green on the demo laptop. Paste the tail into the team chat.
 - [ ] TAK client / web map open, zoomed to the AOI, old tracks cleared.
 - [ ] GCS (QGC / MAVProxy) listening on the STATUSTEXT port, if used.
@@ -34,11 +34,11 @@ button.
 | Live run errors / hangs | No CoT on the map 10 s after start | Backup video from 0:00, narrator keeps the same script | 10 s |
 | Projector / laptop dies | Black screen | Laptop 2, same video | 30 s |
 | Map client crashes | Window gone | Plot of `runs/demo.jsonl` + video | 10 s |
-| Judges ask to see it live after the video | - | `make demo` at the judging table after the pitch | - |
+| Reviewers ask to see it live after the video | - | `make demo` at the review table after the talk | - |
 
-Never debug on stage. Say "switching to the recording made at H+30", switch, continue.
+Never debug on stage. Say "switching to the recording made at hour 30", switch, continue.
 
-## Recording the backup (H+30 to H+36)
+## Recording the backup (hours 30-36)
 
 - Record the full script once end to end, screen + narration, no cuts. Note the commit hash on the first frame.
 - Second recording of just the attack and alarm, 30 s, for a slide.

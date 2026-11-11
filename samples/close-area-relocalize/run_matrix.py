@@ -1,4 +1,4 @@
-"""Held-out matrix for the relocalization headline (loop-56): seeds 2-4, 7 families, 2 faults, 3 arms.
+"""Held-out matrix for the relocalization headline: seeds 2-4, 7 families, 2 faults, 3 arms.
 
 .venv/bin/python run_matrix.py --part parity     # seed 1 random 30 layouts vs results/disamb_random_1.json
 .venv/bin/python run_matrix.py --part matrix     # seeds 2-4 x 7 families x dropout/jump x (b)/(c)/(f), 30 layouts
