@@ -21,7 +21,7 @@ Own numpy + scipy Hybrid A* (Dolgov et al. 2008 / 2010) over continuous (x, y, h
 ## Related
 
 - explains: [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md)
-- explains: [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md)
+- explains: [Close-area benchmark matrix: 21 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md)
 - explains: [Path Planning for Autonomous Vehicles in Unknown Semi-structured Environments](../../catalog/resources/dolgov-hybrid-astar-ijrr-2010.md)
 
 ## Referenced by

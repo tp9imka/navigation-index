@@ -23,7 +23,7 @@ Own pure-Python Theta* (Daniel, Nash, Koenig, Felner 2010) and Lazy Theta* (Nash
 ## Related
 
 - explains: [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md)
-- explains: [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md)
+- explains: [Close-area benchmark matrix: 21 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md)
 - explains: [python_motion_planning](../../catalog/repos/ai-winter__python_motion_planning.md)
 - explains: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 

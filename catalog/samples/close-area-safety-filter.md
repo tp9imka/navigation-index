@@ -42,7 +42,7 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 - [Close-area talk scaffold: A to B through obstacles](../../templates/presenting/close-area-story.md) (mentions)
 - [Hard questions a reviewer will ask, with 20-second answers](../../templates/presenting/hard-questions.md) (mentions)
 - [Live demo script: close-area A to B, the toolkit in 2 minutes](../../templates/presenting/live-demo-script-close-area.md) (mentions)
-- [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
+- [Close-area benchmark matrix: 21 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 - [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) (explains)
 
 _Indexed by lane(s): samples_

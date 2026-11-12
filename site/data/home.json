@@ -13,7 +13,7 @@
  },
  "benchmark": {
   "source": "samples/close-area-benchmark/results/matrix_0.json",
-  "command": "python bench.py --layouts 20 --seed 0 --workers 14 --parity",
+  "command": "python bench.py --layouts 20 --seed 0 --workers 10 --parity --stem matrix_0_regen",
   "input": "synthetic",
   "layouts": 20,
   "presets": [

@@ -31,7 +31,7 @@ Replaces the close-area-arena A* carrot follower with a linear MPC path follower
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
-- [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
+- [Close-area benchmark matrix: 21 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 - [Close-area MPPI: sampling-based MPC (Model Predictive Path Integral) from range returns, alone and on an unknown-map A* path, vs A* on 8 arena families](../../catalog/samples/close-area-planner-mppi.md) (alternative_to)
 
 _Indexed by lane(s): samples_

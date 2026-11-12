@@ -30,6 +30,6 @@ Two more classic map-free local planners for close-area A=>B, written as close-a
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) (mentions)
-- [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
+- [Close-area benchmark matrix: 21 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 
 _Indexed by lane(s): samples_
