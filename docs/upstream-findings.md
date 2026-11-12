@@ -432,7 +432,19 @@ themselves. Not upstream defects: Stone Soup set-order nondeterminism, evo on a 
   matrix_0.json, the playground parity tables and the advisor stay as they are, with this bias noted.
   The fix (option B) is backlog item 88: patch the arena and regenerate every unknown-map row.
 - **Channel:** hub.
-- **Status:** fix written and verified (2026-11-11, [verification](../samples/close-area-benchmark/results/dropout_fix_verify_88b.md)), shipped off (`SKIP_DROPPED_BEAMS = False`) until the benchmark is regenerated with it (item 88c).
+- **Fix shipped (2026-11-12, item 88c):** `SKIP_DROPPED_BEAMS = True`. matrix_0, matrix_depth_0 and the
+  explore bench_0 were regenerated (seed 0, same layouts and limits, 10 processes). The 13 benchmark planners
+  that build no map from the scan reproduced 4160/4160 runs exactly; the 6 unknown-map rows the study ran
+  equal its `status` arm in 1920/1920 runs; a 104-row explore rerun with the fix off reproduced the old
+  rows exactly. Over all 8 unknown-map rows the 8-family reached rate moved by -3.7 to +1.3 points (ideal)
+  and -5.6 to +5.7 (crazyflie); the study's -1.9 lower bound did not cover `lazy_thetastar_unknown`
+  (-5.6). The advisor, playground parity files, scenario packs, replays and custom_sensor_0 were rebuilt
+  from the new rows. Not re-run, and labelled as such in their READMEs: the planner samples' own benches
+  (D* Lite, Hybrid A*, MPPI, Theta*), the arena's A* + ESDF and sensor-realism sections, the relocalize
+  imperfect-map section and the cold-start drill records.
+- **Status:** fixed (2026-11-11 [verification](../samples/close-area-benchmark/results/dropout_fix_verify_88b.md),
+  shipped 2026-11-12). [dropout_fix_tables.md](../samples/close-area-benchmark/results/dropout_fix_tables.md)
+  compares against the matrix_0.json of before the fix (git history), so it is not regenerated.
 
 ## Checked and not filed
 

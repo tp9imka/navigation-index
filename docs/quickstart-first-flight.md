@@ -160,7 +160,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena dep
 
 - cwd: `samples/close-area-benchmark`. Venv install time: not measured.
 - Last line ([pack_hall_8x6_stdout.txt](../samples/close-area-benchmark/results/pack_hall_8x6_stdout.txt),
-  1 worker): `wall 21.1 s for 60 runs on 1 workers; wrote results/pack_hall_8x6.json, .md`.
+  1 worker): `wall 21.7 s for 60 runs on 1 workers; wrote results/pack_hall_8x6.json, .md`.
   Exit code 0 = at least one planner passes every criterion, 1 = none does, 2 = invalid pack.
 - Wall: about 8 s (hall_8x6, 60 runs, 14 workers), about 15 s (office_crazyflie, 75 runs); 51 s for 105 runs on 4 workers on a fresh venv (16.4 s inside the script, drill 2026-11). On a laptop use `--workers 4`.
   - Before the 2026-11-10 fix the Solver and the pack disagreed on a no-map planner: on the drill room `lazy_thetastar_unknown` reached 5/5 in Solver Quick and 2/5 in the pack on the same seeds, A, B, vehicle and sensor (known-map planners agreed). Cause: the pack's benchmark loop inflated by 0.15 m while the Solver plans with the drone radius. Fixed: `pack.py` now applies the same per-run radius override, and the two agree on all 15 drill runs ([solver_vs_pack.md](../samples/close-area-benchmark/results/pack_drill_solver_vs_pack.md)). `--shipped-inflation` gives the old behaviour.
@@ -205,8 +205,8 @@ python3 tools/offline_browser_kit.py bundle
   in `samples/close-area-moving-obstacles` (own `.venv`, its Run section), about 45 s for 1000 runs; A* + VO gate reached B in
   100 of 100 held-out runs, 0 collisions, vs 92 % for A* + F2
   ([VO gate](../samples/close-area-moving-obstacles/README.md#prediction-arms-constant-velocity-tracks-space-time-a-vo-gate-ran-2026-11-10)).
-- B is a marker at an unknown spot: `.venv/bin/python bench.py --layouts 20 --seed 0 --jobs 14` in
-  `samples/close-area-explore` (own `.venv`), about 8 min on 14 processes; frontier found B in 43.3 % with B unknown, 88.3-100 %
+- B is a marker at an unknown spot: `.venv/bin/python bench.py --layouts 20 --seed 0 --jobs 10` in
+  `samples/close-area-explore` (own `.venv`), about 9 min on 10 processes; frontier found B in 41.7 % with B unknown, 86.7-95.0 %
   with a nominal B within 2 m ([close-area-explore](../samples/close-area-explore/README.md)). Ask for a nominal B.
 - VIO lost: `make first-flight-reloc` in flight-repo, then
   [close-area-relocalize](../samples/close-area-relocalize/README.md) (holds on open rooms only).

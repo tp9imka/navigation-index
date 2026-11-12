@@ -1,0 +1,87 @@
+$ .venv/bin/python export_replays.py --merge --planners astar_unknown,astar_unknown_f2,dstar_lite,thetastar_unknown,lazy_thetastar_unknown,mppi,mppi_astar,hybrid_astar   # 2026-11-12, dropped-beam fix on
+random__astar_unknown.json: reached, min clearance 0.6623 m, 6284 bytes, 10 Hz, world JSON round trip ok, wall 1.4 s; matrix match
+random__astar_unknown_f2.json: reached, min clearance 0.8274 m, 6337 bytes, 10 Hz, world JSON round trip ok, wall 1.5 s; matrix match
+random__dstar_lite.json: reached, min clearance 0.6577 m, 6294 bytes, 10 Hz, world JSON round trip ok, wall 0.5 s; matrix match
+random__thetastar_unknown.json: reached, min clearance 0.8905 m, 5897 bytes, 10 Hz, world JSON round trip ok, wall 15.9 s; matrix match
+random__lazy_thetastar_unknown.json: reached, min clearance 0.8918 m, 6015 bytes, 10 Hz, world JSON round trip ok, wall 4.5 s; matrix match
+random__mppi.json: reached, min clearance 0.3604 m, 6848 bytes, 10 Hz, world JSON round trip ok, wall 0.8 s; matrix match
+random__mppi_astar.json: reached, min clearance 0.5813 m, 6726 bytes, 10 Hz, world JSON round trip ok, wall 2.2 s; matrix match
+random__hybrid_astar.json: reached, min clearance 0.6713 m, 6293 bytes, 10 Hz, world JSON round trip ok, wall 0.6 s; matrix match
+u_trap__astar_unknown.json: reached, min clearance 0.578 m, 6482 bytes, 10 Hz, world JSON round trip ok, wall 1.7 s; matrix match
+u_trap__astar_unknown_f2.json: reached, min clearance 0.8322 m, 6561 bytes, 10 Hz, world JSON round trip ok, wall 1.9 s; matrix match
+u_trap__dstar_lite.json: reached, min clearance 0.5794 m, 6496 bytes, 10 Hz, world JSON round trip ok, wall 0.5 s; matrix match
+u_trap__thetastar_unknown.json: reached, min clearance 0.828 m, 6011 bytes, 10 Hz, world JSON round trip ok, wall 20.6 s; matrix match
+u_trap__lazy_thetastar_unknown.json: reached, min clearance 0.8692 m, 5978 bytes, 10 Hz, world JSON round trip ok, wall 5.0 s; matrix match
+u_trap__mppi.json: stuck, min clearance 0.6688 m, 6549 bytes, 10 Hz, world JSON round trip ok, wall 0.8 s; matrix match
+u_trap__mppi_astar.json: reached, min clearance 0.4473 m, 6869 bytes, 10 Hz, world JSON round trip ok, wall 2.5 s; matrix match
+u_trap__hybrid_astar.json: reached, min clearance 0.8129 m, 6294 bytes, 10 Hz, world JSON round trip ok, wall 0.7 s; matrix match
+narrow_gap__astar_unknown.json: reached, min clearance 0.3131 m, 7616 bytes, 10 Hz, world JSON round trip ok, wall 2.0 s; matrix match
+narrow_gap__astar_unknown_f2.json: stuck, min clearance 0.8328 m, 6973 bytes, 10 Hz, world JSON round trip ok, wall 2.4 s; matrix match
+narrow_gap__dstar_lite.json: reached, min clearance 0.3174 m, 7563 bytes, 10 Hz, world JSON round trip ok, wall 0.7 s; matrix match
+narrow_gap__thetastar_unknown.json: reached, min clearance 0.308 m, 7086 bytes, 10 Hz, world JSON round trip ok, wall 22.6 s; matrix match
+narrow_gap__lazy_thetastar_unknown.json: reached, min clearance 0.314 m, 7061 bytes, 10 Hz, world JSON round trip ok, wall 6.1 s; matrix match
+narrow_gap__mppi.json: reached, min clearance 0.2141 m, 6849 bytes, 10 Hz, world JSON round trip ok, wall 0.8 s; matrix match
+narrow_gap__mppi_astar.json: reached, min clearance 0.2576 m, 6769 bytes, 10 Hz, world JSON round trip ok, wall 2.4 s; matrix match
+narrow_gap__hybrid_astar.json: reached, min clearance 0.329 m, 7424 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+office__astar_unknown.json: reached, min clearance 0.264 m, 9937 bytes, 10 Hz, world JSON round trip ok, wall 0.7 s; matrix match
+office__astar_unknown_f2.json: stuck, min clearance 0.8475 m, 7095 bytes, 10 Hz, world JSON round trip ok, wall 0.5 s; matrix match
+office__dstar_lite.json: reached, min clearance 0.264 m, 9966 bytes, 10 Hz, world JSON round trip ok, wall 0.6 s; matrix match
+office__thetastar_unknown.json: reached, min clearance 0.3661 m, 9027 bytes, 10 Hz, world JSON round trip ok, wall 2.3 s; matrix match
+office__lazy_thetastar_unknown.json: reached, min clearance 0.3635 m, 8947 bytes, 10 Hz, world JSON round trip ok, wall 1.3 s; matrix match
+office__mppi.json: stuck, min clearance 0.6632 m, 7516 bytes, 10 Hz, world JSON round trip ok, wall 0.5 s; matrix match
+office__mppi_astar.json: reached, min clearance 0.3192 m, 7335 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+office__hybrid_astar.json: reached, min clearance 0.2534 m, 9462 bytes, 10 Hz, world JSON round trip ok, wall 0.7 s; matrix match
+warehouse__astar_unknown.json: reached, min clearance 0.2948 m, 14656 bytes, 10 Hz, world JSON round trip ok, wall 3.9 s; matrix match
+warehouse__astar_unknown_f2.json: stuck, min clearance 0.7233 m, 8877 bytes, 10 Hz, world JSON round trip ok, wall 4.4 s; matrix match
+warehouse__dstar_lite.json: reached, min clearance 0.2931 m, 15332 bytes, 10 Hz, world JSON round trip ok, wall 1.7 s; matrix match
+warehouse__thetastar_unknown.json: reached, min clearance 0.3063 m, 13538 bytes, 10 Hz, world JSON round trip ok, wall 57.7 s; matrix match
+warehouse__lazy_thetastar_unknown.json: reached, min clearance 0.2972 m, 13270 bytes, 10 Hz, world JSON round trip ok, wall 18.8 s; matrix match
+warehouse__mppi.json: reached, min clearance 0.2899 m, 10390 bytes, 10 Hz, world JSON round trip ok, wall 1.1 s; matrix match
+warehouse__mppi_astar.json: reached, min clearance 0.2964 m, 9467 bytes, 10 Hz, world JSON round trip ok, wall 2.6 s; matrix match
+warehouse__hybrid_astar.json: reached, min clearance 0.2654 m, 14716 bytes, 10 Hz, world JSON round trip ok, wall 1.5 s; matrix match
+forest__astar_unknown.json: reached, min clearance 0.6172 m, 13629 bytes, 10 Hz, world JSON round trip ok, wall 1.6 s; matrix match
+forest__astar_unknown_f2.json: stuck, min clearance 0.8431 m, 14212 bytes, 10 Hz, world JSON round trip ok, wall 1.7 s; matrix match
+forest__dstar_lite.json: reached, min clearance 0.5827 m, 13645 bytes, 10 Hz, world JSON round trip ok, wall 0.7 s; matrix match
+forest__thetastar_unknown.json: reached, min clearance 0.7422 m, 12442 bytes, 10 Hz, world JSON round trip ok, wall 18.4 s; matrix match
+forest__lazy_thetastar_unknown.json: reached, min clearance 0.7394 m, 12439 bytes, 10 Hz, world JSON round trip ok, wall 4.6 s; matrix match
+forest__mppi.json: reached, min clearance 0.4142 m, 12878 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+forest__mppi_astar.json: reached, min clearance 0.5902 m, 12910 bytes, 10 Hz, world JSON round trip ok, wall 2.2 s; matrix match
+forest__hybrid_astar.json: reached, min clearance 0.5643 m, 13301 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+maze__astar_unknown.json: reached, min clearance 0.5865 m, 15959 bytes, 10 Hz, world JSON round trip ok, wall 3.9 s; matrix match
+maze__astar_unknown_f2.json: stuck, min clearance 0.7941 m, 8275 bytes, 10 Hz, world JSON round trip ok, wall 2.7 s; matrix match
+maze__dstar_lite.json: reached, min clearance 0.5845 m, 16213 bytes, 10 Hz, world JSON round trip ok, wall 1.3 s; matrix match
+maze__thetastar_unknown.json: reached, min clearance 0.7996 m, 13535 bytes, 10 Hz, world JSON round trip ok, wall 59.5 s; matrix match
+maze__lazy_thetastar_unknown.json: reached, min clearance 0.7895 m, 13583 bytes, 10 Hz, world JSON round trip ok, wall 13.9 s; matrix match
+maze__mppi.json: stuck, min clearance 0.6544 m, 10151 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+maze__mppi_astar.json: reached, min clearance 0.3757 m, 13001 bytes, 10 Hz, world JSON round trip ok, wall 4.2 s; matrix match
+maze__hybrid_astar.json: reached, min clearance 0.4198 m, 14995 bytes, 10 Hz, world JSON round trip ok, wall 1.5 s; matrix match
+glass_office__astar_unknown.json: collision, min clearance 0.144 m, 9415 bytes, 10 Hz, world JSON round trip ok, wall 0.8 s; matrix match
+glass_office__astar_unknown_f2.json: collision, min clearance 0.1489 m, 7868 bytes, 10 Hz, world JSON round trip ok, wall 0.6 s; matrix match
+glass_office__dstar_lite.json: timeout, min clearance 0.2255 m, 18180 bytes, 10 Hz, world JSON round trip ok, wall 1.2 s; matrix match
+glass_office__thetastar_unknown.json: reached, min clearance 0.2193 m, 13760 bytes, 10 Hz, world JSON round trip ok, wall 5.1 s; matrix match
+glass_office__lazy_thetastar_unknown.json: collision, min clearance 0.1482 m, 4952 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+glass_office__mppi.json: collision, min clearance 0.14 m, 3386 bytes, 10 Hz, world JSON round trip ok, wall 0.1 s; matrix match
+glass_office__mppi_astar.json: collision, min clearance 0.1417 m, 6146 bytes, 10 Hz, world JSON round trip ok, wall 0.9 s; matrix match
+glass_office__hybrid_astar.json: collision, min clearance 0.1369 m, 9155 bytes, 10 Hz, world JSON round trip ok, wall 1.0 s; matrix match
+--merge: kept 88 existing index entries (files not rewritten, match flags as stored)
+wrote 64 replays, index.json lists 152 to ../../site/data/showcase/replays_v2; 152/152 match results/matrix_0.json; world JSON round trip ok 152/152; max 34492 bytes; wall 329.1 s
+
+$ .venv/bin/python export_replays.py --merge --planners thetastar_known,lazy_thetastar_known   # 2026-11-12
+random__thetastar_known.json: reached, min clearance 0.8834 m, 5887 bytes, 10 Hz, world JSON round trip ok, wall 1.4 s; matrix match
+random__lazy_thetastar_known.json: reached, min clearance 0.8494 m, 5932 bytes, 10 Hz, world JSON round trip ok, wall 1.1 s; matrix match
+u_trap__thetastar_known.json: reached, min clearance 0.9179 m, 5844 bytes, 10 Hz, world JSON round trip ok, wall 1.3 s; matrix match
+u_trap__lazy_thetastar_known.json: reached, min clearance 0.919 m, 5836 bytes, 10 Hz, world JSON round trip ok, wall 0.7 s; matrix match
+narrow_gap__thetastar_known.json: reached, min clearance 0.3582 m, 6973 bytes, 10 Hz, world JSON round trip ok, wall 2.8 s; matrix match
+narrow_gap__lazy_thetastar_known.json: reached, min clearance 0.3692 m, 6997 bytes, 10 Hz, world JSON round trip ok, wall 2.1 s; matrix match
+office__thetastar_known.json: reached, min clearance 0.3725 m, 9056 bytes, 10 Hz, world JSON round trip ok, wall 1.6 s; matrix match
+office__lazy_thetastar_known.json: reached, min clearance 0.3853 m, 9016 bytes, 10 Hz, world JSON round trip ok, wall 1.1 s; matrix match
+warehouse__thetastar_known.json: reached, min clearance 0.6811 m, 11154 bytes, 10 Hz, world JSON round trip ok, wall 4.6 s; matrix match
+warehouse__lazy_thetastar_known.json: reached, min clearance 0.6811 m, 11173 bytes, 10 Hz, world JSON round trip ok, wall 3.1 s; matrix match
+forest__thetastar_known.json: reached, min clearance 0.7189 m, 12433 bytes, 10 Hz, world JSON round trip ok, wall 1.9 s; matrix match
+forest__lazy_thetastar_known.json: reached, min clearance 0.7231 m, 12503 bytes, 10 Hz, world JSON round trip ok, wall 1.2 s; matrix match
+maze__thetastar_known.json: reached, min clearance 0.8223 m, 13177 bytes, 10 Hz, world JSON round trip ok, wall 4.4 s; matrix match
+maze__lazy_thetastar_known.json: reached, min clearance 0.8208 m, 13186 bytes, 10 Hz, world JSON round trip ok, wall 2.6 s; matrix match
+glass_office__thetastar_known.json: reached, min clearance 0.2445 m, 8989 bytes, 10 Hz, world JSON round trip ok, wall 4.1 s; matrix match
+glass_office__lazy_thetastar_known.json: reached, min clearance 0.2406 m, 8979 bytes, 10 Hz, world JSON round trip ok, wall 2.3 s; matrix match
+--merge: kept 152 existing index entries (files not rewritten, match flags as stored)
+wrote 16 replays, index.json lists 168 to ../../site/data/showcase/replays_v2; 168/168 match results/matrix_0.json; world JSON round trip ok 168/168; max 34492 bytes; wall 36.7 s

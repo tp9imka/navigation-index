@@ -1,1 +1,1 @@
-results/replay_office_0_nominal_frontier_r5_ideal.json: reached, found at 45.3 s, at B 47.18 s, 16593 bytes, world round trip ok; matches results/bench_0.json
+results/replay_office_0_nominal_frontier_r5_ideal.json: reached, found at 172.2 s, at B 174.16 s, 50278 bytes, world round trip ok; matches results/bench_0.json

@@ -77,8 +77,8 @@ Network blocks the CDN? `python3 tools/offline_browser_kit.py prepare`, then `ve
 
 ## 3. Which planner first
 
-Read the [close-area-benchmark](../../samples/close-area-benchmark/README.md#results-ran-2026-11-09-synthetic)
-matrix before writing a planner: 14 planners x 8 room families x 2 range sensors, 20 layouts per
+Read the [close-area-benchmark](../../samples/close-area-benchmark/README.md#results-ran-2026-11-12-synthetic)
+matrix before writing a planner: 21 planners x 8 room families x 2 range sensors, 20 layouts per
 cell, seed 0, true pose, synthetic. Cell = reached % / collision %. "Ideal" = 72 rays, 6 m, sees
 glass. "4 beams" = the Crazyflie-like preset (4 x 27 deg cones, 3 m, glass invisible). Try the
 picks in the browser: [playground](../../site/playground/index.html) (its advisor panel shows the
@@ -89,14 +89,14 @@ so read it as a direction, not a ranking.
 
 | Family | With a map (all sensors) | Without a map, ideal | Without a map, 4 beams | Without a map, depth camera (n = 6, directional) |
 |---|---|---|---|---|
-| random clutter | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown`, `astar_unknown_f2` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite` or `mppi_astar` 100 / 0 |
-| u_trap | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown_f2` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite` or `mppi_astar` 100 / 0 |
-| narrow_gap (0.5-0.9 m) | `astar_known` 100 / 0 | `astar_unknown` 90 / 0 | `astar_unknown` 25 / 5 (weak) | `mppi_astar` 83 / 0 |
-| office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 50 / 5 | `astar_unknown` or `dstar_lite` 67 / 0 |
-| warehouse | `astar_known` 100 / 0 | `astar_unknown` 55 / 0 | none works: `bug2` 15 / 20 reaches most, `astar_unknown_f2` 0 / 0 is safest | `dstar_lite` 83 / 0 |
-| forest (open poles) | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 (reactive planners tie) | `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite`, `dwa_mem` or `mppi_astar` 100 / 0 |
-| maze | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 55 / 0 | `astar_unknown` 100 / 0 (`dstar_lite` 83 / 0) |
-| glass_office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | none works: `dstar_lite` 10 / 65; `freest_beam` or `dwa_mem` 5 / 5 are safest | none works: `dstar_lite` 33 / 67; `astar_unknown_f2` 0 / 0 or `dwa_mem` 17 / 0 are safest |
+| random clutter | `astar_known` 100 / 0 | `astar_unknown` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite` or `mppi_astar` 100 / 0 |
+| u_trap | `astar_known` 100 / 0 | `astar_unknown` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite` or `mppi_astar` 100 / 0 |
+| narrow_gap (0.5-0.9 m) | `astar_known` 100 / 0 | `dstar_lite` 85 / 0 (`astar_unknown` 80 / 0) | `dstar_lite` 20 / 0 (weak) | `mppi_astar` 83 / 0 |
+| office | `astar_known` 100 / 0 | `astar_unknown` or `dstar_lite` 90 / 0 | `astar_unknown_f2` 40 / 5 (weak) | `mppi_astar` 100 / 0 (`astar_unknown` or `dstar_lite` 83 / 0) |
+| warehouse | `astar_known` 100 / 0 | `dstar_lite` 55 / 0 (`astar_unknown` 50 / 0) | `astar_unknown_f2` 30 / 0 (weak) | `astar_unknown` or `mppi_astar` 83 / 0 |
+| forest (open poles) | `astar_known` 100 / 0 | `astar_unknown` or `dstar_lite` 100 / 0 (reactive planners tie) | `astar_unknown` or `astar_unknown_f2` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite`, `dwa_mem` or `mppi_astar` 100 / 0 |
+| maze | `astar_known` 100 / 0 | `astar_unknown` or `dstar_lite` 90 / 0 | `dstar_lite` 55 / 0 (`astar_unknown_f2` 50 / 0) | `mppi_astar` 100 / 0 (`astar_unknown` or `dstar_lite` 83 / 0) |
+| glass_office | `astar_known` 100 / 0 | `astar_unknown` or `dstar_lite` 90 / 0 | none works: `astar_unknown` or `dstar_lite` 15 / 60; `freest_beam` or `dwa_mem` 5 / 5 are safest | none works: `astar_unknown`, `dstar_lite` or `mppi_astar` 17 / 83; `astar_unknown_f2` 0 / 0 or `dwa_mem` 17 / 0 are safest |
 
 How to read it:
 
@@ -105,17 +105,17 @@ How to read it:
   16 cells; start from `astar_known` (`planners/astar_esdf.py`). Informed RRT* needed more than
   60 s in 30 of its 40 maze + warehouse successes. The map is exact and the pose true here, so
   100 % is an upper bound.
-- **No map, dense sensor:** `astar_unknown` (`astar_esdf` with `known_map=False`). `dstar_lite`
-  ends the same way in 153 of 160 runs and searches a few times faster; it matters only on maps
-  beyond about 40 x 40 m ([close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md)).
-- **No map, 4 beams:** `astar_unknown` + F2 range filter. It is the only map-free row at 50 % or
-  more in office and maze. Warehouse and glass rooms have no working map-free planner: ask for the
-  map. On 72 beams do not put F2 under it by default: it freezes in doors and aisles (0 % reached
+- **No map, dense sensor:** `astar_unknown` (`astar_esdf` with `known_map=False`) or `dstar_lite`.
+  D* Lite ends the same way in 155 of 160 runs, is 5 points ahead on narrow_gap and warehouse, and
+  searches a few times faster; the speed matters only on maps beyond about 40 x 40 m ([close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md)).
+- **No map, 4 beams:** `astar_unknown` + F2 range filter. It reaches most in office (40 %) and
+  warehouse (30 %, no collision) and 50 % in maze, where `dstar_lite` reaches 55 %. None of that is
+  a working answer, and glass rooms have no map-free planner at all: ask for the map. On 72 beams do not put F2 under it by default: it freezes in doors and aisles (0 % reached
   in office, warehouse, maze, narrow_gap and glass_office).
-- **No map, forward depth camera:** `dstar_lite` first (79 % reached [66, 88], 10 % collision
-  [5, 22] pooled over 48 synthetic runs, 95 % Wilson), `astar_unknown` close behind (75 / 17).
-  `mppi_astar`, the ideal-sensor pick, collides in 50 % on office and warehouse with this sensor.
-  Glass rooms still need a map: glass is invisible to the camera (glass_office 67-83 % collision).
+- **No map, forward depth camera:** `mppi_astar` first (85 % reached [73, 93], 10 % collision
+  [5, 22] pooled over 48 synthetic runs, 95 % Wilson), `astar_unknown` (75 / 17) and `dstar_lite`
+  (73 / 15) behind. Glass rooms still need a map: glass is invisible to the camera (glass_office
+  83 % collision for all three).
 - **Reactive planners** (APF, VFH+, DWA, Bug2, TangentBug) only fit open clutter: 0-40 % in
   office, warehouse and maze on ideal. On 4 beams, 3 s of scan memory cuts DWA collisions sharply
   (office 55 => 0 %), at the cost of runs ending stuck.
@@ -134,7 +134,8 @@ Do not start from `straight`: it never steers, so it is only the floor.
 ## 4. Numbers you can cite
 
 All synthetic, seed 0, from the sample READMEs. "Re-run" means repeated for this sheet with
-identical results.
+identical results. Rows that use a map built from range hits and are not from the benchmark ran before
+the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)).
 
 - A* + ESDF, 50 layouts per family: straight reached 26 % / 0 % / 0 % (random / u_trap /
   narrow_gap); known map 100 % on all three; unknown map 100 % / 100 % / 80 %, 0 % collision.
@@ -158,7 +159,7 @@ identical results.
 - First flight: `make first-flight` in [flight-repo](../../templates/flight-repo/README.md#brief-to-first-flight) flies arena A* + PX4-CBF through the 20 Hz loop: reached in 19.76 s, min clearance 0.83 m; with the VIO jump fault it ends `unconfirmed` 0.64 m from B instead of claiming arrival. One layout. Not re-run.
 - Corridor MPC (OSQP) vs the A* carrot follower, 50 layouts per family: both 100 % reached, 0 % collision; MPC 21.97 vs 24.23 s to goal through narrow gaps; QP 0.22 ms median on an M3 Max laptop. Not re-run ([close-area-planner-mpc](../../samples/close-area-planner-mpc/README.md)).
 - RRT* vs A* on the same grid: A* plans a 0.4 m gap in 100 % of layouts, RRT* with 1000 samples in 28.3 % (5000: 85.7 %); keep A* as the default. Not re-run ([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)).
-- Benchmark, 20 layouts per cell: without a map on 4 beams, `astar_unknown` reaches office 35 % (25 % collision), warehouse 0 % (50 %), glass_office 5 % (65 %); with a map every prior-map planner 100 / 0. Not re-run ([close-area-benchmark](../../samples/close-area-benchmark/README.md)).
+- Benchmark, 20 layouts per cell: without a map on 4 beams, `astar_unknown` reaches office 30 % (35 % collision), warehouse 5 % (55 %), glass_office 15 % (60 %); with a map every prior-map planner 100 / 0. Regenerated 2026-11-12 with the dropped-beam fix ([close-area-benchmark](../../samples/close-area-benchmark/README.md)).
 - VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions, but with 2-4 wrong commits; a hover-until-unique rule deadlocks in a corridor (20 of 20). Hover plus a short info-gain move after 1 s: 99-100 % reached, 0 wrong commits, held-out seed 1 included; corridor 80 %. Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md)). Held-out seeds 2-4 narrowed it: 100 %, 0 wrong commits on random and u_trap only; office 94.4 %, glass_office 83.3 %, narrow_gap 85.6 %, warehouse 97.2 % with 33 wrong commits; 48-64 % on 4 beams with a yaw-spin; 7 % collisions with unmapped added obstacles ([held-out matrix](../../samples/close-area-relocalize/README.md)).
 - Replan cost: a full 200 x 200 x 50 scipy EDT took 183 ms median on an M3 Max (synthetic grid),
   so a 20 x 20 x 5 m ESDF at 0.1 m fits a 2-5 Hz replan. Not re-run.
@@ -219,8 +220,8 @@ before any planner flight. Rules per platform: [frames.md](../../templates/drone
    (95 % Wilson 57-100 %); only `straight` dropped out (synthetic,
    [Solver](../../site/solver/README.md)).
    A tie is not a winner: read the Pareto view, then run Stress, Thorough or a harder map.
-8. **Frontier search is not a search for B.** With B unknown, nearest-frontier found B in 43.3 %
-   [31.6, 55.9] of runs in 180 s; with a nominal B within 2 m every arm found it in 88.3-100 %. The
+8. **Frontier search is not a search for B.** With B unknown, nearest-frontier found B in 41.7 %
+   [30.1, 54.3] of runs in 180 s; with a nominal B within 2 m every arm found it in 86.7-95.0 %. The
    6 m range sensor maps the room before the 2 m detector sees B (synthetic,
    [close-area-explore](../../samples/close-area-explore/README.md)). Ask for a nominal B.
 9. **Planners on 4 beams.** Benchmark winners on the ideal 72-ray fan collide on the Crazyflie-like

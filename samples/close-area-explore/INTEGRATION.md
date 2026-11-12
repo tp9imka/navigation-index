@@ -17,14 +17,14 @@ detector has seen it.
 Add to the "Start from" cell:
 
 [close-area-explore](./README.md) (synthetic: B as a region of radius 0 / 2 / 5 m or unknown,
-detected within 2 m in line of sight; with a nominal within 2 m every arm found B in 88.3-100 %
-of 60 runs, with R = 5 m random waypoints 91.7 %, lawnmower 86.7 %, nominal-first + frontier
-81.7 %; with B unknown nearest-frontier found 43.3 % [31.6, 55.9] in 180 s)
+detected within 2 m in line of sight; with a nominal within 2 m every arm found B in 86.7-95.0 %
+of 60 runs, with R = 5 m random waypoints 85.0 %, lawnmower 83.3 %, nominal-first + frontier
+81.7 %; with B unknown nearest-frontier found 41.7 % [30.1, 54.3] in 180 s)
 
 Add to the "Main risk" cell:
 
 B outside the detector's view from A. Without a nominal B, nearest-frontier search found B in
-43.3 % of ideal-sensor runs (warehouse 10 %) in 180 s; with the 4-beam crazyflie preset 3.3 %.
+41.7 % of ideal-sensor runs (warehouse 5 %) in 180 s; with the 4-beam crazyflie preset 18.3 %.
 Ask whether a nominal B is given and how far it can be off.
 
 Search keywords for the row: `frontier exploration search`, `lawnmower sweep nominal goal`,
@@ -40,7 +40,7 @@ a row in its INTEGRATION.md cheat-sheet line:
   unknown-map A* follower (`astar_unknown` row), same presets, families random / office /
   warehouse, 180 s budget instead of 60 s, stuck = under 0.5 m of path in 10 s. Its `oracle`
   row (B given) uses the same follower as the benchmark's `astar_unknown` row, with the map
-  origin at the geofence and the longer budget: ideal 98.3 % reached, crazyflie 38.3 % collision,
+  origin at the geofence and the longer budget: ideal 93.3 % reached, crazyflie 38.3 % collision,
   pooled over the three families.
 
 Replay for the showcase: copy

@@ -50,7 +50,7 @@ def main():
     pg_astar = ns["PLANNERS"]["astar_unknown"]
     ns["PLANNERS"]["astar_unknown_pg"] = pg_astar
     ns["PLANNERS"]["astar_unknown"] = lambda w: bench.PLANNERS["astar_unknown"][0](w)
-    ns["WORLD_PLANNERS"].add("astar_unknown")
+    ns["WORLD_PLANNERS"].update(("astar_unknown", "astar_unknown_pg"))
     docs = {w: json.load(open(os.path.join(NP.PG, "presets", w + ".json"))) for w in WORLDS}
     rows = []
     t_all = time.perf_counter()

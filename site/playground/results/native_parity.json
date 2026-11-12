@@ -8,11 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 3286.9,
-   "arena": 494.0,
-   "reactive": 70.5,
-   "sample_planners": 2390.7,
-   "safety_filter": 4439.2
+   "scipy_ndimage": 422.5,
+   "arena": 10.5,
+   "reactive": 2.2,
+   "sample_planners": 150.2,
+   "safety_filter": 280.0
   },
   "planners": [
    "straight",
@@ -98,7 +98,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.079,
+   "native_wall_s": 0.08,
    "frames": 204,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -119,7 +119,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.08,
-   "native_wall_s": 0.092,
+   "native_wall_s": 0.09,
    "frames": 261,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -140,7 +140,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.341,
+   "native_wall_s": 0.338,
    "frames": 194,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -161,7 +161,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 18.7,
-   "native_wall_s": 1.372,
+   "native_wall_s": 1.346,
    "frames": 187,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -182,7 +182,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.88,
-   "native_wall_s": 0.099,
+   "native_wall_s": 0.098,
    "frames": 289,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -224,7 +224,7 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.36,
+   "native_wall_s": 0.365,
    "frames": 142,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -245,7 +245,7 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.65,
+   "native_wall_s": 0.643,
    "frames": 329,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -266,7 +266,7 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.141,
+   "native_wall_s": 0.146,
    "frames": 259,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -287,7 +287,7 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.477,
+   "native_wall_s": 0.472,
    "frames": 206,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -308,7 +308,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.419,
+   "native_wall_s": 0.41,
    "frames": 228,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -329,7 +329,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.068,
+   "native_wall_s": 0.069,
    "frames": 131,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -364,15 +364,15 @@
    "score": {
     "outcome": "collision",
     "time_to_goal_s": null,
-    "duration_s": 55.28,
-    "min_clearance_m": 0.1472,
-    "path_length_m": 25.733
+    "duration_s": 26.2,
+    "min_clearance_m": 0.144,
+    "path_length_m": 10.824
    },
    "max_pose_error_m": 0.0,
    "free_path": true,
-   "sim_s": 55.28,
-   "native_wall_s": 1.402,
-   "frames": 553,
+   "sim_s": 26.2,
+   "native_wall_s": 0.764,
+   "frames": 262,
    "max_time_s": 60.0,
    "max_time_source": "default"
   },
@@ -392,7 +392,7 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.447,
+   "native_wall_s": 0.432,
    "frames": 295,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -413,7 +413,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 43.68,
-   "native_wall_s": 0.568,
+   "native_wall_s": 0.563,
    "frames": 437,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -434,7 +434,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 1.337,
+   "native_wall_s": 1.327,
    "frames": 290,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -476,7 +476,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 25.68,
-   "native_wall_s": 0.122,
+   "native_wall_s": 0.121,
    "frames": 257,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -489,16 +489,16 @@
    "filter": "none",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 24.52,
-    "duration_s": 24.52,
-    "min_clearance_m": 0.3288,
-    "path_length_m": 25.187
+    "time_to_goal_s": 24.78,
+    "duration_s": 24.78,
+    "min_clearance_m": 0.3174,
+    "path_length_m": 25.243
    },
    "max_pose_error_m": 0.0,
    "free_path": true,
-   "sim_s": 24.52,
-   "native_wall_s": 0.772,
-   "frames": 246,
+   "sim_s": 24.78,
+   "native_wall_s": 0.711,
+   "frames": 248,
    "max_time_s": 60.0,
    "max_time_source": "default"
   },
@@ -518,7 +518,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 25.88,
-   "native_wall_s": 0.413,
+   "native_wall_s": 0.404,
    "frames": 259,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -539,7 +539,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 41.26,
-   "native_wall_s": 1.99,
+   "native_wall_s": 1.883,
    "frames": 413,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -560,7 +560,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 49.26,
-   "native_wall_s": 1.699,
+   "native_wall_s": 1.648,
    "frames": 493,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -581,7 +581,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 105.22,
-   "native_wall_s": 0.29,
+   "native_wall_s": 0.284,
    "frames": 1053,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -602,7 +602,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 120.0,
-   "native_wall_s": 0.301,
+   "native_wall_s": 0.299,
    "frames": 1200,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -623,7 +623,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 69.7,
-   "native_wall_s": 0.404,
+   "native_wall_s": 0.385,
    "frames": 697,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -636,16 +636,16 @@
    "filter": "none",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "max_pose_error_m": 0.0,
    "free_path": true,
-   "sim_s": 21.96,
-   "native_wall_s": 0.592,
-   "frames": 220,
+   "sim_s": 22.76,
+   "native_wall_s": 0.644,
+   "frames": 228,
    "max_time_s": 60.0,
    "max_time_source": "default"
   }
@@ -1163,17 +1163,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    }
   },
   {
@@ -1188,17 +1188,17 @@
    "same": false,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 22.0,
-    "duration_s": 22.0,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.758
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.264,
+    "path_length_m": 13.686
    }
   },
   {
@@ -1388,17 +1388,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 24.52,
-    "duration_s": 24.52,
-    "min_clearance_m": 0.3288,
-    "path_length_m": 25.187
+    "time_to_goal_s": 24.78,
+    "duration_s": 24.78,
+    "min_clearance_m": 0.3174,
+    "path_length_m": 25.243
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 24.52,
-    "duration_s": 24.52,
-    "min_clearance_m": 0.3288,
-    "path_length_m": 25.187
+    "time_to_goal_s": 24.78,
+    "duration_s": 24.78,
+    "min_clearance_m": 0.3174,
+    "path_length_m": 25.243
    }
   },
   {
@@ -1513,17 +1513,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    }
   },
   {
@@ -1657,7 +1657,7 @@
    "fired_t": 2.7,
    "hyp_frames": 6,
    "sim_s": 21.78,
-   "native_wall_s": 0.445
+   "native_wall_s": 0.437
   },
   {
    "world": "reloc_demo_random_1_97",
@@ -1706,7 +1706,7 @@
    "fired_t": 2.7,
    "hyp_frames": 100,
    "sim_s": 22.9,
-   "native_wall_s": 0.586
+   "native_wall_s": 0.575
   },
   {
    "world": "reloc_demo_random_1_97",
@@ -1755,7 +1755,7 @@
    "fired_t": 2.7,
    "hyp_frames": 19,
    "sim_s": 20.34,
-   "native_wall_s": 0.449
+   "native_wall_s": 0.454
   },
   {
    "world": "u_trap_0",
@@ -1836,7 +1836,7 @@
    "fired_t": 7.267,
    "hyp_frames": 36,
    "sim_s": 21.76,
-   "native_wall_s": 0.39
+   "native_wall_s": 0.398
   }
  ],
  "reloc_checks": [
@@ -2526,17 +2526,17 @@
    ],
    "matrix": {
     "outcome": "reached",
-    "time_to_goal_s": 24.52,
-    "duration_s": 24.52,
-    "min_clearance_m": 0.3288,
-    "path_length_m": 25.187
+    "time_to_goal_s": 24.78,
+    "duration_s": 24.78,
+    "min_clearance_m": 0.3174,
+    "path_length_m": 25.243
    },
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 24.52,
-    "duration_s": 24.52,
-    "min_clearance_m": 0.3288,
-    "path_length_m": 25.187
+    "time_to_goal_s": 24.78,
+    "duration_s": 24.78,
+    "min_clearance_m": 0.3174,
+    "path_length_m": 25.243
    },
    "max_time_s": {
     "driver": 60.0,
@@ -2729,17 +2729,17 @@
    ],
    "matrix": {
     "outcome": "reached",
-    "time_to_goal_s": 22.0,
-    "duration_s": 22.0,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.758
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.264,
+    "path_length_m": 13.686
    },
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "max_time_s": {
     "driver": 60.0,

@@ -159,8 +159,10 @@ class ArenaAdapter:
 
     def ranges(self) -> RangeScan:
         s = self.sim.ranges()
+        dropped = getattr(s, "dropped", None)
         return RangeScan(t=float(s.t), angles=[float(a) for a in s.angles],
-                         distances=[float(d) for d in s.distances], max_range=float(s.max_range))
+                         distances=[float(d) for d in s.distances], max_range=float(s.max_range),
+                         dropped=None if dropped is None else [bool(v) for v in dropped])
 
     def send_setpoint(self, sp: Setpoint) -> None:
         """Hold sp until the next 20 Hz tick, then return (lockstep)."""

@@ -12,14 +12,16 @@ Everything here is **synthetic**: simulated layouts, vehicle and sensors in
 ```sh
 cd samples/close-area-benchmark
 uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena deps + osqp
-.venv/bin/python bench.py --layouts 20 --seed 0 --workers 14 --parity   # ~5.5 min on 14 processes
-.venv/bin/python export_replays.py                                      # ~1 min, 72 replays
+.venv/bin/python bench.py --layouts 20 --seed 0 --workers 10 --parity   # ~50 min on 10 processes, 21 rows
+.venv/bin/python export_replays.py                                      # 168 replays, 21 planners x 8 families
 .venv/bin/python bench.py --render matrix_0                             # rebuild the .md from the .json
 .venv/bin/python -m unittest test_smoke -v                              # ~5 s, skips without numpy
 ```
 
-The full command above now runs all 21 rows. The five rows added later (DWA, `dwa_mem`, Bug2,
-TangentBug, D* Lite) were run into the existing matrix without re-running the old nine:
+The full command above runs all 21 rows; that is how the current results/matrix_0.json was made, on
+2026-11-12. Before that the matrix grew in three runs, and `--add-to` is still the way to add a planner
+without re-running the rest. The five rows added second (DWA, `dwa_mem`, Bug2, TangentBug, D* Lite)
+were run into the existing matrix without re-running the old nine:
 
 ```sh
 .venv/bin/python bench.py --add-to matrix_0 --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite \
@@ -38,15 +40,19 @@ python3 results/cross_check_loop73.py                                           
 ```
 
 Measured on an Apple M3 Max (16 cores), macOS arm64, CPython 3.12.10, numpy 2.5.4, scipy 1.18.1,
-osqp 1.1.3 (`env` in [results/matrix_0.json](results/matrix_0.json)). The matrix took 323.4 s wall
+osqp 1.1.3 (`env` in [results/matrix_0.json](results/matrix_0.json)). The current matrix took 2963.7 s
+wall with 10 worker processes for 6,720 flights, on 2026-11-12, with the dropped-beam fix on
+(`regenerated` in matrix_0.json). Its replays were re-exported with `--merge` for the 8 planners the fix
+changed and the 7 rows that had none ([results/export_replays_regen_0.log](results/export_replays_regen_0.log));
+all 168 match their matrix row. History of the earlier runs: the first matrix took 323.4 s wall
 with 14 worker processes (2,880 flights). The replay export took 58.0 s, one process
 ([results/export_replays_0.log](results/export_replays_0.log)). The added rows took 216.2 s wall
 with 14 processes for 2,240 flights (1,600 new + 640 re-check), same interpreter and versions
-([results/add_46c_stdout.txt](results/add_46c_stdout.txt), `additions` in matrix_0.json); their
+([results/add_46c_stdout.txt](results/add_46c_stdout.txt)); their
 replay export took 35.3 s ([results/export_replays_add_0.log](results/export_replays_add_0.log)).
 The 2026-11-10 rows took 2058.5 s wall with 14 processes for 2,240 flights, same interpreter and versions, on a
-host shared with other jobs ([results/add_73_stdout.txt](results/add_73_stdout.txt), `additions` in
-matrix_0.json). No replays were exported for them.
+host shared with other jobs ([results/add_73_stdout.txt](results/add_73_stdout.txt)). No replays were
+exported for them until 2026-11-12. The `additions` records of those runs are in the git history of matrix_0.json.
 
 ## What is in the matrix
 
@@ -90,8 +96,8 @@ Two settings differ from the arena defaults. Both are stated in [bench.py](bench
 - **Geofence for the unknown-map A*.** As shipped, its 24 m log-odds map starts at (-2.5, -2.5)
   in the A frame, so a B at negative x or y is clamped to the map edge. In office layouts A sits
   in any room. `astar_unknown` gets the area corner - 2 m as its map corner instead. A diagnostic
-  run of the shipped prior on ideal ([results/prior_check_0.md](results/prior_check_0.md)):
-  office 15 % vs 95 % reached, glass_office 25 % vs 95 %, warehouse 70 % vs 55 % (the shipped
+  run of the shipped prior on ideal ([results/prior_check_0.md](results/prior_check_0.md), both arms
+  run on 2026-11-09, before the dropped-beam fix): office 15 % vs 95 % reached, glass_office 25 % vs 95 %, warehouse 70 % vs 55 % (the shipped
   prior blocks the left main aisle, which here happened to help). `dstar_lite` subclasses the same
   `astar_esdf` unknown-map planner, so it gets the same geofence (a subclass in bench.py; the
   D* Lite sample is not edited). Its shipped prior was not run here.
@@ -100,12 +106,15 @@ The loop is `run.run_one`'s, with the sensor and an optional filter passed in. `
 it against `run.evaluate` on ideal x random: 10 of 10 runs identical in outcome and min clearance
 for both `straight` and `astar_known`.
 
-Checks for the five added rows:
+Checks on the 2026-11-12 run, which replaced every row: the 13 planners that build no map from the scan
+reproduced their earlier runs in 4160 of 4160, and the 6 unknown-map rows that the dropout-fix study also ran
+equal its `status` arm (the same fix applied by a wrapper) in 1920 of 1920 runs on outcome, min clearance, path
+length and time to goal. Checks made when rows were added, before that run:
 
 - **Old rows unchanged.** `vfh_plus` and `astar_unknown` were re-run in the same pool: 320 of 320
   runs each identical in outcome, min clearance, path length and time to goal
   ([results/matrix_0_recheck.md](results/matrix_0_recheck.md)). The 2,880 old rows in
-  matrix_0.json are kept as they were.
+  matrix_0.json were kept as they were.
 - **2026-11-10 rows** ([results/matrix_0_loop73_checks.md](results/matrix_0_loop73_checks.md)): the 4,480
   older runs and their summaries equal the committed matrix_0.json; every run that the three source samples
   flew themselves is identical in outcome, min clearance, time to goal and path length, 1,440 of 1,440
@@ -115,11 +124,12 @@ Checks for the five added rows:
   its 72-beam "default" fan: 60 of 60 runs each, same outcome and min clearance
   ([results/matrix_0_cross_checks.md](results/matrix_0_cross_checks.md)).
 
-## Results (ran 2026-11-09, synthetic)
+## Results (ran 2026-11-12, synthetic)
 
-`python bench.py --layouts 20 --seed 0 --workers 14 --parity`, wall 323.4 s, plus the five rows
-added by `bench.py --add-to matrix_0` (above), wall 216.2 s, and the seven rows added on 2026-11-10,
-wall 2058.5 s. Cell = reached % / collision %. Source: [results/matrix_0.md](results/matrix_0.md) (also stuck, timeout, median time,
+`python bench.py --layouts 20 --seed 0 --workers 10 --parity`, all 21 rows in one run, wall 2963.7 s, with the
+dropped-beam fix on ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)).
+The 13 planners that do not build a map from the scan reproduced their earlier runs exactly (4160 of 4160);
+the 8 that do moved by -3.7 to +1.3 points of reach on ideal and -5.6 to +5.7 on crazyflie. Cell = reached % / collision %. Source: [results/matrix_0.md](results/matrix_0.md) (also stuck, timeout, median time,
 min clearance, material hit), per-run rows in [results/matrix_0.json](results/matrix_0.json).
 
 ### Preset `ideal`
@@ -131,103 +141,103 @@ min clearance, material hit), per-run rows in [results/matrix_0.json](results/ma
 | apf_escape | 100 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 10 / 0 | 0 / 0 |
 | vfh_plus | 100 / 0 | 0 / 0 | 50 / 0 | 40 / 0 | 20 / 0 | 100 / 0 | 10 / 0 | 50 / 0 |
 | astar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
-| astar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 95 / 0 | 55 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
+| astar_unknown | 100 / 0 | 100 / 0 | 80 / 0 | 90 / 0 | 50 / 0 | 100 / 0 | 90 / 0 | 90 / 0 |
 | informed_rrt_star | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
 | astar_mpc | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
-| astar_unknown_f2 | 75 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 65 / 0 | 0 / 0 | 0 / 0 |
+| astar_unknown_f2 | 80 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 65 / 0 | 0 / 0 | 0 / 0 |
 | dwa | 80 / 0 | 0 / 0 | 10 / 0 | 5 / 0 | 10 / 0 | 90 / 0 | 0 / 0 | 5 / 0 |
 | dwa_mem | 75 / 0 | 0 / 0 | 10 / 0 | 5 / 0 | 10 / 0 | 75 / 0 | 0 / 0 | 5 / 0 |
 | bug2 | 90 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 20 / 0 | 0 / 0 |
 | tangent_bug | 95 / 0 | 90 / 0 | 45 / 0 | 25 / 0 | 20 / 0 | 100 / 0 | 15 / 0 | 25 / 0 |
-| dstar_lite | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| dstar_lite | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 90 / 0 |
 | thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
 | lazy_thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
-| thetastar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 90 / 0 | 60 / 0 | 100 / 0 | 95 / 0 | 90 / 0 |
-| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 90 / 0 | 65 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| thetastar_unknown | 100 / 0 | 100 / 0 | 80 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 100 / 0 | 85 / 0 | 55 / 0 | 100 / 0 | 85 / 0 | 90 / 0 |
 | mppi | 90 / 0 | 0 / 0 | 25 / 0 | 25 / 0 | 15 / 0 | 100 / 0 | 0 / 0 | 10 / 0 |
-| mppi_astar | 100 / 0 | 100 / 0 | 95 / 0 | 100 / 0 | 65 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
-| hybrid_astar | 100 / 0 | 100 / 0 | 70 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 85 / 0 |
+| mppi_astar | 100 / 0 | 100 / 0 | 95 / 0 | 95 / 0 | 55 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
+| hybrid_astar | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 50 / 0 | 100 / 0 | 90 / 0 | 85 / 0 |
 
 Best planner per family: the prior-map planners (`astar_known`, `informed_rrt_star`, `astar_mpc`,
 and since 2026-11-10 `thetastar_known`, `lazy_thetastar_known`) reach 100 % with 0 % collisions in every
 family. The paragraph below compares the 14 older rows; the 2026-11-10 rows are in "Reading, rows added 2026-11-10". Best without a prior map:
-`astar_unknown` in every family (random 100, u_trap 100, narrow_gap 90, office 95, warehouse 55,
-forest 100, maze 95, glass_office 95). `dstar_lite` ties it on random, u_trap, warehouse
-(55 / 0), forest and glass_office (95 / 0) and is 5 points lower on narrow_gap (85), office (90)
-and maze (90). Other ties: `apf_escape` and `vfh_plus` on random, `astar_unknown_f2` on u_trap,
+`dstar_lite` in every family (random 100, u_trap 100, narrow_gap 85, office 90, warehouse 55,
+forest 100, maze 90, glass_office 90). `astar_unknown` ties it on random, u_trap, office, forest, maze
+and glass_office and is 5 points lower on narrow_gap (80) and warehouse (50). Other ties: `apf_escape` and `vfh_plus` on random, `astar_unknown_f2` on u_trap,
 and `freest_beam`, `apf_escape`, `vfh_plus`, `bug2` and `tangent_bug` on forest.
 
 ### Preset `crazyflie`
 
 | planner | random | u_trap | narrow_gap | office | warehouse | forest | maze | glass_office |
 |---|---|---|---|---|---|---|---|---|
-| straight | 40 / 40 | 0 / 65 | 0 / 70 | 0 / 65 | 0 / 65 | 15 / 60 | 0 / 80 | 5 / 70 |
-| freest_beam | 50 / 5 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 35 / 15 | 0 / 10 | 5 / 5 |
-| apf_escape | 85 / 0 | 35 / 20 | 0 / 5 | 0 / 10 | 0 / 0 | 60 / 25 | 0 / 15 | 5 / 20 |
-| vfh_plus | 45 / 55 | 0 / 100 | 5 / 95 | 5 / 90 | 0 / 95 | 35 / 65 | 0 / 100 | 0 / 90 |
+| straight | 40 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 15 / 0 | 0 / 5 | 0 / 0 |
+| freest_beam | 80 / 0 | 0 / 0 | 0 / 0 | 15 / 5 | 15 / 0 | 100 / 0 | 0 / 0 | 10 / 5 |
+| apf_escape | 100 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 10 / 0 | 0 / 0 |
+| vfh_plus | 100 / 0 | 0 / 0 | 50 / 0 | 40 / 0 | 20 / 0 | 100 / 0 | 10 / 0 | 50 / 0 |
 | astar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
-| astar_unknown | 100 / 0 | 95 / 5 | 25 / 5 | 35 / 25 | 0 / 50 | 95 / 5 | 35 / 15 | 5 / 65 |
+| astar_unknown | 100 / 0 | 100 / 0 | 80 / 0 | 90 / 0 | 50 / 0 | 100 / 0 | 90 / 0 | 90 / 0 |
 | informed_rrt_star | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
 | astar_mpc | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
-| astar_unknown_f2 | 100 / 0 | 100 / 0 | 15 / 5 | 50 / 5 | 0 / 0 | 95 / 5 | 55 / 0 | 5 / 45 |
-| dwa | 40 / 35 | 0 / 15 | 0 / 40 | 0 / 55 | 0 / 50 | 10 / 90 | 0 / 65 | 5 / 60 |
-| dwa_mem | 55 / 5 | 0 / 0 | 5 / 0 | 5 / 0 | 0 / 20 | 45 / 15 | 0 / 15 | 5 / 5 |
-| bug2 | 90 / 10 | 20 / 30 | 0 / 0 | 0 / 35 | 15 / 20 | 50 / 40 | 0 / 20 | 5 / 40 |
-| tangent_bug | 55 / 45 | 35 / 15 | 5 / 10 | 10 / 45 | 0 / 35 | 25 / 75 | 0 / 50 | 5 / 50 |
-| dstar_lite | 100 / 0 | 100 / 0 | 15 / 10 | 20 / 40 | 5 / 45 | 100 / 0 | 40 / 25 | 10 / 65 |
+| astar_unknown_f2 | 80 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 65 / 0 | 0 / 0 | 0 / 0 |
+| dwa | 80 / 0 | 0 / 0 | 10 / 0 | 5 / 0 | 10 / 0 | 90 / 0 | 0 / 0 | 5 / 0 |
+| dwa_mem | 75 / 0 | 0 / 0 | 10 / 0 | 5 / 0 | 10 / 0 | 75 / 0 | 0 / 0 | 5 / 0 |
+| bug2 | 90 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 20 / 0 | 0 / 0 |
+| tangent_bug | 95 / 0 | 90 / 0 | 45 / 0 | 25 / 0 | 20 / 0 | 100 / 0 | 15 / 0 | 25 / 0 |
+| dstar_lite | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 90 / 0 |
 | thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
 | lazy_thetastar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
-| thetastar_unknown | 100 / 0 | 90 / 5 | 5 / 15 | 35 / 60 | 5 / 60 | 95 / 5 | 65 / 10 | 20 / 65 |
-| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 15 / 25 | 45 / 35 | 30 / 20 | 95 / 5 | 50 / 0 | 30 / 55 |
-| mppi | 55 / 40 | 0 / 95 | 0 / 100 | 5 / 75 | 0 / 100 | 100 / 0 | 0 / 95 | 10 / 75 |
-| mppi_astar | 80 / 20 | 40 / 60 | 15 / 85 | 10 / 85 | 0 / 100 | 100 / 0 | 0 / 100 | 5 / 85 |
-| hybrid_astar | 95 / 5 | 100 / 0 | 10 / 5 | 40 / 45 | 0 / 35 | 90 / 10 | 35 / 15 | 5 / 75 |
+| thetastar_unknown | 100 / 0 | 100 / 0 | 80 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+| lazy_thetastar_unknown | 100 / 0 | 100 / 0 | 100 / 0 | 85 / 0 | 55 / 0 | 100 / 0 | 85 / 0 | 90 / 0 |
+| mppi | 90 / 0 | 0 / 0 | 25 / 0 | 25 / 0 | 15 / 0 | 100 / 0 | 0 / 0 | 10 / 0 |
+| mppi_astar | 100 / 0 | 100 / 0 | 95 / 0 | 95 / 0 | 55 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
+| hybrid_astar | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 50 / 0 | 100 / 0 | 90 / 0 | 85 / 0 |
 
-Best planner per family: again the three prior-map planners, 100 / 0 everywhere; `dstar_lite`
-ties them on random, u_trap and forest. Best without a prior map (highest reached %, then lowest
-collision %): random `astar_unknown`, `astar_unknown_f2` and `dstar_lite` (100 / 0), u_trap
-`astar_unknown_f2` and `dstar_lite` (100 / 0), narrow_gap `astar_unknown` (25 / 5), office
-`astar_unknown_f2` (50 / 5), warehouse `bug2` (15 / 20), forest `dstar_lite` (100 / 0), maze
-`astar_unknown_f2` (55 / 0), glass_office `dstar_lite` (10 / 65). The last two picks by that rule
-are weak: warehouse had no reach at all before (best 0 / 0, `astar_unknown_f2`), and on
-glass_office `freest_beam` and `dwa_mem` (5 / 5) are far safer than `dstar_lite`'s 65 % collisions.
+Best planner per family: again the prior-map planners, 100 / 0 everywhere; `astar_unknown` and
+`astar_unknown_f2` tie them on random, u_trap and forest, `dstar_lite` on random and u_trap. Best of the
+14 older rows without a prior map (highest reached %, then lowest collision %): random and u_trap
+`astar_unknown`, `astar_unknown_f2` and `dstar_lite` (100 / 0), narrow_gap `dstar_lite` (20 / 0), office
+`astar_unknown_f2` (40 / 5), warehouse `astar_unknown_f2` (30 / 0), forest `astar_unknown` and
+`astar_unknown_f2` (100 / 0), maze `dstar_lite` (55 / 0), glass_office `astar_unknown` and `dstar_lite`
+(15 / 60). The glass_office pick by that rule is weak: `freest_beam` and `dwa_mem` (5 / 5) are far safer
+than the 60 % collisions of the top two.
 
 ### Reading, rows added 2026-11-10
 
 - **Theta* with a prior map ties A* known map**: 100 / 0 in every family on both presets.
-- **Without a map, on ideal, `mppi_astar` is the best or tied-best map-free row in every family** (by the
-  bench's rule in [results/matrix_0.md](results/matrix_0.md)): narrow_gap 95 vs 90 for `astar_unknown`,
-  office 100 vs 95, warehouse 65 vs 55 (tied with `lazy_thetastar_unknown`). `mppi` alone gets 0 % on
-  u_trap and maze.
-- **With 4 beams the new map-free rows collide more in rooms.** `mppi_astar` collides in 60-100 % on
-  u_trap, narrow_gap, office, warehouse, maze and glass_office (`astar_unknown`: 5-65 %). `thetastar_unknown`
-  collides in 60 % on office and warehouse. `lazy_thetastar_unknown` is the bench's map-free pick on crazyflie
-  warehouse (30 / 20) and glass_office (30 / 55), `thetastar_unknown` on maze (65 / 10).
-- **Hybrid A* reaches less often than `astar_unknown` on ideal** in narrow_gap (70 vs 90), office (90 vs 95),
-  maze (90 vs 95) and glass_office (85 vs 95), and ties it elsewhere (warehouse 55 both).
+- **Without a map, on ideal, `mppi_astar` is the best or tied-best map-free row in every family but
+  narrow_gap** (by the bench's rule in [results/matrix_0.md](results/matrix_0.md)): office 95 vs 90 for
+  `astar_unknown`, maze 95 vs 90, warehouse 55 vs 50 (tied with `dstar_lite` and both Theta* rows). On
+  narrow_gap `lazy_thetastar_unknown` reaches 100 vs 95. `mppi` alone gets 0 % on u_trap and maze.
+- **With 4 beams the new map-free rows collide more in rooms.** `mppi_astar` collides in 80-100 % on
+  narrow_gap, office, warehouse, maze and glass_office (`astar_unknown`: 0-60 % in the same families).
+  `thetastar_unknown` collides in 40 % on office and warehouse. On crazyflie the 2026-11-10 rows tie
+  the older map-free leaders on random, u_trap and forest and lead alone only on glass_office
+  (`thetastar_unknown`, 20 / 65).
+- **Hybrid A* flies like `astar_unknown` on ideal**: tied in six families, 85 vs 80 on narrow_gap and
+  85 vs 90 on glass_office. Before the dropped-beam fix it was 5-20 points lower in four rooms.
 
 ### Reading
 
 - **A prior map solves every family here.** The prior-map rows are the same on both presets
   because those planners never read the scan. That is an upper bound: the map is exact and the
   pose is true.
-- **Without a map, 4 beams break the harder rooms.** `astar_unknown` falls from 95 to 35 % on
-  office, 55 to 0 % on warehouse (50 % collision) and 95 to 5 % on glass_office (65 % collision:
-  7 runs hit glass, 6 hit matte surfaces between beams).
+- **Without a map, 4 beams break the harder rooms.** `astar_unknown` falls from 90 to 30 % on
+  office, 50 to 5 % on warehouse (55 % collision) and 90 to 15 % on glass_office (60 % collision:
+  8 runs hit glass, 4 hit matte surfaces between beams).
 - **F2 trades reach for safety, and the sign depends on the sensor.** With 72 beams it freezes
   the vehicle in doors, gaps and aisles (0 % reached on narrow_gap, office, warehouse, maze,
   glass_office; runs end stuck). With 4 beams it sees fewer points and cuts in less: warehouse
-  collisions 50 => 0 %, maze reached 35 => 55 %, office 35 => 50 %. It cannot see glass:
-  glass_office still 45 % collision, all 9 on glass.
+  collisions 55 => 0 %, warehouse reached 5 => 30 %, office 30 => 40 %. It cannot see glass:
+  glass_office still 65 % collision, all 13 on glass.
 - **Reactive planners only fit open clutter.** Forest is 100 % for all of them on ideal; office,
   warehouse and maze are 0-40 %. VFH+ on the 4-beam preset collides in 55-100 % of runs.
 - **D* Lite flies like the unknown-map A* it is built on.** Same map, cost and follower, only the
-  search is incremental. On ideal 153 of 160 runs end with the same outcome as `astar_unknown`;
-  on crazyflie 115 of 160 ([results/matrix_0_cross_checks.md](results/matrix_0_cross_checks.md)).
-  The 4-beam differences go both ways: office 35 => 20 %, narrow_gap 25 => 15 %, but warehouse
-  0 => 5 %, maze 35 => 40 %, u_trap 95 => 100 %. Equal-cost ties between the two searches are a
-  likely cause; no run was traced. Mean planner step 4.2 vs 10.7 ms on ideal, 2.9 vs 13.4 ms on
-  crazyflie, measured with 14 processes in parallel, so read it only as "a few times less".
+  search is incremental. On ideal 155 of 160 runs end with the same outcome as `astar_unknown`;
+  on crazyflie 127 of 160 ([results/matrix_0_cross_checks.md](results/matrix_0_cross_checks.md)).
+  The 4-beam differences go both ways: office 30 => 35 %, warehouse 5 => 10 %, maze 45 => 55 %, but
+  forest 100 => 95 %. Equal-cost ties between the two searches are a likely cause; no run was traced.
+  Mean planner step 3.0 vs 7.7 ms on ideal, 2.1 vs 9.2 ms on crazyflie, measured with 10 processes in
+  parallel, so read it only as "a few times less".
 - **DWA alone does not leave a U trap or find a door.** 0 % on u_trap and maze on both presets,
   at most 10 % on narrow_gap, office and warehouse. It is a local planner meant to run under a
   global one (see the [dwa-bug README](../close-area-planner-dwa-bug/README.md)).
@@ -249,11 +259,12 @@ glass_office `freest_beam` and `dwa_mem` (5 / 5) are far safer than `dstar_lite`
 
 A RealSense D435i-class forward depth camera is the likeliest range sensor on a PX4-class drone.
 This section adds it as a third sensor column for the five map-free planners that matter on the first day.
-Ran 2026-11-10, synthetic (simulated layouts, vehicle and sensor), scored on truth.
+Ran 2026-11-10, re-run 2026-11-12 with the dropped-beam fix on; synthetic (simulated layouts, vehicle and
+sensor), scored on truth.
 
 ```
 .venv/bin/python bench.py --presets depth_cam_87 --planners astar_unknown,astar_unknown_f2,dstar_lite,dwa_mem,mppi_astar \
-    --layouts 6 --workers 4 --stem matrix_depth_0          # 240 runs, wall 121 s on 4 processes
+    --layouts 6 --workers 10 --stem matrix_depth_0         # 240 runs, wall 59 s on 10 processes
 python3 results/matrix_depth_0.compare.py                  # pairs it with matrix_0 layouts 0-5, no flights
 ```
 
@@ -268,8 +279,8 @@ python3 results/matrix_depth_0.compare.py                  # pairs it with matri
   crazyflie rows are identical in 160/160 runs each
   ([results/matrix_depth_0.compare.md](results/matrix_depth_0.compare.md)). Their depth column equals
   ideal (100 / 0 in every family).
-- **Dropout bias:** the arena fix (backlog item 88) is parked, so these rows carry the known
-  dropout-map bias of [upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls).
+- **Dropout fix on:** a dropped beam adds nothing to the map
+  ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)).
 - **Small sample, directional only.** n = 6 layouts per cell (seed 0, indices 0-5); one layout moves a
   cell by 17 points. Intervals below are 95 % Wilson on the 48 pooled runs per row.
 
@@ -278,55 +289,55 @@ Directional.
 
 | planner | random | u_trap | narrow_gap | office | warehouse | forest | maze | glass_office | pooled reached % [95 % CI] | pooled collision % [95 % CI] |
 |---|---|---|---|---|---|---|---|---|---|---|
-| astar_unknown | 100 / 0 | 100 / 0 | 33 / 33 | 67 / 0 | 83 / 17 | 100 / 0 | 100 / 0 | 17 / 83 | 75 [61, 85] | 17 [9, 30] |
-| astar_unknown_f2 | 100 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 17 / 17 | 100 / 0 | 17 / 0 | 0 / 0 | 42 [29, 56] | 2 [0, 11] |
-| dstar_lite | 100 / 0 | 100 / 0 | 67 / 17 | 67 / 0 | 83 / 0 | 100 / 0 | 83 / 0 | 33 / 67 | 79 [66, 88] | 10 [5, 22] |
-| dwa_mem | 67 / 17 | 0 / 0 | 17 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 0 / 0 | 17 / 0 | 25 [15, 39] | 2 [0, 11] |
-| mppi_astar | 100 / 0 | 100 / 0 | 83 / 0 | 50 / 50 | 50 / 50 | 100 / 0 | 83 / 17 | 17 / 83 | 73 [59, 83] | 25 [15, 39] |
+| astar_unknown | 100 / 0 | 100 / 0 | 33 / 50 | 83 / 0 | 83 / 0 | 100 / 0 | 83 / 0 | 17 / 83 | 75 [61, 85] (36/48) | 17 [9, 30] (8/48) |
+| astar_unknown_f2 | 100 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 17 / 17 | 100 / 0 | 50 / 0 | 0 / 0 | 46 [33, 60] (22/48) | 2 [0, 11] (1/48) |
+| dstar_lite | 100 / 0 | 100 / 0 | 33 / 33 | 83 / 0 | 67 / 0 | 100 / 0 | 83 / 0 | 17 / 83 | 73 [59, 83] (35/48) | 15 [7, 27] (7/48) |
+| dwa_mem | 67 / 17 | 0 / 0 | 17 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 0 / 0 | 17 / 0 | 25 [15, 39] (12/48) | 2 [0, 11] (1/48) |
+| mppi_astar | 100 / 0 | 100 / 0 | 83 / 0 | 100 / 0 | 83 / 0 | 100 / 0 | 100 / 0 | 17 / 83 | 85 [73, 93] (41/48) | 10 [5, 22] (5/48) |
 
 The same five planners on the same six layouts, pooled over 8 families (48 runs, from
 [results/matrix_depth_0.compare.md](results/matrix_depth_0.compare.md)):
 
 | planner | ideal (72 rays, 360 deg, 6 m) | depth_cam_87 | crazyflie (4 beams, 3 m) |
 |---|---|---|---|
-| astar_unknown | 96 [86, 99] / 0 [0, 7] | 75 [61, 85] / 17 [9, 30] | 44 [31, 58] / 31 [20, 45] |
-| astar_unknown_f2 | 31 [20, 45] / 0 [0, 7] | 42 [29, 56] / 2 [0, 11] | 52 [38, 66] / 8 [3, 20] |
-| dstar_lite | 92 [80, 97] / 0 [0, 7] | 79 [66, 88] / 10 [5, 22] | 50 [36, 64] / 25 [15, 39] |
+| astar_unknown | 88 [75, 94] / 0 [0, 7] | 75 [61, 85] / 17 [9, 30] | 52 [38, 66] / 17 [9, 30] |
+| astar_unknown_f2 | 31 [20, 45] / 0 [0, 7] | 46 [33, 60] / 2 [0, 11] | 52 [38, 66] / 12 [6, 25] |
+| dstar_lite | 92 [80, 97] / 0 [0, 7] | 73 [59, 83] / 15 [7, 27] | 48 [34, 62] / 23 [13, 37] |
 | dwa_mem | 29 [18, 43] / 0 [0, 7] | 25 [15, 39] / 2 [0, 11] | 17 [9, 30] / 6 [2, 17] |
-| mppi_astar | 96 [86, 99] / 0 [0, 7] | 73 [59, 83] / 25 [15, 39] | 33 [22, 47] / 65 [50, 77] |
+| mppi_astar | 94 [83, 98] / 0 [0, 7] | 85 [73, 93] / 10 [5, 22] | 38 [25, 52] / 58 [44, 71] |
 
 Reading (all synthetic, directional):
 
-- **The depth camera sits between the two old columns.** Best pooled row: `dstar_lite` 79 % reached,
-  10 % collision; `astar_unknown` 75 / 17 and `mppi_astar` 73 / 25 overlap it. On ideal the best rows
-  reach 92-96 % with no collision; on crazyflie the best reach 44-52 %.
+- **The depth camera sits between the two old columns.** Best pooled row: `mppi_astar` 85 % reached,
+  10 % collision; `astar_unknown` 75 / 17 and `dstar_lite` 73 / 15 overlap it. On ideal the best rows
+  reach 88-94 % with no collision; on crazyflie the best reach 48-52 %.
 - **Glass is the main loss.** Glass is invisible to the depth preset, so glass_office collides in
-  67-83 % for the three map-based rows. 13 of the 25 collisions of those rows hit glass (outcome mix
+  83 % for the three map-based rows. 14 of the 20 collisions of those rows hit glass (outcome mix
   in the compare file).
-- **`mppi_astar` is not the ideal-sensor winner here.** It collides in 50 % on office and warehouse;
-  `dstar_lite` has 0 % there. The cause (87 deg view vs MPPI rollouts to the side) was not traced.
-- **F2 freezes as on ideal.** `astar_unknown_f2` ends stuck in 27 of 48 runs (0 % reached on
+- **`mppi_astar` leads on the depth camera.** 100 / 0 on office and maze, 83 / 0 on narrow_gap and
+  warehouse. Before the dropped-beam fix it collided in 50 % on office and warehouse.
+- **F2 freezes as on ideal.** `astar_unknown_f2` ends stuck in 22 of 48 runs (0 % reached on
   narrow_gap, office, glass_office) with 1 collision.
 - **`dwa_mem` stays a clutter-only planner:** 100 % in forest, 0 % in u_trap, office, warehouse, maze.
 
-Not verified: the run used Python 3.11.15 and numpy 2.4.6 (matrix_0 used 3.12.10 and 2.5.4); no
-parity check of this environment against matrix_0 was run, to stay inside the 240-run budget.
+Environment: the 2026-11-12 re-run used Python 3.12.10 and numpy 2.5.4, the same as matrix_0 (the first run
+used 3.11.15 and 2.4.6). `dwa_mem`, which builds no map, reproduced its first-run rows in 48 of 48 runs.
 Proposed cheat-sheet column and decoder sentence: [INTEGRATION_depth.md](INTEGRATION_depth.md).
 
 ## Replays
 
 `export_replays.py` flies layout 0 of each family again for every planner (crazyflie for
 glass_office, ideal otherwise) and writes `site/data/showcase/replays_v2/<family>__<planner>.json`
-plus `index.json` grouped by family. 112 files (14 planners x 8 families), largest 34,492 bytes
-(cap 120,000), all at 10 Hz. The 40 files of the five added rows were written by
-`export_replays.py --merge`, which keeps the 72 older files and their index entries as they were.
-Each file embeds `world_json.to_json(world)` (`close-area-world/1`), the truth path, `est: null`
-(true pose in every run), truth clearance per kept sample, the outcome and the scorer row. Every
-outcome and min clearance matches its row in results/matrix_0.json: 72 of 72 for the first export
-([results/export_replays_0.log](results/export_replays_0.log)) and 40 of 40 for the added rows
-([results/export_replays_add_0.log](results/export_replays_add_0.log)). The world JSON in all 112
-files round-trips through `world_json.from_json` unchanged (same logs). Export walls: 58.0 s for
-the first 72, 35.3 s for the 40 added.
+plus `index.json` grouped by family. 168 files (21 planners x 8 families), largest 34,492 bytes
+(cap 120,000), all at 10 Hz. `export_replays.py --merge --planners ...` rewrites only the named planners and keeps
+every other file and index entry as it was. Each file embeds `world_json.to_json(world)` (`close-area-world/1`),
+the truth path, `est: null` (true pose in every run), truth clearance per kept sample, the outcome and the scorer
+row. Every outcome and min clearance matches its row in results/matrix_0.json, 168 of 168, and the world JSON in
+every file round-trips through `world_json.from_json` unchanged. Logs: the first 72
+([results/export_replays_0.log](results/export_replays_0.log), 58.0 s), the 40 of the rows added second
+([results/export_replays_add_0.log](results/export_replays_add_0.log), 35.3 s), and on 2026-11-12 the 64 of
+the 8 planners the dropped-beam fix changed (5 of them had none before) and the 16 of the two prior-map
+Theta* rows ([results/export_replays_regen_0.log](results/export_replays_regen_0.log), 329.1 s and 36.7 s).
 
 ## Scenario packs
 
@@ -407,10 +418,11 @@ the table says it needs. The count cell prints the rate bound next to the verdic
 **Flight loop.** Each run calls `bench.run_one`'s own code object. Four of its module globals are
 swapped: `run.DEFAULTS` (the pack vehicle), `world_glass.make_any_world` (the pack world),
 `presets.make_sensor` (the pack sensor) and `max_time` (the pack limit). Same loop, stop conditions,
-F2 filter wiring and scorer as the matrix. Check: on office layouts 0-2 at seed 0 with `crazyflie`, the 15
-pack runs have the same outcome as results/matrix_0.json. Their min clearance is within 0.2 mm, because
-the world JSON rounds coordinates to 0.1 mm. The same code on the unrounded layouts is identical in
-outcome and min clearance, 15 of 15
+F2 filter wiring and scorer as the matrix. Check: on office layouts 0-2 at seed 0 with `crazyflie`, 14 of
+the 15 pack runs have the same outcome as results/matrix_0.json, with min clearance within 0.2 mm, because
+the world JSON rounds coordinates to 0.1 mm. The 15th (astar_unknown_f2, office #0) gets stuck on the
+unrounded layout and reaches B on the rounded one: that rounding is enough to flip an unknown-map run.
+The same code on the unrounded layouts is identical in outcome and min clearance, 15 of 15
 ([results/pack_office_crazyflie_matrix_check.md](results/pack_office_crazyflie_matrix_check.md)).
 
 **Vehicle radius.** The pack radius changes the vehicle, the collision stop, the scoring and (since
@@ -437,16 +449,15 @@ export on all 15 seed 0-4 runs. `lazy_thetastar_unknown` went from 17/35 reached
 planner commands a yaw rate. The playground turns a sensor with less than 360 deg of view toward the
 direction of travel; that policy is not applied here. This matters for `depth_cam_87`.
 
-### Results (ran 2026-11-10, synthetic)
+### Results (ran 2026-11-12, synthetic)
 
-These two packs ran before the radius change, so their planners inflated by the shipped 0.15 m. The office pack
-uses the default 0.15 m vehicle and is unaffected; the hall numbers (0.2 m) were not re-run with the
-override.
+Re-run on 2026-11-12 with the dropped-beam fix on (`SKIP_DROPPED_BEAMS = True`, upstream-findings section 22)
+and with the per-run radius override, so the hall planners (0.2 m vehicle) now inflate by the drone radius.
+The office pack uses the default 0.15 m vehicle, where the override changes nothing.
 
-Both packs ran on an Apple M3 Max (16 cores), macOS arm64, CPython 3.12.10, numpy 2.5.4, 14 worker
-processes. Every number below is from results/pack_*.md / .json. The planner sees the true pose and
-runs are scored on truth. Each pack was run more than once while pack.py was written (office 3 times,
-hall 2 times), with the same numbers every time.
+Both packs ran on an Apple M3 Max (16 cores), macOS arm64, CPython 3.12.10, numpy 2.5.4, 1 worker
+process. Every number below is from results/pack_*.md / .json. The planner sees the true pose and
+runs are scored on truth.
 
 **`packs/office_crazyflie.json`**: `preset:office_0`, `family:office:1`, `family:office:2`, default
 vehicle, `crazyflie` sensor, 5 planners x 3 worlds x 5 seeds = 75 runs, exit code 1
@@ -455,9 +466,9 @@ vehicle, `crazyflie` sensor, 5 planners x 3 worlds x 5 seeds = 75 runs, exit cod
 | planner | reached_rate >= 0.9 | collisions == 0 (min 15 runs) | time_to_goal_p50_s <= 30 | verdict |
 |---|---|---|---|---|
 | astar_known | NOT PROVEN: 15/15 = 1.00, CI [0.80, 1.00]; lower 0.80 misses >= 0.9, upper 1.00 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | PASS: 18.1 s, CI [13.8, 22.6], n=15; upper 22.6 <= 30 | **NOT PROVEN** |
-| astar_unknown | FAIL: 6/15 = 0.40, CI [0.20, 0.64]; upper 0.64 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 3 collision in 15 distinct runs; 3 == 0 is false; rate <= 0.45 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [18.2, inf], n=15; upper inf misses <= 30, lower 18.2 meets it | **FAIL** |
-| astar_unknown_f2 | NOT PROVEN: 12/15 = 0.80, CI [0.55, 0.93]; lower 0.55 misses >= 0.9, upper 0.93 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | NOT PROVEN: 26.6 s, CI [18.3, 32.3], n=15; upper 32.3 misses <= 30, lower 18.3 meets it | **NOT PROVEN** |
-| lazy_thetastar_unknown | FAIL: 7/15 = 0.47, CI [0.25, 0.70]; upper 0.70 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 5 collision in 15 distinct runs; 5 == 0 is false; rate <= 0.58 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [19.5, inf], n=15; upper inf misses <= 30, lower 19.5 meets it | **FAIL** |
+| astar_unknown | FAIL: 5/15 = 0.33, CI [0.15, 0.58]; upper 0.58 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 4 collision in 15 distinct runs; 4 == 0 is false; rate <= 0.52 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [27.5, inf], n=15; upper inf misses <= 30, lower 27.5 meets it | **FAIL** |
+| astar_unknown_f2 | NOT PROVEN: 13/15 = 0.87, CI [0.62, 0.96]; lower 0.62 misses >= 0.9, upper 0.96 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | NOT PROVEN: 28.2 s, CI [18.4, 32.3], n=15; upper 32.3 misses <= 30, lower 18.4 meets it | **NOT PROVEN** |
+| lazy_thetastar_unknown | FAIL: 7/15 = 0.47, CI [0.25, 0.70]; upper 0.70 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 5 collision in 15 distinct runs; 5 == 0 is false; rate <= 0.58 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [17.4, inf], n=15; upper inf misses <= 30, lower 17.4 meets it | **FAIL** |
 | dwa_mem | FAIL: 1/15 = 0.07, CI [0.01, 0.30]; upper 0.30 misses >= 0.9; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=15; lower inf misses <= 30 | **FAIL** |
 
 Sample-size hint: astar_known: NOT PROVEN only on sample size. reached_rate >= 0.9 needs 35 distinct runs if every run succeeds (has 15) => at least 12 seeds x 3 worlds.
@@ -469,11 +480,11 @@ The hall keeps a free path at 0.2 m for all 10 seeds' A and B.
 
 | planner | reached_rate >= 0.9 | collisions == 0 (min 10 runs) | time_to_goal_p50_s <= 30 | verdict |
 |---|---|---|---|---|
-| astar_known | NOT PROVEN: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses >= 0.9, upper 1.00 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 10 distinct runs; 0 == 0 in 10 >= 10 distinct runs; rate <= 0.28 (95 % Wilson bound, not a rate claim) | PASS: 23.7 s, CI [22.9, 24.6], n=10; upper 24.6 <= 30 | **NOT PROVEN** |
-| astar_unknown | FAIL: 3/10 = 0.30, CI [0.11, 0.60]; upper 0.60 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 7 collision in 10 distinct runs; 7 == 0 is false; rate <= 0.89 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [29.2, inf], n=10; upper inf misses <= 30, lower 29.2 meets it | **FAIL** |
-| astar_unknown_f2 | FAIL: 0/9 = 0.00, CI [0.00, 0.30]; upper 0.30 misses >= 0.9; runs needed if every run succeeds: 35 | NOT PROVEN: 0 collision in 9 distinct runs (10 flown); 9 distinct runs < min_runs 10; rate <= 0.30 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=9; lower inf misses <= 30 | **FAIL** |
-| mppi_astar | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 10 collision in 10 distinct runs; 10 == 0 is false; rate <= 1.00 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
-| tangent_bug | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 2 collision in 10 distinct runs; 2 == 0 is false; rate <= 0.51 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| astar_known | NOT PROVEN: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses >= 0.9, upper 1.00 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 10 distinct runs; 0 == 0 in 10 >= 10 distinct runs; rate <= 0.28 (95 % Wilson bound, not a rate claim) | PASS: 23.3 s, CI [22.6, 25.0], n=10; upper 25.0 <= 30 | **NOT PROVEN** |
+| astar_unknown | NOT PROVEN: 8/10 = 0.80, CI [0.49, 0.94]; lower 0.49 misses >= 0.9, upper 0.94 meets it; runs needed if every run succeeds: 35 | FAIL: 2 collision in 10 distinct runs; 2 == 0 is false; rate <= 0.51 (95 % Wilson bound, not a rate claim) | NOT PROVEN: 29.5 s, CI [28.5, inf], n=10; upper inf misses <= 30, lower 28.5 meets it | **FAIL** |
+| astar_unknown_f2 | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | PASS: 0 collision in 10 distinct runs; 0 == 0 in 10 >= 10 distinct runs; rate <= 0.28 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| mppi_astar | FAIL: 4/10 = 0.40, CI [0.17, 0.69]; upper 0.69 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 5 collision in 10 distinct runs; 5 == 0 is false; rate <= 0.76 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [19.4, inf], n=10; upper inf misses <= 30, lower 19.4 meets it | **FAIL** |
+| tangent_bug | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 1 collision in 10 distinct runs; 1 == 0 is false; rate <= 0.40 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
 | straight | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | PASS: 0 collision in 10 distinct runs; 0 == 0 in 10 >= 10 distinct runs; rate <= 0.28 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
 
 Sample-size hint: astar_known: NOT PROVEN only on sample size. reached_rate >= 0.9 needs 35 distinct runs if every run succeeds (has 10) => at least 35 seeds x 1 worlds.
@@ -485,23 +496,22 @@ Reading:
   runs are below the 35 that `reached_rate >= 0.9` needs. Under the old rate rule `collision_rate <= 0`
   could never pass.
 - **A* with the true map is the best candidate in both.** It reached B in 15 of 15 office runs and
-  10 of 10 hall runs with no collision. Its median time to B is 18.1 s (office) and 23.7 s (hall), and the
+  10 of 10 hall runs with no collision. Its median time to B is 18.1 s (office) and 23.3 s (hall), and the
   time criterion passes on the upper bound. The collision count rule passes; the reach criterion is NOT
   PROVEN only because n is small.
 - **Without a map, F2 is the safest in the offices but stalls in the hall.** In the offices
-  `astar_unknown_f2` reached B in 12 of 15 runs with 0 collisions, while `astar_unknown` reached 6 of 15
-  with 3 collisions. In the hall `astar_unknown_f2` ended stuck in all 10 runs.
-- **In the hall the map-free planners collide.** `astar_unknown` collided in 7 of 10 runs and
-  `mppi_astar` in 10 of 10. The 0.2 m vehicle flies planners that inflate by 0.15 m, and the 87 deg camera
-  only turns when the planner turns it. These runs do not separate those two causes from the planners
-  themselves.
+  `astar_unknown_f2` reached B in 13 of 15 runs with 0 collisions, while `astar_unknown` reached 5 of 15
+  with 4 collisions. In the hall `astar_unknown_f2` ended stuck in all 10 runs.
+- **In the hall the map-free planners still collide, less than before.** `astar_unknown` reached 8 of 10
+  and collided in 2; `mppi_astar` reached 4 and collided in 5. On 2026-11-10 they collided in 7 and 10 of 10,
+  with planners that inflated by 0.15 m for the 0.2 m vehicle. Since then the radius override and the
+  dropped-beam fix both changed, and these runs do not separate the two. The 87 deg camera only turns when
+  the planner turns it.
 - **Baseline.** `straight` reached B in 0 of 10 hall runs, all stuck. On random layouts it reaches 40 %
   (results/matrix_0.md, ideal).
 
 ## Not included yet
 
-- Replays (`export_replays.py --merge`) for the seven rows added 2026-11-10: not exported, since the replay folder
-  is generated site data outside the paths that change could touch.
 - The diagnostic shipped-prior run for `dstar_lite` (only `astar_unknown` has one), and a scan
   memory for APF, VFH+ or the Bug planners.
 - The other safety-filter arms (F1 CP-stop, the map-based CBFs) and the estimator faults: the

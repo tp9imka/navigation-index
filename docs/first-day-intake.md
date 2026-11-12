@@ -54,10 +54,10 @@ sense or look up, and no benchmark row covers it ([cold-start drill blocker 5](c
 The new Q5 default is the cheapest obstacle sensor a small indoor drone usually carries, and the
 arena's `crazyflie` preset models it, so every number below has a measured row. With it, the
 defaults lead to a working stack: **`astar_unknown` + F2 range filter** from
-[close-area-benchmark](../samples/close-area-benchmark/README.md#results-ran-2026-11-09-synthetic)
+[close-area-benchmark](../samples/close-area-benchmark/README.md#results-ran-2026-11-12-synthetic)
 (4-beam preset, 20 layouts, seed 0, true pose, synthetic): random 100 / 0, u_trap 100 / 0,
-office 50 / 5, maze 55 / 0 reached / collision %. It does not work in warehouses (0 %) or glass
-rooms (5 % reached, 45 % collision), so ask for a floor plan as part of Q7: with a prior map,
+office 40 / 5, maze 50 / 0 reached / collision %. It barely works in warehouses (30 %) and not in glass
+rooms (5 % reached, 65 % collision), so ask for a floor plan as part of Q7: with a prior map,
 `astar_known` reached 100 % with 0 % collisions in every family on both sensors. If Q5 turns out
 to be "no obstacle sensor" after all, the gate in 3.4 still applies.
 
@@ -129,7 +129,7 @@ Added 2026-11-10. All tools run on synthetic input; the full flow is in the
 | Q7: "here is the floor plan" (image, PDF screenshot, whiteboard photo) | [world_from_image.py](../samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic) | `world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D --a-m X Y --b-m X Y -o room.world.json --preview room.png`; a measured room without a drawing: `world_from_room.py <room>.json` |
 | Q1 / Q5: drone size, top speed, sensor specs | Solver **Your drone** panel ([site/solver](../site/solver/README.md)) | Set radius, v_max, a_max and a sensor preset or Custom (beams, FoV, range), then **Quick**; **Recommend** gives the flight-repo command |
 | Q7: "people walk through" | VO gate in [close-area-moving-obstacles](../samples/close-area-moving-obstacles/README.md#prediction-arms-constant-velocity-tracks-space-time-a-vo-gate-ran-2026-11-10) | `run_predict.py --layouts 50 --seeds 0,1 --workers 14`. A* + VO gate reached B in 100 of 100 held-out runs with 0 collisions vs 92 % for A* + F2; the sim people walk straight lines |
-| Q3: "B is a marker" and its position is not given | [close-area-explore](../samples/close-area-explore/README.md) to find it, then [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md) for the last metres | `bench.py --layouts 20 --seed 0 --jobs 14`. With B unknown nearest-frontier found it in 43.3 % [31.6, 55.9]; with a nominal within 2 m every arm found it in 88.3-100 %. Ask for a nominal B |
+| Q3: "B is a marker" and its position is not given | [close-area-explore](../samples/close-area-explore/README.md) to find it, then [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md) for the last metres | `bench.py --layouts 20 --seed 0 --jobs 10`. With B unknown nearest-frontier found it in 41.7 % [30.1, 54.3]; with a nominal within 2 m every arm found it in 86.7-95.0 %. Ask for a nominal B |
 | Any answer, before tuning | Scenario pack in [close-area-benchmark](../samples/close-area-benchmark/README.md#scenario-packs) | `pack.py run packs/<name>.json`: our room + our drone + the bar, re-run after each change |
 
 ## 3. Decision tree

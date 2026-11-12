@@ -5,8 +5,9 @@ Python 3.12, numpy 2.4.6, scipy 1.17.1, osqp 1.1.3 (the 2026-11-10 dropout-fix s
 macOS arm64, 4 worker processes, load average 6.6 at the start. No benchmark table was regenerated.
 
 Shipped state: the code landed with `SKIP_DROPPED_BEAMS = False` in `planners/astar_esdf.py`, so the
-published tables (matrix_0, matrix_depth_0, advisor, explore, packs) still describe the unfixed map.
-The runs below set it to True. A follow-up change turns it on and regenerates every unknown-map row.
+published tables (matrix_0, matrix_depth_0, advisor, explore, packs) still described the unfixed map.
+The runs below set it to True. Update 2026-11-12: the flag is now True and every unknown-map table was
+regenerated (item 88c, [upstream-findings section 22](../../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)).
 
 ## What changed
 

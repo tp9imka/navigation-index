@@ -21,6 +21,12 @@ VIO loss ([close-area-relocalize](../../samples/close-area-relocalize/README.md)
 in JS. Everything is **synthetic**: a simulated 2.5D point-mass vehicle, simulated range sensors and
 a simulated VIO. No number here is a flight result.
 
+The browser checks below ran before the 2026-11-12 dropped-beam fix
+([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)),
+against the native side as it was then. On 2026-11-12 the native side (`results/native_parity*.json`) was re-run with
+the fix and the browser side was not, so for the planners that build a map from the scan the browser = native
+claims and their numbers are from before the fix and not re-checked.
+
 ## Your drone: radius, top speed, yaw
 
 Under the seed field, **Advanced: your drone** (closed by default) holds three controls. They apply to
@@ -75,10 +81,10 @@ and both now stop short (stuck) instead of flying into the gap and colliding. On
 
 **Yaw.** `cfg.yaw = "look_where_you_go"` turns the vehicle toward its commanded velocity (gain 2 /s, cap
 1 rad/s, toward B below 0.2 m/s). Default `fixed` for every sensor. In the first version of this panel the policy was on by default
-for sensors under 360 deg; it was slower than fixed yaw in 4 of 4 office_0 / maze_0 runs with the depth
+for sensors under 360 deg; it was not faster than fixed yaw in any of the 4 office_0 / maze_0 runs with the depth
 camera ([custom_sensor_0.md](../../samples/close-area-arena/results/custom_sensor_0.md)), so it is now opt-in.
-Example: office_0, MPPI on the A* path, depth_cam_87: reached in 14.14 s fixed, 15.88 s look where you go
-(browser = native). The result carries `yaw` and `config.yaw`.
+Example: office_0, MPPI on the A* path, depth_cam_87: reached in 13.66 s fixed, 13.8 s look where you go
+(native, with the dropped-beam fix; the browser run of 2026-11-10 gave 14.14 s and 15.88 s, equal to native then). The result carries `yaw` and `config.yaw`.
 
 Checks: [native_parity_custom.json](results/native_parity_custom.json) 11/11 (the sensor dict = the preset
 name; driver = `run.run_one` with the override; constants restored and a default run unchanged after the
@@ -290,9 +296,10 @@ wall times are one run each on a shared host (load average 45.8 at the start), s
   | maze_0 | hybrid_astar | reached / 39.26 / 0.2553 / 38.439 | 2.262 | 1.932 |
 
 Information only (check F, `native_parity_loop73.py --matrix-only`): against the benchmark's rows on the
-generated worlds (layout 0, ideal), 12/12 same outcome and 6/12 identical in every field. Five differ by
-0.0001 m in clearance or 0.001 m in path (the 4-decimal JSON rounding of check B); Hybrid A* on random_0
-reaches B at 18.74 s here and 18.54 s in the matrix.
+generated worlds (layout 0, ideal), 12/12 same outcome and 5/12 identical in every field (native re-run
+2026-11-12, dropped-beam fix on). Four differ by 0.0001 m in clearance or 0.001 m in path (the 4-decimal JSON
+rounding of check B); Lazy Theta* unknown map on maze_0 by 0.0012 m in clearance and 0.006 m in path; Hybrid A*
+reaches B at 18.66 s here vs 18.54 s in the matrix on random_0, and 36.64 s vs 39.14 s on maze_0.
 
 No run took over 60 s of browser Python, so all 6 stay in the list. Lazy Theta* unknown map is the slowest
 option: 30.7 s for one maze_0 run. MPPI, MPPI + A* and Hybrid A* take the world as an argument (geofence on
@@ -459,6 +466,8 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
 
 ## Not verified (playground)
 
+- Browser = native after the 2026-11-12 dropped-beam fix: the native files were re-run, the headless-Chrome
+  measurements (`results/measure*.mjs`) were not.
 - GitHub Pages hosting. Only `python3 -m http.server` locally.
 - Firefox and Safari, real phones and touch input. Only headless Chrome 140 with mouse events and
   a 390 x 844 emulated viewport.

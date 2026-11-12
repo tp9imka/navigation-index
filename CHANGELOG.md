@@ -6,6 +6,16 @@ All notable changes to this project are recorded here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- **Arena mapper: a dropped beam no longer marks free space behind walls.** The unknown-map
+  log-odds map traced a beam the sensor dropped as free out to max range. It now adds nothing
+  (`SKIP_DROPPED_BEAMS = True`, upstream-findings section 22). The benchmark matrix, the depth
+  camera matrix, the explore search benchmark, the Advisor data, the playground parity files, the
+  scenario packs and the replays were regenerated. The 8 planners that build a map from the scan
+  moved by -5.6 to +5.7 points of reach; the other 13 reproduced every run. The flight-repo arena
+  adapter now passes the per-beam drop flags through.
+
 ## [0.1.0] - 2026-11-11
 
 First public release. Counts are from `INDEX.md`, `samples/README.md` and

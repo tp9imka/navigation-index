@@ -68,9 +68,8 @@ MAP_RES = 0.1                 # m, same as the arena grid
 LO_HIT, LO_MISS = 0.9, 0.4    # log-odds increment for a hit, decrement for a pass-through
 LO_MIN, LO_MAX = -2.0, 3.5    # log-odds clamp
 LO_OCC, LO_FREE = 0.5, -0.3   # occupied above, free below, unknown between
-SKIP_DROPPED_BEAMS = False    # True: a beam the sensor flags dropped (scan.dropped) adds nothing to the map.
-                              # Off until the benchmark is regenerated with it, so the published
-                              # numbers match the code; False traces a dropped beam free to max_range.
+SKIP_DROPPED_BEAMS = True     # True: a beam the sensor flags dropped (scan.dropped) adds nothing to the map.
+                              # False = the mapper before 2026-11-12: a dropped beam is traced free to max_range.
 NO_RETURN_FREE_TO_MAX_RANGE = True   # a measured beam with no return clears free space out to max_range
                                      # (False = option A of the dropout-fix study: such a beam adds nothing either)
 NO_TRACE_REACH = -1.0         # m, free-space reach of a beam that adds nothing: below every sample (r >= 0)

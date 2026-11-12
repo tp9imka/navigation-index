@@ -56,7 +56,7 @@ blacklisted. Constants are module globals at the top of [explore.py](explore.py)
 ```sh
 cd samples/close-area-explore
 uv venv --python 3.12 .venv && uv pip install --python .venv -r requirements.txt   # numpy + scipy
-.venv/bin/python bench.py --layouts 20 --seed 0 --jobs 14   # ~8 min on 14 processes, results/bench_0.*
+.venv/bin/python bench.py --layouts 20 --seed 0 --jobs 10   # ~9 min on 10 processes, results/bench_0.*
 .venv/bin/python analyze.py                                 # ~3 s, results/analysis_0.md
 .venv/bin/python export_replay.py                           # ~1.5 s, one replay JSON
 .venv/bin/python -m unittest test_smoke -v                  # ~1.5 s; skips without numpy
@@ -67,10 +67,13 @@ One run from code (no processes, so it also fits a Pyodide page; not tried there
 
 ## Results (ran 2026-11-10, Apple M3 Max, macOS 26.6.2, CPython 3.12.10, numpy 2.5.4, scipy 1.18.1)
 
-`python bench.py --layouts 20 --seed 0 --jobs 14`: 1560 runs, wall 460.5 s on 14 processes
+Re-run on 2026-11-12 with the arena's dropped-beam fix on
+([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)):
+`python bench.py --layouts 20 --seed 0 --jobs 10`, 1560 runs, wall 556.2 s on 10 processes
 ([results/bench_0.md](results/bench_0.md), every run row in
-[results/bench_0.json](results/bench_0.json), stdout in
-[results/bench_stdout.txt](results/bench_stdout.txt)). Families random, office, warehouse;
+[results/bench_0.json](results/bench_0.json); the stdout kept in
+[results/bench_stdout.txt](results/bench_stdout.txt) is the 2026-11-10 run, 460.5 s on 14 processes).
+A rerun of 104 rows with the fix off reproduced the 2026-11-10 rows exactly, so the changes below are the fix. Families random, office, warehouse;
 layouts 0-19 of seed 0; presets `ideal` (72 rays, 6 m) and `crazyflie` (4 cones, 3 m) from the
 arena's [presets.py](../close-area-arena/presets.py). True pose. Wilson 95 % intervals. Times are
 medians over the runs that found / reached B, from take-off.
@@ -81,55 +84,55 @@ ignores the region, so it has one row):
 
 | region | arm | ideal found % [95 % CI] | ideal collision % [95 % CI] | ideal median time to find s | ideal median time to B s | crazyflie found % [95 % CI] | crazyflie collision % [95 % CI] | crazyflie median time to B s |
 |---|---|---|---|---|---|---|---|---|
-| B given | oracle | 100.0 [94.0, 100.0] | 0.0 [0.0, 6.0] | 0.0 | 22.8 | 100.0 [94.0, 100.0] | 38.3 [27.1, 51.0] | 23.68 |
-| 0 m | nominal_frontier | 95.0 [86.3, 98.3] | 0.0 [0.0, 6.0] | 20.0 | 21.98 | 55.0 [42.5, 66.9] | 35.0 [24.2, 47.6] | 23.54 |
-| 0 m | lawnmower | 91.7 [81.9, 96.4] | 0.0 [0.0, 6.0] | 19.9 | 21.82 | 55.0 [42.5, 66.9] | 33.3 [22.7, 45.9] | 23.54 |
-| 0 m | random_walk | 100.0 [94.0, 100.0] | 0.0 [0.0, 6.0] | 20.15 | 23.66 | 58.3 [45.7, 69.9] | 36.7 [25.6, 49.3] | 23.77 |
-| 2 m | nominal_frontier | 95.0 [86.3, 98.3] | 0.0 [0.0, 6.0] | 22.7 | 24.9 | 50.0 [37.7, 62.3] | 35.0 [24.2, 47.6] | 24.67 |
-| 2 m | lawnmower | 88.3 [77.8, 94.2] | 0.0 [0.0, 6.0] | 25.5 | 28.96 | 53.3 [40.9, 65.4] | 41.7 [30.1, 54.3] | 24.82 |
-| 2 m | random_walk | 95.0 [86.3, 98.3] | 0.0 [0.0, 6.0] | 25.2 | 27.98 | 55.0 [42.5, 66.9] | 35.0 [24.2, 47.6] | 23.25 |
-| 5 m | nominal_frontier | 81.7 [70.1, 89.4] | 0.0 [0.0, 6.0] | 29.2 | 32.16 | 48.3 [36.2, 60.7] | 31.7 [21.3, 44.2] | 42.26 |
-| 5 m | lawnmower | 86.7 [75.8, 93.1] | 0.0 [0.0, 6.0] | 55.25 | 58.41 | 38.3 [27.1, 51.0] | 50.0 [37.7, 62.3] | 34.44 |
-| 5 m | random_walk | 91.7 [81.9, 96.4] | 0.0 [0.0, 6.0] | 43.2 | 44.94 | 41.7 [30.1, 54.3] | 43.3 [31.6, 55.9] | 28.18 |
-| unknown | frontier | 43.3 [31.6, 55.9] | 5.0 [1.7, 13.7] | 70.75 | 73.12 | 3.3 [0.9, 11.4] | 16.7 [9.3, 28.0] | 132.97 |
-| unknown | lawnmower | 26.7 [17.1, 39.0] | 6.7 [2.6, 15.9] | 158.35 | 153.6 | 8.3 [3.6, 18.1] | 75.0 [62.8, 84.2] | 153.3 |
-| unknown | random_walk | 13.3 [6.9, 24.2] | 1.7 [0.3, 8.9] | 66.0 | 69.46 | 5.0 [1.7, 13.7] | 56.7 [44.1, 68.4] | 160.86 |
+| B given | oracle | 100.0 [94.0, 100.0] | 0.0 [0.0, 6.0] | 0.0 | 22.05 | 100.0 [94.0, 100.0] | 38.3 [27.1, 51.0] | 23.39 |
+| 0 m | nominal_frontier | 91.7 [81.9, 96.4] | 0.0 [0.0, 6.0] | 19.8 | 21.82 | 58.3 [45.7, 69.9] | 28.3 [18.5, 40.8] | 23.46 |
+| 0 m | lawnmower | 88.3 [77.8, 94.2] | 0.0 [0.0, 6.0] | 19.1 | 21.68 | 53.3 [40.9, 65.4] | 30.0 [19.9, 42.5] | 22.29 |
+| 0 m | random_walk | 95.0 [86.3, 98.3] | 0.0 [0.0, 6.0] | 20.1 | 22.18 | 60.0 [47.4, 71.4] | 35.0 [24.2, 47.6] | 23.69 |
+| 2 m | nominal_frontier | 88.3 [77.8, 94.2] | 0.0 [0.0, 6.0] | 21.1 | 23.0 | 50.0 [37.7, 62.3] | 40.0 [28.6, 52.6] | 24.13 |
+| 2 m | lawnmower | 91.7 [81.9, 96.4] | 0.0 [0.0, 6.0] | 30.4 | 32.84 | 51.7 [39.3, 63.8] | 35.0 [24.2, 47.6] | 23.2 |
+| 2 m | random_walk | 86.7 [75.8, 93.1] | 0.0 [0.0, 6.0] | 20.3 | 23.92 | 63.3 [50.7, 74.4] | 30.0 [19.9, 42.5] | 24.92 |
+| 5 m | nominal_frontier | 81.7 [70.1, 89.4] | 0.0 [0.0, 6.0] | 26.3 | 30.88 | 55.0 [42.5, 66.9] | 21.7 [13.1, 33.6] | 71.78 |
+| 5 m | lawnmower | 83.3 [72.0, 90.7] | 1.7 [0.3, 8.9] | 47.8 | 49.72 | 40.0 [28.6, 52.6] | 43.3 [31.6, 55.9] | 36.8 |
+| 5 m | random_walk | 85.0 [73.9, 91.9] | 0.0 [0.0, 6.0] | 41.4 | 43.38 | 46.7 [34.6, 59.1] | 38.3 [27.1, 51.0] | 28.52 |
+| unknown | frontier | 41.7 [30.1, 54.3] | 0.0 [0.0, 6.0] | 78.4 | 81.28 | 18.3 [10.6, 29.9] | 0.0 [0.0, 6.0] | 140.48 |
+| unknown | lawnmower | 31.7 [21.3, 44.2] | 5.0 [1.7, 13.7] | 152.5 | 152.81 | 10.0 [4.7, 20.1] | 51.7 [39.3, 63.8] | 160.06 |
+| unknown | random_walk | 18.3 [10.6, 29.9] | 1.7 [0.3, 8.9] | 91.4 | 95.04 | 6.7 [2.6, 15.9] | 53.3 [40.9, 65.4] | 66.98 |
 
 Oracle "found" is 100 % by definition. Per family, reached %, stuck % and timeout % are in
 [results/bench_0.md](results/bench_0.md). Selected per-family cells (ideal, found %):
 
 | family | oracle reached % | R = 5 m nominal_frontier | R = 5 m lawnmower | R = 5 m random_walk | unknown frontier | unknown lawnmower |
 |---|---|---|---|---|---|---|
-| random | 100.0 | 100.0 | 100.0 | 100.0 | 55.0 | 65.0 |
-| office | 100.0 | 70.0 | 85.0 | 95.0 | 65.0 | 15.0 |
-| warehouse | 95.0 | 75.0 | 75.0 | 80.0 | 10.0 | 0.0 |
+| random | 100.0 | 95.0 | 100.0 | 100.0 | 50.0 | 80.0 |
+| office | 100.0 | 80.0 | 75.0 | 85.0 | 70.0 | 15.0 |
+| warehouse | 80.0 | 70.0 | 75.0 | 70.0 | 5.0 | 0.0 |
 
 Reading:
 
 - **A nominal is worth more than any search rule.** With an ideal sensor, every arm given a
-  nominal within 2 m found B in 88.3-100 % of runs, about as fast as the oracle (median time to
-  B 21.82-28.96 s vs 22.8 s). With B unknown the best arm, `frontier`, found it in 43.3 % [31.6, 55.9]
+  nominal within 2 m found B in 86.7-95.0 % of runs, about as fast as the oracle (median time to
+  B 21.68-32.84 s vs 22.05 s). With B unknown the best arm, `frontier`, found it in 41.7 % [30.1, 54.3]
   within 180 s. Ask whoever set the task for a nominal B, even a rough one.
 - **Frontier exploration finishes the map, not the search.** The 6 m range sensor maps the
   room faster than a 2 m detector sweeps it. In the ideal `frontier` runs that missed B, the
-  map was complete: median coverage 1.03 in the 8 runs that ended hovering (a rerun confirmed
-  all 8 had no frontier left) and 1.02 in the 23 timeouts ([results/analysis_0.md](results/analysis_0.md); coverage above 1 is explained
-  under Limits). A search needs a frontier of the detector's footprint, not of the map.
+  map was nearly complete: median coverage 0.98 in the 11 runs that ended hovering (a rerun confirmed
+  all 11 had no frontier left) and 0.80 in the 24 timeouts ([results/analysis_0.md](results/analysis_0.md)). A search needs a frontier of the detector's footprint, not of the map.
   This sample did not build one.
-- **With R = 5 m, simple beats clever on found %, not on time.** `random_walk` 91.7 %,
-  `lawnmower` 86.7 %, `nominal_frontier` 81.7 % (intervals overlap). `nominal_frontier` is the
-  fastest when it finds B (median 29.2 s vs 43.2 s and 55.25 s) but misses more, for the same
-  reason as above. The office is the hard family for it (70 %).
+- **With R = 5 m, simple beats clever on found %, not on time.** `random_walk` 85.0 %,
+  `lawnmower` 83.3 %, `nominal_frontier` 81.7 % (intervals overlap). `nominal_frontier` is the
+  fastest when it finds B (median 26.3 s vs 41.4 s and 47.8 s) but misses more, for the same
+  reason as above. The warehouse is the hard family for it (70 %).
 - **R = 0 arms differ only after a failed approach.** All four fly to the nominal first; their
-  found % (91.7-100) differs where the A* to the nominal failed once and the arm fell back to
+  found % (88.3-95.0) differs where the A* to the nominal failed once and the arm fell back to
   frontier search.
 - **On the crazyflie preset, collisions decide, not search.** The oracle itself collides in
   38.3 % [27.1, 51.0] of runs (office 50 %, warehouse 65 %), the known 4-beam weakness of the
   unknown-map A* ([close-area-benchmark](../close-area-benchmark/README.md)). Search arms that
-  fly more metres collide more: `lawnmower` with B unknown 75.0 %.
-- **Ideal-preset collisions are grazes.** All 8 ideal collisions had a min clearance of
-  0.1466-0.1498 m against the 0.15 m radius ([results/bench_0.md](results/bench_0.md)
-  "Collisions"), all in runs with B unknown.
+  fly more metres collide more: `lawnmower` with B unknown 51.7 %. `frontier` with B unknown had no
+  collision on this preset (18.3 % found).
+- **Ideal-preset collisions are grazes.** All 5 ideal collisions had a min clearance of
+  0.1483-0.1493 m against the 0.15 m radius ([results/bench_0.md](results/bench_0.md)
+  "Collisions"), 4 of them in runs with B unknown.
 
 Baseline for scale: the arena's straight planner reaches 40 % of random layouts with B given
 ([close-area-arena results](../close-area-arena/results/straight_random_0.md)).
@@ -138,8 +141,8 @@ Baseline for scale: the arena's straight planner reaches 40 % of random layouts 
 
 `python export_replay.py` (defaults: office layout 0, `nominal_frontier`, R = 5 m, ideal) wrote
 [results/replay_office_0_nominal_frontier_r5_ideal.json](results/replay_office_0_nominal_frontier_r5_ideal.json),
-16,593 bytes ([results/export_replay.log](results/export_replay.log)): found at 45.3 s, at B
-47.18 s, outcome and min clearance match its row in bench_0.json. Same top-level fields as the
+50,278 bytes ([results/export_replay.log](results/export_replay.log)): found at 172.2 s, at B
+174.16 s, outcome and min clearance match its row in bench_0.json. Same top-level fields as the
 benchmark's replays (`close-area-replay/2`, `world` in `close-area-world/1`, truth path and
 clearance at 10 Hz), plus a `search` object (region, nominal, detection range, time found). The
 `world` round-trips through the arena's `world_json.from_json` unchanged. B in `world.b` is the
@@ -151,12 +154,11 @@ true B; the planner was given `search.nominal`.
   error. A real camera has a field of view (the AprilTag sample's is 65 deg horizontal), so a
   real search must also turn to look. The tag's view-angle limit is not modelled.
 - The planner sees the true pose. No VIO drift, so "known B" after detection is exact.
-- Map coverage above 1.0 in [results/analysis_0.md](results/analysis_0.md): the arena's
-  `LogOddsMap` traces a no-return beam (2 % dropout on the ideal preset) as free out to the full
-  range, through walls. Cells behind walls then look explored, which removes frontiers and
-  helps hide B. The three highest-coverage runs (warehouse 1, 2, 4: 1.19, 1.20, 1.25) rerun
-  with dropout 0 end at 0.85, 0.79, 0.98 (same file). Reported, not fixed (the arena is not
-  edited here).
+- Map coverage: until 2026-11-12 the arena's `LogOddsMap` traced a dropped beam (2 % dropout on
+  the ideal preset) as free out to the full range, through walls, so coverage reached 1.25 and cells
+  behind walls looked explored. With the fix a dropped beam adds nothing: coverage stays at or below
+  0.99, and the three highest-coverage runs rerun with dropout 0 end within 0.02 of it
+  ([results/analysis_0.md](results/analysis_0.md)).
 - B's placement is the arena's: always near the far corner from A (random), in a far room
   (office), or in the top aisle (warehouse). A whole-area lawnmower starting at A covers that
   corner last. Different B placement would change the "unknown" rows.

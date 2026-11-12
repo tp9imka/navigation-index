@@ -4,7 +4,7 @@
  "note": "SYNTHETIC SIMULATION, 2.5D point mass, scored on truth, planner sees the true pose. Not a flight result.",
  "pack_file": "packs/hall_8x6.json",
  "workers": 1,
- "wall_s": 21.1,
+ "wall_s": 21.7,
  "n_runs": 60,
  "env": {
   "python": "3.12.10",
@@ -15,7 +15,7 @@
   "system": "Darwin",
   "cpus": 16
  },
- "date": "2026-11-10",
+ "date": "2026-11-12",
  "pack": {
   "schema": "close-area-pack/1",
   "name": "hall_8x6",
@@ -77,7 +77,24 @@
   }
  ],
  "no_free_path_at_radius": [],
- "planner_inflation_note": "planners inflate by their own constants (0.15 m class); the pack radius changes the vehicle, the collision stop and the scoring only",
+ "planner_inflation": {
+  "radius_m": 0.2,
+  "set": {
+   "astar_esdf.RADIUS": 0.2,
+   "astar_esdf.CARROT_CLEAR_M": 0.3,
+   "hybrid_astar.RADIUS": 0.2,
+   "rrt_star.RADIUS": 0.2,
+   "mppi.R_COLL": 0.2,
+   "mppi.D_SAFE": 0.45,
+   "dwa.RADIUS": 0.2,
+   "bug.RADIUS": 0.2
+  },
+  "instance": {
+   "apf_escape": "APF.radius = radius_m",
+   "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"
+  },
+  "note": "planners inflate by the pack radius for each run, as site/playground/worker.js radius_override"
+ },
  "evaluation": {
   "planners": {
    "astar_known": {
@@ -114,9 +131,9 @@
       "verdict": "PASS",
       "n": 10,
       "n_runs": 10,
-      "value": 23.72,
-      "lo": 22.9,
-      "hi": 24.58,
+      "value": 23.32,
+      "lo": 22.62,
+      "hi": 24.96,
       "bound_used": "upper",
       "gap": null,
       "criterion": "<= 30"
@@ -129,29 +146,29 @@
    "astar_unknown": {
     "criteria": {
      "reached_rate": {
-      "verdict": "FAIL",
-      "k": 3,
+      "verdict": "NOT PROVEN",
+      "k": 8,
       "n": 10,
       "n_runs": 10,
-      "value": 0.3,
-      "lo": 0.10778928748621183,
-      "hi": 0.6032267800204347,
+      "value": 0.8,
+      "lo": 0.49015684672072335,
+      "hi": 0.9433190520193067,
       "bound_used": "lower",
       "runs_needed_all_success": 35,
       "all_success": false,
-      "gap": null,
+      "gap": "data",
       "criterion": ">= 0.9"
      },
      "collisions": {
       "verdict": "FAIL",
-      "k": 7,
+      "k": 2,
       "n": 10,
       "n_runs": 10,
       "min_runs": 10,
       "outcome": "collision",
-      "value": 0.7,
-      "lo": 0.39677321997956516,
-      "hi": 0.892210712513788,
+      "value": 0.2,
+      "lo": 0.056680947980693314,
+      "hi": 0.5098431532792765,
       "bound_used": "count",
       "gap": null,
       "criterion": "== 0"
@@ -160,11 +177,11 @@
       "verdict": "NOT PROVEN",
       "n": 10,
       "n_runs": 10,
-      "value": "inf",
-      "lo": 29.2,
+      "value": 29.52,
+      "lo": 28.54,
       "hi": "inf",
       "bound_used": "upper",
-      "gap": "data",
+      "gap": "sample_size",
       "criterion": "<= 30"
      }
     },
@@ -177,11 +194,11 @@
      "reached_rate": {
       "verdict": "FAIL",
       "k": 0,
-      "n": 9,
+      "n": 10,
       "n_runs": 10,
       "value": 0.0,
       "lo": 0.0,
-      "hi": 0.2991527535509594,
+      "hi": 0.2775401687666166,
       "bound_used": "lower",
       "runs_needed_all_success": 35,
       "all_success": false,
@@ -189,22 +206,22 @@
       "criterion": ">= 0.9"
      },
      "collisions": {
-      "verdict": "NOT PROVEN",
+      "verdict": "PASS",
       "k": 0,
-      "n": 9,
+      "n": 10,
       "n_runs": 10,
       "min_runs": 10,
       "outcome": "collision",
       "value": 0.0,
       "lo": 0.0,
-      "hi": 0.2991527535509594,
+      "hi": 0.2775401687666166,
       "bound_used": "count",
-      "gap": "sample_size",
+      "gap": null,
       "criterion": "== 0"
      },
      "time_to_goal_p50_s": {
       "verdict": "FAIL",
-      "n": 9,
+      "n": 10,
       "n_runs": 10,
       "value": "inf",
       "lo": "inf",
@@ -222,12 +239,12 @@
     "criteria": {
      "reached_rate": {
       "verdict": "FAIL",
-      "k": 0,
+      "k": 4,
       "n": 10,
       "n_runs": 10,
-      "value": 0.0,
-      "lo": 0.0,
-      "hi": 0.2775401687666166,
+      "value": 0.4,
+      "lo": 0.16817758120350967,
+      "hi": 0.6873304525498135,
       "bound_used": "lower",
       "runs_needed_all_success": 35,
       "all_success": false,
@@ -236,27 +253,27 @@
      },
      "collisions": {
       "verdict": "FAIL",
-      "k": 10,
+      "k": 5,
       "n": 10,
       "n_runs": 10,
       "min_runs": 10,
       "outcome": "collision",
-      "value": 1.0,
-      "lo": 0.7224598312333834,
-      "hi": 1.0,
+      "value": 0.5,
+      "lo": 0.23658959361548731,
+      "hi": 0.7634104063845126,
       "bound_used": "count",
       "gap": null,
       "criterion": "== 0"
      },
      "time_to_goal_p50_s": {
-      "verdict": "FAIL",
+      "verdict": "NOT PROVEN",
       "n": 10,
       "n_runs": 10,
       "value": "inf",
-      "lo": "inf",
+      "lo": 19.38,
       "hi": "inf",
       "bound_used": "upper",
-      "gap": null,
+      "gap": "data",
       "criterion": "<= 30"
      }
     },
@@ -282,14 +299,14 @@
      },
      "collisions": {
       "verdict": "FAIL",
-      "k": 2,
+      "k": 1,
       "n": 10,
       "n_runs": 10,
       "min_runs": 10,
       "outcome": "collision",
-      "value": 0.2,
-      "lo": 0.056680947980693314,
-      "hi": 0.5098431532792765,
+      "value": 0.1,
+      "lo": 0.01787574951572113,
+      "hi": 0.4041563854975721,
       "bound_used": "count",
       "gap": null,
       "criterion": "== 0"
@@ -385,12 +402,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 23.98,
-   "path_length_m": 9.204,
-   "min_clearance_m": 0.2212,
-   "duration_s": 23.98,
-   "wall_s": 0.33,
-   "planner_ms_mean": 1.267,
+   "time_to_goal_s": 23.54,
+   "path_length_m": 9.114,
+   "min_clearance_m": 0.2081,
+   "duration_s": 23.54,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.87,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -415,12 +432,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 23.72,
-   "path_length_m": 9.024,
-   "min_clearance_m": 0.2204,
-   "duration_s": 23.72,
-   "wall_s": 0.39,
-   "planner_ms_mean": 1.465,
+   "time_to_goal_s": 22.92,
+   "path_length_m": 8.748,
+   "min_clearance_m": 0.2189,
+   "duration_s": 22.92,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.933,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -445,12 +462,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 23.66,
-   "path_length_m": 8.928,
-   "min_clearance_m": 0.2235,
-   "duration_s": 23.66,
-   "wall_s": 0.38,
-   "planner_ms_mean": 1.431,
+   "time_to_goal_s": 22.92,
+   "path_length_m": 8.72,
+   "min_clearance_m": 0.2067,
+   "duration_s": 22.92,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.931,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -475,12 +492,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 24.16,
-   "path_length_m": 8.914,
-   "min_clearance_m": 0.2263,
-   "duration_s": 24.16,
-   "wall_s": 0.44,
-   "planner_ms_mean": 1.642,
+   "time_to_goal_s": 23.8,
+   "path_length_m": 9.045,
+   "min_clearance_m": 0.2112,
+   "duration_s": 23.8,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.864,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -505,12 +522,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 22.9,
-   "path_length_m": 9.346,
-   "min_clearance_m": 0.2141,
-   "duration_s": 22.9,
-   "wall_s": 0.37,
-   "planner_ms_mean": 1.455,
+   "time_to_goal_s": 22.62,
+   "path_length_m": 9.266,
+   "min_clearance_m": 0.2105,
+   "duration_s": 22.62,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.962,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -535,12 +552,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 25.7,
-   "path_length_m": 9.687,
-   "min_clearance_m": 0.2131,
-   "duration_s": 25.7,
-   "wall_s": 0.46,
-   "planner_ms_mean": 1.642,
+   "time_to_goal_s": 24.96,
+   "path_length_m": 9.797,
+   "min_clearance_m": 0.2108,
+   "duration_s": 24.96,
+   "wall_s": 0.27,
+   "planner_ms_mean": 0.957,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -565,12 +582,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 24.18,
-   "path_length_m": 9.317,
-   "min_clearance_m": 0.2185,
-   "duration_s": 24.18,
-   "wall_s": 0.44,
-   "planner_ms_mean": 1.642,
+   "time_to_goal_s": 23.32,
+   "path_length_m": 9.115,
+   "min_clearance_m": 0.2113,
+   "duration_s": 23.32,
+   "wall_s": 0.25,
+   "planner_ms_mean": 0.959,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -595,12 +612,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 23.5,
-   "path_length_m": 9.23,
-   "min_clearance_m": 0.218,
-   "duration_s": 23.5,
-   "wall_s": 0.46,
-   "planner_ms_mean": 1.811,
+   "time_to_goal_s": 23.82,
+   "path_length_m": 9.348,
+   "min_clearance_m": 0.2312,
+   "duration_s": 23.82,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.925,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -625,12 +642,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 24.58,
-   "path_length_m": 9.782,
-   "min_clearance_m": 0.2157,
-   "duration_s": 24.58,
-   "wall_s": 0.41,
-   "planner_ms_mean": 1.537,
+   "time_to_goal_s": 25.24,
+   "path_length_m": 9.956,
+   "min_clearance_m": 0.2337,
+   "duration_s": 25.24,
+   "wall_s": 0.27,
+   "planner_ms_mean": 0.949,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -655,12 +672,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 22.76,
-   "path_length_m": 8.785,
-   "min_clearance_m": 0.2123,
-   "duration_s": 22.76,
-   "wall_s": 0.33,
-   "planner_ms_mean": 1.294,
+   "time_to_goal_s": 22.3,
+   "path_length_m": 8.619,
+   "min_clearance_m": 0.2103,
+   "duration_s": 22.3,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.958,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -684,14 +701,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 7.073,
-   "min_clearance_m": 0.1999,
-   "duration_s": 20.5,
-   "wall_s": 0.55,
-   "planner_ms_mean": 2.554,
-   "hit_material": "matte",
+   "outcome": "reached",
+   "time_to_goal_s": 28.54,
+   "path_length_m": 12.077,
+   "min_clearance_m": 0.2145,
+   "duration_s": 28.54,
+   "wall_s": 0.6,
+   "planner_ms_mean": 1.998,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -714,14 +731,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 6.625,
-   "min_clearance_m": 0.1997,
-   "duration_s": 19.48,
-   "wall_s": 0.52,
-   "planner_ms_mean": 2.508,
-   "hit_material": "matte",
+   "outcome": "reached",
+   "time_to_goal_s": 30.08,
+   "path_length_m": 13.099,
+   "min_clearance_m": 0.2592,
+   "duration_s": 30.08,
+   "wall_s": 0.64,
+   "planner_ms_mean": 2.004,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -745,12 +762,12 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 29.2,
-   "path_length_m": 10.011,
-   "min_clearance_m": 0.2199,
-   "duration_s": 29.2,
-   "wall_s": 0.65,
-   "planner_ms_mean": 2.075,
+   "time_to_goal_s": 28.46,
+   "path_length_m": 12.434,
+   "min_clearance_m": 0.2439,
+   "duration_s": 28.46,
+   "wall_s": 0.62,
+   "planner_ms_mean": 2.082,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -774,14 +791,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 6.015,
-   "min_clearance_m": 0.1979,
-   "duration_s": 16.4,
-   "wall_s": 0.51,
-   "planner_ms_mean": 2.884,
-   "hit_material": "matte",
+   "outcome": "reached",
+   "time_to_goal_s": 28.66,
+   "path_length_m": 11.642,
+   "min_clearance_m": 0.2363,
+   "duration_s": 28.66,
+   "wall_s": 0.57,
+   "planner_ms_mean": 1.879,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -805,493 +822,493 @@
    "free_path": true,
    "error": null,
    "outcome": "reached",
-   "time_to_goal_s": 30.28,
-   "path_length_m": 10.606,
-   "min_clearance_m": 0.2289,
-   "duration_s": 30.28,
-   "wall_s": 0.74,
-   "planner_ms_mean": 2.297,
-   "hit_material": null,
-   "intervention_frac": null
-  },
-  {
-   "planner": "astar_unknown",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 5,
-   "a": [
-    0.8645,
-    0.3985
-   ],
-   "b": [
-    7.5612,
-    0.7581
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 0.278,
-   "min_clearance_m": 0.1975,
-   "duration_s": 1.34,
-   "wall_s": 0.11,
-   "planner_ms_mean": 7.828,
-   "hit_material": "wall",
-   "intervention_frac": null
-  },
-  {
-   "planner": "astar_unknown",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 6,
-   "a": [
-    0.8439,
-    1.1426
-   ],
-   "b": [
-    7.294,
-    0.6396
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 6.679,
-   "min_clearance_m": 0.1993,
-   "duration_s": 19.84,
-   "wall_s": 0.54,
-   "planner_ms_mean": 2.547,
-   "hit_material": "matte",
-   "intervention_frac": null
-  },
-  {
-   "planner": "astar_unknown",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 7,
-   "a": [
-    1.2507,
-    0.715
-   ],
-   "b": [
-    7.4085,
-    0.5906
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "reached",
-   "time_to_goal_s": 27.18,
-   "path_length_m": 9.948,
-   "min_clearance_m": 0.2144,
-   "duration_s": 27.18,
-   "wall_s": 0.71,
-   "planner_ms_mean": 2.46,
-   "hit_material": null,
-   "intervention_frac": null
-  },
-  {
-   "planner": "astar_unknown",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 8,
-   "a": [
-    0.5159,
-    0.4267
-   ],
-   "b": [
-    7.2977,
-    0.8242
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 6.97,
-   "min_clearance_m": 0.1996,
-   "duration_s": 19.64,
-   "wall_s": 0.65,
-   "planner_ms_mean": 3.145,
-   "hit_material": "matte",
-   "intervention_frac": null
-  },
-  {
-   "planner": "astar_unknown",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 9,
-   "a": [
-    1.1176,
-    1.0924
-   ],
-   "b": [
-    6.9721,
-    0.7928
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 6.447,
-   "min_clearance_m": 0.1988,
-   "duration_s": 18.94,
-   "wall_s": 0.46,
-   "planner_ms_mean": 2.274,
-   "hit_material": "matte",
-   "intervention_frac": null
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 0,
-   "a": [
-    0.8,
-    0.8
-   ],
-   "b": [
-    7.2,
-    1.0
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.223,
-   "min_clearance_m": 0.7862,
-   "duration_s": 14.66,
-   "wall_s": 0.52,
-   "planner_ms_mean": 2.856,
-   "hit_material": null,
-   "intervention_frac": 0.9578
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 1,
-   "a": [
-    0.7405,
-    1.1866
-   ],
-   "b": [
-    6.8937,
-    0.7913
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.22,
-   "min_clearance_m": 0.7405,
-   "duration_s": 15.12,
-   "wall_s": 0.58,
-   "planner_ms_mean": 3.072,
-   "hit_material": null,
-   "intervention_frac": 0.9723
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 2,
-   "a": [
-    0.6918,
-    1.0777
-   ],
-   "b": [
-    6.8709,
-    1.0094
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.088,
-   "min_clearance_m": 0.6918,
-   "duration_s": 14.48,
-   "wall_s": 0.51,
-   "planner_ms_mean": 2.829,
-   "hit_material": null,
-   "intervention_frac": 0.989
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 3,
-   "a": [
-    1.0974,
-    0.4862
-   ],
-   "b": [
-    7.0783,
-    1.034
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.043,
-   "min_clearance_m": 0.4862,
-   "duration_s": 14.48,
-   "wall_s": 0.54,
-   "planner_ms_mean": 3.106,
-   "hit_material": null,
-   "intervention_frac": 0.9821
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 4,
-   "a": [
-    0.7771,
-    0.6454
-   ],
-   "b": [
-    7.1382,
-    1.408
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.273,
-   "min_clearance_m": 0.6454,
-   "duration_s": 15.2,
-   "wall_s": 0.58,
-   "planner_ms_mean": 3.066,
-   "hit_material": null,
-   "intervention_frac": 0.9816
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 5,
-   "a": [
-    0.8645,
-    0.3985
-   ],
-   "b": [
-    7.5612,
-    0.7581
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.822,
-   "min_clearance_m": 0.3911,
-   "duration_s": 15.46,
-   "wall_s": 0.58,
-   "planner_ms_mean": 3.121,
-   "hit_material": null,
-   "intervention_frac": 0.9806
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 6,
-   "a": [
-    0.8439,
-    1.1426
-   ],
-   "b": [
-    7.294,
-    0.6396
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.088,
-   "min_clearance_m": 0.747,
-   "duration_s": 14.88,
-   "wall_s": 0.56,
-   "planner_ms_mean": 3.032,
-   "hit_material": null,
-   "intervention_frac": 0.9651
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 7,
-   "a": [
-    1.2507,
-    0.715
-   ],
-   "b": [
-    7.4085,
-    0.5906
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.02,
-   "min_clearance_m": 0.715,
-   "duration_s": 15.04,
-   "wall_s": 0.61,
-   "planner_ms_mean": 3.298,
-   "hit_material": null,
-   "intervention_frac": 0.9309
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 8,
-   "a": [
-    0.5159,
-    0.4267
-   ],
-   "b": [
-    7.2977,
-    0.8242
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 2.188,
-   "min_clearance_m": 0.4267,
-   "duration_s": 13.66,
-   "wall_s": 0.54,
-   "planner_ms_mean": 3.275,
-   "hit_material": null,
-   "intervention_frac": 0.9386
-  },
-  {
-   "planner": "astar_unknown_f2",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 9,
-   "a": [
-    1.1176,
-    1.0924
-   ],
-   "b": [
-    6.9721,
-    0.7928
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 1.783,
-   "min_clearance_m": 0.7429,
-   "duration_s": 14.1,
-   "wall_s": 0.51,
-   "planner_ms_mean": 2.888,
-   "hit_material": null,
-   "intervention_frac": 1.0
-  },
-  {
-   "planner": "mppi_astar",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 0,
-   "a": [
-    0.8,
-    0.8
-   ],
-   "b": [
-    7.2,
-    1.0
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 4.669,
-   "min_clearance_m": 0.1994,
-   "duration_s": 5.94,
+   "time_to_goal_s": 29.42,
+   "path_length_m": 11.944,
+   "min_clearance_m": 0.2535,
+   "duration_s": 29.42,
    "wall_s": 0.59,
-   "planner_ms_mean": 9.685,
+   "planner_ms_mean": 1.908,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_unknown",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 5,
+   "a": [
+    0.8645,
+    0.3985
+   ],
+   "b": [
+    7.5612,
+    0.7581
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "collision",
+   "time_to_goal_s": null,
+   "path_length_m": 0.693,
+   "min_clearance_m": 0.1978,
+   "duration_s": 3.16,
+   "wall_s": 0.13,
+   "planner_ms_mean": 3.949,
+   "hit_material": "wall",
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_unknown",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 6,
+   "a": [
+    0.8439,
+    1.1426
+   ],
+   "b": [
+    7.294,
+    0.6396
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 30.22,
+   "path_length_m": 13.025,
+   "min_clearance_m": 0.216,
+   "duration_s": 30.22,
+   "wall_s": 0.65,
+   "planner_ms_mean": 2.024,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_unknown",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 7,
+   "a": [
+    1.2507,
+    0.715
+   ],
+   "b": [
+    7.4085,
+    0.5906
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "collision",
+   "time_to_goal_s": null,
+   "path_length_m": 4.589,
+   "min_clearance_m": 0.1992,
+   "duration_s": 10.28,
+   "wall_s": 0.3,
+   "planner_ms_mean": 2.773,
    "hit_material": "matte",
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_unknown",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 8,
+   "a": [
+    0.5159,
+    0.4267
+   ],
+   "b": [
+    7.2977,
+    0.8242
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.52,
+   "path_length_m": 12.548,
+   "min_clearance_m": 0.2247,
+   "duration_s": 29.52,
+   "wall_s": 0.64,
+   "planner_ms_mean": 2.048,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_unknown",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 9,
+   "a": [
+    1.1176,
+    1.0924
+   ],
+   "b": [
+    6.9721,
+    0.7928
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 30.56,
+   "path_length_m": 12.68,
+   "min_clearance_m": 0.2173,
+   "duration_s": 30.56,
+   "wall_s": 0.66,
+   "planner_ms_mean": 2.048,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.739,
+   "min_clearance_m": 0.7542,
+   "duration_s": 17.52,
+   "wall_s": 0.52,
+   "planner_ms_mean": 2.512,
+   "hit_material": null,
+   "intervention_frac": 0.9133
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.832,
+   "min_clearance_m": 0.7004,
+   "duration_s": 14.32,
+   "wall_s": 0.45,
+   "planner_ms_mean": 2.638,
+   "hit_material": null,
+   "intervention_frac": 0.7378
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.448,
+   "min_clearance_m": 0.6918,
+   "duration_s": 21.96,
+   "wall_s": 0.66,
+   "planner_ms_mean": 2.53,
+   "hit_material": null,
+   "intervention_frac": 0.8835
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.222,
+   "min_clearance_m": 0.4862,
+   "duration_s": 13.62,
+   "wall_s": 0.46,
+   "planner_ms_mean": 2.89,
+   "hit_material": null,
+   "intervention_frac": 0.8238
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.356,
+   "min_clearance_m": 0.6204,
+   "duration_s": 21.56,
+   "wall_s": 0.66,
+   "planner_ms_mean": 2.549,
+   "hit_material": null,
+   "intervention_frac": 0.8869
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 5,
+   "a": [
+    0.8645,
+    0.3985
+   ],
+   "b": [
+    7.5612,
+    0.7581
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.933,
+   "min_clearance_m": 0.3867,
+   "duration_s": 16.12,
+   "wall_s": 0.52,
+   "planner_ms_mean": 2.748,
+   "hit_material": null,
+   "intervention_frac": 0.8848
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 6,
+   "a": [
+    0.8439,
+    1.1426
+   ],
+   "b": [
+    7.294,
+    0.6396
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.153,
+   "min_clearance_m": 0.7033,
+   "duration_s": 12.22,
+   "wall_s": 0.43,
+   "planner_ms_mean": 3.029,
+   "hit_material": null,
+   "intervention_frac": 0.7234
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 7,
+   "a": [
+    1.2507,
+    0.715
+   ],
+   "b": [
+    7.4085,
+    0.5906
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.433,
+   "min_clearance_m": 0.6682,
+   "duration_s": 13.62,
+   "wall_s": 0.45,
+   "planner_ms_mean": 2.828,
+   "hit_material": null,
+   "intervention_frac": 0.8223
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 8,
+   "a": [
+    0.5159,
+    0.4267
+   ],
+   "b": [
+    7.2977,
+    0.8242
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.897,
+   "min_clearance_m": 0.4267,
+   "duration_s": 15.88,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.87,
+   "hit_material": null,
+   "intervention_frac": 0.9031
+  },
+  {
+   "planner": "astar_unknown_f2",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 9,
+   "a": [
+    1.1176,
+    1.0924
+   ],
+   "b": [
+    6.9721,
+    0.7928
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.237,
+   "min_clearance_m": 0.6612,
+   "duration_s": 13.76,
+   "wall_s": 0.44,
+   "planner_ms_mean": 2.699,
+   "hit_material": null,
+   "intervention_frac": 0.843
+  },
+  {
+   "planner": "mppi_astar",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.64,
+   "path_length_m": 14.201,
+   "min_clearance_m": 0.2002,
+   "duration_s": 24.64,
+   "wall_s": 1.53,
+   "planner_ms_mean": 6.087,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -1316,11 +1333,11 @@
    "error": null,
    "outcome": "collision",
    "time_to_goal_s": null,
-   "path_length_m": 2.765,
-   "min_clearance_m": 0.1991,
-   "duration_s": 4.08,
+   "path_length_m": 3.265,
+   "min_clearance_m": 0.2,
+   "duration_s": 5.06,
    "wall_s": 0.38,
-   "planner_ms_mean": 9.093,
+   "planner_ms_mean": 7.342,
    "hit_material": "matte",
    "intervention_frac": null
   },
@@ -1346,11 +1363,11 @@
    "error": null,
    "outcome": "collision",
    "time_to_goal_s": null,
-   "path_length_m": 3.974,
-   "min_clearance_m": 0.1968,
-   "duration_s": 5.76,
-   "wall_s": 0.54,
-   "planner_ms_mean": 9.104,
+   "path_length_m": 4.81,
+   "min_clearance_m": 0.1964,
+   "duration_s": 7.36,
+   "wall_s": 0.51,
+   "planner_ms_mean": 6.835,
    "hit_material": "matte",
    "intervention_frac": null
   },
@@ -1374,14 +1391,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
+   "outcome": "stuck",
    "time_to_goal_s": null,
-   "path_length_m": 4.03,
-   "min_clearance_m": 0.1957,
-   "duration_s": 5.36,
-   "wall_s": 0.56,
-   "planner_ms_mean": 10.217,
-   "hit_material": "matte",
+   "path_length_m": 6.112,
+   "min_clearance_m": 0.4862,
+   "duration_s": 17.46,
+   "wall_s": 1.13,
+   "planner_ms_mean": 6.341,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -1404,14 +1421,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 4.032,
-   "min_clearance_m": 0.1985,
-   "duration_s": 5.36,
-   "wall_s": 0.47,
-   "planner_ms_mean": 8.478,
-   "hit_material": "matte",
+   "outcome": "reached",
+   "time_to_goal_s": 20.52,
+   "path_length_m": 11.586,
+   "min_clearance_m": 0.2015,
+   "duration_s": 20.52,
+   "wall_s": 1.21,
+   "planner_ms_mean": 5.745,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -1436,12 +1453,12 @@
    "error": null,
    "outcome": "collision",
    "time_to_goal_s": null,
-   "path_length_m": 0.397,
-   "min_clearance_m": 0.1915,
-   "duration_s": 0.96,
-   "wall_s": 0.17,
-   "planner_ms_mean": 16.439,
-   "hit_material": "wall",
+   "path_length_m": 4.506,
+   "min_clearance_m": 0.1935,
+   "duration_s": 6.04,
+   "wall_s": 0.44,
+   "planner_ms_mean": 7.101,
+   "hit_material": "matte",
    "intervention_frac": null
   },
   {
@@ -1464,14 +1481,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 3.939,
-   "min_clearance_m": 0.1892,
-   "duration_s": 5.28,
-   "wall_s": 0.51,
-   "planner_ms_mean": 9.481,
-   "hit_material": "matte",
+   "outcome": "reached",
+   "time_to_goal_s": 19.38,
+   "path_length_m": 11.677,
+   "min_clearance_m": 0.2155,
+   "duration_s": 19.38,
+   "wall_s": 1.16,
+   "planner_ms_mean": 5.845,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -1494,14 +1511,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 3.809,
-   "min_clearance_m": 0.1879,
-   "duration_s": 4.62,
-   "wall_s": 0.51,
-   "planner_ms_mean": 10.571,
-   "hit_material": "matte",
+   "outcome": "reached",
+   "time_to_goal_s": 15.64,
+   "path_length_m": 11.324,
+   "min_clearance_m": 0.2274,
+   "duration_s": 15.64,
+   "wall_s": 0.95,
+   "planner_ms_mean": 5.934,
+   "hit_material": null,
    "intervention_frac": null
   },
   {
@@ -1526,12 +1543,12 @@
    "error": null,
    "outcome": "collision",
    "time_to_goal_s": null,
-   "path_length_m": 4.309,
-   "min_clearance_m": 0.1986,
-   "duration_s": 4.7,
-   "wall_s": 0.48,
-   "planner_ms_mean": 10.015,
-   "hit_material": "matte",
+   "path_length_m": 0.637,
+   "min_clearance_m": 0.1938,
+   "duration_s": 1.16,
+   "wall_s": 0.13,
+   "planner_ms_mean": 10.326,
+   "hit_material": "wall",
    "intervention_frac": null
   },
   {
@@ -1556,11 +1573,11 @@
    "error": null,
    "outcome": "collision",
    "time_to_goal_s": null,
-   "path_length_m": 3.886,
-   "min_clearance_m": 0.1929,
-   "duration_s": 5.8,
-   "wall_s": 0.58,
-   "planner_ms_mean": 9.912,
+   "path_length_m": 2.885,
+   "min_clearance_m": 0.199,
+   "duration_s": 5.2,
+   "wall_s": 0.4,
+   "planner_ms_mean": 7.579,
    "hit_material": "matte",
    "intervention_frac": null
   },
@@ -1584,14 +1601,14 @@
    "max_time_s": 60.0,
    "free_path": true,
    "error": null,
-   "outcome": "stuck",
+   "outcome": "collision",
    "time_to_goal_s": null,
-   "path_length_m": 7.508,
-   "min_clearance_m": 0.4741,
-   "duration_s": 10.74,
+   "path_length_m": 7.49,
+   "min_clearance_m": 0.1923,
+   "duration_s": 11.66,
    "wall_s": 0.03,
-   "planner_ms_mean": 0.154,
-   "hit_material": null,
+   "planner_ms_mean": 0.133,
+   "hit_material": "matte",
    "intervention_frac": null
   },
   {
@@ -1616,11 +1633,11 @@
    "error": null,
    "outcome": "stuck",
    "time_to_goal_s": null,
-   "path_length_m": 11.576,
-   "min_clearance_m": 0.3475,
-   "duration_s": 17.48,
-   "wall_s": 0.06,
-   "planner_ms_mean": 0.2,
+   "path_length_m": 15.334,
+   "min_clearance_m": 0.437,
+   "duration_s": 22.98,
+   "wall_s": 0.05,
+   "planner_ms_mean": 0.131,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1646,11 +1663,11 @@
    "error": null,
    "outcome": "stuck",
    "time_to_goal_s": null,
-   "path_length_m": 11.205,
-   "min_clearance_m": 0.2621,
-   "duration_s": 16.46,
-   "wall_s": 0.04,
-   "planner_ms_mean": 0.15,
+   "path_length_m": 10.022,
+   "min_clearance_m": 0.52,
+   "duration_s": 14.96,
+   "wall_s": 0.03,
+   "planner_ms_mean": 0.127,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1666,156 +1683,6 @@
    "b": [
     7.0783,
     1.034
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 10.421,
-   "min_clearance_m": 0.2924,
-   "duration_s": 20.38,
-   "wall_s": 0.06,
-   "planner_ms_mean": 0.169,
-   "hit_material": null,
-   "intervention_frac": null
-  },
-  {
-   "planner": "tangent_bug",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 4,
-   "a": [
-    0.7771,
-    0.6454
-   ],
-   "b": [
-    7.1382,
-    1.408
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 2.847,
-   "min_clearance_m": 0.1996,
-   "duration_s": 6.64,
-   "wall_s": 0.02,
-   "planner_ms_mean": 0.147,
-   "hit_material": "wall",
-   "intervention_frac": null
-  },
-  {
-   "planner": "tangent_bug",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 5,
-   "a": [
-    0.8645,
-    0.3985
-   ],
-   "b": [
-    7.5612,
-    0.7581
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 13.142,
-   "min_clearance_m": 0.2191,
-   "duration_s": 22.2,
-   "wall_s": 0.06,
-   "planner_ms_mean": 0.148,
-   "hit_material": null,
-   "intervention_frac": null
-  },
-  {
-   "planner": "tangent_bug",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 6,
-   "a": [
-    0.8439,
-    1.1426
-   ],
-   "b": [
-    7.294,
-    0.6396
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "stuck",
-   "time_to_goal_s": null,
-   "path_length_m": 6.424,
-   "min_clearance_m": 0.3183,
-   "duration_s": 10.0,
-   "wall_s": 0.03,
-   "planner_ms_mean": 0.146,
-   "hit_material": null,
-   "intervention_frac": null
-  },
-  {
-   "planner": "tangent_bug",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 7,
-   "a": [
-    1.2507,
-    0.715
-   ],
-   "b": [
-    7.4085,
-    0.5906
-   ],
-   "ab_kept": [
-    false,
-    false
-   ],
-   "max_time_s": 60.0,
-   "free_path": true,
-   "error": null,
-   "outcome": "collision",
-   "time_to_goal_s": null,
-   "path_length_m": 2.268,
-   "min_clearance_m": 0.1996,
-   "duration_s": 6.72,
-   "wall_s": 0.04,
-   "planner_ms_mean": 0.241,
-   "hit_material": "wall",
-   "intervention_frac": null
-  },
-  {
-   "planner": "tangent_bug",
-   "world": "hall_8x6",
-   "world_index": 0,
-   "seed": 8,
-   "a": [
-    0.5159,
-    0.4267
-   ],
-   "b": [
-    7.2977,
-    0.8242
    ],
    "ab_kept": [
     false,
@@ -1826,11 +1693,161 @@
    "error": null,
    "outcome": "timeout",
    "time_to_goal_s": null,
-   "path_length_m": 11.384,
-   "min_clearance_m": 0.2361,
-   "duration_s": 19.48,
-   "wall_s": 0.06,
-   "planner_ms_mean": 0.174,
+   "path_length_m": 10.905,
+   "min_clearance_m": 0.293,
+   "duration_s": 17.36,
+   "wall_s": 0.04,
+   "planner_ms_mean": 0.128,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "tangent_bug",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 11.448,
+   "min_clearance_m": 0.3309,
+   "duration_s": 21.28,
+   "wall_s": 0.05,
+   "planner_ms_mean": 0.125,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "tangent_bug",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 5,
+   "a": [
+    0.8645,
+    0.3985
+   ],
+   "b": [
+    7.5612,
+    0.7581
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.451,
+   "min_clearance_m": 0.2905,
+   "duration_s": 18.14,
+   "wall_s": 0.04,
+   "planner_ms_mean": 0.13,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "tangent_bug",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 6,
+   "a": [
+    0.8439,
+    1.1426
+   ],
+   "b": [
+    7.294,
+    0.6396
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 15.622,
+   "min_clearance_m": 0.4195,
+   "duration_s": 23.52,
+   "wall_s": 0.05,
+   "planner_ms_mean": 0.123,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "tangent_bug",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 7,
+   "a": [
+    1.2507,
+    0.715
+   ],
+   "b": [
+    7.4085,
+    0.5906
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 11.955,
+   "min_clearance_m": 0.347,
+   "duration_s": 18.68,
+   "wall_s": 0.04,
+   "planner_ms_mean": 0.13,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "tangent_bug",
+   "world": "hall_8x6",
+   "world_index": 0,
+   "seed": 8,
+   "a": [
+    0.5159,
+    0.4267
+   ],
+   "b": [
+    7.2977,
+    0.8242
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 10.707,
+   "min_clearance_m": 0.291,
+   "duration_s": 16.7,
+   "wall_s": 0.04,
+   "planner_ms_mean": 0.128,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1856,11 +1873,11 @@
    "error": null,
    "outcome": "stuck",
    "time_to_goal_s": null,
-   "path_length_m": 21.316,
-   "min_clearance_m": 0.2545,
-   "duration_s": 34.52,
-   "wall_s": 0.1,
-   "planner_ms_mean": 0.159,
+   "path_length_m": 9.63,
+   "min_clearance_m": 0.2795,
+   "duration_s": 15.22,
+   "wall_s": 0.04,
+   "planner_ms_mean": 0.127,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1890,7 +1907,7 @@
    "min_clearance_m": 0.4396,
    "duration_s": 12.68,
    "wall_s": 0.03,
-   "planner_ms_mean": 0.125,
+   "planner_ms_mean": 0.11,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1919,8 +1936,8 @@
    "path_length_m": 2.327,
    "min_clearance_m": 0.4368,
    "duration_s": 12.76,
-   "wall_s": 0.04,
-   "planner_ms_mean": 0.166,
+   "wall_s": 0.03,
+   "planner_ms_mean": 0.107,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1950,7 +1967,7 @@
    "min_clearance_m": 0.4361,
    "duration_s": 12.78,
    "wall_s": 0.03,
-   "planner_ms_mean": 0.121,
+   "planner_ms_mean": 0.104,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -1979,8 +1996,8 @@
    "path_length_m": 1.975,
    "min_clearance_m": 0.4361,
    "duration_s": 12.94,
-   "wall_s": 0.05,
-   "planner_ms_mean": 0.174,
+   "wall_s": 0.03,
+   "planner_ms_mean": 0.11,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -2009,8 +2026,8 @@
    "path_length_m": 2.301,
    "min_clearance_m": 0.4386,
    "duration_s": 12.66,
-   "wall_s": 0.03,
-   "planner_ms_mean": 0.122,
+   "wall_s": 0.02,
+   "planner_ms_mean": 0.1,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -2039,8 +2056,8 @@
    "path_length_m": 2.203,
    "min_clearance_m": 0.3985,
    "duration_s": 14.14,
-   "wall_s": 0.05,
-   "planner_ms_mean": 0.177,
+   "wall_s": 0.03,
+   "planner_ms_mean": 0.107,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -2069,8 +2086,8 @@
    "path_length_m": 2.228,
    "min_clearance_m": 0.4345,
    "duration_s": 12.64,
-   "wall_s": 0.06,
-   "planner_ms_mean": 0.252,
+   "wall_s": 0.03,
+   "planner_ms_mean": 0.101,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -2100,7 +2117,7 @@
    "min_clearance_m": 0.4407,
    "duration_s": 12.56,
    "wall_s": 0.03,
-   "planner_ms_mean": 0.133,
+   "planner_ms_mean": 0.108,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -2130,7 +2147,7 @@
    "min_clearance_m": 0.4267,
    "duration_s": 14.3,
    "wall_s": 0.03,
-   "planner_ms_mean": 0.124,
+   "planner_ms_mean": 0.106,
    "hit_material": null,
    "intervention_frac": null
   },
@@ -2160,7 +2177,7 @@
    "min_clearance_m": 0.4385,
    "duration_s": 12.36,
    "wall_s": 0.03,
-   "planner_ms_mean": 0.121,
+   "planner_ms_mean": 0.107,
    "hit_material": null,
    "intervention_frac": null
   }

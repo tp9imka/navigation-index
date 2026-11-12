@@ -251,6 +251,8 @@ make first-flight PLANNER=bench:mppi_astar WORLD=my_world.json ARM=F0 OUT=my_run
 
 ### Result (2026-11-10, synthetic, ./.venv uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1)
 
+Ran before the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)) and not re-run: the `bench:` rows here and under "All ids" that plan on a map built from range hits used the old mapper. Since then `arena_adapter.py` also passes the sensor's per-beam `dropped` flags to the planner, as the benchmark loop does.
+
 `make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json`,
 from [results/first_flight_bench.txt](results/first_flight_bench.txt):
 

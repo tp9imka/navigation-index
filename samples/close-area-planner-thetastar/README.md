@@ -48,6 +48,8 @@ From another sample: `import arena, thetastar` then
 
 ## Results (ran 2026-11-10, Apple silicon arm64, 16 CPUs, CPython 3.12.10, numpy 2.5.4, scipy 1.18.1)
 
+Ran before the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)): rows that plan on a map built from range hits used the old mapper and were not re-run here. The [benchmark matrix](../close-area-benchmark/README.md#results-ran-2026-11-12-synthetic) has the regenerated rows.
+
 The machine was shared with other jobs: 1-minute load average 38-256 at the start or end of the
 runs (each results file records it). Every ms number below is wall time under that load and is pessimistic. Outcomes,
 times to B, path lengths and clearances are simulated time and do not depend on load. The arena

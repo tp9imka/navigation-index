@@ -121,6 +121,8 @@ median for 3D (overwritten; timings move a few percent with load).
 
 ## A* + ESDF grid planner (ran 2026-11-09, synthetic)
 
+Ran before the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)): rows that plan on a map built from range hits used the old mapper and were not re-run here. The [benchmark matrix](../close-area-benchmark/README.md#results-ran-2026-11-12-synthetic) has the regenerated rows.
+
 `planners/astar_esdf.py`: A* on a grid inflated by radius + 0.10 m margin, ESDF clearance cost,
 shortcutting, carrot following with clearance-scaled speed, replan at 2-5 Hz. `known_map` plans
 on the true grid; `unknown_map` builds the grid from range returns only and treats unknown cells
@@ -155,6 +157,8 @@ Followers: a linear corridor MPC (OSQP, 0.22 ms median solve) matches the carrot
 [close-area-planner-sampling](../close-area-planner-sampling/README.md).
 
 ## Sensor realism: Crazyflie presets and glass (ran 2026-11-09, synthetic)
+
+Ran before the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)): rows that plan on a map built from range hits used the old mapper and were not re-run here. The [benchmark matrix](../close-area-benchmark/README.md#results-ran-2026-11-12-synthetic) has the regenerated rows.
 
 `presets.py` (ideal, crazyflie 4 x 27 deg cones at 3.0 m, crazyflie_bright 0.73 m, values from
 [doc 08](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md)), `sensors_cone.py`

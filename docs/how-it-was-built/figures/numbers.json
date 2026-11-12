@@ -1,8 +1,8 @@
 {
  "generated_by": "python3 docs/how-it-was-built/make_figures.py",
- "head": "ce9cc74",
+ "head": "8c03611c",
  "inputs_sha256_16": {
-  "samples/close-area-benchmark/results/matrix_0.json": "33e5ccf1b4e9a767",
+  "samples/close-area-benchmark/results/matrix_0.json": "66aa3e0e5a7275f9",
   "samples/close-area-safety-filter/results/kill_d_unsensed_on_0.json": "9aa7e825bf19c443",
   "samples/close-area-safety-filter/results/kill_e_unsensed_on_1.json": "345e2443302dfec6",
   "samples/close-area-safety-filter/results/kill_e_unsensed_on_2.json": "b82553477032e39f",
@@ -49,34 +49,29 @@
    "ideal": {
     "random": 100.0,
     "u_trap": 100.0,
-    "narrow_gap": 90.0,
-    "office": 95.0,
-    "warehouse": 55.0,
+    "narrow_gap": 80.0,
+    "office": 90.0,
+    "warehouse": 50.0,
     "forest": 100.0,
-    "maze": 95.0,
-    "glass_office": 95.0
+    "maze": 90.0,
+    "glass_office": 90.0
    },
    "crazyflie": {
     "random": 100.0,
-    "u_trap": 95.0,
-    "narrow_gap": 25.0,
-    "office": 35.0,
-    "warehouse": 0.0,
-    "forest": 95.0,
-    "maze": 35.0,
-    "glass_office": 5.0
+    "u_trap": 100.0,
+    "narrow_gap": 20.0,
+    "office": 30.0,
+    "warehouse": 5.0,
+    "forest": 100.0,
+    "maze": 45.0,
+    "glass_office": 15.0
    }
   },
   "wall_s_runs": [
-   323.4,
-   216.2,
-   2058.5
+   2963.7
   ],
-  "wall_s_total": 2598.1,
-  "runs_in_additions": [
-   2240,
-   2240
-  ],
+  "wall_s_total": 2963.7,
+  "runs_in_additions": [],
   "reached_pct": {
    "ideal": {
     "straight": {
@@ -132,12 +127,12 @@
     "astar_unknown": {
      "random": 100.0,
      "u_trap": 100.0,
-     "narrow_gap": 90.0,
-     "office": 95.0,
-     "warehouse": 55.0,
+     "narrow_gap": 80.0,
+     "office": 90.0,
+     "warehouse": 50.0,
      "forest": 100.0,
-     "maze": 95.0,
-     "glass_office": 95.0
+     "maze": 90.0,
+     "glass_office": 90.0
     },
     "informed_rrt_star": {
      "random": 100.0,
@@ -160,7 +155,7 @@
      "glass_office": 100.0
     },
     "astar_unknown_f2": {
-     "random": 75.0,
+     "random": 80.0,
      "u_trap": 100.0,
      "narrow_gap": 0.0,
      "office": 0.0,
@@ -217,7 +212,7 @@
      "warehouse": 55.0,
      "forest": 100.0,
      "maze": 90.0,
-     "glass_office": 95.0
+     "glass_office": 90.0
     },
     "thetastar_known": {
      "random": 100.0,
@@ -242,22 +237,22 @@
     "thetastar_unknown": {
      "random": 100.0,
      "u_trap": 100.0,
-     "narrow_gap": 90.0,
+     "narrow_gap": 80.0,
      "office": 90.0,
-     "warehouse": 60.0,
+     "warehouse": 55.0,
      "forest": 100.0,
-     "maze": 95.0,
-     "glass_office": 90.0
+     "maze": 90.0,
+     "glass_office": 95.0
     },
     "lazy_thetastar_unknown": {
      "random": 100.0,
      "u_trap": 100.0,
-     "narrow_gap": 90.0,
-     "office": 90.0,
-     "warehouse": 65.0,
+     "narrow_gap": 100.0,
+     "office": 85.0,
+     "warehouse": 55.0,
      "forest": 100.0,
-     "maze": 90.0,
-     "glass_office": 95.0
+     "maze": 85.0,
+     "glass_office": 90.0
     },
     "mppi": {
      "random": 90.0,
@@ -273,8 +268,8 @@
      "random": 100.0,
      "u_trap": 100.0,
      "narrow_gap": 95.0,
-     "office": 100.0,
-     "warehouse": 65.0,
+     "office": 95.0,
+     "warehouse": 55.0,
      "forest": 100.0,
      "maze": 95.0,
      "glass_office": 95.0
@@ -282,9 +277,9 @@
     "hybrid_astar": {
      "random": 100.0,
      "u_trap": 100.0,
-     "narrow_gap": 70.0,
+     "narrow_gap": 85.0,
      "office": 90.0,
-     "warehouse": 55.0,
+     "warehouse": 50.0,
      "forest": 100.0,
      "maze": 90.0,
      "glass_office": 85.0
@@ -343,13 +338,13 @@
     },
     "astar_unknown": {
      "random": 100.0,
-     "u_trap": 95.0,
-     "narrow_gap": 25.0,
-     "office": 35.0,
-     "warehouse": 0.0,
-     "forest": 95.0,
-     "maze": 35.0,
-     "glass_office": 5.0
+     "u_trap": 100.0,
+     "narrow_gap": 20.0,
+     "office": 30.0,
+     "warehouse": 5.0,
+     "forest": 100.0,
+     "maze": 45.0,
+     "glass_office": 15.0
     },
     "informed_rrt_star": {
      "random": 100.0,
@@ -375,10 +370,10 @@
      "random": 100.0,
      "u_trap": 100.0,
      "narrow_gap": 15.0,
-     "office": 50.0,
-     "warehouse": 0.0,
-     "forest": 95.0,
-     "maze": 55.0,
+     "office": 40.0,
+     "warehouse": 30.0,
+     "forest": 100.0,
+     "maze": 50.0,
      "glass_office": 5.0
     },
     "dwa": {
@@ -424,12 +419,12 @@
     "dstar_lite": {
      "random": 100.0,
      "u_trap": 100.0,
-     "narrow_gap": 15.0,
-     "office": 20.0,
-     "warehouse": 5.0,
-     "forest": 100.0,
-     "maze": 40.0,
-     "glass_office": 10.0
+     "narrow_gap": 20.0,
+     "office": 35.0,
+     "warehouse": 10.0,
+     "forest": 95.0,
+     "maze": 55.0,
+     "glass_office": 15.0
     },
     "thetastar_known": {
      "random": 100.0,
@@ -452,30 +447,30 @@
      "glass_office": 100.0
     },
     "thetastar_unknown": {
-     "random": 100.0,
-     "u_trap": 90.0,
-     "narrow_gap": 5.0,
+     "random": 95.0,
+     "u_trap": 100.0,
+     "narrow_gap": 10.0,
      "office": 35.0,
-     "warehouse": 5.0,
+     "warehouse": 20.0,
      "forest": 95.0,
-     "maze": 65.0,
+     "maze": 50.0,
      "glass_office": 20.0
     },
     "lazy_thetastar_unknown": {
      "random": 100.0,
      "u_trap": 100.0,
-     "narrow_gap": 15.0,
-     "office": 45.0,
-     "warehouse": 30.0,
+     "narrow_gap": 20.0,
+     "office": 35.0,
+     "warehouse": 15.0,
      "forest": 95.0,
-     "maze": 50.0,
-     "glass_office": 30.0
+     "maze": 40.0,
+     "glass_office": 15.0
     },
     "mppi": {
-     "random": 55.0,
+     "random": 60.0,
      "u_trap": 0.0,
-     "narrow_gap": 0.0,
-     "office": 5.0,
+     "narrow_gap": 5.0,
+     "office": 10.0,
      "warehouse": 0.0,
      "forest": 100.0,
      "maze": 0.0,
@@ -483,22 +478,22 @@
     },
     "mppi_astar": {
      "random": 80.0,
-     "u_trap": 40.0,
-     "narrow_gap": 15.0,
-     "office": 10.0,
+     "u_trap": 80.0,
+     "narrow_gap": 10.0,
+     "office": 15.0,
      "warehouse": 0.0,
      "forest": 100.0,
-     "maze": 0.0,
+     "maze": 5.0,
      "glass_office": 5.0
     },
     "hybrid_astar": {
-     "random": 95.0,
-     "u_trap": 100.0,
-     "narrow_gap": 10.0,
-     "office": 40.0,
+     "random": 100.0,
+     "u_trap": 95.0,
+     "narrow_gap": 0.0,
+     "office": 25.0,
      "warehouse": 0.0,
-     "forest": 90.0,
-     "maze": 35.0,
+     "forest": 95.0,
+     "maze": 40.0,
      "glass_office": 5.0
     }
    }
@@ -1448,7 +1443,7 @@
   }
  },
  "cost": {
-  "benchmark_wall_s": 2598.1,
+  "benchmark_wall_s": 2963.7,
   "kill_test_seeds_0_2_and_families_wall_s": 739.0,
   "agent_jobs_tokens_or_credits": "not measured",
   "human_hours": "not measured"

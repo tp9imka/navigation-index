@@ -20,6 +20,8 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt
 
 ## Results (seed 0, 50 layouts per family)
 
+Ran before the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)): rows that plan on a map built from range hits used the old mapper and were not re-run here. The [benchmark matrix](../close-area-benchmark/README.md#results-ran-2026-11-12-synthetic) has the regenerated rows.
+
 From [compare_0.md](results/compare_0.md). Plan = whole replan (ESDF + cost arrays + search +
 shortcut).
 

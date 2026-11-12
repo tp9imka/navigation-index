@@ -156,7 +156,7 @@ it is synthetic. The planners are reference implementations, untuned. PRs are we
 5. To show it in the browser Arena, follow "How to add a planner" in
    [site/solver/README.md](site/solver/README.md).
 
-Measured cost for scale: the first 14 rows (2,880 flights) took 323.4 s wall on 14 processes on
+Measured cost for scale: all 21 rows (6,720 flights) took 2963.7 s wall on 10 processes on
 an Apple M3 Max (benchmark README, synthetic). Your machine will differ.
 
 ## Honesty rules

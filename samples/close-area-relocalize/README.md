@@ -495,6 +495,8 @@ Limits of this addition:
 
 ## Imperfect prior map
 
+Ran before the 2026-11-12 dropped-beam fix ([upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls)): rows that plan on a map built from range hits used the old mapper and were not re-run here. The [benchmark matrix](../close-area-benchmark/README.md#results-ran-2026-11-12-synthetic) has the regenerated rows.
+
 The headline above matches against the exact layout grid. The first-day intake default for Q7 is
 "unknown and moved between runs" ([intake](../../docs/first-day-intake.md)). This run
 measures the same arms on a ladder of map errors. Synthetic inputs only.

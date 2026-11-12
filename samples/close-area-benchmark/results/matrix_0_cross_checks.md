@@ -13,5 +13,5 @@ dstar_lite vs astar_unknown (same geofence, same map and cost model, incremental
 
 | preset | same outcome | astar_unknown mean step ms | dstar_lite mean step ms |
 |---|---|---|---|
-| ideal | 153/160 | 10.7 | 4.2 |
-| crazyflie | 115/160 | 13.42 | 2.92 |
+| ideal | 155/160 | 7.68 | 3.05 |
+| crazyflie | 127/160 | 9.23 | 2.15 |

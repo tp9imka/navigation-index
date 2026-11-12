@@ -215,6 +215,15 @@ class BenchPlanner(unittest.TestCase):
         with self.assertRaises(ValueError):
             bench_planner.make("no_such_planner", BENCH_DIR, ad.world)
 
+    def test_arena_ranges_keep_dropped_flags(self):
+        """The unknown-map planners skip beams flagged dropped; the adapter must not lose the flags."""
+        from flightloop.arena_adapter import ArenaAdapter
+        ad = ArenaAdapter(ARENA_DIR, "random", 0, 0)
+        scan = ad.ranges()
+        self.assertIsNotNone(scan.dropped)
+        self.assertEqual(len(scan.dropped), len(scan.distances))
+        self.assertTrue(all(math.isinf(d) for d, f in zip(scan.distances, scan.dropped) if f))
+
 
 if __name__ == "__main__":
     unittest.main()

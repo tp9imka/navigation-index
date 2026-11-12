@@ -37,7 +37,7 @@
   "scipy": "1.18.1",
   "machine": "arm64"
  },
- "wall_s": 90.1,
+ "wall_s": 58.6,
  "runs": [
   {
    "world": "random_0",
@@ -53,7 +53,7 @@
     "path_length_m": 23.95
    },
    "max_time_s": 60.0,
-   "wall_s": 1.395
+   "wall_s": 1.324
   },
   {
    "world": "random_0",
@@ -63,13 +63,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 18.9,
-    "duration_s": 18.9,
-    "min_clearance_m": 0.6587,
-    "path_length_m": 23.981
+    "time_to_goal_s": 18.84,
+    "duration_s": 18.84,
+    "min_clearance_m": 0.6635,
+    "path_length_m": 23.993
    },
    "max_time_s": 60.0,
-   "wall_s": 1.429
+   "wall_s": 1.309
   },
   {
    "world": "random_0",
@@ -81,11 +81,11 @@
     "outcome": "reached",
     "time_to_goal_s": 19.08,
     "duration_s": 19.08,
-    "min_clearance_m": 0.6485,
+    "min_clearance_m": 0.6496,
     "path_length_m": 23.98
    },
    "max_time_s": 60.0,
-   "wall_s": 1.437
+   "wall_s": 1.362
   },
   {
    "world": "random_0",
@@ -97,11 +97,11 @@
     "outcome": "reached",
     "time_to_goal_s": 20.24,
     "duration_s": 20.24,
-    "min_clearance_m": 0.5812,
+    "min_clearance_m": 0.5813,
     "path_length_m": 23.917
    },
    "max_time_s": 60.0,
-   "wall_s": 2.575
+   "wall_s": 2.167
   },
   {
    "world": "random_0",
@@ -111,13 +111,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 20.32,
-    "duration_s": 20.32,
-    "min_clearance_m": 0.6225,
-    "path_length_m": 23.998
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6334,
+    "path_length_m": 24.006
    },
    "max_time_s": 60.0,
-   "wall_s": 3.121
+   "wall_s": 2.137
   },
   {
    "world": "random_0",
@@ -129,11 +129,11 @@
     "outcome": "reached",
     "time_to_goal_s": 20.32,
     "duration_s": 20.32,
-    "min_clearance_m": 0.639,
-    "path_length_m": 24.008
+    "min_clearance_m": 0.6392,
+    "path_length_m": 24.006
    },
    "max_time_s": 60.0,
-   "wall_s": 2.985
+   "wall_s": 2.231
   },
   {
    "world": "random_0",
@@ -143,13 +143,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    },
    "max_time_s": 60.0,
-   "wall_s": 1.869
+   "wall_s": 1.31
   },
   {
    "world": "random_0",
@@ -159,13 +159,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 18.9,
-    "duration_s": 18.9,
-    "min_clearance_m": 0.6769,
-    "path_length_m": 24.037
+    "time_to_goal_s": 18.84,
+    "duration_s": 18.84,
+    "min_clearance_m": 0.6635,
+    "path_length_m": 23.993
    },
    "max_time_s": 60.0,
-   "wall_s": 1.981
+   "wall_s": 1.359
   },
   {
    "world": "random_0",
@@ -175,13 +175,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 18.9,
-    "duration_s": 18.9,
-    "min_clearance_m": 0.6037,
-    "path_length_m": 23.938
+    "time_to_goal_s": 19.08,
+    "duration_s": 19.08,
+    "min_clearance_m": 0.6496,
+    "path_length_m": 23.98
    },
    "max_time_s": 60.0,
-   "wall_s": 1.961
+   "wall_s": 1.358
   },
   {
    "world": "office_0",
@@ -191,13 +191,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 21.96,
-    "duration_s": 21.96,
-    "min_clearance_m": 0.2892,
-    "path_length_m": 13.764
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "max_time_s": 60.0,
-   "wall_s": 0.96
+   "wall_s": 0.657
   },
   {
    "world": "office_0",
@@ -207,13 +207,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 25.4,
-    "duration_s": 25.4,
-    "min_clearance_m": 0.224,
-    "path_length_m": 15.252
+    "time_to_goal_s": 23.06,
+    "duration_s": 23.06,
+    "min_clearance_m": 0.1898,
+    "path_length_m": 14.212
    },
    "max_time_s": 60.0,
-   "wall_s": 1.233
+   "wall_s": 0.673
   },
   {
    "world": "office_0",
@@ -223,13 +223,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 23.14,
-    "duration_s": 23.14,
-    "min_clearance_m": 0.191,
-    "path_length_m": 14.253
+    "time_to_goal_s": 23.06,
+    "duration_s": 23.06,
+    "min_clearance_m": 0.1885,
+    "path_length_m": 14.212
    },
    "max_time_s": 60.0,
-   "wall_s": 1.046
+   "wall_s": 0.668
   },
   {
    "world": "office_0",
@@ -239,13 +239,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 12.84,
-    "duration_s": 12.84,
-    "min_clearance_m": 0.3131,
-    "path_length_m": 13.895
+    "time_to_goal_s": 12.8,
+    "duration_s": 12.8,
+    "min_clearance_m": 0.3193,
+    "path_length_m": 13.887
    },
    "max_time_s": 60.0,
-   "wall_s": 1.485
+   "wall_s": 0.9
   },
   {
    "world": "office_0",
@@ -255,13 +255,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 15.88,
-    "duration_s": 15.88,
-    "min_clearance_m": 0.2883,
-    "path_length_m": 15.725
+    "time_to_goal_s": 13.8,
+    "duration_s": 13.8,
+    "min_clearance_m": 0.3681,
+    "path_length_m": 14.373
    },
    "max_time_s": 60.0,
-   "wall_s": 1.747
+   "wall_s": 0.991
   },
   {
    "world": "office_0",
@@ -271,13 +271,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 14.14,
-    "duration_s": 14.14,
-    "min_clearance_m": 0.2836,
-    "path_length_m": 14.516
+    "time_to_goal_s": 13.66,
+    "duration_s": 13.66,
+    "min_clearance_m": 0.3521,
+    "path_length_m": 14.287
    },
    "max_time_s": 60.0,
-   "wall_s": 1.445
+   "wall_s": 0.982
   },
   {
    "world": "office_0",
@@ -286,14 +286,14 @@
    "preset": "ideal",
    "yaw_policy": "off",
    "score": {
-    "outcome": "stuck",
-    "time_to_goal_s": null,
-    "duration_s": 10.0,
-    "min_clearance_m": 0.8475,
-    "path_length_m": 0.0
+    "outcome": "reached",
+    "time_to_goal_s": 22.76,
+    "duration_s": 22.76,
+    "min_clearance_m": 0.2641,
+    "path_length_m": 13.69
    },
    "max_time_s": 60.0,
-   "wall_s": 0.575
+   "wall_s": 0.626
   },
   {
    "world": "office_0",
@@ -302,14 +302,14 @@
    "preset": "depth_cam_87",
    "yaw_policy": "look_where_you_go",
    "score": {
-    "outcome": "stuck",
-    "time_to_goal_s": null,
-    "duration_s": 10.0,
-    "min_clearance_m": 0.8475,
-    "path_length_m": 0.0
+    "outcome": "reached",
+    "time_to_goal_s": 23.06,
+    "duration_s": 23.06,
+    "min_clearance_m": 0.1898,
+    "path_length_m": 14.212
    },
    "max_time_s": 60.0,
-   "wall_s": 0.623
+   "wall_s": 0.689
   },
   {
    "world": "office_0",
@@ -318,14 +318,14 @@
    "preset": "depth_cam_87",
    "yaw_policy": "off",
    "score": {
-    "outcome": "stuck",
-    "time_to_goal_s": null,
-    "duration_s": 10.0,
-    "min_clearance_m": 0.8475,
-    "path_length_m": 0.0
+    "outcome": "reached",
+    "time_to_goal_s": 23.06,
+    "duration_s": 23.06,
+    "min_clearance_m": 0.1885,
+    "path_length_m": 14.212
    },
    "max_time_s": 60.0,
-   "wall_s": 0.527
+   "wall_s": 0.699
   },
   {
    "world": "maze_0",
@@ -333,31 +333,31 @@
    "sensor": "ideal",
    "preset": "ideal",
    "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.22,
+    "duration_s": 43.22,
+    "min_clearance_m": 0.5864,
+    "path_length_m": 37.896
+   },
+   "max_time_s": 120.0,
+   "wall_s": 3.914
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
     "time_to_goal_s": 44.78,
     "duration_s": 44.78,
-    "min_clearance_m": 0.5911,
-    "path_length_m": 37.733
+    "min_clearance_m": 0.596,
+    "path_length_m": 37.866
    },
    "max_time_s": 120.0,
-   "wall_s": 5.839
-  },
-  {
-   "world": "maze_0",
-   "planner": "astar_unknown",
-   "sensor": "depth_cam_87",
-   "preset": "depth_cam_87",
-   "yaw_policy": "look_where_you_go",
-   "score": {
-    "outcome": "reached",
-    "time_to_goal_s": 54.28,
-    "duration_s": 54.28,
-    "min_clearance_m": 0.2642,
-    "path_length_m": 40.927
-   },
-   "max_time_s": 120.0,
-   "wall_s": 7.873
+   "wall_s": 4.234
   },
   {
    "world": "maze_0",
@@ -367,13 +367,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 49.82,
-    "duration_s": 49.82,
-    "min_clearance_m": 0.5713,
-    "path_length_m": 41.392
+    "time_to_goal_s": 44.08,
+    "duration_s": 44.08,
+    "min_clearance_m": 0.523,
+    "path_length_m": 37.722
    },
    "max_time_s": 120.0,
-   "wall_s": 7.209
+   "wall_s": 4.047
   },
   {
    "world": "maze_0",
@@ -383,13 +383,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 31.28,
-    "duration_s": 31.28,
-    "min_clearance_m": 0.357,
-    "path_length_m": 35.589
+    "time_to_goal_s": 31.44,
+    "duration_s": 31.44,
+    "min_clearance_m": 0.3757,
+    "path_length_m": 35.802
    },
    "max_time_s": 120.0,
-   "wall_s": 5.941
+   "wall_s": 4.206
   },
   {
    "world": "maze_0",
@@ -399,13 +399,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 34.82,
-    "duration_s": 34.82,
-    "min_clearance_m": 0.4024,
-    "path_length_m": 39.701
+    "time_to_goal_s": 31.7,
+    "duration_s": 31.7,
+    "min_clearance_m": 0.3684,
+    "path_length_m": 36.402
    },
    "max_time_s": 120.0,
-   "wall_s": 6.595
+   "wall_s": 4.312
   },
   {
    "world": "maze_0",
@@ -415,13 +415,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 31.96,
-    "duration_s": 31.96,
-    "min_clearance_m": 0.3598,
-    "path_length_m": 36.49
+    "time_to_goal_s": 31.66,
+    "duration_s": 31.66,
+    "min_clearance_m": 0.3583,
+    "path_length_m": 36.407
    },
    "max_time_s": 120.0,
-   "wall_s": 6.072
+   "wall_s": 4.195
   },
   {
    "world": "maze_0",
@@ -431,13 +431,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 51.9,
-    "duration_s": 51.9,
-    "min_clearance_m": 0.5385,
-    "path_length_m": 40.46
+    "time_to_goal_s": 43.22,
+    "duration_s": 43.22,
+    "min_clearance_m": 0.5864,
+    "path_length_m": 37.896
    },
    "max_time_s": 120.0,
-   "wall_s": 8.274
+   "wall_s": 3.938
   },
   {
    "world": "maze_0",
@@ -447,13 +447,13 @@
    "yaw_policy": "look_where_you_go",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 50.3,
-    "duration_s": 50.3,
-    "min_clearance_m": 0.5539,
-    "path_length_m": 41.447
+    "time_to_goal_s": 44.78,
+    "duration_s": 44.78,
+    "min_clearance_m": 0.596,
+    "path_length_m": 37.866
    },
    "max_time_s": 120.0,
-   "wall_s": 7.198
+   "wall_s": 4.104
   },
   {
    "world": "maze_0",
@@ -463,13 +463,13 @@
    "yaw_policy": "off",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 47.26,
-    "duration_s": 47.26,
-    "min_clearance_m": 0.5875,
-    "path_length_m": 40.292
+    "time_to_goal_s": 44.08,
+    "duration_s": 44.08,
+    "min_clearance_m": 0.523,
+    "path_length_m": 37.722
    },
    "max_time_s": 120.0,
-   "wall_s": 6.69
+   "wall_s": 4.169
   }
  ]
 }

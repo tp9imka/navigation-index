@@ -412,7 +412,7 @@ test("recommend: winner text, both intervals, command and benchmark rows", () =>
   assert.match(md, /\| Bug2 \| bug2 \| 3\/30 \| 3 %-26 % \|/);
   assert.equal(json.fly.command, "make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/random_0.json ARM=F2");
   const nar = json.benchmark.rows.find(r => r.family === "narrow_gap");
-  assert.deepEqual([nar.ideal.reached_pct, nar.crazyflie.reached_pct], [85, 15]);   // advisor.json cells
+  assert.deepEqual([nar.ideal.reached_pct, nar.crazyflie.reached_pct], [85, 20]);   // advisor.json cells
   assert.match(md, /Synthetic 2\.5D simulation, scored on truth, not a flight result; 3 seeds on one map is a small sample/);
   assert.ok(!/[\u2013\u2014]/.test(md), "no en or em dashes");
 });

@@ -34,6 +34,7 @@ class RangeScan:       # body frame
     angles: list[float]            # rad, CCW, 0 = forward
     distances: list[float]         # metres, math.inf = no return
     max_range: float
+    dropped: list[bool] | None = None  # per beam: True = the sensor dropped it (no measurement); None = unknown
 
 
 @dataclass

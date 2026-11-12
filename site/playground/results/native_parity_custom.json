@@ -8,11 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 5772.6,
-   "arena": 279.9,
-   "reactive": 204.7,
-   "sample_planners": 1766.9,
-   "safety_filter": 3092.3
+   "scipy_ndimage": 211.4,
+   "arena": 6.6,
+   "reactive": 0.8,
+   "sample_planners": 55.4,
+   "safety_filter": 116.4
   },
   "planners": [
    "straight",
@@ -102,14 +102,14 @@
    "seed": 0,
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 20.32,
-    "duration_s": 20.32,
-    "min_clearance_m": 0.6225,
-    "path_length_m": 23.998
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6334,
+    "path_length_m": 24.006
    },
    "free_path": true,
-   "sim_s": 20.32,
-   "native_wall_s": 2.192,
+   "sim_s": 20.34,
+   "native_wall_s": 2.149,
    "frames": 204,
    "max_time_s": 60.0,
    "flown": {
@@ -169,15 +169,15 @@
    "seed": 0,
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 15.88,
-    "duration_s": 15.88,
-    "min_clearance_m": 0.2883,
-    "path_length_m": 15.725
+    "time_to_goal_s": 13.8,
+    "duration_s": 13.8,
+    "min_clearance_m": 0.3681,
+    "path_length_m": 14.373
    },
    "free_path": true,
-   "sim_s": 15.88,
-   "native_wall_s": 1.174,
-   "frames": 159,
+   "sim_s": 13.8,
+   "native_wall_s": 0.948,
+   "frames": 138,
    "max_time_s": 60.0,
    "flown": {
     "vehicle": {
@@ -236,15 +236,15 @@
    "seed": 0,
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 14.14,
-    "duration_s": 14.14,
-    "min_clearance_m": 0.2836,
-    "path_length_m": 14.516
+    "time_to_goal_s": 13.66,
+    "duration_s": 13.66,
+    "min_clearance_m": 0.3521,
+    "path_length_m": 14.287
    },
    "free_path": true,
-   "sim_s": 14.14,
-   "native_wall_s": 0.985,
-   "frames": 142,
+   "sim_s": 13.66,
+   "native_wall_s": 0.93,
+   "frames": 137,
    "max_time_s": 60.0,
    "flown": {
     "vehicle": {
@@ -300,15 +300,15 @@
    "seed": 0,
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 40.0,
-    "duration_s": 40.0,
-    "min_clearance_m": 0.3595,
-    "path_length_m": 45.096
+    "time_to_goal_s": 41.26,
+    "duration_s": 41.26,
+    "min_clearance_m": 0.3362,
+    "path_length_m": 45.61
    },
    "free_path": true,
-   "sim_s": 40.0,
-   "native_wall_s": 5.632,
-   "frames": 400,
+   "sim_s": 41.26,
+   "native_wall_s": 5.636,
+   "frames": 413,
    "max_time_s": 60.0,
    "flown": {
     "vehicle": {
@@ -360,10 +360,10 @@
    },
    "before": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 21.48,
+    "duration_s": 21.48,
+    "min_clearance_m": 0.27,
+    "path_length_m": 25.203
    }
   },
   {
@@ -384,14 +384,14 @@
    "score": {
     "outcome": "stuck",
     "time_to_goal_s": null,
-    "duration_s": 52.46,
-    "min_clearance_m": 0.6173,
-    "path_length_m": 33.293
+    "duration_s": 53.0,
+    "min_clearance_m": 0.6175,
+    "path_length_m": 33.698
    },
    "free_path": false,
-   "sim_s": 52.52,
-   "native_wall_s": 18.37,
-   "frames": 526,
+   "sim_s": 53.04,
+   "native_wall_s": 18.69,
+   "frames": 531,
    "max_time_s": 60.0,
    "flown": {
     "vehicle": {
@@ -444,9 +444,9 @@
    "before": {
     "outcome": "collision",
     "time_to_goal_s": null,
-    "duration_s": 11.12,
-    "min_clearance_m": 0.3467,
-    "path_length_m": 12.999
+    "duration_s": 11.02,
+    "min_clearance_m": 0.3495,
+    "path_length_m": 13.016
    }
   },
   {
@@ -466,15 +466,15 @@
    "seed": 0,
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 53.24,
-    "duration_s": 53.24,
-    "min_clearance_m": 0.3264,
-    "path_length_m": 55.086
+    "time_to_goal_s": 50.7,
+    "duration_s": 50.7,
+    "min_clearance_m": 0.3013,
+    "path_length_m": 47.251
    },
    "free_path": true,
-   "sim_s": 53.24,
-   "native_wall_s": 6.34,
-   "frames": 533,
+   "sim_s": 50.7,
+   "native_wall_s": 5.17,
+   "frames": 507,
    "max_time_s": 60.0,
    "flown": {
     "vehicle": {
@@ -526,9 +526,9 @@
    },
    "before": {
     "outcome": "reached",
-    "time_to_goal_s": 24.98,
-    "duration_s": 24.98,
-    "min_clearance_m": 0.301,
+    "time_to_goal_s": 25.04,
+    "duration_s": 25.04,
+    "min_clearance_m": 0.3131,
     "path_length_m": 25.195
    }
   },
@@ -556,7 +556,7 @@
    },
    "free_path": false,
    "sim_s": 38.56,
-   "native_wall_s": 9.847,
+   "native_wall_s": 9.749,
    "frames": 386,
    "max_time_s": 60.0,
    "flown": {
@@ -610,9 +610,9 @@
    "before": {
     "outcome": "collision",
     "time_to_goal_s": null,
-    "duration_s": 12.62,
-    "min_clearance_m": 0.3484,
-    "path_length_m": 12.956
+    "duration_s": 12.56,
+    "min_clearance_m": 0.3499,
+    "path_length_m": 12.928
    }
   }
  ],
@@ -627,17 +627,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 20.32,
-    "duration_s": 20.32,
-    "min_clearance_m": 0.6225,
-    "path_length_m": 23.998
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6334,
+    "path_length_m": 24.006
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 20.32,
-    "duration_s": 20.32,
-    "min_clearance_m": 0.6225,
-    "path_length_m": 23.998
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6334,
+    "path_length_m": 24.006
    }
   },
   {
@@ -650,17 +650,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 15.88,
-    "duration_s": 15.88,
-    "min_clearance_m": 0.2883,
-    "path_length_m": 15.725
+    "time_to_goal_s": 13.8,
+    "duration_s": 13.8,
+    "min_clearance_m": 0.3681,
+    "path_length_m": 14.373
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 15.88,
-    "duration_s": 15.88,
-    "min_clearance_m": 0.2883,
-    "path_length_m": 15.725
+    "time_to_goal_s": 13.8,
+    "duration_s": 13.8,
+    "min_clearance_m": 0.3681,
+    "path_length_m": 14.373
    }
   },
   {
@@ -673,17 +673,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 14.14,
-    "duration_s": 14.14,
-    "min_clearance_m": 0.2836,
-    "path_length_m": 14.516
+    "time_to_goal_s": 13.66,
+    "duration_s": 13.66,
+    "min_clearance_m": 0.3521,
+    "path_length_m": 14.287
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 14.14,
-    "duration_s": 14.14,
-    "min_clearance_m": 0.2836,
-    "path_length_m": 14.516
+    "time_to_goal_s": 13.66,
+    "duration_s": 13.66,
+    "min_clearance_m": 0.3521,
+    "path_length_m": 14.287
    }
   },
   {
@@ -696,17 +696,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 40.0,
-    "duration_s": 40.0,
-    "min_clearance_m": 0.3595,
-    "path_length_m": 45.096
+    "time_to_goal_s": 41.26,
+    "duration_s": 41.26,
+    "min_clearance_m": 0.3362,
+    "path_length_m": 45.61
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 40.0,
-    "duration_s": 40.0,
-    "min_clearance_m": 0.3595,
-    "path_length_m": 45.096
+    "time_to_goal_s": 41.26,
+    "duration_s": 41.26,
+    "min_clearance_m": 0.3362,
+    "path_length_m": 45.61
    }
   },
   {
@@ -720,16 +720,16 @@
    "driver": {
     "outcome": "stuck",
     "time_to_goal_s": null,
-    "duration_s": 52.46,
-    "min_clearance_m": 0.6173,
-    "path_length_m": 33.293
+    "duration_s": 53.0,
+    "min_clearance_m": 0.6175,
+    "path_length_m": 33.698
    },
    "reference": {
     "outcome": "stuck",
     "time_to_goal_s": null,
-    "duration_s": 52.46,
-    "min_clearance_m": 0.6173,
-    "path_length_m": 33.293
+    "duration_s": 53.0,
+    "min_clearance_m": 0.6175,
+    "path_length_m": 33.698
    }
   },
   {
@@ -742,17 +742,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 53.24,
-    "duration_s": 53.24,
-    "min_clearance_m": 0.3264,
-    "path_length_m": 55.086
+    "time_to_goal_s": 50.7,
+    "duration_s": 50.7,
+    "min_clearance_m": 0.3013,
+    "path_length_m": 47.251
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 53.24,
-    "duration_s": 53.24,
-    "min_clearance_m": 0.3264,
-    "path_length_m": 55.086
+    "time_to_goal_s": 50.7,
+    "duration_s": 50.7,
+    "min_clearance_m": 0.3013,
+    "path_length_m": 47.251
    }
   },
   {
@@ -812,17 +812,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 21.48,
+    "duration_s": 21.48,
+    "min_clearance_m": 0.27,
+    "path_length_m": 25.203
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 21.48,
+    "duration_s": 21.48,
+    "min_clearance_m": 0.27,
+    "path_length_m": 25.203
    }
   },
   {
@@ -834,17 +834,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 14.14,
-    "duration_s": 14.14,
-    "min_clearance_m": 0.2836,
-    "path_length_m": 14.516
+    "time_to_goal_s": 13.66,
+    "duration_s": 13.66,
+    "min_clearance_m": 0.3521,
+    "path_length_m": 14.287
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 14.14,
-    "duration_s": 14.14,
-    "min_clearance_m": 0.2836,
-    "path_length_m": 14.516
+    "time_to_goal_s": 13.66,
+    "duration_s": 13.66,
+    "min_clearance_m": 0.3521,
+    "path_length_m": 14.287
    }
   },
   {
@@ -856,17 +856,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 21.48,
+    "duration_s": 21.48,
+    "min_clearance_m": 0.27,
+    "path_length_m": 25.203
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 21.48,
+    "duration_s": 21.48,
+    "min_clearance_m": 0.27,
+    "path_length_m": 25.203
    }
   }
  ],
@@ -879,10 +879,10 @@
   ],
   "published": {
    "outcome": "reached",
-   "time_to_goal_s": 14.14,
-   "duration_s": 14.14,
-   "min_clearance_m": 0.2836,
-   "path_length_m": 14.516
+   "time_to_goal_s": 13.66,
+   "duration_s": 13.66,
+   "min_clearance_m": 0.3521,
+   "path_length_m": 14.287
   },
   "same": true,
   "source": "samples/close-area-arena/results/custom_sensor_0.json"

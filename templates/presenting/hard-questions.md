@@ -40,26 +40,26 @@ real, measured on an Apple M3 Max laptop.
 
 | # | Question | Number to say | Input |
 |---|---|---|---|
-| A1 | A forward depth camera, not a 360 deg sensor? | Camera reached B in 6 of 6 geofenced runs, as the 360 deg fan did; +3.04 to +3.44 s on office_0 | synthetic |
+| A1 | A forward depth camera, not a 360 deg sensor? | Camera reached B in 6 of 6 geofenced runs, as the 360 deg fan did; +0.30 to +1.0 s on office_0 | synthetic |
 | A2 | Your map is a drawing | Spec 23.98 s, 9.204 m, 8 obstacles; sketch 25.54 s, 9.629 m, 45 boxes; both reached | synthetic |
 | A3 | 17 planners tie. What did the Solver decide? | No winner by success rate; Pareto view names 3 of 17 | synthetic |
 | A4 | Why not your safety filter everywhere? | F2 closes gaps under about 1.4 m: 0 of 21 planners passed a 0.764 m gap with F2, 15 of 21 with F0 | synthetic |
 | A5 | People walking through? | VO gate 100 of 100 reached, 0 collisions, held-out seed; A* + F2 92 %, 0 collisions, 8 % stuck | synthetic |
-| A6 | What if B is unknown? | Frontier found B in 43.3 % [31.6, 55.9]; a nominal within 2 m: 88.3-100 % | synthetic |
+| A6 | What if B is unknown? | Frontier found B in 41.7 % [30.1, 54.3]; a nominal within 2 m: 86.7-95.0 % | synthetic |
 | A7 | Why show Hybrid A* losing? | 81.9 % vs 91.2 % reached for A*, 0 % collisions for both | synthetic |
 | A8 | Nothing here is novel. What is the contribution? | 21 planners x 8 room families x 2 sensors, 6720 flights; 2 own headlines failed their kill tests | synthetic |
 | A9 | Brief to first flight, how long? | 6 min 7 s clone to pack verdict, agent-driven; 2 min 26 s of it commands | wall time real, flights synthetic |
-| A10 | Is the arena biased? | Dropped beams mark free space behind walls; fix moves reached by -3.7 to +5.7 points | synthetic |
+| A10 | Is the arena biased? | Dropped beams marked free space behind walls; fixed, moved reached by -5.6 to +5.7 points | synthetic |
 | A11 | The question we hope nobody asks: has any of it flown? | No number. No SITL run, no flight | - |
 
 ### A1. "Your drone has a forward depth camera, not a 360 deg sensor."
 
 "We flew that case. A simulated 87 deg depth camera, modelled on a RealSense D435i, reached B in
-6 of 6 geofenced runs, the same as the 360 deg fan, but slower: 3 to 3.4 s more on the office
-map and up to 9.5 s more in the maze. One layout per family, so those are examples. In the Solver
+6 of 6 geofenced runs, the same as the 360 deg fan, and a little slower: 0.3 to 1 s more on the
+office map and up to 1.6 s more in the maze. One layout per family, so those are examples. In the Solver
 on office_0 with that camera, 8 of 18 planners reached B in 3 of 3 runs."
 
-- **Number:** 6 of 6 reached (2 planners x 3 worlds), +3.04 to +3.44 s on office_0, +3.54 to +9.5 s on maze_0 `[synthetic]`, one layout per family, truth pose; Solver Quick on office_0: 54 runs, 25 reached, 26 stuck, 2 collision, 1 timeout `[synthetic]`, 3 seeds.
+- **Number:** 6 of 6 reached (2 planners x 3 worlds), +0.30 to +1.0 s on office_0, +0.26 to +1.56 s on maze_0 `[synthetic]`, one layout per family, truth pose; Solver Quick on office_0: 54 runs, 25 reached, 26 stuck, 2 collision, 1 timeout `[synthetic]`, 3 seeds.
 - **Source:** [custom_sensor_0.md](../../samples/close-area-arena/results/custom_sensor_0.md#result),
   [Solver office_0 depth camera sweep](../../site/solver/README.md#result-one-quick-sweep-on-office_0-with-depth_cam_87),
   [quick_office_0_depth_cam.json](../../site/solver/results/quick_office_0_depth_cam.json).
@@ -125,11 +125,11 @@ reaching B where the filter deadlocked, not fewer collisions."
 ### A6. "What if B is a marker somewhere, not a coordinate?"
 
 "Then ask whoever set the task for a rough position. With B unknown, our best search, frontier
-exploration, found B in 43 % of runs within 180 s, in simulation. Given a nominal within 2 m, every
-search arm found it in 88-100 %, about as fast as knowing B. The map fills before the detector
+exploration, found B in 42 % of runs within 180 s, in simulation. Given a nominal within 2 m, every
+search arm found it in 87-95 %, about as fast as knowing B. The map fills before the detector
 has swept the room, and we did not build a detector-aware frontier."
 
-- **Number:** frontier 43.3 % [31.6, 55.9] found, B unknown; 88.3-100 % with a nominal within 2 m `[synthetic]`, 60 runs per cell, 3 families, ideal sensor, geometric detection model.
+- **Number:** frontier 41.7 % [30.1, 54.3] found, B unknown; 86.7-95.0 % with a nominal within 2 m `[synthetic]`, 60 runs per cell, 3 families, ideal sensor, geometric detection model.
 - **Source:** [close-area-explore results](../../samples/close-area-explore/README.md#results-ran-2026-11-10-apple-m3-max-macos-2662-cpython-31210-numpy-254-scipy-1181),
   [analysis_0.md](../../samples/close-area-explore/results/analysis_0.md).
 
@@ -143,7 +143,9 @@ arrived. So A* stays the default, and the page says when to pick Hybrid A*."
 - **Number:** 81.9 % vs 91.2 % reached; median 0.94 s faster when both reached, 152 paired runs `[synthetic]`, 8 families x 20 layouts, ideal sensor.
 - **Source:** [hybrid-astar reading](../../samples/close-area-planner-hybrid-astar/README.md#reading),
   [how it was built: Hybrid A*](../../docs/how-it-was-built.md#hybrid-a).
-- **Say also:** our own untuned implementation, no path smoothing.
+- **Say also:** our own untuned implementation, no path smoothing. These runs predate the
+  2026-11-12 dropped-beam fix and were not re-run; in the regenerated benchmark, on the stock
+  vehicle, Hybrid A* and plain A* both reach 87.5 % on ideal.
 
 ### A8. "Nothing here is novel. What is the contribution?"
 
@@ -170,16 +172,17 @@ page suggests budgeting 15 minutes once the room is measured."
 
 ### A10. "Is your arena biased?"
 
-"Yes, in one known way, and it is written down. The sim's mapper treats a dropped beam as free
-space out to max range, so it can mark cells behind a wall as free. We sized it: fixing it moves
-the unknown-map planners' reach rate by -3.7 to +5.7 points, inside single-seed noise. The fix is
-on the backlog; the published tables carry the note."
+"It was, in one known way, and we fixed it. The sim's mapper used to treat a dropped beam as free
+space out to max range, so it could mark cells behind a wall as free. Now a dropped beam adds
+nothing to the map, and every unknown-map table was regenerated with the fix. It moved the
+unknown-map planners' reach rate by -5.6 to +5.7 points; the planners with a prior map did not
+move at all."
 
-- **Number:** dropped beams 2 % (ideal) and 5 % (crazyflie); falsely-free cells median 6.7-8.8 % => about 0.4 % with the fix (ideal); reached changes -3.7 to +1.3 points (ideal), -1.9 to +5.7 (crazyflie) `[synthetic]`, seed 0, 20 layouts x 8 families.
+- **Number:** dropped beams 2 % (ideal) and 5 % (crazyflie); falsely-free cells median 6.7-8.8 % => about 0.4 % with the fix (ideal); reached changes -3.7 to +1.3 points (ideal), -5.6 to +5.7 (crazyflie) over the 8 unknown-map planners; the other 13 planners reproduced 4160/4160 runs exactly `[synthetic]`, seed 0, 20 layouts x 8 families.
 - **Source:** [upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls),
   [dropout_fix_tables.md](../../samples/close-area-benchmark/results/dropout_fix_tables.md).
-- **Say also:** the seed noise floor was not measured (that arm crashed), so "inside noise" rests
-  on most per-family changes being 1-2 layouts.
+- **Say also:** the seed noise floor was not measured (that arm crashed), so we don't call the
+  changes noise; most per-family changes are 1-2 layouts.
 
 ### A11. The question we hope nobody asks: "Has any of this flown, or run on a real autopilot?"
 
@@ -302,7 +305,7 @@ spin and the move it reached B in 48 % (dropout) and 64 % (jump) of runs, agains
 beams, still with 0 wrong commits, after a median 9-12 s of spinning. Under dropout that is worse
 than not relocalizing at all (64 %)."
 
-- **Number:** 48 / 64 % reached, 3 / 7 % collisions, 0 wrong commits, 100 random layouts, seed 0, yaw is truth in the sim `[synthetic]`. Context: without a map 4 beams drop the unknown-map A* from 95 to 35 % reached in office layouts.
+- **Number:** 48 / 64 % reached, 3 / 7 % collisions, 0 wrong commits, 100 random layouts, seed 0, yaw is truth in the sim `[synthetic]`. Context: without a map 4 beams drop the unknown-map A* from 90 to 30 % reached in office layouts.
 - **Source:** [4-beam spin](../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin),
   [acceptance rule](../../samples/close-area-relocalize/README.md#what-is-in-it),
   [benchmark crazyflie preset](../../samples/close-area-benchmark/README.md#preset-crazyflie),

@@ -56,8 +56,8 @@ What the matrix says:
 - Five planners with a prior map reached B in every cell with 0 collisions on both sensors:
   `astar_known`, `informed_rrt_star`, `astar_mpc`, `thetastar_known`, `lazy_thetastar_known`. They
   never read the scan, so this is an upper bound. [`benchmark.planners_100_reached_0_collision_every_family`]
-- Without a map, 4 beams break the rooms. A* on a map built from range hits reached 95 % of office
-  layouts with 72 beams and 35 % with 4; warehouse 55 % and 0 %; glass office 95 % and 5 %.
+- Without a map, 4 beams break the rooms. A* on a map built from range hits reached 90 % of office
+  layouts with 72 beams and 30 % with 4; warehouse 50 % and 5 %; glass office 90 % and 15 %.
   [`benchmark.astar_unknown_reached_pct`]
 
 ### Kill tests
@@ -166,7 +166,7 @@ numbers from the paper by section, had no misquotes in the sample.
 
 | item | value |
 |---|---|
-| benchmark compute, wall seconds on 14 processes | 2598.1 [`cost.benchmark_wall_s`] |
+| benchmark compute, wall seconds on 10 processes (one run, 2026-11-12) | 2963.7 [`cost.benchmark_wall_s`] |
 | kill-test compute (seeds 0-2 + 2 families), wall seconds on 14 workers | 739.0 [`cost.kill_test_seeds_0_2_and_families_wall_s`] |
 | total agent jobs, tokens or credits | not measured |
 | human hours | not measured |

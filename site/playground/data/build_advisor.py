@@ -81,8 +81,8 @@ PLANNER_DOCS = {
     "astar_unknown": dict(
         what="The same A*, but on a map built during flight from range hits. Unknown cells count as free with a penalty.",
         needs="No prior map. A range sensor; works best with a dense 360 deg scan.",
-        good="Best map-free planner on the ideal sensor in every family (55-100 % reached, 0 % collision).",
-        fails="With 4 beams the map has holes: office 35 %, warehouse 0 % (50 % collision), glass_office 5 % (65 % collision).",
+        good="Strong map-free planner on the ideal sensor (50-100 % reached, 0 % collision); D* Lite matches it or leads by 5 points.",
+        fails="With 4 beams the map has holes: office 30 %, warehouse 5 % (55 % collision), glass_office 15 % (60 % collision).",
         src=[B]),
     "informed_rrt_star": dict(
         what="Informed RRT*: grows a random tree of paths on the prior map (5000 samples), then refines inside an ellipse around A and B.",
@@ -99,7 +99,7 @@ PLANNER_DOCS = {
     "astar_unknown_f2": dict(
         what="A* unknown map with the F2 safety filter (PX4-CBF as shipped) between the planner and the vehicle.",
         needs="No prior map. A range sensor.",
-        good="With 4 beams it collides less: warehouse 50 => 0 %, maze reached 35 => 55 % (benchmark).",
+        good="With 4 beams it collides less: warehouse 55 => 0 %, warehouse reached 5 => 30 % (benchmark).",
         fails="With 72 beams it freezes in doors, gaps and aisles: 0 % reached on narrow_gap, office, warehouse, maze and glass_office. Blind to glass.",
         src=[B]),
     "dwa": dict(
@@ -129,8 +129,8 @@ PLANNER_DOCS = {
     "dstar_lite": dict(
         what="D* Lite: the unknown-map A*, but it repairs the old plan when the map changes instead of searching again.",
         needs="No prior map. A range sensor.",
-        good="Same flights as A* unknown map (153 of 160 identical outcomes on ideal) with 4-7x less search time per replan; matters above about 40 x 40 m.",
-        fails="Same holes as A* unknown map with 4 beams: glass_office 10 % reached, 65 % collision.",
+        good="Same flights as A* unknown map (155 of 160 identical outcomes on ideal) with a few times less search time per replan; matters above about 40 x 40 m.",
+        fails="Same holes as A* unknown map with 4 beams: glass_office 15 % reached, 60 % collision.",
         src=[B, "samples/close-area-planner-dstar/README.md"]),
 }
 
