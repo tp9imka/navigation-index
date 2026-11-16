@@ -51,8 +51,8 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
 | [GeoRinex](geospace-code__georinex.md) | high | MIT | 2026-05-27 | Load RINEX 2/3/4 OBS/NAV (plain, gz/Z/bz2/zip or Hatanaka) and SP3 orbits straight into `xarray.Dataset` in one call - the fastest way to get pseudoranges, C/N0 and... | geodesy |
-| [GNSS-SDR](gnss-sdr__gnss-sdr.md) | high | GPL-3.0 | 2026-11-08 | A complete software GNSS receiver: IQ samples in (file or SDR front-end), observables, RINEX, NMEA, RTCM and a PVT fix out, with per-channel correlator, C/N0 and... | gnss-sdr, gnss-interference |
-| [gnss_lib_py](stanford-navlab__gnss_lib_py.md) | high | MIT | 2026-11-04 | Pure-Python GNSS measurement toolkit: parse Android raw logs, RINEX, NMEA, SP3/CLK into one `NavData` table, compute satellite states, then run WLS, a GNSS EKF and fault... | datasets-benchmarks |
+| [GNSS-SDR](gnss-sdr__gnss-sdr.md) | high | GPL-3.0 | 2026-11-16 | A complete software GNSS receiver: IQ samples in (file or SDR front-end), observables, RINEX, NMEA, RTCM and a PVT fix out, with per-channel correlator, C/N0 and... | gnss-sdr, gnss-interference |
+| [gnss_lib_py](stanford-navlab__gnss_lib_py.md) | high | MIT | 2026-11-14 | Pure-Python GNSS measurement toolkit: parse Android raw logs, RINEX, NMEA, SP3/CLK into one `NavData` table, compute satellite states, then run WLS, a GNSS EKF and fault... | datasets-benchmarks |
 | [GPS Measurement Tools (Google)](google__gps-measurement-tools.md) | high | Apache-2.0 | 2026-10-19 | Google's reference for Android raw GNSS - the GnssLogger app source (log pseudoranges, carrier phase, AGC, C/N0 on a phone) plus MATLAB code that turns those logs into... | datasets-benchmarks |
 | [GPS-SDR-SIM](osqzss__gps-sdr-sim.md) | high | MIT | 2025-01-26 (archived) | Generates GPS L1 C/A baseband IQ sample files for a chosen static position or trajectory and time | gnss-interference, simulation |
 | [laika](commaai__laika.md) | high | MIT | 2026-09-25 | Comma.ai's Python GNSS processing library: `AstroDog` fetches orbits, clocks, DCBs and ionosphere maps on demand and turns raw pseudoranges into corrected measurements... | - |
@@ -65,14 +65,14 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | [pyrtcm](semuconsulting__pyrtcm.md) | high | BSD-3-Clause | 2026-11-06 | Pure-Python RTCM3 parser and serializer - decode NTRIP or base-station correction streams into named data fields (MSM observables, 1005 base position, ephemerides, SSR)... | gnss-rtk-ppp, standards |
 | [pyubx2](semuconsulting__pyubx2.md) | high | BSD-3-Clause | 2026-11-06 | Pure-Python reader/writer for u-blox UBX (plus NMEA and RTCM3 via sister libs): the fastest way to get PVT, raw measurements and the receiver's own jamming/spoofing... | standards |
 | [RTKLIB (upstream, T. Takasu)](tomojitakasu__rtklib.md) | high | No LICENSE file | 2024-05-28 | The original RTKLIB: ANSI C library plus CLIs (`rnx2rtkp`, `rtkrcv`, `str2str`, `convbin`, `pos2kml`) for SPP / DGNSS / RTK / PPP from RINEX, receiver binaries and... | gnss-rtk-ppp |
-| [RTKLIB demo5 / RTKLIB-EX](rtklibexplorer__rtklib.md) | high | GitHub metadata: NOASSERTION | 2026-11-07 | The fastest path from receiver logs or public RINEX to an SPP / RTK / PPK / PPP position file, plus `str2str` and `rtkrcv` for live NTRIP corrections and real-time RTK.... | gnss-rtk-ppp |
+| [RTKLIB demo5 / RTKLIB-EX](rtklibexplorer__rtklib.md) | high | GitHub metadata: NOASSERTION | 2026-11-09 | The fastest path from receiver logs or public RINEX to an SPP / RTK / PPK / PPP position file, plus `str2str` and `rtkrcv` for live NTRIP corrections and real-time RTK.... | gnss-rtk-ppp |
 | [ublox (KumarRobotics)](kumarrobotics__ublox.md) | high | BSD-3-Clause | 2026-08-21 | The standard ROS driver for u-blox GNSS receivers (M8, F9P/F9R, M8T...) - `NavSatFix` plus raw UBX topics (NAV-PVT, NAV-SAT, RXM-RAWX, MON-HW) and an RTCM input for RTK | ros |
 
 ## Timing and time transfer
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [AllanTools](aewallin__allantools.md) | high | LGPL-3.0 | 2026-10-26 | `pip install allantools` and get ADEV/OADEV/MDEV/TDEV/HDEV/TOTDEV/MTIE/TIE-rms on numpy arrays of phase or fractional frequency, with confidence intervals and noise... | calibration |
+| [AllanTools](aewallin__allantools.md) | high | LGPL-3.0 | 2026-11-15 | `pip install allantools` and get ADEV/OADEV/MDEV/TDEV/HDEV/TOTDEV/MTIE/TIE-rms on numpy arrays of phase or fractional frequency, with confidence intervals and noise... | calibration |
 | [chrony](gitlab.com__chrony__chrony.md) | high | GPL-2.0 | not tracked | NTP client/server (`chronyd` + `chronyc`) that disciplines the system clock from NTP/NTS servers, GNSS refclocks (PPS, gpsd SOCK/SHM, PTP hardware clocks, RTC) and... | assured-pnt |
 | [linuxptp](nwtime__linuxptp.md) | high | GPL-2.0 | 2026-08-09 | The standard Linux IEEE 1588 PTP stack: `ptp4l` (OC/BC/TC, gPTP, telecom profiles), `phc2sys` (PHC <=> system clock), `ts2phc` (GNSS 1PPS + NMEA => NIC hardware clock)... | standards |
 | [SatPulse](jclark__satpulse.md) | high | MIT | 2026-11-08 | Go daemon + tools that own a GNSS receiver's serial port and turn it into (a) a chrony/ntpd refclock, (b) a PHC-disciplining PTP grandmaster feeding `ptp4l`, (c) an... | gnss |
@@ -92,9 +92,9 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
 | [FilterPy](rlabbe__filterpy.md) | high | MIT | 2026-10-27 | Readable NumPy implementations of KF, EKF, UKF, CKF, IMM, ensemble, information, square-root and fading-memory filters plus RTS / fixed-lag smoothers: the fastest way to... | target-tracking |
-| [GTSAM](borglab__gtsam.md) | high | GitHub: NOASSERTION | 2026-11-08 | A pip-installable factor-graph backend where IMU preintegration plus GNSS position (or pseudorange) factors give you a GNSS/INS smoother you can starve of GNSS to show... | ins, gnss-ins, visual-slam |
+| [GTSAM](borglab__gtsam.md) | high | GitHub: NOASSERTION | 2026-11-10 | A pip-installable factor-graph backend where IMU preintegration plus GNSS position (or pseudorange) factors give you a GNSS/INS smoother you can starve of GNSS to show... | ins, gnss-ins, visual-slam |
 | [manif](artivis__manif.md) | high | MIT | 2026-08-05 | Header-only C++ Lie group library (SO2/SE2/SO3/SE3/SE_2(3)/SGal(3)/Rn/Bundle) with analytic right Jacobians and Python bindings, so you can write an on-manifold ESKF or... | ins |
-| [MINS](rpng__mins.md) | high | GPL-3.0 | 2026-10-23 | Tightly coupled MSCKF-style filter fusing IMU with any mix of cameras, LiDARs, wheel odometry and GNSS (with online calibration), plus a multi-sensor simulator, so you... | vio, gnss-ins, calibration |
+| [MINS](rpng__mins.md) | high | GPL-3.0 | 2026-11-16 | Tightly coupled MSCKF-style filter fusing IMU with any mix of cameras, LiDARs, wheel odometry and GNSS (with online calibration), plus a multi-sensor simulator, so you... | vio, gnss-ins, calibration |
 | [navlie](decargroup__navlie.md) | high | MIT | 2026-04-30 | Pure-Python on-manifold estimation toolkit: define a `State` (vector or any Lie group), a process and a measurement model, and reuse EKF / iterated EKF / UKF / cubature... | ins |
 | [robot_localization](cra-ros-pkg__robot_localization.md) | high | GitHub: NOASSERTION | 2026-11-02 | Config-only ROS 2 EKF/UKF that fuses wheel odometry, IMU and GNSS into `odom` and `map` frames, so a ground robot gets a GNSS-anchored pose in an afternoon | ins, gnss-ins, ros, ground-vehicle-nav |
 | [fuse](locusrobotics__fuse.md) | medium | GitHub: NOASSERTION | 2026-08-19 | ROS 2 sensor-fusion framework where every sensor and motion model is a plugin that adds Ceres factors to a fixed-lag smoother or batch optimizer | ros, ground-vehicle-nav |
@@ -116,8 +116,8 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [Clover (COEX)](copterexpress__clover.md) | high | MIT | 2026-04-14 | ROS Noetic package and Raspberry Pi image that turns a PX4 drone into a Python-scriptable one (`navigate(x, y, z, frame_id='aruco_map')`) | autopilot, ros, simulation, mavlink-gcs |
-| [cuVSLAM](nvidia-isaac__cuvslam.md) | high | GitHub metadata: NOASSERTION | 2026-11-07 | GPU stereo / stereo-inertial / RGB-D visual odometry plus SLAM with map save, relocalization and optional visual place recognition, driven from Python on a Jetson or a... | visual-slam, edge-ai |
+| [Clover (COEX)](copterexpress__clover.md) | high | MIT | 2026-11-13 | ROS Noetic package and Raspberry Pi image that turns a PX4 drone into a Python-scriptable one (`navigate(x, y, z, frame_id='aruco_map')`) | autopilot, ros, simulation, mavlink-gcs |
+| [cuVSLAM](nvidia-isaac__cuvslam.md) | high | GitHub metadata: NOASSERTION | 2026-11-15 | GPU stereo / stereo-inertial / RGB-D visual odometry plus SLAM with map save, relocalization and optional visual place recognition, driven from Python on a Jetson or a... | visual-slam, edge-ai |
 | [Isaac ROS Visual SLAM (isaac_ros_cuvslam)](nvidia-isaac-ros__isaac_ros_visual_slam.md) | high | Wrapper LICENSE: Apache-2.0 | 2026-09-22 | ROS 2 wrapper around NVIDIA's GPU stereo / multi-camera / RGB-D visual(-inertial) odometry and SLAM (cuVSLAM) | visual-slam, edge-ai, ros |
 | [OpenVINS](rpng__open_vins.md) | high | GitHub metadata: GPL-3.0 | 2025-11-30 | CPU-only MSCKF visual-inertial odometry with online camera/IMU calibration and a built-in simulator, so a team can produce a VIO trajectory before any hardware arrives | calibration, simulation |
 | [vision_to_mavros](thien94__vision_to_mavros.md) | high | GPL-3.0 | 2022-10-28 | The reference glue (ROS 1 node + standalone pymavlink scripts) that turns a VIO/SLAM/AprilTag pose into ArduPilot `VISION_POSITION_ESTIMATE`/`VISION_SPEED_ESTIMATE`... | mavlink-gcs, ros |
@@ -128,8 +128,8 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 |---|---|---|---|---|---|
 | [ORB-SLAM3](uz-slamlab__orb_slam3.md) | high | GitHub metadata: GPL-3.0 | 2024-07-24 | CPU feature-based SLAM for mono / stereo / RGB-D, with or without IMU, with loop closure, relocalization and a multi-map atlas | vio, place-recognition |
 | [ORB_SLAM3_ROS2](zang09__orb_slam3_ros2.md) | high | No LICENSE file in the repo and no... | 2024-07-22 | Thin ROS 2 wrapper that feeds camera (and IMU) topics into ORB-SLAM3 for MONO, STEREO, RGBD and STEREO-INERTIAL modes | ros |
-| [RTAB-Map](introlab__rtabmap.md) | high | GitHub metadata: NOASSERTION | 2026-11-09 | Graph SLAM with appearance-based loop closure for RGB-D, stereo and 2D/3D LiDAR, with a GUI, a SQLite map database, localization-only mode and Nav2-ready occupancy grids | lidar-slam, place-recognition, ros |
-| [rtabmap_ros](introlab__rtabmap_ros.md) | high | BSD-3-Clause | 2026-11-04 | The ROS 2 (and ROS 1) wrapper around RTAB-Map: odometry nodes (RGB-D, stereo, ICP LiDAR), the `rtabmap` SLAM node with a persistent SQLite map, a localization-only mode... | ros, ground-vehicle-nav |
+| [RTAB-Map](introlab__rtabmap.md) | high | GitHub metadata: NOASSERTION | 2026-11-16 | Graph SLAM with appearance-based loop closure for RGB-D, stereo and 2D/3D LiDAR, with a GUI, a SQLite map database, localization-only mode and Nav2-ready occupancy grids | lidar-slam, place-recognition, ros |
+| [rtabmap_ros](introlab__rtabmap_ros.md) | high | BSD-3-Clause | 2026-11-16 | The ROS 2 (and ROS 1) wrapper around RTAB-Map: odometry nodes (RGB-D, stereo, ICP LiDAR), the `rtabmap` SLAM node with a persistent SQLite map, a localization-only mode... | ros, ground-vehicle-nav |
 
 ## LiDAR odometry and SLAM
 
@@ -157,7 +157,7 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 |---|---|---|---|---|---|
 | [LightGlue](cvg__lightglue.md) | high | Code and LightGlue weights: Apache-2.0 | 2026-10-25 | Sparse learned matcher that turns two images into point correspondences in a few lines of PyTorch - the default fine stage for drone-frame-to-map-tile registration, if... | - |
 | [RoMa](parskatt__roma.md) | high | MIT | 2026-01-23 | Dense matcher (DINOv2 coarse features + learned refinement) that still finds correspondences across season, lighting and sensor gaps where sparse matchers fail - use it... | - |
-| [vismatch](gmberton__vismatch.md) | high | Wrapper code: BSD-3-Clause | 2026-11-03 | `get_matcher("<name>")` gives one interface (paths in, keypoints + RANSAC homography out) over 82 matcher names, so you can run a matcher shoot-out on your own... | - |
+| [vismatch](gmberton__vismatch.md) | high | Wrapper code: BSD-3-Clause | 2026-11-12 | `get_matcher("<name>")` gives one interface (paths in, keypoints + RANSAC homography out) over 82 matcher names, so you can run a matcher shoot-out on your own... | - |
 | [XFeat](verlab__accelerated_features.md) | high | Apache-2.0 | 2025-01-15 | Tiny CNN keypoint detector/descriptor (64-D) with built-in sparse, semi-dense and LighterGlue matching that runs real time on a laptop CPU - the "no GPU onboard"... | edge-ai |
 
 ## Visual geo-localization (image-to-map)
@@ -171,7 +171,7 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [elevation](bopen__elevation.md) | high | Apache-2.0 | 2026-11-09 | One command (`eio clip --bounds ...`) gets you a clipped, cached 30 m or 90 m global DEM GeoTIFF for an AOI - the map half of terrain-relative navigation | gis-mapping |
+| [elevation](bopen__elevation.md) | high | Apache-2.0 | 2026-11-15 | One command (`eio clip --bounds ...`) gets you a clipped, cached 30 m or 90 m global DEM GeoTIFF for an AOI - the map half of terrain-relative navigation | gis-mapping |
 | [python-tercom](alti3__python-tercom.md) | high | GitHub metadata: none detected | 2025-04-06 | A two-file NumPy demo of TERCOM - simulate a noisy altimeter profile over a height grid, brute-force search position + heading by MSE, print the fix as a GPGGA sentence... | - |
 | [tercom_nav](mzahana__tercom_nav.md) | high | GitHub metadata: none detected - the... | 2026-04-26 | A ROS 2 Humble package that turns baro + single-beam range + IMU into terrain-matching position fixes against a GeoTIFF DEM and fuses them in a 15-state ESKF - a... | sensor-fusion, ros |
 
@@ -179,7 +179,7 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [MagNav.jl](mit-ai-accelerator__magnav.jl.md) | high | GitHub NOASSERTION | 2026-11-09 | The reference implementation of airborne magnetic anomaly navigation (Tolles-Lawson / NN aircraft compensation + map-matching EKF) with real SGL flight data and anomaly... | sensor-fusion, ins, assured-pnt, datasets-benchmarks |
+| [MagNav.jl](mit-ai-accelerator__magnav.jl.md) | high | GitHub NOASSERTION | 2026-11-11 | The reference implementation of airborne magnetic anomaly navigation (Tolles-Lawson / NN aircraft compensation + map-matching EKF) with real SGL flight data and anomaly... | sensor-fusion, ins, assured-pnt, datasets-benchmarks |
 
 ## Celestial and star-tracker navigation
 
@@ -206,35 +206,35 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [ArduPilot](ardupilot__ardupilot.md) | high | GPL-3.0 | 2026-11-09 | GPL autopilot with a scriptable EKF3 that can switch between GPS, external nav (VIO/mocap), optical flow, beacons and wheel encoders in flight, plus a SITL that can... | sensor-fusion, gnss-ins, vio, ground-vehicle-nav, maritime-nav, underwater-nav, simulation |
-| [Crazyflie firmware](bitcraze__crazyflie-firmware.md) | high | LICENSE.txt is GPL-3.0 | 2026-11-06 | Firmware for the Crazyflie 2.x nano quad (and Bolt / 2.1 Brushless / Roadrunner): a small, readable onboard EKF / error-state UKF that fuses IMU with UWB (Loco... | sensor-fusion, rf-localization, indoor-pedestrian, multi-agent |
-| [PX4 Autopilot](px4__px4-autopilot.md) | high | BSD-3-Clause | 2026-11-09 | BSD autopilot whose EKF2 takes GNSS, external vision, optical flow and an "auxiliary global position" (map-matching, pseudolites, LEO) through per-source bitmask params... | sensor-fusion, gnss-ins, vio, simulation |
+| [ArduPilot](ardupilot__ardupilot.md) | high | GPL-3.0 | 2026-11-15 | GPL autopilot with a scriptable EKF3 that can switch between GPS, external nav (VIO/mocap), optical flow, beacons and wheel encoders in flight, plus a SITL that can... | sensor-fusion, gnss-ins, vio, ground-vehicle-nav, maritime-nav, underwater-nav, simulation |
+| [Crazyflie firmware](bitcraze__crazyflie-firmware.md) | high | LICENSE.txt is GPL-3.0 | 2026-11-13 | Firmware for the Crazyflie 2.x nano quad (and Bolt / 2.1 Brushless / Roadrunner): a small, readable onboard EKF / error-state UKF that fuses IMU with UWB (Loco... | sensor-fusion, rf-localization, indoor-pedestrian, multi-agent |
+| [PX4 Autopilot](px4__px4-autopilot.md) | high | BSD-3-Clause | 2026-11-15 | BSD autopilot whose EKF2 takes GNSS, external vision, optical flow and an "auxiliary global position" (map-matching, pseudolites, LEO) through per-source bitmask params... | sensor-fusion, gnss-ins, vio, simulation |
 
 ## MAVLink, ground control and C2 links
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [BlueOS](bluerobotics__blueos.md) | high | Dual: SPDX-License-Identifier... | 2026-11-07 | Docker-based onboard OS for ArduPilot vehicles (BlueROV2, BlueBoat, generic) with a web UI, selectable MAVLink router, mavlink2rest, NMEA-to-GPS_INPUT injection and an... | underwater-nav, maritime-nav, autopilot |
-| [MAVLink](mavlink__mavlink.md) | high | COPYING: generator is LGPL-3.0 | 2026-11-06 | The message definitions (XML dialects) and the `mavgen` generator behind every PX4 / ArduPilot link: generate C, C++11 or other-language headers for `common.xml` or your... | standards |
+| [BlueOS](bluerobotics__blueos.md) | high | Dual: SPDX-License-Identifier... | 2026-11-14 | Docker-based onboard OS for ArduPilot vehicles (BlueROV2, BlueBoat, generic) with a web UI, selectable MAVLink router, mavlink2rest, NMEA-to-GPS_INPUT injection and an... | underwater-nav, maritime-nav, autopilot |
+| [MAVLink](mavlink__mavlink.md) | high | COPYING: generator is LGPL-3.0 | 2026-11-12 | The message definitions (XML dialects) and the `mavgen` generator behind every PX4 / ArduPilot link: generate C, C++11 or other-language headers for `common.xml` or your... | standards |
 | [mavlink-router](mavlink-router__mavlink-router.md) | high | Apache-2.0 | 2026-10-23 | Small C++ daemon that fans one autopilot link out to many MAVLink clients (GCS, companion scripts, loggers) with sysid-aware routing, per-endpoint message filters, dedup... | - |
 | [mavp2p](bluenviron__mavp2p.md) | high | MIT | 2026-11-03 | Single static Go binary that links any number of serial, UDP and TCP MAVLink endpoints, so the autopilot, the GCS and your nav process share one link - no Python, no... | - |
-| [MAVProxy](ardupilot__mavproxy.md) | high | GPL-3.0-or-later | 2026-11-07 | Terminal MAVLink GCS and router in Python that `sim_vehicle.py` starts for you | mission-planning |
-| [MAVROS](mavlink__mavros.md) | high | Triple BSD / GPLv3 / LGPLv3 | 2026-11-06 | MAVLink-to-ROS 2 bridge for PX4 and ArduPilot | ros, vio |
-| [MAVSDK](mavlink__mavsdk.md) | high | BSD-3-Clause | 2026-11-09 | C++ high-level MAVLink API (action, mission, offboard, telemetry, param, failure injection, mavlink_direct) plus the `mavsdk_server` gRPC binary and, since v4, native C... | autopilot |
+| [MAVProxy](ardupilot__mavproxy.md) | high | GPL-3.0-or-later | 2026-11-13 | Terminal MAVLink GCS and router in Python that `sim_vehicle.py` starts for you | mission-planning |
+| [MAVROS](mavlink__mavros.md) | high | Triple BSD / GPLv3 / LGPLv3 | 2026-11-15 | MAVLink-to-ROS 2 bridge for PX4 and ArduPilot | ros, vio |
+| [MAVSDK](mavlink__mavsdk.md) | high | BSD-3-Clause | 2026-11-12 | C++ high-level MAVLink API (action, mission, offboard, telemetry, param, failure injection, mavlink_direct) plus the `mavsdk_server` gRPC binary and, since v4, native C... | autopilot |
 | [MAVSDK-Python](mavlink__mavsdk-python.md) | high | BSD-3-Clause | 2026-10-15 | Asyncio Python API (takeoff, offboard, missions, telemetry streams, failure injection) over an embedded gRPC `mavsdk_server`, the fastest way to script a PX4 SITL... | autopilot |
-| [pymavlink](ardupilot__pymavlink.md) | high | LGPL-3.0-or-later | 2026-11-07 | The Python MAVLink codec, connection helper and log toolkit | - |
-| [QGroundControl](mavlink__qgroundcontrol.md) | high | Dual Apache-2.0 / GPL-3.0 | 2026-11-09 | Cross-platform MAVLink ground station for PX4 and ArduPilot | mission-planning, situational-awareness |
-| [Rpanion-server](stephendade__rpanion-server.md) | high | GPL-3.0 | 2026-11-05 | Browser-configured companion computer for ArduPilot/PX4 - MAVLink routing (mavlink-router), RTSP video, NTRIP-to-autopilot RTK injection, logging and Wi-Fi AP - so a Pi... | - |
+| [pymavlink](ardupilot__pymavlink.md) | high | LGPL-3.0-or-later | 2026-11-13 | The Python MAVLink codec, connection helper and log toolkit | - |
+| [QGroundControl](mavlink__qgroundcontrol.md) | high | Dual Apache-2.0 / GPL-3.0 | 2026-11-15 | Cross-platform MAVLink ground station for PX4 and ArduPilot | mission-planning, situational-awareness |
+| [Rpanion-server](stephendade__rpanion-server.md) | high | GPL-3.0 | 2026-11-12 | Browser-configured companion computer for ArduPilot/PX4 - MAVLink routing (mavlink-router), RTSP video, NTRIP-to-autopilot RTK injection, logging and Wi-Fi AP - so a Pi... | - |
 
 ## Path and motion planning
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [Nav2 (ROS 2 Navigation)](ros-navigation__navigation2.md) | high | Mixed | 2026-11-06 | A complete ROS 2 ground-robot navigation stack (localization, costmaps, planners, controllers, behavior trees, GPS waypoint following) you can drive from a short Python... | obstacle-avoidance, ground-vehicle-nav, ros |
+| [Nav2 (ROS 2 Navigation)](ros-navigation__navigation2.md) | high | Mixed | 2026-11-13 | A complete ROS 2 ground-robot navigation stack (localization, costmaps, planners, controllers, behavior trees, GPS waypoint following) you can drive from a short Python... | obstacle-avoidance, ground-vehicle-nav, ros |
 | [OMPL](ompl__ompl.md) | high | BSD 3-Clause | 2026-11-06 | Sampling-based motion planning library (RRT-Connect, RRT*, PRM, KPIECE, SST and 40+ more) with Python wheels on PyPI, so a geometric path planner over SE(2)/SE(3) with... | obstacle-avoidance |
-| [OSRM](project-osrm__osrm-backend.md) | high | BSD-2-Clause | 2026-11-07 | Fastest open road router on OSM - offline route, nearest, distance/duration table, trip (TSP) and HMM map matching over HTTP, Node or Python, from a one-time... | ground-vehicle-nav, gis-mapping |
+| [OSRM](project-osrm__osrm-backend.md) | high | BSD-2-Clause | 2026-11-15 | Fastest open road router on OSM - offline route, nearest, distance/duration table, trip (TSP) and HMM map matching over HTTP, Node or Python, from a one-time... | ground-vehicle-nav, gis-mapping |
 | [TARE Planner](caochao39__tare_planner.md) | high | No LICENSE file on any branch | 2026-05-25 | Hierarchical exploration planner (dense local horizon + sparse global TSP) from CMU's SubT team that emits a single `/way_point` for a ground robot | mission-planning |
-| [Valhalla](valhalla__valhalla.md) | high | MIT | 2026-11-08 | Offline OSM routing engine with per-request costing (auto, truck, pedestrian, bicycle, avoid polygons), isochrones, time-distance matrices, elevation sampling and map... | ground-vehicle-nav, gis-mapping |
+| [Valhalla](valhalla__valhalla.md) | high | MIT | 2026-11-15 | Offline OSM routing engine with per-request costing (auto, truck, pedestrian, bicycle, avoid polygons), isochrones, time-distance matrices, elevation sampling and map... | ground-vehicle-nav, gis-mapping |
 
 ## Swarms and multi-agent navigation
 
@@ -246,11 +246,11 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [GDAL](osgeo__gdal.md) | high | MIT for GDAL itself | 2026-11-08 | The format and reprojection layer under every DEM, orthophoto and tile pipeline - clip, warp, hillshade, viewshed, point-sample and convert geodata from the command line... | geodesy |
-| [Leaflet](leaflet__leaflet.md) | high | BSD-2-Clause | 2026-11-08 | The smallest, simplest 2D web map for an operator view - raster or WMS basemap, a vehicle marker and a track polyline in a dozen lines, huge plugin ecosystem, no WebGL... | situational-awareness |
-| [MapLibre GL JS](maplibre__maplibre-gl-js.md) | high | BSD-3-Clause | 2026-11-08 | Open-source WebGL2 map in the browser for the operator view - offline vector or raster basemap, live vehicle track and uncertainty, 3D terrain and globe - with no API key | situational-awareness |
-| [Martin](maplibre__martin.md) | high | Dual MIT OR Apache-2.0 | 2026-11-09 | Single Rust binary that serves vector tiles from PostGIS tables (live, generated per request), PMTiles, MBTiles and GeoJSON, plus fonts, sprites and styles - the offline... | situational-awareness |
-| [OSMnx](gboeing__osmnx.md) | high | MIT | 2026-11-07 | One Python call turns an OSM area into a NetworkX road/path graph with lengths, speeds and travel times - fastest way to prototype ground-vehicle route planning, task... | path-planning |
+| [GDAL](osgeo__gdal.md) | high | MIT for GDAL itself | 2026-11-13 | The format and reprojection layer under every DEM, orthophoto and tile pipeline - clip, warp, hillshade, viewshed, point-sample and convert geodata from the command line... | geodesy |
+| [Leaflet](leaflet__leaflet.md) | high | BSD-2-Clause | 2026-11-15 | The smallest, simplest 2D web map for an operator view - raster or WMS basemap, a vehicle marker and a track polyline in a dozen lines, huge plugin ecosystem, no WebGL... | situational-awareness |
+| [MapLibre GL JS](maplibre__maplibre-gl-js.md) | high | BSD-3-Clause | 2026-11-15 | Open-source WebGL2 map in the browser for the operator view - offline vector or raster basemap, live vehicle track and uncertainty, 3D terrain and globe - with no API key | situational-awareness |
+| [Martin](maplibre__martin.md) | high | Dual MIT OR Apache-2.0 | 2026-11-16 | Single Rust binary that serves vector tiles from PostGIS tables (live, generated per request), PMTiles, MBTiles and GeoJSON, plus fonts, sprites and styles - the offline... | situational-awareness |
+| [OSMnx](gboeing__osmnx.md) | high | MIT | 2026-11-15 | One Python call turns an OSM area into a NetworkX road/path graph with lengths, speeds and travel times - fastest way to prototype ground-vehicle route planning, task... | path-planning |
 | [PMTiles](protomaps__pmtiles.md) | high | Reference implementations BSD-3-Clause | 2026-09-16 | A single-file tile archive you can cut to your AOI and serve from a laptop or static storage, giving an offline basemap (vector, raster or terrain-RGB) for a... | - |
 | [Rasterio](rasterio__rasterio.md) | high | BSD-3-Clause | 2026-11-03 | Pip-installable GeoTIFF/DEM reader that turns a map tile into a numpy array plus an affine transform, so a nav filter can look up terrain height or orthophoto pixels by... | terrain-nav |
 | [TileServer GL](maptiler__tileserver-gl.md) | high | BSD-2-Clause | 2026-11-01 | Serve MBTiles/PMTiles vector tiles with GL styles and render them server-side to PNG/JPEG/WebP raster tiles, WMTS and static map images - the bridge from a vector... | - |
@@ -260,7 +260,7 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
 | [GeographicLib](geographiclib__geographiclib.md) | high | MIT | 2026-08-24 | Charles Karney's small C++ library for nanometre-accurate geodesics plus the nav-relevant conversions (UTM/UPS/MGRS, geocentric, local tangent plane), EGM geoid heights... | - |
-| [PROJ](osgeo__proj.md) | high | MIT-style | 2026-11-05 | The coordinate reference system engine under GDAL, QGIS, pyproj and most GIS stacks: geodetic <=> projected <=> ECEF conversions, datum transformations (with shift... | gis-mapping |
+| [PROJ](osgeo__proj.md) | high | MIT-style | 2026-11-14 | The coordinate reference system engine under GDAL, QGIS, pyproj and most GIS stacks: geodetic <=> projected <=> ECEF conversions, datum transformations (with shift... | gis-mapping |
 | [pymap3d](geospace-code__pymap3d.md) | high | BSD-2-Clause | 2026-06-22 | Pure-Python geodetic / ECEF / ENU / NED / AER / ECI conversions with a Matlab-like API: the glue for turning GNSS lat/lon/alt into the local metric frame your filter... | sensor-fusion |
 | [pyproj](pyproj4__pyproj.md) | high | MIT | 2026-11-02 | The Python front-end to PROJ - correct datum, projection, UTM, ECEF and vertical (geoid) transformations plus ellipsoidal geodesics, with self-contained wheels | - |
 
@@ -269,55 +269,55 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
 | [ADSBCOT](snstac__adsbcot.md) | high | Apache-2.0 | 2026-10-23 | PyTAK-based gateway that polls an ADS-B decoder (readsb/dump1090 JSON, raw or Beast TCP) or an aggregator API and pushes every aircraft as a CoT track to... | gnss-interference, counter-uas |
-| [CesiumJS](cesiumgs__cesium.md) | high | Apache-2.0 | 2026-11-09 | A WebGL 3D globe in the browser (WGS84, terrain, 3D Tiles, time-dynamic tracks via CZML) for a situational-awareness display: true vs estimated trajectory, GNSS-denied... | gis-mapping |
-| [deck.gl](visgl__deck.gl.md) | high | MIT | 2026-11-08 | GPU layer stack for the common operating picture - thousands of live tracks (ADS-B, AIS, swarm telemetry), trails with time fade, hexbin density and 3D tiles, drawn over... | gis-mapping |
+| [CesiumJS](cesiumgs__cesium.md) | high | Apache-2.0 | 2026-11-16 | A WebGL 3D globe in the browser (WGS84, terrain, 3D Tiles, time-dynamic tracks via CZML) for a situational-awareness display: true vs estimated trajectory, GNSS-denied... | gis-mapping |
+| [deck.gl](visgl__deck.gl.md) | high | MIT | 2026-11-16 | GPU layer stack for the common operating picture - thousands of live tracks (ADS-B, AIS, swarm telemetry), trails with time fade, hexbin density and 3D tiles, drawn over... | gis-mapping |
 | [GoATAK](kdudkov__goatak.md) | high | AGPL-3.0 | 2026-06-30 | Go TAK server / CoT router plus a browser-based TAK client (Leaflet + milsymbol) | - |
-| [mil-sym-ts](missioncommand__mil-sym-ts.md) | high | Apache-2.0 | 2026-11-05 | The US Army Mission Command MIL-STD-2525 renderer in TypeScript - single-point unit/equipment icons as SVG and multi-point tactical graphics (boundaries, phase lines... | standards, gis-mapping |
-| [milsymbol](spatialillusions__milsymbol.md) | high | MIT | 2026-10-27 | Dependency-free JavaScript that renders MIL-STD-2525 / APP-6 unit symbols to SVG or Canvas from a SIDC string | standards |
-| [node-cot](dfpc-coe__node-cot.md) | high | MIT | 2026-11-08 | TypeScript library (npm `@tak-ps/node-cot`) that converts Cursor-on-Target between XML, TAK Protobuf, a typed JSON object and GeoJSON, plus TAK data packages - the... | standards |
+| [mil-sym-ts](missioncommand__mil-sym-ts.md) | high | Apache-2.0 | 2026-11-10 | The US Army Mission Command MIL-STD-2525 renderer in TypeScript - single-point unit/equipment icons as SVG and multi-point tactical graphics (boundaries, phase lines... | standards, gis-mapping |
+| [milsymbol](spatialillusions__milsymbol.md) | high | MIT | 2026-11-11 | Dependency-free JavaScript that renders MIL-STD-2525 / APP-6 unit symbols to SVG or Canvas from a SIDC string | standards |
+| [node-cot](dfpc-coe__node-cot.md) | high | MIT | 2026-11-09 | TypeScript library (npm `@tak-ps/node-cot`) that converts Cursor-on-Target between XML, TAK Protobuf, a typed JSON object and GeoJSON, plus TAK data packages - the... | standards |
 | [OpenSky Network API client](openskynetwork__opensky-api.md) | high | Client code GPL-3.0 | 2026-11-05 | Official Python client for OpenSky's REST API - current (and up to 1 h old) ADS-B/MLAT state vectors for a bounding box, plus flights and tracks - for an air picture or... | - |
-| [OpenTAKServer](brian7704__opentakserver.md) | high | GPL-3.0 | 2026-11-07 | Python/Flask TAK server with a web map UI that ATAK, iTAK, WinTAK and PyTAK clients connect to | - |
-| [pyModeS](junzis__pymodes.md) | high | GPL-3.0 | 2026-10-30 | Pure-Python Mode S / ADS-B decoder - one `decode()` call gives position, velocity, identity and quality fields (NIC, NACp, SIL) from hex frames, and `modes live` streams... | standards |
+| [OpenTAKServer](brian7704__opentakserver.md) | high | GPL-3.0 | 2026-11-13 | Python/Flask TAK server with a web map UI that ATAK, iTAK, WinTAK and PyTAK clients connect to | - |
+| [pyModeS](junzis__pymodes.md) | high | GPL-3.0 | 2026-11-11 | Pure-Python Mode S / ADS-B decoder - one `decode()` call gives position, velocity, identity and quality fields (NIC, NACp, SIL) from hex frames, and `modes live` streams... | standards |
 | [PyTAK](snstac__pytak.md) | high | Apache-2.0 | 2026-11-02 | Pure-Python asyncio library and CLI for sending and receiving Cursor on Target (CoT) over TCP, TLS, UDP multicast, WebSockets or the Marti REST API | standards |
-| [readsb](wiedehopf__readsb.md) | high | GPL-3.0-or-later per the repo LICENSE... | 2026-11-08 | Mode S / ADS-B decoder for RTL-SDR and other SDRs whose `aircraft.json` exposes per-aircraft integrity fields (NIC, NACp, SIL, Rc) and an experimental `gpsOkBefore`... | gnss-interference, counter-uas, gnss-sdr |
+| [readsb](wiedehopf__readsb.md) | high | GPL-3.0-or-later per the repo LICENSE... | 2026-11-11 | Mode S / ADS-B decoder for RTL-SDR and other SDRs whose `aircraft.json` exposes per-aircraft integrity fields (NIC, NACp, SIL, Rc) and an experimental `gpsOkBefore`... | gnss-interference, counter-uas, gnss-sdr |
 | [takproto](snstac__takproto.md) | medium | MIT | 2026-11-02 | Small Python library that turns CoT XML into TAK Protocol Version 1 protobuf (Mesh/UDP or Stream/TCP framing) and parses protobuf back into a `TakMessage` object | standards |
 
 ## Maritime navigation
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [AIS-catcher](jvde-github__ais-catcher.md) | high | GPL-3.0 | 2026-11-08 | Turn a cheap RTL-SDR (or Airspy, HackRF, SDRplay, serial dAISy) into a dual-channel AIS receiver with a built-in web map and NMEA/JSON out over UDP/TCP/HTTP - the local... | situational-awareness, gnss-sdr |
+| [AIS-catcher](jvde-github__ais-catcher.md) | high | GPL-3.0 | 2026-11-15 | Turn a cheap RTL-SDR (or Airspy, HackRF, SDRplay, serial dAISy) into a dual-channel AIS receiver with a built-in web map and NMEA/JSON out over UDP/TCP/HTTP - the local... | situational-awareness, gnss-sdr |
 | [colav-simulator](ntnu-itk-autonomous-ship-lab__colav-simulator.md) | high | MIT | 2026-01-23 | Python ship collision-avoidance simulator from NTNU - YAML COLREGs scenarios (head-on, crossing, overtaking, AIS-derived) over real Norwegian ENC data, radar/AIS sensors... | obstacle-avoidance, simulation |
-| [MOOS-IvP](moos-ivp__moos-ivp.md) | high | GPLv3 and LGPLv3 mix | 2026-10-29 | MIT's marine autonomy stack - MOOSDB pub/sub plus the IvP Helm behaviour engine with waypoint, loiter, obstacle and COLREGs avoidance behaviours, a marine vehicle sim... | path-planning, obstacle-avoidance, multi-agent |
-| [OpenCPN](opencpn__opencpn.md) | high | GPL-2.0-or-later for project files | 2026-11-05 | Open chartplotter for the surface-vessel operator view - S-57 vector and BSB raster charts, own-ship from any NMEA 0183 / NMEA 2000 / Signal K feed, AIS targets, routes... | situational-awareness, gis-mapping |
-| [pyais](m0r13n__pyais.md) | high | MIT | 2026-11-01 | Pure-Python AIS (AIVDM/AIVDO) decoder and encoder with socket/file streams, filters and an in-memory vessel tracker - the fastest path from NMEA lines to ship tracks in... | situational-awareness, target-tracking |
-| [Signal K Server](signalk__signalk-server.md) | high | Apache-2.0 | 2026-11-08 | Node.js hub that ingests NMEA 0183, NMEA 2000 (CAN), AIS and sensors, normalizes everything to one JSON data model in SI units, and serves it over REST and WebSocket -... | sensor-fusion, situational-awareness |
+| [MOOS-IvP](moos-ivp__moos-ivp.md) | high | GPLv3 and LGPLv3 mix | 2026-11-15 | MIT's marine autonomy stack - MOOSDB pub/sub plus the IvP Helm behaviour engine with waypoint, loiter, obstacle and COLREGs avoidance behaviours, a marine vehicle sim... | path-planning, obstacle-avoidance, multi-agent |
+| [OpenCPN](opencpn__opencpn.md) | high | GPL-2.0-or-later for project files | 2026-11-13 | Open chartplotter for the surface-vessel operator view - S-57 vector and BSB raster charts, own-ship from any NMEA 0183 / NMEA 2000 / Signal K feed, AIS targets, routes... | situational-awareness, gis-mapping |
+| [pyais](m0r13n__pyais.md) | high | MIT | 2026-11-15 | Pure-Python AIS (AIVDM/AIVDO) decoder and encoder with socket/file streams, filters and an in-memory vessel tracker - the fastest path from NMEA lines to ship tracks in... | situational-awareness, target-tracking |
+| [Signal K Server](signalk__signalk-server.md) | high | Apache-2.0 | 2026-11-16 | Node.js hub that ingests NMEA 0183, NMEA 2000 (CAN), AIS and sensors, normalizes everything to one JSON data model in SI units, and serves it over REST and WebSocket -... | sensor-fusion, situational-awareness |
 
 ## Ground vehicle autonomy
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
 | [elevation_mapping_cupy](leggedrobotics__elevation_mapping_cupy.md) | high | MIT | 2026-10-03 | GPU (CuPy) robot-centric elevation mapping from point clouds with drift compensation, visibility cleanup, a small learned traversability filter and plugin layers... | terrain-nav, edge-ai, path-planning, gis-mapping |
-| [Grid Map](anybotics__grid_map.md) | high | BSD-3-Clause | 2026-01-13 | Multi-layer 2.5D grid map library (Eigen storage, circular buffer, iterators, filters, RViz plugin, converters to OccupancyGrid / PointCloud2 / OpenCV / costmap_2d /... | gis-mapping, path-planning |
+| [Grid Map](anybotics__grid_map.md) | high | BSD-3-Clause | 2026-11-15 | Multi-layer 2.5D grid map library (Eigen storage, circular buffer, iterators, filters, RViz plugin, converters to OccupancyGrid / PointCloud2 / OpenCV / costmap_2d /... | gis-mapping, path-planning |
 
 ## Simulation and HIL/SITL
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [Gazebo Sim (gz-sim)](gazebosim__gz-sim.md) | high | Apache-2.0 | 2026-11-08 | The physics + sensor simulator behind PX4 and ArduPilot SITL and Nav2 demos, with IMU, NavSat (GNSS), magnetometer, altimeter, air pressure, cameras and LiDAR, so you... | autopilot, ros |
+| [Gazebo Sim (gz-sim)](gazebosim__gz-sim.md) | high | Apache-2.0 | 2026-11-14 | The physics + sensor simulator behind PX4 and ArduPilot SITL and Nav2 demos, with IMU, NavSat (GNSS), magnetometer, altimeter, air pressure, cameras and LiDAR, so you... | autopilot, ros |
 | [gnss-ins-sim](aceinna__gnss-ins-sim.md) | high | MIT | 2024-11-27 | Pure-Python generator of reference trajectories plus noisy IMU, GNSS, magnetometer and odometer data from a CSV motion profile, with per-segment GNSS visibility so you... | ins, gnss-ins |
-| [gym-pybullet-drones](learnsyslab__gym-pybullet-drones.md) | high | MIT | 2026-11-06 | A pip-installable PyBullet quadrotor simulator (Crazyflie models, PID controllers, Gymnasium and PettingZoo envs) for multi-drone control, swarm and planning logic in... | multi-agent |
-| [ros_gz](gazebosim__ros_gz.md) | high | Apache-2.0 | 2026-11-09 | The ROS 2 <=> Gazebo (gz-sim) glue: `parameter_bridge` maps Gazebo sensor topics (IMU, NavSat, magnetometer, altimeter, air pressure, cameras, LiDAR, odometry, clock)... | ros |
+| [gym-pybullet-drones](learnsyslab__gym-pybullet-drones.md) | high | MIT | 2026-11-13 | A pip-installable PyBullet quadrotor simulator (Crazyflie models, PID controllers, Gymnasium and PettingZoo envs) for multi-drone control, swarm and planning logic in... | multi-agent |
+| [ros_gz](gazebosim__ros_gz.md) | high | Apache-2.0 | 2026-11-11 | The ROS 2 <=> Gazebo (gz-sim) glue: `parameter_bridge` maps Gazebo sensor topics (IMU, NavSat, magnetometer, altimeter, air pressure, cameras, LiDAR, odometry, clock)... | ros |
 | [RotorPy](spencerfolk__rotorpy.md) | high | MIT | 2026-09-07 | Pure-Python multirotor simulator with aerodynamic drag, motor dynamics and wind (constant, sinusoid, Dryden), noisy IMU / motion-capture / range / pinhole-camera sensors... | ins |
-| [Stonefish](patrykcieslak__stonefish.md) | high | COPYING.txt: GPL-3.0 | 2026-11-05 | C++ marine robotics simulator (Bullet physics extended with geometry-based hydrodynamics, custom OpenGL 4.3 underwater rendering) with a nav-relevant sensor set: IMU... | underwater-nav, maritime-nav |
+| [Stonefish](patrykcieslak__stonefish.md) | high | COPYING.txt: GPL-3.0 | 2026-11-12 | C++ marine robotics simulator (Bullet physics extended with geometry-based hydrodynamics, custom OpenGL 4.3 underwater rendering) with a nav-relevant sensor set: IMU... | underwater-nav, maritime-nav |
 
 ## Datasets and benchmarks
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [evo](michaelgrupp__evo.md) | high | GPL-3.0 | 2026-10-30 | The fastest way to put an honest number (APE/RPE, aligned, plotted) on any trajectory your nav stack produces, against GNSS, mocap or dataset ground truth | visual-slam, lidar-slam |
-| [MCAP - recording and replay card](foxglove__mcap.md) | high | MIT | 2026-11-03 | Use `mcap.writer.Writer`, register a schema and channel, then add messages with integer nanosecond timestamps | sensor-fusion |
-| [Rerun - inspect sensors and navigation on a timeline](rerun-io__rerun.md) | high | Repository offers MIT and Apache-2.0 | 2026-11-06 | Start from the official docs | geodesy, situational-awareness |
+| [evo](michaelgrupp__evo.md) | high | GPL-3.0 | 2026-11-15 | The fastest way to put an honest number (APE/RPE, aligned, plotted) on any trajectory your nav stack produces, against GNSS, mocap or dataset ground truth | visual-slam, lidar-slam |
+| [MCAP - recording and replay card](foxglove__mcap.md) | high | MIT | 2026-11-10 | Use `mcap.writer.Writer`, register a schema and channel, then add messages with integer nanosecond timestamps | sensor-fusion |
+| [Rerun - inspect sensors and navigation on a timeline](rerun-io__rerun.md) | high | Repository offers MIT and Apache-2.0 | 2026-11-15 | Start from the official docs | geodesy, situational-awareness |
 | [Rosbags - ROS recordings without a ROS install](ternaris__rosbags.md) | high | Apache-2.0 in LICENSE.txt | 2026-10-20 | Start with the official AnyReader example | sensor-fusion |
 
 ## ROS / ROS 2 robotics middleware
@@ -325,7 +325,7 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
 | [ardupilot_ros](ardupilot__ardupilot_ros.md) | high | GPL-3.0 | 2026-07-27 | ArduPilot's ROS 2 example workspace package that flies an Iris copter in a Gazebo maze on 2D-lidar Cartographer SLAM instead of GPS, plus Nav2 goal navigation | lidar-slam, autopilot |
-| [PX4 ROS 2 Interface Library](auterion__px4-ros2-interface-lib.md) | high | BSD-3-Clause | 2026-11-04 | C++ (partial Python) library for writing PX4 flight modes and navigation inputs as ROS 2 nodes | autopilot, sensor-fusion |
+| [PX4 ROS 2 Interface Library](auterion__px4-ros2-interface-lib.md) | high | BSD-3-Clause | 2026-11-13 | C++ (partial Python) library for writing PX4 flight modes and navigation inputs as ROS 2 nodes | autopilot, sensor-fusion |
 | [px4_ros_com](px4__px4_ros_com.md) | high | BSD-3-Clause | 2025-11-21 | PX4's ROS 2 example package (listeners, offboard control in C++ and Python) plus `frame_transforms.h`, the NED/ENU and FRD/FLU conversion helpers you need when you... | autopilot |
 | [Micro XRCE-DDS Agent](eprosima__micro-xrce-dds-agent.md) | medium | Apache-2.0 | 2026-09-03 | The broker process that turns the autopilot's on-board XRCE-DDS client into normal ROS 2 topics | - |
 
@@ -338,15 +338,15 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | [jetson-inference (Hello AI World)](dusty-nv__jetson-inference.md) | high | MIT | 2025-10-16 | TensorRT detection / segmentation / mono-depth on a Jetson camera stream in an afternoon, from Python or C++, with ROS nodes next door | - |
 | [LightGlue-ONNX](fabio-sim__lightglue-onnx.md) | high | Apache-2.0 | 2026-07-30 | Exports extractor + LightGlue as one ONNX graph and runs it on ONNX Runtime (CPU, CUDA, TensorRT, OpenVINO) or pure TensorRT - the deployment path for LightGlue on... | feature-matching, visual-geolocalization |
 | [torch2trt](nvidia-ai-iot__torch2trt.md) | high | MIT | 2024-08-17 | One call (`torch2trt(model, [x])`) turns a PyTorch module into a TensorRT engine wrapped as a `TRTModule` | - |
-| [Ultralytics YOLO](ultralytics__ultralytics.md) | high | AGPL-3.0 | 2026-11-09 | The fastest way to get a trained detector, segmenter or tracker running on a camera feed (`yolo predict`, `model.track`, export to ONNX/TensorRT) | target-tracking, counter-uas |
-| [depthai-core](luxonis__depthai-core.md) | medium | MIT | 2026-11-06 | The C++17 library (with the Python bindings built from the same tree) behind every Luxonis OAK camera | vio |
+| [Ultralytics YOLO](ultralytics__ultralytics.md) | high | AGPL-3.0 | 2026-11-16 | The fastest way to get a trained detector, segmenter or tracker running on a camera feed (`yolo predict`, `model.track`, export to ONNX/TensorRT) | target-tracking, counter-uas |
+| [depthai-core](luxonis__depthai-core.md) | medium | MIT | 2026-11-15 | The C++17 library (with the Python bindings built from the same tree) behind every Luxonis OAK camera | vio |
 
 ## Tracking and data association
 
 | Card | Fit | License | Last push | Purpose | Also |
 |---|---|---|---|---|---|
-| [BoxMOT](mikel-brostrom__boxmot.md) | high | AGPL-3.0 | 2026-11-04 | Drop-in multi-object trackers (ByteTrack, BoT-SORT, OC-SORT, StrongSORT, DeepOCSORT, OccluBoost and others) that take any detector's `[x1,y1,x2,y2,conf,cls]` array and... | edge-ai |
-| [Stone Soup](dstl__stone-soup.md) | high | MIT | 2026-11-06 | Dstl's modular Python framework for tracking and state estimation (Kalman/EKF/UKF/particle filters, data association, track management, metrics) | sensor-fusion, situational-awareness, counter-uas |
+| [BoxMOT](mikel-brostrom__boxmot.md) | high | AGPL-3.0 | 2026-11-12 | Drop-in multi-object trackers (ByteTrack, BoT-SORT, OC-SORT, StrongSORT, DeepOCSORT, OccluBoost and others) that take any detector's `[x1,y1,x2,y2,conf,cls]` array and... | edge-ai |
+| [Stone Soup](dstl__stone-soup.md) | high | MIT | 2026-11-13 | Dstl's modular Python framework for tracking and state estimation (Kalman/EKF/UKF/particle filters, data association, track management, metrics) | sensor-fusion, situational-awareness, counter-uas |
 
 ## Counter-UAS and drone detection
 
@@ -354,7 +354,7 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 |---|---|---|---|---|---|
 | [Anti-UAV](zhaoj9014__anti-uav.md) | high | MIT | 2025-05-07 | Benchmark repo for defensive drone detection and tracking in RGB and thermal IR video | target-tracking, datasets-benchmarks |
 | [DragonSync](alphafox02__dragonsync.md) | high | Apache-2.0 | 2026-11-06 | Python gateway that subscribes to ZMQ streams of decoded drone Remote ID / DJI DroneID frames (plus kit GPS status, optional readsb aircraft, FPV alerts, Kismet devices)... | situational-awareness |
-| [Drone Mesh Mapper](colonelpanichacks__drone-mesh-mapper.md) | high | MIT | 2026-11-04 | Cheapest end-to-end passive Remote ID picture - ESP32 sniffers decode BLE + Wi-Fi broadcasts, relay over a Meshtastic LoRa mesh or USB, and a single-file Flask app plots... | situational-awareness, multi-agent |
+| [Drone Mesh Mapper](colonelpanichacks__drone-mesh-mapper.md) | high | MIT | 2026-11-14 | Cheapest end-to-end passive Remote ID picture - ESP32 sniffers decode BLE + Wi-Fi broadcasts, relay over a Meshtastic LoRa mesh or USB, and a single-file Flask app plots... | situational-awareness, multi-agent |
 | [OpenDroneID receiver-android](opendroneid__receiver-android.md) | high | Apache-2.0 | 2026-07-26 | Android app (Java) that receives ASTM F3411 / ASD-STAN Remote ID over Bluetooth legacy and long range, WiFi NAN and WiFi Beacon, shows drone and operator positions on a... | situational-awareness, standards |
 | [RID (PeterJBurke)](peterjburke__rid.md) | high | MIT | 2024-03-31 | Minimal PlatformIO firmware that turns a TTGO ESP32 board into a passive Remote ID receiver - BLE scan for ASTM F3411 broadcasts, decode with opendroneid-core-c, print... | situational-awareness |
 
@@ -373,6 +373,6 @@ Per-capability picks (default and alternative): [reference-stacks.md](../referen
 | [GNM / ViNT / NoMaD (visualnav-transformer)](robodhruv__visualnav-transformer.md) | high | Code LICENSE: MIT | 2024-09-15 | Pretrained visual navigation policies that drive a ground robot from a single RGB camera along a recorded image "topological map" (no metric map, no GNSS), plus NoMaD... | obstacle-avoidance, edge-ai |
 | [MAVLinkMCP](ion-g-ion__mavlinkmcp.md) | high | MIT | 2026-08-31 | Python MCP server (built on MAVSDK) that lets an LLM agent read telemetry and fly a PX4-class vehicle, with a reviewable survey-plan pipeline (map view => plan =>... | mavlink-gcs, mission-planning |
 | [QGIS MCP (jjsantos01)](jjsantos01__qgis_mcp.md) | high | None | 2025-10-01 | Let an LLM client (Claude Desktop or any MCP client) drive a running QGIS Desktop - load an AOI, DEM or flight log, run Processing algorithms, render a map PNG - through... | gis-mapping |
-| [ROS MCP Server](robotmcp__ros-mcp-server.md) | high | Apache-2.0 | 2026-11-08 | MCP server that gives an LLM client (Claude Code, Codex CLI, Gemini CLI, Cursor...) discovery and pub/sub/service/action/param access to any ROS 1 or ROS 2 robot through... | ros |
+| [ROS MCP Server](robotmcp__ros-mcp-server.md) | high | Apache-2.0 | 2026-11-15 | MCP server that gives an LLM client (Claude Code, Codex CLI, Gemini CLI, Cursor...) discovery and pub/sub/service/action/param access to any ROS 1 or ROS 2 robot through... | ros |
 | [ROSA](nasa-jpl__rosa.md) | high | Apache-2.0 | 2026-11-03 | NASA JPL's LangChain agent for ROS 1 and ROS 2 with built-in introspection tools (nodes, topics, services, params, logs) and an extension point for your own tools | ros |
 | [TypeFly](typefly__typefly.md) | high | Apache-2.0 | 2026-07-08 | Natural-language-to-robot-plan loop (OpenAI planner + YOLO scene description + validated skill program) that runs on a webcam with no hardware, then on a DJI Tello... | mission-planning |
