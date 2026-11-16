@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 19 | Python | MIT | 2026-09-28 | False | active-research | medium |
+| 22 | Python | MIT | 2026-09-28 | False | active-research | medium |
 
 Scalable benchmark and platform for long-horizon UAV vision-language navigation built from satellite imagery (NeurIPS 2026 Datasets track).
 
@@ -28,4 +28,4 @@ Scalable benchmark and platform for long-horizon UAV vision-language navigation 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

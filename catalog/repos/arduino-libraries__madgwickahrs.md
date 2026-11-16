@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 585 | C++ | ? | 2026-09-27 | False | production | medium |
+| 586 | C++ | ? | 2026-09-27 | False | production | medium |
 
 Official Arduino library implementing the Madgwick AHRS filter.
 
@@ -29,4 +29,4 @@ Official Arduino library implementing the Madgwick AHRS filter.
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

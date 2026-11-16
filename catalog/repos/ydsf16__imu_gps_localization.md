@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 738 | C++ | NOASSERTION | 2026-10-04 | False | educational | high |
+| 740 | C++ | NOASSERTION | 2026-10-04 | False | educational | high |
 
 Error-state Kalman filter fusing IMU and GPS for localization, small and readable.
 
@@ -21,13 +21,13 @@ Error-state Kalman filter fusing IMU and GPS for localization, small and readabl
 ## Related
 
 - alternative_to: [eskf-gps-imu-fusion](../../catalog/repos/zm0612__eskf-gps-imu-fusion.md)
-- alternative_to: [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md)
+- alternative_to: [imu_x_fusion](../../catalog/repos/gavngao__imu_x_fusion.md)
 
 ## Referenced by
 
-- [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md) (alternative_to)
+- [imu_x_fusion](../../catalog/repos/gavngao__imu_x_fusion.md) (alternative_to)
 - [eskf-gps-imu-fusion](../../catalog/repos/zm0612__eskf-gps-imu-fusion.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

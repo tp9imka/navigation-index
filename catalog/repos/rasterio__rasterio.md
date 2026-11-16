@@ -54,4 +54,4 @@ Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

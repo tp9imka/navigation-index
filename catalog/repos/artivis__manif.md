@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,828 | C++ | MIT | 2026-08-05 | False | production | high |
+| 1,829 | C++ | MIT | 2026-08-05 | False | production | high |
 
 Header-only C++11 library for Lie theory (SO2, SE2, SO3, SE3, SE_2(3) and more) with Jacobians, built around Sola's micro Lie theory paper; Python bindings available.
 
@@ -43,4 +43,4 @@ Header-only C++11 library for Lie theory (SO2, SE2, SO3, SE3, SE_2(3) and more) 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

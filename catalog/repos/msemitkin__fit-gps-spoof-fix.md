@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1 | Python | MIT | 2026-10-28 | False | research-prototype | medium |
+| 2 | Python | MIT | 2026-10-28 | False | research-prototype | medium |
 
 Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities corrupted by GNSS spoofing or jamming: tracks that teleport to a fixed far-away location, impossible speed spikes, phantom distance. Bilingual English/Ukrainian README written from the Ukrainian civilian experience of EW.
 
@@ -32,4 +32,4 @@ Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities c
 
 _Indexed by lane(s): ua-ru-sources_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

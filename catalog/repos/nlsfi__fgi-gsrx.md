@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 200 | MATLAB | GPL-3.0 | 2026-10-09 | False | active-research | medium |
+| 201 | MATLAB | GPL-3.0 | 2026-10-09 | False | active-research | medium |
 
 Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Institute, with modular acquisition, tracking and navigation stages.
 
@@ -31,4 +31,4 @@ Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Inst
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

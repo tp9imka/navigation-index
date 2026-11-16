@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 697 | C++ | GPL-3.0 | 2025-10-11 | False | active-research | medium |
+| 698 | C++ | GPL-3.0 | 2025-10-11 | False | active-research | medium |
 
 INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise INS drives the visual front end and GNSS is fused in a factor graph.
 
@@ -32,4 +32,4 @@ INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

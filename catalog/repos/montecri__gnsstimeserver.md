@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 242 | C | MIT | 2026-11-01 | False | active-research | medium |
+| 244 | C | MIT | 2026-11-01 | False | active-research | medium |
 
 ESP8266/ESP32 stratum-1 time server fed by a GNSS module and a TCXO-backed RTC, serving NTP and RDATE over WiFi or W5500 Ethernet, with a PTPv2 master edition, web dashboard and battery backup.
 
@@ -25,4 +25,4 @@ ESP8266/ESP32 stratum-1 time server fed by a GNSS module and a TCXO-backed RTC, 
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

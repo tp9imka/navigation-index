@@ -29,4 +29,4 @@ ROS library fusing UWB ranging with IMU for accurate 3D localization of MAV swar
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

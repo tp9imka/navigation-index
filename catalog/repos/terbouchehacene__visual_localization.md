@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 168 | Python | MIT | 2024-05-10 | False | research-prototype | high |
+| 169 | Python | MIT | 2024-05-10 | False | research-prototype | high |
 
 A cleaner reimplementation of the WildNav idea: match UAV images to satellite tiles with SuperPoint/SuperGlue-style matchers and estimate geographic position.
 
@@ -30,4 +30,4 @@ A cleaner reimplementation of the WildNav idea: match UAV images to satellite ti
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

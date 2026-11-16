@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 18 | TypeScript | Apache-2.0 | 2026-11-06 | False | production | medium |
+| 18 | TypeScript | Apache-2.0 | 2026-11-14 | False | production | medium |
 
 Signal K server plugin that converts Signal K data back into NMEA 0183 sentences for legacy displays and autopilots.
 
@@ -29,4 +29,4 @@ Signal K server plugin that converts Signal K data back into NMEA 0183 sentences
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

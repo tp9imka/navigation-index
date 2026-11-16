@@ -25,4 +25,4 @@ Examples for Hailo-8/8L accelerators on Raspberry Pi 5 (AI Kit/HAT): detection, 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

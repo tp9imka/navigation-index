@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | research-prototype | low |
+| 2 | C++ | BSD-3-Clause | 2026-04-24 | False | research-prototype | low |
 
 ROS 2 node that turns depth images, range images or point clouds from one or more sensors into a small set of obstacle points for the composite CBF, by angular binning with a per-bin percentile filter.
 
@@ -23,3 +23,5 @@ ROS 2 node that turns depth images, range images or point clouds from one or mor
 - integrates_with: [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md)
 
 _Indexed by lane(s): cbf-baselines_
+
+_GitHub metadata fetched 2026-11-16._

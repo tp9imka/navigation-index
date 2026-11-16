@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 351 | Python | NOASSERTION | 2026-11-04 | False | production | high |
+| 352 | Python | NOASSERTION | 2026-11-13 | False | production | high |
 
 Python API to connect, log, set parameters and send setpoints/high-level commands to Crazyflies over Crazyradio or USB.
 
@@ -32,4 +32,4 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

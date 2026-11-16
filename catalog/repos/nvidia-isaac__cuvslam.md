@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,900 | C++ | NOASSERTION | 2026-11-07 | False | production | high |
+| 1,907 | C++ | NOASSERTION | 2026-11-15 | False | production | high |
 
 NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to multi-camera rigs with optional IMU, with Python bindings.
 
@@ -47,4 +47,4 @@ NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to mu
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

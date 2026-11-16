@@ -48,4 +48,4 @@ ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node c
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

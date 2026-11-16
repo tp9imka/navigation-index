@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 114 | C++ | MIT | 2025-07-13 | False | production | low |
+| 115 | C++ | MIT | 2025-07-13 | False | production | low |
 
 Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspeed and other peripherals on CAN.
 
@@ -24,4 +24,4 @@ Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspe
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

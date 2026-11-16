@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 125 | Python | BSD-3-Clause | 2025-08-14 | False | research-prototype | medium |
+| 126 | Python | BSD-3-Clause | 2025-08-14 | False | research-prototype | medium |
 
 NASA software for building a star tracker from commercial off-the-shelf cameras, including calibration and attitude solution.
 
@@ -29,4 +29,4 @@ NASA software for building a star tracker from commercial off-the-shelf cameras,
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

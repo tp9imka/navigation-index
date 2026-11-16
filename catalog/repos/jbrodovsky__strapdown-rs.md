@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 8 | Rust | MIT | 2026-10-20 | False | active-research | medium |
+| 8 | Rust | MIT | 2026-11-12 | False | active-research | medium |
 
 Rust library and CLI for strapdown INS research under GNSS denial: local-level mechanization, four loosely coupled filters (ESKF, EKF, UKF, Rao-Blackwellized particle filter) and a simulator that removes or corrupts GNSS in recorded or synthetic data from a scenario file.
 
@@ -24,4 +24,4 @@ Rust library and CLI for strapdown INS research under GNSS denial: local-level m
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -24,4 +24,4 @@ Pose-graph sensor fusion and self-calibration library on g2o with a catalogue of
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

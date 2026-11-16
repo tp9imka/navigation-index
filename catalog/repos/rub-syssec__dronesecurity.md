@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,333 | Python | AGPL-3.0 | 2023-03-10 | False | research-prototype | medium |
+| 1,334 | Python | AGPL-3.0 | 2023-03-10 | False | research-prototype | medium |
 
 Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or offline on captures, released with their NDSS 2023 security analysis.
 
@@ -38,4 +38,4 @@ Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or o
 
 _Indexed by lane(s): defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

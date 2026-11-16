@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 53 | Python | ? | 2026-07-07 | False | active-research | medium |
+| 54 | Python | ? | 2026-07-07 | False | active-research | medium |
 
 Baseline for last-meter UAV navigation using diffusion-refined aerial visual servoing; serves as the baseline for the ACM MM 2026 UAV workshop challenge.
 
@@ -29,4 +29,4 @@ Baseline for last-meter UAV navigation using diffusion-refined aerial visual ser
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

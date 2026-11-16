@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 226 | Jupyter Notebook | ? | 2022-05-21 | False | research-prototype | low |
+| 227 | Jupyter Notebook | ? | 2022-05-21 | False | research-prototype | low |
 
 Training notebook and flight data for Neural-Fly, which learns a wind-invariant representation of quadrotor aerodynamic residual force and adapts it online. Data includes position, velocity, attitude, thrust setpoint, PWM and the computed residual force at several fan-array wind speeds.
 
@@ -28,4 +28,4 @@ Training notebook and flight data for Neural-Fly, which learns a wind-invariant 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

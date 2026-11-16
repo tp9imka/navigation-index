@@ -38,4 +38,4 @@ Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, 
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

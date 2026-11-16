@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 571 | C++ | BSD-3-Clause | 2019-08-17 | False | archived | medium |
+| 572 | C++ | BSD-3-Clause | 2019-08-17 | False | archived | medium |
 
 C++ library implementing the invariant EKF for aided inertial navigation, including contact-aided legged-robot state estimation.
 
@@ -33,4 +33,4 @@ C++ library implementing the invariant EKF for aided inertial navigation, includ
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

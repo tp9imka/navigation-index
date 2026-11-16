@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 780 | Python | BSD-3-Clause | 2026-06-28 | False | active-research | medium |
+| 781 | Python | BSD-3-Clause | 2026-06-28 | False | active-research | medium |
 
 GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, with depth/range sensors and RL navigation examples.
 
@@ -31,4 +31,4 @@ GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, wit
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

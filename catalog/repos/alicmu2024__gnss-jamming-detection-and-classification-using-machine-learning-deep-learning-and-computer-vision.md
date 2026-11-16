@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 69 | Jupyter Notebook | ? | 2025-11-17 | False | research-prototype | high |
+| 70 | Jupyter Notebook | ? | 2025-11-17 | False | research-prototype | high |
 
 Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogram images) from a public raw-IQ jamming set, plus one GPS spoofing ML notebook; companion to arXiv 2501.02352.
 
@@ -25,4 +25,4 @@ Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogr
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

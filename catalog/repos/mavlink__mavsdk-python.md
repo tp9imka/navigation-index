@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 459 | Python | BSD-3-Clause | 2026-10-15 | False | production | high |
+| 460 | Python | BSD-3-Clause | 2026-10-15 | False | production | high |
 
 Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
@@ -46,4 +46,4 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

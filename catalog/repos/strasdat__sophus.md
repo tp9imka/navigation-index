@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,465 | C++ | NOASSERTION | 2024-07-06 | False | production | medium |
+| 2,469 | C++ | NOASSERTION | 2024-07-06 | False | production | medium |
 
 C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SLAM and VIO systems.
 
@@ -28,4 +28,4 @@ C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SL
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

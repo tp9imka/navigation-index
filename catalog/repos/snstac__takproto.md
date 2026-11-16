@@ -36,4 +36,4 @@ Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and str
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

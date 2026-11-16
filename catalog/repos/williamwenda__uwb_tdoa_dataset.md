@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 44 | Python | ? | 2021-04-23 | False | archived | high |
+| 43 | Python | ? | 2021-04-23 | False | archived | high |
 
 Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraze's Loco Positioning System, collected by University of Toronto.
 
@@ -40,4 +40,4 @@ Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraz
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

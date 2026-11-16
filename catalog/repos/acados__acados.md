@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,519 | C | NOASSERTION | 2026-10-29 | False | production | high |
+| 1,527 | C | NOASSERTION | 2026-11-13 | False | production | high |
 
 Fast embedded solvers for nonlinear optimal control and nonlinear MPC. Models are written in CasADi from Python or MATLAB, and acados generates C code with real-time iteration SQP and HPIPM QP solvers.
 
@@ -40,4 +40,4 @@ Fast embedded solvers for nonlinear optimal control and nonlinear MPC. Models ar
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

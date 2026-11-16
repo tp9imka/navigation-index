@@ -29,4 +29,4 @@ Loader and inspection scripts for a Kaggle drone RF benchmark: 16,384-sample IQ 
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

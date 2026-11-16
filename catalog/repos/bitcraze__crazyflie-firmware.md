@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,567 | C | GPL-3.0 | 2026-11-06 | False | production | high |
+| 1,572 | C | GPL-3.0 | 2026-11-13 | False | production | high |
 
 Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, with EKF and complementary estimators supporting UWB Loco positioning, Lighthouse, Flow deck and mocap.
 
@@ -64,4 +64,4 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

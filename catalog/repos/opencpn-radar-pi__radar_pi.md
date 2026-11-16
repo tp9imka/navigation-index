@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 108 | C | GPL-2.0 | 2026-08-04 | False | production | medium |
+| 109 | C | GPL-2.0 | 2026-08-04 | False | production | medium |
 
 OpenCPN plugin that connects to Navico and some Garmin and Raymarine marine radars and overlays radar imagery and ARPA-style targets on the chart.
 
@@ -30,4 +30,4 @@ OpenCPN plugin that connects to Navico and some Garmin and Raymarine marine rada
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

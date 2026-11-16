@@ -43,4 +43,4 @@ Hackathon code from team SKB 'ФИЗ-ТЕХ' for the June 2026 blind-flight case
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

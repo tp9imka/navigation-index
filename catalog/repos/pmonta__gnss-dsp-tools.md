@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 142 | Python | MIT | 2025-08-17 | False | active-research | high |
+| 143 | Python | MIT | 2026-11-14 | False | active-research | high |
 
 Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONASS, BeiDou and Xona Pulsar LEO signals, operating on IQ recordings.
 
@@ -29,4 +29,4 @@ Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONA
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

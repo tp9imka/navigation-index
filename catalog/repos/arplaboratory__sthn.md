@@ -43,4 +43,4 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 709 | Java | NOASSERTION | 2026-04-03 | False | production | medium |
+| 712 | Java | NOASSERTION | 2026-04-03 | False | production | medium |
 
 Open-source release of the TAK Server from the TAK Product Center: the federation and message routing server for ATAK/WinTAK/iTAK clients, handling CoT, data packages, missions and video.
 
@@ -33,4 +33,4 @@ Open-source release of the TAK Server from the TAK Product Center: the federatio
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

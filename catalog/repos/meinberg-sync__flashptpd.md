@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 51 | C++ | MIT | 2024-07-02 | True | archived | low |
+| 50 | C++ | MIT | 2024-07-02 | True | archived | low |
 
 Experimental C++17 client/server style PTP from Meinberg: the client sends Sync with a request TLV and the server answers, so no BMCA or master announce is needed. Archived.
 
@@ -24,4 +24,4 @@ Experimental C++17 client/server style PTP from Meinberg: the client sends Sync 
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

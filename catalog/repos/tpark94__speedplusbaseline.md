@@ -28,4 +28,4 @@ PyTorch baselines and domain-bridging methods for spacecraft pose estimation on 
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

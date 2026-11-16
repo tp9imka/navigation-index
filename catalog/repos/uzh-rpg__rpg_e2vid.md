@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 436 | Python | GPL-3.0 | 2021-12-05 | False | archived | low |
+| 435 | Python | GPL-3.0 | 2021-12-05 | False | archived | low |
 
 Reconstructs intensity video from event streams with a recurrent network, enabling frame-based methods on event data.
 
@@ -24,4 +24,4 @@ Reconstructs intensity video from event streams with a recurrent network, enabli
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

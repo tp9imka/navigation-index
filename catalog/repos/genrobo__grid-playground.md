@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 348 | Jupyter Notebook | NOASSERTION | 2026-01-06 | False | research-prototype | medium |
+| 347 | Jupyter Notebook | NOASSERTION | 2026-01-06 | False | research-prototype | medium |
 
 Notes and examples for the GRID platform from General Robotics (formerly Scaled Foundations), which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.
 
@@ -28,4 +28,4 @@ Notes and examples for the GRID platform from General Robotics (formerly Scaled 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

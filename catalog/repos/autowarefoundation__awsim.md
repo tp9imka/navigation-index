@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 761 | C# | NOASSERTION | 2026-10-20 | False | production | medium |
+| 764 | C# | NOASSERTION | 2026-10-20 | False | production | medium |
 
 Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GNSS and IMU.
 
@@ -28,4 +28,4 @@ Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GN
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

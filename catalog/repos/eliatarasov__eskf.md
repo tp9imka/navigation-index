@@ -30,4 +30,4 @@ ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magn
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

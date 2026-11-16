@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 57 | Python | ? | 2022-08-15 | False | educational | high |
+| 58 | Python | ? | 2022-08-15 | False | educational | high |
 
 Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.
 
@@ -31,4 +31,4 @@ Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 889 | Python | MIT | 2025-05-07 | False | active-research | high |
+| 892 | Python | MIT | 2025-05-07 | False | active-research | high |
 
 Official repository of the Anti-UAV challenge and benchmark for detecting and tracking UAVs in RGB and thermal infrared video, with dataset links (Anti-UAV300/410/600) and baselines.
 
@@ -43,4 +43,4 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

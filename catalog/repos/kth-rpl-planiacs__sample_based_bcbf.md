@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | research-prototype | medium |
+| 9 | Python | MIT | 2025-07-21 | False | research-prototype | medium |
 
 Python code for the CDC 2025 sample-based belief CBF paper: simulation environments for tracking and collision avoidance and the belief-CBF policies.
 
@@ -23,3 +23,5 @@ Python code for the CDC 2025 sample-based belief CBF paper: simulation environme
 - [Risk-Aware Robot Control in Dynamic Environments Using Belief Control Barrier Functions](../../catalog/resources/han-vahs-sample-based-bcbf-cdc2025.md) (has_code)
 
 _Indexed by lane(s): cbf-baselines_
+
+_GitHub metadata fetched 2026-11-16._

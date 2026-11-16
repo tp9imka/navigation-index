@@ -29,4 +29,4 @@ Collision avoidance simulator for COLREG-compliant autonomous ship navigation in
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

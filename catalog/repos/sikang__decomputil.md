@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | archived | medium |
+| 289 | C++ | BSD-3-Clause | 2018-09-10 | False | archived | medium |
 
 Header-only C++ library that grows convex polytopes (safe flight corridors) around a piecewise-linear path using ellipsoid inflation against a point cloud.
 
@@ -33,3 +33,5 @@ Header-only C++ library that grows convex polytopes (safe flight corridors) arou
 - [Planning Dynamically Feasible Trajectories for Quadrotors Using Safe Flight Corridors in 3-D Complex Environments](../../catalog/resources/liu-sfc-quadrotor-ral-2017.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

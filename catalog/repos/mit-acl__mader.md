@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 626 | C++ | BSD-3-Clause | 2022-12-07 | False | archived | low |
+| 627 | C++ | BSD-3-Clause | 2022-12-07 | False | archived | low |
 
 MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in dynamic environments with obstacle and agent avoidance.
 
@@ -30,4 +30,4 @@ MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in d
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

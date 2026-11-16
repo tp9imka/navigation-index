@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 529 | C++ | MIT | 2026-04-21 | False | research-prototype | low |
+| 529 | C++ | MIT | 2026-11-14 | False | research-prototype | low |
 
 Templated C++ unscented Kalman filter library for state and parameter estimation, including square-root variants, aimed at embedded use.
 
@@ -24,4 +24,4 @@ Templated C++ unscented Kalman filter library for state and parameter estimation
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

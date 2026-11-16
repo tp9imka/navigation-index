@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,009 | Python | MIT | 2025-01-08 | False | research-prototype | high |
+| 1,010 | Python | MIT | 2025-01-08 | False | research-prototype | high |
 
 Car dead reckoning from IMU only, using an invariant EKF whose noise covariances are adapted by a neural network, evaluated on KITTI.
 
@@ -39,4 +39,4 @@ Car dead reckoning from IMU only, using an invariant EKF whose noise covariances
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

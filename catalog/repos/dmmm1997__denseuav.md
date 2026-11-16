@@ -35,4 +35,4 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 _Indexed by lane(s): alt-nav, sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

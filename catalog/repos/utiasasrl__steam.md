@@ -29,4 +29,4 @@ Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinea
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

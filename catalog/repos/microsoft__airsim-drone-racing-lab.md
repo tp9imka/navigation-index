@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | archived | low |
+| 240 | Python | MIT | 2023-08-14 | True | archived | low |
 
 Archived AirSim-based framework used for the NeurIPS 2019 Game of Drones competition: gate tracks, perception, planning and head-to-head racing tiers.
 
@@ -27,3 +27,5 @@ Archived AirSim-based framework used for the NeurIPS 2019 Game of Drones competi
 - [AirSim Drone Racing Lab](../../catalog/resources/madaan-2020-airsim-drone-racing-lab.md) (has_code)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

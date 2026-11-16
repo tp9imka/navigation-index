@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,759 | Jupyter Notebook | Apache-2.0 | 2025-01-15 | False | research-prototype | high |
+| 1,762 | Jupyter Notebook | Apache-2.0 | 2025-01-15 | False | research-prototype | high |
 
 Lightweight local feature extractor and matcher (CVPR 2024) designed for speed on constrained hardware.
 
@@ -40,4 +40,4 @@ Lightweight local feature extractor and matcher (CVPR 2024) designed for speed o
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

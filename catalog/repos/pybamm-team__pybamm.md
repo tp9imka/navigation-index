@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,727 | Python | BSD-3-Clause | 2026-11-06 | False | production | medium |
+| 1,736 | Python | BSD-3-Clause | 2026-11-15 | False | production | medium |
 
 Python battery modelling library: equivalent-circuit to electrochemical (SPM, DFN) lithium-ion models with parameter sets and fast solvers.
 
@@ -29,4 +29,4 @@ Python battery modelling library: equivalent-circuit to electrochemical (SPM, DF
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

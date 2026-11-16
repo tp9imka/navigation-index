@@ -24,4 +24,4 @@ Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial questi
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

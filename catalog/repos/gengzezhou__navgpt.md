@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 356 | Python | MIT | 2023-11-07 | False | research-prototype | low |
+| 357 | Python | MIT | 2023-11-07 | False | research-prototype | low |
 
 Purely LLM-based vision-and-language navigation agent that reasons explicitly over textual observations to choose actions (AAAI 2024).
 
@@ -28,4 +28,4 @@ Purely LLM-based vision-and-language navigation agent that reasons explicitly ov
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 5,356 | C++ | GPL-2.0 | 2026-10-25 | False | production | high |
+| 5,376 | C++ | GPL-2.0 | 2026-10-25 | False | production | high |
 
 Computationally efficient LiDAR-inertial odometry using an iterated error-state Kalman filter and incremental k-d tree map, mapping raw points directly.
 
@@ -62,4 +62,4 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

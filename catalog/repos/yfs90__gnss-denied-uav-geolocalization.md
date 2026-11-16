@@ -29,4 +29,4 @@ Project page for a UAV geolocalization system that combines image matching, visu
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

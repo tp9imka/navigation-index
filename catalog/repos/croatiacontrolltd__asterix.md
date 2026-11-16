@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 214 | C++ | GPL-2.0 | 2025-12-03 | False | production | medium |
+| 215 | C++ | GPL-2.0 | 2025-12-03 | False | production | medium |
 
 C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, stdin or network, with XML category definitions and JSON/XML output.
 
@@ -29,4 +29,4 @@ C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, s
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

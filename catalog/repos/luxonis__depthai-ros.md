@@ -28,4 +28,4 @@ ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

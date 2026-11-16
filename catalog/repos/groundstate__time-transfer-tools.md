@@ -24,4 +24,4 @@ MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match o
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,566 | C | Apache-2.0 | 2026-11-08 | False | production | low |
+| 1,578 | C | Apache-2.0 | 2026-11-15 | False | production | low |
 
 NASA Goddard's reusable flight software framework: a publish/subscribe software bus, an OS abstraction layer and a library of flight apps. Used on many spacecraft and some UAS research programmes.
 
@@ -31,4 +31,4 @@ NASA Goddard's reusable flight software framework: a publish/subscribe software 
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

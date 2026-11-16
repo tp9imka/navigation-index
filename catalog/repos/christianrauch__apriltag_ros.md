@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | active-research | high |
+| 380 | C++ | MIT | 2026-11-01 | False | active-research | high |
 
 ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and camera info, and publishes tag detections and TF transforms.
 
@@ -32,3 +32,5 @@ ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and 
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

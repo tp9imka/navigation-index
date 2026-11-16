@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,781 | C++ | GPL-3.0 | 2024-05-23 | False | research-prototype | medium |
+| 4,791 | C++ | GPL-3.0 | 2024-05-23 | False | research-prototype | medium |
 
 Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optional loose fusion of global sensors such as GPS.
 
@@ -35,4 +35,4 @@ Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optiona
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

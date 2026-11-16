@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 266 | C++ | NOASSERTION | 2026-08-29 | False | research-prototype | medium |
+| 268 | C++ | NOASSERTION | 2026-08-29 | False | research-prototype | medium |
 
 Dataset with synchronized visual, inertial and raw GNSS measurements released with GVINS.
 
@@ -34,4 +34,4 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

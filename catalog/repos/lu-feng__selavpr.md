@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 269 | Python | MIT | 2026-02-04 | False | research-prototype | medium |
+| 270 | Python | MIT | 2026-02-04 | False | research-prototype | medium |
 
 ICLR 2024 method adapting pretrained foundation models for place recognition with lightweight adapters, producing both global and local features.
 
@@ -28,4 +28,4 @@ ICLR 2024 method adapting pretrained foundation models for place recognition wit
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -28,4 +28,4 @@ Invariant Kalman filter implementation on SE(2) and SE(3).
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

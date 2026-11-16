@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 5 | Python | NOASSERTION | 2026-10-15 | False | active-research | medium |
+| 6 | Python | NOASSERTION | 2026-10-15 | False | active-research | medium |
 
 Continuous geo-localization of oblique thermal UAV sequences against a 2D satellite map (VGGT reconstruction + MINIMA-RoMa matching), with the Thermal-Oblique dataset: 216 trajectories, 28,112 frames.
 
@@ -29,4 +29,4 @@ Continuous geo-localization of oblique thermal UAV sequences against a 2D satell
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

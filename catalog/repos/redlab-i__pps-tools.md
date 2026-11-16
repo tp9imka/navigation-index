@@ -29,4 +29,4 @@ User-space tools and headers for the Linux PPS API (ppstest, ppsctl, ppswatch).
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

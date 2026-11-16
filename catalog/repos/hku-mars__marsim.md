@@ -24,4 +24,4 @@ Lightweight point-realistic lidar simulator for UAVs from HKU MaRS, supporting r
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

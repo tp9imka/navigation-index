@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 308 | C++ | GPL-3.0 | 2022-08-11 | False | research-prototype | medium |
+| 309 | C++ | GPL-3.0 | 2022-08-11 | False | research-prototype | medium |
 
 EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurements.
 
@@ -35,4 +35,4 @@ EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurement
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

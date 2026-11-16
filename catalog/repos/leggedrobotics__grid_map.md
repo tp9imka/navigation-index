@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 27 | C++ | BSD-3-Clause | 2026-09-07 | False | production | high |
+| 28 | C++ | BSD-3-Clause | 2026-09-07 | False | production | high |
 
 Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
 
@@ -29,4 +29,4 @@ Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 int
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

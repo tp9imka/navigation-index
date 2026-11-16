@@ -37,6 +37,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
 - [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
+- [realsense-ros](../../catalog/repos/realsenseai__realsense-ros.md) - fit: high - ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, depth, colour and IMU topics.
 - [OpenVINS](../../catalog/repos/rpng__open_vins.md) - fit: high - MSCKF-based visual-inertial navigation platform with online calibration, a simulator, and extensive documentation for research use.
 - [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md) - fit: high - NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to multi-camera rigs with optional IMU, with Python bindings.
 - [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) - fit: high - ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inertial) odometry and SLAM on Jetson and x86 GPUs.
@@ -45,7 +46,6 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [COEX Clover](../../catalog/repos/copterexpress__clover.md) - fit: high - ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath).
 - [vision_to_mavros](../../catalog/repos/thien94__vision_to_mavros.md) - fit: high - ROS and Python scripts that convert external localisation (fiducials, T265 VIO, SLAM, depth) into MAVROS/MAVLink pose messages, tested on ArduPilot.
 - [GeoAnchor](../../catalog/repos/yusufgunel__geoanchor.md) - fit: high - Recent project fusing visual odometry with satellite-map matching in a particle filter for GNSS-denied UAV flight, with an explicit notion of when the map match should not be trusted; evaluated on UAV-VisLoc flights and 
-- [realsense-ros](../../catalog/repos/realsenseai__realsense-ros.md) - fit: high - ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, depth, colour and IMU topics.
 - [AirSim](../../catalog/repos/microsoft__airsim.md) - fit: medium - Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU, GPS, barometer and magnetometer models and a Python/C++ API.
 - [VINS-Mono](../../catalog/repos/hkust-aerial-robotics__vins-mono.md) - fit: medium - Optimization-based monocular visual-inertial estimator with sliding-window bundle adjustment, online initialization, loop closure and pose-graph reuse.
 - [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) - fit: medium - ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics and time offset), plus IMU intrinsics and rolling-shutter calibration.
@@ -85,8 +85,8 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [VID-Dataset](../../catalog/repos/zju-fast-lab__vid-dataset.md) - fit: medium - Visual-inertial-dynamical multirotor dataset: stereo/depth camera, hardware-timestamped IMU, commanded and measured rotor speed and motor current for all four motors, flight-controller GPS, RTK and mocap ground truth, re
 - [ESVIO](../../catalog/repos/arclab-hku__esvio.md) - fit: medium - Event-based stereo visual-inertial odometry combining stereo event and image streams with IMU (RA-L/IROS 2023).
 - [UZH-FPV dataset tools](../../catalog/repos/uzh-rpg__uzh_fpv_open.md) - fit: medium - Companion repo for the UZH-FPV drone racing dataset with scripts and info.
-- [MVIO - monocular visual-inertial odometry in C++](../../catalog/repos/rusaub__mvio.md) - fit: medium - C++ monocular VIO: ORB features tracked with Lucas-Kanade flow, parallax-based keyframes, essential-matrix initialisation then PnP, IMU preintegration, least-squares scale and gravity estimation, and a 15-state error-sta
 - [DISO](../../catalog/repos/senseroboticslab__diso.md) - fit: medium - Direct imaging sonar odometry: estimates vehicle motion directly from forward-looking imaging sonar frames without feature extraction.
+- [MVIO - monocular visual-inertial odometry in C++](../../catalog/repos/rusaub__mvio.md) - fit: medium - C++ monocular VIO: ORB features tracked with Lucas-Kanade flow, parallax-based keyframes, essential-matrix initialisation then PnP, IMU preintegration, least-squares scale and gravity estimation, and a 15-state error-sta
 - [ETIO](../../catalog/repos/hitsz-nrsl__etio.md) - fit: medium - Edge-based monocular thermal-inertial odometry that tracks thermal edges for visually degraded environments.
 - [rope-ladder-tracker](../../catalog/repos/vohminv__rope-ladder-tracker.md) - fit: medium - Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 - [R3LIVE](../../catalog/repos/hku-mars__r3live.md) - fit: low - Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package.
@@ -107,6 +107,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [VID-Fusion](../../catalog/repos/zju-fast-lab__vid-fusion.md) - fit: low - Visual-inertial-dynamics odometry: adds a thrust-model (from measured rotor speed) factor to a VINS-style sliding-window optimizer and estimates the external force on the multirotor together with its pose.
 - [EKLT](../../catalog/repos/uzh-rpg__rpg_eklt.md) - fit: low - Asynchronous photometric feature tracking that combines events and frames (IJCV 2019).
 - [DEIO](../../catalog/repos/arclab-hku__deio.md) - fit: low - Learning-based event-inertial odometry: a learned event-patch front-end coupled with IMU pre-integration in a factor graph, evaluated on ten public event benchmarks.
+- [rhem_planner](../../catalog/repos/ntnu-arl__rhem_planner.md) - fit: low - Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.
 - [HDVIO2.0](../../catalog/repos/uzh-rpg__hdvio2.0.md) - fit: low - Sliding-window VIO that adds a hybrid quadrotor dynamics model (point-mass model plus learned thrust and torque residual networks fed by commands and gyro history) and estimates wind and external disturbances.
 - [GNSS-Denied UAV Geolocalization (terrain-weighted)](../../catalog/repos/yfs90__gnss-denied-uav-geolocalization.md) - fit: low - Project page for a UAV geolocalization system that combines image matching, visual odometry and a terrain-weighted constraint optimization, intended to work day and night.
 - [Event feature tracking (EM-ICP)](../../catalog/repos/daniilidis-group__event_feature_tracking.md) - fit: low - MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.
@@ -114,7 +115,6 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Smart-UAV-Return-GNSS-Station](../../catalog/repos/citec-spbu__smart-uav-return-gnss-station.md) - fit: low - Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer.
 - [ViNet_AirSim_drone - learned VIO in AirSim](../../catalog/repos/sasha-lobov__vinet_airsim_drone.md) - fit: low - PyTorch CNN+RNN network that predicts relative pose between frames from a monocular camera and 6-axis IMU, trained on data collected in Microsoft AirSim with ground-truth poses and a composite loss to limit drift.
 - [MIT VNAV lab data](../../catalog/repos/mit-spark__vnav-lab-data.md) - fit: low - Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomous Vehicles course exercises.
-- [rhem_planner](../../catalog/repos/ntnu-arl__rhem_planner.md) - fit: low - Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) - fit: low - Minimal Python project: essential-matrix visual odometry fused with IMU in an EKF to estimate position without GPS.
 
 ## Documents, talks, courses, datasets (103)

@@ -24,4 +24,4 @@ Mirror of the original OpenPilot flight controller project (not comma.ai's openp
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

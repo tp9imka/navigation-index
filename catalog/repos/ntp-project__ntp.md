@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 197 | C | NOASSERTION | 2026-08-27 | False | production | low |
+| 198 | C | NOASSERTION | 2026-08-27 | False | production | low |
 
 The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntpdate and refclock drivers).
 
@@ -30,4 +30,4 @@ The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntp
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

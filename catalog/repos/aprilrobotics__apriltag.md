@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C | ? | ? | ? | production | high |
+| 2,621 | C | NOASSERTION | 2026-08-07 | False | production | high |
 
 C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose of each tag relative to a calibrated camera. Ships several tag families and Python bindings.
 
@@ -34,3 +34,5 @@ C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose 
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

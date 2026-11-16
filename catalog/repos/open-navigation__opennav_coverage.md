@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 320 | C++ | Apache-2.0 | 2026-11-06 | False | active-research | medium |
+| 321 | C++ | Apache-2.0 | 2026-11-06 | False | active-research | medium |
 
 Nav2-compatible complete-coverage task server and navigator built on Fields2Cover, with behavior-tree utilities for field/area coverage and row following.
 
@@ -30,4 +30,4 @@ Nav2-compatible complete-coverage task server and navigator built on Fields2Cove
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

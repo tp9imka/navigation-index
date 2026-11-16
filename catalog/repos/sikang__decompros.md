@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | archived | low |
+| 243 | C++ | BSD-3-Clause | 2018-09-10 | False | archived | low |
 
 ROS wrapper and visualisation for the DecompUtil convex decomposition.
 
@@ -23,3 +23,5 @@ ROS wrapper and visualisation for the DecompUtil convex decomposition.
 - depends_on: [DecompUtil](../../catalog/repos/sikang__decomputil.md)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

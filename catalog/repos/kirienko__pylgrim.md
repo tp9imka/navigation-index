@@ -24,4 +24,4 @@ Playground GNSS positioning code in Python/numpy that computes a static GPS posi
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

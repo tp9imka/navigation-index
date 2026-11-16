@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,191 | Python | NOASSERTION | 2024-08-07 | False | research-prototype | low |
+| 2,193 | Python | NOASSERTION | 2024-08-07 | False | research-prototype | low |
 
 Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and maps directly against a 3D Gaussian representation.
 
@@ -32,4 +32,4 @@ Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

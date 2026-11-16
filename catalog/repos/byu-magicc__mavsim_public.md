@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,045 | Python | GPL-3.0 | 2026-06-13 | False | educational | high |
+| 1,053 | Python | GPL-3.0 | 2026-06-13 | False | educational | high |
 
 Project files for Beard and McLain's 'Small Unmanned Aircraft: Theory and Practice': a Python fixed-wing simulator built chapter by chapter, with autopilot (PID, LQR, TECS), straight-line and orbit path following, Dubins path manager and RRT planners.
 
@@ -32,4 +32,4 @@ Project files for Beard and McLain's 'Small Unmanned Aircraft: Theory and Practi
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

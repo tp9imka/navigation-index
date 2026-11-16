@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 211 | C++ | MIT | 2020-10-13 | False | research-prototype | medium |
+| 212 | C++ | MIT | 2020-10-13 | False | research-prototype | medium |
 
 Implements the Fisher Information Field, a voxel map that stores how well a camera can localise at a given 6-DoF pose against known 3D landmarks. The field is differentiable and fast to query, with RRT* and trajectory-optimisation examples.
 
@@ -34,4 +34,4 @@ Implements the Fisher Information Field, a voxel map that stores how well a came
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

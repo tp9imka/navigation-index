@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,190 | C++ | GPL-3.0 | 2023-05-15 | False | research-prototype | low |
+| 1,191 | C++ | GPL-3.0 | 2023-05-15 | False | research-prototype | low |
 
 Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS 2020).
 
@@ -31,4 +31,4 @@ Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -37,4 +37,4 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

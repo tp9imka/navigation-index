@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 274 | C++ | MIT | 2026-02-11 | False | active-research | medium |
+| 275 | C++ | MIT | 2026-02-11 | False | active-research | medium |
 
 Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built on the STEAM library.
 
@@ -38,4 +38,4 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

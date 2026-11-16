@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 915 | Python | MIT | 2026-11-06 | False | production | medium |
+| 916 | Python | MIT | 2026-11-06 | False | production | medium |
 
 Python client for Sentinel Hub and Copernicus Data Space services to search, download and process Sentinel and other satellite imagery.
 
@@ -24,4 +24,4 @@ Python client for Sentinel Hub and Copernicus Data Space services to search, dow
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

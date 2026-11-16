@@ -24,4 +24,4 @@ Arduino library forked from MPU6050_tockn that reads and calibrates an MPU6050 a
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

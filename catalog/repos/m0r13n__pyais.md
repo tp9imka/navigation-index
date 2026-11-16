@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 263 | Python | MIT | 2026-11-01 | False | production | high |
+| 263 | Python | MIT | 2026-11-15 | False | production | high |
 
 Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), including multi-part messages and streaming from sockets or files.
 
@@ -46,4 +46,4 @@ Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), inclu
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

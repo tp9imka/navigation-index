@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 211 | Python | NOASSERTION | 2026-11-03 | False | production | high |
+| 212 | Python | NOASSERTION | 2026-11-03 | False | production | high |
 
 Python client for searching STAC APIs (Earth Search, Planetary Computer and others) by area, time and properties.
 
@@ -45,4 +45,4 @@ Python client for searching STAC APIs (Earth Search, Planetary Computer and othe
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -35,4 +35,4 @@ Fork of Clover with Tomsk Polytechnic team TPU_2's CopterHack 2023 entry (docs/r
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

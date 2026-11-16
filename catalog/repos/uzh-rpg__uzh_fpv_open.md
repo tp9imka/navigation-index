@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 61 | Python | GPL-3.0 | 2020-11-13 | False | archived | medium |
+| 62 | Python | GPL-3.0 | 2020-11-13 | False | archived | medium |
 
 Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 
@@ -37,4 +37,4 @@ Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

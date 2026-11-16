@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 464 | C | NOASSERTION | 2026-10-27 | False | active-research | medium |
+| 474 | C | NOASSERTION | 2026-10-27 | False | active-research | medium |
 
 Open-source acoustic drone detector that listens for propeller noise; explicitly detection and alerting only.
 
@@ -28,4 +28,4 @@ Open-source acoustic drone detector that listens for propeller noise; explicitly
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

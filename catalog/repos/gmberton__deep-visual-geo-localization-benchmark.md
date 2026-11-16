@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 259 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
+| 260 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
 
 Official code for the CVPR 2022 benchmark: a configurable training and evaluation framework for visual geo-localization where backbone, aggregation, negative mining and pre/post-processing can be swapped and measured.
 
@@ -30,4 +30,4 @@ Official code for the CVPR 2022 benchmark: a configurable training and evaluatio
 
 _Indexed by lane(s): backlog_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

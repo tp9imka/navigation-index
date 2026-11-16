@@ -32,4 +32,4 @@ GNU Radio receiver and live decoder for the DCF77 77.5 kHz time signal, covering
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

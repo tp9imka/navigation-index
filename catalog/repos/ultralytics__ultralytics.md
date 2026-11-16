@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 63,228 | Python | AGPL-3.0 | 2026-11-09 | False | production | high |
+| 63,467 | Python | AGPL-3.0 | 2026-11-16 | False | production | high |
 
 Widely used Python package for YOLO-family detection, segmentation and tracking with training, export to edge runtimes and built-in trackers.
 
@@ -42,4 +42,4 @@ Widely used Python package for YOLO-family detection, segmentation and tracking 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

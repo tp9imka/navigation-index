@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 3,680 |  | ? | 2026-10-23 | False | educational | medium |
+| 3,685 |  | ? | 2026-10-23 | False | educational | medium |
 
 Community-curated list of event-camera papers, datasets, drivers, simulators and code.
 
@@ -30,4 +30,4 @@ Community-curated list of event-camera papers, datasets, drivers, simulators and
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 12,042 | TypeScript | NOASSERTION | 2026-11-08 | False | production | high |
+| 12,100 | TypeScript | NOASSERTION | 2026-11-15 | False | production | high |
 
 Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles, 3D terrain and globe view.
 
@@ -49,4 +49,4 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

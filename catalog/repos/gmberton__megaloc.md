@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 321 | Python | MIT | 2026-08-06 | False | active-research | medium |
+| 325 | Python | MIT | 2026-08-06 | False | active-research | medium |
 
 General image-retrieval model for localization tasks, trained across many VPR datasets.
 
@@ -28,4 +28,4 @@ General image-retrieval model for localization tasks, trained across many VPR da
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

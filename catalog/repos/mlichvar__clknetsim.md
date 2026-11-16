@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 37 | C | GPL-2.0 | 2026-10-20 | False | production | medium |
+| 37 | C | GPL-2.0 | 2026-11-10 | False | production | medium |
 
 Clock and network simulator from the chrony author: runs real NTP/PTP daemons against simulated clocks and network delays to test synchronization behaviour. Mirror of gitlab.com/chrony/clknetsim.
 
@@ -33,4 +33,4 @@ Clock and network simulator from the chrony author: runs real NTP/PTP daemons ag
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 39 | Haskell | BSD-3-Clause | 2026-10-27 | False | production | medium |
+| 40 | Haskell | BSD-3-Clause | 2026-11-14 | False | production | medium |
 
 EUROCONTROL ASTERIX category specifications in a structured machine-readable format, with generated JSON and docs.
 
@@ -29,4 +29,4 @@ EUROCONTROL ASTERIX category specifications in a structured machine-readable for
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

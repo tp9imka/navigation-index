@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 552 | C++ | Apache-2.0 | 2026-11-09 | False | production | high |
+| 553 | C++ | Apache-2.0 | 2026-11-11 | False | production | high |
 
 Bridge packages that relay topics, services and clock between Gazebo Sim transport and ROS 1/ROS 2.
 
@@ -35,4 +35,4 @@ Bridge packages that relay topics, services and clock between Gazebo Sim transpo
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

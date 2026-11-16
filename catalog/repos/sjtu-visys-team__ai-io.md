@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 87 | Python | MIT | 2026-07-27 | False | active-research | high |
+| 88 | Python | MIT | 2026-07-27 | False | active-research | high |
 
 Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU data into a transformer velocity regressor, then fuses the predicted velocity in an uncertainty-aware EKF. Ships its own real flight dataset with IMU, rotor speed and ground truth, and also reads the DIDO dataset.
 
@@ -35,4 +35,4 @@ Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU d
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

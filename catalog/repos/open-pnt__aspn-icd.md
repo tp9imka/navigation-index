@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 10 | Python | CC-BY-4.0 | 2026-09-24 | False | production | medium |
+| 11 | Python | CC-BY-4.0 | 2026-09-24 | False | production | medium |
 
 Public interface control document for ASPN 2023, the All-Source Positioning and Navigation measurement message standard that grew out of the DARPA ASPN programme.
 
@@ -29,4 +29,4 @@ Public interface control document for ASPN 2023, the All-Source Positioning and 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

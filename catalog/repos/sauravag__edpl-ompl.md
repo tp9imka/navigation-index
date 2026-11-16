@@ -29,4 +29,4 @@ C++ belief-space motion planning on top of OMPL (FIRM-style roadmaps with feedba
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

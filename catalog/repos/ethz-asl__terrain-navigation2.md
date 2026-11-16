@@ -36,4 +36,4 @@ ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT*
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

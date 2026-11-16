@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,722 | C | GPL-2.0 | 2026-11-09 | False | production | low |
+| 1,725 | C | GPL-2.0 | 2026-11-15 | False | production | low |
 
 Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.
 
@@ -29,4 +29,4 @@ Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, roto
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

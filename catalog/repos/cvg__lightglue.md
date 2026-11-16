@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,868 | Python | Apache-2.0 | 2026-10-25 | False | production | high |
+| 4,879 | Python | Apache-2.0 | 2026-10-25 | False | production | high |
 
 Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.
 
@@ -65,4 +65,4 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

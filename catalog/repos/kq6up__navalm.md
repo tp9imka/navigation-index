@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 3 | C | MIT | 2026-11-09 | False | research-prototype | low |
+| 5 | C | MIT | 2026-11-10 | False | research-prototype | low |
 
 Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses and web interfaces.
 
@@ -24,4 +24,4 @@ Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

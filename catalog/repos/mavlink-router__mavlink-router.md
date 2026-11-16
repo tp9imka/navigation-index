@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 624 | C++ | Apache-2.0 | 2026-10-23 | False | production | high |
+| 625 | C++ | Apache-2.0 | 2026-10-23 | False | production | high |
 
 Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints with filtering and logging.
 
@@ -42,4 +42,4 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

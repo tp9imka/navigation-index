@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | research-prototype | low |
+| 1,262 | C++ | BSD-3-Clause | 2025-03-10 | False | research-prototype | low |
 
 Receding-horizon multirotor planner for unknown environments that optimises a fast trajectory through known-free and unknown space while always keeping a safe backup trajectory inside known-free space. Corridors come from JPS plus convex decomposition; the optimisation is a mixed-integer QP.
 
@@ -32,3 +32,5 @@ Receding-horizon multirotor planner for unknown environments that optimises a fa
 - [FASTER: Fast and Safe Trajectory Planner for Navigation in Unknown Environments](../../catalog/resources/tordesillas-faster-tro-2022.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | research-prototype | medium |
+| 1,684 | C++ | BSD-3-Clause | 2024-07-01 | False | research-prototype | medium |
 
 CPU voxel mapping library that fuses depth into a truncated signed distance field (TSDF) and grows a Euclidean signed distance field (ESDF) from it incrementally. Ships ROS 1 nodes, meshing and planning-oriented queries.
 
@@ -31,3 +31,5 @@ CPU voxel mapping library that fuses depth into a truncated signed distance fiel
 - [Voxblox: Incremental 3D Euclidean Signed Distance Fields for On-Board MAV Planning](../../catalog/resources/oleynikova-voxblox-iros-2017.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

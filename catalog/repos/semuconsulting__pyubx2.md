@@ -45,4 +45,4 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

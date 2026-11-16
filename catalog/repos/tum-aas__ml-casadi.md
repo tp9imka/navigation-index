@@ -32,4 +32,4 @@ Bridges PyTorch models into CasADi and acados so a neural network can be part of
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 116 | MATLAB | MIT | 2025-01-15 | False | active-research | medium |
+| 117 | MATLAB | MIT | 2025-01-15 | False | active-research | medium |
 
 Code reproducing Taro Suzuki's Google Smartphone Decimeter Challenge 2023 entry (1st on the public leaderboard, 2nd on the private one), using factor graph optimization of smartphone GNSS and IMU in MATLAB.
 
@@ -44,4 +44,4 @@ Code reproducing Taro Suzuki's Google Smartphone Decimeter Challenge 2023 entry 
 
 _Indexed by lane(s): gnss, sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,489 | C++ | GPL-2.0 | 2025-12-04 | False | research-prototype | low |
+| 2,491 | C++ | GPL-2.0 | 2025-12-04 | False | research-prototype | low |
 
 Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package.
 
@@ -28,4 +28,4 @@ Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

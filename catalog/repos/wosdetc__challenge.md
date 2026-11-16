@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 72 | Python | ? | 2022-12-16 | False | archived | high |
+| 73 | Python | ? | 2022-12-16 | False | archived | high |
 
 Repository of the long-running Drone-vs-Bird challenge: annotations and instructions for a video dataset of small drones with birds as distractors.
 
@@ -31,4 +31,4 @@ Repository of the long-running Drone-vs-Bird challenge: annotations and instruct
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

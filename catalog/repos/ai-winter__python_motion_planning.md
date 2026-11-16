@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | active-research | medium |
+| 1,109 | Python | GPL-3.0 | 2026-09-15 | False | active-research | medium |
 
 Python package of planning and tracking algorithms for mobile robots: Dijkstra, A*, JPS, D* Lite, Theta*, RRT family, Voronoi, plus local planners and trackers such as DWA, APF, LQR and MPC. Published on PyPI.
 
@@ -29,3 +29,5 @@ Python package of planning and tracking algorithms for mobile robots: Dijkstra, 
 - [Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map](../../catalog/samples/close-area-planner-thetastar.md) (explains)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

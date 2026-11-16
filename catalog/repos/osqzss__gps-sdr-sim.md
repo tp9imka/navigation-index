@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 3,474 | C | MIT | 2025-01-26 | True | archived | high |
+| 3,475 | C | MIT | 2025-01-26 | True | archived | high |
 
 Generates GPS L1 C/A baseband IQ sample files for a user-defined static or moving trajectory from a broadcast ephemeris file, for playback through an SDR.
 
@@ -50,4 +50,4 @@ Generates GPS L1 C/A baseband IQ sample files for a user-defined static or movin
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

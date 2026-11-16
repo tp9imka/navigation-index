@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,091 | C++ | NOASSERTION | 2026-11-09 | False | production | high |
+| 4,106 | C++ | NOASSERTION | 2026-11-16 | False | production | high |
 
 Graph-based SLAM library and app supporting RGB-D, stereo and LiDAR, with memory management for large-scale loop closure and map reuse.
 
@@ -39,4 +39,4 @@ Graph-based SLAM library and app supporting RGB-D, stereo and LiDAR, with memory
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

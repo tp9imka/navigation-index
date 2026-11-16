@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 197 | Jupyter Notebook | MIT | 2025-03-16 | False | research-prototype | medium |
+| 198 | Jupyter Notebook | MIT | 2025-03-16 | False | research-prototype | medium |
 
 CVPR 2024 place recognition with a bag of learnable global queries over backbone features.
 
@@ -32,4 +32,4 @@ CVPR 2024 place recognition with a bag of learnable global queries over backbone
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

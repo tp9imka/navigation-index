@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 808 | C++ | GPL-3.0 | 2026-11-08 | False | production | high |
+| 809 | C++ | GPL-3.0 | 2026-11-15 | False | production | high |
 
 AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, SoapySDR) with a built-in web map, JSON/NMEA output and feed sharing.
 
@@ -43,4 +43,4 @@ AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, Soapy
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

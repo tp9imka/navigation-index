@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 172 | Python | ? | 2025-08-08 | False | research-prototype | medium |
+| 171 | Python | ? | 2025-08-08 | False | research-prototype | medium |
 
 Cross-view geo-localization training with hard negative sampling, reporting strong results on drone-satellite and street-satellite benchmarks with a simple contrastive setup.
 
@@ -37,4 +37,4 @@ Cross-view geo-localization training with hard negative sampling, reporting stro
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

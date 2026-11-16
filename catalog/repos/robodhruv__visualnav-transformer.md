@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,342 | Python | MIT | 2024-09-15 | False | research-prototype | high |
+| 1,347 | Python | MIT | 2024-09-15 | False | research-prototype | high |
 
 Code and checkpoints for general visual navigation foundation models (GNM, ViNT, NoMaD) that drive robots from camera images toward image goals or explore, with ROS deployment code.
 
@@ -39,4 +39,4 @@ Code and checkpoints for general visual navigation foundation models (GNM, ViNT,
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

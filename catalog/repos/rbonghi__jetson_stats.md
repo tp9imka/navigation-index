@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,634 | Python | AGPL-3.0 | 2026-10-26 | False | production | high |
+| 2,638 | Python | AGPL-3.0 | 2026-11-15 | False | production | high |
 
 Monitoring tool for NVIDIA Jetson: CPU/GPU load, clocks, temperatures, power rails and power mode, with a Python API for logging.
 
@@ -28,4 +28,4 @@ Monitoring tool for NVIDIA Jetson: CPU/GPU load, clocks, temperatures, power rai
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

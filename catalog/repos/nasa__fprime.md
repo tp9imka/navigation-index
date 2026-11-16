@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 11,858 | C++ | Apache-2.0 | 2026-11-08 | False | production | low |
+| 11,882 | C++ | Apache-2.0 | 2026-11-15 | False | production | low |
 
 JPL's component-based flight software framework: typed ports, a modelling language (FPP) and generated C++ glue, flown on the Mars Helicopter. Runs on Linux, RTOSes and microcontrollers.
 
@@ -31,4 +31,4 @@ JPL's component-based flight software framework: typed ports, a modelling langua
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -29,4 +29,4 @@ C library that decodes the DCF77 time code bitstream (from a cheap AM receiver m
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

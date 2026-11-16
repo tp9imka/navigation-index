@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | research-prototype | medium |
+| 12 | Python | MIT | 2026-09-05 | False | research-prototype | medium |
 
 Community benchmark of KISS-ICP, DLIO, FAST-LIO2 and GLIM on Livox Mid-360 data (TIERS indoor dataset plus own VICON-tracked UAV flights), run in ROS 2 Humble and scored with evo.
 
@@ -31,3 +31,5 @@ Community benchmark of KISS-ICP, DLIO, FAST-LIO2 and GLIM on Livox Mid-360 data 
 - [SLAM benchmark on Livox Mid-360: public dataset + our own UAV flight data (KISS-ICP, DLIO, FAST-LIO2, GLIM)](../../catalog/resources/harsha-2026-mid360-slam-benchmark-post.md) (has_code)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 9 | JavaScript | MIT | 2026-02-04 | False | research-prototype | medium |
+| 10 | JavaScript | MIT | 2026-02-04 | False | research-prototype | medium |
 
 Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite positioning.
 
@@ -33,4 +33,4 @@ Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | production | high |
+| 3,483 | Python | Apache-2.0 | 2026-11-15 | False | production | high |
 
 ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, depth, colour and IMU topics. The ROS 1 wrapper and the T265 tracking camera support live on legacy branches.
 
@@ -28,3 +28,5 @@ ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, d
 - [End-of-Life (EOL) Announcement for some Intel RealSense products](../../catalog/resources/intel-realsense-tracking-eol.md) (explains)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

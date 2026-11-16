@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 815 | C++ | ? | 2024-11-19 | False | research-prototype | medium |
+| 820 | C++ | ? | 2024-11-19 | False | research-prototype | medium |
 
 Rapid collaborative exploration with multiple UAVs: decomposes unknown space and allocates exploration regions between drones with pairwise communication.
 
@@ -28,4 +28,4 @@ Rapid collaborative exploration with multiple UAVs: decomposes unknown space and
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

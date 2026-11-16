@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 88 | C | LGPL-3.0 | 2026-11-04 | False | production | medium |
+| 88 | C | LGPL-3.0 | 2026-11-12 | False | production | medium |
 
 Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting two-way ranging and TDoA modes.
 
@@ -34,4 +34,4 @@ Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

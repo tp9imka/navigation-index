@@ -31,4 +31,4 @@ DLR Python package extending the Dubins airplane method: 3D fixed-wing trajector
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

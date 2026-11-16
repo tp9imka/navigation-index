@@ -34,4 +34,4 @@ Small Python package computing Allan variance and fitting standard noise paramet
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

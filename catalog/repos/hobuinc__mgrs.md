@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 136 | C++ | MIT | 2026-11-03 | False | production | high |
+| 136 | C++ | MIT | 2026-11-11 | False | production | high |
 
 Python library converting between latitude/longitude and MGRS grid references, built on NGA GEOTRANS 3.10 (now a Rust port exposed through a pybind11 extension).
 
@@ -30,4 +30,4 @@ Python library converting between latitude/longitude and MGRS grid references, b
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

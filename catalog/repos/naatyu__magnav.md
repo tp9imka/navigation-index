@@ -30,4 +30,4 @@ Deep-learning approach to aircraft magnetic disturbance compensation built aroun
 
 _Indexed by lane(s): alt-nav, defense-context_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

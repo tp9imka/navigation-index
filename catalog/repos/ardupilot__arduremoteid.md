@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 256 | C++ | GPL-2.0 | 2025-07-04 | False | production | high |
+| 257 | C++ | GPL-2.0 | 2025-07-04 | False | production | high |
 
 ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bluetooth and Wi-Fi) fed from MAVLink or DroneCAN.
 
@@ -43,4 +43,4 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

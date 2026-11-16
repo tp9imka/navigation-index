@@ -29,4 +29,4 @@ u-blox's portable C libraries for building applications on their GNSS and cellul
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

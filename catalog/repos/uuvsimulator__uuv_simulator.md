@@ -29,4 +29,4 @@ Gazebo/ROS packages for underwater vehicle simulation with hydrodynamics, thrust
 
 _Indexed by lane(s): domains-swarm, sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

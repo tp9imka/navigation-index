@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 580 | C | NOASSERTION | 2022-09-05 | False | archived | low |
+| 579 | C | NOASSERTION | 2022-09-05 | False | archived | low |
 
 Older open-source PTPv2 daemon; the repository has been inactive since 2022.
 
@@ -30,4 +30,4 @@ Older open-source PTPv2 daemon; the repository has been inactive since 2022.
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

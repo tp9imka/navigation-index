@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 175 | Python | MIT | 2024-07-25 | False | research-prototype | medium |
+| 176 | Python | MIT | 2024-07-25 | False | research-prototype | medium |
 
 Modular PyTorch framework for training VPR models as data -> backbone -> aggregation -> loss, with one-command download of GSV-Cities / GSV-Cities-light, metric-learning losses, TensorBoard logging and retrieval visualizations.
 
@@ -29,4 +29,4 @@ Modular PyTorch framework for training VPR models as data -> backbone -> aggrega
 
 _Indexed by lane(s): backlog_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

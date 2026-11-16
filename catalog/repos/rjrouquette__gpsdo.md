@@ -28,4 +28,4 @@ A GPS-disciplined PTP grandmaster on a TI MSP432E4 MCU: u-blox receiver, softwar
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

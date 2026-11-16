@@ -30,4 +30,4 @@ Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

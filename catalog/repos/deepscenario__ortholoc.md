@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 79 | Python | NOASSERTION | 2026-03-10 | False | active-research | medium |
+| 80 | Python | NOASSERTION | 2026-03-10 | False | active-research | medium |
 
 Dataset tools and code for UAV 6-DoF localization and calibration against orthophotos and surface models (NeurIPS 2025 D&B).
 
@@ -24,4 +24,4 @@ Dataset tools and code for UAV 6-DoF localization and calibration against orthop
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

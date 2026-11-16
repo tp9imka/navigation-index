@@ -31,4 +31,4 @@ Visual-inertial-dynamical multirotor dataset: stereo/depth camera, hardware-time
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -29,4 +29,4 @@ Python port of the demo5 RTKLIB positioning core, currently focused on post-proc
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

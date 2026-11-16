@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 9,234 | C++ | GPL-3.0 | 2024-07-24 | False | research-prototype | high |
+| 9,249 | C++ | GPL-3.0 | 2024-07-24 | False | research-prototype | high |
 
 Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
 
@@ -49,4 +49,4 @@ Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

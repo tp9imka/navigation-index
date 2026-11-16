@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 103 | Python | MIT | 2026-05-16 | False | active-research | high |
+| 104 | Python | MIT | 2026-05-16 | False | active-research | high |
 
 IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB imagery, using domain adaptation to bridge thermal and visible imagery; comes with the Boson-nighttime dataset.
 
@@ -46,4 +46,4 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

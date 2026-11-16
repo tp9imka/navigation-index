@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,481 | Python | LGPL-3.0 | 2026-09-22 | False | active-research | high |
+| 1,482 | Python | LGPL-3.0 | 2026-09-22 | False | active-research | high |
 
 Python toolbox for model predictive control and moving horizon estimation on top of CasADi, with templates for model, controller, estimator and simulator.
 
@@ -31,4 +31,4 @@ Python toolbox for model predictive control and moving horizon estimation on top
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

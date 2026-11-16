@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 431 | Python | GPL-3.0 | 2023-02-03 | False | research-prototype | medium |
+| 432 | Python | GPL-3.0 | 2023-02-03 | False | research-prototype | medium |
 
 Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks (ResNet, LSTM, TCN) regressing pedestrian velocity from IMU.
 
@@ -42,4 +42,4 @@ Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

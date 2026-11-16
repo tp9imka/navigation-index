@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,984 | C++ | NOASSERTION | 2026-11-02 | False | production | high |
+| 1,990 | C++ | NOASSERTION | 2026-11-02 | False | production | high |
 
 ROS package with EKF and UKF state estimation nodes that fuse any number of odometry, IMU, pose and GNSS inputs, plus a navsat_transform node for GPS-to-map conversion.
 
@@ -48,4 +48,4 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

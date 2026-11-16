@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 824 | Python | Apache-2.0 | 2026-07-30 | False | production | high |
+| 828 | Python | Apache-2.0 | 2026-07-30 | False | production | high |
 
 ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED extractors (including RaCo-ALIKED-LightGlue+), with TensorRT, OpenVINO and FP8 quantization workflows.
 
@@ -41,4 +41,4 @@ ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

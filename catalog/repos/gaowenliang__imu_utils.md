@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,750 | C++ | MIT | 2026-03-19 | False | research-prototype | medium |
+| 1,752 | C++ | MIT | 2026-03-19 | False | research-prototype | medium |
 
 ROS package for analysing IMU performance with Allan variance to estimate noise and bias instability.
 
@@ -28,4 +28,4 @@ ROS package for analysing IMU performance with Allan variance to estimate noise 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

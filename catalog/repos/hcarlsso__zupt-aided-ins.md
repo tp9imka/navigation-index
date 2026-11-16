@@ -30,4 +30,4 @@ MATLAB implementation of the OpenShoe zero-velocity-aided foot-mounted INS with 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -29,4 +29,4 @@ Benchmark and code for UAV geo-localization trained on synthetic game imagery wi
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

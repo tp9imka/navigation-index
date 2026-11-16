@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,681 | TeX | ? | 2026-05-28 | False | educational | medium |
+| 4,684 | TeX | ? | 2026-05-28 | False | educational | medium |
 
 Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlone, Kim, Barfoot, Cremers and Dellaert, published incrementally in three parts from late 2024.
 
@@ -24,4 +24,4 @@ Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlo
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

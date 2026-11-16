@@ -25,4 +25,4 @@ Event-based stereo visual-inertial odometry combining stereo event and image str
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

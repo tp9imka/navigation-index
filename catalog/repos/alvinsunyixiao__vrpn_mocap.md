@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | active-research | medium |
+| 41 | C++ | MIT | 2026-09-24 | False | active-research | medium |
 
 ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and other VRPN devices) into pose topics.
 
@@ -29,3 +29,5 @@ ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and o
 - [Brief decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

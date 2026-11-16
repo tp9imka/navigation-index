@@ -24,4 +24,4 @@ PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 360 | C++ | NOASSERTION | 2025-04-23 | False | active-research | medium |
+| 361 | C++ | NOASSERTION | 2025-04-23 | False | active-research | medium |
 
 Modular IMU-driven sensor-fusion framework from University of Klagenfurt designed so sensors can be added, removed or fail at runtime without reworking the core filter.
 
@@ -32,4 +32,4 @@ Modular IMU-driven sensor-fusion framework from University of Klagenfurt designe
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 741 | Python | NOASSERTION | 2026-11-07 | False | production | high |
+| 744 | Python | NOASSERTION | 2026-11-13 | False | production | high |
 
 Python MAVLink implementation plus tools for connections, log parsing (DataFlash/tlog) and code generation.
 
@@ -58,4 +58,4 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

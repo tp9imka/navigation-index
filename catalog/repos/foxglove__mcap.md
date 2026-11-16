@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,137 | Rust | MIT | 2026-11-03 | False | production | high |
+| 1,146 | Rust | MIT | 2026-11-10 | False | production | high |
 
 Open container format and libraries for timestamped, heterogeneous robotics logs, with embedded schemas and indexed access. Message serialization remains an explicit choice separate from the container.
 
@@ -37,4 +37,4 @@ Open container format and libraries for timestamped, heterogeneous robotics logs
 
 _Indexed by lane(s): recording-debugging_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

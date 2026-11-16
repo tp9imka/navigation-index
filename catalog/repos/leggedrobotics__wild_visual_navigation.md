@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 329 | Python | MIT | 2026-05-27 | False | active-research | medium |
+| 332 | Python | MIT | 2026-05-27 | False | active-research | medium |
 
 System that learns visual traversability online from pre-trained vision features and robot self-supervision, deployed on legged robots in forests.
 
@@ -31,4 +31,4 @@ System that learns visual traversability online from pre-trained vision features
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

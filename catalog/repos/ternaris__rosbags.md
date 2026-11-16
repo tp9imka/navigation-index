@@ -36,4 +36,4 @@ Pure Python ROS 1 and ROS 2 bag readers, writers, converters and type system. Th
 
 _Indexed by lane(s): recording-debugging_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

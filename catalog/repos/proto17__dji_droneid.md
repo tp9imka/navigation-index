@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 550 | MATLAB | MIT | 2024-05-27 | False | research-prototype | low |
+| 552 | MATLAB | MIT | 2024-05-27 | False | research-prototype | low |
 
 Original reverse engineering of DJI DroneID with MATLAB/Octave scripts that demodulate frames, C++ turbo-code helpers and a GNU Radio correlation test flowgraph.
 
@@ -36,4 +36,4 @@ Original reverse engineering of DJI DroneID with MATLAB/Octave scripts that demo
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -42,4 +42,4 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

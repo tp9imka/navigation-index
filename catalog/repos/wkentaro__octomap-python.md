@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | active-research | high |
+| 102 | Cython | BSD-3-Clause | 2026-10-31 | False | active-research | high |
 
 Cython bindings for OctoMap, published on PyPI as octomap-python. Lets Python code insert point clouds, query occupancy and cast rays against an octree.
 
@@ -27,3 +27,5 @@ Cython bindings for OctoMap, published on PyPI as octomap-python. Lets Python co
 - [OctoMap](../../catalog/repos/octomap__octomap.md) (integrates_with)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

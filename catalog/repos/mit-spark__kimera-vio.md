@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,937 | C++ | BSD-2-Clause | 2026-08-06 | False | active-research | medium |
+| 1,936 | C++ | BSD-2-Clause | 2026-08-06 | False | active-research | medium |
 
 Stereo visual-inertial odometry with a factor-graph backend, robust loop closure and real-time 3D mesh generation; the odometry core of the Kimera stack.
 
@@ -34,4 +34,4 @@ Stereo visual-inertial odometry with a factor-graph backend, robust loop closure
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

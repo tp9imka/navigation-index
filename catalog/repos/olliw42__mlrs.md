@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 632 | C | GPL-3.0 | 2026-11-08 | False | production | medium |
+| 635 | C | GPL-3.0 | 2026-11-15 | False | production | medium |
 
 LoRa-based bidirectional link carrying RC and full MAVLink serial data on 2.4 GHz, 868/915 MHz and 433 MHz.
 
@@ -31,4 +31,4 @@ LoRa-based bidirectional link carrying RC and full MAVLink serial data on 2.4 GH
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

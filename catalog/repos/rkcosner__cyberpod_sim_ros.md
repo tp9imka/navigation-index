@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Jupyter Notebook | ? | ? | ? | archived | low |
+| 11 | Jupyter Notebook | ? | 2020-12-31 | False | archived | low |
 
 ROS Melodic Segway simulation used for the CoRL 2020 measurement-robust CBF results, with a virtual camera stream and the ECOS SOCP solver.
 
@@ -19,3 +19,5 @@ ROS Melodic Segway simulation used for the CoRL 2020 measurement-robust CBF resu
 **Domains:** ground
 
 _Indexed by lane(s): cbf-baselines_
+
+_GitHub metadata fetched 2026-11-16._

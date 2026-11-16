@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 504 | JavaScript | NOASSERTION | 2026-04-14 | False | active-research | medium |
+| 509 | JavaScript | NOASSERTION | 2026-04-14 | False | active-research | medium |
 
 NASA's Formal Requirements Elicitation Tool: write requirements in a structured English (FRETish), get temporal-logic formalisations, consistency checks and test cases. Exports feed Ogma and other monitor generators.
 
@@ -30,4 +30,4 @@ NASA's Formal Requirements Elicitation Tool: write requirements in a structured 
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

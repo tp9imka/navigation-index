@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? |  | ? | ? | ? | active-research | high |
+| 13 |  | BSD-3-Clause | 2025-10-16 | False | active-research | high |
 
 Documentation and setup for a CBF safety filter inside the PX4 position controller that minimally changes the acceleration setpoint using onboard range data. The code lives on the ntnu-arl/PX4-Autopilot fork, branch cbf.
 
@@ -34,3 +34,5 @@ Documentation and setup for a CBF safety filter inside the PX4 position controll
 - [Embedded Safe Reactive Navigation for Multirotors Systems using Control Barrier Functions](../../catalog/resources/misyats-px4-cbf-icuas2025.md) (has_code)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

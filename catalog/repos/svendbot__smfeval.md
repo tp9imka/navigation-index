@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | active-research | medium |
+| 1 | Python | Apache-2.0 | 2026-09-23 | False | active-research | medium |
 
 Python tool that scores an odometry estimate together with its reported covariance (NEES, scale gap, coverage, proper scoring rules), plus a pairwise test that flags overconfidence between two filters without ground truth.
 
@@ -31,3 +31,5 @@ Python tool that scores an odometry estimate together with its reported covarian
 - [You Should Be Properly Scoring Your Odometry](../../catalog/resources/ronning-2026-properly-scoring-odometry.md) (has_code)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

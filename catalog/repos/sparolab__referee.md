@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 62 | C++ | BSD-3-Clause | 2026-09-24 | False | research-prototype | medium |
+| 62 | C++ | BSD-3-Clause | 2026-11-11 | False | research-prototype | medium |
 
 Lightweight radar global descriptor for radar place recognition (RA-L 2024).
 
@@ -28,4 +28,4 @@ Lightweight radar global descriptor for radar place recognition (RA-L 2024).
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

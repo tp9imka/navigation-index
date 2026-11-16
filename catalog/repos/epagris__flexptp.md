@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 65 | C | MIT | 2026-10-27 | False | active-research | medium |
+| 66 | C | MIT | 2026-11-12 | False | active-research | medium |
 
 PTP (IEEE 1588, also 802.1AS) for Cortex-M4/M7 microcontrollers: master and slave ordinary clock, E2E and P2P, L2 and L4 transports, one- and two-step. MIT licence, with a journal paper.
 
@@ -24,4 +24,4 @@ PTP (IEEE 1588, also 802.1AS) for Cortex-M4/M7 microcontrollers: master and slav
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

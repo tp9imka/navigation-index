@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 358 | Python | MIT | 2025-04-01 | False | archived | medium |
+| 359 | Python | MIT | 2025-04-01 | False | archived | medium |
 
 Python implementation of SO2, SE2, SO3 and SE3 matrix Lie groups with numpy and PyTorch backends.
 
@@ -30,4 +30,4 @@ Python implementation of SO2, SE2, SO3 and SE3 matrix Lie groups with numpy and 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

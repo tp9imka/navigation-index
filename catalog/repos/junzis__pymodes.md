@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 673 | Python | GPL-3.0 | 2026-10-30 | False | production | high |
+| 674 | Python | GPL-3.0 | 2026-11-11 | False | production | high |
 
 Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with live streaming tools.
 
@@ -38,4 +38,4 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

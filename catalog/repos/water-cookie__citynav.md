@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 148 | Python | MIT | 2025-02-11 | False | research-prototype | medium |
+| 149 | Python | MIT | 2025-02-11 | False | research-prototype | medium |
 
 Language-goal aerial navigation dataset over real-city 3D point clouds with geographic information, plus baselines that use map-based landmark grounding.
 
@@ -30,4 +30,4 @@ Language-goal aerial navigation dataset over real-city 3D point clouds with geog
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

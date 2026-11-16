@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 221 | Python | ? | 2026-10-10 | False | active-research | high |
+| 225 | Python | ? | 2026-10-10 | False | active-research | high |
 
 Benchmark and code for UAV absolute visual localization under low-altitude, multi-view (oblique) observation, comparing retrieval and matching combinations against aerial and satellite reference maps.
 
@@ -49,4 +49,4 @@ Benchmark and code for UAV absolute visual localization under low-altitude, mult
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

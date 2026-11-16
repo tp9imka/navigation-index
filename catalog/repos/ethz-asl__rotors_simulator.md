@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,509 | C++ | ? | 2024-07-15 | False | research-prototype | low |
+| 1,511 | C++ | ? | 2024-07-15 | False | research-prototype | low |
 
 Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odometry sensor plugins and example controllers.
 
@@ -30,4 +30,4 @@ Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odomet
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

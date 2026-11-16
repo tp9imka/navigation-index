@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 137 | HTML | ? | 2026-08-05 | False | production | medium |
+| 137 | HTML | ? | 2026-11-14 | False | production | medium |
 
 Collection of aircraft and vehicle models and parameter files for ArduPilot SITL, mostly for the RealFlight simulator (planes, quadplanes, tailsitters, helicopters, multicopters) plus a Gazebo package with models and worlds.
 
@@ -29,4 +29,4 @@ Collection of aircraft and vehicle models and parameter files for ArduPilot SITL
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

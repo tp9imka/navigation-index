@@ -29,4 +29,4 @@ RP2040-based GPS-disciplined OCXO: firmware steers the OCXO via PWM from u-blox 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

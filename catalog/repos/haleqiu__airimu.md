@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 177 | Python | BSD-3-Clause | 2025-07-04 | False | active-research | medium |
+| 179 | Python | BSD-3-Clause | 2025-07-04 | False | active-research | medium |
 
 Learns IMU error correction and uncertainty with a network, combined with differentiable IMU preintegration (CMU AirLab).
 
@@ -31,4 +31,4 @@ Learns IMU error correction and uncertainty with a network, combined with differ
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 36 | C++ | GPL-3.0 | 2025-01-09 | False | research-prototype | medium |
+| 37 | C++ | GPL-3.0 | 2025-01-09 | False | research-prototype | medium |
 
 Direct imaging sonar odometry: estimates vehicle motion directly from forward-looking imaging sonar frames without feature extraction.
 
@@ -29,4 +29,4 @@ Direct imaging sonar odometry: estimates vehicle motion directly from forward-lo
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

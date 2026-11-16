@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 525 | C | GPL-3.0 | 2022-04-04 | False | archived | medium |
+| 526 | C | GPL-3.0 | 2022-04-04 | False | archived | medium |
 
 Quadrotor MPC built on ACADO code generation, including the Perception-Aware MPC (PAMPC) variant that adds a cost to keep a point of interest visible in the camera while tracking a trajectory.
 
@@ -33,4 +33,4 @@ Quadrotor MPC built on ACADO code generation, including the Perception-Aware MPC
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

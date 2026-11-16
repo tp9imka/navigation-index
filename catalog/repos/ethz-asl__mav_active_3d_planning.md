@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 714 | C++ | BSD-3-Clause | 2025-08-14 | False | research-prototype | low |
+| 715 | C++ | BSD-3-Clause | 2025-08-14 | False | research-prototype | low |
 
 Modular framework for online informative path planning on MAVs: pluggable trajectory generators, evaluators (information gain), and back-ends, built on Voxblox maps.
 
@@ -31,4 +31,4 @@ Modular framework for online informative path planning on MAVs: pluggable trajec
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

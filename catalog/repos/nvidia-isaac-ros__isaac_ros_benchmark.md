@@ -30,4 +30,4 @@ ros2_benchmark-based scripts NVIDIA uses to produce the Isaac ROS performance ta
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

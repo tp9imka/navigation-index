@@ -19,13 +19,13 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 
 ## Repositories (29)
 
+- [realsense-ros](../../catalog/repos/realsenseai__realsense-ros.md) - fit: high - ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, depth, colour and IMU topics.
 - [OpenVINS](../../catalog/repos/rpng__open_vins.md) - fit: high - MSCKF-based visual-inertial navigation platform with online calibration, a simulator, and extensive documentation for research use.
+- [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) - fit: high - C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose of each tag relative to a calibrated camera.
 - [MINS](../../catalog/repos/rpng__mins.md) - fit: high - Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS and wheel odometry, including online spatial/temporal calibration and a multi-sensor simulator.
 - [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md) - fit: high - ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and outputs noise parameters in a Kalibr-compatible format.
 - [allantools](../../catalog/repos/aewallin__allantools.md) - fit: high - Python library for time and frequency stability statistics: Allan, modified Allan, overlapping, Hadamard and time deviation, plus confidence intervals and power-law noise generators.
 - [allan-variance (Python)](../../catalog/repos/nmayorov__allan-variance.md) - fit: high - Small Python package computing Allan variance and fitting standard noise parameters.
-- [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) - fit: high - C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose of each tag relative to a calibrated camera.
-- [realsense-ros](../../catalog/repos/realsenseai__realsense-ros.md) - fit: high - ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, depth, colour and IMU topics.
 - [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) - fit: medium - ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics and time offset), plus IMU intrinsics and rolling-shutter calibration.
 - [imu_utils](../../catalog/repos/gaowenliang__imu_utils.md) - fit: medium - ROS package for analysing IMU performance with Allan variance to estimate noise and bias instability.
 - [SymForce](../../catalog/repos/symforce-org__symforce.md) - fit: medium - Symbolic computation and code generation library with a fast sparse nonlinear least-squares optimizer, from Skydio, which says it uses it in production for SLAM, calibration and MPC.

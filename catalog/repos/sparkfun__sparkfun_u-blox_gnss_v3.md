@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 106 | C++ | NOASSERTION | 2026-09-19 | False | production | high |
+| 106 | C++ | NOASSERTION | 2026-11-13 | False | production | high |
 
 Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configuration, high-precision fixes and RTK correction input.
 
@@ -28,4 +28,4 @@ Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configurat
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

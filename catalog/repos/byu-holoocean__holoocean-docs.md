@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 23 | HTML | ? | 2026-11-04 | False | active-research | medium |
+| 23 | HTML | ? | 2026-11-14 | False | active-research | medium |
 
 Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator with sonar, DVL, IMU, depth and camera sensors and multi-agent support. The simulator code itself is not hosted in this repo.
 
@@ -36,4 +36,4 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

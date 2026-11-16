@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 329 | C++ | Apache-2.0 | 2026-11-06 | False | production | high |
+| 331 | C++ | Apache-2.0 | 2026-11-11 | False | production | high |
 
 Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node that is a drop-in replacement for the Nav2 AMCL package.
 
@@ -28,4 +28,4 @@ Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node th
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

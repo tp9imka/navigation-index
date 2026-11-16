@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | research-prototype | low |
+| 260 | C++ | ? | 2024-07-19 | False | research-prototype | low |
 
 Quadrotor navigation that merges planning and control: a light A*-style front end builds a safe flight corridor and a 100 Hz linear MPC tracks toward the goal with the corridor as hard constraints, outputting body rates and thrust. Ships a simulator.
 
@@ -30,3 +30,5 @@ Quadrotor navigation that merges planning and control: a light A*-style front en
 - [Integrated Planning and Control for Quadrotor Navigation in Presence of Suddenly Appearing Objects and Disturbances](../../catalog/resources/liu-ipc-ral-2024.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

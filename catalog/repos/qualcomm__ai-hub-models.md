@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,258 | Python | BSD-3-Clause | 2026-11-07 | False | production | medium |
+| 1,263 | Python | BSD-3-Clause | 2026-11-14 | False | production | medium |
 
 Collection of models exported for Qualcomm devices, each with a perf.yaml of measured on-device latency and memory per runtime (TFLite, QNN, ONNX) and precision. Includes SuperPoint (the MIT rpautrat version), ResNet, depth models and more.
 
@@ -32,4 +32,4 @@ Collection of models exported for Qualcomm devices, each with a perf.yaml of mea
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

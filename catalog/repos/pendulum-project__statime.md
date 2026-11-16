@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 322 | Rust | NOASSERTION | 2026-11-03 | False | active-research | medium |
+| 326 | Rust | NOASSERTION | 2026-11-12 | False | active-research | medium |
 
 A PTP (IEEE 1588-2019) implementation in Rust: a platform-agnostic library with a Linux daemon and an STM32 example for embedded targets.
 
@@ -32,4 +32,4 @@ A PTP (IEEE 1588-2019) implementation in Rust: a platform-agnostic library with 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

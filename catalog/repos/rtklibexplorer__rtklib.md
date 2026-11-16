@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 994 | C | NOASSERTION | 2026-11-07 | False | production | high |
+| 1,000 | C | NOASSERTION | 2026-11-09 | False | production | high |
 
 Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox), with many robustness fixes to ambiguity resolution, cycle-slip handling and receiver decoders.
 
@@ -56,4 +56,4 @@ Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox)
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

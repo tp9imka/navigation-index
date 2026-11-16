@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,493 | C++ | Apache-2.0 | 2026-09-22 | False | production | high |
+| 1,496 | C++ | Apache-2.0 | 2026-09-22 | False | production | high |
 
 ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inertial) odometry and SLAM on Jetson and x86 GPUs.
 
@@ -43,4 +43,4 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

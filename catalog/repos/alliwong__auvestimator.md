@@ -32,4 +32,4 @@ Work-in-progress AUV state estimator fusing DVL, IMU and barometer two ways, a 1
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

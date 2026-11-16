@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 751 | C++ | GPL-2.0 | 2023-05-06 | False | research-prototype | medium |
+| 752 | C++ | GPL-2.0 | 2023-05-06 | False | research-prototype | medium |
 
 Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure.
 
@@ -24,4 +24,4 @@ Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

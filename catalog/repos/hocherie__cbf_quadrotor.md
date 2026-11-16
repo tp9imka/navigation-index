@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | educational | high |
+| 66 | Python | MIT | 2022-12-24 | False | educational | high |
 
 Python exponential CBF for a simple 3D quadrotor model with cascaded PID, single-obstacle and two-robot examples; lecture slides from the AirLab 2020 summer school.
 
@@ -23,3 +23,5 @@ Python exponential CBF for a simple 3D quadrotor model with cascaded PID, single
 - alternative_to: [RotorPy](../../catalog/repos/spencerfolk__rotorpy.md)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

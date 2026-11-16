@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | educational | medium |
+| 48 | Python | ? | 2026-01-09 | False | educational | medium |
 
 Python 2D playground for a CBF-QP safety filter that minimally modifies a user command, with a disturbance-observer variant.
 
@@ -19,3 +19,5 @@ Python 2D playground for a CBF-QP safety filter that minimally modifies a user c
 **Domains:** air
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

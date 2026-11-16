@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 732 | Python | MIT | 2024-07-09 | False | research-prototype | medium |
+| 733 | Python | MIT | 2024-07-09 | False | research-prototype | medium |
 
 Builds visual-language maps by fusing pretrained visual-language features into a 3D reconstruction, enabling open-vocabulary landmark navigation from natural language.
 
@@ -30,4 +30,4 @@ Builds visual-language maps by fusing pretrained visual-language features into a
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

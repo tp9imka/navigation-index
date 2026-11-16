@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | active-research | medium |
+| 15 | C++ | BSD-3-Clause | 2026-05-26 | False | active-research | medium |
 
 ROS implementation of the composite CBF safety filter that combines many range points into one barrier.
 
@@ -32,3 +32,5 @@ ROS implementation of the composite CBF safety filter that combines many range p
 - [Embedded Safe Reactive Navigation for Multirotors Systems using Control Barrier Functions](../../catalog/resources/misyats-px4-cbf-icuas2025.md) (has_code)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

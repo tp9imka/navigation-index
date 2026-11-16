@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | active-research | medium |
+| 205 | Python | MIT | 2026-11-06 | False | active-research | medium |
 
 JAX-based batched, differentiable quadrotor simulator from TUM LSY with first-principles and identified Crazyflie models, plus MuJoCo/MJX rendering, raycasting and contacts.
 
@@ -30,3 +30,5 @@ JAX-based batched, differentiable quadrotor simulator from TUM LSY with first-pr
 - [LSY Autonomous Drone Racing](../../catalog/repos/learnsyslab__lsy_drone_racing.md) (depends_on)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

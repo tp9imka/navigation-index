@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 16 | Rust | Apache-2.0 | 2026-11-06 | False | active-research | low |
+| 17 | Rust | Apache-2.0 | 2026-11-13 | False | active-research | low |
 
 Server side for a pool of NTS time servers: a key-exchange front end that hands clients to member servers while keeping authentication end to end.
 
@@ -28,4 +28,4 @@ Server side for a pool of NTS time servers: a key-exchange front end that hands 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

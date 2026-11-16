@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,368 | C++ | MIT | 2025-12-09 | False | active-research | medium |
+| 2,370 | C++ | MIT | 2025-12-09 | False | active-research | medium |
 
 Certifiable, outlier-robust point-cloud registration library with C++, Python and MATLAB bindings.
 
@@ -29,4 +29,4 @@ Certifiable, outlier-robust point-cloud registration library with C++, Python an
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

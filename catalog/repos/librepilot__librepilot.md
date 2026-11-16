@@ -24,4 +24,4 @@ GitHub mirror of LibrePilot, the community continuation of OpenPilot for CC3D/Re
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

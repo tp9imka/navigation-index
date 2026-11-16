@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,287 | C++ | MIT | 2026-11-08 | False | production | high |
+| 4,296 | C++ | MIT | 2026-11-13 | False | production | high |
 
 C++ behavior tree library with XML trees, async actions, logging and the Groot editor; the execution engine inside Nav2 and many mission frameworks.
 
@@ -32,4 +32,4 @@ C++ behavior tree library with XML trees, async actions, logging and the Groot e
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

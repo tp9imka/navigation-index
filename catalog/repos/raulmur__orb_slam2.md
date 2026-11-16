@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 10,271 | C++ | NOASSERTION | 2024-05-15 | False | archived | medium |
+| 10,267 | C++ | NOASSERTION | 2024-05-15 | False | archived | medium |
 
 Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, with loop closing and relocalization against a reusable map.
 
@@ -29,4 +29,4 @@ Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, w
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

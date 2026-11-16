@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,142 | C++ | NOASSERTION | 2026-09-17 | False | production | high |
+| 1,144 | C++ | NOASSERTION | 2026-09-17 | False | production | high |
 
 ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz IMU visualisation plugin.
 
@@ -34,4 +34,4 @@ ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz I
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 148 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
+| 149 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
 
 Python CLI and library utilities for reading, parsing and broadcasting GNSS streams, including an NTRIP client and caster/server and a socket server.
 
@@ -38,4 +38,4 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

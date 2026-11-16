@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 410 | Python | NOASSERTION | 2026-10-10 | False | active-research | low |
+| 412 | Python | NOASSERTION | 2026-10-10 | False | active-research | low |
 
 GPU-accelerated neural-network verifier that proves bounds on a network's outputs over a set of inputs. Winner of the VNN-COMP verification competition several years running (per its README).
 
@@ -24,4 +24,4 @@ GPU-accelerated neural-network verifier that proves bounds on a network's output
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

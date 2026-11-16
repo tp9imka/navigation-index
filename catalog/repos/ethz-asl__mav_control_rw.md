@@ -30,4 +30,4 @@ Linear and nonlinear MPC position controllers for rotary-wing MAVs with disturba
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

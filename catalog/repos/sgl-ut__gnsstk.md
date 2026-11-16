@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 182 | C++ | NOASSERTION | 2026-09-09 | False | production | low |
+| 183 | C++ | NOASSERTION | 2026-09-09 | False | production | low |
 
 C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time systems, ephemeris handling and positioning algorithms, with Python bindings.
 
@@ -25,4 +25,4 @@ C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time 
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

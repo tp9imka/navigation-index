@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | archived | low |
+| 105 | C++ | ? | 2018-05-30 | False | archived | low |
 
 Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.
 
@@ -23,3 +23,5 @@ Uncertainty-aware receding-horizon exploration planner that picks paths minimisi
 - [Uncertainty-aware receding horizon exploration and mapping using aerial robots](../../catalog/resources/papachristos-uncertainty-aware-exploration-2017.md) (has_code)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

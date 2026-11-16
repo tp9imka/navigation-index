@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 68 |  | NOASSERTION | 2023-03-22 | False | research-prototype | medium |
+| 69 |  | NOASSERTION | 2023-03-22 | False | research-prototype | medium |
 
 Long-wave infrared image dataset of a harbour environment with semantic and instance segmentation masks for maritime scene understanding.
 
@@ -29,4 +29,4 @@ Long-wave infrared image dataset of a harbour environment with semantic and inst
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

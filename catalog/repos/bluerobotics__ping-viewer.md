@@ -28,4 +28,4 @@ Desktop application to view and record data from Blue Robotics Ping echosounder 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -28,4 +28,4 @@ Ground-optimized 4D radar-inertial odometry integrating continuous velocity via 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,973 | C++ | BSD-3-Clause | 2025-02-14 | False | research-prototype | high |
+| 4,982 | C++ | BSD-3-Clause | 2025-02-14 | False | research-prototype | high |
 
 Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optional GPS factors and loop closure.
 
@@ -43,4 +43,4 @@ Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optiona
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

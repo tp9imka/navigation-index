@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 679 | Python | MIT | 2026-11-06 | False | production | high |
+| 682 | Python | MIT | 2026-11-13 | False | production | high |
 
 Open-source Python framework from UK Dstl and partners for developing, running and evaluating tracking and state estimation algorithms: Kalman variants, particle filters, JPDA, MHT, GM-PHD, track management and metrics.
 
@@ -54,4 +54,4 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 
 _Indexed by lane(s): defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

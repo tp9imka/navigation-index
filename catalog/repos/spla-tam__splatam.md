@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,219 | Python | BSD-3-Clause | 2024-06-19 | False | research-prototype | low |
+| 2,221 | Python | BSD-3-Clause | 2024-06-19 | False | research-prototype | low |
 
 Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rendering (CVPR 2024).
 
@@ -29,4 +29,4 @@ Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rend
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

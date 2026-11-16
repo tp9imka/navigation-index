@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 14,578 | C++ | MIT | 2026-11-09 | False | production | high |
+| 14,609 | C++ | MIT | 2026-11-15 | False | production | high |
 
 Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
 
@@ -27,4 +27,4 @@ Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GN
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

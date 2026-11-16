@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 495 | C++ | Apache-2.0 | 2026-10-30 | False | production | medium |
+| 494 | C++ | Apache-2.0 | 2026-10-30 | False | production | medium |
 
 PDDL-based symbolic planning system for ROS 2: domain/problem management, plan generation with off-the-shelf planners and execution via behavior trees.
 
@@ -32,4 +32,4 @@ PDDL-based symbolic planning system for ROS 2: domain/problem management, plan g
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 100 | C | GPL-3.0 | 2026-01-05 | False | active-research | medium |
+| 101 | C | GPL-3.0 | 2026-01-05 | False | active-research | medium |
 
 Coherent multichannel SDR acquisition chain (sync, calibration, decimation) underneath KrakenSDR DoA and passive radar apps.
 
@@ -39,4 +39,4 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

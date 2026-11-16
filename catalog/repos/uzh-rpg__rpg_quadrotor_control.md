@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 731 | C++ | NOASSERTION | 2021-09-20 | False | archived | low |
+| 733 | C++ | NOASSERTION | 2021-09-20 | False | archived | low |
 
 UZH RPG quadrotor control framework: position and attitude controllers, a trajectory generation library, an autopilot state machine and a simulator interface, all as ROS 1 packages.
 
@@ -31,4 +31,4 @@ UZH RPG quadrotor control framework: position and attitude controllers, a trajec
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

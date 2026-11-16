@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 99 | Python | MIT | 2026-07-06 | False | research-prototype | low |
+| 100 | Python | MIT | 2026-07-06 | False | research-prototype | low |
 
 PyTorch implementation of a cross-view geo-localization method that pools features in rings around the image center to capture contextual local patterns.
 
@@ -33,4 +33,4 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

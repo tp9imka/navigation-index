@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 386 | Java | Apache-2.0 | 2026-07-26 | False | production | high |
+| 392 | Java | Apache-2.0 | 2026-07-26 | False | production | high |
 
 Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and Wi-Fi Beacon/NaN and shows drones and operators on a map.
 
@@ -45,4 +45,4 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 
 _Indexed by lane(s): autopilots, defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

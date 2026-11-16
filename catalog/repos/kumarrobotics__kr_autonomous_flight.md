@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 797 | C++ | NOASSERTION | 2026-04-18 | False | active-research | medium |
+| 798 | C++ | NOASSERTION | 2026-04-18 | False | active-research | medium |
 
 UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state estimation, mapping, planning and control in one system.
 
@@ -24,4 +24,4 @@ UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

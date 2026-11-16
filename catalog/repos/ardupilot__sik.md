@@ -28,4 +28,4 @@ Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

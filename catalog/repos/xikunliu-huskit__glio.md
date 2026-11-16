@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 445 | C | ? | 2023-12-27 | False | research-prototype | low |
+| 448 | C | ? | 2023-12-27 | False | research-prototype | low |
 
 Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.
 
@@ -29,4 +29,4 @@ Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free st
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

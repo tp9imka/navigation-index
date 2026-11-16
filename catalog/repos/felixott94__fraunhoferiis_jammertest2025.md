@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 5 | Python | ? | 2026-08-26 | False | active-research | high |
+| 7 | Python | ? | 2026-08-26 | False | active-research | high |
 
 Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.
 
@@ -44,4 +44,4 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

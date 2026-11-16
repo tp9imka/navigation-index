@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 42 | TeX | MIT | 2025-11-21 | False | research-prototype | low |
+| 43 | TeX | MIT | 2025-11-21 | False | research-prototype | low |
 
 MATLAB scripts (plus a Python port, AV_Python) for Allan variance analysis and Gauss-Markov IMU error modelling, accompanying Farrell et al., 'Inertial measurement unit error modeling tutorial', IEEE Control Systems Magazine 2022 (preprint PDF included).
 
@@ -24,4 +24,4 @@ MATLAB scripts (plus a Python port, AV_Python) for Allan variance analysis and G
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

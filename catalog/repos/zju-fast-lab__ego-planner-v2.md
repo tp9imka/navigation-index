@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 749 | C++ | GPL-3.0 | 2023-10-16 | False | research-prototype | medium |
+| 751 | C++ | GPL-3.0 | 2023-10-16 | False | research-prototype | medium |
 
 Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based local trajectory optimisation with obstacle, dynamic-feasibility and inter-agent constraints, plus a lightweight simulator.
 
@@ -33,4 +33,4 @@ Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based loc
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

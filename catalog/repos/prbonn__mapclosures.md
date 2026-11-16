@@ -29,4 +29,4 @@ Loop-closure detection using bird's-eye-view density images of local LiDAR maps.
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

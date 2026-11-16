@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 121 | Python | MIT | 2024-08-11 | False | research-prototype | medium |
+| 120 | Python | MIT | 2024-08-11 | False | research-prototype | medium |
 
 Deep Event Visual Odometry: learned monocular event-only VO trained on simulated events, generalizing to real benchmarks (3DV 2024).
 
@@ -28,4 +28,4 @@ Deep Event Visual Odometry: learned monocular event-only VO trained on simulated
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

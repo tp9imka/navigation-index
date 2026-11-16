@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,955 | Python | Apache-2.0 | 2024-05-30 | False | archived | low |
+| 1,956 | Python | Apache-2.0 | 2024-05-30 | False | archived | low |
 
 Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenance has slowed (last push 2024).
 
@@ -31,4 +31,4 @@ Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenanc
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

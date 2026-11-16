@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 11,757 | C | GPL-3.0 | 2026-11-08 | False | production | low |
+| 11,792 | C | GPL-3.0 | 2026-11-15 | False | production | low |
 
 Racing/freestyle-oriented flight controller firmware focused on attitude control and low-latency filtering. GPS Rescue was long its only navigation mode; releases since 2025 add altitude hold, position hold and waypoint flight plans (AUTOPILOT mode in 2026.6).
 
@@ -30,4 +30,4 @@ Racing/freestyle-oriented flight controller firmware focused on attitude control
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

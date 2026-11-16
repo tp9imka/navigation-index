@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 19,474 | Jupyter Notebook | NOASSERTION | 2024-08-07 | False | educational | high |
+| 19,491 | Jupyter Notebook | NOASSERTION | 2024-08-07 | False | educational | high |
 
 Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particle filters with an intuition-first approach.
 
@@ -30,4 +30,4 @@ Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particl
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

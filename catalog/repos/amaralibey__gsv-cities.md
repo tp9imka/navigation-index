@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 138 | Python | ? | 2024-07-03 | False | research-prototype | medium |
+| 139 | Python | ? | 2024-07-03 | False | research-prototype | medium |
 
 Official training and evaluation code for the GSV-Cities visual place recognition dataset (about 530k street-level images of 62k+ places across many cities), including the Conv-AP aggregator and evaluation notebooks for standard VPR benchmarks.
 
@@ -31,4 +31,4 @@ Official training and evaluation code for the GSV-Cities visual place recognitio
 
 _Indexed by lane(s): backlog_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

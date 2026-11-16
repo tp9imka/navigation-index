@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 371 | C++ | NOASSERTION | 2024-05-07 | False | archived | medium |
+| 372 | C++ | NOASSERTION | 2024-05-07 | False | archived | medium |
 
 Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual track of the DARPA Subterranean Challenge.
 
@@ -30,4 +30,4 @@ Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual t
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

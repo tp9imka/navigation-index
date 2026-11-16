@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 134 | C++ | MIT | 2026-11-08 | False | active-research | medium |
+| 135 | C++ | MIT | 2026-11-15 | False | active-research | medium |
 
 Guidance, navigation and control software from NTNU's student Vortex team for competition AUVs and ROVs, built on ROS 2.
 
@@ -24,4 +24,4 @@ Guidance, navigation and control software from NTNU's student Vortex team for co
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

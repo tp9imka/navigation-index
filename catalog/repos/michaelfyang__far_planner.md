@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,038 | C++ | ? | 2026-10-27 | False | active-research | medium |
+| 1,041 | C++ | ? | 2026-10-27 | False | active-research | medium |
 
 Visibility-graph route planner for known and unknown environments from the CMU SubT team.
 
@@ -29,4 +29,4 @@ Visibility-graph route planner for known and unknown environments from the CMU S
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

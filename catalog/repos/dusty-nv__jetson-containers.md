@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,897 | Jupyter Notebook | NOASSERTION | 2026-11-02 | False | production | high |
+| 4,899 | Jupyter Notebook | NOASSERTION | 2026-11-02 | False | production | high |
 
 Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs) matched to JetPack versions.
 
@@ -36,4 +36,4 @@ Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs)
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

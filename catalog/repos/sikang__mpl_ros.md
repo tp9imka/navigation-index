@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | research-prototype | low |
+| 759 | C++ | Apache-2.0 | 2025-04-17 | False | research-prototype | low |
 
 ROS wrapper and examples for search-based kinodynamic planning: graph search over short constant-jerk or constant-acceleration motion primitives with a minimum-time-plus-effort cost.
 
@@ -29,3 +29,5 @@ ROS wrapper and examples for search-based kinodynamic planning: graph search ove
 - [Search-based motion planning for quadrotors using linear quadratic minimum time control](../../catalog/resources/liu-mpl-lqmt-iros-2017.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

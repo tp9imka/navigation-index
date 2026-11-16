@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 528 | Jupyter Notebook | NOASSERTION | 2026-11-08 | False | active-research | medium |
+| 528 | Jupyter Notebook | NOASSERTION | 2026-11-13 | False | active-research | medium |
 
 End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.
 
@@ -28,4 +28,4 @@ End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-e
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

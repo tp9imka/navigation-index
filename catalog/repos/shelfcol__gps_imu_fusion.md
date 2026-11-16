@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 154 | C++ | ? | 2022-04-09 | False | educational | low |
+| 155 | C++ | ? | 2022-04-09 | False | educational | low |
 
 GPS/IMU fusion examples derived from zm0612/eskf-gps-imu-fusion, implementing an EKF, the original ESKF and a Sola-style quaternion ESKF, plus an observability analysis; UKF is only listed as TODO. Docs in Chinese.
 
@@ -20,12 +20,12 @@ GPS/IMU fusion examples derived from zm0612/eskf-gps-imu-fusion, implementing an
 
 ## Related
 
-- alternative_to: [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md)
+- alternative_to: [imu_x_fusion](../../catalog/repos/gavngao__imu_x_fusion.md)
 
 ## Referenced by
 
-- [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md) (alternative_to)
+- [imu_x_fusion](../../catalog/repos/gavngao__imu_x_fusion.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

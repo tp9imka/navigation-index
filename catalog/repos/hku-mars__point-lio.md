@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,379 | C++ | NOASSERTION | 2026-06-13 | False | active-research | medium |
+| 1,388 | C++ | NOASSERTION | 2026-06-13 | False | active-research | medium |
 
 High-bandwidth LiDAR-inertial odometry that updates the state point by point, tolerating aggressive motion and IMU saturation.
 
@@ -29,4 +29,4 @@ High-bandwidth LiDAR-inertial odometry that updates the state point by point, to
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

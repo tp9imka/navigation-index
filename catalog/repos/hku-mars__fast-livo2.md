@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,856 | C++ | GPL-2.0 | 2026-03-08 | False | active-research | medium |
+| 4,879 | C++ | GPL-2.0 | 2026-03-08 | False | active-research | medium |
 
 Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequential ESIKF update with a unified voxel map.
 
@@ -30,4 +30,4 @@ Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequenti
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -20,4 +20,4 @@ Command-line tool that fetches and displays an NTRIP caster's source table, opti
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

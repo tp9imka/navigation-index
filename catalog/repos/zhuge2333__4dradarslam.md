@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 316 | C++ | GPL-3.0 | 2023-11-01 | False | research-prototype | medium |
+| 317 | C++ | GPL-3.0 | 2023-11-01 | False | research-prototype | medium |
 
 4D radar SLAM with scan-to-scan registration, loop closure and pose-graph optimization, released with an NTU 4D radar dataset.
 
@@ -31,4 +31,4 @@
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

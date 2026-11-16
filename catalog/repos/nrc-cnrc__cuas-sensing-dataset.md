@@ -34,4 +34,4 @@ Labelled real-world radar tracks of small UAVs, birds, humans and vehicles from 
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

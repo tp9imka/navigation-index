@@ -29,4 +29,4 @@ Python parser and command-line tools for PX4 ULog flight logs (to CSV, info, par
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

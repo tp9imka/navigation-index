@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,073 | C++ | MIT | 2026-09-29 | False | active-research | high |
+| 1,076 | C++ | MIT | 2026-09-29 | False | active-research | high |
 
 Efficient, parallel point-cloud registration library (GICP, ICP variants) with C++ and Python APIs.
 
@@ -36,4 +36,4 @@ Efficient, parallel point-cloud registration library (GICP, ICP variants) with C
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

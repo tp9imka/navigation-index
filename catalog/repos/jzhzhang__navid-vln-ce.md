@@ -30,4 +30,4 @@ Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next nav
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

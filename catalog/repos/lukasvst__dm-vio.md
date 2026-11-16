@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,237 | C++ | GPL-3.0 | 2024-10-27 | False | research-prototype | medium |
+| 1,239 | C++ | GPL-3.0 | 2024-10-27 | False | research-prototype | medium |
 
 Monocular visual-inertial odometry built on DSO using delayed marginalization and pose-graph bundle adjustment for IMU initialization.
 
@@ -28,4 +28,4 @@ Monocular visual-inertial odometry built on DSO using delayed marginalization an
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 35 | Python | Apache-2.0 | 2026-03-24 | False | research-prototype | medium |
+| 36 | Python | Apache-2.0 | 2026-03-24 | False | research-prototype | medium |
 
 GNU Radio based scanner that checks known analog FPV video frequencies for energy and publishes alerts over ZMQ; the optional confirmation detector is closed source.
 
@@ -28,4 +28,4 @@ GNU Radio based scanner that checks known analog FPV video frequencies for energ
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

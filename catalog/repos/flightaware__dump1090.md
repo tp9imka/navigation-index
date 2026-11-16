@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,153 | C | NOASSERTION | 2026-11-03 | False | production | medium |
+| 1,152 | C | NOASSERTION | 2026-11-03 | False | production | medium |
 
 FlightAware's maintained Mode S/ADS-B decoder (dump1090-fa), a GitHub fork and successor of dump1090-mutability, supporting RTL-SDR, bladeRF, HackRF, LimeSDR and SoapySDR devices.
 
@@ -30,4 +30,4 @@ FlightAware's maintained Mode S/ADS-B decoder (dump1090-fa), a GitHub fork and s
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 187 | C++ | BSD-3-Clause | 2025-07-01 | False | research-prototype | medium |
+| 188 | C++ | BSD-3-Clause | 2025-07-01 | False | research-prototype | medium |
 
 Original ROS 1 implementation of 'Safe Low-Altitude Navigation in Steep Terrain with Fixed-Wing Aerial Vehicles' (RA-L 2024), with a Docker build for Noetic.
 
@@ -30,4 +30,4 @@ Original ROS 1 implementation of 'Safe Low-Altitude Navigation in Steep Terrain 
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

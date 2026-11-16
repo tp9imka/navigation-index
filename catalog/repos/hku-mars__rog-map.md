@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | active-research | low |
+| 633 | C++ | GPL-3.0 | 2025-03-13 | False | active-research | low |
 
 Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning. It is the map module inside the SUPER planner.
 
@@ -28,3 +28,5 @@ Robocentric occupancy grid that slides with the vehicle and keeps an inflated ma
 - [SUPER](../../catalog/repos/hku-mars__super.md) (depends_on)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

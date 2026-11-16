@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | archived | low |
+| 180 | C++ | NOASSERTION | 2018-06-18 | False | archived | low |
 
 C++/ROS library that answers obstacle proximity queries from a history of depth frames and noisy relative poses, without building a fused map.
 
@@ -23,3 +23,5 @@ C++/ROS library that answers obstacle proximity queries from a history of depth 
 - [NanoMap: Fast, Uncertainty-Aware Proximity Queries with Lazy Search over Local 3D Data](../../catalog/resources/florence-nanomap-2018.md) (has_code)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 8,005 | C++ | Apache-2.0 | 2024-01-05 | False | archived | medium |
+| 8,009 | C++ | Apache-2.0 | 2024-01-05 | False | archived | medium |
 
 Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across many sensor configurations.
 
@@ -28,4 +28,4 @@ Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across m
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

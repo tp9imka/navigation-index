@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 276 | Python | LGPL-3.0 | 2026-10-26 | False | production | high |
+| 277 | Python | LGPL-3.0 | 2026-11-15 | False | production | high |
 
 Python library for time and frequency stability statistics: Allan, modified Allan, overlapping, Hadamard and time deviation, plus confidence intervals and power-law noise generators.
 
@@ -44,4 +44,4 @@ Python library for time and frequency stability statistics: Allan, modified Alla
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

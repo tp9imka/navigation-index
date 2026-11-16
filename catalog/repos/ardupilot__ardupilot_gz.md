@@ -29,4 +29,4 @@ ROS 2 + Gazebo packages for ArduPilot SITL integration and testing.
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

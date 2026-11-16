@@ -45,7 +45,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [gnss-ins-sim](../../catalog/repos/aceinna__gnss-ins-sim.md) - fit: high - Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer measurements with configurable error models, and runs navigation algorithms on them.
 - [KF-GINS](../../catalog/repos/i2nav-whu__kf-gins.md) - fit: high - Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS integration with an error-state EKF, with sample data and documentation.
 - [imu_tools](../../catalog/repos/ccnyroboticslab__imu_tools.md) - fit: high - ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz IMU visualisation plugin.
-- [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md) - fit: high - Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side by side (ESKF, IEKF, UKF variants, MAP).
+- [imu_x_fusion](../../catalog/repos/gavngao__imu_x_fusion.md) - fit: high - Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side by side (ESKF, IEKF, UKF variants, MAP).
 - [AI-IMU Dead-Reckoning](../../catalog/repos/mbrossar__ai-imu-dr.md) - fit: high - Car dead reckoning from IMU only, using an invariant EKF whose noise covariances are adapted by a neural network, evaluated on KITTI.
 - [imu_gps_localization](../../catalog/repos/ydsf16__imu_gps_localization.md) - fit: high - Error-state Kalman filter fusing IMU and GPS for localization, small and readable.
 - [AHRS (Python)](../../catalog/repos/mayitzin__ahrs.md) - fit: high - Python collection of attitude estimation algorithms (Madgwick, Mahony, complementary, EKF, QUEST, TRIAD and more) plus utilities such as the World Magnetic Model and WGS84.
@@ -82,8 +82,8 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [RIO](../../catalog/repos/christopherdoer__rio.md) - fit: medium - EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurements.
 - [AirIO](../../catalog/repos/air-io__air-io.md) - fit: medium - Learning-based inertial odometry for UAVs that improves feature observability by changing the IMU data representation (IEEE RA-L 2025).
 - [ESKF ROS (EliaTarasov)](../../catalog/repos/eliatarasov__eskf.md) - fit: medium - ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magnetometer, vision pose and optical flow.
-- [ESKF (je310)](../../catalog/repos/je310__eskf.md) - fit: medium - Error-state Kalman filter implementation following Sola's quaternion ESKF formulation.
 - [AirIMU](../../catalog/repos/haleqiu__airimu.md) - fit: medium - Learns IMU error correction and uncertainty with a network, combined with differentiable IMU preintegration (CMU AirLab).
+- [ESKF (je310)](../../catalog/repos/je310__eskf.md) - fit: medium - Error-state Kalman filter implementation following Sola's quaternion ESKF formulation.
 - [TartanIMU](../../catalog/repos/superxslam__tartanimu.md) - fit: medium - ResNet-LSTM inertial model pretrained on more than 100 hours of car, quadruped, drone and human data that predicts body-frame velocity from 6-axis IMU, with LoRA adaptation heads, pretrained weights on Hugging Face and a
 - [ROSflight firmware](../../catalog/repos/rosflight__rosflight_firmware.md) - fit: medium - Lean research autopilot (BYU) that keeps only attitude estimation and low-level control on the flight board and pushes everything else to a ROS companion.
 - [MSCEqF](../../catalog/repos/aau-cns__msceqf.md) - fit: medium - Multi-state-constraint equivariant filter for vision-aided inertial navigation (RA-L 2023).

@@ -36,4 +36,4 @@ Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation to
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

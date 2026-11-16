@@ -29,4 +29,4 @@ Data and baseline code from Microsoft Research's Indoor Location Competition 2.0
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

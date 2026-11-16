@@ -29,4 +29,4 @@ SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with expli
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

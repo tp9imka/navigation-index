@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,168 | Jupyter Notebook | MIT | 2026-03-10 | False | active-research | medium |
+| 1,180 | Jupyter Notebook | MIT | 2026-03-10 | False | active-research | medium |
 
 PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering vision-language navigation (VLN-CE and continuous-trajectory VLN) and point, image or trajectory goal navigation, with 10+ baselines, 6 benchmarks, the InternData-N1 dataset and the InternVLA-N1 dual-system model.
 
@@ -28,4 +28,4 @@ PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering visio
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

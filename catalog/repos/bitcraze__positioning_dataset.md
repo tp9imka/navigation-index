@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | archived | low |
+| 4 | Python | ? | 2021-03-31 | False | archived | low |
 
 Scripts and recordings that measure the accuracy and jitter of the Crazyflie Lighthouse positioning system against a Qualisys motion-capture reference, in crossing-beam and EKF modes.
 
@@ -28,3 +28,5 @@ Scripts and recordings that measure the accuracy and jitter of the Crazyflie Lig
 - [Lighthouse Positioning System: Dataset, Accuracy, and Precision for UAV Research](../../catalog/resources/taffanel-2021-lighthouse-positioning-accuracy.md) (has_code)
 
 _Indexed by lane(s): close-area-localization_
+
+_GitHub metadata fetched 2026-11-16._

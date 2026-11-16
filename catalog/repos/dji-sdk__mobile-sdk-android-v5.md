@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Kotlin | ? | ? | ? | production | low |
+| 569 | Kotlin | NOASSERTION | 2026-11-10 | False | production | low |
 
 Sample app and docs entry for DJI MSDK V5, the Android SDK for current DJI consumer and enterprise aircraft, including the virtual stick API.
 
@@ -23,3 +23,5 @@ Sample app and docs entry for DJI MSDK V5, the Android SDK for current DJI consu
 - [Virtual Stick Sample (DJI MSDK V5)](../../catalog/resources/dji-msdk-v5-virtual-stick-tutorial.md) (explains)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

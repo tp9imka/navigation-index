@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 591 | Python | MIT | 2026-01-20 | False | research-prototype | low |
+| 592 | Python | MIT | 2026-01-20 | False | research-prototype | low |
 
 GPU-parallel drone simulation and RL platform built on Isaac Sim.
 
@@ -30,4 +30,4 @@ GPU-parallel drone simulation and RL platform built on Isaac Sim.
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

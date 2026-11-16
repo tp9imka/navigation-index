@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,770 | C++ | BSD-3-Clause | 2024-08-17 | False | archived | low |
+| 2,771 | C++ | BSD-3-Clause | 2024-08-17 | False | archived | low |
 
 Lightweight ground-optimized LiDAR odometry and mapping that segments ground to speed up feature extraction on UGVs.
 
@@ -24,4 +24,4 @@ Lightweight ground-optimized LiDAR odometry and mapping that segments ground to 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

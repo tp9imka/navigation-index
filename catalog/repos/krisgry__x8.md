@@ -29,4 +29,4 @@ MATLAB simulator showcasing the Skywalker X8 flying-wing aerodynamic model from 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

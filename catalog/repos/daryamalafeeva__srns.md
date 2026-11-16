@@ -31,4 +31,4 @@ Python homework for a course on GPS, GLONASS, Galileo and BeiDou: GLONASS satell
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

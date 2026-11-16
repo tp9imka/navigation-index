@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | production | high |
+| 2,401 | C++ | ? | 2026-09-26 | False | production | high |
 
 Probabilistic 3D occupancy mapping on an octree, with explicit free, occupied and unknown cells and log-odds updates from ray casting. The repo also ships the octovis viewer and dynamicEDT3D, an incremental Euclidean distance map built on top of an octree.
 
@@ -35,3 +35,5 @@ Probabilistic 3D occupancy mapping on an octree, with explicit free, occupied an
 - [OctoMap: an efficient probabilistic 3D mapping framework based on octrees](../../catalog/resources/hornung-octomap-auro-2013.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

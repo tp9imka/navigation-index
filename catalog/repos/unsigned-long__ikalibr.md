@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 651 | C++ | NOASSERTION | 2026-01-18 | False | active-research | medium |
+| 656 | C++ | NOASSERTION | 2026-01-18 | False | active-research | medium |
 
 Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, LiDAR, radar, RGB-D, event cameras) estimating extrinsics and time offsets (IEEE T-RO 2025).
 
@@ -31,4 +31,4 @@ Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, Li
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

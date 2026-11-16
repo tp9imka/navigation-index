@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 649 | Python | BSD-3-Clause | 2024-03-13 | False | research-prototype | high |
+| 653 | Python | BSD-3-Clause | 2024-03-13 | False | research-prototype | high |
 
 Universal visual place recognition using foundation-model (DINOv2) features with VLAD/GeM aggregation, working across aerial, underwater, indoor and outdoor domains without task-specific training.
 
@@ -59,4 +59,4 @@ Universal visual place recognition using foundation-model (DINOv2) features with
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

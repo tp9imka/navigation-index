@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | research-prototype | medium |
+| 1 | C++ | BSD-3-Clause | 2025-05-06 | False | research-prototype | medium |
 
 NTNU fork of PX4 whose cbf branch holds the actual PX4-CBF code: CBFSafetyFilter in mc_pos_control, a tof_obstacles_chunk uORB message and CBF_* parameters. Branch HEAD has only the analytic single-constraint filter; the FoV-constrained qpOASES QP is in the earlier commit 338fb51f.
 
@@ -25,3 +25,5 @@ NTNU fork of PX4 whose cbf branch holds the actual PX4-CBF code: CBFSafetyFilter
 - same_org: [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md)
 
 _Indexed by lane(s): cbf-baselines_
+
+_GitHub metadata fetched 2026-11-16._

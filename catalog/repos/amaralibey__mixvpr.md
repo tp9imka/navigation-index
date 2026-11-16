@@ -33,4 +33,4 @@ WACV 2023 place recognition descriptor built by MLP feature mixing; lightweight 
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

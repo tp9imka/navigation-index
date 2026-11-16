@@ -24,4 +24,4 @@ Invariant filter fusing monocular or stereo visual-inertial data with raw GNSS.
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

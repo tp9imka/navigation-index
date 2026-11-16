@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | active-research | low |
+| 663 | C++ | MIT | 2026-11-15 | False | active-research | low |
 
 Dockerized harness to simulate and deploy PX4, ArduPilot and Betaflight drones with ROS 2, YOLO and lidar odometry (KISS-ICP), with a steppable gymnasium interface and Jetson deployment images.
 
@@ -25,3 +25,5 @@ Dockerized harness to simulate and deploy PX4, ArduPilot and Betaflight drones w
 - integrates_with: [PX4 ROS 2 Interface Library](../../catalog/repos/auterion__px4-ros2-interface-lib.md)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

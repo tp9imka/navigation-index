@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | production | low |
+| 96 | Python | BSD-3-Clause | 2026-10-15 | False | production | low |
 
 Parrot's Python controller library for ANAFI drones and the Sphinx simulator, using the Arsdk messages (moveBy, moveTo, piloting, camera).
 
@@ -23,3 +23,5 @@ Parrot's Python controller library for ANAFI drones and the Sphinx simulator, us
 - [Sphinx system requirements](../../catalog/resources/parrot-sphinx-system-requirements.md) (part_of)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

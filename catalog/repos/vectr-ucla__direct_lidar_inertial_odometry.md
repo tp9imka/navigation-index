@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,067 | C++ | MIT | 2026-04-03 | False | active-research | medium |
+| 1,072 | C++ | MIT | 2026-04-03 | False | active-research | medium |
 
 Lightweight LiDAR-inertial odometry with coarse-to-fine continuous-time motion correction (ICRA 2023).
 
@@ -28,4 +28,4 @@ Lightweight LiDAR-inertial odometry with coarse-to-fine continuous-time motion c
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

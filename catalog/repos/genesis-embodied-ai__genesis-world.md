@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Python | ? | ? | ? | active-research | medium |
+| 30,235 | Python | Apache-2.0 | 2026-11-15 | False | active-research | medium |
 
 Python multi-physics simulation platform with camera, depth and lidar sensors and a compiler that targets CUDA, Apple Metal and ARM64. Ships drone hover and route-following examples.
 
@@ -23,3 +23,5 @@ Python multi-physics simulation platform with camera, depth and lidar sensors an
 - alternative_to: [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

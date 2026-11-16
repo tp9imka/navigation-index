@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 524 | Python | MIT | 2026-10-14 | False | production | medium |
+| 525 | Python | MIT | 2026-11-11 | False | production | medium |
 
 Toolbox for processing and analyzing air traffic trajectories: OpenSky access, filtering, resampling, airspace intersection and visualization.
 
@@ -30,4 +30,4 @@ Toolbox for processing and analyzing air traffic trajectories: OpenSky access, f
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

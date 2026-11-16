@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 160 | Python | Apache-2.0 | 2022-04-06 | False | archived | low |
+| 161 | Python | Apache-2.0 | 2022-04-06 | False | archived | low |
 
 Inertial network from RNIN-VIO (ISMAR 2021) that regresses displacement and uncertainty from IMU windows, meant to keep a VIO alive when vision fails.
 
@@ -24,4 +24,4 @@ Inertial network from RNIN-VIO (ISMAR 2021) that regresses displacement and unce
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

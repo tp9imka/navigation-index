@@ -28,4 +28,4 @@ Open-source generator for BeiDou B1C baseband signals for SDR playback or file o
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

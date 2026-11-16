@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 145 | C++ | ? | 2024-11-05 | False | educational | medium |
+| 146 | C++ | ? | 2024-11-05 | False | educational | medium |
 
 Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3D geometry, trajectory optimization, feature tracking, two-view geometry, VIO and place recognition.
 
@@ -30,4 +30,4 @@ Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

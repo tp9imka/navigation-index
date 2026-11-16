@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | Jupyter Notebook | ? | ? | ? | research-prototype | medium |
+| 14 | Jupyter Notebook | MIT | 2023-10-20 | False | research-prototype | medium |
 
 Supplementary materials for the gatekeeper paper: PDF with appendix, videos and notebook code for backup-trajectory safety verification.
 
@@ -23,3 +23,5 @@ Supplementary materials for the gatekeeper paper: PDF with appendix, videos and 
 - [gatekeeper: Online Safety Verification and Control for Nonlinear Systems in Dynamic Environments](../../catalog/resources/agrawal-gatekeeper-tro2024.md) (has_code)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

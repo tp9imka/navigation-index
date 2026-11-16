@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 508 | C++ | ? | 2025-03-20 | False | research-prototype | low |
+| 509 | C++ | ? | 2025-03-20 | False | research-prototype | low |
 
 Event-based stereo visual odometry using spatio-temporal consistency of two event cameras for mapping and tracking.
 
@@ -31,4 +31,4 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

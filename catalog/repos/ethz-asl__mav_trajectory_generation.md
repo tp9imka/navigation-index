@@ -35,4 +35,4 @@ C++ library for polynomial (minimum-snap style) trajectory generation for multir
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

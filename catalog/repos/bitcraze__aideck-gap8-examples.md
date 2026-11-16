@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C | ? | ? | ? | active-research | low |
+| 59 | C | ? | 2026-10-20 | False | active-research | low |
 
 Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming over WiFi and small onboard CNN inference.
 
@@ -23,3 +23,5 @@ Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming ove
 - integrates_with: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
 _Indexed by lane(s): close-area-sims_
+
+_GitHub metadata fetched 2026-11-16._

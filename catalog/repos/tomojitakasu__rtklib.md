@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 3,166 | C | ? | 2024-05-28 | False | production | high |
+| 3,171 | C | ? | 2024-05-28 | False | production | high |
 
 The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK, PPK and PPP engines in portable C, plus CLI tools (rnx2rtkp, rtkrcv, str2str, convbin) and Windows GUIs.
 
@@ -57,4 +57,4 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

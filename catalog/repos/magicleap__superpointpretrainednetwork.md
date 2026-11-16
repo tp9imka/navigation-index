@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,200 | Python | NOASSERTION | 2022-07-24 | False | archived | medium |
+| 2,199 | Python | NOASSERTION | 2022-07-24 | False | archived | medium |
 
 Pretrained SuperPoint keypoint detector and descriptor.
 
@@ -32,4 +32,4 @@ Pretrained SuperPoint keypoint detector and descriptor.
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

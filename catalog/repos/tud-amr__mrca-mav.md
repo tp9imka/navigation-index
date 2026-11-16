@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | MATLAB | ? | ? | ? | archived | low |
+| 97 | MATLAB | GPL-3.0 | 2020-06-30 | False | archived | low |
 
 MATLAB code for chance-constrained NMPC collision avoidance of MAVs among moving obstacles and other robots.
 
@@ -27,3 +27,5 @@ MATLAB code for chance-constrained NMPC collision avoidance of MAVs among moving
 - [Chance-Constrained Collision Avoidance for MAVs in Dynamic Environments](../../catalog/resources/zhu-alonso-mora-ccnmpc-mav-2019.md) (has_code)
 
 _Indexed by lane(s): close-area-innovation_
+
+_GitHub metadata fetched 2026-11-16._

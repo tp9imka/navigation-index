@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 308 | C++ | ? | 2026-05-15 | False | production | medium |
+| 310 | C++ | ? | 2026-05-15 | False | production | medium |
 
 Prophesee's open SDK for event-based vision: camera drivers, data formats, visualization and algorithm building blocks.
 
@@ -28,4 +28,4 @@ Prophesee's open SDK for event-based vision: camera drivers, data formats, visua
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

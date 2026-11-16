@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 694 | C++ | MIT | 2026-04-14 | False | production | high |
+| 696 | C++ | MIT | 2026-11-13 | False | production | high |
 
 ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath). Ships ArUco marker detection, marker-map navigation published to PX4 as a vision position estimate, downward optical-flow position hold, and a Gazebo simulator. Documentation is written in Russian first, with English translations.
 
@@ -50,4 +50,4 @@ ROS-based software stack and Raspberry Pi image for the Clover educational quadc
 
 _Indexed by lane(s): ua-ru-sources_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

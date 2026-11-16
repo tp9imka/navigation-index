@@ -70,11 +70,13 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Swarm-SLAM](../../catalog/repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
 - [MCD: Multi-Campus Dataset](../../catalog/repos/mcdviral__mcdviral.github.io.md) - fit: medium - Site repo for MCD, a multi-campus dataset across Asia and Europe with spinning and non-repetitive lidar, stereo cameras, IMUs, UWB ranging, survey-grade prior maps and continuous-time ground truth.
 - [livox-mid360-slam-evaluation](../../catalog/repos/harshareddy1611__livox-mid360-slam-evaluation.md) - fit: medium - Community benchmark of KISS-ICP, DLIO, FAST-LIO2 and GLIM on Livox Mid-360 data (TIERS indoor dataset plus own VICON-tracked UAV flights), run in ROS 2 Humble and scored with evo.
-- [safe-route (KosmoHackathon 2026)](../../catalog/repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
 - [smfeval](../../catalog/repos/svendbot__smfeval.md) - fit: medium - Python tool that scores an odometry estimate together with its reported covariance (NEES, scale gap, coverage, proper scoring rules), plus a pairwise test that flags overconfidence between two filters without ground trut
+- [safe-route (KosmoHackathon 2026)](../../catalog/repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
 - [LeGO-LOAM](../../catalog/repos/robustfieldautonomylab__lego-loam.md) - fit: low - Lightweight ground-optimized LiDAR odometry and mapping that segments ground to speed up feature extraction on UGVs.
 - [R3LIVE](../../catalog/repos/hku-mars__r3live.md) - fit: low - Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package.
 - [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md) - fit: low - Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS 2020).
+- [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
+- [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
 - [lidar_imu_calib](../../catalog/repos/chennuo0125-hit__lidar_imu_calib.md) - fit: low - Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
 - [GLIO](../../catalog/repos/xikunliu-huskit__glio.md) - fit: low - Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.
 - [Quatro](../../catalog/repos/url-kaist__quatro.md) - fit: low - Fast, robust global registration for terrestrial robots that assumes near-planar motion to cut degrees of freedom.
@@ -82,8 +84,6 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [STEAM](../../catalog/repos/utiasasrl__steam.md) - fit: low - Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinear least-squares library with continuous-time Gaussian-process trajectory priors on Lie groups.
 - [CELL](../../catalog/repos/panagiotisq__cell.md) - fit: low - Event camera localization in prior lidar maps with confidence weighting.
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
-- [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
-- [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 
 ## Documents, talks, courses, datasets (48)
 

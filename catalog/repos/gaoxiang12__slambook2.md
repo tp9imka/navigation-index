@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 6,774 | C++ | MIT | 2024-12-27 | False | educational | medium |
+| 6,786 | C++ | MIT | 2024-12-27 | False | educational | medium |
 
 Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie groups, nonlinear optimization, feature VO, direct methods, back-end and loop closure examples in C++.
 
@@ -28,4 +28,4 @@ Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie g
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

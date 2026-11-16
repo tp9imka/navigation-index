@@ -39,4 +39,4 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

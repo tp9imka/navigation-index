@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| ? | C++ | ? | ? | ? | archived | medium |
+| 486 | C++ | BSD-3-Clause | 2021-02-18 | False | archived | medium |
 
 C++ Jump Point Search on 2D and 3D occupancy grids, plus a distance-map planner that adds a potential-field style clearance cost around obstacles. Builds with plain CMake or catkin.
 
@@ -32,3 +32,5 @@ C++ Jump Point Search on 2D and 3D occupancy grids, plus a distance-map planner 
 - [Planning Dynamically Feasible Trajectories for Quadrotors Using Safe Flight Corridors in 3-D Complex Environments](../../catalog/resources/liu-sfc-quadrotor-ral-2017.md) (has_code)
 
 _Indexed by lane(s): close-area-planning_
+
+_GitHub metadata fetched 2026-11-16._

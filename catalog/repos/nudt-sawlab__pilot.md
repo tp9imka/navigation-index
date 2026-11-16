@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 125 | Python | MIT | 2026-07-04 | False | active-research | medium |
+| 127 | Python | MIT | 2026-07-04 | False | active-research | medium |
 
 Neural pixel-to-3D registration for UAV ego-localization and target geo-localization against a geo-referenced 3D map; release uses 3D Gaussian Splatting map backends (CVPR 2026).
 
@@ -24,4 +24,4 @@ Neural pixel-to-3D registration for UAV ego-localization and target geo-localiza
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

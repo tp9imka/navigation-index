@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,026 | C++ | BSD-3-Clause | 2026-03-22 | False | active-research | medium |
+| 1,030 | C++ | BSD-3-Clause | 2026-03-22 | False | active-research | medium |
 
 GitHub mirror of Basalt, a visual-inertial odometry and mapping system built around non-linear factor recovery, with calibration tools; primary development is on GitLab.
 
@@ -29,4 +29,4 @@ GitHub mirror of Basalt, a visual-inertial odometry and mapping system built aro
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._

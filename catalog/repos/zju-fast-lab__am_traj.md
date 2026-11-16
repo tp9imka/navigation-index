@@ -25,4 +25,4 @@ Alternating-minimisation trajectory generator for aggressive quadrotor flight: j
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-09._
+_GitHub metadata fetched 2026-11-16._
