@@ -42,6 +42,7 @@ jobs:
       - name: Stdlib sample and template tests
         run: |
           python3 tools/test_mcp_server.py
+          python3 tools/test_traffic.py
           make -C templates/project-repo test
           (cd templates/demo-dashboard && python3 -m unittest -q)
           (cd templates/offline-kit && python3 -m unittest -q)

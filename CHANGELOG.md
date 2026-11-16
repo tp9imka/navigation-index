@@ -6,6 +6,14 @@ All notable changes to this project are recorded here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- **Repo traffic on the Home page.** `tools/traffic.py` archives GitHub clone and view counts daily
+  (`.github/workflows/traffic.yml`, repo secret `TRAFFIC_TOKEN`) into `site/data/traffic.json`,
+  past GitHub's 14-day limit. Counting starts 2026-11-16, the day the repo went public. Clones
+  include the repo's own CI and deploy builds; the 14-day unique count reads "not measured" until
+  the whole window is after that date.
+
 ### Fixed
 
 - **Arena mapper: a dropped beam no longer marks free space behind walls.** The unknown-map

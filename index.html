@@ -52,7 +52,7 @@
   .h-card .ch { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
   .h-card h3 { margin: 0; font-size: 17px; }
   .h-card p { margin: 0; color: var(--muted); font-size: 14px; }
-  .h-card .src { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); overflow-wrap: anywhere; }
+  .h-card .src, .h-sect > .src { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); overflow-wrap: anywhere; }
   .mtx { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
   .mtx th { text-align: left; font: 600 11px ui-monospace, Menlo, monospace; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
   .mtx td { padding: 8px; border-bottom: 1px solid var(--line); }
@@ -200,6 +200,17 @@
   </div>
 </section>
 
+<section class="h-sect" aria-labelledby="trafficH">
+  <div class="h-sect-h"><h2 id="trafficH">Repo traffic</h2><a href="site/data/traffic.json">traffic.json</a></div>
+  <div class="h-counters" id="traffic">
+    <div class="h-counter"><span class="num" data-traffic="clones">-</span><span class="lbl">git clones <span data-traffic-since></span></span></div>
+    <div class="h-counter"><span class="num" data-traffic="unique_cloners">-</span><span class="lbl">unique cloners, last 14 days</span></div>
+    <div class="h-counter"><span class="num" data-traffic="views">-</span><span class="lbl">repo page views <span data-traffic-since></span></span></div>
+    <div class="h-counter"><span class="num" data-traffic="stars">-</span><span class="lbl">GitHub stars</span></div>
+  </div>
+  <p class="src" id="trafficNote">Loading site/data/traffic.json...</p>
+</section>
+
 <aside class="h-agents" aria-label="For coding agents">
   <div><strong>For coding agents</strong>
     <span class="links"><a href="https://github.com/tp9imka/navigation-index/blob/main/AGENTS.md" rel="noopener">AGENTS.md</a>, <a href="llms.txt">llms.txt</a>, MCP server</span></div>
@@ -224,6 +235,21 @@
       if (typeof v === "number") el.textContent = v.toLocaleString("en-US");
     });
   }).catch(function () { /* counters stay "-", headline keeps "the planners" */ });
+
+  // ---------- repo traffic, from site/data/traffic.json (tools/traffic.py, daily) ----------
+  getJSON("site/data/traffic.json").then(function (t) {
+    var vals = { clones: t.totals.clones, unique_cloners: t.window_14d.unique_cloners, views: t.totals.views, stars: t.stars };
+    document.querySelectorAll("[data-traffic]").forEach(function (el) {
+      var v = vals[el.dataset.traffic];
+      // stars are a live count; the traffic sums mean nothing before the first reported day
+      if (typeof v === "number" && (t.days.length || el.dataset.traffic === "stars")) el.textContent = v.toLocaleString("en-US");
+    });
+    document.querySelectorAll("[data-traffic-since]").forEach(function (el) { el.textContent = "since " + t.since; });
+    $("#trafficNote").textContent = (t.days.length
+      ? "GitHub traffic for " + t.repo + ", " + t.days[0].date + " to " + t.days[t.days.length - 1].date + ", updated " + t.updated + "."
+      : "Tracking started " + t.since + ". GitHub has not reported a day since then yet.") +
+      " Clones include this repo's own CI and deploy builds. A dash means not measured yet.";
+  }).catch(function (err) { $("#trafficNote").textContent = "Could not load traffic.json (" + err.message + ")."; });
 
   // ---------- top-down map renderer (adapted from docs/design/public-release/arena-preview.js) ----------
   var worlds = {};

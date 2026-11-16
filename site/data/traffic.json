@@ -1,0 +1,19 @@
+{
+ "schema": "navidx-traffic/1",
+ "generated_by": "tools/traffic.py",
+ "repo": "tp9imka/navigation-index",
+ "since": "2026-11-16",
+ "updated": "2026-11-16",
+ "totals": {
+  "clones": 0,
+  "views": 0
+ },
+ "window_14d": {
+  "unique_cloners": null,
+  "unique_visitors": null
+ },
+ "stars": 0,
+ "forks": 0,
+ "referrers_14d": [],
+ "days": []
+}

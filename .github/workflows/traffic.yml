@@ -1,0 +1,34 @@
+name: traffic
+# GitHub keeps clone and view counts for 14 days. This archives them daily into
+# site/data/traffic.json (tools/traffic.py), which the Home page reads.
+# Needs the repo secret TRAFFIC_TOKEN: the default Actions token cannot read traffic.
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: traffic
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Archive traffic
+        env:
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: python3 tools/traffic.py
+      - name: Commit if changed
+        run: |
+          git config user.name "navigation-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/data/traffic.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: traffic snapshot"
+            git pull --rebase
+            git push
+          fi
