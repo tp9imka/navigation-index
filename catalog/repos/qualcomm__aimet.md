@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,750 | Python | NOASSERTION | 2026-11-15 | False | production | low |
+| 2,748 | Python | NOASSERTION | 2026-11-21 | False | production | low |
 
 Qualcomm's quantization and compression library for PyTorch and ONNX models: post-training quantization, quantization-aware training and accuracy debugging, aimed at INT8 deployment on Snapdragon NPUs.
 
@@ -29,4 +29,4 @@ Qualcomm's quantization and compression library for PyTorch and ONNX models: pos
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

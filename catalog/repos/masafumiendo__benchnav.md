@@ -28,4 +28,4 @@ Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

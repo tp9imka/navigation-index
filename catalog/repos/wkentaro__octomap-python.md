@@ -28,4 +28,4 @@ Cython bindings for OctoMap, published on PyPI as octomap-python. Lets Python co
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

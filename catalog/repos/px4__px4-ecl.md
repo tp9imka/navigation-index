@@ -32,4 +32,4 @@ Former home of PX4's estimation and control library including the EKF2 navigatio
 
 _Indexed by lane(s): autopilots, ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

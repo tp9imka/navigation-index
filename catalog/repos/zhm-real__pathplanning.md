@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 9,391 | Python | MIT | 2023-02-06 | False | educational | high |
+| 9,389 | Python | MIT | 2023-02-06 | False | educational | high |
 
 Collection of search-based (A*, LPA*, D* Lite, ARA* and others) and sampling-based (RRT, RRT*, Informed RRT*, BIT*, FMT*) planners in Python with animations, in both 2D and 3D folders.
 
@@ -31,4 +31,4 @@ Collection of search-based (A*, LPA*, D* Lite, ARA* and others) and sampling-bas
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

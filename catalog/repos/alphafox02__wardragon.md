@@ -30,4 +30,4 @@ Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone det
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,244 | Python | MIT | 2023-10-16 | False | educational | high |
+| 1,242 | Python | MIT | 2023-10-16 | False | educational | high |
 
 Python loaders for the KITTI raw and odometry datasets.
 
@@ -33,4 +33,4 @@ Python loaders for the KITTI raw and odometry datasets.
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -165,8 +165,8 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [UUV Simulator](../../catalog/repos/uuvsimulator__uuv_simulator.md) - fit: low - Gazebo/ROS packages for underwater vehicle simulation with hydrodynamics, thrusters and sensors; archived.
 - [agile_autonomy](../../catalog/repos/uzh-rpg__agile_autonomy.md) - fit: low - Code for 'Learning High-Speed Flight in the Wild': a policy trained in simulation from a privileged expert that maps depth and state to collision-free trajectories.
 - [ESIM](../../catalog/repos/uzh-rpg__rpg_esim.md) - fit: low - Event camera simulator from UZH RPG that renders event streams from simulated scenes.
-- [Colosseum (AirSim fork)](../../catalog/repos/codexlabsllc__colosseum.md) - fit: low - Community fork of AirSim that moved it to newer Unreal Engine 5 releases.
 - [aerial-autonomy-stack](../../catalog/repos/jacopopan__aerial-autonomy-stack.md) - fit: low - Dockerized harness to simulate and deploy PX4, ArduPilot and Betaflight drones with ROS 2, YOLO and lidar odometry (KISS-ICP), with a steppable gymnasium interface and Jetson deployment images.
+- [Colosseum (AirSim fork)](../../catalog/repos/codexlabsllc__colosseum.md) - fit: low - Community fork of AirSim that moved it to newer Unreal Engine 5 releases.
 - [OmniDrones](../../catalog/repos/btx0424__omnidrones.md) - fit: low - GPU-parallel drone simulation and RL platform built on Isaac Sim.
 - [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) - fit: low - Unity3D and ROS framework from MIT for photorealistic camera rendering with real or simulated vehicle dynamics in the loop.
 - [AirSim Drone Racing Lab](../../catalog/repos/microsoft__airsim-drone-racing-lab.md) - fit: low - Archived AirSim-based framework used for the NeurIPS 2019 Game of Drones competition: gate tracks, perception, planning and head-to-head racing tiers.

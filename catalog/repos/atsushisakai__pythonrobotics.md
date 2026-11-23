@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 30,925 | Python | NOASSERTION | 2026-11-10 | False | educational | high |
+| 30,956 | Python | NOASSERTION | 2026-11-16 | False | educational | high |
 
 Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 
@@ -34,4 +34,4 @@ Large collection of readable Python implementations of robotics algorithms: loca
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

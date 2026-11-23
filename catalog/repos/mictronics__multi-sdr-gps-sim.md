@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 272 | C | MIT | 2025-01-17 | False | active-research | medium |
+| 273 | C | MIT | 2026-11-21 | False | active-research | medium |
 
 Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to HackRF or ADALM-Pluto, or to a binary IQ file, with a curses text UI.
 
@@ -32,4 +32,4 @@ Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to 
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

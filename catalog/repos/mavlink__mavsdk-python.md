@@ -46,4 +46,4 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

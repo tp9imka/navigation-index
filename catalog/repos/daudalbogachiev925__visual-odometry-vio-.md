@@ -35,4 +35,4 @@ Minimal Python project: essential-matrix visual odometry fused with IMU in an EK
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

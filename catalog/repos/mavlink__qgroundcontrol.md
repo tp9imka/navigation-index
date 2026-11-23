@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 5,120 | C++ | Apache-2.0 | 2026-11-15 | False | production | high |
+| 5,129 | C++ | Apache-2.0 | 2026-11-23 | False | production | high |
 
 Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.
 
@@ -42,4 +42,4 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

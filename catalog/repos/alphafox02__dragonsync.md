@@ -42,4 +42,4 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 
 _Indexed by lane(s): defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

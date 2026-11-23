@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 13,459 | C++ | Apache-2.0 | 2026-11-05 | False | production | high |
+| 13,479 | C++ | Apache-2.0 | 2026-11-18 | False | production | high |
 
 Open parts of NVIDIA's inference SDK: parsers, plugins, samples and the trtexec / Polygraphy tools for building and profiling engines from ONNX.
 
@@ -32,4 +32,4 @@ Open parts of NVIDIA's inference SDK: parsers, plugins, samples and the trtexec 
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

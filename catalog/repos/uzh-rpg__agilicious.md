@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 663 | TeX | ? | 2023-03-07 | False | research-prototype | low |
+| 664 | TeX | ? | 2023-03-07 | False | research-prototype | low |
 
 Public front page of the UZH Agilicious quadrotor hardware and software stack for agile vision-based flight (MPC, planning, estimation). The repository holds documentation; source access is by request.
 
@@ -30,4 +30,4 @@ Public front page of the UZH Agilicious quadrotor hardware and software stack fo
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

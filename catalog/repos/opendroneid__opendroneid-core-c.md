@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 387 | C | Apache-2.0 | 2026-10-07 | False | production | high |
+| 391 | C | Apache-2.0 | 2026-11-18 | False | production | high |
 
 Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID messages (location, operator, system, auth) for Bluetooth and Wi-Fi broadcast.
 
@@ -57,4 +57,4 @@ Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID me
 
 _Indexed by lane(s): autopilots, defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

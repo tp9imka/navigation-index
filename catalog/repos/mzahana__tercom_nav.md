@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 85 | Python | ? | 2026-04-26 | False | research-prototype | high |
+| 86 | Python | ? | 2026-04-26 | False | research-prototype | high |
 
 ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node correlates baro + rangefinder terrain profiles against a GeoTIFF DEM and feeds fixes into a 15-state error-state Kalman filter driven by IMU, baro and velocity updates.
 
@@ -48,4 +48,4 @@ ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node c
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

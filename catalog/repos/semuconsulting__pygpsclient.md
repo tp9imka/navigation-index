@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 865 | Python | BSD-3-Clause | 2026-10-26 | False | production | high |
+| 864 | Python | BSD-3-Clause | 2026-11-19 | False | production | high |
 
 Cross-platform Python GUI GNSS client that displays and configures receivers over NMEA, UBX, RTCM3 and other protocols, with built-in NTRIP and SPARTN clients.
 
@@ -38,4 +38,4 @@ Cross-platform Python GUI GNSS client that displays and configures receivers ove
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

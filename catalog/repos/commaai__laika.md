@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 729 | Python | MIT | 2026-09-25 | False | active-research | high |
+| 727 | Python | MIT | 2026-09-25 | False | active-research | high |
 
 Python GNSS processing library from comma.ai that fetches orbits, clocks and atmospheric corrections automatically and computes corrected pseudoranges and positions from raw measurements.
 
@@ -39,4 +39,4 @@ Python GNSS processing library from comma.ai that fetches orbits, clocks and atm
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

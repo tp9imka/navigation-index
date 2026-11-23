@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 667 | C++ | NOASSERTION | 2026-07-08 | True | archived | low |
+| 666 | C++ | NOASSERTION | 2026-07-08 | True | archived | low |
 
 Community fork of AirSim that moved it to newer Unreal Engine 5 releases. The GitHub repository is now marked archived.
 
@@ -30,4 +30,4 @@ Community fork of AirSim that moved it to newer Unreal Engine 5 releases. The Gi
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

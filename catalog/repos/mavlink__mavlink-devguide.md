@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 149 | Python | NOASSERTION | 2026-11-12 | False | production | medium |
+| 150 | Python | NOASSERTION | 2026-11-21 | False | production | medium |
 
 Source of the mavlink.io documentation: protocol, microservices (mission, parameters, camera, Open Drone ID) and message reference.
 
@@ -28,4 +28,4 @@ Source of the mavlink.io documentation: protocol, microservices (mission, parame
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

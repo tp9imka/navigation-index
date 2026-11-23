@@ -47,4 +47,4 @@ Russian-language hackathon solution for 'Полёт вслепую' (Blind fligh
 
 _Indexed by lane(s): ua-ru-sources_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

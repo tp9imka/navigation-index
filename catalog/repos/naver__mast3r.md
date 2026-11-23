@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 3,169 | Python | NOASSERTION | 2025-06-30 | False | active-research | medium |
+| 3,175 | Python | NOASSERTION | 2025-06-30 | False | active-research | medium |
 
 Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from image pairs, building on DUSt3R.
 
@@ -31,4 +31,4 @@ Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from im
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

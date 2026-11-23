@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 145 | C++ | Apache-2.0 | 2026-07-03 | False | active-research | medium |
+| 146 | C++ | Apache-2.0 | 2026-07-03 | False | active-research | medium |
 
 Multi-state-constraint equivariant filter for vision-aided inertial navigation (RA-L 2023).
 
@@ -28,4 +28,4 @@ Multi-state-constraint equivariant filter for vision-aided inertial navigation (
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

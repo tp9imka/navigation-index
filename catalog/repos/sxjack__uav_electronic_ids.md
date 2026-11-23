@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 136 | C | MIT | 2024-01-04 | False | research-prototype | medium |
+| 137 | C | MIT | 2024-01-04 | False | research-prototype | medium |
 
 Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French ID) and UTM interfaces, with ESP32 examples.
 
@@ -30,4 +30,4 @@ Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

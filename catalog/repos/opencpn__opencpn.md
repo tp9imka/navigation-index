@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,517 | C | GPL-2.0 | 2026-11-13 | False | production | high |
+| 1,518 | C | GPL-2.0 | 2026-11-22 | False | production | high |
 
 Cross-platform open-source chartplotter and navigation application that displays raster and S-57 vector charts, ingests GPS and AIS feeds, and runs waypoint routes. Large plugin ecosystem.
 
@@ -44,4 +44,4 @@ Cross-platform open-source chartplotter and navigation application that displays
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

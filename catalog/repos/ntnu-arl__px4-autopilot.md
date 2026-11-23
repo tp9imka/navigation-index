@@ -26,4 +26,4 @@ NTNU fork of PX4 whose cbf branch holds the actual PX4-CBF code: CBFSafetyFilter
 
 _Indexed by lane(s): cbf-baselines_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

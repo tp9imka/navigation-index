@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,334 | C++ | MIT | 2023-10-15 | False | research-prototype | low |
+| 1,335 | C++ | MIT | 2023-10-15 | False | research-prototype | low |
 
 General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor constraints and dynamic limits with spatial-temporal deformation.
 
@@ -36,4 +36,4 @@ General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

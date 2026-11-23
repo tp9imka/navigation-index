@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 11,814 | Rust | Apache-2.0 | 2026-11-15 | False | production | high |
+| 11,855 | Rust | Apache-2.0 | 2026-11-21 | False | production | high |
 
 SDKs and viewer for recording and inspecting multimodal robotics data on synchronized timelines, including images, point clouds, transforms, trajectories and scalar signals; supports MCAP ingestion.
 
@@ -36,4 +36,4 @@ SDKs and viewer for recording and inspecting multimodal robotics data on synchro
 
 _Indexed by lane(s): recording-debugging_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

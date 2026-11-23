@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 346 | C | BSD-2-Clause | 2026-10-04 | False | production | low |
+| 347 | C | BSD-2-Clause | 2026-10-04 | False | production | low |
 
 Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.
 
@@ -28,4 +28,4 @@ Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

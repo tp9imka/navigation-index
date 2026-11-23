@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 856 | C++ | ? | 2023-04-27 | False | research-prototype | medium |
+| 859 | C++ | ? | 2023-04-27 | False | research-prototype | medium |
 
 LIO-SAM combined with Scan Context loop closure for more reliable large-scale LiDAR-inertial SLAM.
 
@@ -29,4 +29,4 @@ LIO-SAM combined with Scan Context loop closure for more reliable large-scale Li
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

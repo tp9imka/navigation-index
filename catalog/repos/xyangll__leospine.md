@@ -33,4 +33,4 @@ Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

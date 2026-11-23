@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 15 | TeX | MIT | 2026-10-16 | False | production | medium |
+| 16 | TeX | MIT | 2026-11-19 | False | production | medium |
 
 Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.
 
@@ -43,4 +43,4 @@ Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

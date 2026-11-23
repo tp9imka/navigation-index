@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 890 | C++ | NOASSERTION | 2023-03-05 | False | archived | medium |
+| 889 | C++ | NOASSERTION | 2023-03-05 | False | archived | medium |
 
 Command-line tools to convert GDAL-readable DEMs into Cesium heightmap terrain tiles; quantized-mesh output needs the ahuarte47 fork, which the tum-gis Docker image packages.
 
@@ -30,4 +30,4 @@ Command-line tools to convert GDAL-readable DEMs into Cesium heightmap terrain t
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

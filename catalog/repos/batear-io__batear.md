@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 439 | C | MIT | 2026-11-13 | False | active-research | medium |
+| 443 | C | MIT | 2026-11-13 | False | active-research | medium |
 
 Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Ethernet alerting.
 
@@ -29,4 +29,4 @@ Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Et
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

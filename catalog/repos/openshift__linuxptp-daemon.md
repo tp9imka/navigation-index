@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 30 | Go | Apache-2.0 | 2026-11-13 | False | production | medium |
+| 30 | Go | Apache-2.0 | 2026-11-16 | False | production | medium |
 
 Kubernetes DaemonSet that manages ptp4l, phc2sys, ts2phc and timemaster per node, parses their logs into clock-state events, and for u-blox GNSS grandmasters treats a UBX-NAV-STATUS spoofing flag as GNSS loss.
 
@@ -24,4 +24,4 @@ Kubernetes DaemonSet that manages ptp4l, phc2sys, ts2phc and timemaster per node
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 202 | MATLAB | Apache-2.0 | 2021-01-28 | False | archived | low |
+| 203 | MATLAB | Apache-2.0 | 2021-01-28 | False | archived | low |
 
 LabVIEW programs to record RF signals plus MATLAB and Python code for drone detection and identification, accompanying the DroneRF dataset (Mendeley Data, CC BY 4.0).
 
@@ -44,4 +44,4 @@ LabVIEW programs to record RF signals plus MATLAB and Python code for drone dete
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

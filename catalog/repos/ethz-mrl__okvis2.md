@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 243 | C++ | NOASSERTION | 2026-08-07 | False | active-research | medium |
+| 245 | C++ | NOASSERTION | 2026-08-07 | False | active-research | medium |
 
 Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable factor-graph design; second generation of OKVIS.
 
@@ -28,4 +28,4 @@ Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable fa
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

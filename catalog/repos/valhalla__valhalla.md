@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 6,462 | C++ | NOASSERTION | 2026-11-15 | False | production | high |
+| 6,481 | C++ | NOASSERTION | 2026-11-21 | False | production | high |
 
 Tiled OSM routing engine with dynamic costing per request (auto, truck, pedestrian, bicycle), isochrones and map matching.
 
@@ -40,4 +40,4 @@ Tiled OSM routing engine with dynamic costing per request (auto, truck, pedestri
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

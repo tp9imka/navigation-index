@@ -31,4 +31,4 @@ ROS 2 Real-Time Working Group benchmark that simulates an autonomous-driving nod
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

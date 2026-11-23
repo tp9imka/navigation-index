@@ -24,4 +24,4 @@ Semantic-weighted adaptive particle filter for 4-DoF UAV localization against sa
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

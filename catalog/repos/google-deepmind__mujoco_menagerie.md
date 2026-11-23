@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,374 | Python | NOASSERTION | 2026-11-10 | False | production | medium |
+| 4,405 | Python | NOASSERTION | 2026-11-10 | False | production | medium |
 
 Curated MuJoCo MJCF models, including a Skydio X2 quadrotor and a Bitcraze Crazyflie 2. Models only, no controllers.
 
@@ -24,4 +24,4 @@ Curated MuJoCo MJCF models, including a Skydio X2 quadrotor and a Bitcraze Crazy
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

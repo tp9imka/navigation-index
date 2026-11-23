@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 299 | C++ | Apache-2.0 | 2024-08-19 | False | active-research | medium |
+| 298 | C++ | Apache-2.0 | 2024-08-19 | False | active-research | medium |
 
 Gazebo-based underwater simulation environment from the Naval Postgraduate School and partners, extending UUV Simulator with DVL, sonar, bathymetry and manipulation models.
 
@@ -34,4 +34,4 @@ Gazebo-based underwater simulation environment from the Naval Postgraduate Schoo
 
 _Indexed by lane(s): domains-swarm, sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

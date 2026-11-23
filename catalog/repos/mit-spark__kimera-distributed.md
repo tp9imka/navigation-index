@@ -28,4 +28,4 @@ Distributed front end of Kimera-Multi: handles the inter-robot communication pro
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

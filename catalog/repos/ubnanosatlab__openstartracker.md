@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 205 | Python | MIT | 2026-10-30 | False | active-research | medium |
+| 207 | Python | MIT | 2026-10-30 | False | active-research | medium |
 
 Open-source star tracker using a Bayesian star identification approach, developed by the University at Buffalo Nanosatellite Lab.
 
@@ -29,4 +29,4 @@ Open-source star tracker using a Bayesian star identification approach, develope
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

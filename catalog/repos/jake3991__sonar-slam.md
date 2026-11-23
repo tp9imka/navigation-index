@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 309 | Python | MIT | 2023-09-21 | False | research-prototype | medium |
+| 310 | Python | MIT | 2023-09-21 | False | research-prototype | medium |
 
 Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute research on BlueROV-class vehicles, combining sonar feature extraction and pose-graph optimization.
 
@@ -38,4 +38,4 @@ Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

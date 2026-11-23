@@ -29,4 +29,4 @@ Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulato
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -41,4 +41,4 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

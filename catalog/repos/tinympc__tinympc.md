@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,121 | C++ | MIT | 2026-09-02 | False | active-research | medium |
+| 1,120 | C++ | MIT | 2026-11-23 | False | active-research | medium |
 
 ADMM-based convex MPC solver small enough for microcontrollers, with Python bindings and code generation; demonstrated on a Crazyflie.
 
@@ -32,4 +32,4 @@ ADMM-based convex MPC solver small enough for microcontrollers, with Python bind
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

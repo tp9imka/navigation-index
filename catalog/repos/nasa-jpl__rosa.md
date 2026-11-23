@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,688 | Python | Apache-2.0 | 2026-11-03 | False | active-research | high |
+| 1,694 | Python | Apache-2.0 | 2026-11-18 | False | active-research | high |
 
 NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 and ROS 2 systems in natural language through a set of ROS introspection and control tools.
 
@@ -40,4 +40,4 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

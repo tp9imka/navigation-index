@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 96 | Python | GPL-3.0 | 2024-09-08 | False | research-prototype | low |
+| 97 | Python | GPL-3.0 | 2024-09-08 | False | research-prototype | low |
 
 Open star tracker software from the University of Chile space lab, flown on SUCHAI nanosatellites.
 
@@ -25,4 +25,4 @@ Open star tracker software from the University of Chile space lab, flown on SUCH
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

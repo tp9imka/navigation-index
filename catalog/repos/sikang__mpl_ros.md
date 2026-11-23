@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 759 | C++ | Apache-2.0 | 2025-04-17 | False | research-prototype | low |
+| 758 | C++ | Apache-2.0 | 2025-04-17 | False | research-prototype | low |
 
 ROS wrapper and examples for search-based kinodynamic planning: graph search over short constant-jerk or constant-acceleration motion primitives with a minimum-time-plus-effort cost.
 
@@ -30,4 +30,4 @@ ROS wrapper and examples for search-based kinodynamic planning: graph search ove
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

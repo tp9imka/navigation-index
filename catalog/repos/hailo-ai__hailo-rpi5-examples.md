@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 956 | Python | MIT | 2026-01-25 | False | archived | medium |
+| 958 | Python | MIT | 2026-01-25 | False | archived | medium |
 
 Examples for Hailo-8/8L accelerators on Raspberry Pi 5 (AI Kit/HAT): detection, pose and segmentation pipelines; marked outdated in favor of hailo-apps.
 
@@ -25,4 +25,4 @@ Examples for Hailo-8/8L accelerators on Raspberry Pi 5 (AI Kit/HAT): detection, 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

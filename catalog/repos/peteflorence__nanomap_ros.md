@@ -24,4 +24,4 @@ C++/ROS library that answers obstacle proximity queries from a history of depth 
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

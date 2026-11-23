@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,153 | Python | ? | 2025-10-01 | False | research-prototype | high |
+| 1,158 | Python | ? | 2025-10-01 | False | research-prototype | high |
 
 MCP server plus QGIS plugin that lets an LLM create projects, load layers, run processing algorithms and execute PyQGIS code in QGIS Desktop.
 
@@ -37,4 +37,4 @@ MCP server plus QGIS plugin that lets an LLM create projects, load layers, run p
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

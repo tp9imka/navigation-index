@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,078 | Rust | Apache-2.0 | 2026-11-16 | False | production | high |
+| 4,093 | Rust | Apache-2.0 | 2026-11-23 | False | production | high |
 
 Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile generation and mbtiles tooling.
 
@@ -38,4 +38,4 @@ Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile genera
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

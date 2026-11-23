@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 441 | C | GPL-3.0 | 2026-11-01 | False | production | medium |
+| 443 | C | GPL-3.0 | 2026-11-01 | False | production | medium |
 
 Wuhan University's open-source multi-GNSS precise point positioning package with ambiguity resolution, aimed at geodetic-grade post-processing.
 
@@ -28,4 +28,4 @@ Wuhan University's open-source multi-GNSS precise point positioning package with
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

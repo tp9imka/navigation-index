@@ -28,4 +28,4 @@ ESKF fusing GPS and IMU for improved positioning, with documentation in Chinese.
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

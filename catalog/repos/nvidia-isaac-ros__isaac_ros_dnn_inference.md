@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 143 | C++ | Apache-2.0 | 2026-09-24 | False | production | medium |
+| 143 | C++ | Apache-2.0 | 2026-11-18 | False | production | medium |
 
 ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder/decoder nodes for common model types.
 
@@ -24,4 +24,4 @@ ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

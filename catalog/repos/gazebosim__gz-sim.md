@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,581 | C++ | Apache-2.0 | 2026-11-14 | False | production | high |
+| 1,591 | C++ | Apache-2.0 | 2026-11-23 | False | production | high |
 
 Current-generation Gazebo robotics simulator with pluggable physics, rendering and a large sensor library (IMU, GPS/NavSat, lidar, cameras, magnetometer, altimeter). Successor to Gazebo Classic.
 
@@ -55,4 +55,4 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

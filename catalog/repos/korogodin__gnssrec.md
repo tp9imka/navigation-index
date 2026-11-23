@@ -38,4 +38,4 @@ Source of a Russian-language textbook for the MPEI course on satellite navigatio
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

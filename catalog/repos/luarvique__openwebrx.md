@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 657 | Python | AGPL-3.0 | 2026-11-13 | False | active-research | medium |
+| 662 | Python | AGPL-3.0 | 2026-11-22 | False | active-research | medium |
 
 Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging improvements.
 
@@ -28,4 +28,4 @@ Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging im
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

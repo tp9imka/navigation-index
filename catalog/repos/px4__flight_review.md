@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 281 | JavaScript | BSD-3-Clause | 2026-11-12 | False | production | medium |
+| 281 | JavaScript | BSD-3-Clause | 2026-11-16 | False | production | medium |
 
 Web app for uploading and plotting PX4 ULog flight logs, including estimator innovations and test ratios.
 
@@ -33,4 +33,4 @@ Web app for uploading and plotting PX4 ULog flight logs, including estimator inn
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

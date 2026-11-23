@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 374 | Python | ? | 2026-10-03 | False | educational | high |
+| 375 | Python | ? | 2026-11-16 | False | educational | high |
 
 Tutorial packages referenced by docs.nav2.org: example planner, controller and behavior-tree plugins, SLAM and GPS waypoint following setups.
 
@@ -28,4 +28,4 @@ Tutorial packages referenced by docs.nav2.org: example planner, controller and b
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 8,657 | Python | NOASSERTION | 2026-11-16 | False | production | medium |
+| 8,704 | Python | NOASSERTION | 2026-11-22 | False | production | medium |
 
 Robot-learning framework on Isaac Sim for massively parallel RL and imitation learning, with navigation and locomotion task examples.
 
@@ -29,4 +29,4 @@ Robot-learning framework on Isaac Sim for massively parallel RL and imitation le
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

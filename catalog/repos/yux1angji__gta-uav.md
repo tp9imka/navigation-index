@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 177 | Python | Apache-2.0 | 2025-10-20 | False | active-research | high |
+| 179 | Python | Apache-2.0 | 2025-10-20 | False | active-research | high |
 
 Benchmark and code for UAV geo-localization trained on synthetic game imagery with partial-match drone-satellite pairs (AAAI 2025).
 
@@ -29,4 +29,4 @@ Benchmark and code for UAV geo-localization trained on synthetic game imagery wi
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

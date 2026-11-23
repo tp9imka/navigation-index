@@ -36,4 +36,4 @@ Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,743 | C++ | GPL-3.0 | 2025-03-08 | False | research-prototype | medium |
+| 2,757 | C++ | GPL-3.0 | 2025-03-08 | False | research-prototype | medium |
 
 ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimizes B-spline trajectories using collision terms computed only where the trajectory hits obstacles.
 
@@ -36,4 +36,4 @@ ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimiz
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

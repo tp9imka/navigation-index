@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,240 | Python | MIT | 2026-11-02 | False | production | high |
+| 1,241 | Python | MIT | 2026-11-16 | False | production | high |
 
 Python interface to PROJ for CRS definitions, coordinate transformations and geodesic computations.
 
@@ -39,4 +39,4 @@ Python interface to PROJ for CRS definitions, coordinate transformations and geo
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

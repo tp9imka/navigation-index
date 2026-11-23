@@ -29,4 +29,4 @@ Robocentric occupancy grid that slides with the vehicle and keeps an inflated ma
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

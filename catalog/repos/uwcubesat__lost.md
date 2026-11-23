@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 92 | C++ | MIT | 2026-11-13 | False | active-research | medium |
+| 93 | C++ | MIT | 2026-11-20 | False | active-research | medium |
 
 Open-source star tracker (C++) covering centroiding, star identification and attitude estimation, from the UW CubeSat team.
 
@@ -29,4 +29,4 @@ Open-source star tracker (C++) covering centroiding, star identification and att
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

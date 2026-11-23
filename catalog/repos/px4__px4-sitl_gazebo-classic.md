@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 467 | C++ | ? | 2026-10-27 | False | production | medium |
+| 466 | C++ | ? | 2026-10-27 | False | production | medium |
 
 Plugins, vehicle models and worlds that connect PX4 SITL/HITL to Gazebo Classic, including GPS, IMU, magnetometer, barometer and optical-flow plugins.
 
@@ -29,4 +29,4 @@ Plugins, vehicle models and worlds that connect PX4 SITL/HITL to Gazebo Classic,
 
 _Indexed by lane(s): autopilots, sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

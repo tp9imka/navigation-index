@@ -30,4 +30,4 @@ Subequivariant neural inertial odometry (ICLR 2025) that canonicalises IMU data 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

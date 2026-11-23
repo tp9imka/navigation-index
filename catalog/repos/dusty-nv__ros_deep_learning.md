@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 985 | C++ | ? | 2024-07-13 | False | production | medium |
+| 986 | C++ | ? | 2024-07-13 | False | production | medium |
 
 ROS/ROS 2 nodes wrapping jetson-inference for detection, classification and segmentation with TensorRT.
 
@@ -28,4 +28,4 @@ ROS/ROS 2 nodes wrapping jetson-inference for detection, classification and segm
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

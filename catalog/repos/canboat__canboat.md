@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 668 | Rust | NOASSERTION | 2026-11-15 | False | production | medium |
+| 671 | Rust | NOASSERTION | 2026-11-22 | False | production | medium |
 
 Toolkit for NMEA 2000 networks: a PGN decoder/analyzer plus utilities to read, write and convert N2K and NMEA 0183 messages, used largely for reverse-engineering marine bus traffic.
 
@@ -28,4 +28,4 @@ Toolkit for NMEA 2000 networks: a PGN decoder/analyzer plus utilities to read, w
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

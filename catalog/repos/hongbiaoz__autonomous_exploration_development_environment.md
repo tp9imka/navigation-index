@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,017 | C++ | ? | 2026-05-25 | False | active-research | high |
+| 1,022 | C++ | ? | 2026-05-25 | False | active-research | high |
 
 CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).
 
@@ -35,4 +35,4 @@ CMU ground-robot development environment with simulated worlds, terrain analysis
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

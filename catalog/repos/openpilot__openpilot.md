@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 620 | C | NOASSERTION | 2015-08-08 | False | archived | low |
+| 621 | C | NOASSERTION | 2015-08-08 | False | archived | low |
 
 Mirror of the original OpenPilot flight controller project (not comma.ai's openpilot), frozen since 2015.
 
@@ -24,4 +24,4 @@ Mirror of the original OpenPilot flight controller project (not comma.ai's openp
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

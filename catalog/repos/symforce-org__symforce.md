@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,658 | C++ | Apache-2.0 | 2026-10-30 | False | production | medium |
+| 1,657 | C++ | Apache-2.0 | 2026-10-30 | False | production | medium |
 
 Symbolic computation and code generation library with a fast sparse nonlinear least-squares optimizer, from Skydio, which says it uses it in production for SLAM, calibration and MPC.
 
@@ -29,4 +29,4 @@ Symbolic computation and code generation library with a fast sparse nonlinear le
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 9 | Python | NOASSERTION | 2026-10-27 | False | research-prototype | high |
+| 10 | Python | NOASSERTION | 2026-11-19 | False | research-prototype | high |
 
 Recent project fusing visual odometry with satellite-map matching in a particle filter for GNSS-denied UAV flight, with an explicit notion of when the map match should not be trusted; evaluated on UAV-VisLoc flights and with a browser demo.
 
@@ -32,4 +32,4 @@ Recent project fusing visual odometry with satellite-map matching in a particle 
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

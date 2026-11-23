@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 183 | Rust | MIT | 2026-11-03 | False | production | medium |
+| 183 | Rust | MIT | 2026-11-18 | False | production | medium |
 
 Rust service that exposes cameras as MAVLink camera components and streams video (RTSP/UDP) to GCS.
 
@@ -29,4 +29,4 @@ Rust service that exposes cameras as MAVLink camera components and streams video
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

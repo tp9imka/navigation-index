@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 929 | C++ | BSD-3-Clause | 2026-10-27 | False | production | high |
+| 934 | C++ | BSD-3-Clause | 2026-11-17 | False | production | high |
 
 Modular coverage path planning library: headland generation, swath generation, route ordering (boustrophedon, snake, spiral) and Dubins/Reeds-Shepp path smoothing, with Python bindings.
 
@@ -33,4 +33,4 @@ Modular coverage path planning library: headland generation, swath generation, r
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

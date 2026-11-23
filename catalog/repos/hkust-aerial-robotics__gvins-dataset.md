@@ -34,4 +34,4 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

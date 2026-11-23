@@ -30,4 +30,4 @@ Code for computing time-optimal quadrotor trajectories through waypoints, from t
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

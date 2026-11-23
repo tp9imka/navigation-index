@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 12 | C++ | ? | 2026-01-17 | False | research-prototype | medium |
+| 13 | C++ | ? | 2026-01-17 | False | research-prototype | medium |
 
 Edge-based monocular thermal-inertial odometry that tracks thermal edges for visually degraded environments.
 
@@ -34,4 +34,4 @@ Edge-based monocular thermal-inertial odometry that tracks thermal edges for vis
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

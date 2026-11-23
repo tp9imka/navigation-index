@@ -24,4 +24,4 @@ Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

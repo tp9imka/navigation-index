@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 935 | Python | MIT | 2026-04-29 | False | active-research | medium |
+| 937 | Python | MIT | 2026-04-29 | False | active-research | medium |
 
 PyBullet cart-pole and quadrotor environments with CasADi symbolic dynamics and constraint handling, for benchmarking learning-based and safe control.
 
@@ -24,4 +24,4 @@ PyBullet cart-pole and quadrotor environments with CasADi symbolic dynamics and 
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -30,4 +30,4 @@ Python port of the SoftGNSS software-defined GPS receiver toolkit.
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

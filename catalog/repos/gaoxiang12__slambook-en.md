@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,940 | TeX | GPL-3.0 | 2025-07-07 | False | educational | medium |
+| 1,943 | TeX | GPL-3.0 | 2025-07-07 | False | educational | medium |
 
 English edition of Gao Xiang's open textbook on visual SLAM, from geometry and Lie groups to back-end optimization.
 
@@ -25,4 +25,4 @@ English edition of Gao Xiang's open textbook on visual SLAM, from geometry and L
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

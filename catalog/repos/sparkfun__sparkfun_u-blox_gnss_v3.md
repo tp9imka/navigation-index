@@ -28,4 +28,4 @@ Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configurat
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

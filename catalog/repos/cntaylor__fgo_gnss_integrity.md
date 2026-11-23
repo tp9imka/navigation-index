@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 9 | Python | ? | 2026-03-24 | False | research-prototype | low |
+| 8 | Python | ? | 2026-03-24 | False | research-prototype | low |
 
 Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with solution-separation ARAIM on real GNSS epochs (from libRSF datasets) plus Monte Carlo outliers.
 
@@ -28,4 +28,4 @@ Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

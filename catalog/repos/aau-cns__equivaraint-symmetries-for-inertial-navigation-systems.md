@@ -24,4 +24,4 @@ MATLAB code accompanying the paper comparing IEKF and equivariant filters for GN
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

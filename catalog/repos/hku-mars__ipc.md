@@ -31,4 +31,4 @@ Quadrotor navigation that merges planning and control: a light A*-style front en
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

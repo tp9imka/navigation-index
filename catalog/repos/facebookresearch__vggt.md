@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 14,637 | Python | NOASSERTION | 2026-05-19 | False | active-research | low |
+| 14,660 | Python | NOASSERTION | 2026-05-19 | False | active-research | low |
 
 Visual Geometry Grounded Transformer: a feed-forward network predicting camera poses, depth and point maps from one or many images (CVPR 2025 best paper).
 
@@ -28,4 +28,4 @@ Visual Geometry Grounded Transformer: a feed-forward network predicting camera p
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

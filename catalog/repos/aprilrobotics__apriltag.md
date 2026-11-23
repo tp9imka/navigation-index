@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,621 | C | NOASSERTION | 2026-08-07 | False | production | high |
+| 2,623 | C | NOASSERTION | 2026-08-07 | False | production | high |
 
 C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose of each tag relative to a calibrated camera. Ships several tag families and Python bindings.
 
@@ -35,4 +35,4 @@ C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose 
 
 _Indexed by lane(s): close-area-localization_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

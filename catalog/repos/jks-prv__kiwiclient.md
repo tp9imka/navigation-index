@@ -28,4 +28,4 @@ Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

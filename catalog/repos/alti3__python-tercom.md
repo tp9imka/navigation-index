@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 7 | Python | ? | 2025-04-06 | False | educational | high |
+| 8 | Python | ? | 2025-04-06 | False | educational | high |
 
 Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profile over a DEM and correlate it against the map to recover position.
 
@@ -53,4 +53,4 @@ Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profi
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

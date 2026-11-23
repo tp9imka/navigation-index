@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 114 | Go | Apache-2.0 | 2026-11-01 | False | production | high |
+| 116 | Go | Apache-2.0 | 2026-11-21 | False | production | high |
 
 Prometheus exporter for chrony tracking, sources and server statistics.
 
@@ -29,4 +29,4 @@ Prometheus exporter for chrony tracking, sources and server statistics.
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

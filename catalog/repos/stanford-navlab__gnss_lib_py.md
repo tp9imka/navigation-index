@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 270 | Python | MIT | 2026-11-14 | False | active-research | high |
+| 272 | Python | MIT | 2026-11-14 | False | active-research | high |
 
 Modular Python library from Stanford NavLab for parsing, analyzing and visualizing GNSS data (Android logs, RINEX, NMEA, SP3/CLK) with baseline positioning algorithms and fault detection examples.
 
@@ -51,4 +51,4 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

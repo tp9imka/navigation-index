@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 165 | C++ | GPL-3.0 | 2022-02-14 | False | research-prototype | low |
+| 166 | C++ | GPL-3.0 | 2022-02-14 | False | research-prototype | low |
 
 C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.
 
@@ -24,4 +24,4 @@ C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

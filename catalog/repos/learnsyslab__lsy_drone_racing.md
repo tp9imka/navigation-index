@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 94 | Python | MIT | 2026-11-12 | False | active-research | high |
+| 94 | Python | MIT | 2026-11-18 | False | active-research | high |
 
 TUM LSY course project for autonomous Crazyflie racing through gates and around pole obstacles, in simulation (crazyflow) and on real hardware with Vicon. Four TOML difficulty levels add randomized inertia, obstacle and gate positions, and random tracks.
 
@@ -31,4 +31,4 @@ TUM LSY course project for autonomous Crazyflie racing through gates and around 
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

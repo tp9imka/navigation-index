@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 14,761 | TypeScript | MIT | 2026-11-16 | False | production | high |
+| 14,805 | TypeScript | MIT | 2026-11-23 | False | production | high |
 
 GPU-powered large-scale data visualization framework with layers for points, paths, trips, hexbins and 3D tiles, usable over MapLibre or standalone.
 
@@ -36,4 +36,4 @@ GPU-powered large-scale data visualization framework with layers for points, pat
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

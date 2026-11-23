@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 13,036 | C++ | BSD-3-Clause | 2026-11-15 | False | production | high |
+| 13,080 | C++ | BSD-3-Clause | 2026-11-22 | False | production | high |
 
 Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware. Its EKF2 estimator fuses IMU, GNSS, baro, magnetometer, optical flow, range finders and external vision.
 
@@ -116,4 +116,4 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

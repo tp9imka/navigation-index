@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 200 | Go | MIT | 2026-11-16 | False | production | medium |
+| 200 | Go | MIT | 2026-11-22 | False | production | medium |
 
 Go MAVLink v1/v2 library with dialect generation and multiple transports.
 
@@ -30,4 +30,4 @@ Go MAVLink v1/v2 library with dialect generation and multiple transports.
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

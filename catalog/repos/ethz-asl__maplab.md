@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,887 | C++ | Apache-2.0 | 2024-05-31 | False | research-prototype | low |
+| 2,893 | C++ | Apache-2.0 | 2024-05-31 | False | research-prototype | low |
 
 Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.
 
@@ -24,4 +24,4 @@ Modular multi-session, multi-modal mapping framework with map merging, optimizat
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,421 | C# | GPL-3.0 | 2026-11-15 | False | production | medium |
+| 2,424 | C# | GPL-3.0 | 2026-11-19 | False | production | medium |
 
 Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and mission tooling.
 
@@ -33,4 +33,4 @@ Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and 
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

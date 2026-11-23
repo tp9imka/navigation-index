@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 821 | C++ | GPL-3.0 | 2026-11-16 | False | active-research | high |
+| 825 | C++ | GPL-3.0 | 2026-11-20 | False | active-research | high |
 
 Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS and wheel odometry, including online spatial/temporal calibration and a multi-sensor simulator.
 
@@ -39,4 +39,4 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

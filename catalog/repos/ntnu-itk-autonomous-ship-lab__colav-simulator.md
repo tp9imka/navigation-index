@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 37 | Python | MIT | 2026-01-23 | False | active-research | high |
+| 38 | Python | MIT | 2026-01-23 | False | active-research | high |
 
 Python framework from the NTNU Autoship centre for simulating and evaluating autonomous ship collision avoidance controllers, open-sourced in autumn 2025, with scenario generation and evaluation tooling.
 
@@ -42,4 +42,4 @@ Python framework from the NTNU Autoship centre for simulating and evaluating aut
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

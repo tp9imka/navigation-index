@@ -30,4 +30,4 @@ Ceres-based robust sensor fusion library: factor graph formulation, sliding-wind
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

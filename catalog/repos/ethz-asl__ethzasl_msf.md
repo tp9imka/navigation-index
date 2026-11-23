@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,106 | C++ | NOASSERTION | 2026-10-19 | False | research-prototype | medium |
+| 1,108 | C++ | NOASSERTION | 2026-10-19 | False | research-prototype | medium |
 
 Modular EKF framework from ETH ASL for fusing IMU propagation with pose, position and other sensor updates, with delayed-measurement handling.
 
@@ -31,4 +31,4 @@ Modular EKF framework from ETH ASL for fusing IMU propagation with pose, positio
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -41,4 +41,4 @@ CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM an
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

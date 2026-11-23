@@ -24,4 +24,4 @@ Parrot's Python controller library for ANAFI drones and the Sphinx simulator, us
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

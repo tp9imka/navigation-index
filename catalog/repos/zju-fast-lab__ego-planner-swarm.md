@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,257 | C++ | GPL-3.0 | 2025-03-08 | False | research-prototype | high |
+| 2,262 | C++ | GPL-3.0 | 2025-03-08 | False | research-prototype | high |
 
 Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
 
@@ -40,4 +40,4 @@ Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collisio
 
 _Indexed by lane(s): domains-swarm, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

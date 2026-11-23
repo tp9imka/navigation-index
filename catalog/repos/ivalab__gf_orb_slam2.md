@@ -29,4 +29,4 @@ ORB-SLAM2 fork from Georgia Tech IVALab with good-feature selection and the budg
 
 _Indexed by lane(s): innovation-pa-scheduling_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

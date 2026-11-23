@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 520 | C++ | NOASSERTION | 2024-06-09 | False | archived | low |
+| 521 | C++ | NOASSERTION | 2024-06-09 | False | archived | low |
 
 ETH package that computes traversability from elevation maps using slope, roughness and step-height filters.
 
@@ -24,4 +24,4 @@ ETH package that computes traversability from elevation maps using slope, roughn
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

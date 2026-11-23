@@ -24,4 +24,4 @@ GPU-accelerated neural-network verifier that proves bounds on a network's output
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

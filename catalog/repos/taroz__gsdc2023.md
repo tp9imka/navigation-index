@@ -44,4 +44,4 @@ Code reproducing Taro Suzuki's Google Smartphone Decimeter Challenge 2023 entry 
 
 _Indexed by lane(s): gnss, sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

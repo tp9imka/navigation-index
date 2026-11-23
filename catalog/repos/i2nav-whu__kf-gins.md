@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,227 | C++ | GPL-3.0 | 2026-06-10 | False | active-research | high |
+| 1,228 | C++ | GPL-3.0 | 2026-06-10 | False | active-research | high |
 
 Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS integration with an error-state EKF, with sample data and documentation.
 
@@ -48,4 +48,4 @@ Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS inte
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

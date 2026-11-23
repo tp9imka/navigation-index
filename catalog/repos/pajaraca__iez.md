@@ -31,4 +31,4 @@ Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

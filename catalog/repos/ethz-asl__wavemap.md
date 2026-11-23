@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 579 | C++ | BSD-3-Clause | 2024-12-30 | False | active-research | medium |
+| 582 | C++ | BSD-3-Clause | 2024-12-30 | False | active-research | medium |
 
 Multi-resolution occupancy mapping that stores the map as wavelet-compressed octree coefficients. Offers C++ and Python APIs plus a ROS 1 interface and is tested on Intel, AMD and ARM CPUs.
 
@@ -30,4 +30,4 @@ Multi-resolution occupancy mapping that stores the map as wavelet-compressed oct
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 154 | C++ | GPL-3.0 | 2026-03-15 | False | research-prototype | low |
+| 155 | C++ | GPL-3.0 | 2026-03-15 | False | research-prototype | low |
 
 Visual-inertial-dynamics odometry: adds a thrust-model (from measured rotor speed) factor to a VINS-style sliding-window optimizer and estimates the external force on the multirotor together with its pose.
 
@@ -30,4 +30,4 @@ Visual-inertial-dynamics odometry: adds a thrust-model (from measured rotor spee
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

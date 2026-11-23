@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,888 | Python | MIT | 2024-08-17 | False | production | high |
+| 4,889 | Python | MIT | 2024-08-17 | False | production | high |
 
 Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson deployment.
 
@@ -34,4 +34,4 @@ Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

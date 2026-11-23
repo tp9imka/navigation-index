@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 465 | Jupyter Notebook | ? | 2022-11-23 | False | archived | medium |
+| 467 | Jupyter Notebook | ? | 2022-11-23 | False | archived | medium |
 
 Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plus semantic annotations collected on a ground robot.
 
@@ -34,4 +34,4 @@ Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plu
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

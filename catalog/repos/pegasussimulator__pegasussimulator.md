@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 920 | Python | BSD-3-Clause | 2026-08-07 | False | active-research | medium |
+| 925 | Python | BSD-3-Clause | 2026-08-07 | False | active-research | medium |
 
 Framework on top of NVIDIA Isaac Sim for simulating multirotors with PX4 in the loop and Python-defined vehicles and sensors.
 
@@ -29,4 +29,4 @@ Framework on top of NVIDIA Isaac Sim for simulating multirotors with PX4 in the 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

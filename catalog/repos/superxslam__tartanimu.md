@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 160 | Python | Apache-2.0 | 2026-09-12 | False | active-research | medium |
+| 159 | Python | Apache-2.0 | 2026-09-12 | False | active-research | medium |
 
 ResNet-LSTM inertial model pretrained on more than 100 hours of car, quadruped, drone and human data that predicts body-frame velocity from 6-axis IMU, with LoRA adaptation heads, pretrained weights on Hugging Face and an IROS 2026 challenge starter kit.
 
@@ -30,4 +30,4 @@ ResNet-LSTM inertial model pretrained on more than 100 hours of car, quadruped, 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 175 | Python | Apache-2.0 | 2024-08-14 | False | production | high |
+| 176 | Python | Apache-2.0 | 2024-08-14 | False | production | high |
 
 Fast lost-in-space plate solver for star trackers from ESA: identifies stars in an image and returns attitude using a precomputed pattern database.
 
@@ -48,4 +48,4 @@ Fast lost-in-space plate solver for star trackers from ESA: identifies stars in 
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 273 | Python | Apache-2.0 | 2026-11-14 | False | production | high |
+| 273 | Python | Apache-2.0 | 2026-11-22 | False | production | high |
 
 LTTng-based instrumentation for ROS 2: tracepoints in rclcpp/rcl/rmw plus tools to record and analyse callback durations and message flow end to end.
 
@@ -29,4 +29,4 @@ LTTng-based instrumentation for ROS 2: tracepoints in rclcpp/rcl/rmw plus tools 
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

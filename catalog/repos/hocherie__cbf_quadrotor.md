@@ -24,4 +24,4 @@ Python exponential CBF for a simple 3D quadrotor model with cascaded PID, single
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

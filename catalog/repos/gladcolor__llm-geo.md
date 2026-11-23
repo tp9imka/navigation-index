@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 462 | Jupyter Notebook | GPL-3.0 | 2026-10-18 | False | research-prototype | medium |
+| 463 | Jupyter Notebook | GPL-3.0 | 2026-10-18 | False | research-prototype | medium |
 
 Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial question into a solution graph, generates code and executes the analysis to return maps and numbers.
 
@@ -24,4 +24,4 @@ Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial questi
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

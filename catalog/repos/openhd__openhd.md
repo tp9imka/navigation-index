@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,708 | C++ | GPL-3.0 | 2026-11-15 | False | production | medium |
+| 2,711 | C++ | GPL-3.0 | 2026-11-22 | False | production | medium |
 
 Open-source long-range digital HD video and telemetry link over Wi-Fi adapters in monitor mode (wifibroadcast-style), for air and ground units.
 
@@ -28,4 +28,4 @@ Open-source long-range digital HD video and telemetry link over Wi-Fi adapters i
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

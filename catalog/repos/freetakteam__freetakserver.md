@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 968 | Python | EPL-2.0 | 2024-10-29 | False | active-research | medium |
+| 967 | Python | EPL-2.0 | 2024-10-29 | False | active-research | medium |
 
 Open-source Python server compatible with TAK clients (ATAK, WinTAK, iTAK) that relays Cursor-on-Target positions, chat and data packages.
 
@@ -37,4 +37,4 @@ Open-source Python server compatible with TAK clients (ATAK, WinTAK, iTAK) that 
 
 _Indexed by lane(s): defense-context, domains-swarm, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

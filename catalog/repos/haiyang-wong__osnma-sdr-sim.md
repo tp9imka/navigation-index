@@ -47,4 +47,4 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

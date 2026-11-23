@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 32 | Python | MIT | 2026-07-27 | False | active-research | medium |
+| 33 | Python | MIT | 2026-07-27 | False | active-research | medium |
 
 Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB ranging (including inter-robot), vision and IMU data.
 
@@ -40,4 +40,4 @@ Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB rangin
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

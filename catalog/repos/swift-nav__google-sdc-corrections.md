@@ -20,4 +20,4 @@ SSR and OSR GNSS correction data for the 2021 Google Smartphone Decimeter Challe
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

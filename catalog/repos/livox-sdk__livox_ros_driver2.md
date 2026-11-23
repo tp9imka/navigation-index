@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 906 | C++ | NOASSERTION | 2026-09-21 | False | production | high |
+| 914 | C++ | NOASSERTION | 2026-09-21 | False | production | high |
 
 ROS 1/ROS 2 driver for Livox LiDARs such as Mid-360 and HAP.
 
@@ -28,4 +28,4 @@ ROS 1/ROS 2 driver for Livox LiDARs such as Mid-360 and HAP.
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

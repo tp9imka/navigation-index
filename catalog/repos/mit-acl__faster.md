@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,262 | C++ | BSD-3-Clause | 2025-03-10 | False | research-prototype | low |
+| 1,261 | C++ | BSD-3-Clause | 2025-03-10 | False | research-prototype | low |
 
 Receding-horizon multirotor planner for unknown environments that optimises a fast trajectory through known-free and unknown space while always keeping a safe backup trajectory inside known-free space. Corridors come from JPS plus convex decomposition; the optimisation is a mixed-integer QP.
 
@@ -33,4 +33,4 @@ Receding-horizon multirotor planner for unknown environments that optimises a fa
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

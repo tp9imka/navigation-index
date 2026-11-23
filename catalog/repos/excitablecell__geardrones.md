@@ -24,4 +24,4 @@ Lightweight STM32 drone control and multi-agent localization system combining a 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

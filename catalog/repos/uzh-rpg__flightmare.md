@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,451 | C++ | NOASSERTION | 2024-06-14 | False | archived | low |
+| 1,452 | C++ | NOASSERTION | 2024-06-14 | False | archived | low |
 
 Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynamics, aimed at RL and vision-based agile flight.
 
@@ -34,4 +34,4 @@ Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynami
 
 _Indexed by lane(s): defense-context, sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

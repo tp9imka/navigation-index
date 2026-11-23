@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 237 | SCSS | MIT | 2026-10-25 | False | active-research | medium |
+| 238 | SCSS | MIT | 2026-10-25 | False | active-research | medium |
 
 Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ranging from a drone.
 
@@ -35,4 +35,4 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

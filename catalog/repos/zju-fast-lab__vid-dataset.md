@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 66 | C++ | AGPL-3.0 | 2026-04-29 | False | research-prototype | medium |
+| 67 | C++ | AGPL-3.0 | 2026-04-29 | False | research-prototype | medium |
 
 Visual-inertial-dynamical multirotor dataset: stereo/depth camera, hardware-timestamped IMU, commanded and measured rotor speed and motor current for all four motors, flight-controller GPS, RTK and mocap ground truth, recorded as ROS bags with a time-sync tool.
 
@@ -31,4 +31,4 @@ Visual-inertial-dynamical multirotor dataset: stereo/depth camera, hardware-time
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

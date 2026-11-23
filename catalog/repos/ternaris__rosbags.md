@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 12 | Python | NOASSERTION | 2026-10-20 | False | production | high |
+| 12 | Python | NOASSERTION | 2026-11-21 | False | production | high |
 
 Pure Python ROS 1 and ROS 2 bag readers, writers, converters and type system. The official source is on GitLab; this GitHub repository is its official mirror. It can operate without a ROS installation.
 
@@ -36,4 +36,4 @@ Pure Python ROS 1 and ROS 2 bag readers, writers, converters and type system. Th
 
 _Indexed by lane(s): recording-debugging_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

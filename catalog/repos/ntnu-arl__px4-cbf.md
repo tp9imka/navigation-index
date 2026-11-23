@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 13 |  | BSD-3-Clause | 2025-10-16 | False | active-research | high |
+| 14 |  | BSD-3-Clause | 2025-10-16 | False | active-research | high |
 
 Documentation and setup for a CBF safety filter inside the PX4 position controller that minimally changes the acceleration setpoint using onboard range data. The code lives on the ntnu-arl/PX4-Autopilot fork, branch cbf.
 
@@ -35,4 +35,4 @@ Documentation and setup for a CBF safety filter inside the PX4 position controll
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

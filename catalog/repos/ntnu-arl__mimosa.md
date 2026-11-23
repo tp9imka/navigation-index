@@ -28,4 +28,4 @@ Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

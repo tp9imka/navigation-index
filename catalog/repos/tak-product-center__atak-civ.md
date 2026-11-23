@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 303 | Java | NOASSERTION | 2026-02-06 | False | active-research | medium |
+| 312 | Java | NOASSERTION | 2026-02-06 | False | active-research | medium |
 
 Source of the civilian Android Team Awareness Kit maintained by the TAK Product Center: map client, plugin SDK and CoT handling.
 
@@ -38,4 +38,4 @@ Source of the civilian Android Team Awareness Kit maintained by the TAK Product 
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -49,4 +49,4 @@ Benchmark and code for UAV absolute visual localization under low-altitude, mult
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

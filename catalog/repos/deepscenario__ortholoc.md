@@ -24,4 +24,4 @@ Dataset tools and code for UAV 6-DoF localization and calibration against orthop
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

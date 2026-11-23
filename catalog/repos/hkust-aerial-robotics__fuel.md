@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,527 | C++ | GPL-3.0 | 2024-11-19 | False | research-prototype | medium |
+| 1,528 | C++ | GPL-3.0 | 2024-11-19 | False | research-prototype | medium |
 
 Frontier-information-structure based autonomous exploration for quadrotors, combining global tour planning over frontiers with local viewpoint refinement.
 
@@ -33,4 +33,4 @@ Frontier-information-structure based autonomous exploration for quadrotors, comb
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

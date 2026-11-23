@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 684 | Python | MIT | 2026-11-02 | False | production | medium |
+| 683 | Python | MIT | 2026-11-02 | False | production | medium |
 
 Lightweight Python library for parsing NMEA 0183 sentences.
 
@@ -28,4 +28,4 @@ Lightweight Python library for parsing NMEA 0183 sentences.
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

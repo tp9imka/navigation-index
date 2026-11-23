@@ -28,4 +28,4 @@ GPS/IMU fusion examples derived from zm0612/eskf-gps-imu-fusion, implementing an
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

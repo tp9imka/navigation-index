@@ -24,4 +24,4 @@ Monte Carlo localization of a camera against a neural radiance field map.
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

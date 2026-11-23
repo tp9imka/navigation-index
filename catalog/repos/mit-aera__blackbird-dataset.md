@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 162 | Python | MIT | 2022-12-15 | False | archived | low |
+| 163 | Python | MIT | 2022-12-15 | False | archived | low |
 
 MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data and rendered camera imagery.
 
@@ -35,4 +35,4 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

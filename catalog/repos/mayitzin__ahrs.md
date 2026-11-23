@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 739 | Python | MIT | 2026-11-06 | False | production | high |
+| 737 | Python | MIT | 2026-11-17 | False | production | high |
 
 Python collection of attitude estimation algorithms (Madgwick, Mahony, complementary, EKF, QUEST, TRIAD and more) plus utilities such as the World Magnetic Model and WGS84.
 
@@ -33,4 +33,4 @@ Python collection of attitude estimation algorithms (Madgwick, Mahony, complemen
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 223 | C++ | GPL-3.0 | 2026-08-04 | False | active-research | medium |
+| 228 | C++ | GPL-3.0 | 2026-08-04 | False | active-research | medium |
 
 Open-source GNSS monitoring network and software that collects navigation data from volunteer receivers worldwide and publishes live health, ephemeris and timing statistics for Galileo, GPS, BeiDou and GLONASS.
 
@@ -25,4 +25,4 @@ Open-source GNSS monitoring network and software that collects navigation data f
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 64,150 | Python | MIT | 2026-11-16 | False | production | low |
+| 64,209 | Python | MIT | 2026-11-22 | False | production | low |
 
 Open driver-assistance robotics stack. Its current locationd fuses IMU and camera odometry in a pose Kalman filter; GNSS is still read and logged (ubloxd, qcomgpsd) but the laika-based GNSS fusion has been removed.
 
@@ -28,4 +28,4 @@ Open driver-assistance robotics stack. Its current locationd fuses IMU and camer
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

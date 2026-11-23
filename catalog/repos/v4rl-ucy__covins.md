@@ -29,4 +29,4 @@ Centralized collaborative visual-inertial SLAM where agents run VIO and a server
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

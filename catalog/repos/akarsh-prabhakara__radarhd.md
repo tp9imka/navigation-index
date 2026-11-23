@@ -20,4 +20,4 @@ Learns to generate high-resolution, lidar-like point clouds from low-cost single
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

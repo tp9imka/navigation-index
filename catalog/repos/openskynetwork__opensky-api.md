@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 478 | Python | GPL-3.0 | 2026-11-05 | False | production | high |
+| 476 | Python | GPL-3.0 | 2026-11-05 | False | production | high |
 
 Python and Java bindings for the OpenSky Network REST API for live and recent aircraft states.
 
@@ -36,4 +36,4 @@ Python and Java bindings for the OpenSky Network REST API for live and recent ai
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

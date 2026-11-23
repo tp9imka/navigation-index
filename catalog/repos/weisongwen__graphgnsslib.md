@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 635 | C | ? | 2022-12-29 | False | research-prototype | low |
+| 634 | C | ? | 2022-12-29 | False | research-prototype | low |
 
 Open-source GNSS positioning and RTK package using factor graph optimization, built on RTKLIB data handling and ROS.
 
@@ -32,4 +32,4 @@ Open-source GNSS positioning and RTK package using factor graph optimization, bu
 
 _Indexed by lane(s): gnss, ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

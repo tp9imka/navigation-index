@@ -24,4 +24,4 @@ Reference code for conformal keypoint prediction sets and pose uncertainty sets 
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

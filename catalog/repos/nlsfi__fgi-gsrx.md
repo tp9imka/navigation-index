@@ -31,4 +31,4 @@ Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Inst
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

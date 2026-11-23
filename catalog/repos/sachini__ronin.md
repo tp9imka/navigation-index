@@ -42,4 +42,4 @@ Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

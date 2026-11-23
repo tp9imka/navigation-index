@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,923 | JavaScript | NOASSERTION | 2026-11-01 | False | production | high |
+| 2,924 | JavaScript | NOASSERTION | 2026-11-22 | False | production | high |
 
 Vector and raster tile server that serves MBTiles/PMTiles with GL styles and renders raster tiles server-side with MapLibre Native.
 
@@ -38,4 +38,4 @@ Vector and raster tile server that serves MBTiles/PMTiles with GL styles and ren
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

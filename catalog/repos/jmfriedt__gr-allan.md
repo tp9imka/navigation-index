@@ -24,4 +24,4 @@ GNU Radio sink block that wraps allantools to plot Allan deviation in real time 
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

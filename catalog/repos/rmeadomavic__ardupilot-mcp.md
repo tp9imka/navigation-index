@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4 | Python | MIT | 2026-08-03 | False | research-prototype | medium |
+| 5 | Python | MIT | 2026-08-03 | False | research-prototype | medium |
 
 SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with explicit safety gating of commands.
 
@@ -29,4 +29,4 @@ SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with expli
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

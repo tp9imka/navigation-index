@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 721 | Shell | MIT | 2025-04-10 | False | active-research | medium |
+| 725 | Shell | MIT | 2025-04-10 | False | active-research | medium |
 
 Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, supporting lidar, stereo and RGB-D with inter-robot loop closures under limited communication.
 
@@ -34,4 +34,4 @@ Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, suppo
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

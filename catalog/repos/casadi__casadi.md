@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,334 | C++ | LGPL-3.0 | 2026-11-14 | False | production | high |
+| 2,336 | C++ | LGPL-3.0 | 2026-11-22 | False | production | high |
 
 Symbolic framework for numerical optimisation with automatic differentiation, interfaces to IPOPT and other solvers, and C code generation. Used from Python, C++, MATLAB and Julia.
 
@@ -35,4 +35,4 @@ Symbolic framework for numerical optimisation with automatic differentiation, in
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

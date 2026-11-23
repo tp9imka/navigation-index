@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 32 | TypeScript | Apache-2.0 | 2026-11-10 | False | production | high |
+| 32 | TypeScript | Apache-2.0 | 2026-11-19 | False | production | high |
 
 TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
 
@@ -35,4 +35,4 @@ TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

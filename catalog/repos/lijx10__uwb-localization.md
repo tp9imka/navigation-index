@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 425 | C++ | Apache-2.0 | 2018-11-23 | False | archived | low |
+| 426 | C++ | Apache-2.0 | 2018-11-23 | False | archived | low |
 
 ROS library fusing UWB ranging with IMU for accurate 3D localization of MAV swarms, used in a 2017 drone light show.
 
@@ -29,4 +29,4 @@ ROS library fusing UWB ranging with IMU for accurate 3D localization of MAV swar
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

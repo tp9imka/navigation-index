@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 112 | Python | BSD-3-Clause | 2026-10-04 | False | production | medium |
+| 115 | Python | BSD-3-Clause | 2026-10-04 | False | production | medium |
 
 Model and world repository for the new Gazebo, used by PX4 SITL targets such as gz_x500.
 
@@ -30,4 +30,4 @@ Model and world repository for the new Gazebo, used by PX4 SITL targets such as 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

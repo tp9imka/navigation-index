@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 652 | Shell | BSD-3-Clause | 2026-10-22 | False | production | medium |
+| 653 | Shell | BSD-3-Clause | 2026-10-22 | False | production | medium |
 
 Czech Technical University's multi-robot UAV platform with control, estimation (including GNSS-denied modes), planning and simulation, field-tested in outdoor swarm deployments.
 
@@ -32,4 +32,4 @@ Czech Technical University's multi-robot UAV platform with control, estimation (
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

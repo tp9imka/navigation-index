@@ -29,4 +29,4 @@ Minimal recipes for real-time ROS 2: memory locking, thread priorities, CPU pinn
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

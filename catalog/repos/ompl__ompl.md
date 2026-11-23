@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,200 | C++ | NOASSERTION | 2026-11-06 | False | production | high |
+| 2,208 | C++ | NOASSERTION | 2026-11-06 | False | production | high |
 
 Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed variants, kinodynamic planners) with a clean state-space abstraction and Python bindings.
 
@@ -49,4 +49,4 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

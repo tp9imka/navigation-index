@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 243 | C++ | BSD-3-Clause | 2022-11-01 | False | research-prototype | low |
+| 244 | C++ | BSD-3-Clause | 2022-11-01 | False | research-prototype | low |
 
 Perception-aware trajectory planner for multirotors in dynamic environments: jointly optimises translation and yaw so the camera keeps moving obstacles in view while avoiding them.
 
@@ -31,4 +31,4 @@ Perception-aware trajectory planner for multirotors in dynamic environments: joi
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

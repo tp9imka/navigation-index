@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,491 | C | NOASSERTION | 2026-11-14 | False | production | low |
+| 1,490 | C | NOASSERTION | 2026-11-19 | False | production | low |
 
 Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS receiver and an atomic or OCXO holdover oscillator that turns a server into a PTP grandmaster, plus specs and drivers.
 
@@ -35,4 +35,4 @@ Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS re
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

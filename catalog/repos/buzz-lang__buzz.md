@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 319 | C | MIT | 2026-04-01 | False | research-prototype | low |
+| 320 | C | MIT | 2026-04-01 | False | research-prototype | low |
 
 Domain-specific programming language for robot swarms with swarm-level primitives such as neighbour queries, virtual stigmergy and swarm membership.
 
@@ -28,4 +28,4 @@ Domain-specific programming language for robot swarms with swarm-level primitive
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

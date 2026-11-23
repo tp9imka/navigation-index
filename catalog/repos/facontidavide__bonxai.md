@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 887 | C++ | MPL-2.0 | 2026-09-29 | False | active-research | medium |
+| 888 | C++ | MPL-2.0 | 2026-09-29 | False | active-research | medium |
 
 Header-only C++ sparse hierarchical voxel grid inspired by OpenVDB, with an occupancy-map layer. Aimed at fast insertion and lookup with a small memory footprint.
 
@@ -24,4 +24,4 @@ Header-only C++ sparse hierarchical voxel grid inspired by OpenVDB, with an occu
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

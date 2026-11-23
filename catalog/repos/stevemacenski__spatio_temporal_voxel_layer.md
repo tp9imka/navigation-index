@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 884 | C++ | LGPL-2.1 | 2026-10-28 | False | production | medium |
+| 888 | C++ | LGPL-2.1 | 2026-11-19 | False | production | medium |
 
 Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obstacles from depth and LiDAR sensors.
 
@@ -28,4 +28,4 @@ Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obs
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

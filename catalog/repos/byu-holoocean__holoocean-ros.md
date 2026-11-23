@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 57 | Python | MIT | 2026-11-13 | False | active-research | medium |
+| 57 | Python | MIT | 2026-11-17 | False | active-research | medium |
 
 ROS bridge for HoloOcean, BYU's Unreal Engine based underwater simulator with DVL, IMU, depth, sonar and acoustic modem sensors.
 
@@ -31,4 +31,4 @@ ROS bridge for HoloOcean, BYU's Unreal Engine based underwater simulator with DV
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

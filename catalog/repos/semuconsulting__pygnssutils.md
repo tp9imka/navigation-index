@@ -38,4 +38,4 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

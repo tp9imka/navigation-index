@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 418 | Shell | ? | 2025-01-28 | False | research-prototype | low |
+| 420 | Shell | ? | 2025-01-28 | False | research-prototype | low |
 
 Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM system with robust distributed pose-graph optimization.
 
@@ -36,4 +36,4 @@ Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM syst
 
 _Indexed by lane(s): domains-swarm, slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

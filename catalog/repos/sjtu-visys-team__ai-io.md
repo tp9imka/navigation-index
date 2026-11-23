@@ -35,4 +35,4 @@ Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU d
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

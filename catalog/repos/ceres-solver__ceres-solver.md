@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,609 | C++ | NOASSERTION | 2026-11-12 | False | production | medium |
+| 4,611 | C++ | NOASSERTION | 2026-11-20 | False | production | medium |
 
 Google's nonlinear least-squares and general optimization library with automatic differentiation and robust loss functions.
 
@@ -34,4 +34,4 @@ Google's nonlinear least-squares and general optimization library with automatic
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

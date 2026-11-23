@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 5,059 | C++ | NOASSERTION | 2026-11-13 | False | production | high |
+| 5,097 | C++ | NOASSERTION | 2026-11-21 | False | production | high |
 
 The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoint following, including GPS waypoints via robot_localization.
 
@@ -58,4 +58,4 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 245 | Python | MIT | 2026-11-14 | False | active-research | high |
+| 247 | Python | MIT | 2026-11-22 | False | active-research | high |
 
 ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over both BLE and Wi-Fi, relay detections over a Meshtastic LoRa mesh and plot drones and pilots on a live, offline-capable web map.
 
@@ -36,4 +36,4 @@ ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over 
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

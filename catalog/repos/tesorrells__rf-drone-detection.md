@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 226 | Python | ? | 2025-05-21 | False | research-prototype | medium |
+| 227 | Python | ? | 2025-05-21 | False | research-prototype | medium |
 
 Georgia Tech student project on passive RF drone detection: a wifi_monitor.py script that flags DJI MAC OUI prefixes via airodump-ng, plus hackrf_sweep and GNU Radio experiment tools.
 
@@ -24,4 +24,4 @@ Georgia Tech student project on passive RF drone detection: a wifi_monitor.py sc
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

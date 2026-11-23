@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 740 | C++ | NOASSERTION | 2026-10-04 | False | educational | high |
+| 741 | C++ | NOASSERTION | 2026-10-04 | False | educational | high |
 
 Error-state Kalman filter fusing IMU and GPS for localization, small and readable.
 
@@ -30,4 +30,4 @@ Error-state Kalman filter fusing IMU and GPS for localization, small and readabl
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

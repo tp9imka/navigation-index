@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 289 | C++ | BSD-3-Clause | 2018-09-10 | False | archived | medium |
+| 288 | C++ | BSD-3-Clause | 2018-09-10 | False | archived | medium |
 
 Header-only C++ library that grows convex polytopes (safe flight corridors) around a piecewise-linear path using ellipsoid inflation against a point cloud.
 
@@ -34,4 +34,4 @@ Header-only C++ library that grows convex polytopes (safe flight corridors) arou
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 14 | C++ | BSD-3-Clause | 2025-04-11 | False | research-prototype | medium |
+| 14 | C++ | BSD-3-Clause | 2026-11-18 | False | research-prototype | medium |
 
 C++ library and ROS 2 (Humble) node that simulates ultra-short baseline acoustic positioning measurements; a Gazebo plugin is only listed as a planned feature.
 
@@ -31,4 +31,4 @@ C++ library and ROS 2 (Humble) node that simulates ultra-short baseline acoustic
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

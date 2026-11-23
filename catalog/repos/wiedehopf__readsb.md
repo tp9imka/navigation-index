@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 708 | C | NOASSERTION | 2026-11-11 | False | production | high |
+| 707 | C | NOASSERTION | 2026-11-11 | False | production | high |
 
 ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON output, MLAT support and aggregation features.
 
@@ -51,4 +51,4 @@ ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON outpu
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 488 | C++ | MIT | 2026-08-24 | False | production | high |
+| 493 | C++ | MIT | 2026-08-24 | False | production | high |
 
 C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heights, gravity and magnetic field models.
 
@@ -37,4 +37,4 @@ C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heig
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -35,4 +35,4 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

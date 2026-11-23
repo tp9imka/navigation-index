@@ -29,4 +29,4 @@ Sliding-window VIO that adds a hybrid quadrotor dynamics model (point-mass model
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

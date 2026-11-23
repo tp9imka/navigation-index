@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,115 | C++ | ? | 2025-06-04 | False | active-research | low |
+| 1,119 | C++ | ? | 2025-06-04 | False | active-research | low |
 
 LiDAR-based high-speed MAV planner that plans directly on point clouds. Each cycle produces an exploratory trajectory through known and unknown space plus a backup trajectory confined to known free space, so the vehicle always has a safe fallback. Includes ROG-Map and a simulator.
 
@@ -34,4 +34,4 @@ LiDAR-based high-speed MAV planner that plans directly on point clouds. Each cyc
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

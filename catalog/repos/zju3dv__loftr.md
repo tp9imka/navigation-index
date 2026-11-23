@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,979 | Jupyter Notebook | Apache-2.0 | 2024-05-31 | False | research-prototype | medium |
+| 2,981 | Jupyter Notebook | Apache-2.0 | 2024-05-31 | False | research-prototype | medium |
 
 Detector-free transformer matcher producing dense-ish correspondences, good on low-texture scenes.
 
@@ -34,4 +34,4 @@ Detector-free transformer matcher producing dense-ish correspondences, good on l
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

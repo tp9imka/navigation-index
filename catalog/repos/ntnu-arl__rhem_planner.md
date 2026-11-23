@@ -24,4 +24,4 @@ Uncertainty-aware receding-horizon exploration planner that picks paths minimisi
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -30,4 +30,4 @@ MCP server that lets AI agents discover and operate ROS 2 robots: topic echo/pub
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

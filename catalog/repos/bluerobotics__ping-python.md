@@ -31,4 +31,4 @@ Python library and examples for Blue Robotics Ping echosounder and Ping360 scann
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

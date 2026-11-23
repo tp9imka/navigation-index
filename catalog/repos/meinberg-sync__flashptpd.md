@@ -24,4 +24,4 @@ Experimental C++17 client/server style PTP from Meinberg: the client sends Sync 
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

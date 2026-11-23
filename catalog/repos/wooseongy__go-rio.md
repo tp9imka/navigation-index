@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 109 | C++ | ? | 2026-09-21 | False | active-research | medium |
+| 110 | C++ | ? | 2026-09-21 | False | active-research | medium |
 
 Ground-optimized 4D radar-inertial odometry integrating continuous velocity via Gaussian processes (ICRA 2025 best paper finalist).
 
@@ -28,4 +28,4 @@ Ground-optimized 4D radar-inertial odometry integrating continuous velocity via 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

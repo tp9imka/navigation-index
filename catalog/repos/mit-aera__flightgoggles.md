@@ -30,4 +30,4 @@ Unity3D and ROS framework from MIT for photorealistic camera rendering with real
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

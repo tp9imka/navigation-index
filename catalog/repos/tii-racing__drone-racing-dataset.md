@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 152 | Python | MIT | 2026-01-25 | False | active-research | medium |
+| 153 | Python | MIT | 2026-01-25 | False | active-research | medium |
 
 Annotated dataset of fast autonomous and human-piloted quadrotor flight with visual, inertial and mocap data plus labelled racing gates, from TII.
 
@@ -28,4 +28,4 @@ Annotated dataset of fast autonomous and human-piloted quadrotor flight with vis
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

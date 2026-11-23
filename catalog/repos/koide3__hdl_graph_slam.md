@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,345 | C++ | BSD-2-Clause | 2024-07-16 | False | research-prototype | medium |
+| 2,347 | C++ | BSD-2-Clause | 2024-07-16 | False | research-prototype | medium |
 
 3D LiDAR graph SLAM with NDT/GICP scan matching odometry, loop detection and optional GPS, IMU and floor-plane constraints.
 
@@ -30,4 +30,4 @@
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

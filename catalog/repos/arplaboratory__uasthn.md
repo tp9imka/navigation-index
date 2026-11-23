@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 27 | Jupyter Notebook | MIT | 2026-02-28 | False | active-research | medium |
+| 28 | Jupyter Notebook | MIT | 2026-02-28 | False | active-research | medium |
 
 ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-thermal homography, so the system can say when a fix is unreliable.
 
@@ -37,4 +37,4 @@ ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-therma
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

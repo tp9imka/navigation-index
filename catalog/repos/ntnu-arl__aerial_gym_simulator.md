@@ -31,4 +31,4 @@ GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, wit
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

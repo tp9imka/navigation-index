@@ -28,4 +28,4 @@ Code for 'Learning High-Speed Flight in the Wild': a policy trained in simulatio
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

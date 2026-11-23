@@ -31,4 +31,4 @@ Diploma C++ code modelling a moving user, GNSS operation and an astro-corrector 
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 16 | MATLAB | ? | 2022-08-16 | False | educational | medium |
+| 15 | MATLAB | ? | 2022-08-16 | False | educational | medium |
 
 MATLAB implementation of classic receiver autonomous integrity monitoring (fault detection and exclusion) for GNSS positioning.
 
@@ -35,4 +35,4 @@ MATLAB implementation of classic receiver autonomous integrity monitoring (fault
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

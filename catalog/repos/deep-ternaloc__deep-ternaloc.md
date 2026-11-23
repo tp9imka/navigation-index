@@ -24,4 +24,4 @@ Deep-learning-based terrain-referenced navigation and localization project from 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

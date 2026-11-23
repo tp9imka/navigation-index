@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 324 | Python | GPL-3.0 | 2025-12-13 | False | active-research | high |
+| 326 | Python | GPL-3.0 | 2025-12-13 | False | active-research | high |
 
 Direction-of-arrival processing and web UI for the five-channel coherent KrakenSDR, producing bearings to RF emitters.
 
@@ -43,4 +43,4 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

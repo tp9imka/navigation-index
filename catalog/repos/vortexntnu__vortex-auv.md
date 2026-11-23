@@ -24,4 +24,4 @@ Guidance, navigation and control software from NTNU's student Vortex team for co
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

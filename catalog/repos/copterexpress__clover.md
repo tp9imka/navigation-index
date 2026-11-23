@@ -50,4 +50,4 @@ ROS-based software stack and Raspberry Pi image for the Clover educational quadc
 
 _Indexed by lane(s): ua-ru-sources_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

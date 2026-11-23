@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,117 | C++ | BSD-3-Clause | 2026-11-16 | False | production | low |
+| 2,130 | C++ | BSD-3-Clause | 2026-11-19 | False | production | low |
 
 Motion planning framework for ROS 2 manipulators: kinematics, collision checking, planners (OMPL, Pilz, STOMP) and real-time servoing.
 
@@ -28,4 +28,4 @@ Motion planning framework for ROS 2 manipulators: kinematics, collision checking
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

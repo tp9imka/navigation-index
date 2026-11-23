@@ -31,4 +31,4 @@ Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

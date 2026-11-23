@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 5,817 | C++ | NOASSERTION | 2024-03-30 | False | production | medium |
+| 5,828 | C++ | NOASSERTION | 2024-03-30 | False | production | medium |
 
 ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics and time offset), plus IMU intrinsics and rolling-shutter calibration.
 
@@ -40,4 +40,4 @@ ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics 
 
 _Indexed by lane(s): ins-fusion, slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

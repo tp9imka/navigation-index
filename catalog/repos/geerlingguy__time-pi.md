@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 294 | Python | GPL-3.0 | 2026-11-15 | False | research-prototype | high |
+| 320 | Python | GPL-3.0 | 2026-11-22 | False | research-prototype | high |
 
 Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a GNSS module with PPS.
 
@@ -32,4 +32,4 @@ Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

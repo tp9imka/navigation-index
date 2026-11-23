@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,570 | Python | GPL-3.0 | 2026-11-10 | False | production | medium |
+| 1,576 | Python | GPL-3.0 | 2026-11-16 | False | production | medium |
 
 Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, MAVLink and IP tunnels.
 
@@ -28,4 +28,4 @@ Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, 
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

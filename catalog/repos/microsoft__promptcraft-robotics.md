@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,124 | Python | MIT | 2024-01-20 | False | archived | medium |
+| 2,122 | Python | MIT | 2024-01-20 | False | archived | medium |
 
 Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator accompanying the 'ChatGPT for Robotics' work.
 
@@ -30,4 +30,4 @@ Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator ac
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 70 | Go | MIT | 2026-11-08 | False | production | high |
+| 71 | Go | MIT | 2026-11-23 | False | production | high |
 
 Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP with chrony, ntpd-rs or NTPsec, a PTP grandmaster on Raspberry Pi CM4/CM5 or Intel NICs via linuxptp, RTK base/rover, and a web GUI to configure and monitor receivers.
 
@@ -39,4 +39,4 @@ Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

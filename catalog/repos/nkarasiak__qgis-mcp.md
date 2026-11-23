@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 440 | Python | GPL-2.0 | 2026-11-11 | False | active-research | medium |
+| 453 | Python | GPL-2.0 | 2026-11-11 | False | active-research | medium |
 
 MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP socket server inside QGIS and a FastMCP server exposes about 125 tools (layers, feature editing, processing, rendering, styling, layouts/atlas, cross-layer SQL). Supports QGIS 3.28 to 4.x; the plugin installs from the QGIS plugin manager and the server runs via uvx.
 
@@ -28,4 +28,4 @@ MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP sock
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

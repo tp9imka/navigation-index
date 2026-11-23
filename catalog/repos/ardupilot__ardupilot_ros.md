@@ -40,4 +40,4 @@ ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS n
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

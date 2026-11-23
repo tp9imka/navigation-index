@@ -28,4 +28,4 @@ PyTorch implementation of Active Neural Localization for the 2D maze environment
 
 _Indexed by lane(s): innovation-pa-maneuvers_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

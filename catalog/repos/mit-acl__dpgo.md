@@ -26,4 +26,4 @@ Distributed pose-graph optimization library with certifiably correct solutions f
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

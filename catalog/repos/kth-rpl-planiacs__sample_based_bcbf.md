@@ -24,4 +24,4 @@ Python code for the CDC 2025 sample-based belief CBF paper: simulation environme
 
 _Indexed by lane(s): cbf-baselines_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 33 | Jupyter Notebook | ? | 2020-12-24 | False | archived | low |
+| 34 | Jupyter Notebook | ? | 2020-12-24 | False | archived | low |
 
 Exploratory project on automating celestial navigation with deep learning and edge inference on synthetic sky images.
 
@@ -24,4 +24,4 @@ Exploratory project on automating celestial navigation with deep learning and ed
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

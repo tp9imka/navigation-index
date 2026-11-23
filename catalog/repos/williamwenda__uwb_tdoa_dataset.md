@@ -40,4 +40,4 @@ Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraz
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

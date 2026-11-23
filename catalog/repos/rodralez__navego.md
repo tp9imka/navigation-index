@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 645 | MATLAB | NOASSERTION | 2024-02-24 | False | research-prototype | medium |
+| 644 | MATLAB | NOASSERTION | 2024-02-24 | False | research-prototype | medium |
 
 Open MATLAB/GNU Octave toolbox for simulating and processing integrated INS/GNSS navigation, including IMU error modelling and Allan variance analysis.
 
@@ -32,4 +32,4 @@ Open MATLAB/GNU Octave toolbox for simulating and processing integrated INS/GNSS
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

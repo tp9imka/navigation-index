@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 230 | C | NOASSERTION | 2026-10-22 | False | educational | medium |
+| 231 | C | NOASSERTION | 2026-10-22 | False | educational | medium |
 
 Open book on PTP (IEEE 1588 / gPTP) in Chinese with an English translation: BMCA, the four-timestamp maths, transparent clocks, hardware timestamping, security, a walk through linuxptp source, and a ~1000-line ptp-lite implementation.
 
@@ -24,4 +24,4 @@ Open book on PTP (IEEE 1588 / gPTP) in Chinese with an English translation: BMCA
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

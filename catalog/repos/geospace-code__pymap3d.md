@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 452 | Python | BSD-2-Clause | 2026-06-22 | False | production | high |
+| 451 | Python | BSD-2-Clause | 2026-06-22 | False | production | high |
 
 Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with optional NumPy vectorization.
 
@@ -37,4 +37,4 @@ Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

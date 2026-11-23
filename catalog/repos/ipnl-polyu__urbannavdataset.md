@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 638 | Python | MIT | 2026-10-15 | False | active-research | high |
+| 640 | Python | MIT | 2026-10-15 | False | active-research | high |
 
 Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar and camera in deep urban canyons.
 
@@ -32,4 +32,4 @@ Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

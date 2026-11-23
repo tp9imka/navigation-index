@@ -29,4 +29,4 @@ Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

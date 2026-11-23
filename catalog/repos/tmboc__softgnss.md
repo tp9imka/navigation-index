@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 92 | MATLAB | GPL-2.0 | 2022-06-21 | False | educational | medium |
+| 94 | MATLAB | GPL-2.0 | 2022-06-21 | False | educational | medium |
 
 Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with updates for several sampler front-ends.
 
@@ -32,4 +32,4 @@ Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with u
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

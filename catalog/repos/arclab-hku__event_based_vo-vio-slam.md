@@ -28,4 +28,4 @@ Dataset and index of event-based VO, VIO and SLAM work from HKU ArcLab, includin
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

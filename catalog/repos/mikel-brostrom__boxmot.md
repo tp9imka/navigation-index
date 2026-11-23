@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 8,326 | Python | AGPL-3.0 | 2026-11-12 | False | production | high |
+| 8,325 | Python | NOASSERTION | 2026-11-20 | False | production | high |
 
 Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SORT, StrongSORT and others) for detector outputs, in Python and C++.
 
@@ -42,4 +42,4 @@ Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SO
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

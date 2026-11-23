@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 768 | C++ | Apache-2.0 | 2026-09-22 | False | production | high |
+| 772 | C++ | Apache-2.0 | 2026-11-18 | False | production | high |
 
 GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps from depth cameras.
 
@@ -35,4 +35,4 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

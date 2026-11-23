@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 548 | Python | MIT | 2026-08-11 | False | active-research | high |
+| 549 | Python | MIT | 2026-08-11 | False | active-research | high |
 
 LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP odometry.
 
@@ -37,4 +37,4 @@ LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

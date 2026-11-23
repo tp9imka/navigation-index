@@ -24,4 +24,4 @@ Real-time GPS L1 signal simulator variant for LimeSDR.
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

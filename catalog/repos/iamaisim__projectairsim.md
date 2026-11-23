@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 951 | C++ | MIT | 2026-11-09 | False | active-research | medium |
+| 957 | C++ | MIT | 2026-11-16 | False | active-research | medium |
 
 Open-source release of Project AirSim, the rewrite and successor of AirSim, for building and testing autonomous aerial systems in high-fidelity Unreal environments.
 
@@ -30,4 +30,4 @@ Open-source release of Project AirSim, the rewrite and successor of AirSim, for 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

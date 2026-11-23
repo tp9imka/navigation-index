@@ -29,4 +29,4 @@ Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,071 | Python | ? | 2026-10-26 | False | production | high |
+| 1,070 | Python | ? | 2026-10-26 | False | production | high |
 
 Landing repository for Luxonis OAK cameras, which run neural networks and stereo depth on the camera; the default branch now only points to the docs, and the old examples live on the `main` branch. The current Python API (DepthAI v3) is built from luxonis/depthai-core.
 
@@ -37,4 +37,4 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 16 | MATLAB | MIT | 2024-05-31 | False | research-prototype | medium |
+| 17 | MATLAB | MIT | 2024-05-31 | False | research-prototype | medium |
 
 MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magnetic field mapping and map-matching localization with a magnetometer.
 
@@ -20,4 +20,4 @@ MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magneti
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

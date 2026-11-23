@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 188 | C++ | BSD-3-Clause | 2026-06-01 | False | active-research | high |
+| 189 | C++ | BSD-3-Clause | 2026-06-01 | False | active-research | high |
 
 Symmetry-preserving (invariant) state estimation library from University of Michigan for legged, wheeled and other robots, with real-time ROS support.
 
@@ -38,4 +38,4 @@ Symmetry-preserving (invariant) state estimation library from University of Mich
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

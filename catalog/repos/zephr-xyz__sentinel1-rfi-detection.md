@@ -30,4 +30,4 @@ Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

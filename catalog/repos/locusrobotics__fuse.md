@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 884 | C++ | NOASSERTION | 2026-08-19 | False | production | medium |
+| 884 | C++ | NOASSERTION | 2026-11-16 | False | production | medium |
 
 ROS framework for sensor fusion as factor-graph optimization: plugin sensor models, motion models and publishers on top of Ceres, supporting both smoothing and fixed-lag estimation.
 
@@ -36,4 +36,4 @@ ROS framework for sensor fusion as factor-graph optimization: plugin sensor mode
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

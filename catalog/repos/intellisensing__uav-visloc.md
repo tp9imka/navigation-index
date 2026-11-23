@@ -48,4 +48,4 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 
 _Indexed by lane(s): alt-nav, sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

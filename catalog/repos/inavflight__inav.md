@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,304 | C | GPL-3.0 | 2026-11-15 | False | production | medium |
+| 4,308 | C | GPL-3.0 | 2026-11-22 | False | production | medium |
 
 Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirotors, fixed-wing and rovers, adding GPS position hold, return-to-home and waypoint missions on cheap F4/F7/H7 boards.
 
@@ -29,4 +29,4 @@ Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirot
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

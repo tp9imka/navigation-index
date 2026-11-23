@@ -28,4 +28,4 @@ Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -24,4 +24,4 @@ Indoor recordings of drone propeller noise augmented with noise clips, organised
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

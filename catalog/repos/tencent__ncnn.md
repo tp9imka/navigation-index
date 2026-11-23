@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 24,053 | C++ | NOASSERTION | 2026-11-16 | False | production | medium |
+| 24,090 | C++ | NOASSERTION | 2026-11-23 | False | production | medium |
 
 Dependency-free C++ inference engine tuned for ARM CPUs (NEON) with optional Vulkan GPU. Its benchmark/README.md lists per-board latency for a fixed model set, including Raspberry Pi 5 and Jetson AGX Orin.
 
@@ -30,4 +30,4 @@ Dependency-free C++ inference engine tuned for ARM CPUs (NEON) with optional Vul
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

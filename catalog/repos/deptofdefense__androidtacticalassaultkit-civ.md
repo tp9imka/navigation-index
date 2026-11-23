@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 499 | Java | NOASSERTION | 2024-10-18 | True | archived | medium |
+| 501 | Java | NOASSERTION | 2024-10-18 | True | archived | medium |
 
 The DoD's public source release of the civilian Android Team Awareness Kit: map engine, Cursor-on-Target messaging and plugin SDK.
 
@@ -30,4 +30,4 @@ The DoD's public source release of the civilian Android Team Awareness Kit: map 
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

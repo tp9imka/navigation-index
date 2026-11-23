@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 558 | C++ | ? | 2023-06-22 | False | research-prototype | medium |
+| 559 | C++ | ? | 2023-06-22 | False | research-prototype | medium |
 
 Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of accelerometer and gyro) from a sequence of static poses, without a turntable.
 
@@ -24,4 +24,4 @@ Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of a
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

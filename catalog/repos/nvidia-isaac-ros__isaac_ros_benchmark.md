@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 38 | Python | Apache-2.0 | 2026-09-22 | False | production | medium |
+| 39 | Python | Apache-2.0 | 2026-11-18 | False | production | medium |
 
 ros2_benchmark-based scripts NVIDIA uses to produce the Isaac ROS performance tables (throughput and latency per node or graph per Jetson / dGPU platform).
 
@@ -30,4 +30,4 @@ ros2_benchmark-based scripts NVIDIA uses to produce the Isaac ROS performance ta
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

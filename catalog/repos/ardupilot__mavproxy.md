@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 600 | Python | GPL-3.0 | 2026-11-13 | False | production | high |
+| 601 | Python | GPL-3.0 | 2026-11-21 | False | production | high |
 
 Command-line, module-based ground station and MAVLink proxy with map, console and many plugins.
 
@@ -42,4 +42,4 @@ Command-line, module-based ground station and MAVLink proxy with map, console an
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

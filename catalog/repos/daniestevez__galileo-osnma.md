@@ -36,4 +36,4 @@ Rust implementation of Galileo OSNMA that can run on embedded no_std targets, wi
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -24,4 +24,4 @@ Accept/abstain verifier for place-recognition matches: DINOv2 patch-agreement sc
 
 _Indexed by lane(s): innovation-pa-wider_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

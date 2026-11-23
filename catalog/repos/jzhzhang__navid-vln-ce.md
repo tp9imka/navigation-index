@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 460 | Python | MIT | 2025-10-15 | False | research-prototype | low |
+| 462 | Python | MIT | 2025-10-15 | False | research-prototype | low |
 
 Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next navigation step from monocular RGB history in continuous VLN environments.
 
@@ -30,4 +30,4 @@ Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next nav
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -24,4 +24,4 @@ Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR g
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

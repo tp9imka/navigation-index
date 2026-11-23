@@ -29,4 +29,4 @@ Python Roughtime library and CLI implementing RFC 10049; validates signatures ag
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 481 | Jupyter Notebook | ? | 2024-12-13 | False | research-prototype | low |
+| 482 | Jupyter Notebook | ? | 2024-12-13 | False | research-prototype | low |
 
 Decentralized and distributed collaborative visual-inertial SLAM for aerial swarms from HKUST.
 
@@ -29,4 +29,4 @@ Decentralized and distributed collaborative visual-inertial SLAM for aerial swar
 
 _Indexed by lane(s): domains-swarm, slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

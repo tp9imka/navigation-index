@@ -30,4 +30,4 @@ ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and o
 
 _Indexed by lane(s): close-area-localization_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

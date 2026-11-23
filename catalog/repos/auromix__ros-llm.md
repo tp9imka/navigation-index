@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 833 | Python | Apache-2.0 | 2023-07-10 | False | archived | low |
+| 834 | Python | Apache-2.0 | 2023-07-10 | False | archived | low |
 
 Framework for natural-language interaction with ROS robots, letting an LLM call robot functions and chain behaviors.
 
@@ -24,4 +24,4 @@ Framework for natural-language interaction with ROS robots, letting an LLM call 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

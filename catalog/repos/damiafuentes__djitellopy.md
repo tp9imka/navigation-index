@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,497 | Python | MIT | 2025-01-27 | False | production | high |
+| 1,495 | Python | MIT | 2025-01-27 | False | production | high |
 
 Python wrapper around the official Tello UDP text SDK: takeoff, relative moves, rc sticks, state telemetry and the video stream. Works with Tello, Tello EDU and RoboMaster TT.
 
@@ -29,4 +29,4 @@ Python wrapper around the official Tello UDP text SDK: takeoff, relative moves, 
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

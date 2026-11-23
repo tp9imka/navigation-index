@@ -29,4 +29,4 @@ Precision landing using visual fiducial targets, sending LANDING_TARGET messages
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

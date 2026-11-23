@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 112 | Python | BSD-3-Clause | 2026-11-07 | False | production | high |
+| 111 | Python | BSD-3-Clause | 2026-11-21 | False | production | high |
 
 Python library for parsing and generating NMEA 0183 GNSS sentences, including proprietary variants.
 
@@ -39,4 +39,4 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

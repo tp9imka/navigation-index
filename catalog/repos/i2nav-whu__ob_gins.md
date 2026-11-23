@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 655 | C++ | GPL-3.0 | 2024-03-27 | False | research-prototype | high |
+| 656 | C++ | GPL-3.0 | 2024-03-27 | False | research-prototype | high |
 
 Optimization-based GNSS/INS integration from Wuhan University i2Nav, using IMU preintegration in a sliding-window factor graph solved with Ceres.
 
@@ -40,4 +40,4 @@ Optimization-based GNSS/INS integration from Wuhan University i2Nav, using IMU p
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

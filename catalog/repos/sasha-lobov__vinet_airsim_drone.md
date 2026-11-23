@@ -35,4 +35,4 @@ PyTorch CNN+RNN network that predicts relative pose between frames from a monocu
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

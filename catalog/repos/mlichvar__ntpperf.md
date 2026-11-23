@@ -25,4 +25,4 @@ Load generator for NTP servers and PTP masters by chrony's author: simulates man
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

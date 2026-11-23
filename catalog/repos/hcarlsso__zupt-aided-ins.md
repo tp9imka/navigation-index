@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 30 | MATLAB | BSD-2-Clause | 2021-10-09 | False | archived | medium |
+| 31 | MATLAB | BSD-2-Clause | 2021-10-09 | False | archived | medium |
 
 MATLAB implementation of the OpenShoe zero-velocity-aided foot-mounted INS with several zero-velocity detectors (SHOE, acceleration variance and magnitude, angular rate energy).
 
@@ -30,4 +30,4 @@ MATLAB implementation of the OpenShoe zero-velocity-aided foot-mounted INS with 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -38,4 +38,4 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

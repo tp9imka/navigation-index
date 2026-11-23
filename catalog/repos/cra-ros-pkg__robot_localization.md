@@ -48,4 +48,4 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

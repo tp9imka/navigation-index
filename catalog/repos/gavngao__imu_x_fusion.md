@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,127 | C++ | GPL-3.0 | 2025-03-28 | False | educational | high |
+| 1,126 | C++ | GPL-3.0 | 2025-03-28 | False | educational | high |
 
 Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side by side (ESKF, IEKF, UKF variants, MAP).
 
@@ -30,4 +30,4 @@ Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

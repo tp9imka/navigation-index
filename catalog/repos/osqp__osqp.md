@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 2,228 | C | Apache-2.0 | 2026-01-12 | False | production | high |
+| 2,231 | C | Apache-2.0 | 2026-01-12 | False | production | high |
 
 Operator-splitting solver for convex quadratic programs, with embedded C code generation and Python bindings.
 
@@ -30,4 +30,4 @@ Operator-splitting solver for convex quadratic programs, with embedded C code ge
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

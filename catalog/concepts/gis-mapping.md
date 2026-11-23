@@ -40,8 +40,8 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [GDAL](../../catalog/repos/osgeo__gdal.md) - fit: high - Translator library and CLI tools for raster and vector geospatial formats (GeoTIFF, COG, GeoPackage, Shapefile, KML and hundreds more) with reprojection, warping and DEM utilities.
 - [OSMnx](../../catalog/repos/gboeing__osmnx.md) - fit: high - Download, model and analyze street networks and other OSM features as NetworkX graphs.
 - [Martin](../../catalog/repos/maplibre__martin.md) - fit: high - Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile generation and mbtiles tooling.
-- [grid_map](../../catalog/repos/anybotics__grid_map.md) - fit: high - C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for elevation and traversability mapping.
 - [PMTiles](../../catalog/repos/protomaps__pmtiles.md) - fit: high - Single-file tile archive format and tooling, served by HTTP range requests from static storage, with JS/Go readers and extraction CLI.
+- [grid_map](../../catalog/repos/anybotics__grid_map.md) - fit: high - C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for elevation and traversability mapping.
 - [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md) - fit: high - Vector and raster tile server that serves MBTiles/PMTiles with GL styles and renders raster tiles server-side with MapLibre Native.
 - [Rasterio](../../catalog/repos/rasterio__rasterio.md) - fit: high - Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, masks and affine georeferencing.
 - [PROJ](../../catalog/repos/osgeo__proj.md) - fit: high - Cartographic projection and coordinate transformation library with datum grids, time-dependent transformations and a pipeline syntax.

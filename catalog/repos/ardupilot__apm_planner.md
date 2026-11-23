@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 554 | C++ | NOASSERTION | 2026-04-18 | False | archived | low |
+| 553 | C++ | NOASSERTION | 2026-04-18 | False | archived | low |
 
 Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.
 
@@ -29,4 +29,4 @@ Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,620 | C++ | GPL-3.0 | 2024-01-19 | False | research-prototype | medium |
+| 1,621 | C++ | GPL-3.0 | 2024-01-19 | False | research-prototype | medium |
 
 Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omni camera support, optional global map and loop closure.
 
@@ -30,4 +30,4 @@ Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omn
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

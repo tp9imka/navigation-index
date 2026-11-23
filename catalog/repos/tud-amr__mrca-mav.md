@@ -28,4 +28,4 @@ MATLAB code for chance-constrained NMPC collision avoidance of MAVs among moving
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

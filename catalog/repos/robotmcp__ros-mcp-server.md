@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,527 | Python | Apache-2.0 | 2026-11-15 | False | active-research | high |
+| 1,532 | Python | Apache-2.0 | 2026-11-22 | False | active-research | high |
 
 Model Context Protocol server that exposes ROS topics, services and parameters (via rosbridge) to LLM clients such as Claude or GPT, for ROS 1 and ROS 2.
 
@@ -42,4 +42,4 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

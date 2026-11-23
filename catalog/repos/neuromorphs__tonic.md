@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 302 | Python | GPL-3.0 | 2026-10-03 | False | production | medium |
+| 303 | Python | GPL-3.0 | 2026-10-03 | False | production | medium |
 
 Python library for event-based datasets and transforms, in the style of torchvision.
 
@@ -33,4 +33,4 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

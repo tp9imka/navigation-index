@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 69 | Jupyter Notebook | GPL-3.0 | 2024-03-28 | False | research-prototype | medium |
+| 71 | Jupyter Notebook | GPL-3.0 | 2024-03-28 | False | research-prototype | medium |
 
 Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline: two cameras, side-scan sonar (10,030 images, COCO/YOLO labels), segmentation masks and navigation data, for segmentation, detection and visual-inertial localization.
 
@@ -24,4 +24,4 @@ Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

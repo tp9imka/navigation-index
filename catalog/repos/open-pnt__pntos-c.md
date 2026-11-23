@@ -28,4 +28,4 @@ C API specification of pntOS, the modular plug-in architecture for navigation sy
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

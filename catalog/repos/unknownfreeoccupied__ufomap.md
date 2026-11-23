@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 436 | C++ | BSD-2-Clause | 2025-06-27 | False | active-research | medium |
+| 438 | C++ | BSD-2-Clause | 2025-06-27 | False | active-research | medium |
 
 Octree occupancy mapping that represents unknown space explicitly and indexes free, occupied and unknown nodes so queries such as 'is this box all known free' are cheap. Has ROS 1 wrappers and a newer v2 branch.
 
@@ -29,4 +29,4 @@ Octree occupancy mapping that represents unknown space explicitly and indexes fr
 
 _Indexed by lane(s): close-area-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

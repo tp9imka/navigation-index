@@ -32,4 +32,4 @@ Python tool that scores an odometry estimate together with its reported covarian
 
 _Indexed by lane(s): close-area-localization_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

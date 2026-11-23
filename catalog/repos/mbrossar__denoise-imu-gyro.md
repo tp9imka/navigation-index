@@ -30,4 +30,4 @@ CNN that denoises low-cost gyroscope signals to improve attitude estimation.
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

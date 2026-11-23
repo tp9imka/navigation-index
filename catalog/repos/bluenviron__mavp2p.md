@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 257 | Go | MIT | 2026-11-03 | False | production | high |
+| 257 | Go | MIT | 2026-11-17 | False | production | high |
 
 Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with deduplication.
 
@@ -37,4 +37,4 @@ Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with dedupl
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

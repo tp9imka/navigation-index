@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 142 | C | GPL-3.0 | 2024-08-19 | False | production | medium |
+| 141 | C | GPL-3.0 | 2024-08-19 | False | production | medium |
 
 Dockerfile and instructions to build and run the BKG NTRIP caster in a container.
 
@@ -28,4 +28,4 @@ Dockerfile and instructions to build and run the BKG NTRIP caster in a container
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

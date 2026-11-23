@@ -24,4 +24,4 @@ Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

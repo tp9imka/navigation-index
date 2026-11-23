@@ -29,4 +29,4 @@ The JSON schema and specification for the Signal K marine data format covering n
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

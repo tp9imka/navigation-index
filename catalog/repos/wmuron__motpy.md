@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 537 | Python | MIT | 2024-07-25 | False | production | medium |
+| 535 | Python | MIT | 2024-07-25 | False | production | medium |
 
 Simple Python library for tracking-by-detection multi-object tracking with Kalman filters and IoU/feature association.
 
@@ -24,4 +24,4 @@ Simple Python library for tracking-by-detection multi-object tracking with Kalma
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

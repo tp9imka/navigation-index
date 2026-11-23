@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 265 | Python | MIT | 2026-11-12 | False | active-research | medium |
+| 266 | Python | MIT | 2026-11-20 | False | active-research | medium |
 
 ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or onboard localization, including simulation backends.
 
@@ -40,4 +40,4 @@ ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

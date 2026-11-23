@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 539 | C++ | BSD-3-Clause | 2026-08-21 | False | production | high |
+| 540 | C++ | BSD-3-Clause | 2026-08-21 | False | production | high |
 
 ROS driver for u-blox receivers that publishes fixes, raw measurements and receiver status as ROS messages.
 
@@ -34,4 +34,4 @@ ROS driver for u-blox receivers that publishes fixes, raw measurements and recei
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

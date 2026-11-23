@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 197 | Go | AGPL-3.0 | 2026-06-30 | False | active-research | high |
+| 199 | Go | AGPL-3.0 | 2026-06-30 | False | active-research | high |
 
 Go implementation of a simple ATAK-compatible server and a web client, supporting CoT over TCP/UDP/SSL.
 
@@ -36,4 +36,4 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

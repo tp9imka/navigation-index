@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 475 | Vue | NOASSERTION | 2026-11-14 | False | production | high |
+| 475 | Vue | NOASSERTION | 2026-11-20 | False | production | high |
 
 Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot management, MAVLink routing and a Docker extension system on a Raspberry Pi companion computer.
 
@@ -42,4 +42,4 @@ Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot ma
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

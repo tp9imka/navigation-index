@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 949 | Python | BSD-3-Clause | 2026-11-12 | False | active-research | high |
+| 951 | Python | BSD-3-Clause | 2026-11-21 | False | active-research | high |
 
 Wrapper exposing 50+ image matching models behind one interface (formerly image-matching-models).
 
@@ -39,4 +39,4 @@ Wrapper exposing 50+ image matching models behind one interface (formerly image-
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

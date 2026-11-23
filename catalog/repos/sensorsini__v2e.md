@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 501 | Python | MIT | 2026-04-13 | False | active-research | high |
+| 504 | Python | MIT | 2026-11-21 | False | active-research | high |
 
 Converts conventional video into realistic synthetic DVS event streams with sensor noise modeling.
 
@@ -24,4 +24,4 @@ Converts conventional video into realistic synthetic DVS event streams with sens
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

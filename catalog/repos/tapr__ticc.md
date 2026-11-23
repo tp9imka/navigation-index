@@ -30,4 +30,4 @@ Firmware and design files for TAPR's Arduino-based sub-nanosecond time interval 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

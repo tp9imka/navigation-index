@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 293 | Jupyter Notebook | ? | 2022-07-03 | False | archived | low |
+| 294 | Jupyter Notebook | ? | 2022-07-03 | False | archived | low |
 
 Decentralized omnidirectional visual-inertial-UWB state estimation for aerial swarms from HKUST, combining VIO, UWB ranges and map-based place recognition.
 
@@ -29,4 +29,4 @@ Decentralized omnidirectional visual-inertial-UWB state estimation for aerial sw
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

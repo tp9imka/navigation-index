@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 183 | C++ | ? | 2019-03-01 | False | archived | medium |
+| 184 | C++ | ? | 2019-03-01 | False | archived | medium |
 
 ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magnetometer, vision pose and optical flow.
 
@@ -30,4 +30,4 @@ ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magn
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

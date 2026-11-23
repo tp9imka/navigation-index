@@ -20,4 +20,4 @@ Python 2D playground for a CBF-QP safety filter that minimally modifies a user c
 
 _Indexed by lane(s): close-area-innovation_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

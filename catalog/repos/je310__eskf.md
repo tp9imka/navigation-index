@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 178 | C++ | MIT | 2019-04-12 | False | archived | medium |
+| 179 | C++ | MIT | 2019-04-12 | False | archived | medium |
 
 Error-state Kalman filter implementation following Sola's quaternion ESKF formulation.
 
@@ -34,4 +34,4 @@ Error-state Kalman filter implementation following Sola's quaternion ESKF formul
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

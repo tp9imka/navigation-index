@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 840 | Haskell | ? | 2026-11-15 | False | active-research | low |
+| 841 | Haskell | ? | 2026-11-15 | False | active-research | low |
 
 Stream-based runtime-verification language embedded in Haskell. It compiles monitors to constant-time, constant-memory C99 (and Bluespec), so the generated checker can run on a flight controller-class MCU.
 
@@ -31,4 +31,4 @@ Stream-based runtime-verification language embedded in Haskell. It compiles moni
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 403 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
+| 404 | Python | MIT | 2026-03-15 | False | research-prototype | medium |
 
 CVPR 2022 large-scale visual geo-localization treating place recognition as classification over geographic cells.
 
@@ -31,4 +31,4 @@ CVPR 2022 large-scale visual geo-localization treating place recognition as clas
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

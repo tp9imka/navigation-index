@@ -24,4 +24,4 @@ Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming ove
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -31,4 +31,4 @@ Python toolbox for model predictive control and moving horizon estimation on top
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 337 | C++ | GPL-3.0 | 2025-03-18 | False | research-prototype | low |
+| 335 | C++ | GPL-3.0 | 2025-03-18 | False | research-prototype | low |
 
 Open-source release of Ultimate SLAM, combining events, standard frames and IMU for VIO in HDR and high-speed scenarios (RA-L 2018).
 
@@ -29,4 +29,4 @@ Open-source release of Ultimate SLAM, combining events, standard frames and IMU 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

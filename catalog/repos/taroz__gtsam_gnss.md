@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 138 | C++ | MIT | 2026-05-23 | False | active-research | medium |
+| 139 | C++ | MIT | 2026-05-23 | False | active-research | medium |
 
 Custom GTSAM factors and MATLAB wrappers for GNSS factor-graph positioning, including pseudorange, Doppler and carrier-phase factors with ambiguity estimation.
 
@@ -31,4 +31,4 @@ Custom GTSAM factors and MATLAB wrappers for GNSS factor-graph positioning, incl
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

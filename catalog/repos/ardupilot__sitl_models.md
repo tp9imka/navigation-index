@@ -29,4 +29,4 @@ Collection of aircraft and vehicle models and parameter files for ArduPilot SITL
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

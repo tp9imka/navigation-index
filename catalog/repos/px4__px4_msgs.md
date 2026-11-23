@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 163 | Shell | BSD-3-Clause | 2026-11-13 | False | production | high |
+| 164 | Shell | BSD-3-Clause | 2026-11-19 | False | production | high |
 
 ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bridge.
 
@@ -38,4 +38,4 @@ ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bri
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

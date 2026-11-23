@@ -31,4 +31,4 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

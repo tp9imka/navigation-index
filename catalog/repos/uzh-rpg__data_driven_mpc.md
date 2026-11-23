@@ -31,4 +31,4 @@ Python code for the Data-Driven MPC paper: a nominal quadrotor model in acados c
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

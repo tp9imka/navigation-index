@@ -38,4 +38,4 @@ Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

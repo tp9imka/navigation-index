@@ -32,4 +32,4 @@ SDK for the Oxford RobotCar dataset with loaders and projection tools.
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

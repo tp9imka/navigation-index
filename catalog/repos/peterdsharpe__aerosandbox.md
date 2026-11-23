@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,395 | Jupyter Notebook | MIT | 2026-10-30 | False | active-research | high |
+| 1,401 | Jupyter Notebook | MIT | 2026-10-30 | False | active-research | high |
 
 Python aircraft design and trajectory optimisation toolkit on CasADi: aerodynamics, propeller and electric propulsion models, power sources, wind models, and an optimisation front-end.
 
@@ -35,4 +35,4 @@ Python aircraft design and trajectory optimisation toolkit on CasADi: aerodynami
 
 _Indexed by lane(s): guidance-planning_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

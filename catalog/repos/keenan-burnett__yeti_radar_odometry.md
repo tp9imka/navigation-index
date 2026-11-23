@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 155 | C++ | BSD-3-Clause | 2021-12-15 | False | archived | low |
+| 154 | C++ | BSD-3-Clause | 2021-12-15 | False | archived | low |
 
 Radar odometry for Navtech spinning radar that compensates motion distortion and Doppler effects.
 
@@ -33,4 +33,4 @@ Radar odometry for Navtech spinning radar that compensates motion distortion and
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -24,4 +24,4 @@ Sample app and docs entry for DJI MSDK V5, the Android SDK for current DJI consu
 
 _Indexed by lane(s): close-area-sims_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -29,4 +29,4 @@ Scripts and recordings that measure the accuracy and jitter of the Crazyflie Lig
 
 _Indexed by lane(s): close-area-localization_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

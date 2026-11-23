@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 127 | Python | BSD-3-Clause | 2026-09-16 | False | active-research | medium |
+| 128 | Python | BSD-3-Clause | 2026-09-16 | False | active-research | medium |
 
 Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and GNSS/INS ground truth.
 
@@ -32,4 +32,4 @@ Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

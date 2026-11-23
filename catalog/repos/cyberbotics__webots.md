@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 4,770 | C++ | Apache-2.0 | 2026-11-13 | False | production | medium |
+| 4,775 | C++ | Apache-2.0 | 2026-11-23 | False | production | medium |
 
 General-purpose open-source robot simulator with many robot models and sensors including GPS, compass, IMU, lidar and radar.
 
@@ -24,4 +24,4 @@ General-purpose open-source robot simulator with many robot models and sensors i
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

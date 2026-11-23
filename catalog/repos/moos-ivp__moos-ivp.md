@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 103 | C++ | NOASSERTION | 2026-11-15 | False | production | high |
+| 102 | C++ | NOASSERTION | 2026-11-21 | False | production | high |
 
 Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-objective decision engine, used widely for autonomous marine vehicles, including COLREGs-aware collision avoidance behaviours.
 
@@ -43,4 +43,4 @@ Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

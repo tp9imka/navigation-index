@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,273 | C++ | NOASSERTION | 2026-09-03 | False | research-prototype | medium |
+| 1,275 | C++ | NOASSERTION | 2026-09-03 | False | research-prototype | medium |
 
 Robust visual-inertial odometry using an iterated EKF directly on image-patch photometric errors.
 
@@ -32,4 +32,4 @@ Robust visual-inertial odometry using an iterated EKF directly on image-patch ph
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

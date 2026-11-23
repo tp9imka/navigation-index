@@ -25,4 +25,4 @@ ESP8266/ESP32 stratum-1 time server fed by a GNSS module and a TCXO-backed RTC, 
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 206 | Python | MIT | 2026-08-21 | False | active-research | high |
+| 208 | Python | MIT | 2026-08-21 | False | active-research | high |
 
 MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas and Rasterio: geometry ops, CRS transforms, distances and raster analysis, without a desktop GIS.
 
@@ -35,4 +35,4 @@ MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

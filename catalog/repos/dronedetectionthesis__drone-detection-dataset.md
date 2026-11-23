@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 344 | MATLAB | CC0-1.0 | 2026-04-26 | False | research-prototype | high |
+| 348 | MATLAB | CC0-1.0 | 2026-04-26 | False | research-prototype | high |
 
 Multi-sensor dataset from a Swedish thesis: 650 infrared and visible videos (airplane, bird, drone, helicopter; 203k labelled frames) plus 90 audio clips (drone, helicopter, background).
 
@@ -29,4 +29,4 @@ Multi-sensor dataset from a Swedish thesis: 650 infrared and visible videos (air
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

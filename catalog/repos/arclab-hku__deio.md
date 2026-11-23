@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 121 | Jupyter Notebook | MIT | 2026-07-07 | False | active-research | low |
+| 122 | Jupyter Notebook | MIT | 2026-07-07 | False | active-research | low |
 
 Learning-based event-inertial odometry: a learned event-patch front-end coupled with IMU pre-integration in a factor graph, evaluated on ten public event benchmarks.
 
@@ -29,4 +29,4 @@ Learning-based event-inertial odometry: a learned event-patch front-end coupled 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 993 | Python | MIT | 2025-10-16 | False | research-prototype | medium |
+| 995 | Python | MIT | 2025-10-16 | False | research-prototype | medium |
 
 Builds open-vocabulary 3D scene graphs from RGB-D by associating 2D foundation-model detections across views, then lets an LLM plan over the graph.
 
@@ -30,4 +30,4 @@ Builds open-vocabulary 3D scene graphs from RGB-D by associating 2D foundation-m
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

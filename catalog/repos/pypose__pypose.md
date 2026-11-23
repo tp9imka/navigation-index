@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,621 | Python | Apache-2.0 | 2026-11-06 | False | active-research | medium |
+| 1,620 | Python | Apache-2.0 | 2026-11-06 | False | active-research | medium |
 
 PyTorch library for differentiable robotics on Lie groups: IMU pre-integration, EKF/UKF modules and second-order optimizers that can sit inside a training loop.
 
@@ -29,4 +29,4 @@ PyTorch library for differentiable robotics on Lie groups: IMU pre-integration, 
 
 _Indexed by lane(s): nav-differentiators_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

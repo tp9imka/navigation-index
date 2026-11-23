@@ -29,4 +29,4 @@ Cloudflare's Rust implementation of Network Time Security (NTS) key exchange and
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

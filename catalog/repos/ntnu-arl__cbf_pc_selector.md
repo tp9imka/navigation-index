@@ -24,4 +24,4 @@ ROS 2 node that turns depth images, range images or point clouds from one or mor
 
 _Indexed by lane(s): cbf-baselines_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

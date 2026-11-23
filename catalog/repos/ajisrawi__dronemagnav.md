@@ -28,4 +28,4 @@ Hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

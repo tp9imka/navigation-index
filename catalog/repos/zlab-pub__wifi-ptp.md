@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 73 | C | ? | 2024-07-01 | False | research-prototype | low |
+| 74 | C | ? | 2024-07-01 | False | research-prototype | low |
 
 PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi hardware path plus an adjusted linuxptp.
 
@@ -24,4 +24,4 @@ PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

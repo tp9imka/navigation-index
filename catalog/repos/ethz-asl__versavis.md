@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 291 | C++ | NOASSERTION | 2021-09-28 | False | archived | low |
+| 292 | C++ | NOASSERTION | 2021-09-28 | False | archived | low |
 
 Open hardware and firmware board that hardware-triggers multiple cameras and an IMU and timestamps them on one clock, with ROS drivers. Designed for visual-inertial rigs.
 
@@ -28,4 +28,4 @@ Open hardware and firmware board that hardware-triggers multiple cameras and an 
 
 _Indexed by lane(s): flight-embedded_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

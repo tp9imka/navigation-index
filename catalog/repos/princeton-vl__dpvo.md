@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | quick-build fit |
 |---|---|---|---|---|---|---|
-| 1,153 | C++ | MIT | 2026-09-20 | False | active-research | medium |
+| 1,154 | C++ | MIT | 2026-09-20 | False | active-research | medium |
 
 Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM with loop closure.
 
@@ -29,4 +29,4 @@ Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._

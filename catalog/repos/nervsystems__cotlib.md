@@ -24,4 +24,4 @@ Go library for parsing, validating and generating Cursor-on-Target XML with secu
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-16._
+_GitHub metadata fetched 2026-11-23._
