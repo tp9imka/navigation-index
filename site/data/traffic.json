@@ -3,9 +3,9 @@
  "generated_by": "tools/traffic.py",
  "repo": "tp9imka/navigation-index",
  "since": "2026-11-16",
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "totals": {
-  "clones": 95,
+  "clones": 142,
   "views": 41
  },
  "window_14d": {
@@ -71,6 +71,13 @@
    "unique_cloners": 6,
    "views": 2,
    "unique_visitors": 2
+  },
+  {
+   "date": "2026-11-24",
+   "clones": 47,
+   "unique_cloners": 17,
+   "views": 0,
+   "unique_visitors": 0
   }
  ]
 }
